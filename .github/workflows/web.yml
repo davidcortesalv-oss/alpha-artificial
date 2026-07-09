@@ -1,0 +1,47 @@
+# =====================================================================
+# ALPHA ARTIFICIAL — Publicació automàtica de la web
+# ---------------------------------------------------------------------
+# Cada cop que el repositori canvia (per exemple, quan la ronda setmanal
+# fa commit dels resultats), aquest workflow publica la carpeta web/ a
+# GitHub Pages. La web queda a:
+#     https://<el-teu-usuari>.github.io/<nom-del-repositori>/
+# =====================================================================
+name: Publicar la web
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.desplegament.outputs.page_url }}
+    steps:
+      - name: Baixar el codi
+        uses: actions/checkout@v4
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true   # activa Pages sol el primer cop
+
+      - name: Empaquetar la carpeta web/
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+
+      - name: Publicar
+        id: desplegament
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALPHA ARTIFICIAL · Pot una IA batre el mercat?</title>
+  <meta name="description" content="Cinc intel·ligències artificials gestionen 10.000 € cadascuna durant cinc mesos invertint en ETFs reals. Competeixen contra l'índex S&P 500. Pot una IA batre el mercat?" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='42' fill='%23ffb000'/%3E%3Ctext x='50' y='66' font-size='52' text-anchor='middle' font-family='monospace' font-weight='bold' fill='%23070707'%3E%CE%B1%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+
+  <!-- ===================== BARRA SUPERIOR ===================== -->
+  <header class="topbar">
+    <a class="brand" href="#/">
+      <span class="brand-dot"></span>
+      <span class="brand-nom">ALPHA<span class="brand-soft"> ARTIFICIAL</span></span>
+    </a>
+
+    <nav class="nav" id="nav-links" aria-label="Navegació principal">
+      <a href="#/" data-ruta="">Tauler</a>
+      <a href="#/informes" data-ruta="informes">Informes</a>
+      <a href="#/canvis" data-ruta="canvis">Canvis de cartera</a>
+      <a href="#/moments" data-ruta="moments">Moments</a>
+      <a href="#/etfs" data-ruta="etfs">ETFs</a>
+      <a href="#/biaixos" data-ruta="biaixos">Biaixos</a>
+      <a href="#/apis" data-ruta="apis">Configuració d'APIs</a>
+    </nav>
+
+    <div class="top-dreta">
+      <div class="font-dades" id="font-dades"></div>
+      <button class="burger" id="nav-burger" aria-label="Obrir el menú">☰</button>
+    </div>
+  </header>
+
+  <!-- ===================== CONTINGUT (el pinta app.js) ===================== -->
+  <main id="vista"></main>
+
+  <!-- ===================== PEU ===================== -->
+  <footer class="peu">
+    <div class="peu-inner">
+      <div><b>ALPHA ARTIFICIAL</b> — Treball de Recerca de David Cortés · Monlau, 2026-27</div>
+      <div class="peu-regles">
+        <span>Capital: <b>10.000 €</b></span>
+        <span>Comissió: <b>0,1 %</b></span>
+        <span>Màxim per ETF: <b>40 %</b></span>
+        <span>Decisions: <b>1 per setmana</b></span>
+        <span>Durada: <b>5 mesos</b></span>
+      </div>
+      <div class="peu-nota">Projecte educatiu amb capital virtual. Res del que apareix aquí és un consell d'inversió.</div>
+    </div>
+  </footer>
+
+  <!-- Dades i llibreries pròpies (cap dependència externa) -->
+  <!-- El ?v=2 força el navegador a baixar la versió nova si hi ha canvis -->
+  <script src="etfs.js?v=2"></script>
+  <script src="dades_demo.js?v=2"></script>
+  <script src="grafica.js?v=2"></script>
+  <script src="app.js?v=2"></script>
+</body>
+</html>

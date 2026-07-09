@@ -1,0 +1,13 @@
+# MAI pugis les claus API a GitHub. Aquest fitxer ho evita.
+secrets.txt
+.env
+*.key
+
+# Coses tècniques de Python que no cal pujar
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Configuració local de l'assistent (només d'aquest ordinador)
+.claude/settings.local.json
