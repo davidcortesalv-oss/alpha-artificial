@@ -1,0 +1,66 @@
+# =====================================================================
+# ALPHA ARTIFICIAL — Prova de connexions
+# ---------------------------------------------------------------------
+# Comprova que les 5 claus API estan ben posades als Secrets del
+# repositori, enviant un missatge mínim a cada IA (cost: cèntims de
+# cèntim). Un pas per IA: si un pas surt vermell, aquella clau falla.
+#
+# Es llança:
+#   - a mà: Actions → "Prova de connexions" → Run workflow
+#   - automàticament quan canvia el fitxer .provar-claus
+# =====================================================================
+name: Prova de connexions
+
+on:
+  workflow_dispatch:
+  push:
+    paths: [".provar-claus"]
+
+permissions:
+  contents: read
+
+jobs:
+  prova:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Baixar el codi
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instal·lar el mínim necessari
+        run: pip install requests
+
+      - name: OpenAI (GPT)
+        if: always()
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python .github/prova_connexio.py gpt
+
+      - name: Anthropic (Claude)
+        if: always()
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python .github/prova_connexio.py claude
+
+      - name: Google (Gemini)
+        if: always()
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: python .github/prova_connexio.py gemini
+
+      - name: DeepSeek
+        if: always()
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python .github/prova_connexio.py deepseek
+
+      - name: Mistral
+        if: always()
+        env:
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+        run: python .github/prova_connexio.py mistral
