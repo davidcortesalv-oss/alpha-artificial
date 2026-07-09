@@ -6,29 +6,34 @@
 #   1. Baixa preus reals i titulars.
 #   2. Pregunta a les 5 IAs (les claus surten dels "Secrets" del repo).
 #   3. Guarda els resultats a dades/ i regenera web/dades.json.
-#   4. Fa commit dels resultats → això dispara la publicació de la web.
+#   4. Publica la web actualitzada a GitHub Pages.
 #
-# També es pot llançar a mà: pestanya Actions → "Ronda setmanal del
-# torneig" → botó "Run workflow". Útil per a la primera ronda.
+# També es pot llançar quan es vulgui:
+#   - pestanya Actions → "Ronda setmanal del torneig" → "Run workflow"
+#   - o canviant el contingut del fitxer .llancar-ronda
 # =====================================================================
 name: Ronda setmanal del torneig
 
 on:
   schedule:
-    - cron: "30 7 * * 1"   # cada dilluns a les 07:30 UTC
-  workflow_dispatch:        # …i quan es vulgui, amb el botó "Run workflow"
+    - cron: "30 7 * * 1"        # cada dilluns a les 07:30 UTC
+  workflow_dispatch:             # botó "Run workflow"
+  push:
+    paths: [".llancar-ronda"]    # tocar aquest fitxer = ronda extra
 
 concurrency:
-  group: torneig            # mai dues rondes alhora
+  group: torneig                 # mai dues rondes alhora
   cancel-in-progress: false
 
-permissions:
-  contents: write           # per poder guardar els resultats al repositori
-
 jobs:
+  # ------------------------------------------------------------------
+  # 1) Jugar la ronda i guardar els resultats
+  # ------------------------------------------------------------------
   ronda:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    permissions:
+      contents: write            # per guardar els resultats al repositori
     steps:
       - name: Baixar el codi del repositori
         uses: actions/checkout@v4
@@ -42,7 +47,7 @@ jobs:
       - name: Instal·lar les llibreries
         run: pip install -r requirements.txt
 
-      - name: Executar la ronda i actualitzar la web
+      - name: Executar la ronda i actualitzar les dades de la web
         env:
           OPENAI_API_KEY:    ${{ secrets.OPENAI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -56,7 +61,44 @@ jobs:
       - name: Guardar els resultats al repositori
         run: |
           git config user.name "alpha-artificial-bot"
-          git config user.email "actions@users.noreply.github.com"
+          git config user.email "alpha-artificial-bot@users.noreply.github.com"
           git add dades web/dades.json
           git commit -m "Ronda setmanal · $(date +%d/%m/%Y)" || echo "Res de nou a guardar"
           git push
+
+  # ------------------------------------------------------------------
+  # 2) Publicar la web amb les dades noves
+  #    (els commits d'un robot no disparen altres robots; per això la
+  #     publicació va aquí mateix, just després de la ronda)
+  # ------------------------------------------------------------------
+  publicar:
+    needs: ronda
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    environment:
+      name: github-pages
+      url: ${{ steps.desplegament.outputs.page_url }}
+    steps:
+      - name: Baixar l'última versió (amb els resultats de la ronda)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Empaquetar la carpeta web/
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+
+      - name: Publicar
+        id: desplegament
+        uses: actions/deploy-pages@v4
