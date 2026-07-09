@@ -87,12 +87,12 @@ Mientras el torneo no empiece, enseña datos de DEMOSTRACIÓN (lo pone arriba a 
 ## ¿Dónde estás ahora?
 
 ✅ Estructura del proyecto creada
-✅ Motor funcionando en modo simulado (con memoria entre semanas)
-✅ Conectores de las 5 IAs escritos (`connectors_ia.py`)
-✅ Web completa funcionando con datos de demostración
-⬜ Conseguir la primera clave API  ← **tu siguiente paso**
-⬜ Activar la primera IA real (`actiu: True` + `MODE_SIMULAT = False`)
-⬜ Subir a GitHub y publicar la web (GitHub Pages)
-⬜ Activar la automatización semanal
+✅ Motor funcionando (con memoria entre semanas y reglas reales)
+✅ Conectores de las 5 IAs escritos y PROBADOS con tus claves
+✅ Titulares de actualidad conectados (WSJ, CNBC, MarketWatch — idénticos para las 5)
+✅ Web completa funcionando
+✅ Las 5 IAs activadas y `MODE_SIMULAT = False`: el torneo está ARMADO
+✅ Repositorio git creado y workflows de automatización escritos
+⬜ Subir a GitHub, poner los Secrets y encender los robots  ← **tu siguiente paso: sigue GUIA_GITHUB.md**
 
-Cuando tengas la primera clave (o cuando quieras seguir), me dices y continuamos.
+A partir de ahí, cada lunes a las 09:30 la ronda corre sola y la web se actualiza sola.
