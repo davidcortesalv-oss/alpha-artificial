@@ -465,6 +465,17 @@ def executar_ronda(setmana=None):
         print("[!] Cap model actiu. Activa'n algun a config.py (actiu: True).")
         return
 
+    # Fre de seguretat: en mode real, si falta alguna clau NO es juga la
+    # ronda (evita gravar una setmana oficial buida per una mala configuració).
+    if not MODE_SIMULAT:
+        sense_clau = [m for m in models_a_jugar if not connectors_ia.clau_de(m)]
+        if sense_clau:
+            noms = ", ".join(config.MODELS[m]["nom"] for m in sense_clau)
+            print(f"[X] RONDA ATURADA: falten les claus API de: {noms}")
+            print("    En local: posa-les a secrets.txt")
+            print("    A GitHub: Settings → Secrets and variables → Actions")
+            sys.exit(1)
+
     # 3-5. Para cada modelo
     print("\n[2-4] Demanant decisions a les IAs...")
     for model_id in models_a_jugar:
