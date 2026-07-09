@@ -1,0 +1,8 @@
+data,setmana,model,vendre,comprar,import_eur
+2026-07-09,1,gpt,VGK,QQQ,999.0
+2026-07-09,1,gpt,GLD,SMH,499.5
+2026-07-09,1,gpt,TLT,SMH,499.5
+2026-07-09,1,gemini,TLT,VTI,499.5
+2026-07-09,1,mistral,QQQ,SMH,999.0
+2026-07-09,1,mistral,VGK,EWJ,499.5
+2026-07-09,1,mistral,TLT,BIL,499.5

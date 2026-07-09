@@ -1,0 +1,785 @@
+{
+  "meta": {
+    "capital": 10000.0,
+    "comissio": 0.001,
+    "maxPes": 0.4,
+    "moneda": "EUR",
+    "setmanes": 22,
+    "setmanaActual": 1,
+    "dataInici": "2026-07-09",
+    "dataActual": "2026-07-09",
+    "font": "real",
+    "generat": "2026-07-09T14:40",
+    "puntsPerSetmana": 1
+  },
+  "dies": [
+    "2026-07-09"
+  ],
+  "models": [
+    {
+      "id": "claude",
+      "nom": "Claude",
+      "empresa": "Anthropic",
+      "pais": "EUA",
+      "color": "#cc785c",
+      "dash": null,
+      "competeix": true,
+      "isIndex": false,
+      "isAuthor": false,
+      "perfil": "Model d'Anthropic. El seu estil inversor real es descobrirà durant el torneig.",
+      "estrategia": "",
+      "fortaleses": [],
+      "febleses": []
+    },
+    {
+      "id": "gpt",
+      "nom": "GPT",
+      "empresa": "OpenAI",
+      "pais": "EUA",
+      "color": "#19c37d",
+      "dash": null,
+      "competeix": true,
+      "isIndex": false,
+      "isAuthor": false,
+      "perfil": "Model d'OpenAI. El seu estil inversor real es descobrirà durant el torneig.",
+      "estrategia": "",
+      "fortaleses": [],
+      "febleses": []
+    },
+    {
+      "id": "gemini",
+      "nom": "Gemini",
+      "empresa": "Google",
+      "pais": "EUA",
+      "color": "#5b8def",
+      "dash": null,
+      "competeix": true,
+      "isIndex": false,
+      "isAuthor": false,
+      "perfil": "Model de Google. El seu estil inversor real es descobrirà durant el torneig.",
+      "estrategia": "",
+      "fortaleses": [],
+      "febleses": []
+    },
+    {
+      "id": "deepseek",
+      "nom": "DeepSeek",
+      "empresa": "DeepSeek",
+      "pais": "Xina",
+      "color": "#9a7bff",
+      "dash": null,
+      "competeix": true,
+      "isIndex": false,
+      "isAuthor": false,
+      "perfil": "Model de DeepSeek. El seu estil inversor real es descobrirà durant el torneig.",
+      "estrategia": "",
+      "fortaleses": [],
+      "febleses": []
+    },
+    {
+      "id": "mistral",
+      "nom": "Mistral",
+      "empresa": "Mistral AI",
+      "pais": "Europa",
+      "color": "#ff4d6d",
+      "dash": null,
+      "competeix": true,
+      "isIndex": false,
+      "isAuthor": false,
+      "perfil": "Model de Mistral AI. El seu estil inversor real es descobrirà durant el torneig.",
+      "estrategia": "",
+      "fortaleses": [],
+      "febleses": []
+    },
+    {
+      "id": "index",
+      "nom": "S&P 500",
+      "empresa": "Índex · gestió passiva",
+      "pais": "—",
+      "color": "#f3e9d4",
+      "dash": "7 5",
+      "competeix": false,
+      "isIndex": true,
+      "isAuthor": false,
+      "perfil": "El rival a batre: 10.000 € invertits el primer dia i ni un moviment més.",
+      "estrategia": "Passiva pura",
+      "fortaleses": [],
+      "febleses": []
+    }
+  ],
+  "series": {
+    "claude": [
+      10000.01
+    ],
+    "gpt": [
+      9996.01
+    ],
+    "gemini": [
+      9999.01
+    ],
+    "deepseek": [
+      10000.01
+    ],
+    "mistral": [
+      9996.01
+    ],
+    "index": [
+      10000.0
+    ]
+  },
+  "decisions": {
+    "claude": [
+      {
+        "setmana": 1,
+        "data": "2026-07-09",
+        "decisio": "mantenir",
+        "nivell_risc": "moderat",
+        "confianca": 6,
+        "valor_cartera": 10000.01,
+        "rend_setmana": 0.0,
+        "justificacio": "És la primera setmana i la cartera ja té una diversificació sensata (renda variable EUA/Europa, tecnologia, or i bons). El rebombori de DeepSeek sembla un esdeveniment puntual de sentiment de mercat més que un canvi estructural, i no vull reaccionar en calent al soroll d'un sol titular. Prefereixo esperar a tenir una setmana de dades reals de rendibilitat abans de reajustar, evitant costos de transacció innecessaris. Mantinc el nivell de risc moderat, vigilant especialment l'evolució de QQQ (exposició tecnològica) i TLT (sensible a tipus d'interès) de cara a la propera setmana.",
+        "operacions": null
+      }
+    ],
+    "gpt": [
+      {
+        "setmana": 1,
+        "data": "2026-07-09",
+        "decisio": "reajustar",
+        "nivell_risc": "moderat",
+        "confianca": 6,
+        "valor_cartera": 9996.01,
+        "rend_setmana": -0.04,
+        "justificacio": "Objectiu d’assignació després del reajust: SPY 20%, QQQ 30%, SMH 10%, VGK 10%, GLD 15%, TLT 15%. Raons: (1) Comprar la correcció en IA/semiconductors: reforço QQQ i incorporo SMH per capturar el nucli del cicle d’inversió en IA, tot i el soroll de curt termini. (2) Reduir risc europeu (VGK) davant incertesa política i soroll de divises. (3) Mantenir però reequilibrar cobertures: or i bons llargs continuen com a assegurança, però amb rendiments alts i or feble aquesta setmana, allibero capital per a oportunitats amb millor expected return. (4) Diversificació i control de risc: cap ETF >40% i 30% en actius defensius (GLD+TLT). (5) Costos: només 3 operacions per limitar el peatge del 0,1% per operació.",
+        "operacions": [
+          {
+            "vendre": "VGK",
+            "comprar": "QQQ",
+            "import": 999.0
+          },
+          {
+            "vendre": "GLD",
+            "comprar": "SMH",
+            "import": 499.5
+          },
+          {
+            "vendre": "TLT",
+            "comprar": "SMH",
+            "import": 499.5
+          }
+        ]
+      }
+    ],
+    "gemini": [
+      {
+        "setmana": 1,
+        "data": "2026-07-09",
+        "decisio": "reajustar",
+        "nivell_risc": "moderat",
+        "confianca": 5,
+        "valor_cartera": 9999.01,
+        "rend_setmana": -0.01,
+        "justificacio": "La decisió de reajustar la cartera es fonamenta en la cerca de la 'màxima rendibilitat possible assumint un risc raonable' en un horitzó de cinc mesos. Actualment, el 20% de la cartera en TLT (bons a llarg termini) presenta un risc de durada considerable amb el rendiment del bo a 10 anys al 4.559%, i pot llastar la rendibilitat global si els tipus d'interès continuen sent volàtils o si el mercat de renda variable es recupera. Reduir lleugerament aquesta exposició a la renda fixa de llarg termini permet reassignar capital a un fons de renda variable més ampli i diversificat. He escollit VTI (mercat total EUA) per la seva exposició més àmplia a les empreses dels EUA, incloent-hi 'small caps', oferint una diversificació superior a l'S&P 500 (SPY) i menys concentració que el Nasdaq 100 (QQQ), que ha mostrat volatilitat aquesta setmana amb la notícia de la 'AI Rout'. Tot i això, mantinc QQQ en la seva proporció actual, ja que hi ha notícies contradictòries sobre l'impacte real de l'esdeveniment 'DeepSeek' en els 'titans' de la IA dels EUA. Aquesta operació, amb un cost mínim, incrementa lleugerament l'exposició a la renda variable diversificada dels EUA, alineant la cartera més amb l'objectiu de creixement sense augmentar excessivament el risc global. GLD es manté com a cobertura davant la incertesa macroeconòmica.",
+        "operacions": [
+          {
+            "vendre": "TLT",
+            "comprar": "VTI",
+            "import": 499.5
+          }
+        ]
+      }
+    ],
+    "deepseek": [
+      {
+        "setmana": 1,
+        "data": "2026-07-09",
+        "decisio": "mantenir",
+        "nivell_risc": "moderat",
+        "confianca": 6,
+        "valor_cartera": 10000.01,
+        "rend_setmana": 0.0,
+        "justificacio": "Tot i que DeepSeek ha provocat una correcció tecnològica que pot perjudicar QQQ, és prematur vendre en pànic. La cartera està diversificada amb actius defensius (TLT, GLD) que poden compensar. El VGK i SPY ofereixen exposició a renda variable ampla. El cost d'operar (0,1%) no justifica ajustos sense més dades. Prefereixo mantenir l'estratègia inicial i observar l'evolució del mercat la setmana vinent.",
+        "operacions": null
+      }
+    ],
+    "mistral": [
+      {
+        "setmana": 1,
+        "data": "2026-07-09",
+        "decisio": "reajustar",
+        "nivell_risc": "moderat",
+        "confianca": 7,
+        "valor_cartera": 9996.01,
+        "rend_setmana": -0.04,
+        "justificacio": "1. **Reducció de l'exposició a tecnologia (QQQ → SMH)**: La caiguda dels valors d'IA per la competència xinesa suggereix que el sector podria continuar volàtil. Tot i això, els semiconductors (SMH) són un component clau de la cadena de valor de la IA i podrien beneficiar-se de la demanda estructural a llarg termini, amb menys exposició a les tensions geopolítiques directes. Vendre 1000 € de QQQ (50% de la posició) per comprar SMH redueix el risc específic de tecnologia mentre es manté exposició al creixement del sector.  2. **Ajust a mercats internacionals (VGK → EWJ)**: Europa (VGK) podria veure's afectada per la incertesa política (notícies sobre Lagarde i la política francesa) i la debilitat del consum a la Xina (notícia 9). Japó (EWJ) ofereix una alternativa més estable, amb un banc central que manté una política monetària acomodaticia i un mercat amb potencial de revalorització si el ien continua apreciant-se (notícia 6). Vendre 500 € de VGK per comprar EWJ diversifica el risc geopolític.  3. **Canvi en renda fixa (TLT → BIL)**: Els bons a llarg termini (TLT) són sensibles als moviments dels tipus d'interès, que es mantenen elevats. Amb el bo a 10 anys al 4.559%, el risc de pèrdues en TLT és alt. Canviar 500 € de TLT a lletres del Tresor a curt termini (BIL) redueix el risc de tipus i proporciona liquiditat per aprofitar oportunitats futures. Aquesta mesura és defensiva i coherent amb un nivell de risc moderat.  4. **Manteniment de SPY i GLD**: SPY ofereix exposició diversificada al mercat EUA i és un actiu fonamental en qualsevol cartera. GLD actua com a cobertura contra la volatilitat i la incertesa geopolítica, i es manté sense canvis.",
+        "operacions": [
+          {
+            "vendre": "QQQ",
+            "comprar": "SMH",
+            "import": 999.0
+          },
+          {
+            "vendre": "VGK",
+            "comprar": "EWJ",
+            "import": 499.5
+          },
+          {
+            "vendre": "TLT",
+            "comprar": "BIL",
+            "import": 499.5
+          }
+        ]
+      }
+    ]
+  },
+  "informes": {
+    "claude": [
+      {
+        "setmana": 1,
+        "data": "2026-07-09",
+        "decisio": "mantenir",
+        "confianca": 6,
+        "nivell_risc": "moderat",
+        "comprats": [],
+        "venuts": [],
+        "mantinguts": [],
+        "operacions": [],
+        "justificacio": "És la primera setmana i la cartera ja té una diversificació sensata (renda variable EUA/Europa, tecnologia, or i bons). El rebombori de DeepSeek sembla un esdeveniment puntual de sentiment de mercat més que un canvi estructural, i no vull reaccionar en calent al soroll d'un sol titular. Prefereixo esperar a tenir una setmana de dades reals de rendibilitat abans de reajustar, evitant costos de transacció innecessaris. Mantinc el nivell de risc moderat, vigilant especialment l'evolució de QQQ (exposició tecnològica) i TLT (sensible a tipus d'interès) de cara a la propera setmana.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
+        "resultat": null
+      }
+    ],
+    "gpt": [
+      {
+        "setmana": 1,
+        "data": "2026-07-09",
+        "decisio": "reajustar",
+        "confianca": 6,
+        "nivell_risc": "moderat",
+        "comprats": [
+          "QQQ",
+          "SMH"
+        ],
+        "venuts": [
+          "GLD",
+          "TLT",
+          "VGK"
+        ],
+        "mantinguts": [],
+        "operacions": [
+          {
+            "vendre": "VGK",
+            "comprar": "QQQ",
+            "import": 999.0
+          },
+          {
+            "vendre": "GLD",
+            "comprar": "SMH",
+            "import": 499.5
+          },
+          {
+            "vendre": "TLT",
+            "comprar": "SMH",
+            "import": 499.5
+          }
+        ],
+        "justificacio": "Objectiu d’assignació després del reajust: SPY 20%, QQQ 30%, SMH 10%, VGK 10%, GLD 15%, TLT 15%. Raons: (1) Comprar la correcció en IA/semiconductors: reforço QQQ i incorporo SMH per capturar el nucli del cicle d’inversió en IA, tot i el soroll de curt termini. (2) Reduir risc europeu (VGK) davant incertesa política i soroll de divises. (3) Mantenir però reequilibrar cobertures: or i bons llargs continuen com a assegurança, però amb rendiments alts i or feble aquesta setmana, allibero capital per a oportunitats amb millor expected return. (4) Diversificació i control de risc: cap ETF >40% i 30% en actius defensius (GLD+TLT). (5) Costos: només 3 operacions per limitar el peatge del 0,1% per operació.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
+        "resultat": null
+      }
+    ],
+    "gemini": [
+      {
+        "setmana": 1,
+        "data": "2026-07-09",
+        "decisio": "reajustar",
+        "confianca": 5,
+        "nivell_risc": "moderat",
+        "comprats": [
+          "VTI"
+        ],
+        "venuts": [
+          "TLT"
+        ],
+        "mantinguts": [],
+        "operacions": [
+          {
+            "vendre": "TLT",
+            "comprar": "VTI",
+            "import": 499.5
+          }
+        ],
+        "justificacio": "La decisió de reajustar la cartera es fonamenta en la cerca de la 'màxima rendibilitat possible assumint un risc raonable' en un horitzó de cinc mesos. Actualment, el 20% de la cartera en TLT (bons a llarg termini) presenta un risc de durada considerable amb el rendiment del bo a 10 anys al 4.559%, i pot llastar la rendibilitat global si els tipus d'interès continuen sent volàtils o si el mercat de renda variable es recupera. Reduir lleugerament aquesta exposició a la renda fixa de llarg termini permet reassignar capital a un fons de renda variable més ampli i diversificat. He escollit VTI (mercat total EUA) per la seva exposició més àmplia a les empreses dels EUA, incloent-hi 'small caps', oferint una diversificació superior a l'S&P 500 (SPY) i menys concentració que el Nasdaq 100 (QQQ), que ha mostrat volatilitat aquesta setmana amb la notícia de la 'AI Rout'. Tot i això, mantinc QQQ en la seva proporció actual, ja que hi ha notícies contradictòries sobre l'impacte real de l'esdeveniment 'DeepSeek' en els 'titans' de la IA dels EUA. Aquesta operació, amb un cost mínim, incrementa lleugerament l'exposició a la renda variable diversificada dels EUA, alineant la cartera més amb l'objectiu de creixement sense augmentar excessivament el risc global. GLD es manté com a cobertura davant la incertesa macroeconòmica.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
+        "resultat": null
+      }
+    ],
+    "deepseek": [
+      {
+        "setmana": 1,
+        "data": "2026-07-09",
+        "decisio": "mantenir",
+        "confianca": 6,
+        "nivell_risc": "moderat",
+        "comprats": [],
+        "venuts": [],
+        "mantinguts": [],
+        "operacions": [],
+        "justificacio": "Tot i que DeepSeek ha provocat una correcció tecnològica que pot perjudicar QQQ, és prematur vendre en pànic. La cartera està diversificada amb actius defensius (TLT, GLD) que poden compensar. El VGK i SPY ofereixen exposició a renda variable ampla. El cost d'operar (0,1%) no justifica ajustos sense més dades. Prefereixo mantenir l'estratègia inicial i observar l'evolució del mercat la setmana vinent.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
+        "resultat": null
+      }
+    ],
+    "mistral": [
+      {
+        "setmana": 1,
+        "data": "2026-07-09",
+        "decisio": "reajustar",
+        "confianca": 7,
+        "nivell_risc": "moderat",
+        "comprats": [
+          "BIL",
+          "EWJ",
+          "SMH"
+        ],
+        "venuts": [
+          "QQQ",
+          "TLT",
+          "VGK"
+        ],
+        "mantinguts": [],
+        "operacions": [
+          {
+            "vendre": "QQQ",
+            "comprar": "SMH",
+            "import": 999.0
+          },
+          {
+            "vendre": "VGK",
+            "comprar": "EWJ",
+            "import": 499.5
+          },
+          {
+            "vendre": "TLT",
+            "comprar": "BIL",
+            "import": 499.5
+          }
+        ],
+        "justificacio": "1. **Reducció de l'exposició a tecnologia (QQQ → SMH)**: La caiguda dels valors d'IA per la competència xinesa suggereix que el sector podria continuar volàtil. Tot i això, els semiconductors (SMH) són un component clau de la cadena de valor de la IA i podrien beneficiar-se de la demanda estructural a llarg termini, amb menys exposició a les tensions geopolítiques directes. Vendre 1000 € de QQQ (50% de la posició) per comprar SMH redueix el risc específic de tecnologia mentre es manté exposició al creixement del sector.  2. **Ajust a mercats internacionals (VGK → EWJ)**: Europa (VGK) podria veure's afectada per la incertesa política (notícies sobre Lagarde i la política francesa) i la debilitat del consum a la Xina (notícia 9). Japó (EWJ) ofereix una alternativa més estable, amb un banc central que manté una política monetària acomodaticia i un mercat amb potencial de revalorització si el ien continua apreciant-se (notícia 6). Vendre 500 € de VGK per comprar EWJ diversifica el risc geopolític.  3. **Canvi en renda fixa (TLT → BIL)**: Els bons a llarg termini (TLT) són sensibles als moviments dels tipus d'interès, que es mantenen elevats. Amb el bo a 10 anys al 4.559%, el risc de pèrdues en TLT és alt. Canviar 500 € de TLT a lletres del Tresor a curt termini (BIL) redueix el risc de tipus i proporciona liquiditat per aprofitar oportunitats futures. Aquesta mesura és defensiva i coherent amb un nivell de risc moderat.  4. **Manteniment de SPY i GLD**: SPY ofereix exposició diversificada al mercat EUA i és un actiu fonamental en qualsevol cartera. GLD actua com a cobertura contra la volatilitat i la incertesa geopolítica, i es manté sense canvis.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
+        "resultat": null
+      }
+    ]
+  },
+  "carteres": {
+    "gpt": [
+      {
+        "ticker": "QQQ",
+        "pes": 30,
+        "valor": 2998
+      },
+      {
+        "ticker": "SPY",
+        "pes": 20,
+        "valor": 2000
+      },
+      {
+        "ticker": "GLD",
+        "pes": 15,
+        "valor": 1500
+      },
+      {
+        "ticker": "TLT",
+        "pes": 15,
+        "valor": 1500
+      },
+      {
+        "ticker": "VGK",
+        "pes": 10,
+        "valor": 1000
+      },
+      {
+        "ticker": "SMH",
+        "pes": 10,
+        "valor": 998
+      }
+    ],
+    "claude": [
+      {
+        "ticker": "SPY",
+        "pes": 20,
+        "valor": 2000
+      },
+      {
+        "ticker": "VGK",
+        "pes": 20,
+        "valor": 2000
+      },
+      {
+        "ticker": "GLD",
+        "pes": 20,
+        "valor": 2000
+      },
+      {
+        "ticker": "TLT",
+        "pes": 20,
+        "valor": 2000
+      },
+      {
+        "ticker": "QQQ",
+        "pes": 20,
+        "valor": 2000
+      }
+    ],
+    "gemini": [
+      {
+        "ticker": "SPY",
+        "pes": 20,
+        "valor": 2000
+      },
+      {
+        "ticker": "VGK",
+        "pes": 20,
+        "valor": 2000
+      },
+      {
+        "ticker": "GLD",
+        "pes": 20,
+        "valor": 2000
+      },
+      {
+        "ticker": "QQQ",
+        "pes": 20,
+        "valor": 2000
+      },
+      {
+        "ticker": "TLT",
+        "pes": 15,
+        "valor": 1500
+      },
+      {
+        "ticker": "VTI",
+        "pes": 5,
+        "valor": 499
+      }
+    ],
+    "deepseek": [
+      {
+        "ticker": "SPY",
+        "pes": 20,
+        "valor": 2000
+      },
+      {
+        "ticker": "VGK",
+        "pes": 20,
+        "valor": 2000
+      },
+      {
+        "ticker": "GLD",
+        "pes": 20,
+        "valor": 2000
+      },
+      {
+        "ticker": "TLT",
+        "pes": 20,
+        "valor": 2000
+      },
+      {
+        "ticker": "QQQ",
+        "pes": 20,
+        "valor": 2000
+      }
+    ],
+    "mistral": [
+      {
+        "ticker": "SPY",
+        "pes": 20,
+        "valor": 2000
+      },
+      {
+        "ticker": "GLD",
+        "pes": 20,
+        "valor": 2000
+      },
+      {
+        "ticker": "VGK",
+        "pes": 15,
+        "valor": 1500
+      },
+      {
+        "ticker": "TLT",
+        "pes": 15,
+        "valor": 1500
+      },
+      {
+        "ticker": "QQQ",
+        "pes": 10,
+        "valor": 1000
+      },
+      {
+        "ticker": "SMH",
+        "pes": 10,
+        "valor": 998
+      },
+      {
+        "ticker": "EWJ",
+        "pes": 5,
+        "valor": 499
+      },
+      {
+        "ticker": "BIL",
+        "pes": 5,
+        "valor": 499
+      }
+    ]
+  },
+  "canvis": [
+    {
+      "setmana": 1,
+      "data": "2026-07-09",
+      "model": "gpt",
+      "ticker": "VGK",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 999.0,
+      "motiu": "Objectiu d’assignació després del reajust: SPY 20%, QQQ 30%, SMH 10%, VGK 10%, GLD 15%, TLT 15%. Raons: (1) Comprar la correcció en IA/semiconductors: reforço QQQ i incorporo SMH per capturar el nucli del cicle d’inversió en IA, tot i el soroll de curt termini. (2) Reduir risc europeu (VGK) davant incertesa política i soroll de divises. (3) Mantenir però reequilibrar cobertures: or i bons llargs continuen com a assegurança, però amb rendiments alts i or feble aquesta setmana, allibero capital per a oportunitats amb millor expected return. (4) Diversificació i control de risc: cap ETF >40% i 30% en actius defensius (GLD+TLT). (5) Costos: només 3 operacions per limitar el peatge del 0,1% per operació.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 1,
+      "data": "2026-07-09",
+      "model": "gpt",
+      "ticker": "QQQ",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 999.0,
+      "motiu": "Objectiu d’assignació després del reajust: SPY 20%, QQQ 30%, SMH 10%, VGK 10%, GLD 15%, TLT 15%. Raons: (1) Comprar la correcció en IA/semiconductors: reforço QQQ i incorporo SMH per capturar el nucli del cicle d’inversió en IA, tot i el soroll de curt termini. (2) Reduir risc europeu (VGK) davant incertesa política i soroll de divises. (3) Mantenir però reequilibrar cobertures: or i bons llargs continuen com a assegurança, però amb rendiments alts i or feble aquesta setmana, allibero capital per a oportunitats amb millor expected return. (4) Diversificació i control de risc: cap ETF >40% i 30% en actius defensius (GLD+TLT). (5) Costos: només 3 operacions per limitar el peatge del 0,1% per operació.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 1,
+      "data": "2026-07-09",
+      "model": "gpt",
+      "ticker": "GLD",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "Objectiu d’assignació després del reajust: SPY 20%, QQQ 30%, SMH 10%, VGK 10%, GLD 15%, TLT 15%. Raons: (1) Comprar la correcció en IA/semiconductors: reforço QQQ i incorporo SMH per capturar el nucli del cicle d’inversió en IA, tot i el soroll de curt termini. (2) Reduir risc europeu (VGK) davant incertesa política i soroll de divises. (3) Mantenir però reequilibrar cobertures: or i bons llargs continuen com a assegurança, però amb rendiments alts i or feble aquesta setmana, allibero capital per a oportunitats amb millor expected return. (4) Diversificació i control de risc: cap ETF >40% i 30% en actius defensius (GLD+TLT). (5) Costos: només 3 operacions per limitar el peatge del 0,1% per operació.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 1,
+      "data": "2026-07-09",
+      "model": "gpt",
+      "ticker": "SMH",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "Objectiu d’assignació després del reajust: SPY 20%, QQQ 30%, SMH 10%, VGK 10%, GLD 15%, TLT 15%. Raons: (1) Comprar la correcció en IA/semiconductors: reforço QQQ i incorporo SMH per capturar el nucli del cicle d’inversió en IA, tot i el soroll de curt termini. (2) Reduir risc europeu (VGK) davant incertesa política i soroll de divises. (3) Mantenir però reequilibrar cobertures: or i bons llargs continuen com a assegurança, però amb rendiments alts i or feble aquesta setmana, allibero capital per a oportunitats amb millor expected return. (4) Diversificació i control de risc: cap ETF >40% i 30% en actius defensius (GLD+TLT). (5) Costos: només 3 operacions per limitar el peatge del 0,1% per operació.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 1,
+      "data": "2026-07-09",
+      "model": "gpt",
+      "ticker": "TLT",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "Objectiu d’assignació després del reajust: SPY 20%, QQQ 30%, SMH 10%, VGK 10%, GLD 15%, TLT 15%. Raons: (1) Comprar la correcció en IA/semiconductors: reforço QQQ i incorporo SMH per capturar el nucli del cicle d’inversió en IA, tot i el soroll de curt termini. (2) Reduir risc europeu (VGK) davant incertesa política i soroll de divises. (3) Mantenir però reequilibrar cobertures: or i bons llargs continuen com a assegurança, però amb rendiments alts i or feble aquesta setmana, allibero capital per a oportunitats amb millor expected return. (4) Diversificació i control de risc: cap ETF >40% i 30% en actius defensius (GLD+TLT). (5) Costos: només 3 operacions per limitar el peatge del 0,1% per operació.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 1,
+      "data": "2026-07-09",
+      "model": "gpt",
+      "ticker": "SMH",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "Objectiu d’assignació després del reajust: SPY 20%, QQQ 30%, SMH 10%, VGK 10%, GLD 15%, TLT 15%. Raons: (1) Comprar la correcció en IA/semiconductors: reforço QQQ i incorporo SMH per capturar el nucli del cicle d’inversió en IA, tot i el soroll de curt termini. (2) Reduir risc europeu (VGK) davant incertesa política i soroll de divises. (3) Mantenir però reequilibrar cobertures: or i bons llargs continuen com a assegurança, però amb rendiments alts i or feble aquesta setmana, allibero capital per a oportunitats amb millor expected return. (4) Diversificació i control de risc: cap ETF >40% i 30% en actius defensius (GLD+TLT). (5) Costos: només 3 operacions per limitar el peatge del 0,1% per operació.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 1,
+      "data": "2026-07-09",
+      "model": "gemini",
+      "ticker": "TLT",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "La decisió de reajustar la cartera es fonamenta en la cerca de la 'màxima rendibilitat possible assumint un risc raonable' en un horitzó de cinc mesos. Actualment, el 20% de la cartera en TLT (bons a llarg termini) presenta un risc de durada considerable amb el rendiment del bo a 10 anys al 4.559%, i pot llastar la rendibilitat global si els tipus d'interès continuen sent volàtils o si el mercat de renda variable es recupera. Reduir lleugerament aquesta exposició a la renda fixa de llarg termini permet reassignar capital a un fons de renda variable més ampli i diversificat. He escollit VTI (mercat total EUA) per la seva exposició més àmplia a les empreses dels EUA, incloent-hi 'small caps', oferint una diversificació superior a l'S&P 500 (SPY) i menys concentració que el Nasdaq 100 (QQQ), que ha mostrat volatilitat aquesta setmana amb la notícia de la 'AI Rout'. Tot i això, mantinc QQQ en la seva proporció actual, ja que hi ha notícies contradictòries sobre l'impacte real de l'esdeveniment 'DeepSeek' en els 'titans' de la IA dels EUA. Aquesta operació, amb un cost mínim, incrementa lleugerament l'exposició a la renda variable diversificada dels EUA, alineant la cartera més amb l'objectiu de creixement sense augmentar excessivament el risc global. GLD es manté com a cobertura davant la incertesa macroeconòmica.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 1,
+      "data": "2026-07-09",
+      "model": "gemini",
+      "ticker": "VTI",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "La decisió de reajustar la cartera es fonamenta en la cerca de la 'màxima rendibilitat possible assumint un risc raonable' en un horitzó de cinc mesos. Actualment, el 20% de la cartera en TLT (bons a llarg termini) presenta un risc de durada considerable amb el rendiment del bo a 10 anys al 4.559%, i pot llastar la rendibilitat global si els tipus d'interès continuen sent volàtils o si el mercat de renda variable es recupera. Reduir lleugerament aquesta exposició a la renda fixa de llarg termini permet reassignar capital a un fons de renda variable més ampli i diversificat. He escollit VTI (mercat total EUA) per la seva exposició més àmplia a les empreses dels EUA, incloent-hi 'small caps', oferint una diversificació superior a l'S&P 500 (SPY) i menys concentració que el Nasdaq 100 (QQQ), que ha mostrat volatilitat aquesta setmana amb la notícia de la 'AI Rout'. Tot i això, mantinc QQQ en la seva proporció actual, ja que hi ha notícies contradictòries sobre l'impacte real de l'esdeveniment 'DeepSeek' en els 'titans' de la IA dels EUA. Aquesta operació, amb un cost mínim, incrementa lleugerament l'exposició a la renda variable diversificada dels EUA, alineant la cartera més amb l'objectiu de creixement sense augmentar excessivament el risc global. GLD es manté com a cobertura davant la incertesa macroeconòmica.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 1,
+      "data": "2026-07-09",
+      "model": "mistral",
+      "ticker": "QQQ",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 999.0,
+      "motiu": "1. **Reducció de l'exposició a tecnologia (QQQ → SMH)**: La caiguda dels valors d'IA per la competència xinesa suggereix que el sector podria continuar volàtil. Tot i això, els semiconductors (SMH) són un component clau de la cadena de valor de la IA i podrien beneficiar-se de la demanda estructural a llarg termini, amb menys exposició a les tensions geopolítiques directes. Vendre 1000 € de QQQ (50% de la posició) per comprar SMH redueix el risc específic de tecnologia mentre es manté exposició al creixement del sector.  2. **Ajust a mercats internacionals (VGK → EWJ)**: Europa (VGK) podria veure's afectada per la incertesa política (notícies sobre Lagarde i la política francesa) i la debilitat del consum a la Xina (notícia 9). Japó (EWJ) ofereix una alternativa més estable, amb un banc central que manté una política monetària acomodaticia i un mercat amb potencial de revalorització si el ien continua apreciant-se (notícia 6). Vendre 500 € de VGK per comprar EWJ diversifica el risc geopolític.  3. **Canvi en renda fixa (TLT → BIL)**: Els bons a llarg termini (TLT) són sensibles als moviments dels tipus d'interès, que es mantenen elevats. Amb el bo a 10 anys al 4.559%, el risc de pèrdues en TLT és alt. Canviar 500 € de TLT a lletres del Tresor a curt termini (BIL) redueix el risc de tipus i proporciona liquiditat per aprofitar oportunitats futures. Aquesta mesura és defensiva i coherent amb un nivell de risc moderat.  4. **Manteniment de SPY i GLD**: SPY ofereix exposició diversificada al mercat EUA i és un actiu fonamental en qualsevol cartera. GLD actua com a cobertura contra la volatilitat i la incertesa geopolítica, i es manté sense canvis.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 1,
+      "data": "2026-07-09",
+      "model": "mistral",
+      "ticker": "SMH",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 999.0,
+      "motiu": "1. **Reducció de l'exposició a tecnologia (QQQ → SMH)**: La caiguda dels valors d'IA per la competència xinesa suggereix que el sector podria continuar volàtil. Tot i això, els semiconductors (SMH) són un component clau de la cadena de valor de la IA i podrien beneficiar-se de la demanda estructural a llarg termini, amb menys exposició a les tensions geopolítiques directes. Vendre 1000 € de QQQ (50% de la posició) per comprar SMH redueix el risc específic de tecnologia mentre es manté exposició al creixement del sector.  2. **Ajust a mercats internacionals (VGK → EWJ)**: Europa (VGK) podria veure's afectada per la incertesa política (notícies sobre Lagarde i la política francesa) i la debilitat del consum a la Xina (notícia 9). Japó (EWJ) ofereix una alternativa més estable, amb un banc central que manté una política monetària acomodaticia i un mercat amb potencial de revalorització si el ien continua apreciant-se (notícia 6). Vendre 500 € de VGK per comprar EWJ diversifica el risc geopolític.  3. **Canvi en renda fixa (TLT → BIL)**: Els bons a llarg termini (TLT) són sensibles als moviments dels tipus d'interès, que es mantenen elevats. Amb el bo a 10 anys al 4.559%, el risc de pèrdues en TLT és alt. Canviar 500 € de TLT a lletres del Tresor a curt termini (BIL) redueix el risc de tipus i proporciona liquiditat per aprofitar oportunitats futures. Aquesta mesura és defensiva i coherent amb un nivell de risc moderat.  4. **Manteniment de SPY i GLD**: SPY ofereix exposició diversificada al mercat EUA i és un actiu fonamental en qualsevol cartera. GLD actua com a cobertura contra la volatilitat i la incertesa geopolítica, i es manté sense canvis.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 1,
+      "data": "2026-07-09",
+      "model": "mistral",
+      "ticker": "VGK",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "1. **Reducció de l'exposició a tecnologia (QQQ → SMH)**: La caiguda dels valors d'IA per la competència xinesa suggereix que el sector podria continuar volàtil. Tot i això, els semiconductors (SMH) són un component clau de la cadena de valor de la IA i podrien beneficiar-se de la demanda estructural a llarg termini, amb menys exposició a les tensions geopolítiques directes. Vendre 1000 € de QQQ (50% de la posició) per comprar SMH redueix el risc específic de tecnologia mentre es manté exposició al creixement del sector.  2. **Ajust a mercats internacionals (VGK → EWJ)**: Europa (VGK) podria veure's afectada per la incertesa política (notícies sobre Lagarde i la política francesa) i la debilitat del consum a la Xina (notícia 9). Japó (EWJ) ofereix una alternativa més estable, amb un banc central que manté una política monetària acomodaticia i un mercat amb potencial de revalorització si el ien continua apreciant-se (notícia 6). Vendre 500 € de VGK per comprar EWJ diversifica el risc geopolític.  3. **Canvi en renda fixa (TLT → BIL)**: Els bons a llarg termini (TLT) són sensibles als moviments dels tipus d'interès, que es mantenen elevats. Amb el bo a 10 anys al 4.559%, el risc de pèrdues en TLT és alt. Canviar 500 € de TLT a lletres del Tresor a curt termini (BIL) redueix el risc de tipus i proporciona liquiditat per aprofitar oportunitats futures. Aquesta mesura és defensiva i coherent amb un nivell de risc moderat.  4. **Manteniment de SPY i GLD**: SPY ofereix exposició diversificada al mercat EUA i és un actiu fonamental en qualsevol cartera. GLD actua com a cobertura contra la volatilitat i la incertesa geopolítica, i es manté sense canvis.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 1,
+      "data": "2026-07-09",
+      "model": "mistral",
+      "ticker": "EWJ",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "1. **Reducció de l'exposició a tecnologia (QQQ → SMH)**: La caiguda dels valors d'IA per la competència xinesa suggereix que el sector podria continuar volàtil. Tot i això, els semiconductors (SMH) són un component clau de la cadena de valor de la IA i podrien beneficiar-se de la demanda estructural a llarg termini, amb menys exposició a les tensions geopolítiques directes. Vendre 1000 € de QQQ (50% de la posició) per comprar SMH redueix el risc específic de tecnologia mentre es manté exposició al creixement del sector.  2. **Ajust a mercats internacionals (VGK → EWJ)**: Europa (VGK) podria veure's afectada per la incertesa política (notícies sobre Lagarde i la política francesa) i la debilitat del consum a la Xina (notícia 9). Japó (EWJ) ofereix una alternativa més estable, amb un banc central que manté una política monetària acomodaticia i un mercat amb potencial de revalorització si el ien continua apreciant-se (notícia 6). Vendre 500 € de VGK per comprar EWJ diversifica el risc geopolític.  3. **Canvi en renda fixa (TLT → BIL)**: Els bons a llarg termini (TLT) són sensibles als moviments dels tipus d'interès, que es mantenen elevats. Amb el bo a 10 anys al 4.559%, el risc de pèrdues en TLT és alt. Canviar 500 € de TLT a lletres del Tresor a curt termini (BIL) redueix el risc de tipus i proporciona liquiditat per aprofitar oportunitats futures. Aquesta mesura és defensiva i coherent amb un nivell de risc moderat.  4. **Manteniment de SPY i GLD**: SPY ofereix exposició diversificada al mercat EUA i és un actiu fonamental en qualsevol cartera. GLD actua com a cobertura contra la volatilitat i la incertesa geopolítica, i es manté sense canvis.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 1,
+      "data": "2026-07-09",
+      "model": "mistral",
+      "ticker": "TLT",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "1. **Reducció de l'exposició a tecnologia (QQQ → SMH)**: La caiguda dels valors d'IA per la competència xinesa suggereix que el sector podria continuar volàtil. Tot i això, els semiconductors (SMH) són un component clau de la cadena de valor de la IA i podrien beneficiar-se de la demanda estructural a llarg termini, amb menys exposició a les tensions geopolítiques directes. Vendre 1000 € de QQQ (50% de la posició) per comprar SMH redueix el risc específic de tecnologia mentre es manté exposició al creixement del sector.  2. **Ajust a mercats internacionals (VGK → EWJ)**: Europa (VGK) podria veure's afectada per la incertesa política (notícies sobre Lagarde i la política francesa) i la debilitat del consum a la Xina (notícia 9). Japó (EWJ) ofereix una alternativa més estable, amb un banc central que manté una política monetària acomodaticia i un mercat amb potencial de revalorització si el ien continua apreciant-se (notícia 6). Vendre 500 € de VGK per comprar EWJ diversifica el risc geopolític.  3. **Canvi en renda fixa (TLT → BIL)**: Els bons a llarg termini (TLT) són sensibles als moviments dels tipus d'interès, que es mantenen elevats. Amb el bo a 10 anys al 4.559%, el risc de pèrdues en TLT és alt. Canviar 500 € de TLT a lletres del Tresor a curt termini (BIL) redueix el risc de tipus i proporciona liquiditat per aprofitar oportunitats futures. Aquesta mesura és defensiva i coherent amb un nivell de risc moderat.  4. **Manteniment de SPY i GLD**: SPY ofereix exposició diversificada al mercat EUA i és un actiu fonamental en qualsevol cartera. GLD actua com a cobertura contra la volatilitat i la incertesa geopolítica, i es manté sense canvis.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 1,
+      "data": "2026-07-09",
+      "model": "mistral",
+      "ticker": "BIL",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "1. **Reducció de l'exposició a tecnologia (QQQ → SMH)**: La caiguda dels valors d'IA per la competència xinesa suggereix que el sector podria continuar volàtil. Tot i això, els semiconductors (SMH) són un component clau de la cadena de valor de la IA i podrien beneficiar-se de la demanda estructural a llarg termini, amb menys exposició a les tensions geopolítiques directes. Vendre 1000 € de QQQ (50% de la posició) per comprar SMH redueix el risc específic de tecnologia mentre es manté exposició al creixement del sector.  2. **Ajust a mercats internacionals (VGK → EWJ)**: Europa (VGK) podria veure's afectada per la incertesa política (notícies sobre Lagarde i la política francesa) i la debilitat del consum a la Xina (notícia 9). Japó (EWJ) ofereix una alternativa més estable, amb un banc central que manté una política monetària acomodaticia i un mercat amb potencial de revalorització si el ien continua apreciant-se (notícia 6). Vendre 500 € de VGK per comprar EWJ diversifica el risc geopolític.  3. **Canvi en renda fixa (TLT → BIL)**: Els bons a llarg termini (TLT) són sensibles als moviments dels tipus d'interès, que es mantenen elevats. Amb el bo a 10 anys al 4.559%, el risc de pèrdues en TLT és alt. Canviar 500 € de TLT a lletres del Tresor a curt termini (BIL) redueix el risc de tipus i proporciona liquiditat per aprofitar oportunitats futures. Aquesta mesura és defensiva i coherent amb un nivell de risc moderat.  4. **Manteniment de SPY i GLD**: SPY ofereix exposició diversificada al mercat EUA i és un actiu fonamental en qualsevol cartera. GLD actua com a cobertura contra la volatilitat i la incertesa geopolítica, i es manté sense canvis.",
+      "impacte": 0.0
+    }
+  ],
+  "highlights": [],
+  "apis": {
+    "ia": [
+      {
+        "id": "claude",
+        "proveidor": "Anthropic",
+        "model_api": "claude-sonnet-5",
+        "variable": "ANTHROPIC_API_KEY",
+        "url_consola": "https://console.anthropic.com/",
+        "estat": "connectada",
+        "ultimaExecucio": "Setmana 1 · 2026-07-09",
+        "ultimBriefing": "És la primera setmana i la cartera ja té una diversificació sensata (renda variable EUA/Europa, tecnologia, or i bons). El rebombori de DeepSeek sembla un esdev…"
+      },
+      {
+        "id": "gpt",
+        "proveidor": "OpenAI",
+        "model_api": "gpt-5",
+        "variable": "OPENAI_API_KEY",
+        "url_consola": "https://platform.openai.com/api-keys",
+        "estat": "connectada",
+        "ultimaExecucio": "Setmana 1 · 2026-07-09",
+        "ultimBriefing": "Objectiu d’assignació després del reajust: SPY 20%, QQQ 30%, SMH 10%, VGK 10%, GLD 15%, TLT 15%. Raons: (1) Comprar la correcció en IA/semiconductors: reforço Q…"
+      },
+      {
+        "id": "gemini",
+        "proveidor": "Google",
+        "model_api": "gemini-2.5-flash",
+        "variable": "GOOGLE_API_KEY",
+        "url_consola": "https://aistudio.google.com/apikey",
+        "estat": "connectada",
+        "ultimaExecucio": "Setmana 1 · 2026-07-09",
+        "ultimBriefing": "La decisió de reajustar la cartera es fonamenta en la cerca de la 'màxima rendibilitat possible assumint un risc raonable' en un horitzó de cinc mesos. Actualme…"
+      },
+      {
+        "id": "deepseek",
+        "proveidor": "DeepSeek",
+        "model_api": "deepseek-chat",
+        "variable": "DEEPSEEK_API_KEY",
+        "url_consola": "https://platform.deepseek.com/api_keys",
+        "estat": "connectada",
+        "ultimaExecucio": "Setmana 1 · 2026-07-09",
+        "ultimBriefing": "Tot i que DeepSeek ha provocat una correcció tecnològica que pot perjudicar QQQ, és prematur vendre en pànic. La cartera està diversificada amb actius defensius…"
+      },
+      {
+        "id": "mistral",
+        "proveidor": "Mistral AI",
+        "model_api": "mistral-large-latest",
+        "variable": "MISTRAL_API_KEY",
+        "url_consola": "https://console.mistral.ai/api-keys",
+        "estat": "connectada",
+        "ultimaExecucio": "Setmana 1 · 2026-07-09",
+        "ultimBriefing": "1. **Reducció de l'exposició a tecnologia (QQQ → SMH)**: La caiguda dels valors d'IA per la competència xinesa suggereix que el sector podria continuar volàtil.…"
+      }
+    ],
+    "financeres": [
+      {
+        "nom": "Yahoo Finance (yfinance)",
+        "us": "Preus reals dels ETFs i de l'índex S&P 500",
+        "estat": "operativa",
+        "detall": "No necessita clau. El motor la fa servir cada dilluns; si un ticker falla, es reintenta amb els últims 5 dies de dades."
+      },
+      {
+        "nom": "Titulars de mercat (RSS)",
+        "us": "Els 10 titulars del briefing setmanal de cada IA",
+        "estat": "operativa",
+        "detall": "Wall Street Journal, CNBC i MarketWatch (sense clau). Les 5 IAs reben exactament els mateixos titulars."
+      }
+    ]
+  }
+}
