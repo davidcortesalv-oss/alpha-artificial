@@ -16,8 +16,12 @@ name: Ronda setmanal del torneig
 
 on:
   schedule:
-    - cron: "30 7 * * 1"        # cada dilluns a les 07:30 UTC
-  workflow_dispatch:             # botó "Run workflow"
+    # Dilluns a les 07:37 UTC. Fem servir un minut "estrany" (37 i no 30)
+    # a propòsit: GitHub va molt carregat a les hores en punt i mitges, i
+    # les tasques d'aquestes hores arriben tard o es salten. Un minut poc
+    # concorregut sol ser força més puntual.
+    - cron: "37 7 * * 1"
+  workflow_dispatch:             # botó "Run workflow" per llançar-la a mà
   push:
     paths: [".llancar-ronda"]    # tocar aquest fitxer = ronda extra
 
