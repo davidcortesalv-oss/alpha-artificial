@@ -12,3 +12,8 @@ data,setmana,model,vendre,comprar,import_eur
 2026-07-13,3,mistral,GLD,EWJ,749.25
 2026-07-17,4,mistral,QQQ,IEF,733.27
 2026-07-17,4,mistral,SMH,VGK,696.86
+2026-07-20,5,gemini,QQQ,VTI,499.5
+2026-07-20,5,gemini,GLD,VTI,499.5
+2026-07-20,5,mistral,QQQ,USMV,722.25
+2026-07-20,5,mistral,SMH,SPLV,340.85
+2026-07-20,5,mistral,GLD,IEF,362.75

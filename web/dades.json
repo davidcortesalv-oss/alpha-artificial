@@ -5,18 +5,19 @@
     "maxPes": 0.4,
     "moneda": "EUR",
     "setmanes": 22,
-    "setmanaActual": 4,
+    "setmanaActual": 5,
     "dataInici": "2026-07-09",
-    "dataActual": "2026-07-17",
+    "dataActual": "2026-07-20",
     "font": "real",
-    "generat": "2026-07-17T11:51",
+    "generat": "2026-07-20T10:30",
     "puntsPerSetmana": 1
   },
   "dies": [
     "2026-07-09",
     "2026-07-13",
     "2026-07-13",
-    "2026-07-17"
+    "2026-07-17",
+    "2026-07-20"
   ],
   "models": [
     {
@@ -115,37 +116,43 @@
       10000.01,
       10039.0,
       10039.0,
-      9908.28
+      9908.28,
+      9879.92
     ],
     "gpt": [
       9996.01,
       10046.39,
       10046.39,
-      9834.57
+      9834.57,
+      9767.06
     ],
     "gemini": [
       9999.01,
       10041.06,
       10041.06,
-      9909.03
+      9909.03,
+      9872.02
     ],
     "deepseek": [
       10000.01,
       10039.0,
       10039.0,
-      9908.28
+      9908.28,
+      9879.92
     ],
     "mistral": [
       9996.01,
       10029.86,
       10026.86,
-      9812.08
+      9812.08,
+      9750.78
     ],
     "index": [
       10000.0,
       10095.61,
       10095.61,
-      10039.05
+      10039.05,
+      9939.69
     ]
   },
   "decisions": {
@@ -192,6 +199,17 @@
         "valor_cartera": 9908.28,
         "rend_setmana": -1.3,
         "justificacio": "El 'DeepSeek rout' és soroll recurrent que ja porta tres setmanes sense provocar un canvi estructural real en els fonamentals de l'IA ni en el lideratge tecnològic dels EUA. Una caiguda puntual del -1.3% en una cartera diversificada no justifica reajustar, especialment quan encara no hi ha confirmació que sigui l'inici d'una correcció més profunda (VIX només a 18.1, lluny de nivells de pànic). Vendre ara QQQ o SPY després d'una caiguda seria reaccionar tard i pagar costos d'operació (0,1%) per un moviment que podria revertir's la setmana vinent, tal com va passar amb el rebombori inicial de DeepSeek a la setmana 1. Mantinc la meva tesi de diversificació entre renda variable, tecnologia, or i bons llargs, esperant que aquests últims recuperin el seu paper de cobertura si el nerviosisme s'intensifica.",
+        "operacions": null
+      },
+      {
+        "setmana": 5,
+        "data": "2026-07-20",
+        "decisio": "mantenir",
+        "nivell_risc": "moderat",
+        "confianca": 6,
+        "valor_cartera": 9879.92,
+        "rend_setmana": -0.29,
+        "justificacio": "El 'DeepSeek rout' torna a aparèixer per quarta setmana consecutiva com a titular dominant, però segueix sent soroll narratiu més que un canvi de fonamentals: els gegants tecnològics EUA no han vist deteriorament real dels seus resultats. La caiguda de l'or aquesta setmana és puntual i no invalida el seu rol de diversificador a mitjà termini. Reajustar ara per reaccionar a un -0.29% setmanal seria sobreactuar i pagar costos de transacció innecessaris per una cartera que ja està ben diversificada entre renda variable, bons i or. Mantinc la disciplina: sense catalitzador estructural clar, no toco res.",
         "operacions": null
       }
     ],
@@ -255,6 +273,17 @@
         "rend_setmana": -2.11,
         "justificacio": "La tesi central (IA com a motor) no ha canviat; la caiguda sembla més esdeveniment que trencament de cicle. Els nostres coixins (GLD/TLT) limiten riscos en cas que els tipus repuntin o el sentiment empitjori. Els pesos ja estan pràcticament en objectiu; reequilibrar per dècimes implicaria costos innecessaris i risc de ‘whipsaw’. Mantinc i revaloro la setmana vinent: si persisteix debilitat amb VIX >20 sense deteriorament fonamental, consideraria incrementar lleument SMH aprofitant el descompte; si el 10a puja clarament >4,8%, reforçaria duration de manera més prudent.",
         "operacions": null
+      },
+      {
+        "setmana": 5,
+        "data": "2026-07-20",
+        "decisio": "mantenir",
+        "nivell_risc": "moderat",
+        "confianca": 5,
+        "valor_cartera": 9767.06,
+        "rend_setmana": -0.69,
+        "justificacio": "El moviment ha estat impulsat per titulars i revaloració tàctica, no per un canvi estructural en la tesi d’IA. Un dels titulars clau ja apunta que DeepSeek no enfonsarà els líders nord-americans. El VIX a 18 indica nervis, però no pànic. Amb l’increment sorpresiu d’importacions i pressions d’inflació, els tipus alts poden persistir a curt termini (pes per a TLT), però mantenim TLT/GLD com a assegurança si el sentiment empitjora i els rendiments reculen. Els pesos actuals estan pràcticament als objectius; reequilibrar ara implicaria costos (0,1% per operació) sense millorar materialment el perfil risc/retorn. Preferim estabilitat i donar espai perquè el soroll s’esgoti. Si veiéssim trencaments tècnics clars o un canvi de cicle en tipus/inflació, llavors reajustaríem (p. ex., esglaonar TLT cap a durades mitjanes o reforçar qualitat).",
+        "operacions": null
       }
     ],
     "gemini": [
@@ -307,6 +336,28 @@
         "rend_setmana": -1.31,
         "justificacio": "La decisió de mantenir la cartera aquesta setmana es basa en una anàlisi serena del context actual. Si bé la caiguda del -1.31% és notable, considero que una reacció precipitada, especialment venent actius de creixement com QQQ, podria ser contraproduent. El titular 'DeepSeek Won't Sink U.S. AI Titans' suggereix que l'alarma en el sector de la IA podria ser exagerada o de curta durada. La meva cartera està construïda amb una sòlida diversificació entre diferents classes d'actius i geografies, el que hauria de proporcionar resiliència davant la volatilitat a curt termini. Reajustar ara implicaria costos de transacció que podrien menjar-se una part dels beneficis si el mercat es recupera ràpidament. Mantenir la posició és coherent amb la meva estratègia de no deixar-me portar pel soroll del mercat i de mantenir una visió a llarg termini per aconseguir la màxima rendibilitat possible amb un risc raonable.",
         "operacions": null
+      },
+      {
+        "setmana": 5,
+        "data": "2026-07-20",
+        "decisio": "reajustar",
+        "nivell_risc": "moderat",
+        "confianca": 7,
+        "valor_cartera": 9872.02,
+        "rend_setmana": -0.37,
+        "justificacio": "La decisió de reajustar es basa en una anàlisi proactiva dels factors de risc emergents. Redueixo l'exposició a QQQ davant la incertesa generada per la 'AI Rout' i la possible volatilitat del sector tecnològic, malgrat la narrativa que els titans nord-americans resistiran. Al mateix temps, disminueixo lleugerament la posició en GLD, ja que l'or no ha complert plenament la seva funció de valor refugi aquesta setmana en un context de lleugera aversió al risc. Els fons alliberats es destinaran a VTI, l'ETF de mercat total dels EUA, per augmentar la diversificació i obtenir una exposició més àmplia i menys concentrada al mercat nord-americà. Això permet mantenir un perfil de risc moderat, alineant la cartera amb els canvis de mercat sense caure en reaccions excessivament defensives o agressives.",
+        "operacions": [
+          {
+            "vendre": "QQQ",
+            "comprar": "VTI",
+            "import": 499.5
+          },
+          {
+            "vendre": "GLD",
+            "comprar": "VTI",
+            "import": 499.5
+          }
+        ]
       }
     ],
     "deepseek": [
@@ -352,6 +403,17 @@
         "valor_cartera": 9908.28,
         "rend_setmana": -1.3,
         "justificacio": "Mantenir la cartera malgrat les pèrdues. La correcció de DeepSeek pot ser una reacció exagerada i no un canvi estructural. La diversificació entre renda variable (EUA, Europa) i actius refugi (or, bons) està funcionant per limitar les caigudes. Fer canvis ara seria respondre al soroll i pagar comissions. La meva confiança en l'estratègia es manté, tot i que el context és incert. Prefereixo esperar a veure si el mercat es estabilitza.",
+        "operacions": null
+      },
+      {
+        "setmana": 5,
+        "data": "2026-07-20",
+        "decisio": "mantenir",
+        "nivell_risc": "moderat",
+        "confianca": 6,
+        "valor_cartera": 9879.92,
+        "rend_setmana": -0.29,
+        "justificacio": "Mantenir la cartera actual. La diversificació entre renda variable (SPY, VGK, QQQ), or (GLD) i bons (TLT) està funcionant com a cobertura davant la incertesa. Fer canvis ara suposaria costos de transacció i podria vendre en un moment de pànic. La correcció de DeepSeek probablement és exagerada i no revertirà estructuralment el lideratge tecnològic dels EUA. Continuo amb l'estratègia de paciència i risc moderat.",
         "operacions": null
       }
     ],
@@ -448,6 +510,33 @@
             "import": 696.86
           }
         ]
+      },
+      {
+        "setmana": 5,
+        "data": "2026-07-20",
+        "decisio": "reajustar",
+        "nivell_risc": "moderat",
+        "confianca": 7,
+        "valor_cartera": 9750.78,
+        "rend_setmana": -0.62,
+        "justificacio": "1. **Reducció d'exposició a tecnologia**: QQQ i SMH han estat els actius més volàtils aquesta setmana, i la competència xinesa en IA (DeepSeek) podria mantenir la pressió sobre el sector. Vendre QQQ i part de SMH per reduir el risc tecnològic és coherent amb la meva estratègia prèvia. 2. **Reforç de la defensa**: USMV (mínima volatilitat EUA) i SPLV (baixa volatilitat S&P 500) són opcions més estables per protegir la cartera en un entorn de VIX elevat (18.39). 3. **Augment de bons**: IEF (bons 7-10 anys) ofereix un equilibri entre rendibilitat i sensibilitat als tipus d'interès, i la seva ponderació actual (15.2%) és insuficient per contrarestar la volatilitat. Reduir GLD (que ha baixat aquesta setmana) per finançar aquesta compra és raonable, ja que l'or ja no actua com a refugi clar. 4. **Manteniment de diversificació**: Es manté l'exposició a Europa (VGK) i Japó (EWJ), que han mostrat resiliència, i SPY com a nucli estable de la cartera.",
+        "operacions": [
+          {
+            "vendre": "QQQ",
+            "comprar": "USMV",
+            "import": 722.25
+          },
+          {
+            "vendre": "SMH",
+            "comprar": "SPLV",
+            "import": 340.85
+          },
+          {
+            "vendre": "GLD",
+            "comprar": "IEF",
+            "import": 362.75
+          }
+        ]
       }
     ]
   },
@@ -512,6 +601,22 @@
         "mantinguts": [],
         "operacions": [],
         "justificacio": "El 'DeepSeek rout' és soroll recurrent que ja porta tres setmanes sense provocar un canvi estructural real en els fonamentals de l'IA ni en el lideratge tecnològic dels EUA. Una caiguda puntual del -1.3% en una cartera diversificada no justifica reajustar, especialment quan encara no hi ha confirmació que sigui l'inici d'una correcció més profunda (VIX només a 18.1, lluny de nivells de pànic). Vendre ara QQQ o SPY després d'una caiguda seria reaccionar tard i pagar costos d'operació (0,1%) per un moviment que podria revertir's la setmana vinent, tal com va passar amb el rebombori inicial de DeepSeek a la setmana 1. Mantinc la meva tesi de diversificació entre renda variable, tecnologia, or i bons llargs, esperant que aquests últims recuperin el seu paper de cobertura si el nerviosisme s'intensifica.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
+        "resultat": -0.29
+      },
+      {
+        "setmana": 5,
+        "data": "2026-07-20",
+        "decisio": "mantenir",
+        "confianca": 6,
+        "nivell_risc": "moderat",
+        "comprats": [],
+        "venuts": [],
+        "mantinguts": [],
+        "operacions": [],
+        "justificacio": "El 'DeepSeek rout' torna a aparèixer per quarta setmana consecutiva com a titular dominant, però segueix sent soroll narratiu més que un canvi de fonamentals: els gegants tecnològics EUA no han vist deteriorament real dels seus resultats. La caiguda de l'or aquesta setmana és puntual i no invalida el seu rol de diversificador a mitjà termini. Reajustar ara per reaccionar a un -0.29% setmanal seria sobreactuar i pagar costos de transacció innecessaris per una cartera que ja està ben diversificada entre renda variable, bons i or. Mantinc la disciplina: sense catalitzador estructural clar, no toco res.",
         "context": null,
         "riscos": null,
         "expectativa": null,
@@ -604,6 +709,22 @@
         "context": null,
         "riscos": null,
         "expectativa": null,
+        "resultat": -0.69
+      },
+      {
+        "setmana": 5,
+        "data": "2026-07-20",
+        "decisio": "mantenir",
+        "confianca": 5,
+        "nivell_risc": "moderat",
+        "comprats": [],
+        "venuts": [],
+        "mantinguts": [],
+        "operacions": [],
+        "justificacio": "El moviment ha estat impulsat per titulars i revaloració tàctica, no per un canvi estructural en la tesi d’IA. Un dels titulars clau ja apunta que DeepSeek no enfonsarà els líders nord-americans. El VIX a 18 indica nervis, però no pànic. Amb l’increment sorpresiu d’importacions i pressions d’inflació, els tipus alts poden persistir a curt termini (pes per a TLT), però mantenim TLT/GLD com a assegurança si el sentiment empitjora i els rendiments reculen. Els pesos actuals estan pràcticament als objectius; reequilibrar ara implicaria costos (0,1% per operació) sense millorar materialment el perfil risc/retorn. Preferim estabilitat i donar espai perquè el soroll s’esgoti. Si veiéssim trencaments tècnics clars o un canvi de cicle en tipus/inflació, llavors reajustaríem (p. ex., esglaonar TLT cap a durades mitjanes o reforçar qualitat).",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
         "resultat": null
       }
     ],
@@ -680,6 +801,38 @@
         "context": null,
         "riscos": null,
         "expectativa": null,
+        "resultat": -0.37
+      },
+      {
+        "setmana": 5,
+        "data": "2026-07-20",
+        "decisio": "reajustar",
+        "confianca": 7,
+        "nivell_risc": "moderat",
+        "comprats": [
+          "VTI"
+        ],
+        "venuts": [
+          "GLD",
+          "QQQ"
+        ],
+        "mantinguts": [],
+        "operacions": [
+          {
+            "vendre": "QQQ",
+            "comprar": "VTI",
+            "import": 499.5
+          },
+          {
+            "vendre": "GLD",
+            "comprar": "VTI",
+            "import": 499.5
+          }
+        ],
+        "justificacio": "La decisió de reajustar es basa en una anàlisi proactiva dels factors de risc emergents. Redueixo l'exposició a QQQ davant la incertesa generada per la 'AI Rout' i la possible volatilitat del sector tecnològic, malgrat la narrativa que els titans nord-americans resistiran. Al mateix temps, disminueixo lleugerament la posició en GLD, ja que l'or no ha complert plenament la seva funció de valor refugi aquesta setmana en un context de lleugera aversió al risc. Els fons alliberats es destinaran a VTI, l'ETF de mercat total dels EUA, per augmentar la diversificació i obtenir una exposició més àmplia i menys concentrada al mercat nord-americà. Això permet mantenir un perfil de risc moderat, alineant la cartera amb els canvis de mercat sense caure en reaccions excessivament defensives o agressives.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
         "resultat": null
       }
     ],
@@ -743,6 +896,22 @@
         "mantinguts": [],
         "operacions": [],
         "justificacio": "Mantenir la cartera malgrat les pèrdues. La correcció de DeepSeek pot ser una reacció exagerada i no un canvi estructural. La diversificació entre renda variable (EUA, Europa) i actius refugi (or, bons) està funcionant per limitar les caigudes. Fer canvis ara seria respondre al soroll i pagar comissions. La meva confiança en l'estratègia es manté, tot i que el context és incert. Prefereixo esperar a veure si el mercat es estabilitza.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
+        "resultat": -0.29
+      },
+      {
+        "setmana": 5,
+        "data": "2026-07-20",
+        "decisio": "mantenir",
+        "confianca": 6,
+        "nivell_risc": "moderat",
+        "comprats": [],
+        "venuts": [],
+        "mantinguts": [],
+        "operacions": [],
+        "justificacio": "Mantenir la cartera actual. La diversificació entre renda variable (SPY, VGK, QQQ), or (GLD) i bons (TLT) està funcionant com a cobertura davant la incertesa. Fer canvis ara suposaria costos de transacció i podria vendre en un moment de pànic. La correcció de DeepSeek probablement és exagerada i no revertirà estructuralment el lideratge tecnològic dels EUA. Continuo amb l'estratègia de paciència i risc moderat.",
         "context": null,
         "riscos": null,
         "expectativa": null,
@@ -887,6 +1056,46 @@
         "context": null,
         "riscos": null,
         "expectativa": null,
+        "resultat": -0.62
+      },
+      {
+        "setmana": 5,
+        "data": "2026-07-20",
+        "decisio": "reajustar",
+        "confianca": 7,
+        "nivell_risc": "moderat",
+        "comprats": [
+          "IEF",
+          "SPLV",
+          "USMV"
+        ],
+        "venuts": [
+          "GLD",
+          "QQQ",
+          "SMH"
+        ],
+        "mantinguts": [],
+        "operacions": [
+          {
+            "vendre": "QQQ",
+            "comprar": "USMV",
+            "import": 722.25
+          },
+          {
+            "vendre": "SMH",
+            "comprar": "SPLV",
+            "import": 340.85
+          },
+          {
+            "vendre": "GLD",
+            "comprar": "IEF",
+            "import": 362.75
+          }
+        ],
+        "justificacio": "1. **Reducció d'exposició a tecnologia**: QQQ i SMH han estat els actius més volàtils aquesta setmana, i la competència xinesa en IA (DeepSeek) podria mantenir la pressió sobre el sector. Vendre QQQ i part de SMH per reduir el risc tecnològic és coherent amb la meva estratègia prèvia. 2. **Reforç de la defensa**: USMV (mínima volatilitat EUA) i SPLV (baixa volatilitat S&P 500) són opcions més estables per protegir la cartera en un entorn de VIX elevat (18.39). 3. **Augment de bons**: IEF (bons 7-10 anys) ofereix un equilibri entre rendibilitat i sensibilitat als tipus d'interès, i la seva ponderació actual (15.2%) és insuficient per contrarestar la volatilitat. Reduir GLD (que ha baixat aquesta setmana) per finançar aquesta compra és raonable, ja que l'or ja no actua com a refugi clar. 4. **Manteniment de diversificació**: Es manté l'exposició a Europa (VGK) i Japó (EWJ), que han mostrat resiliència, i SPY com a nucli estable de la cartera.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
         "resultat": null
       }
     ]
@@ -896,164 +1105,289 @@
       {
         "ticker": "QQQ",
         "pes": 30,
-        "valor": 2948
+        "valor": 2904
       },
       {
         "ticker": "SPY",
         "pes": 20,
-        "valor": 2008
+        "valor": 1988
       },
       {
         "ticker": "GLD",
         "pes": 15,
-        "valor": 1447
+        "valor": 1461
       },
       {
         "ticker": "TLT",
         "pes": 15,
-        "valor": 1497
+        "valor": 1503
       },
       {
         "ticker": "VGK",
         "pes": 10,
-        "valor": 1004
+        "valor": 1002
       },
       {
         "ticker": "SMH",
         "pes": 9,
-        "valor": 931
+        "valor": 910
       }
     ],
     "claude": [
       {
         "ticker": "SPY",
         "pes": 20,
-        "valor": 2008
+        "valor": 1988
       },
       {
         "ticker": "VGK",
         "pes": 20,
-        "valor": 2008
+        "valor": 2004
+      },
+      {
+        "ticker": "GLD",
+        "pes": 20,
+        "valor": 1948
       },
       {
         "ticker": "TLT",
         "pes": 20,
-        "valor": 1996
+        "valor": 2004
       },
       {
         "ticker": "QQQ",
         "pes": 20,
-        "valor": 1967
-      },
-      {
-        "ticker": "GLD",
-        "pes": 19,
-        "valor": 1929
+        "valor": 1937
       }
     ],
     "gemini": [
       {
         "ticker": "SPY",
         "pes": 20,
-        "valor": 2008
+        "valor": 1988
       },
       {
         "ticker": "VGK",
         "pes": 20,
-        "valor": 2008
-      },
-      {
-        "ticker": "QQQ",
-        "pes": 20,
-        "valor": 1967
+        "valor": 2004
       },
       {
         "ticker": "GLD",
-        "pes": 19,
-        "valor": 1929
+        "pes": 15,
+        "valor": 1448
       },
       {
         "ticker": "TLT",
         "pes": 15,
-        "valor": 1497
+        "valor": 1503
+      },
+      {
+        "ticker": "QQQ",
+        "pes": 15,
+        "valor": 1437
       },
       {
         "ticker": "VTI",
-        "pes": 5,
-        "valor": 500
+        "pes": 15,
+        "valor": 1493
       }
     ],
     "deepseek": [
       {
         "ticker": "SPY",
         "pes": 20,
-        "valor": 2008
+        "valor": 1988
       },
       {
         "ticker": "VGK",
         "pes": 20,
-        "valor": 2008
+        "valor": 2004
+      },
+      {
+        "ticker": "GLD",
+        "pes": 20,
+        "valor": 1948
       },
       {
         "ticker": "TLT",
         "pes": 20,
-        "valor": 1996
+        "valor": 2004
       },
       {
         "ticker": "QQQ",
         "pes": 20,
-        "valor": 1967
-      },
-      {
-        "ticker": "GLD",
-        "pes": 19,
-        "valor": 1929
+        "valor": 1937
       }
     ],
     "mistral": [
       {
         "ticker": "VGK",
-        "pes": 22,
-        "valor": 2202
+        "pes": 23,
+        "valor": 2197
       },
       {
         "ticker": "SPY",
         "pes": 20,
-        "valor": 2008
+        "valor": 1988
       },
       {
         "ticker": "IEF",
-        "pes": 15,
-        "valor": 1482
+        "pes": 19,
+        "valor": 1846
       },
       {
         "ticker": "EWJ",
         "pes": 12,
-        "valor": 1220
+        "valor": 1201
       },
       {
         "ticker": "TLT",
         "pes": 8,
-        "valor": 750
+        "valor": 752
+      },
+      {
+        "ticker": "USMV",
+        "pes": 7,
+        "valor": 722
       },
       {
         "ticker": "GLD",
-        "pes": 7,
-        "valor": 719
-      },
-      {
-        "ticker": "QQQ",
-        "pes": 7,
-        "valor": 734
+        "pes": 4,
+        "valor": 363
       },
       {
         "ticker": "SMH",
-        "pes": 7,
-        "valor": 698
+        "pes": 4,
+        "valor": 341
+      },
+      {
+        "ticker": "SPLV",
+        "pes": 3,
+        "valor": 341
       }
     ]
   },
   "canvis": [
+    {
+      "setmana": 5,
+      "data": "2026-07-20",
+      "model": "gemini",
+      "ticker": "QQQ",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "La decisió de reajustar es basa en una anàlisi proactiva dels factors de risc emergents. Redueixo l'exposició a QQQ davant la incertesa generada per la 'AI Rout' i la possible volatilitat del sector tecnològic, malgrat la narrativa que els titans nord-americans resistiran. Al mateix temps, disminueixo lleugerament la posició en GLD, ja que l'or no ha complert plenament la seva funció de valor refugi aquesta setmana en un context de lleugera aversió al risc. Els fons alliberats es destinaran a VTI, l'ETF de mercat total dels EUA, per augmentar la diversificació i obtenir una exposició més àmplia i menys concentrada al mercat nord-americà. Això permet mantenir un perfil de risc moderat, alineant la cartera amb els canvis de mercat sense caure en reaccions excessivament defensives o agressives.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 5,
+      "data": "2026-07-20",
+      "model": "gemini",
+      "ticker": "VTI",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "La decisió de reajustar es basa en una anàlisi proactiva dels factors de risc emergents. Redueixo l'exposició a QQQ davant la incertesa generada per la 'AI Rout' i la possible volatilitat del sector tecnològic, malgrat la narrativa que els titans nord-americans resistiran. Al mateix temps, disminueixo lleugerament la posició en GLD, ja que l'or no ha complert plenament la seva funció de valor refugi aquesta setmana en un context de lleugera aversió al risc. Els fons alliberats es destinaran a VTI, l'ETF de mercat total dels EUA, per augmentar la diversificació i obtenir una exposició més àmplia i menys concentrada al mercat nord-americà. Això permet mantenir un perfil de risc moderat, alineant la cartera amb els canvis de mercat sense caure en reaccions excessivament defensives o agressives.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 5,
+      "data": "2026-07-20",
+      "model": "gemini",
+      "ticker": "GLD",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "La decisió de reajustar es basa en una anàlisi proactiva dels factors de risc emergents. Redueixo l'exposició a QQQ davant la incertesa generada per la 'AI Rout' i la possible volatilitat del sector tecnològic, malgrat la narrativa que els titans nord-americans resistiran. Al mateix temps, disminueixo lleugerament la posició en GLD, ja que l'or no ha complert plenament la seva funció de valor refugi aquesta setmana en un context de lleugera aversió al risc. Els fons alliberats es destinaran a VTI, l'ETF de mercat total dels EUA, per augmentar la diversificació i obtenir una exposició més àmplia i menys concentrada al mercat nord-americà. Això permet mantenir un perfil de risc moderat, alineant la cartera amb els canvis de mercat sense caure en reaccions excessivament defensives o agressives.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 5,
+      "data": "2026-07-20",
+      "model": "gemini",
+      "ticker": "VTI",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "La decisió de reajustar es basa en una anàlisi proactiva dels factors de risc emergents. Redueixo l'exposició a QQQ davant la incertesa generada per la 'AI Rout' i la possible volatilitat del sector tecnològic, malgrat la narrativa que els titans nord-americans resistiran. Al mateix temps, disminueixo lleugerament la posició en GLD, ja que l'or no ha complert plenament la seva funció de valor refugi aquesta setmana en un context de lleugera aversió al risc. Els fons alliberats es destinaran a VTI, l'ETF de mercat total dels EUA, per augmentar la diversificació i obtenir una exposició més àmplia i menys concentrada al mercat nord-americà. Això permet mantenir un perfil de risc moderat, alineant la cartera amb els canvis de mercat sense caure en reaccions excessivament defensives o agressives.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 5,
+      "data": "2026-07-20",
+      "model": "mistral",
+      "ticker": "QQQ",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 722.25,
+      "motiu": "1. **Reducció d'exposició a tecnologia**: QQQ i SMH han estat els actius més volàtils aquesta setmana, i la competència xinesa en IA (DeepSeek) podria mantenir la pressió sobre el sector. Vendre QQQ i part de SMH per reduir el risc tecnològic és coherent amb la meva estratègia prèvia. 2. **Reforç de la defensa**: USMV (mínima volatilitat EUA) i SPLV (baixa volatilitat S&P 500) són opcions més estables per protegir la cartera en un entorn de VIX elevat (18.39). 3. **Augment de bons**: IEF (bons 7-10 anys) ofereix un equilibri entre rendibilitat i sensibilitat als tipus d'interès, i la seva ponderació actual (15.2%) és insuficient per contrarestar la volatilitat. Reduir GLD (que ha baixat aquesta setmana) per finançar aquesta compra és raonable, ja que l'or ja no actua com a refugi clar. 4. **Manteniment de diversificació**: Es manté l'exposició a Europa (VGK) i Japó (EWJ), que han mostrat resiliència, i SPY com a nucli estable de la cartera.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 5,
+      "data": "2026-07-20",
+      "model": "mistral",
+      "ticker": "USMV",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 722.25,
+      "motiu": "1. **Reducció d'exposició a tecnologia**: QQQ i SMH han estat els actius més volàtils aquesta setmana, i la competència xinesa en IA (DeepSeek) podria mantenir la pressió sobre el sector. Vendre QQQ i part de SMH per reduir el risc tecnològic és coherent amb la meva estratègia prèvia. 2. **Reforç de la defensa**: USMV (mínima volatilitat EUA) i SPLV (baixa volatilitat S&P 500) són opcions més estables per protegir la cartera en un entorn de VIX elevat (18.39). 3. **Augment de bons**: IEF (bons 7-10 anys) ofereix un equilibri entre rendibilitat i sensibilitat als tipus d'interès, i la seva ponderació actual (15.2%) és insuficient per contrarestar la volatilitat. Reduir GLD (que ha baixat aquesta setmana) per finançar aquesta compra és raonable, ja que l'or ja no actua com a refugi clar. 4. **Manteniment de diversificació**: Es manté l'exposició a Europa (VGK) i Japó (EWJ), que han mostrat resiliència, i SPY com a nucli estable de la cartera.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 5,
+      "data": "2026-07-20",
+      "model": "mistral",
+      "ticker": "SMH",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 340.85,
+      "motiu": "1. **Reducció d'exposició a tecnologia**: QQQ i SMH han estat els actius més volàtils aquesta setmana, i la competència xinesa en IA (DeepSeek) podria mantenir la pressió sobre el sector. Vendre QQQ i part de SMH per reduir el risc tecnològic és coherent amb la meva estratègia prèvia. 2. **Reforç de la defensa**: USMV (mínima volatilitat EUA) i SPLV (baixa volatilitat S&P 500) són opcions més estables per protegir la cartera en un entorn de VIX elevat (18.39). 3. **Augment de bons**: IEF (bons 7-10 anys) ofereix un equilibri entre rendibilitat i sensibilitat als tipus d'interès, i la seva ponderació actual (15.2%) és insuficient per contrarestar la volatilitat. Reduir GLD (que ha baixat aquesta setmana) per finançar aquesta compra és raonable, ja que l'or ja no actua com a refugi clar. 4. **Manteniment de diversificació**: Es manté l'exposició a Europa (VGK) i Japó (EWJ), que han mostrat resiliència, i SPY com a nucli estable de la cartera.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 5,
+      "data": "2026-07-20",
+      "model": "mistral",
+      "ticker": "SPLV",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 340.85,
+      "motiu": "1. **Reducció d'exposició a tecnologia**: QQQ i SMH han estat els actius més volàtils aquesta setmana, i la competència xinesa en IA (DeepSeek) podria mantenir la pressió sobre el sector. Vendre QQQ i part de SMH per reduir el risc tecnològic és coherent amb la meva estratègia prèvia. 2. **Reforç de la defensa**: USMV (mínima volatilitat EUA) i SPLV (baixa volatilitat S&P 500) són opcions més estables per protegir la cartera en un entorn de VIX elevat (18.39). 3. **Augment de bons**: IEF (bons 7-10 anys) ofereix un equilibri entre rendibilitat i sensibilitat als tipus d'interès, i la seva ponderació actual (15.2%) és insuficient per contrarestar la volatilitat. Reduir GLD (que ha baixat aquesta setmana) per finançar aquesta compra és raonable, ja que l'or ja no actua com a refugi clar. 4. **Manteniment de diversificació**: Es manté l'exposició a Europa (VGK) i Japó (EWJ), que han mostrat resiliència, i SPY com a nucli estable de la cartera.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 5,
+      "data": "2026-07-20",
+      "model": "mistral",
+      "ticker": "GLD",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 362.75,
+      "motiu": "1. **Reducció d'exposició a tecnologia**: QQQ i SMH han estat els actius més volàtils aquesta setmana, i la competència xinesa en IA (DeepSeek) podria mantenir la pressió sobre el sector. Vendre QQQ i part de SMH per reduir el risc tecnològic és coherent amb la meva estratègia prèvia. 2. **Reforç de la defensa**: USMV (mínima volatilitat EUA) i SPLV (baixa volatilitat S&P 500) són opcions més estables per protegir la cartera en un entorn de VIX elevat (18.39). 3. **Augment de bons**: IEF (bons 7-10 anys) ofereix un equilibri entre rendibilitat i sensibilitat als tipus d'interès, i la seva ponderació actual (15.2%) és insuficient per contrarestar la volatilitat. Reduir GLD (que ha baixat aquesta setmana) per finançar aquesta compra és raonable, ja que l'or ja no actua com a refugi clar. 4. **Manteniment de diversificació**: Es manté l'exposició a Europa (VGK) i Japó (EWJ), que han mostrat resiliència, i SPY com a nucli estable de la cartera.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 5,
+      "data": "2026-07-20",
+      "model": "mistral",
+      "ticker": "IEF",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 362.75,
+      "motiu": "1. **Reducció d'exposició a tecnologia**: QQQ i SMH han estat els actius més volàtils aquesta setmana, i la competència xinesa en IA (DeepSeek) podria mantenir la pressió sobre el sector. Vendre QQQ i part de SMH per reduir el risc tecnològic és coherent amb la meva estratègia prèvia. 2. **Reforç de la defensa**: USMV (mínima volatilitat EUA) i SPLV (baixa volatilitat S&P 500) són opcions més estables per protegir la cartera en un entorn de VIX elevat (18.39). 3. **Augment de bons**: IEF (bons 7-10 anys) ofereix un equilibri entre rendibilitat i sensibilitat als tipus d'interès, i la seva ponderació actual (15.2%) és insuficient per contrarestar la volatilitat. Reduir GLD (que ha baixat aquesta setmana) per finançar aquesta compra és raonable, ja que l'or ja no actua com a refugi clar. 4. **Manteniment de diversificació**: Es manté l'exposició a Europa (VGK) i Japó (EWJ), que han mostrat resiliència, i SPY com a nucli estable de la cartera.",
+      "impacte": 0.0
+    },
     {
       "setmana": 4,
       "data": "2026-07-17",
@@ -1064,7 +1398,7 @@
       "pesDespres": null,
       "import": 733.27,
       "motiu": "La decisió es basa en tres factors clau: 1) **Reducció d'exposició a tecnologia**: QQQ i SMH han estat els actius més volàtils aquesta setmana, i la competència xinesa en IA (DeepSeek) podria continuar pressionant el sector. Vendre part de QQQ (50% de la posició) i SMH (50%) permet reduir el risc sense abandonar completament el sector. 2) **Reforç de renda fixa i Europa**: Amb el Bo EUA 10 anys en 4.569%, IEF ofereix un rendiment atractiu amb menor volatilitat que TLT. A més, VGK podria beneficiar-se d'un possible debilitament del dòlar (EUR/USD en 1.1438) i d'una recuperació econòmica europea més robusta del previst. 3) **Diversificació geogràfica**: Augmentar VGK ajuda a equilibrar la cartera, reduint la dependència dels EUA. La confiança en aquesta decisió és alta (8/10), ja que es basa en una correcció tècnica i fonamental del sector tecnològic, sense abandonar completament el creixement.",
-      "impacte": 0.0
+      "impacte": -0.62
     },
     {
       "setmana": 4,
@@ -1076,7 +1410,7 @@
       "pesDespres": null,
       "import": 733.27,
       "motiu": "La decisió es basa en tres factors clau: 1) **Reducció d'exposició a tecnologia**: QQQ i SMH han estat els actius més volàtils aquesta setmana, i la competència xinesa en IA (DeepSeek) podria continuar pressionant el sector. Vendre part de QQQ (50% de la posició) i SMH (50%) permet reduir el risc sense abandonar completament el sector. 2) **Reforç de renda fixa i Europa**: Amb el Bo EUA 10 anys en 4.569%, IEF ofereix un rendiment atractiu amb menor volatilitat que TLT. A més, VGK podria beneficiar-se d'un possible debilitament del dòlar (EUR/USD en 1.1438) i d'una recuperació econòmica europea més robusta del previst. 3) **Diversificació geogràfica**: Augmentar VGK ajuda a equilibrar la cartera, reduint la dependència dels EUA. La confiança en aquesta decisió és alta (8/10), ja que es basa en una correcció tècnica i fonamental del sector tecnològic, sense abandonar completament el creixement.",
-      "impacte": 0.0
+      "impacte": -0.62
     },
     {
       "setmana": 4,
@@ -1088,7 +1422,7 @@
       "pesDespres": null,
       "import": 696.86,
       "motiu": "La decisió es basa en tres factors clau: 1) **Reducció d'exposició a tecnologia**: QQQ i SMH han estat els actius més volàtils aquesta setmana, i la competència xinesa en IA (DeepSeek) podria continuar pressionant el sector. Vendre part de QQQ (50% de la posició) i SMH (50%) permet reduir el risc sense abandonar completament el sector. 2) **Reforç de renda fixa i Europa**: Amb el Bo EUA 10 anys en 4.569%, IEF ofereix un rendiment atractiu amb menor volatilitat que TLT. A més, VGK podria beneficiar-se d'un possible debilitament del dòlar (EUR/USD en 1.1438) i d'una recuperació econòmica europea més robusta del previst. 3) **Diversificació geogràfica**: Augmentar VGK ajuda a equilibrar la cartera, reduint la dependència dels EUA. La confiança en aquesta decisió és alta (8/10), ja que es basa en una correcció tècnica i fonamental del sector tecnològic, sense abandonar completament el creixement.",
-      "impacte": 0.0
+      "impacte": -0.62
     },
     {
       "setmana": 4,
@@ -1100,7 +1434,7 @@
       "pesDespres": null,
       "import": 696.86,
       "motiu": "La decisió es basa en tres factors clau: 1) **Reducció d'exposició a tecnologia**: QQQ i SMH han estat els actius més volàtils aquesta setmana, i la competència xinesa en IA (DeepSeek) podria continuar pressionant el sector. Vendre part de QQQ (50% de la posició) i SMH (50%) permet reduir el risc sense abandonar completament el sector. 2) **Reforç de renda fixa i Europa**: Amb el Bo EUA 10 anys en 4.569%, IEF ofereix un rendiment atractiu amb menor volatilitat que TLT. A més, VGK podria beneficiar-se d'un possible debilitament del dòlar (EUR/USD en 1.1438) i d'una recuperació econòmica europea més robusta del previst. 3) **Diversificació geogràfica**: Augmentar VGK ajuda a equilibrar la cartera, reduint la dependència dels EUA. La confiança en aquesta decisió és alta (8/10), ja que es basa en una correcció tècnica i fonamental del sector tecnològic, sense abandonar completament el creixement.",
-      "impacte": 0.0
+      "impacte": -0.62
     },
     {
       "setmana": 3,
@@ -1112,7 +1446,7 @@
       "pesDespres": null,
       "import": 749.25,
       "motiu": "1. **Reducció de TLT a IEF**: Els bons a llarg termini (TLT) són molt sensibles als moviments dels tipus d'interès. Amb el Bo EUA 10 anys en 4.569%, és probable que els tipus es mantinguin elevats o fins i tot puguin pujar lleugerament. Canviar a IEF (bons 7-10 anys) redueix el risc de durada sense perdre del tot l'exposició a renda fixa. 2. **Reducció de GLD a EWJ**: L'or ha tingut una setmana negativa i, tot i que pot actuar com a refugi, la seva rendibilitat a llarg termini és incerta. Japó (EWJ) ofereix una oportunitat de creixement amb un mercat que podria beneficiar-se de la debilitat del ien i de reformes corporatives. A més, augmentar l'exposició a mercats internacionals diversifica el risc geogràfic. 3. **Manteniment de la resta**: La resta de la cartera està ben equilibrada. SPY i QQQ ofereixen exposició als EUA, VGK a Europa, i SMH als semiconductors, un sector clau per a la IA i la tecnologia. No vull sobreexposar-me a cap d'aquests sectors, per la qual cosa mantinc les posicions actuals.",
-      "impacte": -2.14
+      "impacte": -2.75
     },
     {
       "setmana": 3,
@@ -1124,7 +1458,7 @@
       "pesDespres": null,
       "import": 749.25,
       "motiu": "1. **Reducció de TLT a IEF**: Els bons a llarg termini (TLT) són molt sensibles als moviments dels tipus d'interès. Amb el Bo EUA 10 anys en 4.569%, és probable que els tipus es mantinguin elevats o fins i tot puguin pujar lleugerament. Canviar a IEF (bons 7-10 anys) redueix el risc de durada sense perdre del tot l'exposició a renda fixa. 2. **Reducció de GLD a EWJ**: L'or ha tingut una setmana negativa i, tot i que pot actuar com a refugi, la seva rendibilitat a llarg termini és incerta. Japó (EWJ) ofereix una oportunitat de creixement amb un mercat que podria beneficiar-se de la debilitat del ien i de reformes corporatives. A més, augmentar l'exposició a mercats internacionals diversifica el risc geogràfic. 3. **Manteniment de la resta**: La resta de la cartera està ben equilibrada. SPY i QQQ ofereixen exposició als EUA, VGK a Europa, i SMH als semiconductors, un sector clau per a la IA i la tecnologia. No vull sobreexposar-me a cap d'aquests sectors, per la qual cosa mantinc les posicions actuals.",
-      "impacte": -2.14
+      "impacte": -2.75
     },
     {
       "setmana": 3,
@@ -1136,7 +1470,7 @@
       "pesDespres": null,
       "import": 749.25,
       "motiu": "1. **Reducció de TLT a IEF**: Els bons a llarg termini (TLT) són molt sensibles als moviments dels tipus d'interès. Amb el Bo EUA 10 anys en 4.569%, és probable que els tipus es mantinguin elevats o fins i tot puguin pujar lleugerament. Canviar a IEF (bons 7-10 anys) redueix el risc de durada sense perdre del tot l'exposició a renda fixa. 2. **Reducció de GLD a EWJ**: L'or ha tingut una setmana negativa i, tot i que pot actuar com a refugi, la seva rendibilitat a llarg termini és incerta. Japó (EWJ) ofereix una oportunitat de creixement amb un mercat que podria beneficiar-se de la debilitat del ien i de reformes corporatives. A més, augmentar l'exposició a mercats internacionals diversifica el risc geogràfic. 3. **Manteniment de la resta**: La resta de la cartera està ben equilibrada. SPY i QQQ ofereixen exposició als EUA, VGK a Europa, i SMH als semiconductors, un sector clau per a la IA i la tecnologia. No vull sobreexposar-me a cap d'aquests sectors, per la qual cosa mantinc les posicions actuals.",
-      "impacte": -2.14
+      "impacte": -2.75
     },
     {
       "setmana": 3,
@@ -1148,7 +1482,7 @@
       "pesDespres": null,
       "import": 749.25,
       "motiu": "1. **Reducció de TLT a IEF**: Els bons a llarg termini (TLT) són molt sensibles als moviments dels tipus d'interès. Amb el Bo EUA 10 anys en 4.569%, és probable que els tipus es mantinguin elevats o fins i tot puguin pujar lleugerament. Canviar a IEF (bons 7-10 anys) redueix el risc de durada sense perdre del tot l'exposició a renda fixa. 2. **Reducció de GLD a EWJ**: L'or ha tingut una setmana negativa i, tot i que pot actuar com a refugi, la seva rendibilitat a llarg termini és incerta. Japó (EWJ) ofereix una oportunitat de creixement amb un mercat que podria beneficiar-se de la debilitat del ien i de reformes corporatives. A més, augmentar l'exposició a mercats internacionals diversifica el risc geogràfic. 3. **Manteniment de la resta**: La resta de la cartera està ben equilibrada. SPY i QQQ ofereixen exposició als EUA, VGK a Europa, i SMH als semiconductors, un sector clau per a la IA i la tecnologia. No vull sobreexposar-me a cap d'aquests sectors, per la qual cosa mantinc les posicions actuals.",
-      "impacte": -2.14
+      "impacte": -2.75
     },
     {
       "setmana": 2,
@@ -1377,8 +1711,8 @@
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
         "estat": "connectada",
-        "ultimaExecucio": "Setmana 4 · 2026-07-17",
-        "ultimBriefing": "El 'DeepSeek rout' és soroll recurrent que ja porta tres setmanes sense provocar un canvi estructural real en els fonamentals de l'IA ni en el lideratge tecnolò…"
+        "ultimaExecucio": "Setmana 5 · 2026-07-20",
+        "ultimBriefing": "El 'DeepSeek rout' torna a aparèixer per quarta setmana consecutiva com a titular dominant, però segueix sent soroll narratiu més que un canvi de fonamentals: e…"
       },
       {
         "id": "gpt",
@@ -1387,8 +1721,8 @@
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
         "estat": "connectada",
-        "ultimaExecucio": "Setmana 4 · 2026-07-17",
-        "ultimBriefing": "La tesi central (IA com a motor) no ha canviat; la caiguda sembla més esdeveniment que trencament de cicle. Els nostres coixins (GLD/TLT) limiten riscos en cas …"
+        "ultimaExecucio": "Setmana 5 · 2026-07-20",
+        "ultimBriefing": "El moviment ha estat impulsat per titulars i revaloració tàctica, no per un canvi estructural en la tesi d’IA. Un dels titulars clau ja apunta que DeepSeek no e…"
       },
       {
         "id": "gemini",
@@ -1397,8 +1731,8 @@
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
         "estat": "connectada",
-        "ultimaExecucio": "Setmana 4 · 2026-07-17",
-        "ultimBriefing": "La decisió de mantenir la cartera aquesta setmana es basa en una anàlisi serena del context actual. Si bé la caiguda del -1.31% és notable, considero que una re…"
+        "ultimaExecucio": "Setmana 5 · 2026-07-20",
+        "ultimBriefing": "La decisió de reajustar es basa en una anàlisi proactiva dels factors de risc emergents. Redueixo l'exposició a QQQ davant la incertesa generada per la 'AI Rout…"
       },
       {
         "id": "deepseek",
@@ -1407,8 +1741,8 @@
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
         "estat": "connectada",
-        "ultimaExecucio": "Setmana 4 · 2026-07-17",
-        "ultimBriefing": "Mantenir la cartera malgrat les pèrdues. La correcció de DeepSeek pot ser una reacció exagerada i no un canvi estructural. La diversificació entre renda variabl…"
+        "ultimaExecucio": "Setmana 5 · 2026-07-20",
+        "ultimBriefing": "Mantenir la cartera actual. La diversificació entre renda variable (SPY, VGK, QQQ), or (GLD) i bons (TLT) està funcionant com a cobertura davant la incertesa. F…"
       },
       {
         "id": "mistral",
@@ -1417,8 +1751,8 @@
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
         "estat": "connectada",
-        "ultimaExecucio": "Setmana 4 · 2026-07-17",
-        "ultimBriefing": "La decisió es basa en tres factors clau: 1) **Reducció d'exposició a tecnologia**: QQQ i SMH han estat els actius més volàtils aquesta setmana, i la competència…"
+        "ultimaExecucio": "Setmana 5 · 2026-07-20",
+        "ultimBriefing": "1. **Reducció d'exposició a tecnologia**: QQQ i SMH han estat els actius més volàtils aquesta setmana, i la competència xinesa en IA (DeepSeek) podria mantenir …"
       }
     ],
     "financeres": [
