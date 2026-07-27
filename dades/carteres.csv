@@ -1,37 +1,41 @@
-model,ticker,unitats,valor,pes
-gpt,SPY,2.6745,1974.26,20.23
-gpt,VGK,11.30842,993.22,10.18
-gpt,GLD,3.965098,1473.11,15.1
-gpt,TLT,17.779872,1478.75,15.15
-gpt,QQQ,4.175751,2889.45,29.61
-gpt,SMH,1.635584,948.92,9.72
-claude,SPY,2.6745,1974.26,20.1
-claude,VGK,22.6168,1986.43,20.22
-claude,GLD,5.2868,1964.15,19.99
-claude,TLT,23.7065,1971.67,20.07
-claude,QQQ,2.7857,1927.59,19.62
-gemini,SPY,2.6745,1974.26,20.15
-gemini,VGK,22.6168,1986.43,20.27
-gemini,GLD,3.929616,1459.93,14.9
-gemini,TLT,17.779872,1478.75,15.09
-gemini,QQQ,1.043569,722.11,7.37
-gemini,VTI,4.06807,1483.58,15.14
-gemini,USMV,7.205783,692.55,7.07
-deepseek,SPY,2.6745,1974.26,20.1
-deepseek,VGK,22.6168,1986.43,20.22
-deepseek,GLD,5.2868,1964.15,19.99
-deepseek,TLT,23.7065,1971.67,20.07
-deepseek,QQQ,2.7857,1927.59,19.62
-mistral,SPY,4.025103,2971.25,30.61
-mistral,VGK,13.492257,1185.02,12.21
-mistral,GLD,0.985624,366.18,3.77
-mistral,TLT,5.297376,440.58,4.54
-mistral,SMH,0.61306,355.68,3.66
-mistral,EWJ,7.788682,709.55,7.31
-mistral,IEF,9.979096,926.56,9.54
-mistral,USMV,4.347778,417.86,4.3
-mistral,XLE,8.369683,496.99,5.12
-mistral,DBC,9.946854,301.49,3.11
-mistral,VHT,2.96133,898.2,9.25
-mistral,XLV,1.854561,299.4,3.08
-mistral,VIG,1.428414,338.89,3.49
+model,ticker,nom,tipus,sector,pais,unitats,valor,pes
+gpt,SPY,S&P 500 (SPDR),etf,Índexs principals,Global,2.366406,1536.16,18.03
+gpt,VGK,Europa (Vanguard),etf,Mercats internacionals,Global,11.30842,882.82,10.36
+gpt,GLD,Or físic (SPDR),etf,Metalls preciosos,Global,3.965098,1306.95,15.34
+gpt,TLT,Bons EUA 20+ anys,etf,Renda fixa,Global,10.984095,808.16,9.49
+gpt,QQQ,Nasdaq 100,etf,Índexs principals,Global,4.175751,2501.12,29.36
+gpt,SMH,Semiconductors (VanEck),etf,IA i semiconductors,Global,1.635584,784.53,9.21
+gpt,TIP,Bons lligats a la inflació,etf,Renda fixa,Global,5.280289,499.0,5.86
+gpt,XLE,Energia EUA,etf,Energia,Global,3.877253,199.6,2.34
+claude,SPY,S&P 500 (SPDR),etf,Índexs principals,Global,2.6745,1736.16,20.05
+claude,VGK,Europa (Vanguard),etf,Mercats internacionals,Global,22.6168,1765.63,20.4
+claude,GLD,Or físic (SPDR),etf,Metalls preciosos,Global,5.2868,1742.6,20.13
+claude,TLT,Bons EUA 20+ anys,etf,Renda fixa,Global,23.7065,1744.21,20.15
+claude,QQQ,Nasdaq 100,etf,Índexs principals,Global,2.7857,1668.53,19.27
+gemini,EFECTIU,Efectiu,efectiu,Efectiu,—,424.134889,424.13,4.9
+gemini,SPY,S&P 500 (SPDR),etf,Índexs principals,Global,2.6745,1736.16,20.07
+gemini,VGK,Europa (Vanguard),etf,Mercats internacionals,Global,22.6168,1765.63,20.41
+gemini,GLD,Or físic (SPDR),etf,Metalls preciosos,Global,3.929616,1295.25,14.97
+gemini,TLT,Bons EUA 20+ anys,etf,Renda fixa,Global,13.702406,1008.16,11.65
+gemini,VTI,Mercat total EUA,etf,Índexs principals,Global,4.06807,1304.77,15.08
+gemini,USMV,Mínima volatilitat EUA,etf,Defensius,Global,13.031365,1117.34,12.92
+deepseek,SPY,S&P 500 (SPDR),etf,Índexs principals,Global,2.6745,1736.16,20.06
+deepseek,VGK,Europa (Vanguard),etf,Mercats internacionals,Global,22.6168,1765.63,20.4
+deepseek,GLD,Or físic (SPDR),etf,Metalls preciosos,Global,10.338773,3407.79,39.38
+deepseek,TLT,Bons EUA 20+ anys,etf,Renda fixa,Global,23.7065,1744.21,20.16
+mistral,SPY,S&P 500 (SPDR),etf,Índexs principals,Global,2.484633,1612.91,18.89
+mistral,VGK,Europa (Vanguard),etf,Mercats internacionals,Global,7.08751,553.3,6.48
+mistral,GLD,Or físic (SPDR),etf,Metalls preciosos,Global,0.985624,324.87,3.8
+mistral,TLT,Bons EUA 20+ anys,etf,Renda fixa,Global,5.297376,389.75,4.56
+mistral,SMH,Semiconductors (VanEck),etf,IA i semiconductors,Global,0.61306,294.06,3.44
+mistral,EWJ,Japó,etf,Mercats internacionals,Global,4.046242,324.35,3.8
+mistral,BIL,Lletres del Tresor (1-3 mesos),etf,Renda fixa,Global,3.163021,254.47,2.98
+mistral,IEF,Bons EUA 7-10 anys,etf,Renda fixa,Global,9.979096,817.77,9.58
+mistral,USMV,Mínima volatilitat EUA,etf,Defensius,Global,4.347778,372.79,4.37
+mistral,XLE,Energia EUA,etf,Energia,Global,8.369683,430.87,5.05
+mistral,VHT,Sanitat (Vanguard),etf,Salut,Global,2.96133,801.02,9.38
+mistral,XLV,Salut EUA,etf,Salut,Global,1.854561,267.17,3.13
+mistral,VIG,Dividends creixents (Vanguard),etf,Dividends,Global,1.428414,300.65,3.52
+mistral,XLP,Consum bàsic EUA,etf,Defensius,Global,13.361838,998.0,11.69
+mistral,NESN.SW,Nestlé,accio,Consum,Suïssa,5.778324,499.0,5.84
+mistral,PG,Procter & Gamble,accio,Consum,EUA,2.301541,299.4,3.51

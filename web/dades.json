@@ -7,11 +7,11 @@
     "maxPesAccio": 0.2,
     "moneda": "EUR",
     "setmanes": 22,
-    "setmanaActual": 7,
+    "setmanaActual": 8,
     "dataInici": "2026-07-09",
     "dataActual": "2026-07-27",
     "font": "real",
-    "generat": "2026-07-27T18:30",
+    "generat": "2026-07-27T16:37",
     "puntsPerSetmana": 1,
     "nAccions": 114,
     "nEtfs": 108
@@ -23,6 +23,7 @@
     "2026-07-17",
     "2026-07-20",
     "2026-07-25",
+    "2026-07-27",
     "2026-07-27"
   ],
   "models": [
@@ -125,7 +126,8 @@
       9908.28,
       9879.92,
       9821.61,
-      9824.11
+      9824.11,
+      8657.12
     ],
     "gpt": [
       9996.01,
@@ -134,7 +136,8 @@
       9834.57,
       9767.06,
       9705.89,
-      9757.72
+      9757.72,
+      8518.33
     ],
     "gemini": [
       9999.01,
@@ -143,7 +146,8 @@
       9909.03,
       9872.02,
       9814.09,
-      9797.62
+      9797.62,
+      8651.44
     ],
     "deepseek": [
       10000.01,
@@ -152,7 +156,8 @@
       9908.28,
       9879.92,
       9821.61,
-      9824.11
+      9824.11,
+      8653.79
     ],
     "mistral": [
       9996.01,
@@ -161,7 +166,8 @@
       9812.08,
       9750.78,
       9725.04,
-      9707.67
+      9707.67,
+      8540.4
     ],
     "index": [
       10000.0,
@@ -170,7 +176,8 @@
       10039.05,
       9939.69,
       9881.39,
-      9871.36
+      9871.36,
+      8680.83
     ]
   },
   "decisions": {
@@ -250,6 +257,17 @@
         "valor_cartera": 9824.11,
         "rend_setmana": 0.03,
         "justificacio": "El titular de DeepSeek porta ja set setmanes sent l'excusa narrativa dominant sense que hagi generat cap deteriorament estructural en els fonamentals: els índexs es mantenen estables, el VIX no dispara (17.6, nivell normal), i la meva cartera diversificada (renda variable EUA/Europa, tecnologia, or com a cobertura, i bons com a estabilitzador) continua complint la seva funció d'amortir volatilitat sense sacrificar exposició al creixement. Els altres titulars (tarifes, cafè, gas natural, Singapur) són soroll sectorial puntual que no afecta la meva tesi de fons. Reajustar ara implicaria pagar costos de transacció (0,1% per operació) per canviar una cartera que ja està ben posicionada, sense un catalitzador clar que justifiqui el canvi. Mantinc la disciplina: no facis res quan no hi ha raó de pes per fer-ho.",
+        "operacions": null
+      },
+      {
+        "setmana": 8,
+        "data": "2026-07-27",
+        "decisio": "",
+        "nivell_risc": "",
+        "confianca": 0,
+        "valor_cartera": 8657.12,
+        "rend_setmana": -11.88,
+        "justificacio": "",
         "operacions": null
       }
     ],
@@ -346,6 +364,28 @@
         "rend_setmana": 0.53,
         "justificacio": "La tesi central (IA/semis com a catalitzador de beneficis) es manté malgrat el soroll. Els coixins (GLD/TLT) continuen sent útils davant riscos de creixement/inflació i episodis de risc-off (safe havens a l’alça, política monetària més dura a Singapur i tensions comercials). Amb el VIX a 17,6 i el 10Y elevat, no és moment d’augmentar risc; però tampoc de retallar exposició a tecnologia que lidera cicles. El drift respecte l’objectiu és <0,5 p.p. per actiu: reequilibrar ara només afegiria costos (0,1% per operació) sense millorar materialment el perfil rendibilitat-risc. Mantinc l’estratègia i guardo la flexibilitat per actuar si els rendiments o la macro es desvien clarament.",
         "operacions": null
+      },
+      {
+        "setmana": 8,
+        "data": "2026-07-27",
+        "decisio": "reajustar",
+        "nivell_risc": "moderat",
+        "confianca": 5,
+        "valor_cartera": 8518.33,
+        "rend_setmana": -12.7,
+        "justificacio": "1) Rebaixem part de la durada llarga passant de TLT cap a TIP per defensar-nos d’un escenari on les expectatives d’inflació repunten (oli ferm, titular 9) mentre els tipus es mantenen elevats; TIP tendeix a comportar-se millor que TLT si pugen els ‘breakevens’. 2) Afegim una petita palanca d’energia (XLE) finançada amb una lleugera reducció d’SPY: si el petroli continua tensant-se, el sector pot actuar com a cobertura pro-inflació i diversificador respecte a tecnologia. 3) Mantenim QQQ/SMH sense augmentar risc després del xoc: la tesi d’IA es manté, però preferim esperar estabilització abans de comprar la caiguda. 4) Moviments mesurats i només dues operacions per minimitzar costos (0,1%/operació) i preservar coherència amb el perfil moderat. Si el mercat es normalitza, la part tech recuperarà; si la inflació persisteix, TIP/XLE ajudaran; i encara conservem una posició rellevant en GLD com a assegurança de cua.",
+        "operacions": [
+          {
+            "vendre": "TLT",
+            "comprar": "TIP",
+            "import": 499.5
+          },
+          {
+            "vendre": "SPY",
+            "comprar": "XLE",
+            "import": 199.8
+          }
+        ]
       }
     ],
     "gemini": [
@@ -448,6 +488,33 @@
         "rend_setmana": -0.17,
         "justificacio": "(sense resposta: Error de connexió: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent)",
         "operacions": null
+      },
+      {
+        "setmana": 8,
+        "data": "2026-07-27",
+        "decisio": "reajustar",
+        "nivell_risc": "moderat",
+        "confianca": 6,
+        "valor_cartera": 8651.44,
+        "rend_setmana": -11.7,
+        "justificacio": "La decisió de reajustar la cartera es fonamenta en la necessitat de respondre a la forta caiguda setmanal i als senyals de mercat. En primer lloc, venc la totalitat de la nostra posició en QQQ, el fons cotitzat que representa el Nasdaq 100 i té una alta exposició a empreses tecnològiques de creixement. La 'caiguda generalitzada de les accions d'IA' que encapçala els titulars de la setmana indica que aquest sector està sota pressió, i malgrat que alguns analistes creuen que 'DeepSeek no enfonsarà els gegants d'IA dels EUA' (notícia 3), la volatilitat és massa elevada per a la nostra exposició actual. Aquesta venda es complementa amb les reduccions anteriors de QQQ per disminuir el risc. En segon lloc, redueixo la meva posició en TLT (bons del Tresor dels EUA a llarg termini) en 300 €. Amb els rendiments dels bons dels EUA a 10 anys en 4.647% i la notícia que 'Singapur endureix la política monetària mentre l'augment dels preus del petroli reaviva el risc d'inflació' (notícia 9), els bons de llarga durada continuen sent vulnerables a futures pujades de tipus o a la persistència de la inflació. Finalment, els 500 € obtinguts de les vendes s'invertiran en USMV, un ETF de mínima volatilitat. Aquesta acció reforça el component defensiu de la cartera, buscant actius que tendeixin a fluctuar menys que el mercat en general, oferint una major resiliència en un entorn d'incertesa i alta volatilitat del VIX (19.47). La resta del capital alliberat (425.06 €) es manté en efectiu per aprofitar futures oportunitats o com a coixí davant de noves caigudes, una estratègia prudent en un context de 'volatilitat'.",
+        "operacions": [
+          {
+            "vendre": "QQQ",
+            "comprar": "EFECTIU",
+            "import": 625.06
+          },
+          {
+            "vendre": "TLT",
+            "comprar": "EFECTIU",
+            "import": 300.0
+          },
+          {
+            "vendre": "EFECTIU",
+            "comprar": "USMV",
+            "import": 500.0
+          }
+        ]
       }
     ],
     "deepseek": [
@@ -527,6 +594,23 @@
         "rend_setmana": 0.03,
         "justificacio": "Tot i que la correcció de DeepSeek ha afectat el sector tecnològic, considero que la reacció és exagerada i que QQQ es recuperarà a mitjà termini. La cartera està diversificada amb or i bons com a cobertura, i el rendiment neutre d'aquesta setmana mostra resiliència. Canviar ara suposaria assumir costos de transacció (0.1% per operació) i podria ser tard si el mercat es recupera. Mantinc la cartera perquè la meva estratègia és de llarg termini i no vull reaccionar al soroll. El risc és moderat perquè, tot i la volatilitat, la diversificació és adequada per suportar moviments adversos.",
         "operacions": null
+      },
+      {
+        "setmana": 8,
+        "data": "2026-07-27",
+        "decisio": "reajustar",
+        "nivell_risc": "moderat",
+        "confianca": 6,
+        "valor_cartera": 8653.79,
+        "rend_setmana": -11.91,
+        "justificacio": "Venc QQQ perquè el Nasdaq 100 és el més colpejat per la correcció de DeepSeek i les incerteses sobre la competència xinesa en IA. La recuperació pot trigar setmanes. Reforço GLD (or físic) com a actiu refugi. Amb la compra, GLD passarà a representar ~40% de la cartera (dins el límit permès). Redueixo exposició a renda variable tecnològica, mantenint la diversificació amb SPY i VGK.",
+        "operacions": [
+          {
+            "vendre": "QQQ",
+            "comprar": "GLD",
+            "import": 1666.86
+          }
+        ]
       }
     ],
     "mistral": [
@@ -703,6 +787,38 @@
             "import": 339.23
           }
         ]
+      },
+      {
+        "setmana": 8,
+        "data": "2026-07-27",
+        "decisio": "reajustar",
+        "nivell_risc": "moderat",
+        "confianca": 8,
+        "valor_cartera": 8540.4,
+        "rend_setmana": -12.02,
+        "justificacio": "1. **Reducció d'exposició a SPY i VGK**: Tot i que SPY és un actiu sòlid, la seva sobreponderació (30.6%) i la correcció actual del S&P 500 aconsellen reduir risc. VGK (Europa) també ha patit per les tensions comercials i la debilitat del sector tecnològic europeu. Es redueix SPY en 1000 € i VGK en 500 € per alliberar capital per a actius més defensius.  2. **Reforç de consum bàsic (XLP i PG)**: XLP (ETF de consum bàsic EUA) és un sector defensiu clàssic, menys sensible a cicles econòmics i amb empreses amb preus estables (com Procter & Gamble, que es compra directament). PG és una empresa líder en béns de consum essencials, amb una marca global i dividends creixents, ideal per a un context de volatilitat.  3. **Reducció de Japó (EWJ) i compra de Nestlé (NESN.SW)**: EWJ ha patit per la debilitat del ien i la caiguda dels mercats asiàtics. Nestlé és una alternativa defensiva, amb exposició global, preus estables i dividends sòlids. És una aposta per la resiliència en mercats volàtils.  4. **Líquiditat amb BIL**: Es ven DBC (matèries primeres) per la seva volatilitat i es mou el capital a BIL (lletres del Tresor EUA a 1-3 mesos). Aquesta posició (254.98 €) actua com a coixí de liquiditat per aprofitar oportunitats en les pròximes setmanes, especialment si la correcció continua i apareixen actius infravalorats.  5. **Manteniment de salut i dividends**: VHT, XLV i VIG es mantenen per la seva resiliència històrica i rendibilitat a llarg termini. No es venen perquè, tot i la caiguda, els seus fonamentals segueixen sent sòlids.  El nivell de risc es manté moderat, però amb un biaix més defensiu per protegir la cartera davant la incertesa actual. La confiança en aquesta decisió és alta (8/10) per la solidesa dels actius defensius seleccionats.",
+        "operacions": [
+          {
+            "vendre": "SPY",
+            "comprar": "XLP",
+            "import": 999.0
+          },
+          {
+            "vendre": "VGK",
+            "comprar": "NESN.SW",
+            "import": 499.5
+          },
+          {
+            "vendre": "EWJ",
+            "comprar": "PG",
+            "import": 299.7
+          },
+          {
+            "vendre": "DBC",
+            "comprar": "BIL",
+            "import": 254.73
+          }
+        ]
       }
     ]
   },
@@ -815,6 +931,22 @@
         "mantinguts": [],
         "operacions": [],
         "justificacio": "El titular de DeepSeek porta ja set setmanes sent l'excusa narrativa dominant sense que hagi generat cap deteriorament estructural en els fonamentals: els índexs es mantenen estables, el VIX no dispara (17.6, nivell normal), i la meva cartera diversificada (renda variable EUA/Europa, tecnologia, or com a cobertura, i bons com a estabilitzador) continua complint la seva funció d'amortir volatilitat sense sacrificar exposició al creixement. Els altres titulars (tarifes, cafè, gas natural, Singapur) són soroll sectorial puntual que no afecta la meva tesi de fons. Reajustar ara implicaria pagar costos de transacció (0,1% per operació) per canviar una cartera que ja està ben posicionada, sense un catalitzador clar que justifiqui el canvi. Mantinc la disciplina: no facis res quan no hi ha raó de pes per fer-ho.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
+        "resultat": -11.88
+      },
+      {
+        "setmana": 8,
+        "data": "2026-07-27",
+        "decisio": "",
+        "confianca": 0,
+        "nivell_risc": "",
+        "comprats": [],
+        "venuts": [],
+        "mantinguts": [],
+        "operacions": [],
+        "justificacio": "",
         "context": null,
         "riscos": null,
         "expectativa": null,
@@ -952,6 +1084,39 @@
         "mantinguts": [],
         "operacions": [],
         "justificacio": "La tesi central (IA/semis com a catalitzador de beneficis) es manté malgrat el soroll. Els coixins (GLD/TLT) continuen sent útils davant riscos de creixement/inflació i episodis de risc-off (safe havens a l’alça, política monetària més dura a Singapur i tensions comercials). Amb el VIX a 17,6 i el 10Y elevat, no és moment d’augmentar risc; però tampoc de retallar exposició a tecnologia que lidera cicles. El drift respecte l’objectiu és <0,5 p.p. per actiu: reequilibrar ara només afegiria costos (0,1% per operació) sense millorar materialment el perfil rendibilitat-risc. Mantinc l’estratègia i guardo la flexibilitat per actuar si els rendiments o la macro es desvien clarament.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
+        "resultat": -12.7
+      },
+      {
+        "setmana": 8,
+        "data": "2026-07-27",
+        "decisio": "reajustar",
+        "confianca": 5,
+        "nivell_risc": "moderat",
+        "comprats": [
+          "TIP",
+          "XLE"
+        ],
+        "venuts": [
+          "SPY",
+          "TLT"
+        ],
+        "mantinguts": [],
+        "operacions": [
+          {
+            "vendre": "TLT",
+            "comprar": "TIP",
+            "import": 499.5
+          },
+          {
+            "vendre": "SPY",
+            "comprar": "XLE",
+            "import": 199.8
+          }
+        ],
+        "justificacio": "1) Rebaixem part de la durada llarga passant de TLT cap a TIP per defensar-nos d’un escenari on les expectatives d’inflació repunten (oli ferm, titular 9) mentre els tipus es mantenen elevats; TIP tendeix a comportar-se millor que TLT si pugen els ‘breakevens’. 2) Afegim una petita palanca d’energia (XLE) finançada amb una lleugera reducció d’SPY: si el petroli continua tensant-se, el sector pot actuar com a cobertura pro-inflació i diversificador respecte a tecnologia. 3) Mantenim QQQ/SMH sense augmentar risc després del xoc: la tesi d’IA es manté, però preferim esperar estabilització abans de comprar la caiguda. 4) Moviments mesurats i només dues operacions per minimitzar costos (0,1%/operació) i preservar coherència amb el perfil moderat. Si el mercat es normalitza, la part tech recuperarà; si la inflació persisteix, TIP/XLE ajudaran; i encara conservem una posició rellevant en GLD com a assegurança de cua.",
         "context": null,
         "riscos": null,
         "expectativa": null,
@@ -1105,6 +1270,43 @@
         "context": null,
         "riscos": null,
         "expectativa": null,
+        "resultat": -11.7
+      },
+      {
+        "setmana": 8,
+        "data": "2026-07-27",
+        "decisio": "reajustar",
+        "confianca": 6,
+        "nivell_risc": "moderat",
+        "comprats": [
+          "USMV"
+        ],
+        "venuts": [
+          "QQQ",
+          "TLT"
+        ],
+        "mantinguts": [],
+        "operacions": [
+          {
+            "vendre": "QQQ",
+            "comprar": "EFECTIU",
+            "import": 625.06
+          },
+          {
+            "vendre": "TLT",
+            "comprar": "EFECTIU",
+            "import": 300.0
+          },
+          {
+            "vendre": "EFECTIU",
+            "comprar": "USMV",
+            "import": 500.0
+          }
+        ],
+        "justificacio": "La decisió de reajustar la cartera es fonamenta en la necessitat de respondre a la forta caiguda setmanal i als senyals de mercat. En primer lloc, venc la totalitat de la nostra posició en QQQ, el fons cotitzat que representa el Nasdaq 100 i té una alta exposició a empreses tecnològiques de creixement. La 'caiguda generalitzada de les accions d'IA' que encapçala els titulars de la setmana indica que aquest sector està sota pressió, i malgrat que alguns analistes creuen que 'DeepSeek no enfonsarà els gegants d'IA dels EUA' (notícia 3), la volatilitat és massa elevada per a la nostra exposició actual. Aquesta venda es complementa amb les reduccions anteriors de QQQ per disminuir el risc. En segon lloc, redueixo la meva posició en TLT (bons del Tresor dels EUA a llarg termini) en 300 €. Amb els rendiments dels bons dels EUA a 10 anys en 4.647% i la notícia que 'Singapur endureix la política monetària mentre l'augment dels preus del petroli reaviva el risc d'inflació' (notícia 9), els bons de llarga durada continuen sent vulnerables a futures pujades de tipus o a la persistència de la inflació. Finalment, els 500 € obtinguts de les vendes s'invertiran en USMV, un ETF de mínima volatilitat. Aquesta acció reforça el component defensiu de la cartera, buscant actius que tendeixin a fluctuar menys que el mercat en general, oferint una major resiliència en un entorn d'incertesa i alta volatilitat del VIX (19.47). La resta del capital alliberat (425.06 €) es manté en efectiu per aprofitar futures oportunitats o com a coixí davant de noves caigudes, una estratègia prudent en un context de 'volatilitat'.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
         "resultat": null
       }
     ],
@@ -1216,6 +1418,32 @@
         "mantinguts": [],
         "operacions": [],
         "justificacio": "Tot i que la correcció de DeepSeek ha afectat el sector tecnològic, considero que la reacció és exagerada i que QQQ es recuperarà a mitjà termini. La cartera està diversificada amb or i bons com a cobertura, i el rendiment neutre d'aquesta setmana mostra resiliència. Canviar ara suposaria assumir costos de transacció (0.1% per operació) i podria ser tard si el mercat es recupera. Mantinc la cartera perquè la meva estratègia és de llarg termini i no vull reaccionar al soroll. El risc és moderat perquè, tot i la volatilitat, la diversificació és adequada per suportar moviments adversos.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
+        "resultat": -11.91
+      },
+      {
+        "setmana": 8,
+        "data": "2026-07-27",
+        "decisio": "reajustar",
+        "confianca": 6,
+        "nivell_risc": "moderat",
+        "comprats": [
+          "GLD"
+        ],
+        "venuts": [
+          "QQQ"
+        ],
+        "mantinguts": [],
+        "operacions": [
+          {
+            "vendre": "QQQ",
+            "comprar": "GLD",
+            "import": 1666.86
+          }
+        ],
+        "justificacio": "Venc QQQ perquè el Nasdaq 100 és el més colpejat per la correcció de DeepSeek i les incerteses sobre la competència xinesa en IA. La recuperació pot trigar setmanes. Reforço GLD (or físic) com a actiu refugi. Amb la compra, GLD passarà a representar ~40% de la cartera (dins el límit permès). Redueixo exposició a renda variable tecnològica, mantenint la diversificació amb SPY i VGK.",
         "context": null,
         "riscos": null,
         "expectativa": null,
@@ -1480,6 +1708,53 @@
         "context": null,
         "riscos": null,
         "expectativa": null,
+        "resultat": -12.02
+      },
+      {
+        "setmana": 8,
+        "data": "2026-07-27",
+        "decisio": "reajustar",
+        "confianca": 8,
+        "nivell_risc": "moderat",
+        "comprats": [
+          "BIL",
+          "NESN.SW",
+          "PG",
+          "XLP"
+        ],
+        "venuts": [
+          "DBC",
+          "EWJ",
+          "SPY",
+          "VGK"
+        ],
+        "mantinguts": [],
+        "operacions": [
+          {
+            "vendre": "SPY",
+            "comprar": "XLP",
+            "import": 999.0
+          },
+          {
+            "vendre": "VGK",
+            "comprar": "NESN.SW",
+            "import": 499.5
+          },
+          {
+            "vendre": "EWJ",
+            "comprar": "PG",
+            "import": 299.7
+          },
+          {
+            "vendre": "DBC",
+            "comprar": "BIL",
+            "import": 254.73
+          }
+        ],
+        "justificacio": "1. **Reducció d'exposició a SPY i VGK**: Tot i que SPY és un actiu sòlid, la seva sobreponderació (30.6%) i la correcció actual del S&P 500 aconsellen reduir risc. VGK (Europa) també ha patit per les tensions comercials i la debilitat del sector tecnològic europeu. Es redueix SPY en 1000 € i VGK en 500 € per alliberar capital per a actius més defensius.  2. **Reforç de consum bàsic (XLP i PG)**: XLP (ETF de consum bàsic EUA) és un sector defensiu clàssic, menys sensible a cicles econòmics i amb empreses amb preus estables (com Procter & Gamble, que es compra directament). PG és una empresa líder en béns de consum essencials, amb una marca global i dividends creixents, ideal per a un context de volatilitat.  3. **Reducció de Japó (EWJ) i compra de Nestlé (NESN.SW)**: EWJ ha patit per la debilitat del ien i la caiguda dels mercats asiàtics. Nestlé és una alternativa defensiva, amb exposició global, preus estables i dividends sòlids. És una aposta per la resiliència en mercats volàtils.  4. **Líquiditat amb BIL**: Es ven DBC (matèries primeres) per la seva volatilitat i es mou el capital a BIL (lletres del Tresor EUA a 1-3 mesos). Aquesta posició (254.98 €) actua com a coixí de liquiditat per aprofitar oportunitats en les pròximes setmanes, especialment si la correcció continua i apareixen actius infravalorats.  5. **Manteniment de salut i dividends**: VHT, XLV i VIG es mantenen per la seva resiliència històrica i rendibilitat a llarg termini. No es venen perquè, tot i la caiguda, els seus fonamentals segueixen sent sòlids.  El nivell de risc es manté moderat, però amb un biaix més defensiu per protegir la cartera davant la incertesa actual. La confiança en aquesta decisió és alta (8/10) per la solidesa dels actius defensius seleccionats.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
         "resultat": null
       }
     ]
@@ -1488,339 +1763,579 @@
     "gpt": [
       {
         "ticker": "QQQ",
-        "nom": "",
+        "nom": "Nasdaq 100",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 29.6,
-        "valor": 2889
+        "sector": "Índexs principals",
+        "pais": "Global",
+        "pes": 29.4,
+        "valor": 2501
       },
       {
         "ticker": "SPY",
-        "nom": "",
+        "nom": "S&P 500 (SPDR)",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 20.2,
-        "valor": 1974
-      },
-      {
-        "ticker": "TLT",
-        "nom": "",
-        "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 15.2,
-        "valor": 1479
+        "sector": "Índexs principals",
+        "pais": "Global",
+        "pes": 18.0,
+        "valor": 1536
       },
       {
         "ticker": "GLD",
-        "nom": "",
+        "nom": "Or físic (SPDR)",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 15.1,
-        "valor": 1473
+        "sector": "Metalls preciosos",
+        "pais": "Global",
+        "pes": 15.3,
+        "valor": 1307
       },
       {
         "ticker": "VGK",
-        "nom": "",
+        "nom": "Europa (Vanguard)",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 10.2,
-        "valor": 993
+        "sector": "Mercats internacionals",
+        "pais": "Global",
+        "pes": 10.4,
+        "valor": 883
+      },
+      {
+        "ticker": "TLT",
+        "nom": "Bons EUA 20+ anys",
+        "tipus": "etf",
+        "sector": "Renda fixa",
+        "pais": "Global",
+        "pes": 9.5,
+        "valor": 808
       },
       {
         "ticker": "SMH",
-        "nom": "",
+        "nom": "Semiconductors (VanEck)",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 9.7,
-        "valor": 949
+        "sector": "IA i semiconductors",
+        "pais": "Global",
+        "pes": 9.2,
+        "valor": 785
+      },
+      {
+        "ticker": "TIP",
+        "nom": "Bons lligats a la inflació",
+        "tipus": "etf",
+        "sector": "Renda fixa",
+        "pais": "Global",
+        "pes": 5.9,
+        "valor": 499
+      },
+      {
+        "ticker": "XLE",
+        "nom": "Energia EUA",
+        "tipus": "etf",
+        "sector": "Energia",
+        "pais": "Global",
+        "pes": 2.3,
+        "valor": 200
       }
     ],
     "claude": [
       {
         "ticker": "VGK",
-        "nom": "",
+        "nom": "Europa (Vanguard)",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 20.2,
-        "valor": 1986
+        "sector": "Mercats internacionals",
+        "pais": "Global",
+        "pes": 20.4,
+        "valor": 1766
       },
       {
         "ticker": "SPY",
-        "nom": "",
+        "nom": "S&P 500 (SPDR)",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
+        "sector": "Índexs principals",
+        "pais": "Global",
         "pes": 20.1,
-        "valor": 1974
-      },
-      {
-        "ticker": "TLT",
-        "nom": "",
-        "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 20.1,
-        "valor": 1972
+        "valor": 1736
       },
       {
         "ticker": "GLD",
-        "nom": "",
+        "nom": "Or físic (SPDR)",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 20.0,
-        "valor": 1964
+        "sector": "Metalls preciosos",
+        "pais": "Global",
+        "pes": 20.1,
+        "valor": 1743
+      },
+      {
+        "ticker": "TLT",
+        "nom": "Bons EUA 20+ anys",
+        "tipus": "etf",
+        "sector": "Renda fixa",
+        "pais": "Global",
+        "pes": 20.1,
+        "valor": 1744
       },
       {
         "ticker": "QQQ",
-        "nom": "",
+        "nom": "Nasdaq 100",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 19.6,
-        "valor": 1928
+        "sector": "Índexs principals",
+        "pais": "Global",
+        "pes": 19.3,
+        "valor": 1669
       }
     ],
     "gemini": [
       {
         "ticker": "VGK",
-        "nom": "",
+        "nom": "Europa (Vanguard)",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 20.3,
-        "valor": 1986
+        "sector": "Mercats internacionals",
+        "pais": "Global",
+        "pes": 20.4,
+        "valor": 1766
       },
       {
         "ticker": "SPY",
-        "nom": "",
+        "nom": "S&P 500 (SPDR)",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
+        "sector": "Índexs principals",
+        "pais": "Global",
         "pes": 20.1,
-        "valor": 1974
-      },
-      {
-        "ticker": "TLT",
-        "nom": "",
-        "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 15.1,
-        "valor": 1479
+        "valor": 1736
       },
       {
         "ticker": "VTI",
-        "nom": "",
+        "nom": "Mercat total EUA",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
+        "sector": "Índexs principals",
+        "pais": "Global",
         "pes": 15.1,
-        "valor": 1484
+        "valor": 1305
       },
       {
         "ticker": "GLD",
-        "nom": "",
+        "nom": "Or físic (SPDR)",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 14.9,
-        "valor": 1460
-      },
-      {
-        "ticker": "QQQ",
-        "nom": "",
-        "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 7.4,
-        "valor": 722
+        "sector": "Metalls preciosos",
+        "pais": "Global",
+        "pes": 15.0,
+        "valor": 1295
       },
       {
         "ticker": "USMV",
-        "nom": "",
+        "nom": "Mínima volatilitat EUA",
         "tipus": "etf",
-        "sector": "—",
+        "sector": "Defensius",
+        "pais": "Global",
+        "pes": 12.9,
+        "valor": 1117
+      },
+      {
+        "ticker": "TLT",
+        "nom": "Bons EUA 20+ anys",
+        "tipus": "etf",
+        "sector": "Renda fixa",
+        "pais": "Global",
+        "pes": 11.7,
+        "valor": 1008
+      },
+      {
+        "ticker": "EFECTIU",
+        "nom": "Efectiu",
+        "tipus": "efectiu",
+        "sector": "Efectiu",
         "pais": "—",
-        "pes": 7.1,
-        "valor": 693
+        "pes": 4.9,
+        "valor": 424
       }
     ],
     "deepseek": [
       {
-        "ticker": "VGK",
-        "nom": "",
+        "ticker": "GLD",
+        "nom": "Or físic (SPDR)",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 20.2,
-        "valor": 1986
+        "sector": "Metalls preciosos",
+        "pais": "Global",
+        "pes": 39.4,
+        "valor": 3408
       },
       {
-        "ticker": "SPY",
-        "nom": "",
+        "ticker": "VGK",
+        "nom": "Europa (Vanguard)",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 20.1,
-        "valor": 1974
+        "sector": "Mercats internacionals",
+        "pais": "Global",
+        "pes": 20.4,
+        "valor": 1766
       },
       {
         "ticker": "TLT",
-        "nom": "",
+        "nom": "Bons EUA 20+ anys",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
+        "sector": "Renda fixa",
+        "pais": "Global",
+        "pes": 20.2,
+        "valor": 1744
+      },
+      {
+        "ticker": "SPY",
+        "nom": "S&P 500 (SPDR)",
+        "tipus": "etf",
+        "sector": "Índexs principals",
+        "pais": "Global",
         "pes": 20.1,
-        "valor": 1972
-      },
-      {
-        "ticker": "GLD",
-        "nom": "",
-        "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 20.0,
-        "valor": 1964
-      },
-      {
-        "ticker": "QQQ",
-        "nom": "",
-        "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 19.6,
-        "valor": 1928
+        "valor": 1736
       }
     ],
     "mistral": [
       {
         "ticker": "SPY",
-        "nom": "",
+        "nom": "S&P 500 (SPDR)",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 30.6,
-        "valor": 2971
+        "sector": "Índexs principals",
+        "pais": "Global",
+        "pes": 18.9,
+        "valor": 1613
       },
       {
-        "ticker": "VGK",
-        "nom": "",
+        "ticker": "XLP",
+        "nom": "Consum bàsic EUA",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 12.2,
-        "valor": 1185
+        "sector": "Defensius",
+        "pais": "Global",
+        "pes": 11.7,
+        "valor": 998
       },
       {
         "ticker": "IEF",
-        "nom": "",
+        "nom": "Bons EUA 7-10 anys",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 9.5,
-        "valor": 927
+        "sector": "Renda fixa",
+        "pais": "Global",
+        "pes": 9.6,
+        "valor": 818
       },
       {
         "ticker": "VHT",
-        "nom": "",
+        "nom": "Sanitat (Vanguard)",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 9.2,
-        "valor": 898
+        "sector": "Salut",
+        "pais": "Global",
+        "pes": 9.4,
+        "valor": 801
       },
       {
-        "ticker": "EWJ",
-        "nom": "",
+        "ticker": "VGK",
+        "nom": "Europa (Vanguard)",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 7.3,
-        "valor": 710
+        "sector": "Mercats internacionals",
+        "pais": "Global",
+        "pes": 6.5,
+        "valor": 553
+      },
+      {
+        "ticker": "NESN.SW",
+        "nom": "Nestlé",
+        "tipus": "accio",
+        "sector": "Consum",
+        "pais": "Suïssa",
+        "pes": 5.8,
+        "valor": 499
       },
       {
         "ticker": "XLE",
-        "nom": "",
+        "nom": "Energia EUA",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 5.1,
-        "valor": 497
+        "sector": "Energia",
+        "pais": "Global",
+        "pes": 5.0,
+        "valor": 431
       },
       {
         "ticker": "TLT",
-        "nom": "",
+        "nom": "Bons EUA 20+ anys",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 4.5,
-        "valor": 441
+        "sector": "Renda fixa",
+        "pais": "Global",
+        "pes": 4.6,
+        "valor": 390
       },
       {
         "ticker": "USMV",
-        "nom": "",
+        "nom": "Mínima volatilitat EUA",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 4.3,
-        "valor": 418
+        "sector": "Defensius",
+        "pais": "Global",
+        "pes": 4.4,
+        "valor": 373
       },
       {
         "ticker": "GLD",
-        "nom": "",
+        "nom": "Or físic (SPDR)",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
+        "sector": "Metalls preciosos",
+        "pais": "Global",
         "pes": 3.8,
-        "valor": 366
+        "valor": 325
       },
       {
-        "ticker": "SMH",
-        "nom": "",
+        "ticker": "EWJ",
+        "nom": "Japó",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 3.7,
-        "valor": 356
+        "sector": "Mercats internacionals",
+        "pais": "Global",
+        "pes": 3.8,
+        "valor": 324
       },
       {
         "ticker": "VIG",
-        "nom": "",
+        "nom": "Dividends creixents (Vanguard)",
         "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
+        "sector": "Dividends",
+        "pais": "Global",
         "pes": 3.5,
-        "valor": 339
-      },
-      {
-        "ticker": "DBC",
-        "nom": "",
-        "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 3.1,
         "valor": 301
       },
       {
-        "ticker": "XLV",
-        "nom": "",
-        "tipus": "etf",
-        "sector": "—",
-        "pais": "—",
-        "pes": 3.1,
+        "ticker": "PG",
+        "nom": "Procter & Gamble",
+        "tipus": "accio",
+        "sector": "Consum",
+        "pais": "EUA",
+        "pes": 3.5,
         "valor": 299
+      },
+      {
+        "ticker": "SMH",
+        "nom": "Semiconductors (VanEck)",
+        "tipus": "etf",
+        "sector": "IA i semiconductors",
+        "pais": "Global",
+        "pes": 3.4,
+        "valor": 294
+      },
+      {
+        "ticker": "XLV",
+        "nom": "Salut EUA",
+        "tipus": "etf",
+        "sector": "Salut",
+        "pais": "Global",
+        "pes": 3.1,
+        "valor": 267
+      },
+      {
+        "ticker": "BIL",
+        "nom": "Lletres del Tresor (1-3 mesos)",
+        "tipus": "etf",
+        "sector": "Renda fixa",
+        "pais": "Global",
+        "pes": 3.0,
+        "valor": 254
       }
     ]
   },
   "canvis": [
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "model": "gpt",
+      "ticker": "TLT",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "1) Rebaixem part de la durada llarga passant de TLT cap a TIP per defensar-nos d’un escenari on les expectatives d’inflació repunten (oli ferm, titular 9) mentre els tipus es mantenen elevats; TIP tendeix a comportar-se millor que TLT si pugen els ‘breakevens’. 2) Afegim una petita palanca d’energia (XLE) finançada amb una lleugera reducció d’SPY: si el petroli continua tensant-se, el sector pot actuar com a cobertura pro-inflació i diversificador respecte a tecnologia. 3) Mantenim QQQ/SMH sense augmentar risc després del xoc: la tesi d’IA es manté, però preferim esperar estabilització abans de comprar la caiguda. 4) Moviments mesurats i només dues operacions per minimitzar costos (0,1%/operació) i preservar coherència amb el perfil moderat. Si el mercat es normalitza, la part tech recuperarà; si la inflació persisteix, TIP/XLE ajudaran; i encara conservem una posició rellevant en GLD com a assegurança de cua.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "model": "gpt",
+      "ticker": "TIP",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "1) Rebaixem part de la durada llarga passant de TLT cap a TIP per defensar-nos d’un escenari on les expectatives d’inflació repunten (oli ferm, titular 9) mentre els tipus es mantenen elevats; TIP tendeix a comportar-se millor que TLT si pugen els ‘breakevens’. 2) Afegim una petita palanca d’energia (XLE) finançada amb una lleugera reducció d’SPY: si el petroli continua tensant-se, el sector pot actuar com a cobertura pro-inflació i diversificador respecte a tecnologia. 3) Mantenim QQQ/SMH sense augmentar risc després del xoc: la tesi d’IA es manté, però preferim esperar estabilització abans de comprar la caiguda. 4) Moviments mesurats i només dues operacions per minimitzar costos (0,1%/operació) i preservar coherència amb el perfil moderat. Si el mercat es normalitza, la part tech recuperarà; si la inflació persisteix, TIP/XLE ajudaran; i encara conservem una posició rellevant en GLD com a assegurança de cua.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "model": "gpt",
+      "ticker": "SPY",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 199.8,
+      "motiu": "1) Rebaixem part de la durada llarga passant de TLT cap a TIP per defensar-nos d’un escenari on les expectatives d’inflació repunten (oli ferm, titular 9) mentre els tipus es mantenen elevats; TIP tendeix a comportar-se millor que TLT si pugen els ‘breakevens’. 2) Afegim una petita palanca d’energia (XLE) finançada amb una lleugera reducció d’SPY: si el petroli continua tensant-se, el sector pot actuar com a cobertura pro-inflació i diversificador respecte a tecnologia. 3) Mantenim QQQ/SMH sense augmentar risc després del xoc: la tesi d’IA es manté, però preferim esperar estabilització abans de comprar la caiguda. 4) Moviments mesurats i només dues operacions per minimitzar costos (0,1%/operació) i preservar coherència amb el perfil moderat. Si el mercat es normalitza, la part tech recuperarà; si la inflació persisteix, TIP/XLE ajudaran; i encara conservem una posició rellevant en GLD com a assegurança de cua.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "model": "gpt",
+      "ticker": "XLE",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 199.8,
+      "motiu": "1) Rebaixem part de la durada llarga passant de TLT cap a TIP per defensar-nos d’un escenari on les expectatives d’inflació repunten (oli ferm, titular 9) mentre els tipus es mantenen elevats; TIP tendeix a comportar-se millor que TLT si pugen els ‘breakevens’. 2) Afegim una petita palanca d’energia (XLE) finançada amb una lleugera reducció d’SPY: si el petroli continua tensant-se, el sector pot actuar com a cobertura pro-inflació i diversificador respecte a tecnologia. 3) Mantenim QQQ/SMH sense augmentar risc després del xoc: la tesi d’IA es manté, però preferim esperar estabilització abans de comprar la caiguda. 4) Moviments mesurats i només dues operacions per minimitzar costos (0,1%/operació) i preservar coherència amb el perfil moderat. Si el mercat es normalitza, la part tech recuperarà; si la inflació persisteix, TIP/XLE ajudaran; i encara conservem una posició rellevant en GLD com a assegurança de cua.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "model": "gemini",
+      "ticker": "QQQ",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 625.06,
+      "motiu": "La decisió de reajustar la cartera es fonamenta en la necessitat de respondre a la forta caiguda setmanal i als senyals de mercat. En primer lloc, venc la totalitat de la nostra posició en QQQ, el fons cotitzat que representa el Nasdaq 100 i té una alta exposició a empreses tecnològiques de creixement. La 'caiguda generalitzada de les accions d'IA' que encapçala els titulars de la setmana indica que aquest sector està sota pressió, i malgrat que alguns analistes creuen que 'DeepSeek no enfonsarà els gegants d'IA dels EUA' (notícia 3), la volatilitat és massa elevada per a la nostra exposició actual. Aquesta venda es complementa amb les reduccions anteriors de QQQ per disminuir el risc. En segon lloc, redueixo la meva posició en TLT (bons del Tresor dels EUA a llarg termini) en 300 €. Amb els rendiments dels bons dels EUA a 10 anys en 4.647% i la notícia que 'Singapur endureix la política monetària mentre l'augment dels preus del petroli reaviva el risc d'inflació' (notícia 9), els bons de llarga durada continuen sent vulnerables a futures pujades de tipus o a la persistència de la inflació. Finalment, els 500 € obtinguts de les vendes s'invertiran en USMV, un ETF de mínima volatilitat. Aquesta acció reforça el component defensiu de la cartera, buscant actius que tendeixin a fluctuar menys que el mercat en general, oferint una major resiliència en un entorn d'incertesa i alta volatilitat del VIX (19.47). La resta del capital alliberat (425.06 €) es manté en efectiu per aprofitar futures oportunitats o com a coixí davant de noves caigudes, una estratègia prudent en un context de 'volatilitat'.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "model": "gemini",
+      "ticker": "TLT",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 300.0,
+      "motiu": "La decisió de reajustar la cartera es fonamenta en la necessitat de respondre a la forta caiguda setmanal i als senyals de mercat. En primer lloc, venc la totalitat de la nostra posició en QQQ, el fons cotitzat que representa el Nasdaq 100 i té una alta exposició a empreses tecnològiques de creixement. La 'caiguda generalitzada de les accions d'IA' que encapçala els titulars de la setmana indica que aquest sector està sota pressió, i malgrat que alguns analistes creuen que 'DeepSeek no enfonsarà els gegants d'IA dels EUA' (notícia 3), la volatilitat és massa elevada per a la nostra exposició actual. Aquesta venda es complementa amb les reduccions anteriors de QQQ per disminuir el risc. En segon lloc, redueixo la meva posició en TLT (bons del Tresor dels EUA a llarg termini) en 300 €. Amb els rendiments dels bons dels EUA a 10 anys en 4.647% i la notícia que 'Singapur endureix la política monetària mentre l'augment dels preus del petroli reaviva el risc d'inflació' (notícia 9), els bons de llarga durada continuen sent vulnerables a futures pujades de tipus o a la persistència de la inflació. Finalment, els 500 € obtinguts de les vendes s'invertiran en USMV, un ETF de mínima volatilitat. Aquesta acció reforça el component defensiu de la cartera, buscant actius que tendeixin a fluctuar menys que el mercat en general, oferint una major resiliència en un entorn d'incertesa i alta volatilitat del VIX (19.47). La resta del capital alliberat (425.06 €) es manté en efectiu per aprofitar futures oportunitats o com a coixí davant de noves caigudes, una estratègia prudent en un context de 'volatilitat'.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "model": "gemini",
+      "ticker": "USMV",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 500.0,
+      "motiu": "La decisió de reajustar la cartera es fonamenta en la necessitat de respondre a la forta caiguda setmanal i als senyals de mercat. En primer lloc, venc la totalitat de la nostra posició en QQQ, el fons cotitzat que representa el Nasdaq 100 i té una alta exposició a empreses tecnològiques de creixement. La 'caiguda generalitzada de les accions d'IA' que encapçala els titulars de la setmana indica que aquest sector està sota pressió, i malgrat que alguns analistes creuen que 'DeepSeek no enfonsarà els gegants d'IA dels EUA' (notícia 3), la volatilitat és massa elevada per a la nostra exposició actual. Aquesta venda es complementa amb les reduccions anteriors de QQQ per disminuir el risc. En segon lloc, redueixo la meva posició en TLT (bons del Tresor dels EUA a llarg termini) en 300 €. Amb els rendiments dels bons dels EUA a 10 anys en 4.647% i la notícia que 'Singapur endureix la política monetària mentre l'augment dels preus del petroli reaviva el risc d'inflació' (notícia 9), els bons de llarga durada continuen sent vulnerables a futures pujades de tipus o a la persistència de la inflació. Finalment, els 500 € obtinguts de les vendes s'invertiran en USMV, un ETF de mínima volatilitat. Aquesta acció reforça el component defensiu de la cartera, buscant actius que tendeixin a fluctuar menys que el mercat en general, oferint una major resiliència en un entorn d'incertesa i alta volatilitat del VIX (19.47). La resta del capital alliberat (425.06 €) es manté en efectiu per aprofitar futures oportunitats o com a coixí davant de noves caigudes, una estratègia prudent en un context de 'volatilitat'.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "model": "deepseek",
+      "ticker": "QQQ",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 1666.86,
+      "motiu": "Venc QQQ perquè el Nasdaq 100 és el més colpejat per la correcció de DeepSeek i les incerteses sobre la competència xinesa en IA. La recuperació pot trigar setmanes. Reforço GLD (or físic) com a actiu refugi. Amb la compra, GLD passarà a representar ~40% de la cartera (dins el límit permès). Redueixo exposició a renda variable tecnològica, mantenint la diversificació amb SPY i VGK.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "model": "deepseek",
+      "ticker": "GLD",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 1666.86,
+      "motiu": "Venc QQQ perquè el Nasdaq 100 és el més colpejat per la correcció de DeepSeek i les incerteses sobre la competència xinesa en IA. La recuperació pot trigar setmanes. Reforço GLD (or físic) com a actiu refugi. Amb la compra, GLD passarà a representar ~40% de la cartera (dins el límit permès). Redueixo exposició a renda variable tecnològica, mantenint la diversificació amb SPY i VGK.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "model": "mistral",
+      "ticker": "SPY",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 999.0,
+      "motiu": "1. **Reducció d'exposició a SPY i VGK**: Tot i que SPY és un actiu sòlid, la seva sobreponderació (30.6%) i la correcció actual del S&P 500 aconsellen reduir risc. VGK (Europa) també ha patit per les tensions comercials i la debilitat del sector tecnològic europeu. Es redueix SPY en 1000 € i VGK en 500 € per alliberar capital per a actius més defensius.  2. **Reforç de consum bàsic (XLP i PG)**: XLP (ETF de consum bàsic EUA) és un sector defensiu clàssic, menys sensible a cicles econòmics i amb empreses amb preus estables (com Procter & Gamble, que es compra directament). PG és una empresa líder en béns de consum essencials, amb una marca global i dividends creixents, ideal per a un context de volatilitat.  3. **Reducció de Japó (EWJ) i compra de Nestlé (NESN.SW)**: EWJ ha patit per la debilitat del ien i la caiguda dels mercats asiàtics. Nestlé és una alternativa defensiva, amb exposició global, preus estables i dividends sòlids. És una aposta per la resiliència en mercats volàtils.  4. **Líquiditat amb BIL**: Es ven DBC (matèries primeres) per la seva volatilitat i es mou el capital a BIL (lletres del Tresor EUA a 1-3 mesos). Aquesta posició (254.98 €) actua com a coixí de liquiditat per aprofitar oportunitats en les pròximes setmanes, especialment si la correcció continua i apareixen actius infravalorats.  5. **Manteniment de salut i dividends**: VHT, XLV i VIG es mantenen per la seva resiliència històrica i rendibilitat a llarg termini. No es venen perquè, tot i la caiguda, els seus fonamentals segueixen sent sòlids.  El nivell de risc es manté moderat, però amb un biaix més defensiu per protegir la cartera davant la incertesa actual. La confiança en aquesta decisió és alta (8/10) per la solidesa dels actius defensius seleccionats.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "model": "mistral",
+      "ticker": "XLP",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 999.0,
+      "motiu": "1. **Reducció d'exposició a SPY i VGK**: Tot i que SPY és un actiu sòlid, la seva sobreponderació (30.6%) i la correcció actual del S&P 500 aconsellen reduir risc. VGK (Europa) també ha patit per les tensions comercials i la debilitat del sector tecnològic europeu. Es redueix SPY en 1000 € i VGK en 500 € per alliberar capital per a actius més defensius.  2. **Reforç de consum bàsic (XLP i PG)**: XLP (ETF de consum bàsic EUA) és un sector defensiu clàssic, menys sensible a cicles econòmics i amb empreses amb preus estables (com Procter & Gamble, que es compra directament). PG és una empresa líder en béns de consum essencials, amb una marca global i dividends creixents, ideal per a un context de volatilitat.  3. **Reducció de Japó (EWJ) i compra de Nestlé (NESN.SW)**: EWJ ha patit per la debilitat del ien i la caiguda dels mercats asiàtics. Nestlé és una alternativa defensiva, amb exposició global, preus estables i dividends sòlids. És una aposta per la resiliència en mercats volàtils.  4. **Líquiditat amb BIL**: Es ven DBC (matèries primeres) per la seva volatilitat i es mou el capital a BIL (lletres del Tresor EUA a 1-3 mesos). Aquesta posició (254.98 €) actua com a coixí de liquiditat per aprofitar oportunitats en les pròximes setmanes, especialment si la correcció continua i apareixen actius infravalorats.  5. **Manteniment de salut i dividends**: VHT, XLV i VIG es mantenen per la seva resiliència històrica i rendibilitat a llarg termini. No es venen perquè, tot i la caiguda, els seus fonamentals segueixen sent sòlids.  El nivell de risc es manté moderat, però amb un biaix més defensiu per protegir la cartera davant la incertesa actual. La confiança en aquesta decisió és alta (8/10) per la solidesa dels actius defensius seleccionats.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "model": "mistral",
+      "ticker": "VGK",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "1. **Reducció d'exposició a SPY i VGK**: Tot i que SPY és un actiu sòlid, la seva sobreponderació (30.6%) i la correcció actual del S&P 500 aconsellen reduir risc. VGK (Europa) també ha patit per les tensions comercials i la debilitat del sector tecnològic europeu. Es redueix SPY en 1000 € i VGK en 500 € per alliberar capital per a actius més defensius.  2. **Reforç de consum bàsic (XLP i PG)**: XLP (ETF de consum bàsic EUA) és un sector defensiu clàssic, menys sensible a cicles econòmics i amb empreses amb preus estables (com Procter & Gamble, que es compra directament). PG és una empresa líder en béns de consum essencials, amb una marca global i dividends creixents, ideal per a un context de volatilitat.  3. **Reducció de Japó (EWJ) i compra de Nestlé (NESN.SW)**: EWJ ha patit per la debilitat del ien i la caiguda dels mercats asiàtics. Nestlé és una alternativa defensiva, amb exposició global, preus estables i dividends sòlids. És una aposta per la resiliència en mercats volàtils.  4. **Líquiditat amb BIL**: Es ven DBC (matèries primeres) per la seva volatilitat i es mou el capital a BIL (lletres del Tresor EUA a 1-3 mesos). Aquesta posició (254.98 €) actua com a coixí de liquiditat per aprofitar oportunitats en les pròximes setmanes, especialment si la correcció continua i apareixen actius infravalorats.  5. **Manteniment de salut i dividends**: VHT, XLV i VIG es mantenen per la seva resiliència històrica i rendibilitat a llarg termini. No es venen perquè, tot i la caiguda, els seus fonamentals segueixen sent sòlids.  El nivell de risc es manté moderat, però amb un biaix més defensiu per protegir la cartera davant la incertesa actual. La confiança en aquesta decisió és alta (8/10) per la solidesa dels actius defensius seleccionats.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "model": "mistral",
+      "ticker": "NESN.SW",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "1. **Reducció d'exposició a SPY i VGK**: Tot i que SPY és un actiu sòlid, la seva sobreponderació (30.6%) i la correcció actual del S&P 500 aconsellen reduir risc. VGK (Europa) també ha patit per les tensions comercials i la debilitat del sector tecnològic europeu. Es redueix SPY en 1000 € i VGK en 500 € per alliberar capital per a actius més defensius.  2. **Reforç de consum bàsic (XLP i PG)**: XLP (ETF de consum bàsic EUA) és un sector defensiu clàssic, menys sensible a cicles econòmics i amb empreses amb preus estables (com Procter & Gamble, que es compra directament). PG és una empresa líder en béns de consum essencials, amb una marca global i dividends creixents, ideal per a un context de volatilitat.  3. **Reducció de Japó (EWJ) i compra de Nestlé (NESN.SW)**: EWJ ha patit per la debilitat del ien i la caiguda dels mercats asiàtics. Nestlé és una alternativa defensiva, amb exposició global, preus estables i dividends sòlids. És una aposta per la resiliència en mercats volàtils.  4. **Líquiditat amb BIL**: Es ven DBC (matèries primeres) per la seva volatilitat i es mou el capital a BIL (lletres del Tresor EUA a 1-3 mesos). Aquesta posició (254.98 €) actua com a coixí de liquiditat per aprofitar oportunitats en les pròximes setmanes, especialment si la correcció continua i apareixen actius infravalorats.  5. **Manteniment de salut i dividends**: VHT, XLV i VIG es mantenen per la seva resiliència històrica i rendibilitat a llarg termini. No es venen perquè, tot i la caiguda, els seus fonamentals segueixen sent sòlids.  El nivell de risc es manté moderat, però amb un biaix més defensiu per protegir la cartera davant la incertesa actual. La confiança en aquesta decisió és alta (8/10) per la solidesa dels actius defensius seleccionats.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "model": "mistral",
+      "ticker": "EWJ",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 299.7,
+      "motiu": "1. **Reducció d'exposició a SPY i VGK**: Tot i que SPY és un actiu sòlid, la seva sobreponderació (30.6%) i la correcció actual del S&P 500 aconsellen reduir risc. VGK (Europa) també ha patit per les tensions comercials i la debilitat del sector tecnològic europeu. Es redueix SPY en 1000 € i VGK en 500 € per alliberar capital per a actius més defensius.  2. **Reforç de consum bàsic (XLP i PG)**: XLP (ETF de consum bàsic EUA) és un sector defensiu clàssic, menys sensible a cicles econòmics i amb empreses amb preus estables (com Procter & Gamble, que es compra directament). PG és una empresa líder en béns de consum essencials, amb una marca global i dividends creixents, ideal per a un context de volatilitat.  3. **Reducció de Japó (EWJ) i compra de Nestlé (NESN.SW)**: EWJ ha patit per la debilitat del ien i la caiguda dels mercats asiàtics. Nestlé és una alternativa defensiva, amb exposició global, preus estables i dividends sòlids. És una aposta per la resiliència en mercats volàtils.  4. **Líquiditat amb BIL**: Es ven DBC (matèries primeres) per la seva volatilitat i es mou el capital a BIL (lletres del Tresor EUA a 1-3 mesos). Aquesta posició (254.98 €) actua com a coixí de liquiditat per aprofitar oportunitats en les pròximes setmanes, especialment si la correcció continua i apareixen actius infravalorats.  5. **Manteniment de salut i dividends**: VHT, XLV i VIG es mantenen per la seva resiliència històrica i rendibilitat a llarg termini. No es venen perquè, tot i la caiguda, els seus fonamentals segueixen sent sòlids.  El nivell de risc es manté moderat, però amb un biaix més defensiu per protegir la cartera davant la incertesa actual. La confiança en aquesta decisió és alta (8/10) per la solidesa dels actius defensius seleccionats.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "model": "mistral",
+      "ticker": "PG",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 299.7,
+      "motiu": "1. **Reducció d'exposició a SPY i VGK**: Tot i que SPY és un actiu sòlid, la seva sobreponderació (30.6%) i la correcció actual del S&P 500 aconsellen reduir risc. VGK (Europa) també ha patit per les tensions comercials i la debilitat del sector tecnològic europeu. Es redueix SPY en 1000 € i VGK en 500 € per alliberar capital per a actius més defensius.  2. **Reforç de consum bàsic (XLP i PG)**: XLP (ETF de consum bàsic EUA) és un sector defensiu clàssic, menys sensible a cicles econòmics i amb empreses amb preus estables (com Procter & Gamble, que es compra directament). PG és una empresa líder en béns de consum essencials, amb una marca global i dividends creixents, ideal per a un context de volatilitat.  3. **Reducció de Japó (EWJ) i compra de Nestlé (NESN.SW)**: EWJ ha patit per la debilitat del ien i la caiguda dels mercats asiàtics. Nestlé és una alternativa defensiva, amb exposició global, preus estables i dividends sòlids. És una aposta per la resiliència en mercats volàtils.  4. **Líquiditat amb BIL**: Es ven DBC (matèries primeres) per la seva volatilitat i es mou el capital a BIL (lletres del Tresor EUA a 1-3 mesos). Aquesta posició (254.98 €) actua com a coixí de liquiditat per aprofitar oportunitats en les pròximes setmanes, especialment si la correcció continua i apareixen actius infravalorats.  5. **Manteniment de salut i dividends**: VHT, XLV i VIG es mantenen per la seva resiliència històrica i rendibilitat a llarg termini. No es venen perquè, tot i la caiguda, els seus fonamentals segueixen sent sòlids.  El nivell de risc es manté moderat, però amb un biaix més defensiu per protegir la cartera davant la incertesa actual. La confiança en aquesta decisió és alta (8/10) per la solidesa dels actius defensius seleccionats.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "model": "mistral",
+      "ticker": "DBC",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 254.73,
+      "motiu": "1. **Reducció d'exposició a SPY i VGK**: Tot i que SPY és un actiu sòlid, la seva sobreponderació (30.6%) i la correcció actual del S&P 500 aconsellen reduir risc. VGK (Europa) també ha patit per les tensions comercials i la debilitat del sector tecnològic europeu. Es redueix SPY en 1000 € i VGK en 500 € per alliberar capital per a actius més defensius.  2. **Reforç de consum bàsic (XLP i PG)**: XLP (ETF de consum bàsic EUA) és un sector defensiu clàssic, menys sensible a cicles econòmics i amb empreses amb preus estables (com Procter & Gamble, que es compra directament). PG és una empresa líder en béns de consum essencials, amb una marca global i dividends creixents, ideal per a un context de volatilitat.  3. **Reducció de Japó (EWJ) i compra de Nestlé (NESN.SW)**: EWJ ha patit per la debilitat del ien i la caiguda dels mercats asiàtics. Nestlé és una alternativa defensiva, amb exposició global, preus estables i dividends sòlids. És una aposta per la resiliència en mercats volàtils.  4. **Líquiditat amb BIL**: Es ven DBC (matèries primeres) per la seva volatilitat i es mou el capital a BIL (lletres del Tresor EUA a 1-3 mesos). Aquesta posició (254.98 €) actua com a coixí de liquiditat per aprofitar oportunitats en les pròximes setmanes, especialment si la correcció continua i apareixen actius infravalorats.  5. **Manteniment de salut i dividends**: VHT, XLV i VIG es mantenen per la seva resiliència històrica i rendibilitat a llarg termini. No es venen perquè, tot i la caiguda, els seus fonamentals segueixen sent sòlids.  El nivell de risc es manté moderat, però amb un biaix més defensiu per protegir la cartera davant la incertesa actual. La confiança en aquesta decisió és alta (8/10) per la solidesa dels actius defensius seleccionats.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "model": "mistral",
+      "ticker": "BIL",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 254.73,
+      "motiu": "1. **Reducció d'exposició a SPY i VGK**: Tot i que SPY és un actiu sòlid, la seva sobreponderació (30.6%) i la correcció actual del S&P 500 aconsellen reduir risc. VGK (Europa) també ha patit per les tensions comercials i la debilitat del sector tecnològic europeu. Es redueix SPY en 1000 € i VGK en 500 € per alliberar capital per a actius més defensius.  2. **Reforç de consum bàsic (XLP i PG)**: XLP (ETF de consum bàsic EUA) és un sector defensiu clàssic, menys sensible a cicles econòmics i amb empreses amb preus estables (com Procter & Gamble, que es compra directament). PG és una empresa líder en béns de consum essencials, amb una marca global i dividends creixents, ideal per a un context de volatilitat.  3. **Reducció de Japó (EWJ) i compra de Nestlé (NESN.SW)**: EWJ ha patit per la debilitat del ien i la caiguda dels mercats asiàtics. Nestlé és una alternativa defensiva, amb exposició global, preus estables i dividends sòlids. És una aposta per la resiliència en mercats volàtils.  4. **Líquiditat amb BIL**: Es ven DBC (matèries primeres) per la seva volatilitat i es mou el capital a BIL (lletres del Tresor EUA a 1-3 mesos). Aquesta posició (254.98 €) actua com a coixí de liquiditat per aprofitar oportunitats en les pròximes setmanes, especialment si la correcció continua i apareixen actius infravalorats.  5. **Manteniment de salut i dividends**: VHT, XLV i VIG es mantenen per la seva resiliència històrica i rendibilitat a llarg termini. No es venen perquè, tot i la caiguda, els seus fonamentals segueixen sent sòlids.  El nivell de risc es manté moderat, però amb un biaix més defensiu per protegir la cartera davant la incertesa actual. La confiança en aquesta decisió és alta (8/10) per la solidesa dels actius defensius seleccionats.",
+      "impacte": 0.0
+    },
     {
       "setmana": 7,
       "data": "2026-07-27",
@@ -1831,7 +2346,7 @@
       "pesDespres": null,
       "import": 899.1,
       "motiu": "1. **Reducció de IEF a VHT**: Els bons de mitjà termini (IEF) ofereixen rendibilitats atractives (4.7%), però en un context d'inflació persistent i possibles pujades de tipus addicionals (titular 9), la renda variable defensiva com la salut (VHT) pot oferir millor protecció i creixement. VHT té un dividend estable i menys sensibilitat a cicles econòmics. 2. **Canvi de USMV/XLV a XLV**: USMV i SPLV són actius de baixa volatilitat, però en un mercat on els sectors defensius com la salut (XLV) estan infraponderats a la cartera, és preferible buscar creixement amb un perfil de risc moderat. 3. **Substitució de SPLV per VIG**: VIG (dividends creixents) ofereix una combinació de rendibilitat i creixement, més alineada amb un escenari de tipus alts però estables. Aquesta operació redueix la sobreexposició a actius purament defensius sense augmentar significativament la volatilitat.",
-      "impacte": 0.0
+      "impacte": -12.02
     },
     {
       "setmana": 7,
@@ -1843,7 +2358,7 @@
       "pesDespres": null,
       "import": 899.1,
       "motiu": "1. **Reducció de IEF a VHT**: Els bons de mitjà termini (IEF) ofereixen rendibilitats atractives (4.7%), però en un context d'inflació persistent i possibles pujades de tipus addicionals (titular 9), la renda variable defensiva com la salut (VHT) pot oferir millor protecció i creixement. VHT té un dividend estable i menys sensibilitat a cicles econòmics. 2. **Canvi de USMV/XLV a XLV**: USMV i SPLV són actius de baixa volatilitat, però en un mercat on els sectors defensius com la salut (XLV) estan infraponderats a la cartera, és preferible buscar creixement amb un perfil de risc moderat. 3. **Substitució de SPLV per VIG**: VIG (dividends creixents) ofereix una combinació de rendibilitat i creixement, més alineada amb un escenari de tipus alts però estables. Aquesta operació redueix la sobreexposició a actius purament defensius sense augmentar significativament la volatilitat.",
-      "impacte": 0.0
+      "impacte": -12.02
     },
     {
       "setmana": 7,
@@ -1855,7 +2370,7 @@
       "pesDespres": null,
       "import": 299.7,
       "motiu": "1. **Reducció de IEF a VHT**: Els bons de mitjà termini (IEF) ofereixen rendibilitats atractives (4.7%), però en un context d'inflació persistent i possibles pujades de tipus addicionals (titular 9), la renda variable defensiva com la salut (VHT) pot oferir millor protecció i creixement. VHT té un dividend estable i menys sensibilitat a cicles econòmics. 2. **Canvi de USMV/XLV a XLV**: USMV i SPLV són actius de baixa volatilitat, però en un mercat on els sectors defensius com la salut (XLV) estan infraponderats a la cartera, és preferible buscar creixement amb un perfil de risc moderat. 3. **Substitució de SPLV per VIG**: VIG (dividends creixents) ofereix una combinació de rendibilitat i creixement, més alineada amb un escenari de tipus alts però estables. Aquesta operació redueix la sobreexposició a actius purament defensius sense augmentar significativament la volatilitat.",
-      "impacte": 0.0
+      "impacte": -12.02
     },
     {
       "setmana": 7,
@@ -1867,7 +2382,7 @@
       "pesDespres": null,
       "import": 299.7,
       "motiu": "1. **Reducció de IEF a VHT**: Els bons de mitjà termini (IEF) ofereixen rendibilitats atractives (4.7%), però en un context d'inflació persistent i possibles pujades de tipus addicionals (titular 9), la renda variable defensiva com la salut (VHT) pot oferir millor protecció i creixement. VHT té un dividend estable i menys sensibilitat a cicles econòmics. 2. **Canvi de USMV/XLV a XLV**: USMV i SPLV són actius de baixa volatilitat, però en un mercat on els sectors defensius com la salut (XLV) estan infraponderats a la cartera, és preferible buscar creixement amb un perfil de risc moderat. 3. **Substitució de SPLV per VIG**: VIG (dividends creixents) ofereix una combinació de rendibilitat i creixement, més alineada amb un escenari de tipus alts però estables. Aquesta operació redueix la sobreexposició a actius purament defensius sense augmentar significativament la volatilitat.",
-      "impacte": 0.0
+      "impacte": -12.02
     },
     {
       "setmana": 7,
@@ -1879,7 +2394,7 @@
       "pesDespres": null,
       "import": 339.23,
       "motiu": "1. **Reducció de IEF a VHT**: Els bons de mitjà termini (IEF) ofereixen rendibilitats atractives (4.7%), però en un context d'inflació persistent i possibles pujades de tipus addicionals (titular 9), la renda variable defensiva com la salut (VHT) pot oferir millor protecció i creixement. VHT té un dividend estable i menys sensibilitat a cicles econòmics. 2. **Canvi de USMV/XLV a XLV**: USMV i SPLV són actius de baixa volatilitat, però en un mercat on els sectors defensius com la salut (XLV) estan infraponderats a la cartera, és preferible buscar creixement amb un perfil de risc moderat. 3. **Substitució de SPLV per VIG**: VIG (dividends creixents) ofereix una combinació de rendibilitat i creixement, més alineada amb un escenari de tipus alts però estables. Aquesta operació redueix la sobreexposició a actius purament defensius sense augmentar significativament la volatilitat.",
-      "impacte": 0.0
+      "impacte": -12.02
     },
     {
       "setmana": 7,
@@ -1891,7 +2406,7 @@
       "pesDespres": null,
       "import": 339.23,
       "motiu": "1. **Reducció de IEF a VHT**: Els bons de mitjà termini (IEF) ofereixen rendibilitats atractives (4.7%), però en un context d'inflació persistent i possibles pujades de tipus addicionals (titular 9), la renda variable defensiva com la salut (VHT) pot oferir millor protecció i creixement. VHT té un dividend estable i menys sensibilitat a cicles econòmics. 2. **Canvi de USMV/XLV a XLV**: USMV i SPLV són actius de baixa volatilitat, però en un mercat on els sectors defensius com la salut (XLV) estan infraponderats a la cartera, és preferible buscar creixement amb un perfil de risc moderat. 3. **Substitució de SPLV per VIG**: VIG (dividends creixents) ofereix una combinació de rendibilitat i creixement, més alineada amb un escenari de tipus alts però estables. Aquesta operació redueix la sobreexposició a actius purament defensius sense augmentar significativament la volatilitat.",
-      "impacte": 0.0
+      "impacte": -12.02
     },
     {
       "setmana": 6,
@@ -1903,7 +2418,7 @@
       "pesDespres": null,
       "import": 699.3,
       "motiu": "La justificació d'aquest reajustament es basa en la necessitat de reforçar la resiliència de la cartera davant l'actual context de mercat volàtil i els titulars negatius. La 'Broad AI Rout' assenyala una vulnerabilitat continuada en el sector tecnològic, per la qual cosa redueixo l'exposició a QQQ, aprofundint en la decisió de la setmana anterior. Al mateix temps, la decebedora performance de l'or com a refugi segur m'impulsa a buscar alternatives més directament vinculades a la baixa volatilitat. Per això, la venda de QQQ es destinarà a la compra d'USMV (Mínima Volatilitat EUA). Aquest ETF ofereix una exposició a empreses amb menor volatilitat històrica, proporcionant una capa addicional de defensa contra les turbulències del mercat i alineant-se amb un perfil de risc moderat que busca rendibilitat raonable sense exposicions excessives a la incertesa actual (VIX a 18.58 i tensions comercials). Mantenir la resta d'actius (SPY, VTI, VGK, GLD, TLT) permet preservar la diversificació global i de classes d'actius, tot esperant una possible recuperació o un millor rendiment dels refugis tradicionals.",
-      "impacte": -0.17
+      "impacte": -11.85
     },
     {
       "setmana": 6,
@@ -1915,7 +2430,7 @@
       "pesDespres": null,
       "import": 699.3,
       "motiu": "La justificació d'aquest reajustament es basa en la necessitat de reforçar la resiliència de la cartera davant l'actual context de mercat volàtil i els titulars negatius. La 'Broad AI Rout' assenyala una vulnerabilitat continuada en el sector tecnològic, per la qual cosa redueixo l'exposició a QQQ, aprofundint en la decisió de la setmana anterior. Al mateix temps, la decebedora performance de l'or com a refugi segur m'impulsa a buscar alternatives més directament vinculades a la baixa volatilitat. Per això, la venda de QQQ es destinarà a la compra d'USMV (Mínima Volatilitat EUA). Aquest ETF ofereix una exposició a empreses amb menor volatilitat històrica, proporcionant una capa addicional de defensa contra les turbulències del mercat i alineant-se amb un perfil de risc moderat que busca rendibilitat raonable sense exposicions excessives a la incertesa actual (VIX a 18.58 i tensions comercials). Mantenir la resta d'actius (SPY, VTI, VGK, GLD, TLT) permet preservar la diversificació global i de classes d'actius, tot esperant una possible recuperació o un millor rendiment dels refugis tradicionals.",
-      "impacte": -0.17
+      "impacte": -11.85
     },
     {
       "setmana": 6,
@@ -1927,7 +2442,7 @@
       "pesDespres": null,
       "import": 999.0,
       "motiu": "1. **Reducció d'exposició a Europa (VGK)**: Tot i que Europa ha tingut un bon comportament, les tensions comercials globals (titular 9) i la possible escalada de tarifes podrien afectar negativament els mercats europeus. Reallocaré part d'aquests fons a SPY per augmentar l'exposició als EUA, que podria beneficiar-se d'una política fiscal més expansiva. 2. **Reducció de Japó (EWJ) i entrada a energia (XLE)**: El ien s'ha apreciat (titular 6), cosa que podria afectar les exportacions japoneses. A més, les tensions geopolítiques podrien impulsar els preus de l'energia, per la qual cosa augmentaré l'exposició a XLE (59.62 $). 3. **Reducció de TLT i entrada a matèries primeres (DBC)**: Els bons a llarg termini (TLT) són sensibles als tipus d'interès, i amb el Bo EUA 10 anys en 4.679%, podrien patir més pressió. Diversificaré cap a DBC (30.1 $) per cobrir el risc inflacionari i geopolític. Aquests canvis mantenen un perfil moderat però amb una mica més d'exposició a sectors que podrien beneficiar-se de l'entorn actual.",
-      "impacte": -0.18
+      "impacte": -12.18
     },
     {
       "setmana": 6,
@@ -1939,7 +2454,7 @@
       "pesDespres": null,
       "import": 999.0,
       "motiu": "1. **Reducció d'exposició a Europa (VGK)**: Tot i que Europa ha tingut un bon comportament, les tensions comercials globals (titular 9) i la possible escalada de tarifes podrien afectar negativament els mercats europeus. Reallocaré part d'aquests fons a SPY per augmentar l'exposició als EUA, que podria beneficiar-se d'una política fiscal més expansiva. 2. **Reducció de Japó (EWJ) i entrada a energia (XLE)**: El ien s'ha apreciat (titular 6), cosa que podria afectar les exportacions japoneses. A més, les tensions geopolítiques podrien impulsar els preus de l'energia, per la qual cosa augmentaré l'exposició a XLE (59.62 $). 3. **Reducció de TLT i entrada a matèries primeres (DBC)**: Els bons a llarg termini (TLT) són sensibles als tipus d'interès, i amb el Bo EUA 10 anys en 4.679%, podrien patir més pressió. Diversificaré cap a DBC (30.1 $) per cobrir el risc inflacionari i geopolític. Aquests canvis mantenen un perfil moderat però amb una mica més d'exposició a sectors que podrien beneficiar-se de l'entorn actual.",
-      "impacte": -0.18
+      "impacte": -12.18
     },
     {
       "setmana": 6,
@@ -1951,7 +2466,7 @@
       "pesDespres": null,
       "import": 499.5,
       "motiu": "1. **Reducció d'exposició a Europa (VGK)**: Tot i que Europa ha tingut un bon comportament, les tensions comercials globals (titular 9) i la possible escalada de tarifes podrien afectar negativament els mercats europeus. Reallocaré part d'aquests fons a SPY per augmentar l'exposició als EUA, que podria beneficiar-se d'una política fiscal més expansiva. 2. **Reducció de Japó (EWJ) i entrada a energia (XLE)**: El ien s'ha apreciat (titular 6), cosa que podria afectar les exportacions japoneses. A més, les tensions geopolítiques podrien impulsar els preus de l'energia, per la qual cosa augmentaré l'exposició a XLE (59.62 $). 3. **Reducció de TLT i entrada a matèries primeres (DBC)**: Els bons a llarg termini (TLT) són sensibles als tipus d'interès, i amb el Bo EUA 10 anys en 4.679%, podrien patir més pressió. Diversificaré cap a DBC (30.1 $) per cobrir el risc inflacionari i geopolític. Aquests canvis mantenen un perfil moderat però amb una mica més d'exposició a sectors que podrien beneficiar-se de l'entorn actual.",
-      "impacte": -0.18
+      "impacte": -12.18
     },
     {
       "setmana": 6,
@@ -1963,7 +2478,7 @@
       "pesDespres": null,
       "import": 499.5,
       "motiu": "1. **Reducció d'exposició a Europa (VGK)**: Tot i que Europa ha tingut un bon comportament, les tensions comercials globals (titular 9) i la possible escalada de tarifes podrien afectar negativament els mercats europeus. Reallocaré part d'aquests fons a SPY per augmentar l'exposició als EUA, que podria beneficiar-se d'una política fiscal més expansiva. 2. **Reducció de Japó (EWJ) i entrada a energia (XLE)**: El ien s'ha apreciat (titular 6), cosa que podria afectar les exportacions japoneses. A més, les tensions geopolítiques podrien impulsar els preus de l'energia, per la qual cosa augmentaré l'exposició a XLE (59.62 $). 3. **Reducció de TLT i entrada a matèries primeres (DBC)**: Els bons a llarg termini (TLT) són sensibles als tipus d'interès, i amb el Bo EUA 10 anys en 4.679%, podrien patir més pressió. Diversificaré cap a DBC (30.1 $) per cobrir el risc inflacionari i geopolític. Aquests canvis mantenen un perfil moderat però amb una mica més d'exposició a sectors que podrien beneficiar-se de l'entorn actual.",
-      "impacte": -0.18
+      "impacte": -12.18
     },
     {
       "setmana": 6,
@@ -1975,7 +2490,7 @@
       "pesDespres": null,
       "import": 299.7,
       "motiu": "1. **Reducció d'exposició a Europa (VGK)**: Tot i que Europa ha tingut un bon comportament, les tensions comercials globals (titular 9) i la possible escalada de tarifes podrien afectar negativament els mercats europeus. Reallocaré part d'aquests fons a SPY per augmentar l'exposició als EUA, que podria beneficiar-se d'una política fiscal més expansiva. 2. **Reducció de Japó (EWJ) i entrada a energia (XLE)**: El ien s'ha apreciat (titular 6), cosa que podria afectar les exportacions japoneses. A més, les tensions geopolítiques podrien impulsar els preus de l'energia, per la qual cosa augmentaré l'exposició a XLE (59.62 $). 3. **Reducció de TLT i entrada a matèries primeres (DBC)**: Els bons a llarg termini (TLT) són sensibles als tipus d'interès, i amb el Bo EUA 10 anys en 4.679%, podrien patir més pressió. Diversificaré cap a DBC (30.1 $) per cobrir el risc inflacionari i geopolític. Aquests canvis mantenen un perfil moderat però amb una mica més d'exposició a sectors que podrien beneficiar-se de l'entorn actual.",
-      "impacte": -0.18
+      "impacte": -12.18
     },
     {
       "setmana": 6,
@@ -1987,7 +2502,7 @@
       "pesDespres": null,
       "import": 299.7,
       "motiu": "1. **Reducció d'exposició a Europa (VGK)**: Tot i que Europa ha tingut un bon comportament, les tensions comercials globals (titular 9) i la possible escalada de tarifes podrien afectar negativament els mercats europeus. Reallocaré part d'aquests fons a SPY per augmentar l'exposició als EUA, que podria beneficiar-se d'una política fiscal més expansiva. 2. **Reducció de Japó (EWJ) i entrada a energia (XLE)**: El ien s'ha apreciat (titular 6), cosa que podria afectar les exportacions japoneses. A més, les tensions geopolítiques podrien impulsar els preus de l'energia, per la qual cosa augmentaré l'exposició a XLE (59.62 $). 3. **Reducció de TLT i entrada a matèries primeres (DBC)**: Els bons a llarg termini (TLT) són sensibles als tipus d'interès, i amb el Bo EUA 10 anys en 4.679%, podrien patir més pressió. Diversificaré cap a DBC (30.1 $) per cobrir el risc inflacionari i geopolític. Aquests canvis mantenen un perfil moderat però amb una mica més d'exposició a sectors que podrien beneficiar-se de l'entorn actual.",
-      "impacte": -0.18
+      "impacte": -12.18
     },
     {
       "setmana": 5,
@@ -2432,8 +2947,8 @@
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
         "estat": "connectada",
-        "ultimaExecucio": "Setmana 7 · 2026-07-27",
-        "ultimBriefing": "El titular de DeepSeek porta ja set setmanes sent l'excusa narrativa dominant sense que hagi generat cap deteriorament estructural en els fonamentals: els índex…"
+        "ultimaExecucio": "Setmana 8 · 2026-07-27",
+        "ultimBriefing": ""
       },
       {
         "id": "gpt",
@@ -2442,8 +2957,8 @@
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
         "estat": "connectada",
-        "ultimaExecucio": "Setmana 7 · 2026-07-27",
-        "ultimBriefing": "La tesi central (IA/semis com a catalitzador de beneficis) es manté malgrat el soroll. Els coixins (GLD/TLT) continuen sent útils davant riscos de creixement/in…"
+        "ultimaExecucio": "Setmana 8 · 2026-07-27",
+        "ultimBriefing": "1) Rebaixem part de la durada llarga passant de TLT cap a TIP per defensar-nos d’un escenari on les expectatives d’inflació repunten (oli ferm, titular 9) mentr…"
       },
       {
         "id": "gemini",
@@ -2452,8 +2967,8 @@
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
         "estat": "connectada",
-        "ultimaExecucio": "Setmana 7 · 2026-07-27",
-        "ultimBriefing": "(sense resposta: Error de connexió: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:gene…"
+        "ultimaExecucio": "Setmana 8 · 2026-07-27",
+        "ultimBriefing": "La decisió de reajustar la cartera es fonamenta en la necessitat de respondre a la forta caiguda setmanal i als senyals de mercat. En primer lloc, venc la total…"
       },
       {
         "id": "deepseek",
@@ -2462,8 +2977,8 @@
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
         "estat": "connectada",
-        "ultimaExecucio": "Setmana 7 · 2026-07-27",
-        "ultimBriefing": "Tot i que la correcció de DeepSeek ha afectat el sector tecnològic, considero que la reacció és exagerada i que QQQ es recuperarà a mitjà termini. La cartera es…"
+        "ultimaExecucio": "Setmana 8 · 2026-07-27",
+        "ultimBriefing": "Venc QQQ perquè el Nasdaq 100 és el més colpejat per la correcció de DeepSeek i les incerteses sobre la competència xinesa en IA. La recuperació pot trigar setm…"
       },
       {
         "id": "mistral",
@@ -2472,8 +2987,8 @@
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
         "estat": "connectada",
-        "ultimaExecucio": "Setmana 7 · 2026-07-27",
-        "ultimBriefing": "1. **Reducció de IEF a VHT**: Els bons de mitjà termini (IEF) ofereixen rendibilitats atractives (4.7%), però en un context d'inflació persistent i possibles pu…"
+        "ultimaExecucio": "Setmana 8 · 2026-07-27",
+        "ultimBriefing": "1. **Reducció d'exposició a SPY i VGK**: Tot i que SPY és un actiu sòlid, la seva sobreponderació (30.6%) i la correcció actual del S&P 500 aconsellen reduir ri…"
       }
     ],
     "financeres": [
@@ -2493,47 +3008,53 @@
   },
   "risc": {
     "claude": {
-      "volatilitat": 4.28,
-      "max_caiguda": -2.17,
-      "sharpe": -3.57
+      "volatilitat": 31.82,
+      "max_caiguda": -13.77,
+      "sharpe": -3.19
     },
     "gpt": {
-      "volatilitat": 7.14,
-      "max_caiguda": -3.39,
-      "sharpe": -2.89
+      "volatilitat": 34.16,
+      "max_caiguda": -15.21,
+      "sharpe": -3.28
     },
     "gemini": {
-      "volatilitat": 4.25,
-      "max_caiguda": -2.42,
-      "sharpe": -4.13
+      "volatilitat": 31.21,
+      "max_caiguda": -13.84,
+      "sharpe": -3.27
     },
     "deepseek": {
-      "volatilitat": 4.28,
-      "max_caiguda": -2.17,
-      "sharpe": -3.57
+      "volatilitat": 31.91,
+      "max_caiguda": -13.8,
+      "sharpe": -3.18
     },
     "mistral": {
-      "volatilitat": 6.28,
-      "max_caiguda": -3.21,
-      "sharpe": -4.0
+      "volatilitat": 31.97,
+      "max_caiguda": -14.85,
+      "sharpe": -3.47
     },
     "index": {
-      "volatilitat": 4.88,
-      "max_caiguda": -2.22,
-      "sharpe": -2.28
+      "volatilitat": 32.59,
+      "max_caiguda": -14.01,
+      "sharpe": -3.04
     }
   },
-  "comissions": {},
+  "comissions": {
+    "gpt": 1.4,
+    "claude": 0.0,
+    "gemini": 1.43,
+    "deepseek": 3.34,
+    "mistral": 4.11
+  },
   "consens": [
     {
       "ticker": "SPY",
-      "nom": "",
+      "nom": "S&P 500 (SPDR)",
       "tipus": "etf",
-      "sector": "—",
+      "sector": "Índexs principals",
       "models": [
         {
           "model": "gpt",
-          "pes": 20.2
+          "pes": 18.0
         },
         {
           "model": "claude",
@@ -2549,87 +3070,31 @@
         },
         {
           "model": "mistral",
-          "pes": 30.6
-        }
-      ]
-    },
-    {
-      "ticker": "VGK",
-      "nom": "",
-      "tipus": "etf",
-      "sector": "—",
-      "models": [
-        {
-          "model": "gpt",
-          "pes": 10.2
-        },
-        {
-          "model": "claude",
-          "pes": 20.2
-        },
-        {
-          "model": "gemini",
-          "pes": 20.3
-        },
-        {
-          "model": "deepseek",
-          "pes": 20.2
-        },
-        {
-          "model": "mistral",
-          "pes": 12.2
-        }
-      ]
-    },
-    {
-      "ticker": "TLT",
-      "nom": "",
-      "tipus": "etf",
-      "sector": "—",
-      "models": [
-        {
-          "model": "gpt",
-          "pes": 15.2
-        },
-        {
-          "model": "claude",
-          "pes": 20.1
-        },
-        {
-          "model": "gemini",
-          "pes": 15.1
-        },
-        {
-          "model": "deepseek",
-          "pes": 20.1
-        },
-        {
-          "model": "mistral",
-          "pes": 4.5
+          "pes": 18.9
         }
       ]
     },
     {
       "ticker": "GLD",
-      "nom": "",
+      "nom": "Or físic (SPDR)",
       "tipus": "etf",
-      "sector": "—",
+      "sector": "Metalls preciosos",
       "models": [
         {
           "model": "gpt",
-          "pes": 15.1
+          "pes": 15.3
         },
         {
           "model": "claude",
-          "pes": 20.0
+          "pes": 20.1
         },
         {
           "model": "gemini",
-          "pes": 14.9
+          "pes": 15.0
         },
         {
           "model": "deepseek",
-          "pes": 20.0
+          "pes": 39.4
         },
         {
           "model": "mistral",
@@ -2638,66 +3103,130 @@
       ]
     },
     {
-      "ticker": "QQQ",
-      "nom": "",
+      "ticker": "VGK",
+      "nom": "Europa (Vanguard)",
       "tipus": "etf",
-      "sector": "—",
+      "sector": "Mercats internacionals",
       "models": [
         {
           "model": "gpt",
-          "pes": 29.6
+          "pes": 10.4
         },
         {
           "model": "claude",
-          "pes": 19.6
+          "pes": 20.4
         },
         {
           "model": "gemini",
-          "pes": 7.4
+          "pes": 20.4
         },
         {
           "model": "deepseek",
-          "pes": 19.6
+          "pes": 20.4
+        },
+        {
+          "model": "mistral",
+          "pes": 6.5
         }
       ]
     },
     {
-      "ticker": "SMH",
-      "nom": "",
+      "ticker": "TLT",
+      "nom": "Bons EUA 20+ anys",
       "tipus": "etf",
-      "sector": "—",
+      "sector": "Renda fixa",
       "models": [
         {
           "model": "gpt",
-          "pes": 9.7
+          "pes": 9.5
+        },
+        {
+          "model": "claude",
+          "pes": 20.1
+        },
+        {
+          "model": "gemini",
+          "pes": 11.7
+        },
+        {
+          "model": "deepseek",
+          "pes": 20.2
         },
         {
           "model": "mistral",
-          "pes": 3.7
+          "pes": 4.6
+        }
+      ]
+    },
+    {
+      "ticker": "QQQ",
+      "nom": "Nasdaq 100",
+      "tipus": "etf",
+      "sector": "Índexs principals",
+      "models": [
+        {
+          "model": "gpt",
+          "pes": 29.4
+        },
+        {
+          "model": "claude",
+          "pes": 19.3
         }
       ]
     },
     {
       "ticker": "USMV",
-      "nom": "",
+      "nom": "Mínima volatilitat EUA",
       "tipus": "etf",
-      "sector": "—",
+      "sector": "Defensius",
       "models": [
         {
           "model": "gemini",
-          "pes": 7.1
+          "pes": 12.9
         },
         {
           "model": "mistral",
-          "pes": 4.3
+          "pes": 4.4
+        }
+      ]
+    },
+    {
+      "ticker": "SMH",
+      "nom": "Semiconductors (VanEck)",
+      "tipus": "etf",
+      "sector": "IA i semiconductors",
+      "models": [
+        {
+          "model": "gpt",
+          "pes": 9.2
+        },
+        {
+          "model": "mistral",
+          "pes": 3.4
+        }
+      ]
+    },
+    {
+      "ticker": "XLE",
+      "nom": "Energia EUA",
+      "tipus": "etf",
+      "sector": "Energia",
+      "models": [
+        {
+          "model": "gpt",
+          "pes": 2.3
+        },
+        {
+          "model": "mistral",
+          "pes": 5.0
         }
       ]
     },
     {
       "ticker": "VTI",
-      "nom": "",
+      "nom": "Mercat total EUA",
       "tipus": "etf",
-      "sector": "—",
+      "sector": "Índexs principals",
       "models": [
         {
           "model": "gemini",
@@ -2706,58 +3235,82 @@
       ]
     },
     {
-      "ticker": "IEF",
-      "nom": "",
+      "ticker": "XLP",
+      "nom": "Consum bàsic EUA",
       "tipus": "etf",
-      "sector": "—",
+      "sector": "Defensius",
       "models": [
         {
           "model": "mistral",
-          "pes": 9.5
+          "pes": 11.7
+        }
+      ]
+    },
+    {
+      "ticker": "IEF",
+      "nom": "Bons EUA 7-10 anys",
+      "tipus": "etf",
+      "sector": "Renda fixa",
+      "models": [
+        {
+          "model": "mistral",
+          "pes": 9.6
         }
       ]
     },
     {
       "ticker": "VHT",
-      "nom": "",
+      "nom": "Sanitat (Vanguard)",
       "tipus": "etf",
-      "sector": "—",
+      "sector": "Salut",
       "models": [
         {
           "model": "mistral",
-          "pes": 9.2
+          "pes": 9.4
+        }
+      ]
+    },
+    {
+      "ticker": "TIP",
+      "nom": "Bons lligats a la inflació",
+      "tipus": "etf",
+      "sector": "Renda fixa",
+      "models": [
+        {
+          "model": "gpt",
+          "pes": 5.9
+        }
+      ]
+    },
+    {
+      "ticker": "NESN.SW",
+      "nom": "Nestlé",
+      "tipus": "accio",
+      "sector": "Consum",
+      "models": [
+        {
+          "model": "mistral",
+          "pes": 5.8
         }
       ]
     },
     {
       "ticker": "EWJ",
-      "nom": "",
+      "nom": "Japó",
       "tipus": "etf",
-      "sector": "—",
+      "sector": "Mercats internacionals",
       "models": [
         {
           "model": "mistral",
-          "pes": 7.3
-        }
-      ]
-    },
-    {
-      "ticker": "XLE",
-      "nom": "",
-      "tipus": "etf",
-      "sector": "—",
-      "models": [
-        {
-          "model": "mistral",
-          "pes": 5.1
+          "pes": 3.8
         }
       ]
     },
     {
       "ticker": "VIG",
-      "nom": "",
+      "nom": "Dividends creixents (Vanguard)",
       "tipus": "etf",
-      "sector": "—",
+      "sector": "Dividends",
       "models": [
         {
           "model": "mistral",
@@ -2766,10 +3319,22 @@
       ]
     },
     {
-      "ticker": "DBC",
-      "nom": "",
+      "ticker": "PG",
+      "nom": "Procter & Gamble",
+      "tipus": "accio",
+      "sector": "Consum",
+      "models": [
+        {
+          "model": "mistral",
+          "pes": 3.5
+        }
+      ]
+    },
+    {
+      "ticker": "XLV",
+      "nom": "Salut EUA",
       "tipus": "etf",
-      "sector": "—",
+      "sector": "Salut",
       "models": [
         {
           "model": "mistral",
@@ -2778,14 +3343,14 @@
       ]
     },
     {
-      "ticker": "XLV",
-      "nom": "",
+      "ticker": "BIL",
+      "nom": "Lletres del Tresor (1-3 mesos)",
       "tipus": "etf",
-      "sector": "—",
+      "sector": "Renda fixa",
       "models": [
         {
           "model": "mistral",
-          "pes": 3.1
+          "pes": 3.0
         }
       ]
     }
@@ -2793,10 +3358,15 @@
   "exposicio": {
     "gpt": {
       "sectors": {
-        "—": 100.0
+        "Índexs principals": 47.4,
+        "Renda fixa": 15.4,
+        "Metalls preciosos": 15.3,
+        "Mercats internacionals": 10.4,
+        "IA i semiconductors": 9.2,
+        "Energia": 2.3
       },
       "paisos": {
-        "—": 100.0
+        "Global": 100.0
       },
       "tipus": {
         "Fons (ETFs)": 100.0
@@ -2804,10 +3374,13 @@
     },
     "claude": {
       "sectors": {
-        "—": 100.0
+        "Índexs principals": 39.4,
+        "Mercats internacionals": 20.4,
+        "Metalls preciosos": 20.1,
+        "Renda fixa": 20.1
       },
       "paisos": {
-        "—": 100.0
+        "Global": 100.0
       },
       "tipus": {
         "Fons (ETFs)": 100.0
@@ -2815,37 +3388,110 @@
     },
     "gemini": {
       "sectors": {
-        "—": 100.0
+        "Índexs principals": 35.2,
+        "Mercats internacionals": 20.4,
+        "Metalls preciosos": 15.0,
+        "Defensius": 12.9,
+        "Renda fixa": 11.7,
+        "Efectiu": 4.9
       },
       "paisos": {
-        "—": 100.0
+        "Global": 95.2,
+        "—": 4.9
       },
       "tipus": {
-        "Fons (ETFs)": 100.0
+        "Fons (ETFs)": 95.2,
+        "Efectiu": 4.9
       }
     },
     "deepseek": {
       "sectors": {
-        "—": 100.0
+        "Metalls preciosos": 39.4,
+        "Mercats internacionals": 20.4,
+        "Renda fixa": 20.2,
+        "Índexs principals": 20.1
       },
       "paisos": {
-        "—": 100.0
+        "Global": 100.1
       },
       "tipus": {
-        "Fons (ETFs)": 100.0
+        "Fons (ETFs)": 100.1
       }
     },
     "mistral": {
       "sectors": {
-        "—": 99.9
+        "Índexs principals": 18.9,
+        "Renda fixa": 17.2,
+        "Defensius": 16.1,
+        "Salut": 12.5,
+        "Mercats internacionals": 10.3,
+        "Consum": 9.3,
+        "Energia": 5.0,
+        "Metalls preciosos": 3.8,
+        "Dividends": 3.5,
+        "IA i semiconductors": 3.4
       },
       "paisos": {
-        "—": 99.9
+        "Global": 90.7,
+        "Suïssa": 5.8,
+        "EUA": 3.5
       },
       "tipus": {
-        "Fons (ETFs)": 99.9
+        "Fons (ETFs)": 90.7,
+        "Accions": 9.3
       }
     }
   },
-  "titulars": []
+  "titulars": [
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "titular": "Stocks Sink in Broad AI Rout Sparked by China's DeepSeek"
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "titular": "Comex Gold, Silver Settle Lower"
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "titular": "DeepSeek Won't Sink U.S. AI Titans"
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "titular": "Financial Services Roundup: Market Talk"
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "titular": "Arabica Coffee Prices Hit Record on U.S., Colombia Tariff Spat"
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "titular": "Swiss franc, Japanese yen Rise as DeepSeek News Boosts Safe Havens"
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "titular": "Natural Gas Falls on Shifting Weather Forecasts"
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "titular": "Building-Products Distributor QXO Launches Hostile Bid for Beacon"
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "titular": "Singapore tightens monetary policy in surprise move as rising oil prices rekindle inflation risk"
+    },
+    {
+      "setmana": 8,
+      "data": "2026-07-27",
+      "titular": "Trump's new global tariff draws rebukes from trade partners over forced labor justification"
+    }
+  ]
 }
