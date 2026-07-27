@@ -566,6 +566,20 @@ main {
 .etf-cat-accio { background: rgba(255, 176, 0, .16); border-color: rgba(255,176,0,.35); color: var(--ambre-2); }
 .etf-sector { font: 600 10.5px var(--mono); letter-spacing: .6px; text-transform: uppercase; color: var(--apagat-2); margin-bottom: 6px; }
 .etf-eines-fila { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.etf-resultat {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  font-size: 13px; color: var(--apagat); padding: 2px 2px 0;
+}
+.etf-resultat b { color: var(--ambre); font-family: var(--mono); font-size: 14px; }
+
+/* Gràfic històric dins la fitxa d'un actiu */
+.mod-graf { margin: 16px 0 6px; border-top: 1px solid var(--linia); padding-top: 14px; }
+.mod-graf-cap { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+.mod-variacio { font: 700 16px var(--mono); }
+.mod-var-sub { display: block; font: 500 11px var(--sans); color: var(--apagat-2); margin-top: 2px; }
+#mod-chart svg { width: 100%; height: auto; display: block; }
+.mod-caixa { max-width: 620px; }
+.mod-cos { max-height: 78vh; overflow-y: auto; }
 
 /* =====================================================================
    CONFIGURACIÓ D'APIs

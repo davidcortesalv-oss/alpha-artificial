@@ -69,6 +69,43 @@ reflecteix la pràctica habitual del sector.
 - Sense palanquejament ni posicions curtes.
 - Els cinc models participants i el rival (índex S&P 500).
 
+### Ajust comptable associat (important per al TR)
+
+En passar a comptabilitzar en euros de veritat, totes les carteres van
+"caure" un 12,0% de cop. **No va ser una pèrdua de mercat**: fins aleshores
+els preus en dòlars es tractaven com si fossin euros, i el canvi d'unitat de
+compte (1 € = 1,14 $) va aflorar la diferència.
+
+Per no introduir un salt artificial a les gràfiques, es va aplicar un **ajust
+de redenominació** d'una sola vegada (script `corregir_divises.py`): es van
+reescalar les unitats de cada cartera perquè, valorades correctament en
+euros, valguessin exactament el mateix que valien just abans del canvi.
+
+| Participant | Valor abans de l'ajust | Valor després | Factor |
+|---|---|---|---|
+| GPT | 8.508,97 € | 9.757,72 € | 1,1468 |
+| Claude | 8.650,43 € | 9.824,11 € | 1,1357 |
+| Gemini | 8.646,93 € | 9.797,62 € | 1,1331 |
+| DeepSeek | 8.648,75 € | 9.824,11 € | 1,1359 |
+| Mistral | 8.539,62 € | 9.707,67 € | 1,1368 |
+| S&P 500 (índex) | 8.673,43 € | 9.871,36 € | 1,1381 |
+
+Conseqüències:
+- **La comparació entre participants no queda afectada**: tots es reescalen
+  amb el mateix criteri, inclòs l'índex de referència.
+- Les rendibilitats acumulades i les posicions relatives es mantenen.
+- A partir de la setmana 8, l'efecte divisa (que un inversor europeu amb
+  actius en dòlars pateix de veritat) **sí que compta** al resultat.
+
+### Incidència tècnica detectada la mateixa setmana
+
+A la setmana 8, la resposta de **Claude** es va tallar a mitges perquè el
+límit de longitud de resposta (2.048 tokens) s'havia quedat curt amb un
+univers de 222 actius. El sistema va registrar una decisió buida. Es va
+corregir apujant el límit a 8.000 tokens i afegint una comprovació que
+rebutja qualsevol resposta sense el camp `decisio`, de manera que un tall
+similar quedi registrat com a error explícit i no com una decisió buida.
+
 ---
 
 ## Millores metodològiques aplicades el mateix dia

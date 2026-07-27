@@ -126,8 +126,11 @@ def _trucar_claude(clau, model, briefing):
             "Content-Type": "application/json",
         },
         json={
+            # 8000 tokens: amb 220 actius les IAs escriuen justificacions
+            # llargues. Amb 2048 la resposta es tallava a mitges i el JSON
+            # quedava trencat (va passar a la setmana 8 amb Claude).
             "model": model,
-            "max_tokens": 2048,
+            "max_tokens": 8000,
             "messages": [{"role": "user", "content": briefing}],
         },
         timeout=TEMPS_MAXIM,
@@ -173,7 +176,10 @@ def extreure_json(text):
         return json.loads(text)
     except json.JSONDecodeError:
         pass
-    # Buscar el primer { ... } equilibrado dentro del texto
+    # Buscar objetos { ... } equilibrados dentro del texto. Nos quedamos con
+    # el primero que tenga el campo "decisio" (el que nos interesa de verdad);
+    # si ninguno lo tiene, devolvemos el primero válido que hayamos visto.
+    candidats = []
     inici = text.find("{")
     while inici != -1:
         profunditat = 0
@@ -184,11 +190,16 @@ def extreure_json(text):
                 profunditat -= 1
                 if profunditat == 0:
                     try:
-                        return json.loads(text[inici:i + 1])
+                        obj = json.loads(text[inici:i + 1])
+                        if isinstance(obj, dict):
+                            if obj.get("decisio"):
+                                return obj
+                            candidats.append(obj)
                     except json.JSONDecodeError:
-                        break
+                        pass
+                    break
         inici = text.find("{", inici + 1)
-    return None
+    return candidats[0] if candidats else None
 
 
 INTENTS = 5                # cuántas veces probamos si la API falla
@@ -216,6 +227,11 @@ def demanar(model_id, briefing):
             decisio = extreure_json(text)
             if decisio is None:
                 error = "La resposta no contenia un JSON vàlid"
+            elif not decisio.get("decisio"):
+                # Hem trobat un JSON, però no és la decisió (passa si la
+                # resposta es talla i el parser agafa un tros solt).
+                error = ("El JSON rebut no té el camp 'decisio' "
+                         f"(claus trobades: {', '.join(list(decisio)[:5]) or 'cap'})")
             else:
                 return decisio, ""
         except requests.exceptions.RequestException as e:

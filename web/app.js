@@ -571,6 +571,7 @@
           </div>
         </div>
         <div class="filtres" id="etf-cats"></div>
+        <div class="etf-resultat" id="etf-resultat"></div>
       </div>
       <div id="etf-grid" class="etf-grid"></div>
       <div class="etf-modal" id="etf-modal" hidden></div>`;
@@ -614,6 +615,23 @@
     // les empreses primer (són el que enganxa), després els fons
     entrades.sort((a, b) => (a[1].tipus === b[1].tipus) ? 0 : a[1].tipus === "accio" ? -1 : 1);
 
+    // comptador de resultats: així es veu que el filtre ha fet efecte
+    const res = $("#etf-resultat");
+    if (res) {
+      const filtres = [];
+      if (etfState.tipus !== "tots") filtres.push(etfState.tipus === "accio" ? "empreses" : "fons");
+      if (etfState.cat !== "Totes") filtres.push(`«${etfState.cat}»`);
+      if (cerca) filtres.push(`cerca «${etfState.cerca.trim()}»`);
+      res.innerHTML = `<b>${entrades.length}</b> ${entrades.length === 1 ? "actiu" : "actius"}`
+        + (filtres.length ? ` · ${filtres.join(" · ")}` : " · sense filtres")
+        + (filtres.length ? ' <button class="btn-ghost btn-mini" id="etf-netejar">Netejar filtres ✕</button>' : "");
+      const net = $("#etf-netejar");
+      if (net) net.onclick = () => {
+        etfState = { cat: "Totes", cerca: "", tipus: "tots" };
+        viewEtfs();
+      };
+    }
+
     $("#etf-grid").innerHTML = entrades.map(([tk, e]) => {
       const art = window.ALPHA_ART[e.art] || window.ALPHA_ART.generic;
       const qui = tenedors(tk);
@@ -643,6 +661,59 @@
     });
   }
 
+  // ---- Historial de preus (es carrega només quan cal, un sol cop) ----
+  let HISTORIC = null, historicCarregant = null;
+  function carregarHistoric() {
+    if (HISTORIC) return Promise.resolve(HISTORIC);
+    if (historicCarregant) return historicCarregant;
+    historicCarregant = fetch("historic.json", { cache: "force-cache" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((h) => { HISTORIC = h; return h; })
+      .catch(() => null);
+    return historicCarregant;
+  }
+
+  let modalRang = 1825;   // dies: 5 anys per defecte
+
+  function pintarHistoric(tk) {
+    const cont = $("#mod-chart");
+    if (!cont) return;
+    if (!HISTORIC || !HISTORIC.preus[tk]) {
+      cont.innerHTML = '<p class="buit">Historial no disponible per a aquest actiu.</p>';
+      return;
+    }
+    // Filtrar nuls i tallar al rang demanat (les dades són setmanals)
+    const totes = HISTORIC.dates, preus = HISTORIC.preus[tk];
+    const punts = [];
+    for (let i = 0; i < totes.length; i++) {
+      if (preus[i] != null) punts.push({ data: totes[i], valor: preus[i] });
+    }
+    if (punts.length < 2) { cont.innerHTML = '<p class="buit">Historial insuficient.</p>'; return; }
+
+    const setmanes = Math.max(2, Math.round(modalRang / 7));
+    const tall = punts.slice(Math.max(0, punts.length - setmanes));
+    const primer = tall[0].valor, ultim = tall[tall.length - 1].valor;
+    const variacio = (ultim / primer - 1) * 100;
+
+    window.AlphaChart.render(cont, {
+      dies: tall.map((p) => p.data),
+      series: { actiu: tall.map((p) => p.valor) },
+      models: [{ id: "actiu", nom: ACTIUS()[tk].nom, color: "var(--ambre)", competeix: true }],
+      visible: ["actiu"], mode: "value", range: Infinity,
+      capital: primer, height: 210, tooltipEl: $("#mod-tooltip"),
+      tooltip: (i) => `<div class="tt-cap"><b>${fmtData(tall[i].data)}</b></div>
+        <div class="tt-row"><span class="tt-nom">${tk}</span>
+        <span class="tt-cel">${euro2(tall[i].valor)}</span></div>`,
+    });
+
+    const resum = $("#mod-variacio");
+    if (resum) {
+      resum.className = "mod-variacio " + cls(variacio);
+      resum.innerHTML = `${variacio >= 0 ? "▲" : "▼"} ${pct(variacio)}
+        <span class="mod-var-sub">en aquest període · avui ${euro2(ultim)}</span>`;
+    }
+  }
+
   function obrirModalETF(tk) {
     const e = ACTIUS()[tk];
     const art = window.ALPHA_ART[e.art] || window.ALPHA_ART.generic;
@@ -665,6 +736,23 @@
             <span class="etf-risc">risc ${"●".repeat(e.risc)}${"○".repeat(5 - e.risc)}</span></div>
           <h3>${e.nom}</h3>
           <p>${e.desc}</p>
+
+          <div class="mod-graf">
+            <div class="mod-graf-cap">
+              <div class="mod-variacio" id="mod-variacio">Carregant historial…</div>
+              <div class="seg" id="mod-rangs">
+                <button data-r="30">1M</button>
+                <button data-r="180">6M</button>
+                <button data-r="365">1A</button>
+                <button data-r="1825" class="active">5A</button>
+              </div>
+            </div>
+            <div class="chart-stage">
+              <div id="mod-chart"></div>
+              <div class="chart-tooltip" id="mod-tooltip" hidden></div>
+            </div>
+          </div>
+
           <div class="inf-l" style="margin-top:14px">Qui el té ara en cartera</div>
           ${qui || '<p class="buit">Cap IA el té en cartera ara mateix.</p>'}
           <div class="mod-peu">Ticker de Yahoo Finance: <code>${tk}</code>${e.moneda && e.moneda !== "EUR" ? ` · cotitza en ${e.moneda}, convertit a euros pel motor` : ""}
@@ -674,6 +762,18 @@
       </div>`;
     $("#mod-tancar").onclick = () => { modal.hidden = true; };
     modal.querySelector(".mod-fons").onclick = () => { modal.hidden = true; };
+
+    // --- Gràfic històric: es carrega i es pot canviar de període ---
+    modalRang = 1825;
+    document.querySelectorAll("#mod-rangs button").forEach((b) => {
+      b.onclick = () => {
+        modalRang = Number(b.dataset.r);
+        document.querySelectorAll("#mod-rangs button").forEach((x) => x.classList.remove("active"));
+        b.classList.add("active");
+        pintarHistoric(tk);
+      };
+    });
+    carregarHistoric().then(() => pintarHistoric(tk));
   }
 
   /* ==================================================================
