@@ -25,6 +25,7 @@ Fitxers que llegeix (tots els escriu torneo.py, tret de destacats.csv):
 import os
 import csv
 import json
+import math
 import datetime
 import config
 
@@ -39,6 +40,9 @@ RUTA_INDEX = os.path.join(config.CARPETA_DADES, "index.csv")
 RUTA_CARTERES = os.path.join(config.CARPETA_DADES, "carteres.csv")
 RUTA_CANVIS = os.path.join(config.CARPETA_DADES, "canvis.csv")
 RUTA_DESTACATS = os.path.join(config.CARPETA_DADES, "destacats.csv")
+RUTA_COMISSIONS = os.path.join(config.CARPETA_DADES, "comissions.csv")
+RUTA_TITULARS = os.path.join(config.CARPETA_DADES, "titulars.csv")
+RUTA_DIARIS = os.path.join(config.CARPETA_DADES, "valors_diaris.csv")
 
 # --- Metadades visuals i de perfil de cada participant ---
 #     (els colors han de coincidir amb l'estètica de la web)
@@ -79,6 +83,60 @@ def num(x, default=0.0):
         return float(str(x).replace(",", "."))
     except (TypeError, ValueError):
         return default
+
+
+# =====================================================================
+#  MÈTRIQUES DE RISC (el que fa que el TR sembli professional)
+# ---------------------------------------------------------------------
+#  No n'hi ha prou amb saber qui guanya més: importa QUANT RISC ha
+#  assumit per guanyar-ho. Aquests tres números són els que fa servir
+#  qualsevol gestora de debò.
+# =====================================================================
+def metriques_risc(serie, punts_per_any=252):
+    """Calcula volatilitat, màxima caiguda i ràtio de Sharpe d'una sèrie de
+    valors de cartera. 'punts_per_any' = 252 si les dades són diàries,
+    52 si són setmanals.
+
+    - volatilitat: com de moguda és la cartera (%, anualitzada). Menys és
+      més tranquil.
+    - max_caiguda: la pitjor caiguda des d'un màxim fins a un mínim (%).
+      És el "quant vaig arribar a perdre pel camí".
+    - sharpe: rendibilitat obtinguda per cada unitat de risc. Més és millor.
+      Per sobre d'1 es considera bo.
+    """
+    if not serie or len(serie) < 3:
+        return {"volatilitat": None, "max_caiguda": None, "sharpe": None}
+
+    # Rendimientos de un punto al siguiente
+    rends = []
+    for i in range(1, len(serie)):
+        anterior = serie[i - 1]
+        if anterior:
+            rends.append(serie[i] / anterior - 1)
+    if len(rends) < 2:
+        return {"volatilitat": None, "max_caiguda": None, "sharpe": None}
+
+    mitjana = sum(rends) / len(rends)
+    variancia = sum((r - mitjana) ** 2 for r in rends) / (len(rends) - 1)
+    desviacio = math.sqrt(variancia)
+
+    volatilitat = desviacio * math.sqrt(punts_per_any) * 100
+    rend_anual = mitjana * punts_per_any * 100
+    sharpe = (rend_anual / volatilitat) if volatilitat > 0.0001 else None
+
+    # Máxima caída: el peor bajón desde un pico anterior
+    maxim, max_caiguda = serie[0], 0.0
+    for v in serie:
+        maxim = max(maxim, v)
+        if maxim:
+            caiguda = (v - maxim) / maxim * 100
+            max_caiguda = min(max_caiguda, caiguda)
+
+    return {
+        "volatilitat": round(volatilitat, 2),
+        "max_caiguda": round(max_caiguda, 2),
+        "sharpe": round(sharpe, 2) if sharpe is not None else None,
+    }
 
 
 def main():
@@ -235,7 +293,7 @@ def main():
     else:
         print(f"[i] Sense {RUTA_INDEX}: la web no dibuixarà la línia de l'índex.")
 
-    # --- Carteres actuals (dades/carteres.csv) ---
+    # --- Carteres actuals (dades/carteres.csv), amb sector, país i tipus ---
     carteres = {}
     for f in llegir_csv(RUTA_CARTERES):
         m = (f.get("model") or "").strip()
@@ -243,13 +301,62 @@ def main():
             continue
         carteres.setdefault(m, []).append({
             "ticker": (f.get("ticker") or "").strip(),
-            "pes": round(num(f.get("pes"))),
+            "nom": (f.get("nom") or "").strip(),
+            "tipus": (f.get("tipus") or "etf").strip(),
+            "sector": (f.get("sector") or "—").strip(),
+            "pais": (f.get("pais") or "—").strip(),
+            "pes": round(num(f.get("pes")), 1),
             "valor": round(num(f.get("valor"))),
         })
     for m in carteres:
         carteres[m].sort(key=lambda h: -h["pes"])
     if not carteres:
         print(f"[i] Sense {RUTA_CARTERES}: el detall de cada IA no mostrarà la cartera.")
+
+    # --- Exposició per sector, país i tipus (per als gràfics de disc) ---
+    exposicio = {}
+    for m, posicions in carteres.items():
+        sectors, paisos, tipus = {}, {}, {}
+        for h in posicions:
+            sectors[h["sector"]] = round(sectors.get(h["sector"], 0) + h["pes"], 1)
+            paisos[h["pais"]] = round(paisos.get(h["pais"], 0) + h["pes"], 1)
+            etiqueta = {"accio": "Accions", "etf": "Fons (ETFs)",
+                        "efectiu": "Efectiu"}.get(h["tipus"], h["tipus"])
+            tipus[etiqueta] = round(tipus.get(etiqueta, 0) + h["pes"], 1)
+        ordena = lambda d: dict(sorted(d.items(), key=lambda x: -x[1]))
+        exposicio[m] = {"sectors": ordena(sectors), "paisos": ordena(paisos),
+                        "tipus": ordena(tipus)}
+
+    # --- Consens: quins actius comparteixen les IAs i quins són apostes soles ---
+    tinences = {}
+    for m, posicions in carteres.items():
+        for h in posicions:
+            if h["ticker"] == "EFECTIU":
+                continue
+            reg = tinences.setdefault(h["ticker"], {
+                "ticker": h["ticker"], "nom": h["nom"], "tipus": h["tipus"],
+                "sector": h["sector"], "models": []})
+            reg["models"].append({"model": m, "pes": h["pes"]})
+    consens = sorted(tinences.values(),
+                     key=lambda r: (-len(r["models"]),
+                                    -sum(x["pes"] for x in r["models"])))
+
+    # --- Comissions acumulades (la prova de si sobreoperar surt car) ---
+    comissions = {}
+    for f in llegir_csv(RUTA_COMISSIONS):
+        m = (f.get("model") or "").strip()
+        if m in META_MODELS:
+            comissions[m] = round(num(f.get("comissio_acumulada")), 2)
+
+    # --- Titulars que han vist les IAs (traçabilitat per al TR) ---
+    titulars = []
+    for f in llegir_csv(RUTA_TITULARS):
+        titulars.append({
+            "setmana": int(num(f.get("setmana"), 0)),
+            "data": (f.get("data") or "").strip(),
+            "titular": (f.get("titular") or "").strip(),
+        })
+    titulars.sort(key=lambda t: -t["setmana"])
 
     # --- Moments destacats (opcional, escrits a mà: dades/destacats.csv) ---
     highlights = []
@@ -260,6 +367,38 @@ def main():
             "titol": (f.get("titol") or "").strip(),
             "text": (f.get("text") or "").strip(),
         })
+
+    # --- Sèrie DIÀRIA (si existeix, la gràfica es mou cada dia) ---
+    # El motor semanal marca las decisiones; actualitzar_preus.py añade un
+    # punto cada día de mercado. Si hay datos diarios, la web los usa.
+    files_diaris = llegir_csv(RUTA_DIARIS)
+    punts_per_setmana = 1
+    if files_diaris:
+        per_dia = {}
+        for f in files_diaris:
+            dia = (f.get("data") or "").strip()
+            m = (f.get("model") or "").strip()
+            if dia and m:
+                per_dia.setdefault(dia, {})[m] = num(f.get("valor"))
+        dies_ord = sorted(per_dia)
+        if len(dies_ord) >= 2:
+            ids = list(series.keys())
+            series_diaries = {mid: [] for mid in ids}
+            previ = {mid: config.CAPITAL_INICIAL for mid in ids}
+            for dia in dies_ord:
+                for mid in ids:
+                    v = per_dia[dia].get(mid, previ[mid])
+                    series_diaries[mid].append(round(v, 2))
+                    previ[mid] = v
+            series = series_diaries
+            dies = dies_ord
+            # ~5 días de mercado por semana
+            punts_per_setmana = 5
+            print(f"[i] Fent servir la sèrie DIÀRIA ({len(dies_ord)} dies de mercat).")
+
+    # --- Mètriques de risc de cada participant ---
+    punts_any = 252 if punts_per_setmana > 1 else 52
+    risc = {mid: metriques_risc(s, punts_any) for mid, s in series.items()}
 
     # --- Estat de les APIs (per al panell "Configuració d'APIs") ---
     apis = {"ia": [], "financeres": []}
@@ -292,6 +431,8 @@ def main():
             "capital": config.CAPITAL_INICIAL,
             "comissio": config.COMISSIO,
             "maxPes": config.MAX_PES_PER_ETF,
+            "maxPesEtf": config.MAX_PES_PER_ETF,
+            "maxPesAccio": config.MAX_PES_PER_ACCIO,
             "moneda": config.MONEDA,
             "setmanes": max(n_set, 22),      # durada prevista del torneig
             "setmanaActual": n_set,
@@ -299,7 +440,9 @@ def main():
             "dataActual": dies[-1] if dies else "",
             "font": "real",
             "generat": datetime.datetime.now().isoformat(timespec="minutes"),
-            "puntsPerSetmana": 1,            # les dades reals són setmanals
+            "puntsPerSetmana": punts_per_setmana,
+            "nAccions": len(config.UNIVERS_ACCIONS),
+            "nEtfs": len(config.UNIVERS_ETFS),
         },
         "dies": dies,
         "models": models_json,
@@ -310,6 +453,11 @@ def main():
         "canvis": sorted(canvis_json, key=lambda c: -c["setmana"]),
         "highlights": highlights,
         "apis": apis,
+        "risc": risc,
+        "comissions": comissions,
+        "consens": consens,
+        "exposicio": exposicio,
+        "titulars": titulars,
     }
 
     os.makedirs(CARPETA_WEB, exist_ok=True)

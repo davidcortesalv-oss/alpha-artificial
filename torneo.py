@@ -55,33 +55,71 @@ RUTA_DECISIONS = os.path.join(config.CARPETA_DADES, "decisions.csv")
 RUTA_CANVIS = os.path.join(config.CARPETA_DADES, "canvis.csv")
 RUTA_CARTERES = os.path.join(config.CARPETA_DADES, "carteres.csv")
 RUTA_INDEX = os.path.join(config.CARPETA_DADES, "index.csv")
+RUTA_COMISSIONS = os.path.join(config.CARPETA_DADES, "comissions.csv")
+RUTA_TITULARS = os.path.join(config.CARPETA_DADES, "titulars.csv")
 
 
 # ============================================================
 #  PASO 1 — Bajar precios reales del mercado
 # ============================================================
 def baixar_preus():
-    """Descarga el precio actual de cada ETF de la lista y de los
-    indicadores de contexto. Devuelve un diccionario {ticker: preu}."""
+    """Descarga el precio de todos los activos del universo (ETFs + acciones),
+    los indicadores de contexto y los tipos de cambio. Devuelve los precios YA
+    CONVERTIDOS A EUROS, que es la moneda del torneo.
+
+    Esto último es importante: Apple cotiza en dólares, Inditex en euros y
+    Shell en peniques. Sumarlos sin convertir daría un valor de cartera falso."""
     import yfinance as yf
 
-    tickers = list(config.UNIVERS_ETFS.keys()) + list(config.INDICADORS_CONTEXT.keys())
-    preus = {}
-    print(f"[1] Baixant preus de {len(tickers)} símbols...")
+    actius = config.tots_els_actius()
+    parells = [d["parell"] for d in config.DIVISES.values() if d["parell"]]
+    tickers = list(actius.keys()) + list(config.INDICADORS_CONTEXT.keys()) + parells
+    print(f"[1] Baixant preus de {len(tickers)} símbols (ETFs, accions i divises)...")
 
     # yfinance permite bajar muchos de golpe; pedimos los últimos 5 días
     # y nos quedamos con el cierre más reciente de cada uno.
     dades = yf.download(tickers, period="5d", progress=False)
 
+    bruts = {}
     for t in tickers:
         try:
             serie = dades["Close"][t].dropna()
-            preus[t] = round(float(serie.iloc[-1]), 4)
+            bruts[t] = round(float(serie.iloc[-1]), 4)
         except Exception:
-            preus[t] = None  # si algún ticker falla, lo marcamos como None
-    obtinguts = sum(1 for v in preus.values() if v is not None)
-    print(f"    {obtinguts}/{len(tickers)} preus obtinguts.")
+            bruts[t] = None  # si algún ticker falla, lo marcamos como None
+
+    # --- Convertir cada precio a euros ---
+    preus = {}
+    for t, valor in bruts.items():
+        if valor is None:
+            preus[t] = None
+            continue
+        info = actius.get(t)
+        if info is None:
+            preus[t] = valor      # indicadores y divisas: se dejan tal cual
+            continue
+        preus[t] = a_euros(valor, info["moneda"], bruts)
+
+    obtinguts = sum(1 for t in actius if preus.get(t) is not None)
+    canvi = bruts.get("EURUSD=X")
+    print(f"    {obtinguts}/{len(actius)} actius amb preu (convertits a euros)."
+          + (f" EUR/USD: {canvi}" if canvi else ""))
     return preus
+
+
+def a_euros(valor, moneda, bruts):
+    """Convierte un precio a euros. 'bruts' trae los tipos de cambio del día.
+    Ejemplo: Apple a 337 USD con EUR/USD = 1,14 → 337 / 1,14 = 295,61 €."""
+    dades = config.DIVISES.get(moneda)
+    if dades is None:
+        return round(valor, 4)
+    valor = valor * dades["factor"]        # peniques → libras, etc.
+    if dades["parell"] is None:
+        return round(valor, 4)             # ya está en euros
+    canvi = bruts.get(dades["parell"])
+    if not canvi:
+        return None                        # sin tipo de cambio no inventamos nada
+    return round(valor / canvi, 4)
 
 
 # ============================================================
@@ -207,13 +245,34 @@ def montar_briefing(setmana, preus, cartera, model_id, titulars=None):
     semana y de esta IA concreta. Devuelve el texto final a enviar."""
     plantilla = carregar_prompt()
 
-    # Lista de ETFs disponibles con su precio
-    linies_etfs = []
+    # --- Lista de activos disponibles, en dos bloques ---
+    # Primero las empresas (agrupadas por país, que es como piensa un gestor)
+    # y después los fondos. Todos los precios ya vienen en euros.
+    per_pais = {}
+    for tk, (nom, sector, pais, _mon) in config.UNIVERS_ACCIONS.items():
+        p = preus.get(tk)
+        if p is not None:
+            per_pais.setdefault(pais, []).append(f"    {tk} — {nom} ({sector}) — {p} €")
+
+    linies = ["ACCIONS D'EMPRESES CONCRETES (màxim "
+              f"{int(config.MAX_PES_PER_ACCIO * 100)}% de la cartera per empresa):"]
+    for pais in sorted(per_pais):
+        linies.append(f"  · {pais}")
+        linies.extend(sorted(per_pais[pais]))
+
+    linies.append("")
+    linies.append("FONS COTITZATS / ETFs (màxim "
+                  f"{int(config.MAX_PES_PER_ETF * 100)}% de la cartera per fons):")
+    per_cat = {}
     for tk, (nom, cat) in config.UNIVERS_ETFS.items():
         p = preus.get(tk)
         if p is not None:
-            linies_etfs.append(f"  {tk} — {nom} ({cat}) — {p} $")
-    llista_etfs = "\n".join(linies_etfs)
+            per_cat.setdefault(cat, []).append(f"    {tk} — {nom} — {p} €")
+    for cat in per_cat:
+        linies.append(f"  · {cat}")
+        linies.extend(per_cat[cat])
+
+    llista_etfs = "\n".join(linies)
 
     # Contexto de mercado (VIX, bono, EUR/USD)
     linies_ctx = []
@@ -224,6 +283,7 @@ def montar_briefing(setmana, preus, cartera, model_id, titulars=None):
     context = "\n".join(linies_ctx)
 
     # Posiciones actuales de la cartera
+    actius = config.tots_els_actius()
     valor_total = valor_cartera(cartera, preus)
     linies_pos = []
     for tk, unitats in cartera.items():
@@ -233,7 +293,10 @@ def montar_briefing(setmana, preus, cartera, model_id, titulars=None):
         if p:
             val = round(unitats * p, 2)
             pes = round(100 * val / valor_total, 1) if valor_total else 0
-            linies_pos.append(f"  {tk} — {unitats} unitats — {val} € ({pes}%)")
+            nom = actius.get(tk, {}).get("nom", tk)
+            limit = int(config.max_pes(tk) * 100)
+            linies_pos.append(f"  {tk} ({nom}) — {unitats} unitats — "
+                              f"{val} € ({pes}% de {limit}% permès)")
     posicions = "\n".join(linies_pos) if linies_pos else "  (cap posició)"
 
     # Rendibilidad semanal (comparando con lo apuntado la semana pasada)
@@ -305,23 +368,25 @@ def validar_decisio(decisio):
     """Comprobaciones básicas antes de tocar la cartera."""
     if decisio.get("decisio") == "mantenir":
         return True, ""
+    permesos = config.tots_els_actius()
     for op in decisio.get("operacions", []):
         tk_compra = op.get("comprar")
         tk_venda = op.get("vendre")
-        if tk_compra and tk_compra not in config.UNIVERS_ETFS:
-            return False, f"ETF no permès: {tk_compra}"
-        if tk_venda and tk_venda not in config.UNIVERS_ETFS and tk_venda != "EFECTIU":
-            return False, f"ETF no permès: {tk_venda}"
+        if tk_compra and tk_compra not in permesos and tk_compra != "EFECTIU":
+            return False, f"Actiu no permès: {tk_compra}"
+        if tk_venda and tk_venda not in permesos and tk_venda != "EFECTIU":
+            return False, f"Actiu no permès: {tk_venda}"
         if op.get("import_eur", 0) < 0:
             return False, "Import negatiu"
     return True, ""
 
 
 def aplicar_operacions(cartera, decisio, preus):
-    """Ejecuta las operaciones válidas sobre la cartera, con comisión y
-    respetando la regla del 40%. Devuelve la lista de operaciones que
-    realmente se han aplicado (para apuntarlas en canvis.csv)."""
+    """Ejecuta las operaciones válidas sobre la cartera, cobrando la comisión y
+    respetando el límite de concentración (20% por acción, 40% por ETF).
+    Devuelve (operaciones aplicadas, comisión total pagada en euros)."""
     aplicades = []
+    comissio_pagada = 0.0
     for op in decisio.get("operacions", []):
         tk_v = op.get("vendre")
         tk_c = op.get("comprar")
@@ -340,6 +405,7 @@ def aplicar_operacions(cartera, decisio, preus):
             if cartera[tk_v] < 1e-6:
                 cartera[tk_v] = 0.0
             # el dinero de la venta entra en efectivo, menos la comisión
+            comissio_pagada += import_real * config.COMISSIO
             cartera["EFECTIU"] = cartera.get("EFECTIU", 0) + import_real * (1 - config.COMISSIO)
         else:
             import_real = min(import_eur, cartera.get("EFECTIU", 0))
@@ -354,20 +420,22 @@ def aplicar_operacions(cartera, decisio, preus):
             gastar = min(import_real, cartera.get("EFECTIU", 0))
             if gastar <= 0:
                 continue
-            # Regla del 40%: probamos la compra y, si se pasa, la recortamos
+            # Límite de concentración (20% acciones / 40% ETFs): si la compra
+            # se pasa del máximo permitido para ESE activo, se recorta.
             valor_total = valor_cartera(cartera, preus)
             valor_tk = cartera.get(tk_c, 0) * p_c
-            maxim_permes = config.MAX_PES_PER_ETF * valor_total - valor_tk
+            maxim_permes = config.max_pes(tk_c) * valor_total - valor_tk
             gastar = max(0.0, min(gastar, maxim_permes))
             if gastar <= 0:
                 continue
             cartera["EFECTIU"] = cartera.get("EFECTIU", 0) - gastar
+            comissio_pagada += gastar * config.COMISSIO
             cartera[tk_c] = round(cartera.get(tk_c, 0) + gastar * (1 - config.COMISSIO) / p_c, 6)
             import_real = gastar
 
         aplicades.append({"vendre": tk_v or "EFECTIU", "comprar": tk_c or "EFECTIU",
                           "import_eur": round(import_real, 2)})
-    return aplicades
+    return aplicades, round(comissio_pagada, 2)
 
 
 # ============================================================
@@ -404,25 +472,70 @@ def guardar_canvis(setmana, model_id, aplicades):
              op["vendre"], op["comprar"], op["import_eur"]])
 
 
+def guardar_comissions(setmana, model_id, comissio, acumulada):
+    """Apunta lo que ha pagado esta IA en comisiones. Es la prueba directa
+    de si sobreoperar sale caro (una de las hipótesis del TR)."""
+    _afegir_fila(RUTA_COMISSIONS,
+        ["data", "setmana", "model", "comissio_setmana", "comissio_acumulada"],
+        [datetime.date.today().isoformat(), setmana, model_id,
+         round(comissio, 2), round(acumulada, 2)])
+
+
+def guardar_titulars(setmana, titulars):
+    """Guarda los titulares que han visto TODAS las IAs esta semana.
+    Sirve para demostrar en el TR que la información fue idéntica."""
+    if not titulars:
+        return
+    for linia in titulars.splitlines():
+        text = linia.strip()
+        if not text:
+            continue
+        # las líneas vienen como "  1. Titular..."; quitamos la numeración
+        if "." in text[:4]:
+            text = text.split(".", 1)[1].strip()
+        _afegir_fila(RUTA_TITULARS,
+            ["data", "setmana", "titular"],
+            [datetime.date.today().isoformat(), setmana, text])
+
+
+def guardar_briefing(setmana, model_id, briefing):
+    """Guarda el briefing exacto que ha recibido cada IA (trazabilidad).
+    Un archivo por IA y semana, dentro de dades/briefings/."""
+    carpeta = os.path.join(config.CARPETA_DADES, "briefings")
+    os.makedirs(carpeta, exist_ok=True)
+    ruta = os.path.join(carpeta, f"S{setmana:02d}_{model_id}.txt")
+    with open(ruta, "w", encoding="utf-8") as f:
+        f.write(briefing)
+
+
 def guardar_carteres(estat, preus):
-    """Reescribe carteres.csv con la foto actual de todas las carteras."""
+    """Reescribe carteres.csv con la foto actual de todas las carteras,
+    incluyendo tipo (acción/ETF), sector y país — para los gráficos de la web."""
     os.makedirs(config.CARPETA_DADES, exist_ok=True)
+    actius = config.tots_els_actius()
     with open(RUTA_CARTERES, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["model", "ticker", "unitats", "valor", "pes"])
+        w.writerow(["model", "ticker", "nom", "tipus", "sector", "pais",
+                    "unitats", "valor", "pes"])
         for mid, cartera in estat["carteres"].items():
             total = valor_cartera(cartera, preus) or 1
             for tk, unitats in cartera.items():
                 if tk == "EFECTIU":
                     val = unitats
+                    info = {"nom": "Efectiu", "tipus": "efectiu",
+                            "categoria": "Efectiu", "pais": "—"}
                 else:
                     p = preus.get(tk)
                     if not p or unitats <= 0:
                         continue
                     val = unitats * p
+                    info = actius.get(tk, {"nom": tk, "tipus": "etf",
+                                           "categoria": "—", "pais": "—"})
                 if val < 0.5:
                     continue
-                w.writerow([mid, tk, round(unitats, 6), round(val, 2),
+                w.writerow([mid, tk, info["nom"], info["tipus"],
+                            info["categoria"], info["pais"],
+                            round(unitats, 6), round(val, 2),
                             round(100 * val / total, 2)])
 
 
@@ -488,6 +601,7 @@ def executar_ronda(setmana=None):
             estat["carteres"][model_id] = cartera
 
         briefing = montar_briefing(setmana, preus, cartera, model_id, titulars)
+        guardar_briefing(setmana, model_id, briefing)
         decisio, error = demanar_decisio(model_id, briefing, cartera)
 
         if decisio is None:
@@ -496,22 +610,29 @@ def executar_ronda(setmana=None):
                        "justificacio": f"(sense resposta: {error})", "operacions": []}
 
         ok, motiu = validar_decisio(decisio)
-        aplicades = []
+        aplicades, comissio = [], 0.0
         if ok and decisio.get("decisio") == "reajustar":
-            aplicades = aplicar_operacions(cartera, decisio, preus)
+            aplicades, comissio = aplicar_operacions(cartera, decisio, preus)
+
+        # Comisiones acumuladas de esta IA desde el principio del torneo
+        acumulades = estat.setdefault("comissions", {})
+        acumulades[model_id] = round(acumulades.get(model_id, 0.0) + comissio, 2)
 
         valor = valor_cartera(cartera, preus)
         estat_txt = "✓ vàlida" if ok else f"✗ rebutjada ({motiu})"
         print(f"    {nom:22} → {decisio.get('decisio','?'):9} "
               f"risc:{str(decisio.get('nivell_risc','—')):12} "
               f"conf:{decisio.get('confianca','—')}/10  "
-              f"cartera:{round(valor,2):>9} €  {estat_txt}")
+              f"cartera:{round(valor,2):>9} €  "
+              f"comissions:{acumulades[model_id]:>6} €  {estat_txt}")
 
         if ok:
             guardar_decisio(setmana, model_id, decisio, valor)
             guardar_canvis(setmana, model_id, aplicades)
+            guardar_comissions(setmana, model_id, comissio, acumulades[model_id])
 
-    # 6. Índice, foto de carteras y estado para la próxima semana
+    # 6. Índice, titulares, foto de carteras y estado para la próxima semana
+    guardar_titulars(setmana, titulars)
     guardar_index(setmana, estat, preus)
     guardar_carteres(estat, preus)
     estat["setmana"] = setmana

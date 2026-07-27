@@ -112,7 +112,7 @@
       perfil: "El gestor pacient. Diversifica, opera poc i tracta el soroll del mercat com el que és: soroll. La seva arma és la disciplina.",
       fortaleses: ["Disciplina: no persegueix el mercat", "Costos mínims en comissions", "Compra quan els altres tenen por"],
       febleses: ["Pot quedar-se enrere en ral·lis molt forts", "Reacciona lent si el règim de mercat canvia de debò"],
-      inicial: { SPY: 30, QQQ: 18, VGK: 14, XLV: 10, GLD: 14, EFECTIU: 14 },
+      inicial: { SPY: 24, QQQ: 12, AAPL: 8, MSFT: 8, "ITX.MC": 6, JNJ: 6, VGK: 8, GLD: 14, EFECTIU: 14 },
       moves: {
         4: {
           ops: [["QQQ", "XLV", 4]], conf: 7, risc: "moderat",
@@ -154,7 +154,7 @@
       perfil: "El creient de la tecnologia. Concentra la cartera en Nasdaq, semiconductors i IA, i aguanta les turbulències amb una convicció inalterable.",
       fortaleses: ["Convicció: no ven en pànic", "Posicionat al sector amb més creixement", "Coherent amb la seva tesi setmana rere setmana"],
       febleses: ["Molt dependent d'un sol sector", "Si la tecnologia corregeix de debò, no té xarxa"],
-      inicial: { QQQ: 28, XLK: 20, SMH: 12, SPY: 20, EEM: 8, EFECTIU: 12 },
+      inicial: { QQQ: 20, NVDA: 14, MSFT: 10, "ASML.AS": 8, SMH: 10, SPY: 16, TSM: 8, EFECTIU: 14 },
       moves: {
         2: {
           ops: [["EFECTIU", "SMH", 5]], conf: 8, risc: "agressiu",
@@ -202,7 +202,7 @@
       perfil: "El gestor emocional. Quan tot puja, s'anima i compra; quan tot cau, ven de cop. El seu torneig és un manual dels biaixos de Kahneman.",
       fortaleses: ["Reacciona ràpid quan detecta perill", "Capaç de girar la cartera sencera en una setmana"],
       febleses: ["Ven a baix i compra a dalt", "L'excés de confiança el traeix abans de les caigudes"],
-      inicial: { SPY: 30, QQQ: 26, EEM: 10, XLF: 10, VGK: 10, EFECTIU: 14 },
+      inicial: { SPY: 24, QQQ: 18, TSLA: 10, "SAN.MC": 8, META: 8, XLF: 8, VGK: 10, EFECTIU: 14 },
       moves: {
         5: {
           ops: [["EFECTIU", "QQQ", 6]], conf: 8, risc: "agressiu",
@@ -250,7 +250,7 @@
       perfil: "El guardià del capital. Bons, efectiu i una mica de borsa: la seva prioritat és no perdre mai gaire, encara que això signifiqui guanyar menys.",
       fortaleses: ["Gairebé immune a les caigudes", "Anticipa els problemes abans que arribin", "Consistència absoluta"],
       febleses: ["Es perd bona part de les pujades", "Massa prudència té un cost d'oportunitat enorme"],
-      inicial: { TLT: 18, IEF: 20, SPY: 20, LQD: 14, GLD: 10, BIL: 8, EFECTIU: 10 },
+      inicial: { TLT: 16, IEF: 18, SPY: 16, LQD: 12, GLD: 10, "NESN.SW": 8, KO: 6, "IBE.MC": 6, EFECTIU: 8 },
       moves: {
         6: {
           ops: [["SPY", "IEF", 6]], conf: 7, risc: "conservador",
@@ -286,7 +286,7 @@
       perfil: "El caçador d'oportunitats. Or, plata, petroli, urani... sempre veu la pròxima gran jugada i sempre està movent fitxa. Operar tant, però, té un preu: les comissions.",
       fortaleses: ["Olfacte per les tendències de matèries primeres", "No li tremola el pols per apostar fort"],
       febleses: ["Sobreopera: paga més comissions que ningú", "Persegueix el mercat i sovint arriba tard"],
-      inicial: { SPY: 24, GLD: 18, XLE: 14, QQQ: 14, DBC: 10, EFECTIU: 20 },
+      inicial: { GLD: 18, SPY: 16, XLE: 12, "REP.MC": 8, "RACE": 8, NVDA: 8, DBC: 10, EFECTIU: 20 },
       moves: {
         2: {
           ops: [["SPY", "GLD", 6]], conf: 8, risc: "agressiu",
@@ -369,7 +369,7 @@
       perfil: "L'autor del Treball de Recerca. Participa fora de competició amb una cartera senzilla i diversificada, per comparar el criteri humà amateur amb el de les màquines.",
       fortaleses: ["Diversificació senzilla i barata", "No es deixa arrossegar pel soroll"],
       febleses: ["Sense temps ni eines professionals", "Reconeix que improvisa més del que voldria"],
-      inicial: { SPY: 26, QQQ: 18, VGK: 14, GLD: 12, EEM: 10, AGG: 12, EFECTIU: 8 },
+      inicial: { SPY: 24, QQQ: 16, VGK: 12, GLD: 12, AAPL: 8, "ITX.MC": 8, AGG: 12, EFECTIU: 8 },
       moves: {
         12: {
           ops: [["EEM", "SPY", 3]], conf: 5, risc: "moderat",
@@ -613,10 +613,100 @@
     ],
   };
 
+  /* ===================================================================
+     Dades derivades: risc, comissions, exposició i consens
+     (a la demo es calculen aquí; amb dades reals les calcula generar_web.py)
+     =================================================================== */
+  const INFO = (tk) => (window.ALPHA_ACCIONS && window.ALPHA_ACCIONS[tk])
+    || (window.ALPHA_ETFS && window.ALPHA_ETFS[tk]
+        ? Object.assign({ tipus: "etf", pais: "Global" }, window.ALPHA_ETFS[tk])
+        : null);
+
+  function metriquesRisc(serie, puntsAny) {
+    if (!serie || serie.length < 3) return { volatilitat: null, max_caiguda: null, sharpe: null };
+    const rends = [];
+    for (let i = 1; i < serie.length; i++) if (serie[i - 1]) rends.push(serie[i] / serie[i - 1] - 1);
+    const mitjana = rends.reduce((s, r) => s + r, 0) / rends.length;
+    const variancia = rends.reduce((s, r) => s + (r - mitjana) ** 2, 0) / (rends.length - 1);
+    const vol = Math.sqrt(variancia) * Math.sqrt(puntsAny) * 100;
+    const rendAnual = mitjana * puntsAny * 100;
+    let maxim = serie[0], maxCaiguda = 0;
+    serie.forEach((v) => { maxim = Math.max(maxim, v); maxCaiguda = Math.min(maxCaiguda, (v - maxim) / maxim * 100); });
+    return {
+      volatilitat: Math.round(vol * 100) / 100,
+      max_caiguda: Math.round(maxCaiguda * 100) / 100,
+      sharpe: vol > 0.01 ? Math.round((rendAnual / vol) * 100) / 100 : null,
+    };
+  }
+
+  const risc = {};
+  Object.entries(series).forEach(([id, s]) => { risc[id] = metriquesRisc(s, 252); });
+
+  // Comissions: 0,1% de cada operació aplicada (les tenim a 'canvis')
+  const comissions = {};
+  models.filter((m) => !m.isIndex).forEach((m) => {
+    const seus = canvis.filter((c) => c.model === m.id);
+    // cada canvi mou uns punts de cartera; ho aproximem amb el pes mogut
+    const total = seus.reduce((s, c) => s + Math.abs((c.pesDespres || 0) - (c.pesAbans || 0)), 0);
+    comissions[m.id] = Math.round((total / 100) * CAPITAL * 0.001 * 100) / 100;
+  });
+
+  // Exposició per sector, país i tipus
+  const exposicio = {};
+  Object.entries(carteres).forEach(([mid, posicions]) => {
+    const sectors = {}, paisos = {}, tipus = {};
+    posicions.forEach((h) => {
+      const info = h.ticker === "EFECTIU"
+        ? { cat: "Efectiu", pais: "—", tipus: "efectiu" } : (INFO(h.ticker) || { cat: "—", pais: "—", tipus: "etf" });
+      sectors[info.cat] = (sectors[info.cat] || 0) + h.pes;
+      paisos[info.pais] = (paisos[info.pais] || 0) + h.pes;
+      const et = info.tipus === "accio" ? "Accions" : info.tipus === "efectiu" ? "Efectiu" : "Fons (ETFs)";
+      tipus[et] = (tipus[et] || 0) + h.pes;
+      h.tipus = info.tipus; h.sector = info.cat; h.pais = info.pais;
+      h.nom = h.ticker === "EFECTIU" ? "Efectiu" : (info.nom || h.ticker);
+    });
+    const ordena = (o) => Object.fromEntries(Object.entries(o).sort((a, b) => b[1] - a[1]));
+    exposicio[mid] = { sectors: ordena(sectors), paisos: ordena(paisos), tipus: ordena(tipus) };
+  });
+
+  // Consens: qui té cada actiu
+  const tinences = {};
+  Object.entries(carteres).forEach(([mid, posicions]) => {
+    posicions.forEach((h) => {
+      if (h.ticker === "EFECTIU") return;
+      const reg = tinences[h.ticker] || (tinences[h.ticker] = {
+        ticker: h.ticker, nom: h.nom, tipus: h.tipus, sector: h.sector, models: [] });
+      reg.models.push({ model: mid, pes: h.pes });
+    });
+  });
+  const consens = Object.values(tinences).sort((a, b) =>
+    b.models.length - a.models.length ||
+    b.models.reduce((s, x) => s + x.pes, 0) - a.models.reduce((s, x) => s + x.pes, 0));
+
+  // Titulars d'exemple de les últimes setmanes
+  const titulars = [];
+  [[22, 0], [21, 5], [20, 10]].forEach(([setm, desp]) => {
+    const base = [
+      "Els mercats tanquen la setmana amb pujades moderades",
+      "Els fabricants de xips lideren les pujades del Nasdaq",
+      "El BCE manté els tipus d'interès sense canvis",
+      "L'or es manté prop de màxims històrics",
+      "El petroli cau per l'augment de les reserves als EUA",
+      "Inditex presenta resultats per sobre del previst",
+      "La inflació de la zona euro es modera una dècima",
+      "Wall Street tanca en verd després de les dades d'ocupació",
+      "Els bons a 10 anys es relaxen lleugerament",
+      "El dòlar es debilita davant l'euro",
+    ];
+    base.forEach((t) => titulars.push({
+      setmana: setm, data: dies[mondayIdx(setm)] || dies[dies.length - 1], titular: t }));
+  });
+
   // ---- Exposar-ho perquè app.js ho llegeixi ----
   window.ALPHA_DEMO = {
     meta: {
-      capital: CAPITAL, comissio: 0.001, maxPes: 0.40, moneda: "EUR",
+      capital: CAPITAL, comissio: 0.001, maxPes: 0.40,
+      maxPesEtf: 0.40, maxPesAccio: 0.20, moneda: "EUR",
       setmanes: WEEKS, setmanaActual: WEEKS,
       dataInici: dies[0], dataActual: dies[dies.length - 1],
       font: "demo", generat: null,
@@ -631,5 +721,10 @@
     canvis,
     highlights,
     apis,
+    risc,
+    comissions,
+    consens,
+    exposicio,
+    titulars,
   };
 })();

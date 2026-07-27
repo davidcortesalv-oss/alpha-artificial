@@ -1,0 +1,87 @@
+# =====================================================================
+# ALPHA ARTIFICIAL — Actualització DIÀRIA de preus
+# ---------------------------------------------------------------------
+# Les IAs continuen decidint només els dilluns. Aquest robot, en canvi,
+# s'executa cada dia de mercat (dilluns a divendres) i només fa una cosa:
+# recalcular què valen les carteres amb els preus del dia i republicar la
+# web. NO truca cap IA, així que no costa ni un cèntim.
+#
+# Resultat: la gràfica del torneig es mou cada dia.
+# =====================================================================
+name: Preus diaris
+
+on:
+  schedule:
+    # 21:42 UTC de dilluns a divendres: els mercats dels EUA ja han tancat
+    # (22:00 CET). Minut "estrany" a propòsit perquè GitHub sigui puntual.
+    - cron: "42 21 * * 1-5"
+  workflow_dispatch:
+
+concurrency:
+  group: torneig          # mai alhora que la ronda setmanal
+  cancel-in-progress: false
+
+jobs:
+  preus:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - name: Baixar el codi
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instal·lar les llibreries
+        run: pip install -r requirements.txt
+
+      - name: Recalcular el valor de les carteres
+        run: |
+          python actualitzar_preus.py
+          python generar_web.py
+
+      - name: Guardar els valors del dia
+        run: |
+          git config user.name "alpha-artificial-bot"
+          git config user.email "alpha-artificial-bot@users.noreply.github.com"
+          git add dades web/dades.json
+          git commit -m "Preus del dia · $(date +%d/%m/%Y)" || echo "Res de nou (mercat tancat o ja actualitzat)"
+          git push
+
+  # Republicar la web amb els valors nous
+  publicar:
+    needs: preus
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    environment:
+      name: github-pages
+      url: ${{ steps.desplegament.outputs.page_url }}
+    steps:
+      - name: Baixar l'última versió
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Empaquetar la carpeta web/
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+
+      - name: Publicar
+        id: desplegament
+        uses: actions/deploy-pages@v4

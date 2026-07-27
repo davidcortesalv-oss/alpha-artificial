@@ -494,6 +494,80 @@ main {
 .bias-peu { border-top: 1px solid var(--linia); margin: 13px 0 0; padding-top: 11px; font-size: 13px; color: var(--apagat); }
 
 /* =====================================================================
+   GRÀFICS DE DISC (donut) — composició de carteres i comissions
+   ===================================================================== */
+.donut-wrap { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; }
+.donut { width: 210px; height: 210px; flex-shrink: 0; }
+.donut-tros { transition: opacity .15s, transform .15s; transform-origin: 110px 110px; cursor: default; }
+.donut-wrap:hover .donut-tros { opacity: .45; }
+.donut-wrap .donut-tros:hover { opacity: 1; transform: scale(1.04); }
+.donut-c1 { fill: var(--text); font: 700 17px var(--mono); }
+.donut-c2 { fill: var(--apagat-2); font: 500 11px var(--sans); }
+.donut-leg { flex: 1; min-width: 220px; display: flex; flex-direction: column; gap: 2px; }
+.donut-fila {
+  display: grid; grid-template-columns: 12px 1fr auto;
+  gap: 9px; align-items: center; padding: 4px 0;
+  border-bottom: 1px solid var(--linia); font-size: 13px;
+}
+.donut-fila:last-child { border-bottom: none; }
+.donut-punt { width: 10px; height: 10px; border-radius: 3px; }
+.donut-nom { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.donut-val { font: 600 12.5px var(--mono); color: var(--crema); }
+
+/* =====================================================================
+   TAULA (rendibilitat vs risc)
+   ===================================================================== */
+.taula-wrap { overflow-x: auto; }
+.taula { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 520px; }
+.taula th {
+  text-align: right; font: 700 10px var(--mono); letter-spacing: 1px;
+  text-transform: uppercase; color: var(--apagat-2);
+  padding: 0 10px 9px; border-bottom: 1px solid var(--linia-2);
+}
+.taula th:first-child, .taula td:first-child { text-align: left; }
+.taula td { text-align: right; padding: 10px; border-bottom: 1px solid var(--linia); font-family: var(--mono); }
+.taula td:first-child { font-family: var(--sans); display: flex; align-items: center; gap: 8px; }
+.taula tr:last-child td { border-bottom: none; }
+.fila-index td { color: var(--apagat); }
+.fila-index { background: rgba(255, 255, 255, .02); }
+
+/* =====================================================================
+   CONSENS ENTRE IAs
+   ===================================================================== */
+.consens-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+.consens {
+  background: var(--fons-2); border: 1px solid var(--linia);
+  border-radius: 12px; padding: 11px 13px;
+}
+.consens-fort { border-color: rgba(255, 176, 0, .45); background: rgba(255, 176, 0, .06); }
+.consens-sol { border-style: dashed; opacity: .85; }
+.consens-cap { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.consens-cap b { font: 700 14px var(--mono); }
+.consens-nom { font-size: 11.5px; color: var(--apagat-2); margin: 4px 0 8px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.consens-qui { display: flex; gap: 4px; }
+
+/* Titulars registrats */
+.tit-bloc { margin-bottom: 16px; }
+.tit-llista { margin: 8px 0 0; padding-left: 20px; }
+.tit-llista li { font-size: 13px; color: var(--apagat); margin: 5px 0; }
+
+/* Etiquetes petites dins la cartera */
+.mini-etiqueta {
+  display: inline-block; font: 700 9px var(--mono); letter-spacing: .5px;
+  text-transform: uppercase; padding: 1px 6px; border-radius: 5px;
+  background: rgba(255, 176, 0, .13); color: var(--ambre);
+  border: 1px solid rgba(255, 176, 0, .3); margin-left: 5px;
+}
+.mini-etiqueta.mini-etf { background: rgba(255,255,255,.05); color: var(--apagat); border-color: var(--linia-2); }
+
+/* Galeria: accions vs fons */
+.etf.es-accio { border-color: rgba(255, 176, 0, .22); }
+.etf-cat-accio { background: rgba(255, 176, 0, .16); border-color: rgba(255,176,0,.35); color: var(--ambre-2); }
+.etf-sector { font: 600 10.5px var(--mono); letter-spacing: .6px; text-transform: uppercase; color: var(--apagat-2); margin-bottom: 6px; }
+.etf-eines-fila { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+
+/* =====================================================================
    CONFIGURACIÓ D'APIs
    ===================================================================== */
 .api-avis { font-size: 14px; color: var(--apagat); }

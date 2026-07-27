@@ -11,7 +11,22 @@ es el ÚNICO sitio donde tienes que tocar. El resto del programa lee de aquí.
 CAPITAL_INICIAL = 10000.0      # euros virtuales por participante
 COMISSIO = 0.001               # 0,1% por operación
 MAX_PES_PER_ETF = 0.40         # ningún ETF puede pasar del 40% de la cartera
+MAX_PES_PER_ACCIO = 0.20       # ninguna ACCIÓN puede pasar del 20% (más arriesgada)
 MONEDA = "EUR"
+
+# --- Cambio de divisa ---
+# Las acciones cotizan en la moneda de su bolsa (Apple en dólares, Inditex en
+# euros, Shell en peniques...). El torneo se contabiliza en EUROS, así que el
+# motor convierte TODOS los precios a euros antes de calcular nada.
+# 'factor' corrige mercados que cotizan en subunidades (Londres, en peniques).
+DIVISES = {
+    "EUR": {"parell": None,       "factor": 1.0},    # ya está en euros
+    "USD": {"parell": "EURUSD=X", "factor": 1.0},
+    "GBP": {"parell": "EURGBP=X", "factor": 0.01},   # Londres cotiza en penics
+    "JPY": {"parell": "EURJPY=X", "factor": 1.0},
+    "CHF": {"parell": "EURCHF=X", "factor": 1.0},
+    "KRW": {"parell": "EURKRW=X", "factor": 1.0},
+}
 
 # --- Los 5 modelos que compiten ---
 # 'actiu': False de momento porque aún no tienes las claves API.
@@ -62,7 +77,6 @@ UNIVERS_ETFS = {
     "BOTZ": ("Robòtica i IA (Global X)",        "IA i semiconductors"),
     "ROBO": ("Robòtica i automatització",       "IA i semiconductors"),
     "AIQ":  ("Intel·ligència artificial",       "IA i semiconductors"),
-    "IRBO": ("IA i robòtica (iShares)",         "IA i semiconductors"),
     "ARKQ": ("Autonomia i robòtica (ARK)",      "IA i semiconductors"),
 
     # ── Energia ────────────────────────────────────────────────────
@@ -170,6 +184,189 @@ UNIVERS_ETFS = {
     "ITA":  ("Aeroespacial i defensa",          "Sectors EUA"),
     "JETS": ("Aerolínies",                      "Sectors EUA"),
 }
+
+# =====================================================================
+#  ACCIONES CONCRETAS (añadidas en la semana 3 — ver CANVI_DE_REGLES.md)
+# ---------------------------------------------------------------------
+#  Ahora las IAs no solo eligen "tecnología" o "Europa": pueden decir
+#  "compro Nvidia" o "compro Inditex" y explicar por qué. Mucho más
+#  interesante de leer y de analizar en el TR.
+#  Formato: "TICKER": ("nom", "sector", "pais", "moneda")
+#  OJO: la moneda importa — el motor lo convierte todo a euros.
+# =====================================================================
+UNIVERS_ACCIONS = {
+    # ── EUA · Tecnologia ───────────────────────────────────────────
+    "AAPL":  ("Apple",                  "Tecnologia",   "EUA",        "USD"),
+    "MSFT":  ("Microsoft",              "Tecnologia",   "EUA",        "USD"),
+    "NVDA":  ("Nvidia",                 "Semiconductors", "EUA",      "USD"),
+    "GOOGL": ("Alphabet (Google)",      "Tecnologia",   "EUA",        "USD"),
+    "AMZN":  ("Amazon",                 "Consum",       "EUA",        "USD"),
+    "META":  ("Meta (Facebook)",        "Tecnologia",   "EUA",        "USD"),
+    "TSLA":  ("Tesla",                  "Automoció",    "EUA",        "USD"),
+    "AMD":   ("AMD",                    "Semiconductors", "EUA",      "USD"),
+    "INTC":  ("Intel",                  "Semiconductors", "EUA",      "USD"),
+    "AVGO":  ("Broadcom",               "Semiconductors", "EUA",      "USD"),
+    "QCOM":  ("Qualcomm",               "Semiconductors", "EUA",      "USD"),
+    "CRM":   ("Salesforce",             "Tecnologia",   "EUA",        "USD"),
+    "ORCL":  ("Oracle",                 "Tecnologia",   "EUA",        "USD"),
+    "ADBE":  ("Adobe",                  "Tecnologia",   "EUA",        "USD"),
+    "IBM":   ("IBM",                    "Tecnologia",   "EUA",        "USD"),
+    "CSCO":  ("Cisco",                  "Tecnologia",   "EUA",        "USD"),
+    "NFLX":  ("Netflix",                "Mitjans",      "EUA",        "USD"),
+    "PLTR":  ("Palantir",               "Tecnologia",   "EUA",        "USD"),
+
+    # ── EUA · Salut ────────────────────────────────────────────────
+    "JNJ":   ("Johnson & Johnson",      "Salut",        "EUA",        "USD"),
+    "LLY":   ("Eli Lilly",              "Salut",        "EUA",        "USD"),
+    "PFE":   ("Pfizer",                 "Salut",        "EUA",        "USD"),
+    "MRK":   ("Merck",                  "Salut",        "EUA",        "USD"),
+    "ABBV":  ("AbbVie",                 "Salut",        "EUA",        "USD"),
+    "UNH":   ("UnitedHealth",           "Salut",        "EUA",        "USD"),
+    "AMGN":  ("Amgen",                  "Salut",        "EUA",        "USD"),
+    "MRNA":  ("Moderna",                "Salut",        "EUA",        "USD"),
+
+    # ── EUA · Finances ─────────────────────────────────────────────
+    "JPM":   ("JPMorgan Chase",         "Finances",     "EUA",        "USD"),
+    "BAC":   ("Bank of America",        "Finances",     "EUA",        "USD"),
+    "GS":    ("Goldman Sachs",          "Finances",     "EUA",        "USD"),
+    "V":     ("Visa",                   "Finances",     "EUA",        "USD"),
+    "MA":    ("Mastercard",             "Finances",     "EUA",        "USD"),
+    "AXP":   ("American Express",       "Finances",     "EUA",        "USD"),
+    "BRK-B": ("Berkshire Hathaway",     "Finances",     "EUA",        "USD"),
+    "PYPL":  ("PayPal",                 "Finances",     "EUA",        "USD"),
+
+    # ── EUA · Consum ───────────────────────────────────────────────
+    "KO":    ("Coca-Cola",              "Consum",       "EUA",        "USD"),
+    "PEP":   ("PepsiCo",                "Consum",       "EUA",        "USD"),
+    "MCD":   ("McDonald's",             "Consum",       "EUA",        "USD"),
+    "NKE":   ("Nike",                   "Consum",       "EUA",        "USD"),
+    "SBUX":  ("Starbucks",              "Consum",       "EUA",        "USD"),
+    "WMT":   ("Walmart",                "Consum",       "EUA",        "USD"),
+    "COST":  ("Costco",                 "Consum",       "EUA",        "USD"),
+    "PG":    ("Procter & Gamble",       "Consum",       "EUA",        "USD"),
+    "HD":    ("Home Depot",             "Consum",       "EUA",        "USD"),
+    "DIS":   ("Walt Disney",            "Mitjans",      "EUA",        "USD"),
+
+    # ── EUA · Energia i indústria ──────────────────────────────────
+    "XOM":   ("ExxonMobil",             "Energia",      "EUA",        "USD"),
+    "CVX":   ("Chevron",                "Energia",      "EUA",        "USD"),
+    "BA":    ("Boeing",                 "Indústria",    "EUA",        "USD"),
+    "CAT":   ("Caterpillar",            "Indústria",    "EUA",        "USD"),
+    "GE":    ("General Electric",       "Indústria",    "EUA",        "USD"),
+    "LMT":   ("Lockheed Martin",        "Defensa",      "EUA",        "USD"),
+    "RTX":   ("RTX (Raytheon)",         "Defensa",      "EUA",        "USD"),
+    "DE":    ("John Deere",             "Indústria",    "EUA",        "USD"),
+    "UPS":   ("UPS",                    "Logística",    "EUA",        "USD"),
+
+    # ── EUA · Altres ───────────────────────────────────────────────
+    "T":     ("AT&T",                   "Telecomunicacions", "EUA",   "USD"),
+    "VZ":    ("Verizon",                "Telecomunicacions", "EUA",   "USD"),
+    "UBER":  ("Uber",                   "Tecnologia",   "EUA",        "USD"),
+    "ABNB":  ("Airbnb",                 "Consum",       "EUA",        "USD"),
+    "COIN":  ("Coinbase",               "Finances",     "EUA",        "USD"),
+    "F":     ("Ford",                   "Automoció",    "EUA",        "USD"),
+    "GM":    ("General Motors",         "Automoció",    "EUA",        "USD"),
+
+    # ── Espanya (empreses que reconeixeràs del dia a dia) ──────────
+    "ITX.MC":  ("Inditex (Zara)",       "Consum",       "Espanya",    "EUR"),
+    "SAN.MC":  ("Banco Santander",      "Finances",     "Espanya",    "EUR"),
+    "BBVA.MC": ("BBVA",                 "Finances",     "Espanya",    "EUR"),
+    "IBE.MC":  ("Iberdrola",            "Energia",      "Espanya",    "EUR"),
+    "TEF.MC":  ("Telefónica",           "Telecomunicacions", "Espanya", "EUR"),
+    "REP.MC":  ("Repsol",               "Energia",      "Espanya",    "EUR"),
+    "GRF.MC":  ("Grifols",              "Salut",        "Catalunya",  "EUR"),
+    "CLNX.MC": ("Cellnex",              "Telecomunicacions", "Catalunya", "EUR"),
+    "FER.MC":  ("Ferrovial",            "Indústria",    "Espanya",    "EUR"),
+    "AENA.MC": ("Aena (aeroports)",     "Indústria",    "Espanya",    "EUR"),
+    "ELE.MC":  ("Endesa",               "Energia",      "Espanya",    "EUR"),
+    "AMS.MC":  ("Amadeus",              "Tecnologia",   "Espanya",    "EUR"),
+
+    # ── França ─────────────────────────────────────────────────────
+    "MC.PA":  ("LVMH (Louis Vuitton)",  "Luxe",         "França",     "EUR"),
+    "RMS.PA": ("Hermès",                "Luxe",         "França",     "EUR"),
+    "OR.PA":  ("L'Oréal",               "Consum",       "França",     "EUR"),
+    "AIR.PA": ("Airbus",                "Indústria",    "França",     "EUR"),
+    "TTE.PA": ("TotalEnergies",         "Energia",      "França",     "EUR"),
+    "SAN.PA": ("Sanofi",                "Salut",        "França",     "EUR"),
+    "BNP.PA": ("BNP Paribas",           "Finances",     "França",     "EUR"),
+    "CAP.PA": ("Capgemini",             "Tecnologia",   "França",     "EUR"),
+
+    # ── Alemanya ───────────────────────────────────────────────────
+    "SAP.DE": ("SAP",                   "Tecnologia",   "Alemanya",   "EUR"),
+    "SIE.DE": ("Siemens",               "Indústria",    "Alemanya",   "EUR"),
+    "ALV.DE": ("Allianz",               "Finances",     "Alemanya",   "EUR"),
+    "BMW.DE": ("BMW",                   "Automoció",    "Alemanya",   "EUR"),
+    "MBG.DE": ("Mercedes-Benz",         "Automoció",    "Alemanya",   "EUR"),
+    "ADS.DE": ("Adidas",                "Consum",       "Alemanya",   "EUR"),
+    "DTE.DE": ("Deutsche Telekom",      "Telecomunicacions", "Alemanya", "EUR"),
+    "BAS.DE": ("BASF",                  "Química",      "Alemanya",   "EUR"),
+
+    # ── Països Baixos, Bèlgica i Itàlia ────────────────────────────
+    "ASML.AS":  ("ASML",                "Semiconductors", "Països Baixos", "EUR"),
+    "ADYEN.AS": ("Adyen",               "Finances",     "Països Baixos", "EUR"),
+    "PHIA.AS":  ("Philips",             "Salut",        "Països Baixos", "EUR"),
+    "ABI.BR":   ("AB InBev",            "Consum",       "Bèlgica",    "EUR"),
+    "RACE":     ("Ferrari",             "Automoció",    "Itàlia",     "USD"),
+    "ENI.MI":   ("Eni",                 "Energia",      "Itàlia",     "EUR"),
+    "ISP.MI":   ("Intesa Sanpaolo",     "Finances",     "Itàlia",     "EUR"),
+    "STLAM.MI": ("Stellantis",          "Automoció",    "Itàlia",     "EUR"),
+
+    # ── Suïssa ─────────────────────────────────────────────────────
+    "NESN.SW": ("Nestlé",               "Consum",       "Suïssa",     "CHF"),
+    "NOVN.SW": ("Novartis",             "Salut",        "Suïssa",     "CHF"),
+    "UBSG.SW": ("UBS",                  "Finances",     "Suïssa",     "CHF"),
+
+    # ── Regne Unit (cotitzen en penics: el motor ho ajusta) ────────
+    "SHEL.L": ("Shell",                 "Energia",      "Regne Unit", "GBP"),
+    "BP.L":   ("BP",                    "Energia",      "Regne Unit", "GBP"),
+    "AZN.L":  ("AstraZeneca",           "Salut",        "Regne Unit", "GBP"),
+    "HSBA.L": ("HSBC",                  "Finances",     "Regne Unit", "GBP"),
+    "ULVR.L": ("Unilever",              "Consum",       "Regne Unit", "GBP"),
+    "RIO.L":  ("Rio Tinto",             "Mineria",      "Regne Unit", "GBP"),
+
+    # ── Àsia i emergents ───────────────────────────────────────────
+    "TSM":      ("TSMC (xips Taiwan)",  "Semiconductors", "Taiwan",   "USD"),
+    "7203.T":   ("Toyota",              "Automoció",    "Japó",       "JPY"),
+    "6758.T":   ("Sony",                "Tecnologia",   "Japó",       "JPY"),
+    "005930.KS":("Samsung Electronics", "Tecnologia",   "Corea del Sud", "KRW"),
+    "BABA":     ("Alibaba",             "Consum",       "Xina",       "USD"),
+    "PDD":      ("PDD (Temu)",          "Consum",       "Xina",       "USD"),
+    "NTES":     ("NetEase",             "Mitjans",      "Xina",       "USD"),
+    "INFY":     ("Infosys",             "Tecnologia",   "Índia",      "USD"),
+    "HDB":      ("HDFC Bank",           "Finances",     "Índia",      "USD"),
+}
+
+
+# --- Funciones de apoyo: el universo completo (ETFs + acciones) ---
+def es_accio(ticker):
+    """¿Este ticker es una acción concreta (una empresa)?"""
+    return ticker in UNIVERS_ACCIONS
+
+
+def max_pes(ticker):
+    """Límite de cartera de este activo: 20% si es una acción, 40% si es ETF."""
+    return MAX_PES_PER_ACCIO if es_accio(ticker) else MAX_PES_PER_ETF
+
+
+def moneda_de(ticker):
+    """En qué moneda cotiza este activo (los ETFs de la lista son en USD)."""
+    if ticker in UNIVERS_ACCIONS:
+        return UNIVERS_ACCIONS[ticker][3]
+    return "USD"
+
+
+def tots_els_actius():
+    """Todo el universo en un solo diccionario, con la misma forma:
+    {ticker: {"nom", "categoria", "tipus", "pais", "moneda"}}"""
+    total = {}
+    for tk, (nom, cat) in UNIVERS_ETFS.items():
+        total[tk] = {"nom": nom, "categoria": cat, "tipus": "etf",
+                     "pais": "Global", "moneda": "USD"}
+    for tk, (nom, sector, pais, mon) in UNIVERS_ACCIONS.items():
+        total[tk] = {"nom": nom, "categoria": sector, "tipus": "accio",
+                     "pais": pais, "moneda": mon}
+    return total
+
 
 # --- Indicadores de context que se envían a las IAs cada semana ---
 # (símbolos de Yahoo Finance para el "termómetro" del mercado)

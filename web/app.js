@@ -27,9 +27,30 @@
   // ------------------------------------------------------------------
   let DATA = null;
   let chartState = { visible: null, mode: "value", range: Infinity, focus: null };
-  let etfState = { cat: "Totes", cerca: "" };
+  let etfState = { cat: "Totes", cerca: "", tipus: "tots" };
   let informesFiltre = "tots";
   let canvisFiltre = "tots";
+  let exposicioTipus = "sectors";
+
+  // ------------------------------------------------------------------
+  //  Univers d'inversió unificat: ETFs (etfs.js) + accions (univers.js)
+  //  Els dos fitxers tenen la mateixa forma, així la web els tracta igual.
+  // ------------------------------------------------------------------
+  let _ACTIUS = null;
+  function ACTIUS() {
+    if (_ACTIUS) return _ACTIUS;
+    _ACTIUS = {};
+    Object.entries(window.ALPHA_ETFS || {}).forEach(([tk, e]) => {
+      _ACTIUS[tk] = Object.assign({ tipus: "etf", pais: "Global", bandera: "🌍" }, e);
+    });
+    Object.entries(window.ALPHA_ACCIONS || {}).forEach(([tk, e]) => {
+      _ACTIUS[tk] = e;
+    });
+    return _ACTIUS;
+  }
+  const esAccio = (tk) => (ACTIUS()[tk] || {}).tipus === "accio";
+  const nAccions = () => Object.keys(window.ALPHA_ACCIONS || {}).length;
+  const nEtfs = () => Object.keys(window.ALPHA_ETFS || {}).length;
 
   // ------------------------------------------------------------------
   //  Carga de datos: demo → intenta dades.json → refresco periódico
@@ -113,7 +134,9 @@
   }
 
   const nomETF = (tk) => tk === "EFECTIU" ? "Efectiu" :
-    (window.ALPHA_ETFS[tk] ? window.ALPHA_ETFS[tk].nom : tk);
+    (ACTIUS()[tk] ? ACTIUS()[tk].nom : tk);
+  const riscDe = (id) => (DATA.risc || {})[id] || {};
+  const comissioDe = (id) => (DATA.comissions || {})[id];
 
   const swatch = (color, s) => `<span class="sw" style="--c:${color};width:${s || 10}px;height:${s || 10}px"></span>`;
 
@@ -127,7 +150,7 @@
     const vistes = {
       "": viewTauler, informes: viewInformes, canvis: viewCanvis,
       moments: viewMoments, etfs: viewEtfs, biaixos: viewBiaixos,
-      apis: viewApis, ia: () => viewIA(param),
+      analisi: viewAnalisi, apis: viewApis, ia: () => viewIA(param),
     };
     (vistes[nom] || viewTauler)();
     marcarNav(nom);
@@ -166,9 +189,9 @@
           <div>
             <div class="kicker">TREBALL DE RECERCA · EXPERIMENT EN DIRECTE</div>
             <h1>Pot una intel·ligència<br>artificial batre el mercat?</h1>
-            <p class="hero-sub">Cinc IAs gestionen <b>10.000 €</b> cadascuna durant cinc mesos,
-            invertint en un univers de <b>${Object.keys(window.ALPHA_ETFS).length} ETFs reals</b>.
-            El rival a batre: l'índex <b>S&P 500</b>.</p>
+            <p class="hero-sub">Cinc IAs gestionen <b>10.000 €</b> cadascuna durant cinc mesos.
+            Poden comprar <b>${nAccions()} accions d'empreses reals</b> (Nvidia, Inditex, Ferrari…)
+            i <b>${nEtfs()} fons cotitzats</b>. El rival a batre: l'índex <b>S&P 500</b>.</p>
           </div>
           <div class="kpis">
             <div class="kpi"><div class="k-l">Setmana</div><div class="k-v">${DATA.meta.setmanaActual} <span class="k-de">/ ${DATA.meta.setmanes}</span></div></div>
@@ -537,9 +560,16 @@
      ================================================================== */
   function viewEtfs() {
     VISTA().innerHTML = `
-      ${capçaleraVista("Univers d'inversió", `Els ${Object.keys(window.ALPHA_ETFS).length} fons cotitzats (ETFs) on les IAs poden invertir. Llista tancada: cap IA pot comprar res de fora.`)}
+      ${capçaleraVista("Univers d'inversió", `Tot el que les IAs poden comprar: <b>${nAccions()} accions d'empreses concretes</b> de 15 països i <b>${nEtfs()} fons cotitzats</b>. Llista tancada: cap IA pot comprar res de fora.`)}
       <div class="etf-eines">
-        <input id="etf-cerca" type="search" placeholder="Cerca per nom o ticker… (p. ex. «or», SMH)" value="${etfState.cerca}">
+        <div class="etf-eines-fila">
+          <input id="etf-cerca" type="search" placeholder="Cerca per nom, ticker o país… (p. ex. Nvidia, Zara, or)" value="${etfState.cerca}">
+          <div class="seg" id="etf-tipus">
+            <button data-t="tots" class="${etfState.tipus === "tots" ? "active" : ""}">Tot</button>
+            <button data-t="accio" class="${etfState.tipus === "accio" ? "active" : ""}">Empreses</button>
+            <button data-t="etf" class="${etfState.tipus === "etf" ? "active" : ""}">Fons</button>
+          </div>
+        </div>
         <div class="filtres" id="etf-cats"></div>
       </div>
       <div id="etf-grid" class="etf-grid"></div>
@@ -547,11 +577,18 @@
     pintarCatsETF();
     pintarETFs();
     $("#etf-cerca").addEventListener("input", (e) => { etfState.cerca = e.target.value; pintarETFs(); });
+    document.querySelectorAll("#etf-tipus button").forEach((b) => {
+      b.onclick = () => { etfState.tipus = b.dataset.t; etfState.cat = "Totes"; viewEtfs(); };
+    });
   }
 
   function pintarCatsETF() {
-    const cats = ["Totes", ...window.ALPHA_CATEGORIES];
-    $("#etf-cats").innerHTML = cats.map((c) =>
+    // les categories depenen del que estiguem mirant (empreses o fons)
+    let cats;
+    if (etfState.tipus === "accio") cats = window.ALPHA_SECTORS || [];
+    else if (etfState.tipus === "etf") cats = window.ALPHA_CATEGORIES || [];
+    else cats = [...new Set([...(window.ALPHA_SECTORS || []), ...(window.ALPHA_CATEGORIES || [])])].sort();
+    $("#etf-cats").innerHTML = ["Totes", ...cats].map((c) =>
       `<button class="chip chip-cat ${etfState.cat === c ? "on" : ""}" data-c="${c}"><span class="chip-dot"></span>${c}</button>`).join("");
     document.querySelectorAll(".chip-cat").forEach((b) => {
       b.onclick = () => { etfState.cat = b.dataset.c; pintarCatsETF(); pintarETFs(); };
@@ -566,22 +603,31 @@
 
   function pintarETFs() {
     const cerca = etfState.cerca.trim().toLowerCase();
-    const entrades = Object.entries(window.ALPHA_ETFS).filter(([tk, e]) => {
+    const entrades = Object.entries(ACTIUS()).filter(([tk, e]) => {
+      if (etfState.tipus !== "tots" && e.tipus !== etfState.tipus) return false;
       if (etfState.cat !== "Totes" && e.cat !== etfState.cat) return false;
       if (!cerca) return true;
       return tk.toLowerCase().includes(cerca) || e.nom.toLowerCase().includes(cerca) ||
-        e.cat.toLowerCase().includes(cerca) || e.desc.toLowerCase().includes(cerca);
+        e.cat.toLowerCase().includes(cerca) || e.desc.toLowerCase().includes(cerca) ||
+        (e.pais || "").toLowerCase().includes(cerca);
     });
+    // les empreses primer (són el que enganxa), després els fons
+    entrades.sort((a, b) => (a[1].tipus === b[1].tipus) ? 0 : a[1].tipus === "accio" ? -1 : 1);
+
     $("#etf-grid").innerHTML = entrades.map(([tk, e]) => {
       const art = window.ALPHA_ART[e.art] || window.ALPHA_ART.generic;
       const qui = tenedors(tk);
-      return `<div class="etf" data-tk="${tk}">
+      const etiqueta = e.tipus === "accio"
+        ? `<span class="etf-cat etf-cat-accio">${e.bandera || "🌍"} ${e.pais}</span>`
+        : `<span class="etf-cat">${e.cat}</span>`;
+      return `<div class="etf ${e.tipus === "accio" ? "es-accio" : ""}" data-tk="${tk}">
         <div class="etf-art">${art()}
-          <span class="etf-cat">${e.cat}</span>
+          ${etiqueta}
           <span class="etf-tk">${tk}</span>
         </div>
         <div class="etf-cos">
           <div class="etf-nom">${e.nom}</div>
+          <div class="etf-sector">${e.tipus === "accio" ? e.cat : "Fons cotitzat"}</div>
           <div class="etf-desc">${e.desc}</div>
           <div class="etf-peu">
             <span class="etf-risc" title="Nivell de risc ${e.risc} de 5">${"●".repeat(e.risc)}${"○".repeat(5 - e.risc)}</span>
@@ -590,7 +636,7 @@
           </div>
         </div>
       </div>`;
-    }).join("") || '<p class="buit-gran">Cap ETF coincideix amb la cerca.</p>';
+    }).join("") || '<p class="buit-gran">Cap actiu coincideix amb la cerca.</p>';
 
     document.querySelectorAll(".etf").forEach((el) => {
       el.onclick = () => obrirModalETF(el.dataset.tk);
@@ -598,8 +644,10 @@
   }
 
   function obrirModalETF(tk) {
-    const e = window.ALPHA_ETFS[tk];
+    const e = ACTIUS()[tk];
     const art = window.ALPHA_ART[e.art] || window.ALPHA_ART.generic;
+    const limit = e.tipus === "accio"
+      ? (DATA.meta.maxPesAccio || 0.20) : (DATA.meta.maxPesEtf || DATA.meta.maxPes || 0.40);
     const qui = tenedors(tk).map((m) => {
       const h = (DATA.carteres[m.id] || []).find((x) => x.ticker === tk);
       return `<div class="mod-tenedor">${swatch(m.color, 10)}<b>${m.nom}</b><span>${h.pes}% de la cartera · ${euro(h.valor)}</span></div>`;
@@ -610,13 +658,17 @@
       <div class="mod-caixa">
         <div class="mod-art">${art()}</div>
         <div class="mod-cos">
-          <div class="mod-cap"><span class="etf-tk-gran">${tk}</span><span class="tag">${e.cat}</span>
+          <div class="mod-cap"><span class="etf-tk-gran">${tk}</span>
+            <span class="tag">${e.tipus === "accio" ? "Acció" : "Fons (ETF)"}</span>
+            <span class="tag">${e.cat}</span>
+            ${e.tipus === "accio" ? `<span class="tag">${e.bandera || ""} ${e.pais}</span>` : ""}
             <span class="etf-risc">risc ${"●".repeat(e.risc)}${"○".repeat(5 - e.risc)}</span></div>
           <h3>${e.nom}</h3>
           <p>${e.desc}</p>
           <div class="inf-l" style="margin-top:14px">Qui el té ara en cartera</div>
           ${qui || '<p class="buit">Cap IA el té en cartera ara mateix.</p>'}
-          <div class="mod-peu">Ticker de Yahoo Finance: <code>${tk}</code> · Els preus reals els baixa el motor cada dilluns.</div>
+          <div class="mod-peu">Ticker de Yahoo Finance: <code>${tk}</code>${e.moneda && e.moneda !== "EUR" ? ` · cotitza en ${e.moneda}, convertit a euros pel motor` : ""}
+            · Límit permès: <b>${Math.round(limit * 100)}%</b> de la cartera.</div>
           <button class="btn-ghost" id="mod-tancar">Tancar ✕</button>
         </div>
       </div>`;
@@ -661,6 +713,11 @@
           <div class="kpi"><div class="k-l">vs S&P 500</div><div class="k-v ${dif == null ? "" : cls(dif)}">${dif == null ? "—" : pts(dif)}</div></div>
           <div class="kpi"><div class="k-l">Reajustos</div><div class="k-v">${reaj} <span class="k-de">/ ${decs.length} setm.</span></div></div>
           <div class="kpi"><div class="k-l">Confiança mitjana</div><div class="k-v">${dec1(confMitja)} <span class="k-de">/ 10</span></div></div>
+          ${riscDe(id).volatilitat != null ? `
+          <div class="kpi"><div class="k-l">Volatilitat</div><div class="k-v">${dec1(riscDe(id).volatilitat)} <span class="k-de">%</span></div></div>
+          <div class="kpi"><div class="k-l">Pitjor caiguda</div><div class="k-v neg">${dec1(riscDe(id).max_caiguda)} <span class="k-de">%</span></div></div>` : ""}
+          ${comissioDe(id) != null ? `
+          <div class="kpi"><div class="k-l">Comissions pagades</div><div class="k-v">${euro2(comissioDe(id))}</div></div>` : ""}
         </div>
       </section>
 
@@ -672,19 +729,36 @@
         </div>
       </section>
 
+      <section class="card">
+        <div class="bloc-head-link">
+          <h2 class="h-card">Com reparteix els diners</h2>
+          <div class="seg" id="exp-tipus">
+            <button data-e="sectors" class="${exposicioTipus === "sectors" ? "active" : ""}">Sectors</button>
+            <button data-e="paisos" class="${exposicioTipus === "paisos" ? "active" : ""}">Països</button>
+            <button data-e="tipus" class="${exposicioTipus === "tipus" ? "active" : ""}">Empreses vs fons</button>
+          </div>
+        </div>
+        <div id="ia-donut"></div>
+      </section>
+
       <div class="ia-2col">
         <section class="card">
           <h2 class="h-card">Cartera actual</h2>
-          ${cart.length ? cart.map((h) => `
+          ${cart.length ? cart.map((h) => {
+            const accio = h.tipus === "accio";
+            const limit = h.ticker === "EFECTIU" ? 100
+              : Math.round((accio ? (DATA.meta.maxPesAccio || 0.2) : (DATA.meta.maxPesEtf || DATA.meta.maxPes || 0.4)) * 100);
+            return `
             <div class="hold">
               <div class="hold-top">
-                <span class="hold-nom"><b>${h.ticker === "EFECTIU" ? "💶 Efectiu" : h.ticker}</b> ${h.ticker === "EFECTIU" ? "" : "· " + nomETF(h.ticker)}</span>
+                <span class="hold-nom"><b>${h.ticker === "EFECTIU" ? "💶 Efectiu" : h.ticker}</b> ${h.ticker === "EFECTIU" ? "" : "· " + (h.nom || nomETF(h.ticker))}
+                  ${accio ? '<span class="mini-etiqueta">acció</span>' : h.ticker === "EFECTIU" ? "" : '<span class="mini-etiqueta mini-etf">fons</span>'}</span>
                 <span class="hold-xifres">${h.pes}% · ${euro(h.valor)}</span>
               </div>
-              <div class="hold-bar"><span style="width:${(h.pes / 40) * 100}%;background:${h.ticker === "EFECTIU" ? "var(--apagat)" : m.color}"></span></div>
-            </div>`).join("")
+              <div class="hold-bar" title="Límit permès: ${limit}%"><span style="width:${Math.min(100, (h.pes / limit) * 100)}%;background:${h.ticker === "EFECTIU" ? "var(--apagat)" : m.color}"></span></div>
+            </div>`; }).join("")
           : '<p class="buit">Encara no hi ha dades de cartera (el motor les escriurà a dades/carteres.csv).</p>'}
-          <div class="hold-nota">La barra plena = límit del 40% per ETF.</div>
+          <div class="hold-nota">La barra plena = el límit permès per aquell actiu (20% accions, 40% fons).</div>
         </section>
 
         <section class="card">
@@ -723,6 +797,17 @@
         </div>
       </section>`;
 
+    // gràfic de disc: com reparteix els diners aquesta IA
+    pintarDonutIA(id);
+    document.querySelectorAll("#exp-tipus button").forEach((b) => {
+      b.onclick = () => {
+        exposicioTipus = b.dataset.e;
+        document.querySelectorAll("#exp-tipus button").forEach((x) => x.classList.remove("active"));
+        b.classList.add("active");
+        pintarDonutIA(id);
+      };
+    });
+
     // gráfica individual: la IA vs el índice
     window.AlphaChart.render($("#ia-chart"), {
       dies: DATA.dies, series: DATA.series, models: DATA.models,
@@ -739,6 +824,143 @@
         return `<div class="tt-cap"><b>${fmtData(DATA.dies[iGlobal])}</b></div>${files}`;
       },
     });
+  }
+
+  // --- gràfic de disc de la composició d'una IA ---
+  function pintarDonutIA(id) {
+    const el = $("#ia-donut");
+    if (!el) return;
+    const exp = (DATA.exposicio || {})[id];
+    if (!exp) {
+      // sense dades d'exposició, la calculem de la cartera
+      const cart = DATA.carteres[id] || [];
+      if (!cart.length) { el.innerHTML = '<p class="buit">Sense dades de cartera.</p>'; return; }
+      const acc = {};
+      cart.forEach((h) => {
+        const clau = exposicioTipus === "tipus"
+          ? (h.tipus === "accio" ? "Accions" : h.ticker === "EFECTIU" ? "Efectiu" : "Fons (ETFs)")
+          : (exposicioTipus === "paisos" ? (h.pais || "—") : (h.sector || "—"));
+        acc[clau] = (acc[clau] || 0) + h.pes;
+      });
+      window.AlphaChart.donut(el, {
+        dades: Object.entries(acc).sort((a, b) => b[1] - a[1])
+          .map(([etiqueta, valor]) => ({ etiqueta, valor })),
+        unitat: "%", centre: { dalt: model(id).nom, baix: "cartera" },
+      });
+      return;
+    }
+    const dades = Object.entries(exp[exposicioTipus] || {})
+      .map(([etiqueta, valor]) => ({ etiqueta, valor }));
+    window.AlphaChart.donut(el, {
+      dades, unitat: "%",
+      centre: { dalt: model(id).nom, baix: exposicioTipus === "paisos" ? "per països" : exposicioTipus === "tipus" ? "per tipus" : "per sectors" },
+    });
+  }
+
+  /* ==================================================================
+     VISTA 9 · ANÀLISI (risc, comissions i consens)
+     ================================================================== */
+  function viewAnalisi() {
+    const comp = competidors();
+    const teRisc = comp.some((m) => riscDe(m.id).volatilitat != null);
+    const teComissions = comp.some((m) => comissioDe(m.id) != null);
+    const consens = DATA.consens || [];
+
+    VISTA().innerHTML = `
+      ${capçaleraVista("Anàlisi del torneig", "Les xifres que un gestor professional miraria: quant risc assumeix cada IA, quant li costen les comissions i en què coincideixen totes.")}
+
+      <section class="card">
+        <h2 class="h-card">Rendibilitat vs. risc</h2>
+        <p class="bias-q">Guanyar molt assumint molt risc no és el mateix que guanyar molt amb calma. El <b>ràtio de Sharpe</b> mesura precisament això: quanta rendibilitat s'obté per cada unitat de risc (com més alt, millor).</p>
+        ${teRisc ? `
+        <div class="taula-wrap"><table class="taula">
+          <thead><tr><th>Participant</th><th>Rendibilitat</th><th>Volatilitat</th><th>Pitjor caiguda</th><th>Sharpe</th></tr></thead>
+          <tbody>
+            ${[...DATA.models].filter((m) => m.competeix || m.isIndex)
+              .sort((a, b) => (riscDe(b.id).sharpe || -99) - (riscDe(a.id).sharpe || -99))
+              .map((m) => {
+                const r = riscDe(m.id), rend = retPct(m.id);
+                return `<tr class="${m.isIndex ? "fila-index" : ""}">
+                  <td>${swatch(m.color, 9)} <b>${m.nom}</b>${m.isIndex ? ' <span class="tag tag-index">RIVAL</span>' : ""}</td>
+                  <td class="${cls(rend)}">${pct(rend)}</td>
+                  <td>${r.volatilitat != null ? dec1(r.volatilitat) + " %" : "—"}</td>
+                  <td class="neg">${r.max_caiguda != null ? dec1(r.max_caiguda) + " %" : "—"}</td>
+                  <td><b>${r.sharpe != null ? dec1(r.sharpe) : "—"}</b></td>
+                </tr>`;
+              }).join("")}
+          </tbody>
+        </table></div>
+        <p class="hold-nota">Volatilitat i Sharpe estan anualitzats. Calculats sobre ${DATA.dies.length} punts de dades.</p>`
+        : '<p class="buit-gran">Calen unes quantes setmanes de dades per calcular aquestes mètriques.</p>'}
+      </section>
+
+      ${teComissions ? `
+      <div class="ia-2col">
+        <section class="card">
+          <h2 class="h-card">Qui paga més comissions</h2>
+          <p class="bias-q">Cada operació costa un 0,1%. Aquesta és la prova directa de si sobreoperar surt car.</p>
+          <div id="donut-comissions"></div>
+        </section>
+        <section class="card">
+          <h2 class="h-card">Comissions vs. resultat</h2>
+          <p class="bias-q">Si la hipòtesi del TR és certa, les IAs que més paguen en comissions haurien de tendir a rendir pitjor.</p>
+          ${comp.map((m) => {
+            const c = comissioDe(m.id) || 0;
+            const maxc = Math.max(...comp.map((x) => comissioDe(x.id) || 0), 0.01);
+            const r = retPct(m.id);
+            return `<div class="bias-fila">
+              <span class="bias-nom">${swatch(m.color, 9)}${m.nom}</span>
+              <span class="bias-val">${euro2(c)}</span>
+              <span class="bias-bar"><span style="width:${(c / maxc) * 100}%;background:${m.color}"></span></span>
+              <span class="bias-val ${cls(r)}">${pct(r)}</span>
+            </div>`;
+          }).join("")}
+        </section>
+      </div>` : ""}
+
+      <section class="card">
+        <h2 class="h-card">En què coincideixen les IAs</h2>
+        <p class="bias-q">Els actius que tenen diverses IAs alhora (consens) i les apostes que fa una de sola (divergència). Quan cinc intel·ligències diferents coincideixen en una empresa, és un senyal interessant.</p>
+        ${consens.length ? `
+          <div class="consens-grid">
+            ${consens.slice(0, 24).map((c) => `
+              <div class="consens ${c.models.length >= 3 ? "consens-fort" : c.models.length === 1 ? "consens-sol" : ""}">
+                <div class="consens-cap">
+                  <b>${c.ticker}</b>
+                  <span class="tag">${c.models.length} de ${comp.length}</span>
+                </div>
+                <div class="consens-nom">${c.nom || nomETF(c.ticker)}</div>
+                <div class="consens-qui">${c.models.map((x) => {
+                  const mm = model(x.model);
+                  return mm ? `<span title="${mm.nom}: ${x.pes}%">${swatch(mm.color, 9)}</span>` : "";
+                }).join("")}</div>
+              </div>`).join("")}
+          </div>`
+        : '<p class="buit-gran">Encara no hi ha carteres per comparar.</p>'}
+      </section>
+
+      ${(DATA.titulars || []).length ? `
+      <section class="card">
+        <h2 class="h-card">Les notícies que han vist les IAs</h2>
+        <p class="bias-q">Totes les IAs reben <b>exactament</b> els mateixos titulars cada setmana. Aquest registre ho demostra: cap no té més informació que una altra.</p>
+        ${(() => {
+          const perSetmana = {};
+          DATA.titulars.forEach((t) => { (perSetmana[t.setmana] = perSetmana[t.setmana] || []).push(t); });
+          return Object.keys(perSetmana).sort((a, b) => b - a).slice(0, 3).map((s) => `
+            <div class="tit-bloc">
+              <div class="inf-l">Setmana ${s} · ${fmtData(perSetmana[s][0].data)}</div>
+              <ol class="tit-llista">${perSetmana[s].map((t) => `<li>${t.titular}</li>`).join("")}</ol>
+            </div>`).join("");
+        })()}
+      </section>` : ""}`;
+
+    if (teComissions) {
+      window.AlphaChart.donut($("#donut-comissions"), {
+        dades: comp.map((m) => ({ etiqueta: m.nom, valor: comissioDe(m.id) || 0, color: m.color })),
+        unitat: "€",
+        centre: { dalt: euro2(comp.reduce((s, m) => s + (comissioDe(m.id) || 0), 0)), baix: "en total" },
+      });
+    }
   }
 
   /* ==================================================================

@@ -224,5 +224,70 @@
     hitRect.addEventListener("touchend", out);
   }
 
-  window.AlphaChart = { render, fmtData, fmtDataLlarga };
+  /* ===================================================================
+     GRÀFIC DE DISC (donut) — per a la composició de carteres
+     -------------------------------------------------------------------
+     cfg = {
+       dades: [{etiqueta, valor, color}],   // valor en % o en €
+       unitat: "%" | "€",
+       centre: {dalt, baix},                // text del forat del mig
+       llegenda: true/false
+     }
+     =================================================================== */
+  const PALETA = [
+    "#ffb000", "#3fd07a", "#5b8def", "#cc785c", "#9a7bff", "#ff4d6d",
+    "#19c3a0", "#ffd84d", "#c084fc", "#7aa8d8", "#f0a06a", "#8be0f8",
+    "#b6f04d", "#ff9f68", "#6a9fb5", "#d884ff",
+  ];
+
+  function donut(el, cfg) {
+    const dades = (cfg.dades || []).filter((d) => d.valor > 0);
+    if (!dades.length) { el.innerHTML = '<p class="buit">Sense dades.</p>'; return; }
+
+    const total = dades.reduce((s, d) => s + d.valor, 0) || 1;
+    const R = 100, r = 62, cx = 110, cy = 110;   // radis exterior/interior
+    const fmt = (v) => cfg.unitat === "€"
+      ? Math.round(v).toLocaleString("ca-ES") + " €"
+      : v.toLocaleString("ca-ES", { maximumFractionDigits: 1 }) + " %";
+
+    let angle = -Math.PI / 2;   // comencem a dalt
+    let camins = "";
+    dades.forEach((d, i) => {
+      const frac = d.valor / total;
+      const fi = angle + frac * Math.PI * 2;
+      const color = d.color || PALETA[i % PALETA.length];
+      // un sector "gairebé sencer" es dibuixa com dos arcs per evitar bugs SVG
+      const gran = frac > 0.5 ? 1 : 0;
+      const x1 = cx + Math.cos(angle) * R, y1 = cy + Math.sin(angle) * R;
+      const x2 = cx + Math.cos(fi) * R, y2 = cy + Math.sin(fi) * R;
+      const x3 = cx + Math.cos(fi) * r, y3 = cy + Math.sin(fi) * r;
+      const x4 = cx + Math.cos(angle) * r, y4 = cy + Math.sin(angle) * r;
+      const d0 = frac >= 0.999
+        ? `M ${cx - R} ${cy} A ${R} ${R} 0 1 1 ${cx + R} ${cy} A ${R} ${R} 0 1 1 ${cx - R} ${cy} Z
+           M ${cx - r} ${cy} A ${r} ${r} 0 1 0 ${cx + r} ${cy} A ${r} ${r} 0 1 0 ${cx - r} ${cy} Z`
+        : `M ${x1} ${y1} A ${R} ${R} 0 ${gran} 1 ${x2} ${y2} L ${x3} ${y3} A ${r} ${r} 0 ${gran} 0 ${x4} ${y4} Z`;
+      camins += `<path d="${d0}" fill="${color}" class="donut-tros"
+        data-etiqueta="${d.etiqueta}" data-valor="${fmt(d.valor)}"
+        fill-rule="evenodd"><title>${d.etiqueta}: ${fmt(d.valor)}</title></path>`;
+      angle = fi;
+    });
+
+    const centre = cfg.centre || {};
+    const svg = `<svg viewBox="0 0 220 220" class="donut">
+      ${camins}
+      ${centre.dalt ? `<text x="${cx}" y="${cy - 4}" class="donut-c1" text-anchor="middle">${centre.dalt}</text>` : ""}
+      ${centre.baix ? `<text x="${cx}" y="${cy + 16}" class="donut-c2" text-anchor="middle">${centre.baix}</text>` : ""}
+    </svg>`;
+
+    const llegenda = cfg.llegenda === false ? "" : `<div class="donut-leg">${
+      dades.map((d, i) => `<div class="donut-fila">
+        <span class="donut-punt" style="background:${d.color || PALETA[i % PALETA.length]}"></span>
+        <span class="donut-nom">${d.etiqueta}</span>
+        <span class="donut-val">${fmt(d.valor)}</span>
+      </div>`).join("")}</div>`;
+
+    el.innerHTML = `<div class="donut-wrap">${svg}${llegenda}</div>`;
+  }
+
+  window.AlphaChart = { render, donut, fmtData, fmtDataLlarga, PALETA };
 })();

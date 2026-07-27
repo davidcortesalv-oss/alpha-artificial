@@ -17,16 +17,22 @@ Cada dilluns, de manera automàtica:
 
 ```
 alpha-artificial/
-├── config.py              → totes les regles i l'univers de ~110 ETFs
+├── config.py              → totes les regles, 108 ETFs i 114 accions
 ├── torneo.py              → el motor (una ronda setmanal completa)
 ├── connectors_ia.py       → les trucades reals a cada API d'IA
+├── actualitzar_preus.py   → refresca el valor de les carteres cada dia (gratis)
 ├── generar_web.py         → converteix els CSV en dades per a la web
+├── generar_univers_web.py → passa l'univers de config.py a la web
 ├── prompts/
 │   └── prompt_setmanal.txt → les instruccions que rep cada IA
 ├── dades/                 → l'historial del torneig
 │   ├── decisions.csv       → totes les decisions i justificacions
 │   ├── canvis.csv          → cada operació aplicada
-│   ├── carteres.csv        → foto actual de cada cartera
+│   ├── carteres.csv        → foto actual de cada cartera (amb sector i país)
+│   ├── comissions.csv      → què ha pagat cada IA en comissions
+│   ├── titulars.csv        → els titulars que ha vist cada IA cada setmana
+│   ├── valors_diaris.csv   → valor de cada cartera cada dia de mercat
+│   ├── briefings/          → el text exacte enviat a cada IA (traçabilitat)
 │   ├── index.csv           → la línia del S&P 500 (el rival)
 │   ├── destacats.csv       → moments destacats (opcional, escrits a mà)
 │   └── estat_torneig.json  → la memòria entre setmanes
@@ -75,11 +81,17 @@ Claus que fa servir el sistema: `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`,
 ## Regles del torneig
 
 - 10.000 € virtuals per participant, amb preus reals de mercat.
-- 1 decisió per setmana (dilluns).
-- Màxim 40% de la cartera en un sol ETF.
+- 1 decisió per setmana (dilluns). El valor de les carteres es recalcula **cada dia** de mercat.
+- Univers: **114 accions d'empreses concretes** (de 15 països) i **108 ETFs**.
+- Màxim **20%** de la cartera en una sola acció; màxim **40%** en un sol ETF.
 - Comissió del 0,1% per operació.
 - Sense palanquejament ni posicions curtes.
-- Totes les IAs reben exactament la mateixa informació.
+- Totes les IAs reben exactament la mateixa informació (mateixos preus i titulars).
+- Tots els preus es converteixen a **euros** abans de calcular res.
+
+> ⚠️ Les regles es van ampliar la setmana 4 (27/07/2026). El detall complet i el
+> motiu estan a [CANVI_DE_REGLES.md](CANVI_DE_REGLES.md) — document pensat per
+> citar-lo directament al Treball de Recerca.
 
 ## Estat actual
 
