@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-07-27",
     "font": "real",
-    "generat": "2026-07-27T18:45",
+    "generat": "2026-07-27T22:41",
     "puntsPerSetmana": 1,
     "nAccions": 114,
     "nEtfs": 108
@@ -2946,7 +2946,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 8 · 2026-07-27",
         "ultimBriefing": ""
       },
@@ -2956,7 +2956,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 8 · 2026-07-27",
         "ultimBriefing": "1) Rebaixem part de la durada llarga passant de TLT cap a TIP per defensar-nos d’un escenari on les expectatives d’inflació repunten (oli ferm, titular 9) mentr…"
       },
@@ -2966,7 +2966,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 8 · 2026-07-27",
         "ultimBriefing": "La decisió de reajustar la cartera es fonamenta en la necessitat de respondre a la forta caiguda setmanal i als senyals de mercat. En primer lloc, venc la total…"
       },
@@ -2976,7 +2976,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 8 · 2026-07-27",
         "ultimBriefing": "Venc QQQ perquè el Nasdaq 100 és el més colpejat per la correcció de DeepSeek i les incerteses sobre la competència xinesa en IA. La recuperació pot trigar setm…"
       },
@@ -2986,7 +2986,7 @@
         "model_api": "mistral-large-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 8 · 2026-07-27",
         "ultimBriefing": "1. **Reducció d'exposició a SPY i VGK**: Tot i que SPY és un actiu sòlid, la seva sobreponderació (30.6%) i la correcció actual del S&P 500 aconsellen reduir ri…"
       }
