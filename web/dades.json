@@ -8,23 +8,17 @@
     "moneda": "EUR",
     "setmanes": 22,
     "setmanaActual": 8,
-    "dataInici": "2026-07-09",
-    "dataActual": "2026-07-27",
+    "dataInici": "2026-07-27",
+    "dataActual": "2026-07-28",
     "font": "real",
-    "generat": "2026-07-27T22:41",
-    "puntsPerSetmana": 1,
+    "generat": "2026-07-28T22:42",
+    "puntsPerSetmana": 5,
     "nAccions": 114,
     "nEtfs": 108
   },
   "dies": [
-    "2026-07-09",
-    "2026-07-13",
-    "2026-07-13",
-    "2026-07-17",
-    "2026-07-20",
-    "2026-07-25",
     "2026-07-27",
-    "2026-07-27"
+    "2026-07-28"
   ],
   "models": [
     {
@@ -120,64 +114,28 @@
   ],
   "series": {
     "claude": [
-      10000.01,
-      10039.0,
-      10039.0,
-      9908.28,
-      9879.92,
-      9821.61,
-      9824.11,
-      9824.11
+      9838.12,
+      9804.12
     ],
     "gpt": [
-      9996.01,
-      10046.39,
-      10046.39,
-      9834.57,
-      9767.06,
-      9705.89,
-      9757.72,
-      9757.72
+      9778.51,
+      9697.97
     ],
     "gemini": [
-      9999.01,
-      10041.06,
-      10041.06,
-      9909.03,
-      9872.02,
-      9814.09,
-      9797.62,
-      9797.62
+      9808.28,
+      9811.97
     ],
     "deepseek": [
-      10000.01,
-      10039.0,
-      10039.0,
-      9908.28,
-      9879.92,
-      9821.61,
-      9824.11,
-      9824.11
+      9832.48,
+      9790.39
     ],
     "mistral": [
-      9996.01,
-      10029.86,
-      10026.86,
-      9812.08,
-      9750.78,
-      9725.04,
-      9707.67,
-      9707.67
+      9719.95,
+      9744.16
     ],
     "index": [
-      10000.0,
-      10095.61,
-      10095.61,
-      10039.05,
-      9939.69,
-      9881.39,
-      9871.36,
-      9871.36
+      9890.61,
+      9901.23
     ]
   },
   "decisions": {
@@ -3008,34 +2966,34 @@
   },
   "risc": {
     "claude": {
-      "volatilitat": 3.99,
-      "max_caiguda": -2.17,
-      "sharpe": -3.29
+      "volatilitat": null,
+      "max_caiguda": null,
+      "sharpe": null
     },
     "gpt": {
-      "volatilitat": 6.61,
-      "max_caiguda": -3.39,
-      "sharpe": -2.68
+      "volatilitat": null,
+      "max_caiguda": null,
+      "sharpe": null
     },
     "gemini": {
-      "volatilitat": 3.99,
-      "max_caiguda": -2.42,
-      "sharpe": -3.77
+      "volatilitat": null,
+      "max_caiguda": null,
+      "sharpe": null
     },
     "deepseek": {
-      "volatilitat": 3.99,
-      "max_caiguda": -2.17,
-      "sharpe": -3.29
+      "volatilitat": null,
+      "max_caiguda": null,
+      "sharpe": null
     },
     "mistral": {
-      "volatilitat": 5.88,
-      "max_caiguda": -3.21,
-      "sharpe": -3.66
+      "volatilitat": null,
+      "max_caiguda": null,
+      "sharpe": null
     },
     "index": {
-      "volatilitat": 4.49,
-      "max_caiguda": -2.22,
-      "sharpe": -2.12
+      "volatilitat": null,
+      "max_caiguda": null,
+      "sharpe": null
     }
   },
   "comissions": {
