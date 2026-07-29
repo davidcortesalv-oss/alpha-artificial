@@ -34,3 +34,11 @@ data,setmana,model,vendre,comprar,import_eur
 2026-07-27,8,mistral,VGK,NESN.SW,499.5
 2026-07-27,8,mistral,EWJ,PG,299.7
 2026-07-27,8,mistral,DBC,BIL,254.73
+2026-07-29,9,gpt,VGK,SMH,245.16
+2026-07-29,9,gpt,SPY,QQQ,206.9
+2026-07-29,9,gpt,TLT,TIP,190.69
+2026-07-29,9,gemini,EFECTIU,XLP,480.58
+2026-07-29,9,deepseek,GLD,VIG,949.05
+2026-07-29,9,mistral,XLP,XLE,499.5
+2026-07-29,9,mistral,BIL,CVX,287.36
+2026-07-29,9,mistral,IEF,LLY,399.6
