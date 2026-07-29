@@ -9,16 +9,17 @@
     "setmanes": 22,
     "setmanaActual": 9,
     "dataInici": "2026-07-27",
-    "dataActual": "2026-07-28",
+    "dataActual": "2026-07-29",
     "font": "real",
-    "generat": "2026-07-29T20:25",
+    "generat": "2026-07-29T22:39",
     "puntsPerSetmana": 5,
     "nAccions": 114,
     "nEtfs": 108
   },
   "dies": [
     "2026-07-27",
-    "2026-07-28"
+    "2026-07-28",
+    "2026-07-29"
   ],
   "models": [
     {
@@ -115,27 +116,33 @@
   "series": {
     "claude": [
       9838.12,
-      9804.12
+      9804.12,
+      9632.24
     ],
     "gpt": [
       9778.51,
-      9697.97
+      9697.97,
+      9491.9
     ],
     "gemini": [
       9808.28,
-      9811.97
+      9811.97,
+      9666.82
     ],
     "deepseek": [
       9832.48,
-      9790.39
+      9790.39,
+      9663.01
     ],
     "mistral": [
       9719.95,
-      9744.16
+      9744.16,
+      9624.58
     ],
     "index": [
       9890.61,
-      9901.23
+      9901.23,
+      9677.49
     ]
   },
   "decisions": {
@@ -3347,7 +3354,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 9 · 2026-07-29",
         "ultimBriefing": "(sense resposta: Error de connexió: 529 Server Error: <none> for url: https://api.anthropic.com/v1/messages)"
       },
@@ -3357,7 +3364,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 9 · 2026-07-29",
         "ultimBriefing": "Reforcem l’exposició a IA/semis després d’una venda motivada per titulars: el titular 3 (‘DeepSeek no enfonsarà els titans d’IA’) dona suport a la tesi estructu…"
       },
@@ -3367,7 +3374,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 9 · 2026-07-29",
         "ultimBriefing": "Davant la persistent volatilitat del mercat, la recent caiguda del sector tecnològic i els renovats temors inflacionistes, considero prudent reforçar encara més…"
       },
@@ -3377,7 +3384,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 9 · 2026-07-29",
         "ultimBriefing": "Redueixo la posició en or (GLD) perquè ha perdut impuls aquesta setmana i ja està al límit del 40%. Amb els 950 € alliberats, compro VIG (dividends creixents) p…"
       },
@@ -3387,7 +3394,7 @@
         "model_api": "mistral-large-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 9 · 2026-07-29",
         "ultimBriefing": "1. **Rotació de XLP a XLE**: Tot i que el consum bàsic és defensiu, la seva rendibilitat està limitada en un context d'inflació persistent (títol 5: preus del c…"
       }
@@ -3409,34 +3416,34 @@
   },
   "risc": {
     "claude": {
-      "volatilitat": null,
-      "max_caiguda": null,
-      "sharpe": null
+      "volatilitat": 15.8,
+      "max_caiguda": -2.09,
+      "sharpe": -16.74
     },
     "gpt": {
-      "volatilitat": null,
-      "max_caiguda": null,
-      "sharpe": null
+      "volatilitat": 14.61,
+      "max_caiguda": -2.93,
+      "sharpe": -25.44
     },
     "gemini": {
-      "volatilitat": null,
-      "max_caiguda": null,
-      "sharpe": null
+      "volatilitat": 17.03,
+      "max_caiguda": -1.48,
+      "sharpe": -10.67
     },
     "deepseek": {
-      "volatilitat": null,
-      "max_caiguda": null,
-      "sharpe": null
+      "volatilitat": 9.8,
+      "max_caiguda": -1.72,
+      "sharpe": -22.23
     },
     "mistral": {
-      "volatilitat": null,
-      "max_caiguda": null,
-      "sharpe": null
+      "volatilitat": 16.57,
+      "max_caiguda": -1.23,
+      "sharpe": -7.44
     },
     "index": {
-      "volatilitat": null,
-      "max_caiguda": null,
-      "sharpe": null
+      "volatilitat": 26.57,
+      "max_caiguda": -2.26,
+      "sharpe": -10.21
     }
   },
   "comissions": {
