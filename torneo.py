@@ -175,6 +175,61 @@ def carregar_prompt():
         return f.read()
 
 
+def carregar_variacions():
+    """Calcula quant ha pujat o baixat cada actiu en 1 setmana, 1 mes i 1 any,
+    a partir de l'historial que genera generar_historic.py.
+
+    PER QUÈ EXISTEIX AIXÒ (30/07/2026): abans, el briefing només donava el
+    preu d'avui. Amb un ETF n'hi ha prou (el nom ja diu què compres: "Or
+    físic", "Bons EUA 20+ anys"), però amb una acció el preu sol no diu res:
+    saber que Apple val 296 € no et permet decidir si comprar-la. Les cinc
+    IAs van dir explícitament que per això treballaven gairebé només amb
+    ETFs. Aquestes dades igualen el terreny: són les mateixes que té a la
+    pantalla qualsevol gestor real, i es donen per a TOTS els actius per
+    igual, sense afavorir accions ni fons.
+
+    Torna {ticker: {"s": %1setmana, "m": %1mes, "a": %1any}}.
+    Si no hi ha historial, torna {} i el briefing simplement no les mostra."""
+    ruta = os.path.join("web", "historic.json")
+    if not os.path.exists(ruta):
+        print("    [i] Sense web/historic.json: el briefing no portarà variacions.")
+        return {}
+    try:
+        with open(ruta, encoding="utf-8") as f:
+            hist = json.load(f)
+    except (ValueError, OSError):
+        return {}
+
+    diari = hist.get("diari", {}).get("preus", {})
+    setmanal = hist.get("setmanal", {}).get("preus", {})
+
+    def variacio(serie, punts_enrere):
+        """% de canvi entre fa 'punts_enrere' punts i l'últim valor."""
+        nets = [v for v in serie if v is not None]
+        if len(nets) < 2:
+            return None
+        actual = nets[-1]
+        i = max(0, len(nets) - 1 - punts_enrere)
+        abans = nets[i]
+        if not abans:
+            return None
+        return round((actual / abans - 1) * 100, 1)
+
+    variacions = {}
+    for tk in config.tots_els_actius():
+        d, s = diari.get(tk), setmanal.get(tk)
+        if not d and not s:
+            continue
+        variacions[tk] = {
+            "s": variacio(d, 5) if d else None,       # ~5 dies de mercat
+            "m": variacio(d, 21) if d else None,      # ~21 dies de mercat
+            "a": variacio(d, 252) if d else (variacio(s, 52) if s else None),
+        }
+    if variacions:
+        print(f"    Variacions de mercat calculades per a {len(variacions)} actius.")
+    return variacions
+
+
 def obtenir_titulars():
     """Baja los titulares de actualidad y devuelve los más recientes y
     relevantes. Se piden UNA vez por ronda y se dan idénticos a las 5 IAs,
@@ -319,19 +374,35 @@ def valor_setmana_anterior(model_id):
         return None
 
 
-def montar_briefing(setmana, preus, cartera, model_id, titulars=None):
+def montar_briefing(setmana, preus, cartera, model_id, titulars=None, variacions=None):
     """Rellena los huecos {{...}} del prompt con los datos reales de esta
     semana y de esta IA concreta. Devuelve el texto final a enviar."""
     plantilla = carregar_prompt()
 
     # --- Lista de activos disponibles, en dos bloques ---
     # Primero las empresas (agrupadas por país, que es como piensa un gestor)
-    # y después los fondos. Todos los precios ya vienen en euros.
+    # y después los fondos. Todos los precios ya vienen en euros, y cada
+    # activo lleva su evolución reciente (misma información para todos).
+    variacions = variacions or {}
+
+    def evolucio(tk):
+        """Text amb l'evolució recent d'un actiu, per posar al costat del preu."""
+        v = variacions.get(tk)
+        if not v:
+            return ""
+        parts = []
+        for clau, etiqueta in (("s", "1set"), ("m", "1mes"), ("a", "1any")):
+            valor = v.get(clau)
+            if valor is not None:
+                parts.append(f"{etiqueta} {valor:+.1f}%")
+        return ("  | " + " · ".join(parts)) if parts else ""
+
     per_pais = {}
     for tk, (nom, sector, pais, _mon) in config.UNIVERS_ACCIONS.items():
         p = preus.get(tk)
         if p is not None:
-            per_pais.setdefault(pais, []).append(f"    {tk} — {nom} ({sector}) — {p} €")
+            per_pais.setdefault(pais, []).append(
+                f"    {tk} — {nom} ({sector}) — {p} €{evolucio(tk)}")
 
     linies = ["ACCIONS D'EMPRESES CONCRETES (màxim "
               f"{int(config.MAX_PES_PER_ACCIO * 100)}% de la cartera per empresa):"]
@@ -346,7 +417,7 @@ def montar_briefing(setmana, preus, cartera, model_id, titulars=None):
     for tk, (nom, cat) in config.UNIVERS_ETFS.items():
         p = preus.get(tk)
         if p is not None:
-            per_cat.setdefault(cat, []).append(f"    {tk} — {nom} — {p} €")
+            per_cat.setdefault(cat, []).append(f"    {tk} — {nom} — {p} €{evolucio(tk)}")
     for cat in per_cat:
         linies.append(f"  · {cat}")
         linies.extend(per_cat[cat])
@@ -698,11 +769,12 @@ def executar_ronda(setmana=None):
     if MODE_SIMULAT:
         print("    (MODE SIMULAT: IAs de mentida, cap cost)\n")
 
-    # 1. Precios y titulares (los mismos para todas las IAs)
+    # 1. Precios, titulares y evolución de cada activo (idénticos para todas)
     preus = baixar_preus()
     titulars = obtenir_titulars()
     n_tit = len(titulars.splitlines()) if titulars else 0
     print(f"    {n_tit} titulars d'actualitat obtinguts.")
+    variacions = carregar_variacions()
 
     # 2. Qué modelos juegan
     models_a_jugar = list(config.MODELS.keys()) if MODE_SIMULAT else \
@@ -733,7 +805,8 @@ def executar_ronda(setmana=None):
             cartera = cartera_inicial(preus)
             estat["carteres"][model_id] = cartera
 
-        briefing = montar_briefing(setmana, preus, cartera, model_id, titulars)
+        briefing = montar_briefing(setmana, preus, cartera, model_id,
+                                   titulars, variacions)
         guardar_briefing(setmana, model_id, briefing)
         decisio, error = demanar_decisio(model_id, briefing, cartera)
 

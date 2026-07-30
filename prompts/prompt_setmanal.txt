@@ -69,6 +69,9 @@ EL TEU HISTORIAL DE DECISIONS:
 {{HISTORIAL}}
 
 UNIVERS D'INVERSIÓ DISPONIBLE:
+(Cada actiu porta el preu actual en euros i la seva evolució recent: "1set" és
+l'última setmana, "1mes" l'últim mes i "1any" l'últim any. Aquesta informació
+es dóna igual per a totes les accions i per a tots els fons.)
 {{LLISTA_ETFS}}
 
 CONTEXT DE MERCAT:

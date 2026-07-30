@@ -226,6 +226,88 @@ aquesta comparació és material directe per al TR.
 
 ---
 
+## Canvi núm. 4 — Igualar la informació entre accions i fons
+
+**Data:** 30 de juliol de 2026
+**Afecta a partir de:** setmana 11
+
+### Com es va detectar
+
+Dues setmanes després d'ampliar l'univers amb 114 accions, la situació era
+aquesta:
+
+| IA | Pes en accions | Pes en fons |
+|---|---|---|
+| GPT | 0,0 % | 100 % |
+| Claude | 0,0 % | 100 % |
+| Gemini | 0,0 % | 100 % |
+| DeepSeek | 0,0 % | 100 % |
+| Mistral | 11,4 % | 88,5 % |
+
+En tres setmanes es van fer **16 compres de fons i només 4 d'accions** (totes
+de Mistral). Abans de concloure que «les IAs prefereixen els fons», es va fer
+una consulta de diagnòstic a les cinc: se'ls va preguntar, de manera neutral,
+si era una decisió deliberada i si hi havia alguna cosa del sistema que els
+ho dificultés.
+
+### El que van respondre (citacions literals)
+
+Totes van dir que era «deliberat», però totes van assenyalar el mateix
+problema del sistema:
+
+> **GPT:** «si no tinc en un mateix lloc calendaris de resultats i catalysts,
+> mètriques de valoració i comparables […] **em resulta més àgil treballar amb
+> ETFs**.»
+
+> **DeepSeek:** «la **manca d'històric recent de rendiment individual** en el
+> meu dashboard em fa menys còmode monitoritzar-les.»
+
+> **Gemini:** «analitzar 114 accions individualment […] **sense les eines
+> adequades per filtrar o comparar** eficientment un volum tan elevat
+> d'opcions.»
+
+> **Claude:** «És **parcialment deliberat**: […] he tendit **per defecte** cap
+> als ETFs com a opció "seguretat", **més que no pas per haver descartat
+> activament les accions després d'una anàlisi comparativa real**.»
+
+### El biaix era del sistema, no dels models
+
+El briefing donava, de cada actiu, només el **preu d'avui**. Això és
+suficient per a un ETF —el nom ja explica què compres: «Or físic», «Bons EUA
+20+ anys»— però **inservible per a una acció**: saber que Apple val 296 € no
+permet decidir res. Es demanava triar entre 114 empreses **a cegues**, i els
+models es refugiaven, raonablement, en els actius que sí que podien
+interpretar.
+
+### La correcció
+
+Ara cada actiu del briefing porta, **igual per a accions i per a fons**, la
+seva evolució recent:
+
+```
+AAPL — Apple (Tecnologia) — 296,25 €  | 1set +1,2% · 1mes -3,4% · 1any +18,7%
+SPY  — S&P 500 (SPDR) — 638,79 €      | 1set -1,2% · 1mes -2,2% · 1any +17,6%
+```
+
+És la informació que té a la pantalla qualsevol gestor real. **No se'ls
+suggereix en cap moment que comprin accions**: només se'ls dona el mateix
+nivell de detall per a tots els actius.
+
+### Per què és important per al TR
+
+Sense aquesta correcció, la conclusió «les IAs prefereixen els fons
+diversificats» **no seria vàlida**: no havien tingut mai informació suficient
+per valorar l'alternativa. A partir de la setmana 11, si continuen escollint
+fons, serà una preferència real i defensable. I si comencen a comprar
+empreses, la comparació entre el «abans» i el «després» és en si mateixa un
+resultat: mostra fins a quin punt la qualitat de la informació disponible
+condiciona la decisió d'un model.
+
+El cost per ronda puja de ~0,08 € a ~0,14 € (el briefing passa de 9.500 a
+15.900 tokens), cosa que segueix sent irrellevant respecte al pressupost.
+
+---
+
 ## Millores metodològiques aplicades el mateix dia
 
 No modifiquen les regles del joc, però sí què es mesura i es guarda:
