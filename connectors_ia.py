@@ -202,11 +202,18 @@ def extreure_json(text):
     return candidats[0] if candidats else None
 
 
-INTENTS = 5                # cuántas veces probamos si la API falla
-ESPERA_ENTRE_INTENTS = 45  # segundos entre intento e intento
-# (el torneo corre una vez por semana: vale la pena insistir unos minutos
-#  antes de dar por perdida la decisión de una IA; Google, por ejemplo,
-#  devuelve errores 503 intermitentes en su nivel gratuito)
+INTENTS = 6                 # cuántas veces probamos si la API falla
+ESPERES = [20, 45, 90, 180, 300]   # segundos de espera tras cada fallo
+# El torneo corre una vez por semana: vale la pena insistir hasta 10 minutos
+# antes de dar por perdida la decisión de una IA. Las esperas crecen porque
+# los errores de saturación (429 "too many requests", 529 "overloaded",
+# 503 "service unavailable") se resuelven solos, pero necesitan tiempo:
+# reintentar rápido cinco veces seguidas suele fallar cinco veces.
+
+# Errores que SÍ vale la pena reintentar (el servidor está saturado o caído
+# un momento). Un 401 (clave mala) o un 400 (petición mal formada) no se
+# arreglan esperando, así que no se reintentan.
+CODIS_TEMPORALS = (408, 409, 425, 429, 500, 502, 503, 504, 529)
 
 
 def demanar(model_id, briefing):
@@ -222,6 +229,7 @@ def demanar(model_id, briefing):
     model_api = config.MODELS[model_id].get("model_api", "")
     error = ""
     for intent in range(1, INTENTS + 1):
+        temporal = True     # per defecte donem una segona oportunitat
         try:
             text = TRUCADES[model_id](clau, model_api, briefing)
             decisio = extreure_json(text)
@@ -234,13 +242,24 @@ def demanar(model_id, briefing):
                          f"(claus trobades: {', '.join(list(decisio)[:5]) or 'cap'})")
             else:
                 return decisio, ""
+        except requests.exceptions.HTTPError as e:
+            codi = e.response.status_code if e.response is not None else 0
+            temporal = codi in CODIS_TEMPORALS
+            nom = {429: "límit de peticions", 529: "servidor sobrecarregat",
+                   503: "servei no disponible"}.get(codi, f"error HTTP {codi}")
+            error = f"{nom} ({codi})"
         except requests.exceptions.RequestException as e:
             error = f"Error de connexió: {e}"
         except Exception as e:
             # Cualquier otra sorpresa (formato inesperado, etc.)
             error = f"Resposta inesperada de l'API: {type(e).__name__}: {e}"
+
+        if not temporal:
+            print(f"      [{model_id}] {error} — no es reintenta (no s'arregla esperant)")
+            return None, error
         if intent < INTENTS:
-            print(f"      [{model_id}] intent {intent} fallit ({error[:80]}...). "
-                  f"Reintento en {ESPERA_ENTRE_INTENTS} s")
-            time.sleep(ESPERA_ENTRE_INTENTS)
-    return None, error
+            espera = ESPERES[min(intent - 1, len(ESPERES) - 1)]
+            print(f"      [{model_id}] intent {intent}/{INTENTS} fallit: {error[:70]}. "
+                  f"Reintento en {espera} s")
+            time.sleep(espera)
+    return None, f"{error} (després de {INTENTS} intents)"

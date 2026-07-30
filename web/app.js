@@ -673,25 +673,37 @@
     return historicCarregant;
   }
 
-  let modalRang = 1825;   // dies: 5 anys per defecte
+  let modalRang = 365;   // dies: 1 any per defecte
 
   function pintarHistoric(tk) {
     const cont = $("#mod-chart");
     if (!cont) return;
-    if (!HISTORIC || !HISTORIC.preus[tk]) {
+    if (!HISTORIC) {
+      cont.innerHTML = '<p class="buit">No s\'ha pogut carregar l\'historial.</p>';
+      return;
+    }
+    // Dues sèries: DIÀRIA (últim any, molt detall) i SETMANAL (5 anys).
+    // Per als rangs curts fem servir la diària; si no, "1 mes" només tindria
+    // 4 punts i la línia sortiria plana.
+    const usaDiari = modalRang <= 365 && HISTORIC.diari && HISTORIC.diari.preus[tk];
+    const font = usaDiari ? HISTORIC.diari : HISTORIC.setmanal;
+    if (!font || !font.preus[tk]) {
       cont.innerHTML = '<p class="buit">Historial no disponible per a aquest actiu.</p>';
       return;
     }
-    // Filtrar nuls i tallar al rang demanat (les dades són setmanals)
-    const totes = HISTORIC.dates, preus = HISTORIC.preus[tk];
+
+    const totes = font.dates, preus = font.preus[tk];
     const punts = [];
     for (let i = 0; i < totes.length; i++) {
       if (preus[i] != null) punts.push({ data: totes[i], valor: preus[i] });
     }
     if (punts.length < 2) { cont.innerHTML = '<p class="buit">Historial insuficient.</p>'; return; }
 
-    const setmanes = Math.max(2, Math.round(modalRang / 7));
-    const tall = punts.slice(Math.max(0, punts.length - setmanes));
+    // quants punts agafem: dies de mercat si és diari, setmanes si és setmanal
+    const nPunts = usaDiari
+      ? Math.max(5, Math.round(modalRang * 252 / 365))
+      : Math.max(5, Math.round(modalRang / 7));
+    const tall = punts.slice(Math.max(0, punts.length - nPunts));
     const primer = tall[0].valor, ultim = tall[tall.length - 1].valor;
     const variacio = (ultim / primer - 1) * 100;
 
@@ -710,7 +722,8 @@
     if (resum) {
       resum.className = "mod-variacio " + cls(variacio);
       resum.innerHTML = `${variacio >= 0 ? "▲" : "▼"} ${pct(variacio)}
-        <span class="mod-var-sub">en aquest període · avui ${euro2(ultim)}</span>`;
+        <span class="mod-var-sub">avui ${euro2(ultim)} · ${tall.length} punts
+        (${usaDiari ? "dades diàries" : "dades setmanals"})</span>`;
     }
   }
 
@@ -741,10 +754,12 @@
             <div class="mod-graf-cap">
               <div class="mod-variacio" id="mod-variacio">Carregant historial…</div>
               <div class="seg" id="mod-rangs">
+                <button data-r="7">1S</button>
                 <button data-r="30">1M</button>
+                <button data-r="90">3M</button>
                 <button data-r="180">6M</button>
-                <button data-r="365">1A</button>
-                <button data-r="1825" class="active">5A</button>
+                <button data-r="365" class="active">1A</button>
+                <button data-r="1825">5A</button>
               </div>
             </div>
             <div class="chart-stage">
@@ -764,7 +779,7 @@
     modal.querySelector(".mod-fons").onclick = () => { modal.hidden = true; };
 
     // --- Gràfic històric: es carrega i es pot canviar de període ---
-    modalRang = 1825;
+    modalRang = 365;
     document.querySelectorAll("#mod-rangs button").forEach((b) => {
       b.onclick = () => {
         modalRang = Number(b.dataset.r);

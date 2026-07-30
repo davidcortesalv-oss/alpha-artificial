@@ -27,19 +27,14 @@ except Exception:
 RUTA = os.path.join("web", "historic.json")
 
 
-def main():
-    import yfinance as yf
-
-    actius = config.tots_els_actius()
-    parells = [d["parell"] for d in config.DIVISES.values() if d["parell"]]
-    tickers = list(actius.keys()) + parells
-
-    print(f"[1] Baixant 5 anys de preus setmanals de {len(tickers)} símbols...")
-    print("    (pot trigar un parell de minuts)")
-    dades = yf.download(tickers, period="5y", interval="1wk", progress=False)
+def baixar_serie(yf, tickers, actius, parells, periode, interval, etiqueta):
+    """Baixa una tanda de preus i els converteix tots a euros.
+    Torna (llista_de_dates, {ticker: [valors]})."""
+    print(f"[·] Baixant {etiqueta} ({len(tickers)} símbols)...")
+    dades = yf.download(tickers, period=periode, interval=interval, progress=False)
     tancaments = dades["Close"]
 
-    # --- Sèries de canvi de divisa, per convertir cada setmana ---
+    # Sèries de canvi de divisa, per convertir cada punt amb el canvi del dia
     canvis = {}
     for parell in parells:
         try:
@@ -48,14 +43,11 @@ def main():
             canvis[parell] = None
 
     dates = [d.strftime("%Y-%m-%d") for d in tancaments.index]
-
-    historic = {}
-    fallats = []
+    resultat = {}
     for tk, info in actius.items():
         try:
             serie = tancaments[tk]
         except Exception:
-            fallats.append(tk)
             continue
 
         divisa = config.DIVISES.get(info["moneda"], {"parell": None, "factor": 1.0})
@@ -78,22 +70,46 @@ def main():
                 v = v / float(cv)
             valors.append(round(v, 2))
 
-        # Si gairebé no hi ha dades, no val la pena guardar-ho
-        if sum(1 for x in valors if x is not None) < 10:
-            fallats.append(tk)
-            continue
-        historic[tk] = valors
+        if sum(1 for x in valors if x is not None) >= 5:
+            resultat[tk] = valors
+    print(f"    {len(resultat)} actius · {len(dates)} punts")
+    return dates, resultat
 
-    sortida = {"dates": dates, "preus": historic}
+
+def main():
+    import yfinance as yf
+
+    actius = config.tots_els_actius()
+    parells = [d["parell"] for d in config.DIVISES.values() if d["parell"]]
+    tickers = list(actius.keys()) + parells
+
+    print("Generant l'historial de preus per als gràfics de la web.")
+    print("(pot trigar uns minuts: són dues descàrregues)\n")
+
+    # DIARI de l'últim any: perquè els rangs curts (1M, 3M, 6M, 1A) es vegin
+    # amb detall. Amb dades setmanals, "1 mes" només tenia 4 punts i el
+    # gràfic sortia pràcticament pla.
+    dates_d, preus_d = baixar_serie(
+        yf, tickers, actius, parells, "1y", "1d", "1 any de preus DIARIS")
+
+    # SETMANAL de 5 anys: per veure la tendència de fons sense inflar el fitxer.
+    dates_s, preus_s = baixar_serie(
+        yf, tickers, actius, parells, "5y", "1wk", "5 anys de preus SETMANALS")
+
+    sortida = {
+        "diari": {"dates": dates_d, "preus": preus_d},
+        "setmanal": {"dates": dates_s, "preus": preus_s},
+    }
     os.makedirs("web", exist_ok=True)
     with open(RUTA, "w", encoding="utf-8") as f:
         json.dump(sortida, f, ensure_ascii=False, separators=(",", ":"))
 
     mida = os.path.getsize(RUTA) / 1024
-    print(f"\n[OK] Escrit {RUTA}")
-    print(f"     {len(historic)} actius · {len(dates)} setmanes · {mida:.0f} KB")
-    if fallats:
-        print(f"     Sense historial ({len(fallats)}): {', '.join(fallats[:12])}")
+    print(f"\n[OK] Escrit {RUTA}  ({mida:.0f} KB)")
+    print(f"     Diari: {len(dates_d)} dies · Setmanal: {len(dates_s)} setmanes")
+    sense = [t for t in actius if t not in preus_d and t not in preus_s]
+    if sense:
+        print(f"     Sense historial ({len(sense)}): {', '.join(sense[:12])}")
 
 
 if __name__ == "__main__":

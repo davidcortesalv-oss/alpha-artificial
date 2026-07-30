@@ -11,7 +11,7 @@
     "dataInici": "2026-07-27",
     "dataActual": "2026-07-29",
     "font": "real",
-    "generat": "2026-07-29T22:39",
+    "generat": "2026-07-30T16:13",
     "puntsPerSetmana": 5,
     "nAccions": 114,
     "nEtfs": 108
@@ -227,12 +227,12 @@
       {
         "setmana": 8,
         "data": "2026-07-27",
-        "decisio": "",
-        "nivell_risc": "",
+        "decisio": "mantenir",
+        "nivell_risc": "—",
         "confianca": 0,
         "valor_cartera": 9824.11,
         "rend_setmana": 0.0,
-        "justificacio": "",
+        "justificacio": "(incidència tècnica: la resposta del model es va tallar i no es va poder llegir la decisió; la cartera va quedar sense canvis. Veure CANVI_DE_REGLES.md)",
         "operacions": null
       },
       {
@@ -1003,14 +1003,14 @@
       {
         "setmana": 8,
         "data": "2026-07-27",
-        "decisio": "",
+        "decisio": "mantenir",
         "confianca": 0,
-        "nivell_risc": "",
+        "nivell_risc": "—",
         "comprats": [],
         "venuts": [],
         "mantinguts": [],
         "operacions": [],
-        "justificacio": "",
+        "justificacio": "(incidència tècnica: la resposta del model es va tallar i no es va poder llegir la decisió; la cartera va quedar sense canvis. Veure CANVI_DE_REGLES.md)",
         "context": null,
         "riscos": null,
         "expectativa": null,
@@ -3354,7 +3354,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 9 · 2026-07-29",
         "ultimBriefing": "(sense resposta: Error de connexió: 529 Server Error: <none> for url: https://api.anthropic.com/v1/messages)"
       },
@@ -3364,7 +3364,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 9 · 2026-07-29",
         "ultimBriefing": "Reforcem l’exposició a IA/semis després d’una venda motivada per titulars: el titular 3 (‘DeepSeek no enfonsarà els titans d’IA’) dona suport a la tesi estructu…"
       },
@@ -3374,7 +3374,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 9 · 2026-07-29",
         "ultimBriefing": "Davant la persistent volatilitat del mercat, la recent caiguda del sector tecnològic i els renovats temors inflacionistes, considero prudent reforçar encara més…"
       },
@@ -3384,7 +3384,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 9 · 2026-07-29",
         "ultimBriefing": "Redueixo la posició en or (GLD) perquè ha perdut impuls aquesta setmana i ja està al límit del 40%. Amb els 950 € alliberats, compro VIG (dividends creixents) p…"
       },
@@ -3394,7 +3394,7 @@
         "model_api": "mistral-large-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 9 · 2026-07-29",
         "ultimBriefing": "1. **Rotació de XLP a XLE**: Tot i que el consum bàsic és defensiu, la seva rendibilitat està limitada en un context d'inflació persistent (títol 5: preus del c…"
       }
