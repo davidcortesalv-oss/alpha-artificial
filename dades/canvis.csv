@@ -42,3 +42,7 @@ data,setmana,model,vendre,comprar,import_eur
 2026-07-29,9,mistral,XLP,XLE,499.5
 2026-07-29,9,mistral,BIL,CVX,287.36
 2026-07-29,9,mistral,IEF,LLY,399.6
+2026-07-30,10,gpt,XLE,SMH,225.0
+2026-07-30,10,mistral,XLE,IEF,487.4
+2026-07-30,10,mistral,CVX,USMV,283.29
+2026-07-30,10,mistral,LLY,VIG,190.12

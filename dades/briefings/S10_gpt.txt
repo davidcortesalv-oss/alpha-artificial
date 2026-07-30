@@ -1,0 +1,359 @@
+### SISTEMA (rol + regles — idèntic per a totes les IAs) ###
+
+Ets un gestor de cartera autònom que participa en un torneig d'inversió de cinc mesos. Competeixes contra altres quatre intel·ligències artificials i contra l'índex S&P 500 en gestió passiva. L'objectiu és obtenir la màxima rendibilitat possible al final del torneig assumint un risc raonable.
+
+No ets una calculadora. Ets un gestor que pensa, raona i es mulla. Has de reaccionar als teus encerts i als teus errors, tenir criteri propi i defensar les teves decisions amb arguments, igual que ho faria un gestor humà.
+
+=== REGLES DEL TORNEIG (inamovibles) ===
+1. Gestiones una cartera virtual de 10.000 € ja totalment invertida des de la primera setmana. Cada setmana pots mantenir-la o reajustar-la.
+2. Només pots operar amb els actius de la llista que se't proporciona: ACCIONS d'empreses concretes (Apple, Inditex, Nvidia...) i FONS COTITZATS (ETFs). No pots inventar-te cap altre actiu.
+3. Límits de concentració: cap ACCIÓ individual pot superar el 20% de la cartera, i cap ETF pot superar el 40%. Una sola empresa és molt més arriscada que un fons diversificat.
+4. Sense palanquejament i sense posicions curtes.
+5. Pots moure una part a efectiu si ho justifiques com a estratègia, però no deixis diners aturats per inèrcia.
+6. Cada operació té un cost del 0,1%. Operar de més et fa perdre diners.
+7. Prens UNA decisió per setmana.
+8. Tota la informació de què disposes és la d'aquest missatge. No tens accés a Internet.
+9. Tots els preus estan JA CONVERTITS A EUROS, encara que l'empresa cotitzi en dòlars, lliures o iens. No has de fer cap conversió.
+
+=== HORITZÓ TEMPORAL DEL TORNEIG ===
+Aquest torneig NO és una inversió a llarg termini. Es tanca el 31/12/2026: queden 22 setmanes. La classificació final es decidirà exclusivament pel valor de la teva cartera aquell dia; no hi ha res després.
+
+Ets tu qui decideix si aquest horitzó ha d'influir en la teva estratègia i de quina manera. No se t'indica cap conclusió: forma part de la teva feina com a gestor valorar què implica.
+
+=== COM HAS DE PENSAR ===
+- Mira com t'ha anat la cartera aquesta setmana i per què.
+- Reacciona als resultats: comenta els actius que t'han anat molt bé o molt malament.
+- Si compres o vens una empresa concreta, explica QUÈ fa aquesta empresa i per què creus que pujarà o baixarà. Aquesta és la part més interessant per a qui llegeix el torneig.
+- Fes servir el teu historial de decisions: mantén una estratègia coherent i adona't si canvies massa sovint.
+- No facis cas del soroll. De vegades la millor decisió és no fer res.
+- Declara amb quin nivell de risc jugues aquesta setmana.
+
+=== LES NOTÍCIES DE LA SETMANA (llegeix-les de veritat) ===
+Rebràs una llista de titulars reals publicats aquests últims dies. NO són decoració: són l'única finestra que tens al que està passant al món. Abans de decidir:
+- Llegeix-los tots i pregunta't quins afecten DE VERITAT els teus actius.
+- Descarta els que siguin soroll o no tinguin res a veure amb la teva cartera.
+- Al camp "noticies_clau" has d'indicar el NÚMERO dels titulars que han influït en la teva decisió (per exemple [1, 4, 7]), i al camp "lectura_noticies" explicar en una o dues frases què n'has deduït.
+- Si cap titular no t'ha fet canviar res, digues-ho obertament: posa la llista buida i explica per què els consideres irrelevants aquesta setmana. És una resposta perfectament vàlida.
+
+=== FORMAT DE RESPOSTA (OBLIGATORI) ===
+Respon NOMÉS amb un objecte JSON vàlid, sense text abans ni després ni embolcalls de codi, amb aquesta estructura:
+
+{
+  "reflexio_historial": "...",
+  "analisi_cartera": "...",
+  "noticies_clau": [1, 4, 7],
+  "lectura_noticies": "...",
+  "nivell_risc": "conservador | moderat | agressiu",
+  "decisio": "mantenir | reajustar",
+  "operacions": [ { "vendre": "TICKER", "import_eur": 0, "comprar": "TICKER" } ],
+  "justificacio": "...",
+  "confianca": 5
+}
+
+Tot el text ha d'estar en CATALÀ. Si mantens la cartera, "operacions" ha de ser una llista buida [].
+
+
+### USUARI (briefing setmanal — els {{...}} els omple el programa) ###
+
+=== BRIEFING · SETMANA 10 · 2026-07-30 ===
+
+LA TEVA CARTERA ACTUAL (valor total: 9655.37 €):
+  SPY (S&P 500 (SPDR)) — 2.388485 unitats — 1528.27 € (15.8% de 40% permès)
+  VGK (Europa (Vanguard)) — 9.804405 unitats — 770.83 € (8.0% de 40% permès)
+  GLD (Or físic (SPDR)) — 4.547001 unitats — 1485.03 € (15.4% de 40% permès)
+  TLT (Bons EUA 20+ anys) — 9.956937 unitats — 715.09 € (7.4% de 40% permès)
+  QQQ (Nasdaq 100) — 5.146374 unitats — 3039.81 € (31.5% de 40% permès)
+  SMH (Semiconductors (VanEck)) — 2.43203 unitats — 1134.5 € (11.7% de 40% permès)
+  TIP (Bons lligats a la inflació) — 8.080035 unitats — 756.61 € (7.8% de 40% permès)
+  XLE (Energia EUA) — 4.446264 unitats — 225.23 € (2.3% de 40% permès)
+Efectiu sense invertir: 0.0 €
+
+COM T'HA ANAT:
+Rendibilitat aquesta setmana: 1.57 %
+Rendibilitat acumulada: -3.45 %
+
+EL TEU HISTORIAL DE DECISIONS:
+  S2: mantenir (risc moderat, confiança 6/10, cartera 10046.39 €) — Els pesos actuals estan clavats als objectius i la tesi de fons (IA/semis com a motor, amb coixins en or i bons llargs) es manté. El VIX a 1
+  S3: mantenir (risc moderat, confiança 6/10, cartera 10046.39 €) — La tesi central (IA com a motor estructural) no canvia per un sobresalt de titulars; fins i tot hi ha veus que apunten que no enfonsarà els 
+  S4: mantenir (risc moderat, confiança 5/10, cartera 9834.57 €) — La tesi central (IA com a motor) no ha canviat; la caiguda sembla més esdeveniment que trencament de cicle. Els nostres coixins (GLD/TLT) li
+  S5: mantenir (risc moderat, confiança 5/10, cartera 9767.06 €) — El moviment ha estat impulsat per titulars i revaloració tàctica, no per un canvi estructural en la tesi d’IA. Un dels titulars clau ja apun
+  S6: mantenir (risc moderat, confiança 5/10, cartera 9705.89 €) — La caiguda ve d’un xoc de sentiment sobre IA, però un dels propis titulars assenyala que ‘DeepSeek no enfonsarà els titans d’IA’ (titular 3)
+  S7: mantenir (risc moderat, confiança 5/10, cartera 9757.72 €) — La tesi central (IA/semis com a catalitzador de beneficis) es manté malgrat el soroll. Els coixins (GLD/TLT) continuen sent útils davant ris
+  S8: reajustar (risc moderat, confiança 5/10, cartera 9757.72 €) — 1) Rebaixem part de la durada llarga passant de TLT cap a TIP per defensar-nos d’un escenari on les expectatives d’inflació repunten (oli fe
+  S9: reajustar (risc moderat, confiança 5/10, cartera 9505.73 €) — Reforcem l’exposició a IA/semis després d’una venda motivada per titulars: el titular 3 (‘DeepSeek no enfonsarà els titans d’IA’) dona supor
+
+UNIVERS D'INVERSIÓ DISPONIBLE:
+ACCIONS D'EMPRESES CONCRETES (màxim 20% de la cartera per empresa):
+  · Alemanya
+    ADS.DE — Adidas (Consum) — 154.0 €
+    ALV.DE — Allianz (Finances) — 432.8 €
+    BAS.DE — BASF (Química) — 51.36 €
+    BMW.DE — BMW (Automoció) — 60.44 €
+    DTE.DE — Deutsche Telekom (Telecomunicacions) — 27.01 €
+    MBG.DE — Mercedes-Benz (Automoció) — 47.315 €
+    SAP.DE — SAP (Tecnologia) — 156.14 €
+    SIE.DE — Siemens (Indústria) — 282.7 €
+  · Bèlgica
+    ABI.BR — AB InBev (Consum) — 73.64 €
+  · Catalunya
+    CLNX.MC — Cellnex (Telecomunicacions) — 26.74 €
+    GRF.MC — Grifols (Salut) — 10.505 €
+  · Corea del Sud
+    005930.KS — Samsung Electronics (Tecnologia) — 125.9354 €
+  · EUA
+    AAPL — Apple (Tecnologia) — 288.246 €
+    ABBV — AbbVie (Salut) — 222.0745 €
+    ABNB — Airbnb (Consum) — 130.245 €
+    ADBE — Adobe (Tecnologia) — 211.7279 €
+    AMD — AMD (Semiconductors) — 423.7382 €
+    AMGN — Amgen (Salut) — 330.4665 €
+    AMZN — Amazon (Consum) — 206.0203 €
+    AVGO — Broadcom (Semiconductors) — 333.3551 €
+    AXP — American Express (Finances) — 290.1659 €
+    BA — Boeing (Indústria) — 190.2137 €
+    BAC — Bank of America (Finances) — 53.3533 €
+    BRK-B — Berkshire Hathaway (Finances) — 436.4217 €
+    CAT — Caterpillar (Indústria) — 702.1414 €
+    COIN — Coinbase (Finances) — 139.6925 €
+    COST — Costco (Consum) — 829.8584 €
+    CRM — Salesforce (Tecnologia) — 153.779 €
+    CSCO — Cisco (Tecnologia) — 98.0627 €
+    CVX — Chevron (Energia) — 165.4722 €
+    DE — John Deere (Indústria) — 521.2579 €
+    DIS — Walt Disney (Mitjans) — 82.3126 €
+    F — Ford (Automoció) — 12.8156 €
+    GE — General Electric (Indústria) — 305.3818 €
+    GM — General Motors (Automoció) — 75.7971 €
+    GOOGL — Alphabet (Google) (Tecnologia) — 288.9555 €
+    GS — Goldman Sachs (Finances) — 875.4887 €
+    HD — Home Depot (Consum) — 288.8498 €
+    IBM — IBM (Tecnologia) — 191.6775 €
+    INTC — Intel (Semiconductors) — 80.2624 €
+    JNJ — Johnson & Johnson (Salut) — 222.3178 €
+    JPM — JPMorgan Chase (Finances) — 302.6323 €
+    KO — Coca-Cola (Consum) — 76.3009 €
+    LLY — Eli Lilly (Salut) — 1007.7448 €
+    LMT — Lockheed Martin (Defensa) — 485.0317 €
+    MA — Mastercard (Finances) — 496.1211 €
+    MCD — McDonald's (Consum) — 231.8044 €
+    META — Meta (Facebook) (Tecnologia) — 462.7574 €
+    MRK — Merck (Salut) — 111.224 €
+    MRNA — Moderna (Salut) — 48.7273 €
+    MSFT — Microsoft (Tecnologia) — 390.0704 €
+    NFLX — Netflix (Mitjans) — 61.7627 €
+    NKE — Nike (Consum) — 35.8787 €
+    NVDA — Nvidia (Semiconductors) — 169.5814 €
+    ORCL — Oracle (Tecnologia) — 109.795 €
+    PEP — PepsiCo (Consum) — 121.7531 €
+    PFE — Pfizer (Salut) — 21.3926 €
+    PG — Procter & Gamble (Consum) — 123.812 €
+    PLTR — Palantir (Tecnologia) — 105.2515 €
+    PYPL — PayPal (Finances) — 49.3702 €
+    QCOM — Qualcomm (Semiconductors) — 130.4057 €
+    RTX — RTX (Raytheon) (Defensa) — 183.0076 €
+    SBUX — Starbucks (Consum) — 92.1032 €
+    T — AT&T (Telecomunicacions) — 20.185 €
+    TSLA — Tesla (Automoció) — 265.7371 €
+    UBER — Uber (Tecnologia) — 59.8732 €
+    UNH — UnitedHealth (Salut) — 363.7043 €
+    UPS — UPS (Logística) — 89.636 €
+    V — Visa (Finances) — 314.8814 €
+    VZ — Verizon (Telecomunicacions) — 39.9227 €
+    WMT — Walmart (Consum) — 97.1201 €
+    XOM — ExxonMobil (Energia) — 134.6842 €
+  · Espanya
+    AENA.MC — Aena (aeroports) (Indústria) — 26.94 €
+    AMS.MC — Amadeus (Tecnologia) — 52.9 €
+    BBVA.MC — BBVA (Finances) — 23.93 €
+    ELE.MC — Endesa (Energia) — 42.0 €
+    FER.MC — Ferrovial (Indústria) — 56.48 €
+    IBE.MC — Iberdrola (Energia) — 20.55 €
+    ITX.MC — Inditex (Zara) (Consum) — 57.14 €
+    REP.MC — Repsol (Energia) — 26.1 €
+    SAN.MC — Banco Santander (Finances) — 12.242 €
+    TEF.MC — Telefónica (Telecomunicacions) — 3.587 €
+  · França
+    AIR.PA — Airbus (Indústria) — 203.55 €
+    BNP.PA — BNP Paribas (Finances) — 109.16 €
+    CAP.PA — Capgemini (Tecnologia) — 103.55 €
+    MC.PA — LVMH (Louis Vuitton) (Luxe) — 475.1 €
+    OR.PA — L'Oréal (Consum) — 392.7 €
+    RMS.PA — Hermès (Luxe) — 1552.0 €
+    SAN.PA — Sanofi (Salut) — 72.51 €
+    TTE.PA — TotalEnergies (Energia) — 75.27 €
+  · Itàlia
+    ENI.MI — Eni (Energia) — 23.67 €
+    ISP.MI — Intesa Sanpaolo (Finances) — 6.495 €
+    RACE — Ferrari (Automoció) — 343.7581 €
+    STLAM.MI — Stellantis (Automoció) — 5.054 €
+  · Japó
+    6758.T — Sony (Tecnologia) — 20.7427 €
+    7203.T — Toyota (Automoció) — 17.0233 €
+  · Països Baixos
+    ADYEN.AS — Adyen (Finances) — 887.3 €
+    ASML.AS — ASML (Semiconductors) — 1452.4 €
+    PHIA.AS — Philips (Salut) — 23.0 €
+  · Regne Unit
+    AZN.L — AstraZeneca (Salut) — 149.0022 €
+    BP.L — BP (Energia) — 6.2901 €
+    HSBA.L — HSBC (Finances) — 18.5973 €
+    RIO.L — Rio Tinto (Mineria) — 84.584 €
+    SHEL.L — Shell (Energia) — 38.6801 €
+    ULVR.L — Unilever (Consum) — 56.7044 €
+  · Suïssa
+    NESN.SW — Nestlé (Consum) — 88.5232 €
+    NOVN.SW — Novartis (Salut) — 136.6462 €
+    UBSG.SW — UBS (Finances) — 45.9503 €
+  · Taiwan
+    TSM — TSMC (xips Taiwan) (Semiconductors) — 347.3808 €
+  · Xina
+    BABA — Alibaba (Consum) — 99.4358 €
+    NTES — NetEase (Mitjans) — 113.0658 €
+    PDD — PDD (Temu) (Consum) — 75.0456 €
+  · Índia
+    HDB — HDFC Bank (Finances) — 20.8713 €
+    INFY — Infosys (Tecnologia) — 10.4378 €
+
+FONS COTITZATS / ETFs (màxim 40% de la cartera per fons):
+  · Índexs principals
+    SPY — S&P 500 (SPDR) — 639.8488 €
+    VOO — S&P 500 (Vanguard) — 588.0897 €
+    IVV — S&P 500 (iShares Core) — 642.9372 €
+    VTI — Mercat total EUA — 315.824 €
+    QQQ — Nasdaq 100 — 590.6698 €
+    DIA — Dow Jones Industrial — 449.2181 €
+    IWM — Russell 2000 (small caps) — 251.5507 €
+    RSP — S&P 500 equiponderat — 185.3488 €
+    VT — Mercat mundial total — 134.0369 €
+    ACWI — Món desenvolupat i emergent — 134.2542 €
+  · Tecnologia
+    XLK — Tecnologia EUA (S&P) — 151.668 €
+    VGT — Tecnologia (Vanguard) — 97.9439 €
+    IGV — Programari EUA — 79.954 €
+    FDN — Internet EUA — 229.841 €
+    SKYY — Computació al núvol — 119.9461 €
+    CIBR — Ciberseguretat — 77.1957 €
+    ARKK — Innovació disruptiva (ARK) — 62.6097 €
+  · IA i semiconductors
+    SMH — Semiconductors (VanEck) — 466.4842 €
+    SOXX — Semiconductors (iShares) — 436.0003 €
+    BOTZ — Robòtica i IA (Global X) — 29.9574 €
+    ROBO — Robòtica i automatització — 67.644 €
+    AIQ — Intel·ligència artificial — 50.4126 €
+    ARKQ — Autonomia i robòtica (ARK) — 98.0149 €
+  · Energia
+    XLE — Energia EUA — 50.6559 €
+    XOP — Exploració de petroli i gas — 150.0912 €
+    OIH — Serveis petroliers — 323.4124 €
+    ICLN — Energies netes globals — 15.281 €
+    TAN — Energia solar — 42.8764 €
+    FAN — Energia eòlica — 20.6411 €
+    URA — Urani i energia nuclear — 34.0066 €
+  · Salut
+    XLV — Salut EUA — 140.9521 €
+    VHT — Sanitat (Vanguard) — 264.6512 €
+    IBB — Biotecnologia (Nasdaq) — 162.1102 €
+    XBI — Biotecnologia (S&P) — 129.2416 €
+    IHI — Equipament mèdic — 45.5043 €
+  · Renda fixa
+    TLT — Bons EUA 20+ anys — 71.8183 €
+    IEF — Bons EUA 7-10 anys — 80.953 €
+    SHY — Bons EUA 1-3 anys — 71.2452 €
+    BIL — Lletres del Tresor (1-3 mesos) — 79.6238 €
+    AGG — Bons EUA agregats — 84.7841 €
+    BND — Mercat total de bons EUA — 62.905 €
+    LQD — Bons corporatius de qualitat — 92.4159 €
+    HYG — Bons d'alt rendiment — 69.0122 €
+    TIP — Bons lligats a la inflació — 93.6395 €
+    EMB — Deute de mercats emergents — 82.2214 €
+    MUB — Bons municipals EUA — 91.7079 €
+    GOVT — Bons del Tresor EUA — 19.5422 €
+  · Mercats internacionals
+    VGK — Europa (Vanguard) — 78.6205 €
+    EZU — Zona euro — 60.2424 €
+    EWG — Alemanya — 37.0559 €
+    EWQ — França — 40.2137 €
+    EWU — Regne Unit — 42.0989 €
+    EWJ — Japó — 80.1147 €
+    MCHI — Xina (MSCI) — 47.9715 €
+    FXI — Xina (grans empreses) — 31.5611 €
+    EWY — Corea del Sud — 135.7745 €
+    EWT — Taiwan — 81.2962 €
+    EEM — Mercats emergents (MSCI) — 54.7216 €
+    VWO — Mercats emergents (Vanguard) — 50.3736 €
+    INDA — Índia — 43.1023 €
+    EWZ — Brasil — 31.2962 €
+    EWC — Canadà — 51.6072 €
+  · Matèries primeres
+    DBC — Cistella de matèries primeres — 25.4974 €
+    PDBC — Matèries primeres (optimitzat) — 15.2159 €
+    GSG — Índex GSCI de matèries primeres — 27.8169 €
+    USO — Petroli WTI — 111.6671 €
+    BNO — Petroli Brent — 43.3107 €
+    UNG — Gas natural — 8.6917 €
+    DBA — Agricultura — 23.9467 €
+    CPER — Coure — 33.9719 €
+    DBB — Metalls industrials — 21.727 €
+  · Metalls preciosos
+    GLD — Or físic (SPDR) — 326.5963 €
+    IAU — Or físic (iShares) — 66.9361 €
+    SGOL — Or físic (abrdn) — 33.9066 €
+    SLV — Plata física (iShares) — 45.6856 €
+    SIVR — Plata física (abrdn) — 48.054 €
+    PPLT — Platí físic — 12.8269 €
+    PALL — Pal·ladi físic — 20.2502 €
+    GDX — Mineres d'or — 65.4069 €
+    GDXJ — Mineres d'or júnior — 84.3193 €
+  · Immobiliari
+    VNQ — Immobiliari EUA (REITs) — 85.8266 €
+    VNQI — Immobiliari internacional — 40.2876 €
+    IYR — Immobiliari EUA (iShares) — 91.1519 €
+    SCHH — REITs EUA (Schwab) — 21.0668 €
+    REM — REITs hipotecaris — 18.7994 €
+  · Dividends
+    VIG — Dividends creixents (Vanguard) — 207.2018 €
+    VYM — Alt dividend (Vanguard) — 139.5274 €
+    SCHD — Dividends de qualitat (Schwab) — 28.7444 €
+    DVY — Dividends selectes (iShares) — 139.7793 €
+    HDV — Alt dividend (iShares) — 24.7806 €
+    SDY — Aristòcrates del dividend (SPDR) — 134.1065 €
+    NOBL — Aristòcrates del dividend (S&P) — 49.3528 €
+    DGRO — Creixement de dividends — 67.4572 €
+  · Defensius
+    USMV — Mínima volatilitat EUA — 84.2846 €
+    SPLV — Baixa volatilitat S&P 500 — 66.0195 €
+    QUAL — Factor qualitat (MSCI) — 189.0322 €
+    SPHD — Alt dividend i baixa volatilitat — 45.2958 €
+    XLP — Consum bàsic EUA — 74.0335 €
+    XLU — Serveis públics (utilities) — 38.7955 €
+  · Sectors EUA
+    XLF — Banca i finances EUA — 48.9792 €
+    XLY — Consum discrecional EUA — 97.0289 €
+    XLI — Indústria EUA — 153.349 €
+    XLB — Materials EUA — 44.6877 €
+    XLRE — Immobiliari EUA (sector S&P) — 39.1278 €
+    XLC — Serveis de comunicació EUA — 91.8426 €
+    KBE — Bancs EUA — 60.2511 €
+    ITA — Aeroespacial i defensa — 203.3012 €
+    JETS — Aerolínies — 27.1479 €
+
+CONTEXT DE MERCAT:
+  VIX (índex de la por): 18.26
+  Bo EUA 10 anys (%): 4.661
+  EUR/USD: 1.1511
+
+ELS 10 TITULARS MÉS IMPORTANTS DE LA SETMANA:
+  1. U.S. economy slowed to 1.5% growth rate in Q2; June core inflation at 3.3%
+  2. BP to cut 700 jobs as it warns on oil ‘oversupply’
+  3. Jim Cramer says this post-earnings sell-off is a golden buying opportunity
+  4. TripAdvisor shares may shift 9.4% on earnings release
+  5. Yen soars, markets suspect Japan intervention
+  6. Former Fed officials say the Fed cannot rely on luck or rhetoric alone to restore price stability
+  7. ‘Don’t get suckered like I did’: I paid $185 to the wrong passport website. Can I get my money back?
+  8. El Ibex premia esta vez los resultados
+  9. What a divided Fed means for investors
+  10. AI investor Leopold Aschenbrenner forced to unwind all public stock positions after steep losses, sources say
+  11. NYSE owner to buy bond platform MarketAxess in $5.7bn deal
+  12. Vertiv Holdings (VRT) Sees Robust Growth Ahead as AI Infrastructure Spending Accelerates
+
+LA TEVA TASCA: analitza-ho tot i pren la teva decisió. Respon NOMÉS amb el JSON.
