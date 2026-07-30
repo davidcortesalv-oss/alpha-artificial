@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-07-30",
     "font": "real",
-    "generat": "2026-07-30T14:56",
+    "generat": "2026-07-30T22:46",
     "puntsPerSetmana": 3,
     "nAccions": 114,
     "nEtfs": 108
@@ -129,7 +129,7 @@
       9838.12,
       9804.12,
       9632.24,
-      9726.02
+      9751.28
     ],
     "gpt": [
       9996.01,
@@ -140,7 +140,7 @@
       9778.51,
       9697.97,
       9491.9,
-      9654.92
+      9678.0
     ],
     "gemini": [
       9999.01,
@@ -151,7 +151,7 @@
       9808.28,
       9811.97,
       9666.82,
-      9689.33
+      9724.48
     ],
     "deepseek": [
       10000.01,
@@ -162,7 +162,7 @@
       9832.48,
       9790.39,
       9663.01,
-      9718.36
+      9742.76
     ],
     "mistral": [
       9996.01,
@@ -173,7 +173,7 @@
       9719.95,
       9744.16,
       9624.58,
-      9576.65
+      9615.66
     ],
     "index": [
       10000.0,
@@ -184,7 +184,7 @@
       9890.61,
       9901.23,
       9677.49,
-      9738.18
+      9787.7
     ]
   },
   "decisions": {
@@ -3842,7 +3842,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 10 · 2026-07-30",
         "ultimBriefing": "Cap titular d'aquesta setmana representa un canvi estructural prou clar per justificar moviments: el creixement feble i la inflació persistent als EUA són coneg…"
       },
@@ -3852,7 +3852,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 10 · 2026-07-30",
         "ultimBriefing": "Rotem la petita posició d’energia cap a semiconductors: el senyal d’oversupply de BP afebleix el curt termini per a XLE, mentre que l’evidència d’inversió sosti…"
       },
@@ -3862,7 +3862,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 10 · 2026-07-30",
         "ultimBriefing": "Davant el context de creixement econòmic més lent als EUA i una inflació subjacent persistent, la cartera actual es troba ben posicionada per afrontar aquest es…"
       },
@@ -3872,7 +3872,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 10 · 2026-07-30",
         "ultimBriefing": "Tot i que l'or està al 29.6% i podria prendre beneficis, el context de mercat (VIX 18.26, incertesa macro, divisió Fed) aconsella mantenir la diversificació act…"
       },
@@ -3882,7 +3882,7 @@
         "model_api": "mistral-large-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 10 · 2026-07-30",
         "ultimBriefing": "1) **Reducció d'energia (XLE i CVX)**: El sector energètic està sota pressió per l'excés d'oferta de petroli (titular 2) i la caiguda dels preus. Vendre part de…"
       }
@@ -3904,34 +3904,34 @@
   },
   "risc": {
     "claude": {
-      "volatilitat": 14.08,
+      "volatilitat": 15.01,
       "max_caiguda": -4.05,
-      "sharpe": -6.14
+      "sharpe": -5.21
     },
     "gpt": {
-      "volatilitat": 21.48,
+      "volatilitat": 22.38,
       "max_caiguda": -5.52,
-      "sharpe": -4.99
+      "sharpe": -4.44
     },
     "gemini": {
-      "volatilitat": 11.09,
+      "volatilitat": 11.98,
       "max_caiguda": -3.73,
-      "sharpe": -8.87
+      "sharpe": -7.25
     },
     "deepseek": {
-      "volatilitat": 11.21,
+      "volatilitat": 12.02,
       "max_caiguda": -3.75,
-      "sharpe": -7.97
+      "sharpe": -6.77
     },
     "mistral": {
-      "volatilitat": 13.01,
-      "max_caiguda": -4.49,
-      "sharpe": -10.29
+      "volatilitat": 13.25,
+      "max_caiguda": -4.1,
+      "sharpe": -9.14
     },
     "index": {
-      "volatilitat": 16.12,
+      "volatilitat": 17.41,
       "max_caiguda": -4.14,
-      "sharpe": -5.1
+      "sharpe": -3.8
     }
   },
   "comissions": {
