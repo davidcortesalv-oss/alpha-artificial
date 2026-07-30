@@ -206,6 +206,10 @@ def main():
                 if (c.get("model") or "").strip() == mid and int(num(c.get("setmana"), 0)) == s
             ]
 
+            # Quins titulars diu la IA que ha tingut en compte
+            claus_txt = (fila.get("noticies_clau") or "").strip()
+            noticies_clau = [int(num(x)) for x in claus_txt.split() if num(x, 0)] if claus_txt else []
+
             decs.append({
                 "setmana": s,
                 "data": (fila.get("data") or "").strip(),
@@ -216,6 +220,8 @@ def main():
                 "rend_setmana": round(rend, 2),
                 "justificacio": (fila.get("justificacio") or "").strip(),
                 "operacions": ops or None,
+                "noticies_clau": noticies_clau,
+                "lectura_noticies": (fila.get("lectura_noticies") or "").strip(),
             })
             valor_previ = valor
 

@@ -379,13 +379,41 @@ INDICADORS_CONTEXT = {
 # --- Fuentes de titulares de mercado (RSS, gratuitas, sin clave) ---
 # Cada lunes el motor baja los titulares y se los da IDÉNTICOS a las 5 IAs
 # (control de variables: ninguna tiene más información que otra).
-# Si una fuente falla, se prueba con la siguiente.
+#
+# ⚠️ LECCIÓN APRENDIDA (30/07/2026): el feed del Wall Street Journal que había
+# aquí estaba MUERTO — servía las mismas noticias del 27/01/2025 una y otra
+# vez. Las IAs decidieron durante semanas leyendo titulares de hace año y
+# medio. Por eso ahora:
+#   1. Se usan varias fuentes y se MEZCLAN (no se llena con la primera).
+#   2. Se descarta todo titular más antiguo que MAX_DIES_TITULAR.
+#   3. Si una fuente se queda obsoleta, el motor lo avisa por pantalla.
+# Todas las de esta lista se comprobaron vivas el 30/07/2026.
 FONTS_TITULARS = [
-    "https://feeds.a.dj.com/rss/RSSMarketsMain.xml",         # Wall Street Journal · Mercats
-    "https://www.cnbc.com/id/20910258/device/rss/rss.html",  # CNBC · Markets
-    "http://feeds.marketwatch.com/marketwatch/topstories/",  # MarketWatch · Portada
+    "https://www.cnbc.com/id/20910258/device/rss/rss.html",  # CNBC · Mercats
+    "https://www.cnbc.com/id/100003114/device/rss/rss.html", # CNBC · Portada
+    "https://www.ft.com/markets?format=rss",                # Financial Times · Mercats
+    "https://finance.yahoo.com/news/rssindex",              # Yahoo Finance
+    "https://www.investing.com/rss/news_25.rss",            # Investing.com · Mercats
+    "https://www.investing.com/rss/news_14.rss",            # Investing.com · Economia
+    "https://seekingalpha.com/market_currents.xml",          # Seeking Alpha
+    "http://feeds.marketwatch.com/marketwatch/topstories/",  # MarketWatch
+    "https://e00-expansion.uecdn.es/rss/mercados.xml",      # Expansión (Espanya)
 ]
-N_TITULARS = 10   # cuántos titulares recibe cada IA
+N_TITULARS = 12          # cuántos titulares recibe cada IA
+MAX_DIES_TITULAR = 8     # se descarta cualquier noticia más vieja que esto
+
+# Palabras que indican que un titular es de mercados/economía y no de
+# consumo o estilo de vida (MarketWatch y Yahoo mezclan mucho). Se usan para
+# priorizar, no para excluir: si no hay suficientes, se cogen los demás.
+PARAULES_RELLEVANTS = [
+    "stock", "stocks", "market", "markets", "shares", "bond", "yield", "fed",
+    "inflation", "rate", "rates", "earnings", "profit", "loss", "gdp", "economy",
+    "oil", "gold", "dollar", "euro", "tariff", "trade", "recession", "growth",
+    "nasdaq", "s&p", "dow", "index", "central bank", "ecb", "treasury",
+    "bank", "chip", "chips", "ai", "tech", "chief executive", "revenue",
+    "borsa", "mercat", "mercados", "acciones", "tipos", "inflación", "ibex",
+    "beneficio", "resultados", "deuda", "prima de riesgo",
+]
 
 # --- Carpetas donde se guarda todo ---
 CARPETA_DADES = "dades"        # aquí van los CSV con el historial

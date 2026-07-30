@@ -176,33 +176,112 @@ def carregar_prompt():
 
 
 def obtenir_titulars():
-    """Baja los titulares de actualidad de las fuentes RSS de config.py.
-    Se piden UNA vez por ronda y se dan idénticos a las 5 IAs, para que
-    ninguna tenga más información que otra (control de variables).
-    Si todas las fuentes fallan, devuelve None y el briefing lo dirá."""
+    """Baja los titulares de actualidad y devuelve los más recientes y
+    relevantes. Se piden UNA vez por ronda y se dan idénticos a las 5 IAs,
+    para que ninguna tenga más información que otra (control de variables).
+
+    Reglas importantes (ver el aviso en config.py):
+      · Se descarta cualquier noticia de más de MAX_DIES_TITULAR días. Un feed
+        abandonado sirve las mismas noticias durante años y envenenaría el
+        experimento.
+      · Se recogen titulares de TODAS las fuentes y se mezclan, en vez de
+        llenar el cupo con la primera.
+      · Se priorizan los titulares de mercados/economía sobre los de consumo.
+    Si no se consigue nada fresco, devuelve None y el briefing lo dirá."""
     try:
         import feedparser
     except ImportError:
         print("    [!] Falta la llibreria feedparser (pip install feedparser).")
         return None
 
-    titulars, vistos = [], set()
+    ara = datetime.datetime.now(datetime.timezone.utc)
+
+    def antiguitat(entrada):
+        """Días desde la publicación, o None si el feed no da fecha."""
+        for camp in ("published_parsed", "updated_parsed"):
+            valor = getattr(entrada, camp, None)
+            if valor:
+                try:
+                    dt = datetime.datetime(*valor[:6], tzinfo=datetime.timezone.utc)
+                    return (ara - dt).days
+                except (TypeError, ValueError):
+                    continue
+        return None
+
+    def es_rellevant(titol):
+        t = titol.lower()
+        return any(p in t for p in config.PARAULES_RELLEVANTS)
+
+    # --- Recollir de cada font per separat ---
+    per_font = []
+    fonts_obsoletes = []
     for url in config.FONTS_TITULARS:
-        if len(titulars) >= config.N_TITULARS:
-            break
         try:
             canal = feedparser.parse(url)
-            for entrada in canal.entries[:8]:
-                titol = (entrada.get("title") or "").strip()
-                if titol and titol.lower() not in vistos:
-                    vistos.add(titol.lower())
-                    titulars.append(titol)
-                if len(titulars) >= config.N_TITULARS:
-                    break
         except Exception:
-            continue  # si una font falla, provem la següent
+            continue
+        if not getattr(canal, "entries", None):
+            continue
+
+        frescos, mes_nou = [], None
+        for entrada in canal.entries[:15]:
+            titol = " ".join((entrada.get("title") or "").split())
+            if not titol:
+                continue
+            dies = antiguitat(entrada)
+            if dies is not None:
+                mes_nou = dies if mes_nou is None else min(mes_nou, dies)
+                if dies > config.MAX_DIES_TITULAR:
+                    continue          # noticia vella: fora
+            frescos.append((titol, dies if dies is not None else 99))
+
+        # Avisar si tota la font està obsoleta (com el WSJ el 2026)
+        nom_font = url.split("/")[2]
+        if mes_nou is not None and mes_nou > config.MAX_DIES_TITULAR:
+            fonts_obsoletes.append(f"{nom_font} ({mes_nou} dies)")
+            continue
+        if frescos:
+            # dins de cada font, primer les rellevants i les més recents
+            frescos.sort(key=lambda x: (not es_rellevant(x[0]), x[1]))
+            per_font.append(frescos)
+
+    if fonts_obsoletes:
+        print(f"    [!] Fonts obsoletes ignorades: {', '.join(fonts_obsoletes)}")
+    if not per_font:
+        print("    [!] Cap font ha donat titulars recents.")
+        return None
+
+    # --- Mezclar: uno de cada fuente por turnos (round-robin) ---
+    # Así ninguna fuente monopoliza el briefing y hay variedad de enfoques.
+    # Se hacen dos pasadas: primero solo titulares de mercados/economía y,
+    # si no se llena el cupo, se completa con el resto (MarketWatch y Yahoo
+    # mezclan noticias de consumo que no aportan nada a una decisión de
+    # inversión).
+    titulars, vistos = [], set()
+
+    def recollir(nomes_rellevants):
+        for volta in range(15):
+            if len(titulars) >= config.N_TITULARS:
+                return
+            for llista in per_font:
+                if volta >= len(llista) or len(titulars) >= config.N_TITULARS:
+                    continue
+                titol = llista[volta][0]
+                if nomes_rellevants and not es_rellevant(titol):
+                    continue
+                clau = titol.lower()[:60]
+                if clau in vistos:
+                    continue
+                vistos.add(clau)
+                titulars.append(titol)
+
+    recollir(nomes_rellevants=True)
+    if len(titulars) < config.N_TITULARS:
+        recollir(nomes_rellevants=False)
+
     if not titulars:
         return None
+    print(f"    {len(titulars)} titulars recents de {len(per_font)} fonts diferents.")
     return "\n".join(f"  {i + 1}. {t}" for i, t in enumerate(titulars))
 
 
@@ -441,9 +520,38 @@ def aplicar_operacions(cartera, decisio, preus):
 # ============================================================
 #  PASO 6 — Guardar el historial en CSV
 # ============================================================
+def _assegurar_columnes(ruta, capcalera):
+    """Si el CSV ja existeix però amb menys columnes que ara (perquè hem
+    afegit dades noves al motor), el reescriu afegint les columnes que falten
+    buides. Sense això, les files noves quedarien desalineades respecte a les
+    antigues i l'historial es corrompria."""
+    if not os.path.exists(ruta):
+        return
+    with open(ruta, encoding="utf-8") as f:
+        files = list(csv.reader(f))
+    if not files:
+        return
+    antiga = files[0]
+    if antiga == list(capcalera):
+        return                      # ja està al dia
+    if not set(antiga).issubset(set(capcalera)):
+        return                      # canvi estrany: no toquem res
+    # Reescriure mantenint els valors que ja hi havia, per nom de columna
+    with open(ruta, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(capcalera)
+        for fila in files[1:]:
+            reg = dict(zip(antiga, fila))
+            w.writerow([reg.get(c, "") for c in capcalera])
+    print(f"    [i] {os.path.basename(ruta)}: afegides les columnes noves "
+          f"({', '.join(c for c in capcalera if c not in antiga)}).")
+
+
 def _afegir_fila(ruta, capcalera, fila):
-    """Añade una fila a un CSV, creando el archivo con cabecera si no existe."""
+    """Añade una fila a un CSV, creando el archivo con cabecera si no existe.
+    Si el archivo ya existe con una cabecera más corta, la actualiza primero."""
     os.makedirs(config.CARPETA_DADES, exist_ok=True)
+    _assegurar_columnes(ruta, capcalera)
     nou = not os.path.exists(ruta)
     with open(ruta, "a", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
@@ -453,14 +561,25 @@ def _afegir_fila(ruta, capcalera, fila):
 
 
 def guardar_decisio(setmana, model_id, decisio, valor):
-    """Apunta la decisión de esta IA en el historial (decisions.csv)."""
+    """Apunta la decisión de esta IA en el historial (decisions.csv).
+    Incluye qué titulares dice haber tenido en cuenta: así se puede comprobar
+    que las IAs leen de verdad las noticias, y se puede analizar en el TR qué
+    tipo de noticia mueve a cada modelo."""
+    claus = decisio.get("noticies_clau")
+    if isinstance(claus, list):
+        noticies = " ".join(str(x) for x in claus)
+    else:
+        noticies = str(claus or "")
     _afegir_fila(RUTA_DECISIONS,
         ["data", "setmana", "model", "decisio", "nivell_risc",
-         "confianca", "valor_cartera", "justificacio"],
+         "confianca", "valor_cartera", "justificacio",
+         "noticies_clau", "lectura_noticies"],
         [datetime.date.today().isoformat(), setmana, model_id,
          decisio.get("decisio"), decisio.get("nivell_risc"),
          decisio.get("confianca"), round(valor, 2),
-         (decisio.get("justificacio") or "").replace("\n", " ")])
+         (decisio.get("justificacio") or "").replace("\n", " "),
+         noticies,
+         (decisio.get("lectura_noticies") or "").replace("\n", " ")])
 
 
 def guardar_canvis(setmana, model_id, aplicades):

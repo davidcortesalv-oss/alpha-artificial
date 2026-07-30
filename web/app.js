@@ -906,6 +906,10 @@
                 <span class="tl-val">${euro(d.valor_cartera)} <i class="${cls(d.rend_setmana)}">${pct(d.rend_setmana)}</i></span>
               </div>
               <div class="tl-text">«${d.justificacio}»</div>
+              ${d.lectura_noticies ? `<div class="tl-noticies">
+                <span class="tl-not-etiqueta">📰 Notícies que ha llegit${d.noticies_clau && d.noticies_clau.length ? ` (${d.noticies_clau.map((n) => "#" + n).join(", ")})` : " — cap de rellevant"}</span>
+                <span class="tl-not-text">${d.lectura_noticies}</span>
+              </div>` : ""}
               ${d.operacions && d.operacions.length ? `<div class="tl-ops">${d.operacions.map((o) =>
                 `<code>${o.vendre === "EFECTIU" ? "efectiu" : o.vendre} → ${o.comprar === "EFECTIU" ? "efectiu" : o.comprar} (${euro(o.import)})</code>`).join(" ")}</div>` : ""}
             </div>`).join("")}

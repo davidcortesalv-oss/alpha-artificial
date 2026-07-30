@@ -479,6 +479,18 @@ main {
 .tl-val { margin-left: auto; font: 600 12.5px var(--mono); color: var(--apagat); }
 .tl-val i { font-style: normal; margin-left: 6px; }
 .tl-text { color: var(--apagat); font-size: 13.5px; margin-top: 8px; }
+/* Què ha llegit la IA a les notícies (prova que no les ignora) */
+.tl-noticies {
+  margin-top: 9px; padding: 9px 12px;
+  background: rgba(255, 176, 0, .055);
+  border-left: 2px solid rgba(255, 176, 0, .45);
+  border-radius: 0 8px 8px 0;
+}
+.tl-not-etiqueta {
+  display: block; font: 700 10px var(--mono); letter-spacing: .8px;
+  text-transform: uppercase; color: var(--ambre); margin-bottom: 4px;
+}
+.tl-not-text { font-size: 13px; color: var(--apagat); }
 .tl-ops { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
 
 /* =====================================================================

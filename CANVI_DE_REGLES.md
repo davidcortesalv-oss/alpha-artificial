@@ -108,6 +108,71 @@ similar quedi registrat com a error explícit i no com una decisió buida.
 
 ---
 
+## Canvi núm. 2 — Correcció greu de les fonts de notícies
+
+**Data:** 30 de juliol de 2026
+**Afecta a partir de:** setmana 10
+**Setmanes afectades pel problema:** 1 a 9
+
+### El problema
+
+Una de les tres fonts de titulars configurades (el canal RSS de mercats del
+*Wall Street Journal*, `feeds.a.dj.com/rss/RSSMarketsMain.xml`) **estava
+abandonada i servia sempre les mateixes notícies del 27 de gener de 2025** —
+és a dir, amb **548 dies d'antiguitat**.
+
+El motor omplia el cupó de titulars començant per aquesta font, de manera que
+les IAs rebien setmana rere setmana el mateix bloc de notícies caducades
+(encapçalat per «Stocks Sink in Broad AI Rout Sparked by China's DeepSeek»)
+com si fossin els titulars d'aquella setmana.
+
+L'efecte es va detectar per les pròpies justificacions dels models: Claude
+escrivia coses com *«el DeepSeek rout porta ja set setmanes sent l'excusa
+narrativa dominant»*. No era una observació de mercat: **era literalment la
+mateixa notícia repetida**.
+
+### Conseqüència per a l'anàlisi del TR
+
+Les decisions de les setmanes 1 a 9 es van prendre amb **informació de context
+obsoleta**. Els preus dels actius sempre van ser reals i actuals (venien de
+Yahoo Finance), i el control de variables es va mantenir (totes les IAs van
+rebre exactament els mateixos titulars), però el «context de mercat» no
+reflectia l'actualitat d'aquelles setmanes.
+
+Cal esmentar-ho en l'anàlisi: durant aquest període, les diferències de
+rendibilitat entre models s'expliquen per la seva estratègia i per la
+composició de la cartera, **no** per la seva capacitat d'interpretar notícies
+recents.
+
+### La correcció
+
+| Element | Abans | Després |
+|---|---|---|
+| Fonts | 3 (una morta) | **9 fonts verificades** (CNBC ×2, Financial Times, Yahoo Finance, Investing.com ×2, Seeking Alpha, MarketWatch, Expansión) |
+| Antiguitat màxima | sense límit | **8 dies**; el que és més vell es descarta |
+| Repartiment | s'omplia amb la primera font | **es barregen totes** per torns (round-robin) |
+| Filtre temàtic | cap | es prioritzen titulars de mercats i economia |
+| Detecció d'errors | cap | si una font queda obsoleta, **el motor ho avisa** i la ignora |
+| Nombre de titulars | 10 | 12 |
+
+### Verificació que les IAs llegeixen les notícies
+
+Perquè no torni a passar desapercebut i, sobretot, per **poder demostrar-ho al
+TR**, ara cada IA ha de declarar obligatòriament:
+
+- `noticies_clau`: els números dels titulars que han influït en la seva decisió.
+- `lectura_noticies`: què n'ha deduït, en una o dues frases.
+
+Tots dos camps es guarden a `dades/decisions.csv`. Això permet analitzar
+**quin tipus de notícia mou cada model** i comprovar objectivament que no
+ignoren el context. Exemple real de la primera prova (Claude):
+
+> `noticies_clau: [1, 5, 6, 9]` — *«El creixement dels EUA s'ha desaccelerat
+> (1,5%) amb inflació encara alta (3,3%), i el rendiment del bo a 30 anys
+> s'acosta a màxims de 2007, senyal d'estanflació lleu…»*
+
+---
+
 ## Millores metodològiques aplicades el mateix dia
 
 No modifiquen les regles del joc, però sí què es mesura i es guarda:
