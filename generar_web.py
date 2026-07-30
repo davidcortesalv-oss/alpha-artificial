@@ -368,33 +368,69 @@ def main():
             "text": (f.get("text") or "").strip(),
         })
 
-    # --- Sèrie DIÀRIA (si existeix, la gràfica es mou cada dia) ---
-    # El motor semanal marca las decisiones; actualitzar_preus.py añade un
-    # punto cada día de mercado. Si hay datos diarios, la web los usa.
+    # --- LÍNIA TEMPORAL COMPLETA de la gràfica principal ---
+    # Aquí es COMBINEN dues fonts, i és important que sigui així:
+    #   · decisions.csv → un valor per setmana des del primer dia del torneig
+    #   · valors_diaris.csv → un valor per dia de mercat (només des del dia
+    #     que es va activar la valoració diària)
+    # Si només es fes servir la diària, la gràfica perdria tot l'historial
+    # anterior (era el bug: es veien només els últims 3 dies en comptes de
+    # tot el torneig). Si només es fes servir la setmanal, es perdria el
+    # detall dels últims dies. Amb les dues, la gràfica va del dia 1 fins avui.
+    per_data = {}          # {data: {model: valor}}
+
+    # 1) Valors setmanals de cada IA (de les seves decisions)
+    for mid, files_m in per_model.items():
+        if mid not in series:
+            continue
+        for s, fila in files_m.items():
+            data = (fila.get("data") or "").strip()
+            valor = num(fila.get("valor_cartera"), 0)
+            if data and valor:
+                per_data.setdefault(data, {})[mid] = valor
+
+    # 2) Valors setmanals de l'índex
+    for f in files_idx:
+        data = (f.get("data") or "").strip()
+        valor = num(f.get("valor"), 0)
+        if data and valor:
+            per_data.setdefault(data, {})["index"] = valor
+
+    # 3) Valors diaris (tenen prioritat: són els més precisos)
     files_diaris = llegir_csv(RUTA_DIARIS)
-    punts_per_setmana = 1
-    if files_diaris:
-        per_dia = {}
-        for f in files_diaris:
-            dia = (f.get("data") or "").strip()
-            m = (f.get("model") or "").strip()
-            if dia and m:
-                per_dia.setdefault(dia, {})[m] = num(f.get("valor"))
-        dies_ord = sorted(per_dia)
-        if len(dies_ord) >= 2:
-            ids = list(series.keys())
-            series_diaries = {mid: [] for mid in ids}
-            previ = {mid: config.CAPITAL_INICIAL for mid in ids}
-            for dia in dies_ord:
-                for mid in ids:
-                    v = per_dia[dia].get(mid, previ[mid])
-                    series_diaries[mid].append(round(v, 2))
-                    previ[mid] = v
-            series = series_diaries
-            dies = dies_ord
-            # ~5 días de mercado por semana
-            punts_per_setmana = 5
-            print(f"[i] Fent servir la sèrie DIÀRIA ({len(dies_ord)} dies de mercat).")
+    for f in files_diaris:
+        data = (f.get("data") or "").strip()
+        m = (f.get("model") or "").strip()
+        valor = num(f.get("valor"), 0)
+        if data and m and valor:
+            per_data.setdefault(data, {})[m] = valor
+
+    dates_ord = sorted(d for d in per_data if d)
+    if len(dates_ord) >= 2:
+        ids = list(series.keys())
+        series_completes = {mid: [] for mid in ids}
+        previ = {mid: config.CAPITAL_INICIAL for mid in ids}
+        for data in dates_ord:
+            for mid in ids:
+                v = per_data[data].get(mid, previ[mid])   # arrossega l'últim conegut
+                series_completes[mid].append(round(v, 2))
+                previ[mid] = v
+        series = series_completes
+        dies = dates_ord
+
+        # Densitat real de punts: serveix per als selectors de temps de la web
+        try:
+            d0 = datetime.date.fromisoformat(dates_ord[0])
+            d1 = datetime.date.fromisoformat(dates_ord[-1])
+            setmanes_transcorregudes = max(1, (d1 - d0).days / 7)
+            punts_per_setmana = max(1, round(len(dates_ord) / setmanes_transcorregudes))
+        except ValueError:
+            punts_per_setmana = 1
+        print(f"[i] Gràfica principal: {len(dates_ord)} punts "
+              f"({dates_ord[0]} → {dates_ord[-1]}), "
+              f"~{punts_per_setmana} punt(s) per setmana.")
+    else:
+        punts_per_setmana = 1
 
     # --- Mètriques de risc de cada participant ---
     punts_any = 252 if punts_per_setmana > 1 else 52
