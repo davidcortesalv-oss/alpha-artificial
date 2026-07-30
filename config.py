@@ -14,7 +14,16 @@ MAX_PES_PER_ETF = 0.40         # ningún ETF puede pasar del 40% de la cartera
 MAX_PES_PER_ACCIO = 0.20       # ninguna ACCIÓN puede pasar del 20% (más arriesgada)
 MONEDA = "EUR"
 
-# --- Cambio de divisa ---
+# --- Horizonte del torneo ---
+# La fecha en que se cierra la clasificación. Se le comunica a cada IA en su
+# briefing (cuántas semanas le quedan), porque un gestor real SIEMPRE sabe
+# cuál es su horizonte de inversión: no es lo mismo gestionar a 30 años que
+# a cinco meses.
+# IMPORTANTE: solo se les da el DATO. No se les sugiere qué hacer con él
+# (ni ser más prudentes, ni más agresivos, ni evitar según qué activos).
+# Qué conclusión sacan de tener un horizonte corto es precisamente una de
+# las cosas que el TR quiere observar.
+DATA_FI = "2026-12-31"
 # Las acciones cotizan en la moneda de su bolsa (Apple en dólares, Inditex en
 # euros, Shell en peniques...). El torneo se contabiliza en EUROS, así que el
 # motor convierte TODOS los precios a euros antes de calcular nada.

@@ -386,9 +386,23 @@ def montar_briefing(setmana, preus, cartera, model_id, titulars=None):
 
     historial = historial_model(model_id)
 
+    # --- Horitzó: quant queda de torneig ---
+    # Un gestor real sempre sap quan es tanca el seu mandat. Li donem el dato
+    # i prou; què en fa (ser més prudent, més agressiu, evitar segons quins
+    # actius) ho decideix ell, i és part del que estudia el TR.
+    try:
+        fi = datetime.date.fromisoformat(config.DATA_FI)
+        dies_restants = (fi - datetime.date.today()).days
+        setmanes_restants = max(0, round(dies_restants / 7))
+        data_fi_llegible = fi.strftime("%d/%m/%Y")
+    except (ValueError, AttributeError):
+        setmanes_restants, data_fi_llegible = "—", "—"
+
     # Sustituciones
     text = (plantilla
         .replace("{{NUMERO_SETMANA}}", str(setmana))
+        .replace("{{DATA_FI}}", str(data_fi_llegible))
+        .replace("{{SETMANES_RESTANTS}}", str(setmanes_restants))
         .replace("{{DATA}}", datetime.date.today().isoformat())
         .replace("{{VALOR_TOTAL}}", str(round(valor_total, 2)))
         .replace("{{POSICIONS_ACTUALS}}", posicions)

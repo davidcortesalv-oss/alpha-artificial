@@ -173,6 +173,59 @@ ignoren el context. Exemple real de la primera prova (Claude):
 
 ---
 
+## Canvi núm. 3 — Les IAs saben quan s'acaba el torneig
+
+**Data:** 30 de juliol de 2026
+**Afecta a partir de:** setmana 10
+
+### Què s'ha canviat
+
+Fins ara, cap IA sabia quant durava el torneig. Se'ls demanava que gestionessin
+una cartera sense dir-los mai quin era el seu horitzó temporal. Ara, cada
+briefing setmanal inclou:
+
+> «Aquest torneig NO és una inversió a llarg termini. Es tanca el 31/12/2026:
+> queden **22 setmanes**. La classificació final es decidirà exclusivament pel
+> valor de la teva cartera aquell dia; no hi ha res després.
+>
+> Ets tu qui decideix si aquest horitzó ha d'influir en la teva estratègia i de
+> quina manera. No se t'indica cap conclusió: forma part de la teva feina com a
+> gestor valorar què implica.»
+
+Les setmanes restants es calculen automàticament cada ronda a partir de
+`DATA_FI` (config.py).
+
+### Per què és metodològicament important
+
+1. **Corregeix una asimetria irreal.** Un gestor professional sempre sap quin
+   és el seu horitzó: no es gestiona igual un fons de pensions a 30 anys que un
+   mandat de cinc mesos. Amagar-los aquesta dada els posava en una situació que
+   no es dona a la realitat.
+
+2. **No se'ls suggereix la conclusió.** Se'ls dona el **dato** i prou. No se'ls
+   diu que siguin més prudents, ni més agressius, ni que evitin cap tipus
+   d'actiu. Què deduir d'un horitzó curt és, precisament, una de les coses que
+   el TR vol observar: forma part de la seva capacitat de raonament.
+
+3. **Obre una línia d'anàlisi nova.** Es podrà comparar si els models ajusten
+   la durada dels seus actius al termini que els queda, o si l'ignoren. La
+   diferència entre models en aquest punt és un resultat en si mateix.
+
+### Primera reacció observada (prova prèvia a la ronda oficial)
+
+En la prova de validació, Claude va reaccionar sense que se li insinués res:
+
+> «Substitueixo **TLT** (bons 20+ anys, molt sensibles a duració) per **SHY**
+> (bons 1-3 anys, molt menys sensibles a pujades de tipus) […] mantenint un
+> perfil moderat amb **l'horitzó de només 22 setmanes**.»
+
+És a dir: va escurçar la durada de la seva renda fixa i va justificar-ho
+citant l'horitzó. Aquesta conclusió no estava al prompt: la va treure ell.
+Queda per veure si els altres quatre models arriben al mateix raonament, i
+aquesta comparació és material directe per al TR.
+
+---
+
 ## Millores metodològiques aplicades el mateix dia
 
 No modifiquen les regles del joc, però sí què es mesura i es guarda:

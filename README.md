@@ -88,6 +88,8 @@ Claus que fa servir el sistema: `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`,
 - Sense palanquejament ni posicions curtes.
 - Totes les IAs reben exactament la mateixa informació (mateixos preus i titulars).
 - Tots els preus es converteixen a **euros** abans de calcular res.
+- Cada IA sap quantes setmanes queden fins al tancament (**31/12/2026**), però
+  no se li suggereix què fer amb aquesta informació.
 
 > ⚠️ Les regles es van ampliar la setmana 4 (27/07/2026). El detall complet i el
 > motiu estan a [CANVI_DE_REGLES.md](CANVI_DE_REGLES.md) — document pensat per
