@@ -210,6 +210,14 @@ def main():
             claus_txt = (fila.get("noticies_clau") or "").strip()
             noticies_clau = [int(num(x)) for x in claus_txt.split() if num(x, 0)] if claus_txt else []
 
+            # ¿Esta semana la IA realmente decidió, o falló su API?
+            # Es importante distinguirlo: una ronda fallida NO es "decidió
+            # mantener". Si se cuentan como decisiones, las métricas de
+            # sobreoperación y de confianza salen falseadas.
+            just = (fila.get("justificacio") or "").strip()
+            incidencia = ("sense resposta" in just.lower()
+                          or "incidència tècnica" in just.lower())
+
             decs.append({
                 "setmana": s,
                 "data": (fila.get("data") or "").strip(),
@@ -218,10 +226,11 @@ def main():
                 "confianca": int(num(fila.get("confianca"), 0)),
                 "valor_cartera": round(valor, 2),
                 "rend_setmana": round(rend, 2),
-                "justificacio": (fila.get("justificacio") or "").strip(),
+                "justificacio": just,
                 "operacions": ops or None,
                 "noticies_clau": noticies_clau,
                 "lectura_noticies": (fila.get("lectura_noticies") or "").strip(),
+                "incidencia": incidencia,
             })
             valor_previ = valor
 

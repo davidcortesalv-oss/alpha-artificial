@@ -897,10 +897,10 @@
         </div>
         <div class="timeline">
           ${[...decs].reverse().map((d) => `
-            <div class="tl">
+            <div class="tl ${d.incidencia ? "tl-incidencia" : ""}">
               <div class="tl-cap">
                 <span class="tl-set">S${d.setmana} · ${fmtData(d.data)}</span>
-                <span class="tag ${d.decisio === "reajustar" ? "tag-reajust" : "tag-mante"}">${d.decisio}</span>
+                <span class="tag ${d.incidencia ? "tag-incidencia" : d.decisio === "reajustar" ? "tag-reajust" : "tag-mante"}">${d.incidencia ? "sense resposta" : d.decisio}</span>
                 <span class="tag">risc ${d.nivell_risc}</span>
                 <span class="tag">confiança ${d.confianca}/10</span>
                 <span class="tl-val">${euro(d.valor_cartera)} <i class="${cls(d.rend_setmana)}">${pct(d.rend_setmana)}</i></span>
@@ -1088,8 +1088,14 @@
   function viewBiaixos() {
     const comp = competidors();
     const metrica = {};
+    // Les rondes en què una IA no va poder respondre (API caiguda o resposta
+    // tallada) NO són decisions: si es comptessin com a "mantenir", semblaria
+    // més passiva del que és i la seva confiança mitjana baixaria sense motiu.
+    let nIncidencies = 0;
     comp.forEach((m) => {
-      const d = decisionsDe(m.id);
+      const totes = decisionsDe(m.id);
+      const d = totes.filter((x) => !x.incidencia);
+      nIncidencies += totes.length - d.length;
       const reaj = d.filter((x) => x.decisio === "reajustar").length;
       const confMitja = d.length ? d.reduce((s, x) => s + x.confianca, 0) / d.length : 0;
       const perdudes = d.filter((x) => x.rend_setmana < 0);
@@ -1116,6 +1122,13 @@
 
     VISTA().innerHTML = `
       ${capçaleraVista("Anàlisi de biaixos conductuals", "Mostren les IAs els mateixos biaixos que els inversors humans? Pànic, sobreoperació, excés de confiança… Economia conductual, en la línia de Kahneman.")}
+      ${nIncidencies ? `<div class="avis-metodologic">
+        <b>Nota metodològica:</b> s'han exclòs d'aquestes mètriques
+        ${nIncidencies} ronda${nIncidencies === 1 ? "" : "es"} en què una IA no va poder respondre
+        (API del proveïdor caiguda o resposta tallada). No van ser decisions de
+        mantenir la cartera, sinó incidències tècniques: comptar-les distorsionaria
+        la sobreoperació i la confiança mitjana. Continuen visibles a l'historial de cada IA.
+      </div>` : ""}
       <div class="bias-grid">
         ${targetes.map((c) => {
           const files = comp.map((m) => ({ m, v: c.f(m.id) })).sort((a, b) => b.v - a.v);

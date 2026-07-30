@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-07-29",
     "font": "real",
-    "generat": "2026-07-30T16:22",
+    "generat": "2026-07-30T16:53",
     "puntsPerSetmana": 3,
     "nAccions": 114,
     "nEtfs": 108
@@ -191,7 +191,10 @@
         "valor_cartera": 10000.01,
         "rend_setmana": 0.0,
         "justificacio": "És la primera setmana i la cartera ja té una diversificació sensata (renda variable EUA/Europa, tecnologia, or i bons). El rebombori de DeepSeek sembla un esdeveniment puntual de sentiment de mercat més que un canvi estructural, i no vull reaccionar en calent al soroll d'un sol titular. Prefereixo esperar a tenir una setmana de dades reals de rendibilitat abans de reajustar, evitant costos de transacció innecessaris. Mantinc el nivell de risc moderat, vigilant especialment l'evolució de QQQ (exposició tecnològica) i TLT (sensible a tipus d'interès) de cara a la propera setmana.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 2,
@@ -202,7 +205,10 @@
         "valor_cartera": 10039.0,
         "rend_setmana": 0.39,
         "justificacio": "La cartera ha tingut un comportament positiu i coherent amb la meva tesi inicial de diversificació. No hi ha cap catalitzador clar que justifiqui reajustar ara: el soroll de DeepSeek sembla temporal, els tipus es mantenen estables i el VIX no mostra pànic. Canviar d'estratègia cada setmana només generaria costos de transacció sense benefici clar. Prefereixo mantenir la posició i observar com evolucionen els mercats abans de prendre decisions més agressives.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 3,
@@ -213,7 +219,10 @@
         "valor_cartera": 10039.0,
         "rend_setmana": 0.0,
         "justificacio": "Mantinc la cartera diversificada perquè cap notícia d'aquesta setmana representa un canvi estructural en la meva tesi: el 'DeepSeek rout' és un episodi de volatilitat puntual en tecnologia que ja s'ha reflectit sense dany significatif en la meva posició en QQQ, i la resta d'actius (SPY, VGK, GLD, TLT) actuen com a diversificadors efectius. Operar ara només generaria costos de transacció sense benefici clar, ja que el VIX baix indica que no cal reduir risc dràsticament. Prefereixo esperar senyals més consistents abans de reajustar.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 4,
@@ -224,7 +233,10 @@
         "valor_cartera": 9908.28,
         "rend_setmana": -1.3,
         "justificacio": "El 'DeepSeek rout' és soroll recurrent que ja porta tres setmanes sense provocar un canvi estructural real en els fonamentals de l'IA ni en el lideratge tecnològic dels EUA. Una caiguda puntual del -1.3% en una cartera diversificada no justifica reajustar, especialment quan encara no hi ha confirmació que sigui l'inici d'una correcció més profunda (VIX només a 18.1, lluny de nivells de pànic). Vendre ara QQQ o SPY després d'una caiguda seria reaccionar tard i pagar costos d'operació (0,1%) per un moviment que podria revertir's la setmana vinent, tal com va passar amb el rebombori inicial de DeepSeek a la setmana 1. Mantinc la meva tesi de diversificació entre renda variable, tecnologia, or i bons llargs, esperant que aquests últims recuperin el seu paper de cobertura si el nerviosisme s'intensifica.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 5,
@@ -235,7 +247,10 @@
         "valor_cartera": 9879.92,
         "rend_setmana": -0.29,
         "justificacio": "El 'DeepSeek rout' torna a aparèixer per quarta setmana consecutiva com a titular dominant, però segueix sent soroll narratiu més que un canvi de fonamentals: els gegants tecnològics EUA no han vist deteriorament real dels seus resultats. La caiguda de l'or aquesta setmana és puntual i no invalida el seu rol de diversificador a mitjà termini. Reajustar ara per reaccionar a un -0.29% setmanal seria sobreactuar i pagar costos de transacció innecessaris per una cartera que ja està ben diversificada entre renda variable, bons i or. Mantinc la disciplina: sense catalitzador estructural clar, no toco res.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 6,
@@ -246,7 +261,10 @@
         "valor_cartera": 9821.61,
         "rend_setmana": -0.59,
         "justificacio": "Els titulars d'aquesta setmana repeteixen el mateix relat del 'DeepSeek rout' que ja porta un mes sent l'excusa dominant sense provocar cap dany estructural real als fonamentals de les tecnològiques nord-americanes (de fet el titular 3 ho confirma explícitament: 'DeepSeek Won't Sink U.S. AI Titans'). La caiguda de l'or i la plata aquesta setmana és puntual i coincideix amb una setmana de vendes generalitzades, no amb un canvi de tesi sobre l'actiu refugi. Amb un VIX moderat (18.58) i sense cap catalitzador nou (tarifes de Trump són soroll polític recurrent, no una crisi de mercat), no veig justificat pagar costos de transacció per rotar la cartera. La disciplina en aquest punt és mantenir la diversificació i esperar que els fonaments es reafirmin, mentre vigilo si la ratxa negativa es converteix en una tendència de tres setmanes consecutives, cas en què sí reconsideraria reduir exposició a QQQ i augmentar TLT o actius defensius com XLP o SHY.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 7,
@@ -257,7 +275,10 @@
         "valor_cartera": 9824.11,
         "rend_setmana": 0.03,
         "justificacio": "El titular de DeepSeek porta ja set setmanes sent l'excusa narrativa dominant sense que hagi generat cap deteriorament estructural en els fonamentals: els índexs es mantenen estables, el VIX no dispara (17.6, nivell normal), i la meva cartera diversificada (renda variable EUA/Europa, tecnologia, or com a cobertura, i bons com a estabilitzador) continua complint la seva funció d'amortir volatilitat sense sacrificar exposició al creixement. Els altres titulars (tarifes, cafè, gas natural, Singapur) són soroll sectorial puntual que no afecta la meva tesi de fons. Reajustar ara implicaria pagar costos de transacció (0,1% per operació) per canviar una cartera que ja està ben posicionada, sense un catalitzador clar que justifiqui el canvi. Mantinc la disciplina: no facis res quan no hi ha raó de pes per fer-ho.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 8,
@@ -268,7 +289,10 @@
         "valor_cartera": 9824.11,
         "rend_setmana": 0.0,
         "justificacio": "(incidència tècnica: la resposta del model es va tallar i no es va poder llegir la decisió; la cartera va quedar sense canvis. Veure CANVI_DE_REGLES.md)",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": true
       },
       {
         "setmana": 9,
@@ -279,7 +303,10 @@
         "valor_cartera": 9646.28,
         "rend_setmana": -1.81,
         "justificacio": "(sense resposta: Error de connexió: 529 Server Error: <none> for url: https://api.anthropic.com/v1/messages)",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": true
       }
     ],
     "gpt": [
@@ -308,7 +335,10 @@
             "comprar": "SMH",
             "import": 499.5
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 2,
@@ -319,7 +349,10 @@
         "valor_cartera": 10046.39,
         "rend_setmana": 0.5,
         "justificacio": "Els pesos actuals estan clavats als objectius i la tesi de fons (IA/semis com a motor, amb coixins en or i bons llargs) es manté. El VIX a 16 indica tensió moderada, no pànic; no cal reacció precipitada. Reajustar ara penalitzaria amb costos del 0,1% sense guany esperat clar. Mantinc la disciplina: deixo treballar l’exposició a QQQ/SMH i preservo les cobertures (GLD/TLT) davant un possible nou tram de volatilitat. Pla tàctic: si hi hagués una nova caiguda significativa dels semis, valoraré pujar SMH cap al 12–13%; si els rendiments del 10Y pugen de manera sostinguda, reavaluaré TLT.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 3,
@@ -330,7 +363,10 @@
         "valor_cartera": 10046.39,
         "rend_setmana": 0.0,
         "justificacio": "La tesi central (IA com a motor estructural) no canvia per un sobresalt de titulars; fins i tot hi ha veus que apunten que no enfonsarà els líders dels EUA. El VIX a 16 no exigeix replegament i els coixins (GLD, TLT) aporten estabilitat. Els pesos estan clavats als objectius i operar ara només afegiria costos del 0,1% sense millorar clarament el perfil risc/rendiment. Mantinc disciplina: sobrepès QQQ/SMH per capturar recuperació quan s’assequi el soroll, i proteccions per si la volatilitat persisteix.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 4,
@@ -341,7 +377,10 @@
         "valor_cartera": 9834.57,
         "rend_setmana": -2.11,
         "justificacio": "La tesi central (IA com a motor) no ha canviat; la caiguda sembla més esdeveniment que trencament de cicle. Els nostres coixins (GLD/TLT) limiten riscos en cas que els tipus repuntin o el sentiment empitjori. Els pesos ja estan pràcticament en objectiu; reequilibrar per dècimes implicaria costos innecessaris i risc de ‘whipsaw’. Mantinc i revaloro la setmana vinent: si persisteix debilitat amb VIX >20 sense deteriorament fonamental, consideraria incrementar lleument SMH aprofitant el descompte; si el 10a puja clarament >4,8%, reforçaria duration de manera més prudent.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 5,
@@ -352,7 +391,10 @@
         "valor_cartera": 9767.06,
         "rend_setmana": -0.69,
         "justificacio": "El moviment ha estat impulsat per titulars i revaloració tàctica, no per un canvi estructural en la tesi d’IA. Un dels titulars clau ja apunta que DeepSeek no enfonsarà els líders nord-americans. El VIX a 18 indica nervis, però no pànic. Amb l’increment sorpresiu d’importacions i pressions d’inflació, els tipus alts poden persistir a curt termini (pes per a TLT), però mantenim TLT/GLD com a assegurança si el sentiment empitjora i els rendiments reculen. Els pesos actuals estan pràcticament als objectius; reequilibrar ara implicaria costos (0,1% per operació) sense millorar materialment el perfil risc/retorn. Preferim estabilitat i donar espai perquè el soroll s’esgoti. Si veiéssim trencaments tècnics clars o un canvi de cicle en tipus/inflació, llavors reajustaríem (p. ex., esglaonar TLT cap a durades mitjanes o reforçar qualitat).",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 6,
@@ -363,7 +405,10 @@
         "valor_cartera": 9705.89,
         "rend_setmana": -0.63,
         "justificacio": "La caiguda ve d’un xoc de sentiment sobre IA, però un dels propis titulars assenyala que ‘DeepSeek no enfonsarà els titans d’IA’ (titular 3). No veiem trencament de tesi; només volatilitat temporal amb el VIX a 18–19. Els pesos ja estan alineats al nostre disseny i qualsevol reajust seria microtuning d’1–2% que no compensa el cost d’operar (0,1% per execució) ni el risc de perseguir el soroll. Mantenim l’exposició a IA per capturar el rebot quan es normalitzi el sentiment, i preservem GLD/TLT com a assegurança de cua en cas d’esglaó macro. Què vigilarem: si els tipus alts persisteixen i TLT segueix desenganxat com a cobertura, podríem rotar part cap a durada més curta o qualitat equity; si l’ajust en semis s’allarga i s’apropa a un -10/-15% addicional, incrementarem SMH fins al límit de risc. Avui, disciplina i cost-benefici recomanen no tocar res.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 7,
@@ -374,7 +419,10 @@
         "valor_cartera": 9757.72,
         "rend_setmana": 0.53,
         "justificacio": "La tesi central (IA/semis com a catalitzador de beneficis) es manté malgrat el soroll. Els coixins (GLD/TLT) continuen sent útils davant riscos de creixement/inflació i episodis de risc-off (safe havens a l’alça, política monetària més dura a Singapur i tensions comercials). Amb el VIX a 17,6 i el 10Y elevat, no és moment d’augmentar risc; però tampoc de retallar exposició a tecnologia que lidera cicles. El drift respecte l’objectiu és <0,5 p.p. per actiu: reequilibrar ara només afegiria costos (0,1% per operació) sense millorar materialment el perfil rendibilitat-risc. Mantinc l’estratègia i guardo la flexibilitat per actuar si els rendiments o la macro es desvien clarament.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 8,
@@ -396,7 +444,10 @@
             "comprar": "XLE",
             "import": 199.8
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 9,
@@ -423,7 +474,10 @@
             "comprar": "TIP",
             "import": 190.69
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       }
     ],
     "gemini": [
@@ -442,7 +496,10 @@
             "comprar": "VTI",
             "import": 499.5
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 2,
@@ -453,7 +510,10 @@
         "valor_cartera": 10041.06,
         "rend_setmana": 0.42,
         "justificacio": "La cartera està ben diversificada i ha demostrat la seva capacitat per generar rendiments positius en un entorn de mercat complex. Reaccionar de manera precipitada a titulars de notícies que, a més, són contradictoris (com en el cas de l'IA) podria ser contraproduent i generar costos de transacció innecessaris. El VIX es manté en un nivell que no indica un pànic extrem, i la rendibilitat del bo dels EUA a 10 anys continua sent atractiva, cosa que la nostra posició en TLT gestiona parcialment. Mantenir la cartera permetrà observar amb més dades l'evolució real del mercat abans de fer nous ajustos, mantenint la coherència amb la nostra estratègia de buscar la màxima rendibilitat possible amb un risc raonable a llarg termini.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 3,
@@ -464,7 +524,10 @@
         "valor_cartera": 10041.06,
         "rend_setmana": 0.0,
         "justificacio": "La decisió de mantenir la cartera es basa en diversos factors. En primer lloc, la rendibilitat del 0.0% aquesta setmana, tal com ha calculat el sistema, indica que la meva cartera no ha experimentat canvis de valor. Això suggereix que, per als meus propòsits, el mercat ha estat neutre o les fluctuacions s'han compensat. En un entorn així, la millor decisió sovint és no fer res per evitar els costos de transacció (0.1% per operació). A més, la cartera ja està ben diversificada i equilibrada, mantenint una exposició raonable tant a renda variable (EUA i Europa) com a actius refugis (or i bons a llarg termini). Les notícies sobre la 'AI Rout' són contradictòries amb altres titulars que relativitzen l'impacte i, en tot cas, la meva exposició a QQQ està dins dels límits i no ha mostrat una davallada real en el meu valor de cartera aquesta setmana. Mantenir la posició actual s'alinea amb la meva estratègia de risc moderat i la confiança en la diversificació a llarg termini.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 4,
@@ -475,7 +538,10 @@
         "valor_cartera": 9909.03,
         "rend_setmana": -1.31,
         "justificacio": "La decisió de mantenir la cartera aquesta setmana es basa en una anàlisi serena del context actual. Si bé la caiguda del -1.31% és notable, considero que una reacció precipitada, especialment venent actius de creixement com QQQ, podria ser contraproduent. El titular 'DeepSeek Won't Sink U.S. AI Titans' suggereix que l'alarma en el sector de la IA podria ser exagerada o de curta durada. La meva cartera està construïda amb una sòlida diversificació entre diferents classes d'actius i geografies, el que hauria de proporcionar resiliència davant la volatilitat a curt termini. Reajustar ara implicaria costos de transacció que podrien menjar-se una part dels beneficis si el mercat es recupera ràpidament. Mantenir la posició és coherent amb la meva estratègia de no deixar-me portar pel soroll del mercat i de mantenir una visió a llarg termini per aconseguir la màxima rendibilitat possible amb un risc raonable.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 5,
@@ -497,7 +563,10 @@
             "comprar": "VTI",
             "import": 499.5
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 6,
@@ -514,7 +583,10 @@
             "comprar": "USMV",
             "import": 699.3
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 7,
@@ -525,7 +597,10 @@
         "valor_cartera": 9797.62,
         "rend_setmana": -0.17,
         "justificacio": "(sense resposta: Error de connexió: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent)",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": true
       },
       {
         "setmana": 8,
@@ -552,7 +627,10 @@
             "comprar": "USMV",
             "import": 500.0
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 9,
@@ -569,7 +647,10 @@
             "comprar": "XLP",
             "import": 480.58
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       }
     ],
     "deepseek": [
@@ -582,7 +663,10 @@
         "valor_cartera": 10000.01,
         "rend_setmana": 0.0,
         "justificacio": "Tot i que DeepSeek ha provocat una correcció tecnològica que pot perjudicar QQQ, és prematur vendre en pànic. La cartera està diversificada amb actius defensius (TLT, GLD) que poden compensar. El VGK i SPY ofereixen exposició a renda variable ampla. El cost d'operar (0,1%) no justifica ajustos sense més dades. Prefereixo mantenir l'estratègia inicial i observar l'evolució del mercat la setmana vinent.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 2,
@@ -593,7 +677,10 @@
         "valor_cartera": 10039.0,
         "rend_setmana": 0.39,
         "justificacio": "La cartera ha demostrat resiliència en un context de mercat encara nerviós però sense noves amenaces rellevants. El VIX es manté contingut (16.28) i els tipus del bo a 10 anys (4.569%) no han canviat de manera dràstica. La correcció tecnològica sembla esmorteïda i les notícies indiquen que DeepSeek no enfonsarà els gegants tecnològics americans. Amb rendibilitat positiva acumulada, no té sentit canviar una estratègia que funciona. Operar ara seria pagar comissions innecessàries (0.1%) i possiblement trencar una diversificació que està complint el seu objectiu. Mantinc el risc moderat perquè l'exposició a renda variable (60% entre SPY, VGK i QQQ) és raonable per al meu objectiu de rendibilitat sense prendre riscos excessius.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 3,
@@ -604,7 +691,10 @@
         "valor_cartera": 10039.0,
         "rend_setmana": 0.0,
         "justificacio": "La cartera està ben diversificada entre renda variable nord-americana, europea, or i bons. Malgrat la notícia de DeepSeek i una baixada inicial, no hi ha evidència de pànic sostingut. El VIX baix i la falta de moviments dràstics aconsellen no tocar res. Operar ara suposaria costos innecessaris i podria perdre la recuperació. Prefereixo mantenir la posició i esperar més senyals clars.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 4,
@@ -615,7 +705,10 @@
         "valor_cartera": 9908.28,
         "rend_setmana": -1.3,
         "justificacio": "Mantenir la cartera malgrat les pèrdues. La correcció de DeepSeek pot ser una reacció exagerada i no un canvi estructural. La diversificació entre renda variable (EUA, Europa) i actius refugi (or, bons) està funcionant per limitar les caigudes. Fer canvis ara seria respondre al soroll i pagar comissions. La meva confiança en l'estratègia es manté, tot i que el context és incert. Prefereixo esperar a veure si el mercat es estabilitza.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 5,
@@ -626,7 +719,10 @@
         "valor_cartera": 9879.92,
         "rend_setmana": -0.29,
         "justificacio": "Mantenir la cartera actual. La diversificació entre renda variable (SPY, VGK, QQQ), or (GLD) i bons (TLT) està funcionant com a cobertura davant la incertesa. Fer canvis ara suposaria costos de transacció i podria vendre en un moment de pànic. La correcció de DeepSeek probablement és exagerada i no revertirà estructuralment el lideratge tecnològic dels EUA. Continuo amb l'estratègia de paciència i risc moderat.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 6,
@@ -637,7 +733,10 @@
         "valor_cartera": 9821.61,
         "rend_setmana": -0.59,
         "justificacio": "(sense resposta: Error de connexió: 400 Client Error: Bad Request for url: https://api.deepseek.com/chat/completions)",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": true
       },
       {
         "setmana": 7,
@@ -648,7 +747,10 @@
         "valor_cartera": 9824.11,
         "rend_setmana": 0.03,
         "justificacio": "Tot i que la correcció de DeepSeek ha afectat el sector tecnològic, considero que la reacció és exagerada i que QQQ es recuperarà a mitjà termini. La cartera està diversificada amb or i bons com a cobertura, i el rendiment neutre d'aquesta setmana mostra resiliència. Canviar ara suposaria assumir costos de transacció (0.1% per operació) i podria ser tard si el mercat es recupera. Mantinc la cartera perquè la meva estratègia és de llarg termini i no vull reaccionar al soroll. El risc és moderat perquè, tot i la volatilitat, la diversificació és adequada per suportar moviments adversos.",
-        "operacions": null
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 8,
@@ -665,7 +767,10 @@
             "comprar": "GLD",
             "import": 1666.86
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 9,
@@ -682,7 +787,10 @@
             "comprar": "VIG",
             "import": 949.05
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       }
     ],
     "mistral": [
@@ -711,7 +819,10 @@
             "comprar": "BIL",
             "import": 499.5
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 2,
@@ -733,7 +844,10 @@
             "comprar": "QQQ",
             "import": 498.66
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 3,
@@ -755,7 +869,10 @@
             "comprar": "EWJ",
             "import": 749.25
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 4,
@@ -777,7 +894,10 @@
             "comprar": "VGK",
             "import": 696.86
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 5,
@@ -804,7 +924,10 @@
             "comprar": "IEF",
             "import": 362.75
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 6,
@@ -831,7 +954,10 @@
             "comprar": "DBC",
             "import": 299.7
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 7,
@@ -858,7 +984,10 @@
             "comprar": "VIG",
             "import": 339.23
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 8,
@@ -890,7 +1019,10 @@
             "comprar": "BIL",
             "import": 254.73
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       },
       {
         "setmana": 9,
@@ -917,7 +1049,10 @@
             "comprar": "LLY",
             "import": 399.6
           }
-        ]
+        ],
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": false
       }
     ]
   },

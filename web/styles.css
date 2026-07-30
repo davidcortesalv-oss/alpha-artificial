@@ -479,6 +479,20 @@ main {
 .tl-val { margin-left: auto; font: 600 12.5px var(--mono); color: var(--apagat); }
 .tl-val i { font-style: normal; margin-left: 6px; }
 .tl-text { color: var(--apagat); font-size: 13.5px; margin-top: 8px; }
+/* Ronda en què la IA no va poder respondre: es marca, no s'amaga */
+.tl-incidencia { opacity: .62; }
+.tag-incidencia {
+  color: var(--apagat); border-color: var(--linia-2);
+  background: repeating-linear-gradient(45deg, transparent, transparent 4px,
+    rgba(255,255,255,.045) 4px, rgba(255,255,255,.045) 8px);
+}
+.avis-metodologic {
+  background: rgba(255, 176, 0, .07);
+  border: 1px solid rgba(255, 176, 0, .28);
+  border-radius: 12px; padding: 13px 16px; font-size: 13.5px;
+  color: var(--apagat); margin-bottom: 4px;
+}
+.avis-metodologic b { color: var(--ambre); }
 /* Què ha llegit la IA a les notícies (prova que no les ignora) */
 .tl-noticies {
   margin-top: 9px; padding: 9px 12px;
