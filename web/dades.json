@@ -9,9 +9,9 @@
     "setmanes": 22,
     "setmanaActual": 11,
     "dataInici": "2026-07-09",
-    "dataActual": "2026-08-03",
+    "dataActual": "2026-08-04",
     "font": "real",
-    "generat": "2026-08-04T16:56",
+    "generat": "2026-08-04T22:43",
     "puntsPerSetmana": 3,
     "nAccions": 114,
     "nEtfs": 108
@@ -27,7 +27,8 @@
     "2026-07-29",
     "2026-07-30",
     "2026-07-31",
-    "2026-08-03"
+    "2026-08-03",
+    "2026-08-04"
   ],
   "models": [
     {
@@ -133,7 +134,8 @@
       9616.57,
       9735.42,
       9715.76,
-      9792.43
+      9792.43,
+      9914.96
     ],
     "gpt": [
       9979.75,
@@ -146,7 +148,8 @@
       9476.46,
       9662.26,
       9671.2,
-      9783.79
+      9783.79,
+      9995.78
     ],
     "gemini": [
       9982.74,
@@ -159,7 +162,8 @@
       9651.09,
       9708.66,
       9696.39,
-      9884.9
+      9884.9,
+      9952.89
     ],
     "deepseek": [
       9983.74,
@@ -172,7 +176,8 @@
       9647.29,
       9726.91,
       9677.91,
-      9798.26
+      9798.26,
+      9981.5
     ],
     "mistral": [
       9979.75,
@@ -185,7 +190,8 @@
       9608.92,
       9600.02,
       9589.49,
-      9627.28
+      9627.28,
+      9731.15
     ],
     "index": [
       10000.0,
@@ -198,7 +204,8 @@
       9734.27,
       9827.82,
       9850.23,
-      9972.79
+      9972.79,
+      10160.52
     ]
   },
   "decisions": {
@@ -4478,7 +4485,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 11 · 2026-08-03",
         "ultimBriefing": "Mantinc l'estructura general de la cartera (renda variable EUA/Europa, or com a cobertura, tech), però redueixo la duració de la part de renda fixa. TLT (bons 2…"
       },
@@ -4488,7 +4495,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 11 · 2026-08-03",
         "ultimBriefing": "1) Macro: amb inflació replegant-se (1, 10) i el petroli caient (2), el balanç de riscos s’inclina cap a retallades i tires més baixes; per això reverteixo part…"
       },
@@ -4498,7 +4505,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 11 · 2026-08-03",
         "ultimBriefing": "La decisió de reajustar la cartera es basa en una avaluació de la necessitat de millorar la rendibilitat en el curt termini del torneig, sense assumir un risc e…"
       },
@@ -4508,7 +4515,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 11 · 2026-08-03",
         "ultimBriefing": "Venc tota la posició en TLT perquè els bons a llarg termini estan caient per la pujada dels tipus (bo 10 anys al 4.745%) i la inflació moderada no acompanya; el…"
       },
@@ -4518,7 +4525,7 @@
         "model_api": "mistral-large-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 11 · 2026-08-03",
         "ultimBriefing": "1) **Rotació de XLP a SMH**: El consum bàsic (XLP) ha estat un actiu defensiu però amb rendibilitat limitada. En canvi, els semiconductors (SMH) estan en mínims…"
       }
@@ -4540,34 +4547,34 @@
   },
   "risc": {
     "claude": {
-      "volatilitat": 14.33,
+      "volatilitat": 15.24,
       "max_caiguda": -4.05,
-      "sharpe": -3.34
+      "sharpe": -0.97
     },
     "gpt": {
-      "volatilitat": 21.27,
+      "volatilitat": 23.12,
       "max_caiguda": -5.52,
-      "sharpe": -2.25
+      "sharpe": 0.26
     },
     "gemini": {
-      "volatilitat": 15.56,
+      "volatilitat": 15.23,
       "max_caiguda": -3.73,
-      "sharpe": -1.52
+      "sharpe": -0.38
     },
     "deepseek": {
-      "volatilitat": 13.29,
+      "volatilitat": 15.99,
       "max_caiguda": -3.75,
-      "sharpe": -3.49
+      "sharpe": 0.04
     },
     "mistral": {
-      "volatilitat": 12.55,
+      "volatilitat": 13.74,
       "max_caiguda": -4.21,
-      "sharpe": -7.15
+      "sharpe": -4.14
     },
     "index": {
-      "volatilitat": 13.92,
+      "volatilitat": 16.05,
       "max_caiguda": -2.66,
-      "sharpe": -0.43
+      "sharpe": 2.35
     }
   },
   "comissions": {
