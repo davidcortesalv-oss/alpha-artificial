@@ -308,6 +308,67 @@ El cost per ronda puja de ~0,08 € a ~0,14 € (el briefing passa de 9.500 a
 
 ---
 
+## Canvi núm. 5 — Els 10.000 € ja són exactes i verificables
+
+**Data:** 4 d'agost de 2026
+**Afecta a:** tot l'historial (l'índex es recalcula des del primer dia)
+
+### La pregunta que ho va destapar
+
+*«Si jo hagués posat 10.000 € a l'S&P 500 el primer dia, tindria el mateix
+que ensenya la web?»*
+
+La resposta era **no**: la web deia 10.017,69 € i la xifra real era
+9.972,79 €. Un desfasament de 44,90 € (0,45%) **a favor de l'índex**.
+
+### D'on venia
+
+De la correcció de divises del 30/07 (Canvi núm. 1). Aquell ajust va
+reescalar les unitats prenent com a referència els valors de la setmana
+anterior… que estaven inflats precisament per l'error que s'estava
+corregint. Resultat: totes les carteres i l'índex van quedar amb un
+**0,163% d'unitats de més**.
+
+La resta de la diferència (~0,3%) era soroll pel moment exacte de la
+mesura: el robot setmanal mesura dilluns al matí (Wall Street tancat, agafa
+el preu de divendres) i el robot diari mesura al vespre.
+
+### La correcció aplicada
+
+| Element | Com s'ha corregit |
+|---|---|
+| **Índex S&P 500** | Recalculat **des de zero** per a cada data: `unitats = 10.000 € / preu de SPY en euros el 09/07`, i després `valor = unitats × preu real de cada dia`. Ara és verificable per qualsevol amb Yahoo Finance. |
+| **Les 5 IAs** | Se'ls ha aplicat el **mateix factor** (0,998373) a totes les unitats, perquè totes parteixin dels mateixos 10.000 € reals. Com que el factor és idèntic per a totes, **la comparació entre elles i amb l'índex no canvia gens**. |
+| **Historial** | Els valors ja registrats (decisions, valors diaris) s'han ajustat amb el mateix factor. Se'n va fer còpia de seguretat a `dades/copia_abans_correccio/`. |
+
+### Comprovació
+
+Es va calcular de manera **independent** (baixant els preus de Yahoo Finance
+i fent el càlcul des de zero, sense mirar les dades del torneig):
+
+```
+Amb 10.000 € el 09/07/2026 compraries 15,1947 participacions de SPY
+El 03/08/2026 valdrien: 9.972,79 €   (-0,27 %)
+
+L'índex del torneig diu: 9.972,79 €
+Diferència: 0,00 €
+```
+
+### Què vol dir per al TR
+
+- **La xifra de l'índex és ara literalment certa i comprovable.** Qualsevol
+  pot agafar Yahoo Finance, mirar SPY i l'EUR/USD del 09/07 i d'avui, i
+  obtenir el mateix número.
+- **Les conclusions anteriors no canvien**: el desfasament afectava totes
+  les carteres per igual, així que les diferències relatives entre IAs i
+  índex (que és el que respon la pregunta del TR) ja eren correctes.
+- **Limitació que queda documentada:** els valors de les setmanes 1 a 7
+  reflecteixen la comptabilitat d'aleshores (dòlars tractats com a euros)
+  reescalada, no una reconstrucció completa operació per operació. A partir
+  de la setmana 8, tot el càlcul és exacte.
+
+---
+
 ## Millores metodològiques aplicades el mateix dia
 
 No modifiquen les regles del joc, però sí què es mesura i es guarda:
