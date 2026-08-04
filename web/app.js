@@ -94,6 +94,34 @@
   }
 
   // ------------------------------------------------------------------
+  //  Quan va ser l'última ronda i quan toca la següent
+  //  (les rondes són els dilluns, però GitHub sol arribar amb retard:
+  //   això evita pensar que ha fallat quan només va tard)
+  // ------------------------------------------------------------------
+  function infoRondes() {
+    const decs = DATA.decisions || {};
+    let ultima = null;
+    Object.values(decs).forEach((llista) => {
+      (llista || []).forEach((d) => {
+        if (d.data && (!ultima || d.data > ultima)) ultima = d.data;
+      });
+    });
+    if (!ultima) return null;
+
+    const [y, m, dd] = ultima.split("-").map(Number);
+    const dataUltima = new Date(y, m - 1, dd);
+
+    // pròxim dilluns a partir d'avui
+    const avui = new Date(); avui.setHours(0, 0, 0, 0);
+    const seguent = new Date(avui);
+    const dies = (8 - avui.getDay()) % 7 || 7;   // 1 = dilluns
+    seguent.setDate(avui.getDate() + dies);
+
+    const diesDes = Math.round((avui - dataUltima) / 86400000);
+    return { ultima: dataUltima, seguent, diesDes };
+  }
+
+  // ------------------------------------------------------------------
   //  Derivados de los datos
   // ------------------------------------------------------------------
   const model = (id) => DATA.models.find((m) => m.id === id);
@@ -195,6 +223,19 @@
           </div>
           <div class="kpis">
             <div class="kpi"><div class="k-l">Setmana</div><div class="k-v">${DATA.meta.setmanaActual} <span class="k-de">/ ${DATA.meta.setmanes}</span></div></div>
+            ${(() => {
+              const r = infoRondes();
+              if (!r) return "";
+              const dia = (d) => `${d.getDate()} ${["gen","febr","març","abr","maig","juny","jul","ag","set","oct","nov","des"][d.getMonth()]}`;
+              const quan = r.diesDes <= 0 ? "avui"
+                : r.diesDes === 1 ? "fa 1 dia" : `fa ${r.diesDes} dies`;
+              return `<div class="kpi kpi-rondes">
+                <div class="k-l">Última ronda</div>
+                <div class="k-v-r">${dia(r.ultima)}<span class="k-de"> · ${quan}</span></div>
+                <div class="k-l" style="margin-top:6px">Propera</div>
+                <div class="k-v-r">dilluns ${dia(r.seguent)}</div>
+              </div>`;
+            })()}
             <div class="kpi"><div class="k-l">Líder actual</div><div class="k-v ambre">${lider ? lider.nom : "—"}</div></div>
             <div class="kpi"><div class="k-l">S&P 500</div><div class="k-v ${idxRet != null ? cls(idxRet) : ""}">${idxRet != null ? pct(idxRet) : "—"}</div></div>
             <div class="kpi"><div class="k-l">Baten l'índex</div><div class="k-v">${baten != null ? `${baten} <span class="k-de">de ${compet.length}</span>` : "—"}</div></div>
