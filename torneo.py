@@ -125,6 +125,42 @@ def a_euros(valor, moneda, bruts):
 # ============================================================
 #  PASO 2 — Estado del torneo (la memoria entre semanas)
 # ============================================================
+def ja_jugat_aquesta_setmana():
+    """¿Ya se ha jugado una ronda esta semana (de lunes a domingo)?
+
+    Sirve para poder INTENTAR la ronda varias veces el mismo lunes sin que se
+    juegue dos veces. GitHub Actions es poco puntual con las tareas
+    programadas —llega tarde y a veces se salta una— así que en vez de una
+    sola oportunidad a las 07:37 UTC, el robot lo intenta cada dos horas.
+    La primera que entra juega; las demás ven que ya está hecho y no tocan
+    nada."""
+    if not os.path.exists(RUTA_DECISIONS):
+        return False
+    try:
+        with open(RUTA_DECISIONS, encoding="utf-8") as f:
+            files = list(csv.DictReader(f))
+    except OSError:
+        return False
+    if not files:
+        return False
+
+    avui = datetime.date.today()
+    setmana_avui = avui.isocalendar()[:2]      # (any, número de setmana)
+    for fila in reversed(files):
+        data = (fila.get("data") or "").strip()
+        if not data:
+            continue
+        try:
+            d = datetime.date.fromisoformat(data)
+        except ValueError:
+            continue
+        if d.isocalendar()[:2] == setmana_avui:
+            return True
+        if d < avui - datetime.timedelta(days=14):
+            break        # ya estamos mirando datos viejos
+    return False
+
+
 def carregar_estat():
     """Lee dades/estat_torneig.json. Si no existe, es la semana 0 (aún no
     ha empezado): devolvemos un estado vacío."""
@@ -760,7 +796,17 @@ def guardar_index(setmana, estat, preus):
 # ============================================================
 #  PROGRAMA PRINCIPAL — una ronda semanal completa
 # ============================================================
-def executar_ronda(setmana=None):
+def executar_ronda(setmana=None, forcar=False):
+    """Juga una ronda. Si aquesta setmana ja se n'ha jugat una, no fa res
+    (tret que es demani expressament amb forcar=True o la variable
+    d'entorn FORCAR_RONDA=1). Això permet que el robot ho intenti diverses
+    vegades cada dilluns sense por de duplicar la ronda."""
+    if not forcar and os.environ.get("FORCAR_RONDA") != "1":
+        if ja_jugat_aquesta_setmana():
+            print("[i] Aquesta setmana la ronda ja s'ha jugat. No es fa res.")
+            print("    (Per jugar-ne una d'extra: FORCAR_RONDA=1 python torneo.py)")
+            return
+
     estat = carregar_estat()
     if setmana is None:
         setmana = estat.get("setmana", 0) + 1

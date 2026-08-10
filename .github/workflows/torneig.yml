@@ -16,11 +16,18 @@ name: Ronda setmanal del torneig
 
 on:
   schedule:
-    # Dilluns a les 07:37 UTC. Fem servir un minut "estrany" (37 i no 30)
-    # a propòsit: GitHub va molt carregat a les hores en punt i mitges, i
-    # les tasques d'aquestes hores arriben tard o es salten. Un minut poc
-    # concorregut sol ser força més puntual.
-    - cron: "37 7 * * 1"
+    # GitHub NO garanteix l'hora de les tasques programades: sol arribar
+    # amb 1-3 hores de retard i de tant en tant se'n salta alguna. Per això
+    # no ho intentem un sol cop, sinó DIVERSES vegades cada dilluns (i un
+    # parell més el dimarts, per si el dilluns falla del tot).
+    # El motor comprova si la ronda d'aquesta setmana ja s'ha jugat: la
+    # primera execució que entra la juga i la resta no fan res.
+    - cron: "37 7 * * 1"     # dilluns 09:37 (hora d'estiu espanyola)
+    - cron: "17 10 * * 1"    # dilluns 12:17
+    - cron: "43 13 * * 1"    # dilluns 15:43
+    - cron: "23 17 * * 1"    # dilluns 19:23
+    - cron: "51 8 * * 2"     # dimarts 10:51  (xarxa de seguretat)
+    - cron: "29 16 * * 2"    # dimarts 18:29  (xarxa de seguretat)
   workflow_dispatch:             # botó "Run workflow" per llançar-la a mà
   push:
     paths: [".llancar-ronda"]    # tocar aquest fitxer = ronda extra
@@ -53,6 +60,10 @@ jobs:
 
       - name: Executar la ronda i actualitzar les dades de la web
         env:
+          # Si la ronda l'has demanat tu (botó "Run workflow" o tocant el
+          # fitxer .llancar-ronda), es juga sí o sí. Si ve del rellotge
+          # automàtic, només es juga si aquesta setmana encara no s'ha jugat.
+          FORCAR_RONDA: ${{ github.event_name != 'schedule' && '1' || '0' }}
           OPENAI_API_KEY:    ${{ secrets.OPENAI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GOOGLE_API_KEY:    ${{ secrets.GOOGLE_API_KEY }}

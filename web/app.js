@@ -65,7 +65,10 @@
   }
 
   function carregarDadesReals(primerCop) {
-    fetch("dades.json", { cache: "no-store" })
+    // El "?t=" amb l'hora actual és imprescindible: sense ell, el navegador
+    // (i la CDN de GitHub Pages) poden servir una còpia guardada i ensenyar
+    // dades velles. Amb això, cada petició és única i sempre arriba fresca.
+    fetch("dades.json?t=" + Date.now(), { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : null))
       .then((real) => {
         if (real && real.models && real.series) {
