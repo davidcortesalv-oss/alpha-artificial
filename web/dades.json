@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-08-10",
     "font": "real",
-    "generat": "2026-08-10T18:07",
+    "generat": "2026-08-10T22:19",
     "puntsPerSetmana": 3,
     "nAccions": 114,
     "nEtfs": 108
@@ -141,7 +141,7 @@
       9914.96,
       9955.06,
       9967.91,
-      10035.01
+      10048.33
     ],
     "gpt": [
       9979.75,
@@ -158,7 +158,7 @@
       9995.78,
       9993.9,
       9994.38,
-      10085.02
+      10061.8
     ],
     "gemini": [
       9982.74,
@@ -175,7 +175,7 @@
       9952.89,
       9888.2,
       9947.24,
-      9968.69
+      10004.74
     ],
     "deepseek": [
       9983.74,
@@ -192,7 +192,7 @@
       9981.5,
       9928.84,
       9942.06,
-      9981.85
+      9941.81
     ],
     "mistral": [
       9979.75,
@@ -209,7 +209,7 @@
       9731.15,
       9731.95,
       9762.94,
-      9791.62
+      9820.28
     ],
     "index": [
       10000.0,
@@ -226,7 +226,7 @@
       10160.52,
       10120.06,
       10135.46,
-      10161.28
+      10173.22
     ]
   },
   "decisions": {
@@ -4986,7 +4986,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 12 · 2026-08-10",
         "ultimBriefing": "Cap titular d'aquesta setmana justifica un canvi estructural: l'economia EUA mostra feblesa laboral però sense pànic (VIX baix), l'or continua la seva tendència…"
       },
@@ -4996,7 +4996,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 12 · 2026-08-10",
         "ultimBriefing": "1) Venc Europa (VGK) per risc macro específic (sequera greu i senyals de cansament a borsa) i baixo exposició a factors menys dinàmics. 2) Desfaig TIP perquè la…"
       },
@@ -5006,7 +5006,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 12 · 2026-08-10",
         "ultimBriefing": "La decisió de reajustar la cartera es fonamenta en la necessitat d'adaptar-se a les dinàmiques actuals del mercat i notícies rellevants, mantenint un enfocament…"
       },
@@ -5016,7 +5016,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 12 · 2026-08-10",
         "ultimBriefing": "Venc tota la posició en VGK (Europa) perquè ha tingut un rendiment inferior al dels EUA i el context global (dèbil economia europea, sequera) no afavoreix el ve…"
       },
@@ -5026,7 +5026,7 @@
         "model_api": "mistral-large-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 12 · 2026-08-10",
         "ultimBriefing": "1) **Augment d'exposició a semiconductors (SMH i NVDA)**: Els semiconductors han mostrat fortalesa recent (SMH +7.8% setmanal, NVDA +11.5%) i són clau en la tra…"
       }
@@ -5048,34 +5048,34 @@
   },
   "risc": {
     "claude": {
-      "volatilitat": 13.83,
+      "volatilitat": 13.96,
       "max_caiguda": -4.05,
-      "sharpe": 0.73
+      "sharpe": 0.9
     },
     "gpt": {
-      "volatilitat": 20.63,
+      "volatilitat": 20.47,
       "max_caiguda": -5.52,
-      "sharpe": 1.01
+      "sharpe": 0.82
     },
     "gemini": {
-      "volatilitat": 13.95,
+      "volatilitat": 14.14,
       "max_caiguda": -3.73,
-      "sharpe": -0.12
+      "sharpe": 0.35
     },
     "deepseek": {
-      "volatilitat": 14.34,
+      "volatilitat": 14.22,
       "max_caiguda": -3.75,
-      "sharpe": 0.04
+      "sharpe": -0.47
     },
     "mistral": {
-      "volatilitat": 12.45,
+      "volatilitat": 12.7,
       "max_caiguda": -4.21,
-      "sharpe": -2.69
+      "sharpe": -2.22
     },
     "index": {
-      "volatilitat": 14.28,
+      "volatilitat": 14.31,
       "max_caiguda": -2.66,
-      "sharpe": 2.08
+      "sharpe": 2.23
     }
   },
   "comissions": {
