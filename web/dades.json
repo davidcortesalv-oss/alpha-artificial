@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-08-10",
     "font": "real",
-    "generat": "2026-08-10T22:19",
+    "generat": "2026-08-11T09:44",
     "puntsPerSetmana": 3,
     "nAccions": 114,
     "nEtfs": 108
@@ -4986,7 +4986,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 12 · 2026-08-10",
         "ultimBriefing": "Cap titular d'aquesta setmana justifica un canvi estructural: l'economia EUA mostra feblesa laboral però sense pànic (VIX baix), l'or continua la seva tendència…"
       },
@@ -4996,7 +4996,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 12 · 2026-08-10",
         "ultimBriefing": "1) Venc Europa (VGK) per risc macro específic (sequera greu i senyals de cansament a borsa) i baixo exposició a factors menys dinàmics. 2) Desfaig TIP perquè la…"
       },
@@ -5006,7 +5006,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 12 · 2026-08-10",
         "ultimBriefing": "La decisió de reajustar la cartera es fonamenta en la necessitat d'adaptar-se a les dinàmiques actuals del mercat i notícies rellevants, mantenint un enfocament…"
       },
@@ -5016,7 +5016,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 12 · 2026-08-10",
         "ultimBriefing": "Venc tota la posició en VGK (Europa) perquè ha tingut un rendiment inferior al dels EUA i el context global (dèbil economia europea, sequera) no afavoreix el ve…"
       },
@@ -5026,7 +5026,7 @@
         "model_api": "mistral-large-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 12 · 2026-08-10",
         "ultimBriefing": "1) **Augment d'exposició a semiconductors (SMH i NVDA)**: Els semiconductors han mostrat fortalesa recent (SMH +7.8% setmanal, NVDA +11.5%) i són clau en la tra…"
       }
