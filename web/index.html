@@ -3,12 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>ALPHA ARTIFICIAL · Pot una IA batre el mercat?</title>
+
+  <!-- ===================================================================
+       DETECTOR DE VERSIÓ NOVA  (ha d'anar aquí, dins de l'HTML)
+       -------------------------------------------------------------------
+       El navegador pot guardar-se una còpia d'aquesta pàgina. Si ho fa,
+       carrega la versió antiga dels scripts i no veus les novetats ni les
+       dades noves, encara que el torneig s'hagi jugat.
+       Aquest tros de codi va DINS de l'HTML a propòsit: s'executa sempre,
+       fins i tot quan la pàgina ve de la memòria del navegador. Pregunta
+       al servidor quina és l'última versió i, si la que tens és més
+       vella, es recarrega sola amb una adreça nova (que el navegador no
+       pot tenir guardada). Així no has de fer Ctrl+F5 mai.
+       =================================================================== -->
+  <script>
+    (function () {
+      "use strict";
+      var VERSIO_ACTUAL = 9;              // puja aquest número a cada canvi
+      try {
+        if (location.search.indexOf("rv=") !== -1) return;   // ja recarregat
+        fetch("versio.json?t=" + Date.now(), { cache: "no-store" })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (v) {
+            if (v && v.versio > VERSIO_ACTUAL) {
+              location.replace(location.pathname + "?rv=" + v.versio + location.hash);
+            }
+          })
+          .catch(function () { /* sense connexió: seguim amb el que tenim */ });
+      } catch (e) { /* navegador antic: no passa res */ }
+    })();
+  </script>
   <meta name="description" content="Cinc intel·ligències artificials gestionen 10.000 € cadascuna durant cinc mesos invertint en ETFs reals. Competeixen contra l'índex S&P 500. Pot una IA batre el mercat?" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=9" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='42' fill='%23ffb000'/%3E%3Ctext x='50' y='66' font-size='52' text-anchor='middle' font-family='monospace' font-weight='bold' fill='%23070707'%3E%CE%B1%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
@@ -65,10 +98,10 @@
   <!-- Dades i llibreries pròpies (cap dependència externa) -->
   <!-- El ?v=N força el navegador a baixar la versió nova quan hi ha canvis.
        IMPORTANT: puja el número a TOTS els fitxers alhora, styles.css inclòs. -->
-  <script src="etfs.js?v=8"></script>
-  <script src="univers.js?v=8"></script>
-  <script src="dades_demo.js?v=8"></script>
-  <script src="grafica.js?v=8"></script>
-  <script src="app.js?v=8"></script>
+  <script src="etfs.js?v=9"></script>
+  <script src="univers.js?v=9"></script>
+  <script src="dades_demo.js?v=9"></script>
+  <script src="grafica.js?v=9"></script>
+  <script src="app.js?v=9"></script>
 </body>
 </html>

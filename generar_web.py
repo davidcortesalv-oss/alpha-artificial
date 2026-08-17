@@ -26,6 +26,7 @@ import os
 import csv
 import json
 import math
+import re
 import datetime
 import config
 
@@ -83,6 +84,54 @@ def num(x, default=0.0):
         return float(str(x).replace(",", "."))
     except (TypeError, ValueError):
         return default
+
+
+def escriure_versio():
+    """Escriu web/versio.json amb el número de versió que hi ha a index.html.
+
+    Serveix perquè el navegador detecti que té una còpia antiga de la pàgina
+    guardada i es recarregui sol (el detector és al principi de l'index.html).
+    Es llegeix del propi HTML per no haver de mantenir el número en dos llocs."""
+    ruta_html = os.path.join(CARPETA_WEB, "index.html")
+    if not os.path.exists(ruta_html):
+        return
+    with open(ruta_html, encoding="utf-8") as f:
+        trobat = re.search(r"VERSIO_ACTUAL\s*=\s*(\d+)", f.read())
+    if not trobat:
+        return
+    versio = int(trobat.group(1))
+    with open(os.path.join(CARPETA_WEB, "versio.json"), "w", encoding="utf-8") as f:
+        json.dump({"versio": versio}, f)
+    return versio
+
+
+def desar_si_ha_canviat(ruta, dades):
+    """Guarda el JSON només si les dades han canviat de veritat.
+
+    El camp 'generat' canvia a cada execució, així que si es comparés el
+    fitxer sencer sempre semblaria diferent. Això generava un commit brossa
+    cada vegada que el robot s'executava (fins a quatre per dilluns). Aquí
+    es compara ignorant l'hora: si la resta és idèntica, no es toca el
+    fitxer i no hi ha commit."""
+    nou = dict(dades)
+    if os.path.exists(ruta):
+        try:
+            with open(ruta, encoding="utf-8") as f:
+                antic = json.load(f)
+            a = dict(antic.get("meta", {}))
+            b = dict(nou.get("meta", {}))
+            a.pop("generat", None)
+            b.pop("generat", None)
+            if (a == b and
+                    {k: v for k, v in antic.items() if k != "meta"} ==
+                    {k: v for k, v in nou.items() if k != "meta"}):
+                print("[i] Les dades no han canviat: no es reescriu el fitxer.")
+                return False
+        except (ValueError, OSError):
+            pass
+    with open(ruta, "w", encoding="utf-8") as f:
+        json.dump(nou, f, ensure_ascii=False, indent=2)
+    return True
 
 
 # =====================================================================
@@ -513,10 +562,13 @@ def main():
 
     os.makedirs(CARPETA_WEB, exist_ok=True)
     ruta_out = os.path.join(CARPETA_WEB, "dades.json")
-    with open(ruta_out, "w", encoding="utf-8") as f:
-        json.dump(sortida, f, ensure_ascii=False, indent=2)
+    canviat = desar_si_ha_canviat(ruta_out, sortida)
+    versio = escriure_versio()
 
-    print(f"[OK] Escrit {ruta_out}  ({len(models_json)} participants, {n_set} setmanes).")
+    if canviat:
+        print(f"[OK] Escrit {ruta_out}  ({len(models_json)} participants, {n_set} setmanes).")
+    if versio:
+        print(f"[i] Versió de la web: {versio} (a web/versio.json)")
     if not algun_valor:
         print("[!] AVÍS: tots els valors de cartera semblen buits o iguals al capital")
         print("    inicial. Comprova que torneo.py ha pogut baixar preus.")
