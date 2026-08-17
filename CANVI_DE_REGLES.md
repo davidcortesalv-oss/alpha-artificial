@@ -369,6 +369,60 @@ Diferència: 0,00 €
 
 ---
 
+## Canvi núm. 6 — Es cobren els dividends
+
+**Data:** 17 d'agost de 2026
+**Afecta a partir de:** setmana 14
+
+### El problema
+
+Yahoo Finance dóna el preu dels actius **sense** comptar els dividends que
+reparteixen fons i empreses. En una compte real aquests diners es cobren i
+formen part de la rendibilitat.
+
+Sense comptar-los, el torneig **infravalorava el resultat de tothom** i, el
+que és pitjor, **no ho feia per igual**: una IA amb Nestlé i fons de
+dividends perdia molt més rendiment «invisible» que una centrada en
+tecnologia.
+
+### La correcció
+
+Abans de cada ronda, el motor consulta els dividends pagats des de l'última
+setmana i els aplica:
+
+- **A les IAs**: entren com a **efectiu** a la cartera. Cada IA veu aquests
+  diners al seu briefing i decideix què en fa (deixar-los, reinvertir-los…).
+- **A l'índex**: es **reinverteixen** automàticament comprant més
+  participacions de SPY, que és el que fa un fons acumulatiu.
+
+Tot queda registrat a `dades/dividends.csv`.
+
+### Efecte mesurat (simulació de sis mesos)
+
+| Participant | Dividends | % de la cartera |
+|---|---|---|
+| Mistral | 85,88 € | 0,87 % |
+| Claude | 74,05 € | 0,73 % |
+| Gemini | 55,80 € | 0,56 % |
+| DeepSeek | 40,08 € | 0,40 % |
+| GPT | 37,88 € | 0,37 % |
+| S&P 500 | — | +0,479 % en participacions |
+
+L'efecte és de la mateixa magnitud que les diferències actuals entre les IAs
+i l'índex, així que **no és menyspreable**.
+
+### Nota important
+
+Els dividends es comencen a comptar **a partir d'ara**, no de manera
+retroactiva: els pagaments anteriors al 17/08/2026 no es van cobrar mai i no
+s'inventen. L'S&P 500 paga cada trimestre (març, juny, setembre, desembre),
+de manera que els pròxims cobraments seran al setembre i al desembre.
+
+Aquest canvi surt de l'auditoria completa del sistema, documentada a
+[AUDITORIA.md](AUDITORIA.md).
+
+---
+
 ## Millores metodològiques aplicades el mateix dia
 
 No modifiquen les regles del joc, però sí què es mesura i es guarda:

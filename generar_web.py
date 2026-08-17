@@ -42,6 +42,7 @@ RUTA_CARTERES = os.path.join(config.CARPETA_DADES, "carteres.csv")
 RUTA_CANVIS = os.path.join(config.CARPETA_DADES, "canvis.csv")
 RUTA_DESTACATS = os.path.join(config.CARPETA_DADES, "destacats.csv")
 RUTA_COMISSIONS = os.path.join(config.CARPETA_DADES, "comissions.csv")
+RUTA_DIVIDENDS = os.path.join(config.CARPETA_DADES, "dividends.csv")
 RUTA_TITULARS = os.path.join(config.CARPETA_DADES, "titulars.csv")
 RUTA_DIARIS = os.path.join(config.CARPETA_DADES, "valors_diaris.csv")
 
@@ -412,6 +413,13 @@ def main():
         if m in META_MODELS:
             comissions[m] = round(num(f.get("comissio_acumulada")), 2)
 
+    # --- Dividends cobrats (fa que el resultat sigui com el d'una compte real) ---
+    dividends = {}
+    for f in llegir_csv(RUTA_DIVIDENDS):
+        m = (f.get("model") or "").strip()
+        if m:
+            dividends[m] = round(dividends.get(m, 0) + num(f.get("import_eur")), 2)
+
     # --- Titulars que han vist les IAs (traçabilitat per al TR) ---
     titulars = []
     for f in llegir_csv(RUTA_TITULARS):
@@ -555,6 +563,7 @@ def main():
         "apis": apis,
         "risc": risc,
         "comissions": comissions,
+        "dividends": dividends,
         "consens": consens,
         "exposicio": exposicio,
         "titulars": titulars,

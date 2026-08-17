@@ -877,6 +877,8 @@
           <div class="kpi"><div class="k-l">Pitjor caiguda</div><div class="k-v neg">${dec1(riscDe(id).max_caiguda)} <span class="k-de">%</span></div></div>` : ""}
           ${comissioDe(id) != null ? `
           <div class="kpi"><div class="k-l">Comissions pagades</div><div class="k-v">${euro2(comissioDe(id))}</div></div>` : ""}
+          ${(DATA.dividends || {})[id] != null ? `
+          <div class="kpi"><div class="k-l">Dividends cobrats</div><div class="k-v pos">${euro2(DATA.dividends[id])}</div></div>` : ""}
         </div>
       </section>
 

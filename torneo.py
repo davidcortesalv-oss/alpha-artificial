@@ -57,6 +57,7 @@ RUTA_CARTERES = os.path.join(config.CARPETA_DADES, "carteres.csv")
 RUTA_INDEX = os.path.join(config.CARPETA_DADES, "index.csv")
 RUTA_COMISSIONS = os.path.join(config.CARPETA_DADES, "comissions.csv")
 RUTA_TITULARS = os.path.join(config.CARPETA_DADES, "titulars.csv")
+RUTA_DIVIDENDS = os.path.join(config.CARPETA_DADES, "dividends.csv")
 
 
 # ============================================================
@@ -187,6 +188,91 @@ def cartera_inicial(preus):
         if p:
             cartera[tk] = round(per_etf / p, 4)  # cuántas unidades compro
     return cartera
+
+
+def cobrar_dividends(estat, preus):
+    """Cobra els dividends que han pagat els actius des de l'última ronda.
+
+    PER QUÈ CAL AIXÒ: els fons i les accions reparteixen diners als seus
+    propietaris (dividends) unes quantes vegades l'any. Yahoo Finance dóna el
+    preu SENSE comptar-los, així que sense aquesta funció el torneig
+    infravaloraria el que tindria de veritat qualsevol inversor: en una
+    compte real aquests diners es cobren i es queden en efectiu.
+
+    L'S&P 500 (SPY) paga cada trimestre, al març, juny, setembre i desembre.
+    Entre el juliol i l'agost no n'hi va haver cap, però al setembre i al
+    desembre sí, i afecten tant les IAs com l'índex.
+
+    Torna la llista de cobraments aplicats."""
+    import yfinance as yf
+
+    avui = datetime.date.today()
+    desde = estat.get("ultim_dividend")
+    if not desde:
+        # Primera vegada: comencem a comptar des d'avui, no des de l'inici
+        # del torneig (els dividends anteriors no es van cobrar mai).
+        estat["ultim_dividend"] = avui.isoformat()
+        print("    (primera vegada: els dividends es comptaran a partir d'avui)")
+        return []
+    desde = datetime.date.fromisoformat(desde)
+    if desde >= avui:
+        return []
+
+    # Quins actius té algú a la cartera (i l'índex)
+    tinguts = {"SPY"}
+    for cartera in estat.get("carteres", {}).values():
+        tinguts.update(t for t, u in cartera.items() if t != "EFECTIU" and u > 0)
+
+    actius = config.tots_els_actius()
+    cobraments = []
+    for tk in sorted(tinguts):
+        try:
+            divs = yf.Ticker(tk).dividends
+        except Exception:
+            continue
+        if divs is None or len(divs) == 0:
+            continue
+        for data_pag, import_brut in divs.items():
+            dia = data_pag.date() if hasattr(data_pag, "date") else data_pag
+            if not (desde < dia <= avui):
+                continue
+            # El dividend ve en la moneda de l'actiu: cal passar-lo a euros
+            moneda = actius.get(tk, {}).get("moneda", "USD")
+            d = config.DIVISES.get(moneda, {"parell": None, "factor": 1.0})
+            per_unitat = float(import_brut) * d["factor"]
+            if d["parell"]:
+                canvi = preus.get(d["parell"])
+                if not canvi:
+                    continue
+                per_unitat = per_unitat / canvi
+
+            # Cada IA cobra segons les unitats que tingui
+            for mid, cartera in estat.get("carteres", {}).items():
+                unitats = cartera.get(tk, 0)
+                if unitats > 0:
+                    cobrat = unitats * per_unitat
+                    cartera["EFECTIU"] = cartera.get("EFECTIU", 0) + cobrat
+                    cobraments.append((mid, tk, dia.isoformat(), round(cobrat, 2)))
+
+            # I l'índex també: es reinverteix comprant més participacions
+            if tk == "SPY" and estat.get("index_unitats") and preus.get("SPY"):
+                cobrat = estat["index_unitats"] * per_unitat
+                estat["index_unitats"] += cobrat / preus["SPY"]
+                cobraments.append(("index", tk, dia.isoformat(), round(cobrat, 2)))
+
+    estat["ultim_dividend"] = avui.isoformat()
+
+    if cobraments:
+        total = sum(c[3] for c in cobraments)
+        print(f"    {len(cobraments)} cobraments de dividends, {total:.2f} € en total:")
+        for mid, tk, dia, imp in cobraments:
+            print(f"       {mid:10} {tk:9} {dia}  +{imp:.2f} €")
+            _afegir_fila(RUTA_DIVIDENDS,
+                ["data_cobrament", "data_pagament", "model", "ticker", "import_eur"],
+                [avui.isoformat(), dia, mid, tk, imp])
+    else:
+        print("    Cap dividend a cobrar aquesta setmana.")
+    return cobraments
 
 
 def valor_cartera(cartera, preus):
@@ -839,6 +925,11 @@ def executar_ronda(setmana=None, forcar=False):
             print("    En local: posa-les a secrets.txt")
             print("    A GitHub: Settings → Secrets and variables → Actions")
             sys.exit(1)
+
+    # 2b. Cobrar els dividends pendents ABANS de decidir: així cada IA veu
+    #     els diners que ha rebut i pot decidir què en fa.
+    print("\n[2b] Dividends cobrats des de l'última ronda...")
+    cobrar_dividends(estat, preus)
 
     # 3-5. Para cada modelo
     print("\n[2-4] Demanant decisions a les IAs...")

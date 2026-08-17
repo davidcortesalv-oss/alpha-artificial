@@ -23,7 +23,7 @@
   <script>
     (function () {
       "use strict";
-      var VERSIO_ACTUAL = 9;              // puja aquest número a cada canvi
+      var VERSIO_ACTUAL = 10;             // puja aquest número a cada canvi
       try {
         if (location.search.indexOf("rv=") !== -1) return;   // ja recarregat
         fetch("versio.json?t=" + Date.now(), { cache: "no-store" })
@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=9" />
+  <link rel="stylesheet" href="styles.css?v=10" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='42' fill='%23ffb000'/%3E%3Ctext x='50' y='66' font-size='52' text-anchor='middle' font-family='monospace' font-weight='bold' fill='%23070707'%3E%CE%B1%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
@@ -98,10 +98,10 @@
   <!-- Dades i llibreries pròpies (cap dependència externa) -->
   <!-- El ?v=N força el navegador a baixar la versió nova quan hi ha canvis.
        IMPORTANT: puja el número a TOTS els fitxers alhora, styles.css inclòs. -->
-  <script src="etfs.js?v=9"></script>
-  <script src="univers.js?v=9"></script>
-  <script src="dades_demo.js?v=9"></script>
-  <script src="grafica.js?v=9"></script>
-  <script src="app.js?v=9"></script>
+  <script src="etfs.js?v=10"></script>
+  <script src="univers.js?v=10"></script>
+  <script src="dades_demo.js?v=10"></script>
+  <script src="grafica.js?v=10"></script>
+  <script src="app.js?v=10"></script>
 </body>
 </html>
