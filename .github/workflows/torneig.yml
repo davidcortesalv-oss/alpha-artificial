@@ -45,6 +45,11 @@ jobs:
     timeout-minutes: 30
     permissions:
       contents: write            # per guardar els resultats al repositori
+    outputs:
+      # Diu si hi ha res nou. Si la ronda d'aquesta setmana ja estava jugada,
+      # no cal tornar a publicar la web (abans es publicava quatre vegades
+      # cada dilluns i els desplegaments xocaven entre ells).
+      hi_ha_novetats: ${{ steps.guardar.outputs.hi_ha_novetats }}
     steps:
       - name: Baixar el codi del repositori
         uses: actions/checkout@v4
@@ -78,12 +83,19 @@ jobs:
           python generar_web.py
 
       - name: Guardar els resultats al repositori
+        id: guardar
         run: |
           git config user.name "alpha-artificial-bot"
           git config user.email "alpha-artificial-bot@users.noreply.github.com"
-          git add dades web/dades.json web/univers.js web/historic.json
-          git commit -m "Ronda setmanal · $(date +%d/%m/%Y)" || echo "Res de nou a guardar"
-          git push
+          git add dades web/dades.json web/univers.js web/historic.json web/versio.json
+          if git diff --cached --quiet; then
+            echo "Res de nou: la ronda d'aquesta setmana ja estava jugada."
+            echo "hi_ha_novetats=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Ronda setmanal · $(date +%d/%m/%Y)"
+            git push
+            echo "hi_ha_novetats=true" >> "$GITHUB_OUTPUT"
+          fi
 
   # ------------------------------------------------------------------
   # 2) Publicar la web amb les dades noves
@@ -92,6 +104,9 @@ jobs:
   # ------------------------------------------------------------------
   publicar:
     needs: ronda
+    # Només si la ronda ha aportat alguna cosa nova. Així cada dilluns hi ha
+    # UN desplegament, no quatre.
+    if: needs.ronda.outputs.hi_ha_novetats == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -100,7 +115,10 @@ jobs:
       id-token: write
     concurrency:
       group: pages
-      cancel-in-progress: true
+      # false, NO true: si dos desplegaments coincideixen, val més que
+      # esperin el seu torn que no que un cancel·li l'altre (era una de les
+      # causes que la web es quedés sense actualitzar).
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.desplegament.outputs.page_url }}

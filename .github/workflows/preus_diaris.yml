@@ -27,6 +27,8 @@ jobs:
     timeout-minutes: 20
     permissions:
       contents: write
+    outputs:
+      hi_ha_novetats: ${{ steps.guardar.outputs.hi_ha_novetats }}
     steps:
       - name: Baixar el codi
         uses: actions/checkout@v4
@@ -46,16 +48,24 @@ jobs:
           python generar_web.py
 
       - name: Guardar els valors del dia
+        id: guardar
         run: |
           git config user.name "alpha-artificial-bot"
           git config user.email "alpha-artificial-bot@users.noreply.github.com"
-          git add dades web/dades.json
-          git commit -m "Preus del dia · $(date +%d/%m/%Y)" || echo "Res de nou (mercat tancat o ja actualitzat)"
-          git push
+          git add dades web/dades.json web/versio.json
+          if git diff --cached --quiet; then
+            echo "Res de nou (mercat tancat o ja actualitzat)."
+            echo "hi_ha_novetats=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Preus del dia · $(date +%d/%m/%Y)"
+            git push
+            echo "hi_ha_novetats=true" >> "$GITHUB_OUTPUT"
+          fi
 
   # Republicar la web amb els valors nous
   publicar:
     needs: preus
+    if: needs.preus.outputs.hi_ha_novetats == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -64,7 +74,7 @@ jobs:
       id-token: write
     concurrency:
       group: pages
-      cancel-in-progress: true
+      cancel-in-progress: false   # que esperin torn, no que es cancel·lin
     environment:
       name: github-pages
       url: ${{ steps.desplegament.outputs.page_url }}

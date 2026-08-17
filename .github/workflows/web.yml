@@ -20,7 +20,10 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  # false a propòsit: si coincideix amb un altre desplegament, s'espera el
+  # torn. Amb 'true' es cancel·laven desplegaments bons i la web es quedava
+  # sense actualitzar.
+  cancel-in-progress: false
 
 jobs:
   publicar:
@@ -44,4 +47,13 @@ jobs:
 
       - name: Publicar
         id: desplegament
+        uses: actions/deploy-pages@v4
+
+      # Si el desplegament falla per una topada puntual amb un altre, es
+      # torna a intentar un cop després d'esperar mig minut.
+      - name: Reintentar la publicació si ha fallat
+        if: failure() && steps.desplegament.outcome == 'failure'
+        run: sleep 30
+      - name: Segon intent
+        if: failure() && steps.desplegament.outcome == 'failure'
         uses: actions/deploy-pages@v4
