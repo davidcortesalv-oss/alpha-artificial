@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-08-17",
     "font": "real",
-    "generat": "2026-08-17T21:59",
+    "generat": "2026-08-18T09:16",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -5691,7 +5691,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 13 · 2026-08-17",
         "ultimBriefing": "Liquido la posició residual de TLT (ja pràcticament simbòlica) i redueixo IEF perquè la pujada del bo japonès a 30 anys i el context de tipus EUA encara alts (4…"
       },
@@ -5701,7 +5701,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 13 · 2026-08-17",
         "ultimBriefing": "1) Redueixo totalment la durada llarga (TLT) perquè el mix ‘oil-up + yields globals en pujada’ és advers per a bons 20+ anys en un horitzó de 4-5 mesos. 2) Afeg…"
       },
@@ -5711,7 +5711,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 13 · 2026-08-17",
         "ultimBriefing": "La decisió de reajustar la cartera es fonamenta en la necessitat d'adaptar-se a les dinàmiques actuals del mercat i notícies rellevants, mantenint un enfocament…"
       },
@@ -5721,7 +5721,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 13 · 2026-08-17",
         "ultimBriefing": "Redueixo parcialment SMH (semiconductors) per alliberar 600 € i compro XLE (energia EUA), que està pujant amb força (+7,6% setmanal) i es beneficia directament …"
       },
@@ -5731,7 +5731,7 @@
         "model_api": "mistral-large-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 13 · 2026-08-17",
         "ultimBriefing": "1) **Reducció de semiconductors (SMH i NVDA)**: Tot i la seva fortalesa recent, la inflació persistent (titular 1) i les tensions geopolítiques (titular 2) podr…"
       }
