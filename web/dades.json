@@ -7,11 +7,11 @@
     "maxPesAccio": 0.2,
     "moneda": "EUR",
     "setmanes": 22,
-    "setmanaActual": 13,
+    "setmanaActual": 14,
     "dataInici": "2026-07-09",
-    "dataActual": "2026-08-21",
+    "dataActual": "2026-08-24",
     "font": "real",
-    "generat": "2026-08-21T21:59",
+    "generat": "2026-08-24T08:26",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -40,7 +40,8 @@
     "2026-08-18",
     "2026-08-19",
     "2026-08-20",
-    "2026-08-21"
+    "2026-08-21",
+    "2026-08-24"
   ],
   "models": [
     {
@@ -159,7 +160,8 @@
       9967.06,
       9976.28,
       9941.2,
-      10015.01
+      10015.01,
+      10021.47
     ],
     "gpt": [
       9979.75,
@@ -185,7 +187,8 @@
       9998.79,
       9948.71,
       9914.86,
-      9960.94
+      9960.94,
+      9965.83
     ],
     "gemini": [
       9982.74,
@@ -211,7 +214,8 @@
       9785.0,
       9718.82,
       9760.6,
-      9861.25
+      9861.25,
+      9777.04
     ],
     "deepseek": [
       9983.74,
@@ -237,7 +241,8 @@
       9902.39,
       9797.58,
       9737.94,
-      9766.55
+      9766.55,
+      9772.08
     ],
     "mistral": [
       9979.75,
@@ -263,7 +268,8 @@
       9794.56,
       9814.79,
       9761.3,
-      9815.33
+      9815.33,
+      9823.37
     ],
     "index": [
       10000.0,
@@ -289,7 +295,8 @@
       10071.87,
       10004.86,
       9919.97,
-      9963.11
+      9963.11,
+      9970.8
     ]
   },
   "decisions": {
@@ -515,6 +522,31 @@
           11
         ],
         "lectura_noticies": "La inflació EUA en línia amb l'esperat (3.4%) i les apostes de pujada de tipus de la Fed que s'esvaeixen (titular 6) donen un entorn relativament favorable a la renda variable; en canvi, el rendiment del bo japonès a 30 anys en màxims històrics (titular 3) i la tensió a l'estret d'Hormuz (titular 2) apunten a pressió alcista en els tipus llargs globals i a un possible repunt del petroli per risc geopolític, mentre que la desacceleració xinesa (titular 11) reforça que no val la pena buscar exposició emergent ara mateix.",
+        "incidencia": false
+      },
+      {
+        "setmana": 14,
+        "data": "2026-08-24",
+        "decisio": "reajustar",
+        "nivell_risc": "moderat",
+        "confianca": 6,
+        "valor_cartera": 10021.47,
+        "rend_setmana": -0.07,
+        "justificacio": "Redueixo lleugerament QQQ (de 24.3% a ~18%) després d'una setmana de correcció clara i generalitzada en semiconductors i big tech, que crec reflecteix preocupació legítima per valoracions altes en un context de yields elevats i dubtes sobre inflació. Redirigeixo aquest capital cap a XLV (salut EUA), un sector defensiu que aquesta setmana ha mostrat fortalesa relativa (+3.0%) i bona tendència de fons (+30.7% any), sense sortir de renda variable ni augmentar el risc global de la cartera. Mantinc GLD com a cobertura principal donat el seu bon moment, i no toco IEF ni XLE, que ja compleixen el seu paper. És un ajust tàctic i mesurat, no un canvi d'estratègia.",
+        "operacions": [
+          {
+            "vendre": "QQQ",
+            "comprar": "XLV",
+            "import": 629.37
+          }
+        ],
+        "noticies_clau": [
+          4,
+          7,
+          10,
+          11
+        ],
+        "lectura_noticies": "El ral·li de l'or i la plata (titular 4) confirma que el mercat busca cobertura davant la incertesa de tipus i inflació; el debat sobre si els yields dels bons poden competir amb la renda variable (titular 7, 10) i la incertesa geopolítica sobre Iran (titular 11) reforcen un entorn de rotació cap a actius defensius i lluny de la tecnologia més especulativa i cara.",
         "incidencia": false
       }
     ],
@@ -811,6 +843,47 @@
           11
         ],
         "lectura_noticies": "CPI en línia i menor probabilitat de pujada de la Fed donen aire al risc i a l’or (1,6), però l’aturada al Hormuz i el risc d’escalada amb l’Iran apunten a xoc d’oferta de petroli i pressió inflacionària (2,10). El repunt del bo japonès pot empènyer les tires globals a l’alça, penalitzant la durada llarga (3). La feblesa de la Xina recomana selectivitat en cíclics ex-mineria (11). Conclusió: retallo TLT, afegeixo energia i passo part a TIP.",
+        "incidencia": false
+      },
+      {
+        "setmana": 14,
+        "data": "2026-08-24",
+        "decisio": "reajustar",
+        "nivell_risc": "moderat",
+        "confianca": 6,
+        "valor_cartera": 9965.83,
+        "rend_setmana": -1.4,
+        "justificacio": "Redueixo sensibilitat a tipus i una mica de solapament en semis/tech: SMH i QQQ han estat els grans perdedors amb rendiments a l’alça. Mantinc la tesi estructural d’IA (conservo NVDA i una posició rellevant en QQQ), però baixo el risc tàcticament. Surt TIP perquè, amb tipus i reals pujants, pateix més per durada i aporta poc en l’horitzó curt. Reforço sanitat amb XLV (defensiu, fluxos estables, momentum recent) i afegeixo IBB per captar el cicle alcista de biotech (dades, M&A i sorpreses positives). Amplio la palanca a l’or a través de GDX: si el rally de metalls preciosos persisteix en un entorn d’inflació/tensions geopolítiques, les miners poden multiplicar el moviment del metall. Mantenim XLE com a cobertura de cicle i oferta restrictiva. En conjunt, reequilibri moderat que redueix volatilitat de valoració, conserva el potencial d’IA i afegeix cues favorables en salut i metalls.",
+        "operacions": [
+          {
+            "vendre": "TIP",
+            "comprar": "XLV",
+            "import": 394.34
+          },
+          {
+            "vendre": "SMH",
+            "comprar": "GDX",
+            "import": 399.6
+          },
+          {
+            "vendre": "IGV",
+            "comprar": "IBB",
+            "import": 249.75
+          },
+          {
+            "vendre": "QQQ",
+            "comprar": "XLV",
+            "import": 349.65
+          }
+        ],
+        "noticies_clau": [
+          2,
+          4,
+          7,
+          10,
+          11
+        ],
+        "lectura_noticies": "Rendiments a l’alça poden desafiar les borses, sobretot el growth (7, 10), mentre l’or i la plata reboten fort amb nerviosisme latent (4). El front geopolític amb Iran i el petroli afegeix volatilitat a energia i matèries primeres (2, 11). Això justifica retallar una mica tech/semis, sortir de TIP i reforçar defensors i exposició a metalls via miners.",
         "incidencia": false
       }
     ],
@@ -1125,6 +1198,56 @@
         ],
         "lectura_noticies": "Les notícies indiquen una inflació a l'alça però dins de les expectatives, i una reducció de les apostes per una pujada imminent de tipus per part de la Fed, aspectes positius per a l'equitat. No obstant això, el risc geopolític ha augmentat dràsticament amb la incertesa al voltant de l'Estret d'Ormuz i una possible escalada de conflicte amb l'Iran, cosa que podria disparar els preus del petroli. A més, la desacceleració econòmica de la Xina és una preocupació important per al creixement global i el consum discrecional.",
         "incidencia": false
+      },
+      {
+        "setmana": 14,
+        "data": "2026-08-24",
+        "decisio": "reajustar",
+        "nivell_risc": "moderat",
+        "confianca": 7,
+        "valor_cartera": 9777.04,
+        "rend_setmana": -1.12,
+        "justificacio": "La decisió de reajustar la cartera es fonamenta en l'anàlisi de la feblesa generalitzada del mercat de renda variable, especialment en els sectors tecnològic i d'índexs amplis dels EUA, i la fortalesa sostinguda dels metalls preciosos en un entorn de 'risk-off' i preocupacions inflacionistes.   **Vendes:** - **SPY i VTI:** Redueixo l'exposició a aquests ETFs d'índexs amplis dels EUA. Han mostrat una caiguda significativa aquesta setmana (-2.7%) i estan més exposats a les 'preocupacions per la inflació' i als 'rendiments dels bons que desafien les accions', tal com indiquen les notícies [7] i [10]. Reduir la seva ponderació disminueix la dependència del rendiment general del mercat americà, que actualment es troba en un moment de tensió. - **SMH (Semiconductors) i 005930.KS (Samsung Electronics):** Aquests actius del sector tecnològic i de semiconductors han patit pèrdues considerables aquesta setmana (SMH -5.9%, Samsung -5.2%). El sector tecnològic és particularment sensible a la pujada dels tipus d'interès i a la desacceleració econòmica. Aquesta retallada tàctica busca protegir la cartera de possibles futures caigudes en aquest sector.  **Compres:** - **GDX (Mineres d'Or) i GLD (Or Físic):** Augmento significativament la meva posició en or i mineres d'or. La notícia [4] destaca un 'ral·li' d'aquests actius en un context on 'els inversors segueixen en tensió'. GDX ha tingut un rendiment excepcional aquesta setmana (+12.8%) i GLD (+4.1%). Amb les persistents 'preocupacions per la inflació' [10] i la incertesa del mercat, l'or i les empreses mineres actuen com a actius refugi i presenten un fort impuls positiu, oferint una oportunitat per capitalitzar la tendència actual i protegir el valor de la cartera.",
+        "operacions": [
+          {
+            "vendre": "SPY",
+            "comprar": "EFECTIU",
+            "import": 600.0
+          },
+          {
+            "vendre": "VTI",
+            "comprar": "EFECTIU",
+            "import": 300.0
+          },
+          {
+            "vendre": "SMH",
+            "comprar": "EFECTIU",
+            "import": 200.0
+          },
+          {
+            "vendre": "005930.KS",
+            "comprar": "EFECTIU",
+            "import": 300.0
+          },
+          {
+            "vendre": "EFECTIU",
+            "comprar": "GDX",
+            "import": 894.0
+          },
+          {
+            "vendre": "EFECTIU",
+            "comprar": "GLD",
+            "import": 470.0
+          }
+        ],
+        "noticies_clau": [
+          4,
+          7,
+          10,
+          11
+        ],
+        "lectura_noticies": "La notícia [4] confirma la forta pujada de l'or i la plata, indicant que 'els inversors segueixen en tensió', fet que reforça l'atractiu dels actius refugi. Els titulars [7] i [10] suggereixen que els rendiments dels bons podrien 'desafiar les accions' i que hi ha 'preocupacions per la inflació', respectivament, fet que crea un entorn difícil per a la renda variable, especialment per a les accions de creixement i les tecnològiques. Finalment, [11] indica una caiguda dels preus del petroli a l'espera de sancions a l'Iran, afegint volatilitat al sector energètic.",
+        "incidencia": false
       }
     ],
     "deepseek": [
@@ -1362,6 +1485,35 @@
           8
         ],
         "lectura_noticies": "La inflació dels EUA és més alta del que la Fed voldria (3,4% anual), però els mercats ja no esperen una pujada imminent de tipus, la qual cosa és positiva per a la renda variable. L'aturada de l'estret d'Ormuz dispara el preu del petroli i podria afectar negativament sectors com el transport, però beneficia les energies. A més, la debilitat econòmica de la Xina pot pressionar les matèries primeres i les empreses globals.",
+        "incidencia": false
+      },
+      {
+        "setmana": 14,
+        "data": "2026-08-24",
+        "decisio": "reajustar",
+        "nivell_risc": "moderat",
+        "confianca": 6,
+        "valor_cartera": 9772.08,
+        "rend_setmana": -2.34,
+        "justificacio": "Redueixo QQQ en 600 € (el Nasdaq 100 ha caigut un 3.7% i la incertesa sobre valoracions tecnològiques persisteix) i SMH en 400 € (els semiconductors continuen sota pressió, amb baixades generalitzades). Amb aquests 1.000 € incremento GLD i XLE: l'or està en fort rally (+4.1% setmanal, +11.3% mensual) i ofereix cobertura davant la inflació i les tensions geopolítiques; l'energia (XLE) es manté resilient (+1.5% setmanal) i té bon momentum a mitjà termini. Això redueix el pes tecnològic fins al ~33% i augmenta la diversificació, sense superar els límits. Mantinc SPY com a nucli, VIG com a defensiu i deixo l'efectiu mínim per evitar costos innecessaris.",
+        "operacions": [
+          {
+            "vendre": "QQQ",
+            "comprar": "GLD",
+            "import": 600.0
+          },
+          {
+            "vendre": "SMH",
+            "comprar": "XLE",
+            "import": 400.0
+          }
+        ],
+        "noticies_clau": [
+          2,
+          4,
+          11
+        ],
+        "lectura_noticies": "Les sancions a l'Iran i la caiguda del petroli (titular 11) creen incertesa però també poden pressionar l'energia a la baixa a curt termini; tot i això, XLE té un to positiu. L'or i la plata continuen forts (titular 4), la qual cosa reforça la idea de mantenir i fins i tot augmentar exposició a metalls preciosos com a refugi. La resta de titulars són soroll o no afecten directament la meva cartera.",
         "incidencia": false
       }
     ],
@@ -1768,6 +1920,41 @@
         ],
         "lectura_noticies": "1) La inflació als EUA es manté en 3.4%, cosa que podria retardar retallades de tipus d'interès i afectar els actius de creixement com els semiconductors. 2) Les tensions a l'Estret d'Hormuz podrien disparar els preus del petroli, beneficiant el sector energètic. 3) Els bons japonesos a 10 anys assoleixen màxims de tres dècades, cosa que podria atraure capital cap al ien i afectar els mercats globals. 11) La desacceleració de la Xina (retail sales febles) podria impactar les exportacions tecnològiques i les matèries primeres.",
         "incidencia": false
+      },
+      {
+        "setmana": 14,
+        "data": "2026-08-24",
+        "decisio": "reajustar",
+        "nivell_risc": "moderat",
+        "confianca": 6,
+        "valor_cartera": 9823.37,
+        "rend_setmana": 0.26,
+        "justificacio": "1) **Vendre LLY (1% de la cartera)**: Eli Lilly ha pujat un 82% en l'últim any i un 5% aquesta setmana, però el seu PER és elevat (superior a 50x). En un context de rendiments dels bons atractius (4.738%), prefereixo reduir exposició a salut i rotar cap a IEF (bons EUA 7-10 anys) per obtenir rendibilitat sense risc d'accions. 2) **Reduir XLE (de 10.5% a 5.3%)**: El sector energètic està exposat a la volatilitat del petroli (titular 11) i a les tensions geopolítiques (titular 2). Venc la meitat de la posició i compro USMV (mínima volatilitat EUA) per reduir risc sense sortir del mercat. 3) **Reduir GLD (de 10.9% a 7.6%)**: Tot i que l'or ha pujat aquesta setmana, el titular 4 indica que els inversors segueixen nerviosos. Aprofito per augmentar exposició a semiconductors (SMH), que han corregit un 5.9% aquesta setmana però tenen un potencial a llarg termini (IA, reindustrialització).",
+        "operacions": [
+          {
+            "vendre": "LLY",
+            "comprar": "IEF",
+            "import": 94.97
+          },
+          {
+            "vendre": "XLE",
+            "comprar": "USMV",
+            "import": 499.5
+          },
+          {
+            "vendre": "GLD",
+            "comprar": "SMH",
+            "import": 299.7
+          }
+        ],
+        "noticies_clau": [
+          2,
+          4,
+          7,
+          11
+        ],
+        "lectura_noticies": "1) **Titular 2 (sancions a l'Iran)**: Les tensions geopolítiques podrien afectar els preus del petroli i, per tant, el sector energètic (XLE). 2) **Titular 4 (or i plata)**: La recuperació dels metalls preciosos suggereix que els inversors busquen refugi, però el mercat segueix insegur. 3) **Titular 7 (bons vs. accions)**: Els rendiments dels bons (4.738% als EUA) són competitius amb les accions, cosa que podria afavorir una rotació cap a renda fixa. 4) **Titular 11 (caiguda del petroli)**: Confirma la pressió sobre el sector energètic, malgrat la recuperació setmanal de XLE (+1.5%).",
+        "incidencia": false
       }
     ]
   },
@@ -2008,6 +2195,32 @@
           }
         ],
         "justificacio": "Liquido la posició residual de TLT (ja pràcticament simbòlica) i redueixo IEF perquè la pujada del bo japonès a 30 anys i el context de tipus EUA encara alts (4.7%) fan que la renda fixa de duració mitjana-llarga tingui un perfil de risc/rendiment poc atractiu ara mateix. Reforço QQQ perquè el moment del sector tecnològic i semiconductors continua sòlid (Nasdaq +29% a un any, IA com a motor estructural) i obro una posició tàctica en XLE per capturar el repunt del petroli lligat a la tensió a l'estret d'Hormuz, sense trencar la diversificació general de la cartera. Mantinc SPY, VGK i GLD intactes perquè continuen complint bé el seu paper de nucli i cobertura.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
+        "resultat": -0.07
+      },
+      {
+        "setmana": 14,
+        "data": "2026-08-24",
+        "decisio": "reajustar",
+        "confianca": 6,
+        "nivell_risc": "moderat",
+        "comprats": [
+          "XLV"
+        ],
+        "venuts": [
+          "QQQ"
+        ],
+        "mantinguts": [],
+        "operacions": [
+          {
+            "vendre": "QQQ",
+            "comprar": "XLV",
+            "import": 629.37
+          }
+        ],
+        "justificacio": "Redueixo lleugerament QQQ (de 24.3% a ~18%) després d'una setmana de correcció clara i generalitzada en semiconductors i big tech, que crec reflecteix preocupació legítima per valoracions altes en un context de yields elevats i dubtes sobre inflació. Redirigeixo aquest capital cap a XLV (salut EUA), un sector defensiu que aquesta setmana ha mostrat fortalesa relativa (+3.0%) i bona tendència de fons (+30.7% any), sense sortir de renda variable ni augmentar el risc global de la cartera. Mantinc GLD com a cobertura principal donat el seu bon moment, i no toco IEF ni XLE, que ja compleixen el seu paper. És un ajust tàctic i mesurat, no un canvi d'estratègia.",
         "context": null,
         "riscos": null,
         "expectativa": null,
@@ -2342,6 +2555,52 @@
           }
         ],
         "justificacio": "1) Redueixo totalment la durada llarga (TLT) perquè el mix ‘oil-up + yields globals en pujada’ és advers per a bons 20+ anys en un horitzó de 4-5 mesos. 2) Afegeixo XLE per capturar el rally d’energia impulsat per risc geopolític i com a cobertura d’inflació; complementa bé la nostra sobreexposició a tecnologia/semis i històricament té correlació negativa amb sorpreses d’inflació. 3) Substitueixo part del coixí de bons per TIP: manté rol defensiu però amb protecció davant repunts d’inflació, minimitzant la sensibilitat a pujades de tipus reals. 4) Mantinc el nucli d’IA/semis (QQQ, SMH, NVDA) perquè el cicle d’inversió (capex en data centers, memòria, equips) continua fort —les pujades recents en ASML/AMD/Samsung ho confirmen— i és on veig el millor potencial de beneficis a curt termini. 5) Conservo GLD: amb VIX baix però risc geopolític alt, l’or és una assegurança barata que ja està mostrant momentum.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
+        "resultat": -1.4
+      },
+      {
+        "setmana": 14,
+        "data": "2026-08-24",
+        "decisio": "reajustar",
+        "confianca": 6,
+        "nivell_risc": "moderat",
+        "comprats": [
+          "GDX",
+          "IBB",
+          "XLV"
+        ],
+        "venuts": [
+          "IGV",
+          "QQQ",
+          "SMH",
+          "TIP"
+        ],
+        "mantinguts": [],
+        "operacions": [
+          {
+            "vendre": "TIP",
+            "comprar": "XLV",
+            "import": 394.34
+          },
+          {
+            "vendre": "SMH",
+            "comprar": "GDX",
+            "import": 399.6
+          },
+          {
+            "vendre": "IGV",
+            "comprar": "IBB",
+            "import": 249.75
+          },
+          {
+            "vendre": "QQQ",
+            "comprar": "XLV",
+            "import": 349.65
+          }
+        ],
+        "justificacio": "Redueixo sensibilitat a tipus i una mica de solapament en semis/tech: SMH i QQQ han estat els grans perdedors amb rendiments a l’alça. Mantinc la tesi estructural d’IA (conservo NVDA i una posició rellevant en QQQ), però baixo el risc tàcticament. Surt TIP perquè, amb tipus i reals pujants, pateix més per durada i aporta poc en l’horitzó curt. Reforço sanitat amb XLV (defensiu, fluxos estables, momentum recent) i afegeixo IBB per captar el cicle alcista de biotech (dades, M&A i sorpreses positives). Amplio la palanca a l’or a través de GDX: si el rally de metalls preciosos persisteix en un entorn d’inflació/tensions geopolítiques, les miners poden multiplicar el moviment del metall. Mantenim XLE com a cobertura de cicle i oferta restrictiva. En conjunt, reequilibri moderat que redueix volatilitat de valoració, conserva el potencial d’IA i afegeix cues favorables en salut i metalls.",
         "context": null,
         "riscos": null,
         "expectativa": null,
@@ -2701,6 +2960,61 @@
         "context": null,
         "riscos": null,
         "expectativa": null,
+        "resultat": -1.12
+      },
+      {
+        "setmana": 14,
+        "data": "2026-08-24",
+        "decisio": "reajustar",
+        "confianca": 7,
+        "nivell_risc": "moderat",
+        "comprats": [
+          "GDX",
+          "GLD"
+        ],
+        "venuts": [
+          "005930.KS",
+          "SMH",
+          "SPY",
+          "VTI"
+        ],
+        "mantinguts": [],
+        "operacions": [
+          {
+            "vendre": "SPY",
+            "comprar": "EFECTIU",
+            "import": 600.0
+          },
+          {
+            "vendre": "VTI",
+            "comprar": "EFECTIU",
+            "import": 300.0
+          },
+          {
+            "vendre": "SMH",
+            "comprar": "EFECTIU",
+            "import": 200.0
+          },
+          {
+            "vendre": "005930.KS",
+            "comprar": "EFECTIU",
+            "import": 300.0
+          },
+          {
+            "vendre": "EFECTIU",
+            "comprar": "GDX",
+            "import": 894.0
+          },
+          {
+            "vendre": "EFECTIU",
+            "comprar": "GLD",
+            "import": 470.0
+          }
+        ],
+        "justificacio": "La decisió de reajustar la cartera es fonamenta en l'anàlisi de la feblesa generalitzada del mercat de renda variable, especialment en els sectors tecnològic i d'índexs amplis dels EUA, i la fortalesa sostinguda dels metalls preciosos en un entorn de 'risk-off' i preocupacions inflacionistes.   **Vendes:** - **SPY i VTI:** Redueixo l'exposició a aquests ETFs d'índexs amplis dels EUA. Han mostrat una caiguda significativa aquesta setmana (-2.7%) i estan més exposats a les 'preocupacions per la inflació' i als 'rendiments dels bons que desafien les accions', tal com indiquen les notícies [7] i [10]. Reduir la seva ponderació disminueix la dependència del rendiment general del mercat americà, que actualment es troba en un moment de tensió. - **SMH (Semiconductors) i 005930.KS (Samsung Electronics):** Aquests actius del sector tecnològic i de semiconductors han patit pèrdues considerables aquesta setmana (SMH -5.9%, Samsung -5.2%). El sector tecnològic és particularment sensible a la pujada dels tipus d'interès i a la desacceleració econòmica. Aquesta retallada tàctica busca protegir la cartera de possibles futures caigudes en aquest sector.  **Compres:** - **GDX (Mineres d'Or) i GLD (Or Físic):** Augmento significativament la meva posició en or i mineres d'or. La notícia [4] destaca un 'ral·li' d'aquests actius en un context on 'els inversors segueixen en tensió'. GDX ha tingut un rendiment excepcional aquesta setmana (+12.8%) i GLD (+4.1%). Amb les persistents 'preocupacions per la inflació' [10] i la incertesa del mercat, l'or i les empreses mineres actuen com a actius refugi i presenten un fort impuls positiu, oferint una oportunitat per capitalitzar la tendència actual i protegir el valor de la cartera.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
         "resultat": null
       }
     ],
@@ -2965,6 +3279,39 @@
           }
         ],
         "justificacio": "Redueixo parcialment SMH (semiconductors) per alliberar 600 € i compro XLE (energia EUA), que està pujant amb força (+7,6% setmanal) i es beneficia directament del bloqueig de l'estret d'Ormuz i la pujada del petroli. Això redueix una mica la sobreponderació tecnològica i afegeix diversificació sectorial, mantenint un perfil de risc moderat. La resta de la cartera es manté intacta perquè segueixo confiant en la tecnologia a mitjà termini, però crec que és prudent prendre beneficis i cobrir-me davant un possible repunt de la inflació i l'energia.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
+        "resultat": -2.34
+      },
+      {
+        "setmana": 14,
+        "data": "2026-08-24",
+        "decisio": "reajustar",
+        "confianca": 6,
+        "nivell_risc": "moderat",
+        "comprats": [
+          "GLD",
+          "XLE"
+        ],
+        "venuts": [
+          "QQQ",
+          "SMH"
+        ],
+        "mantinguts": [],
+        "operacions": [
+          {
+            "vendre": "QQQ",
+            "comprar": "GLD",
+            "import": 600.0
+          },
+          {
+            "vendre": "SMH",
+            "comprar": "XLE",
+            "import": 400.0
+          }
+        ],
+        "justificacio": "Redueixo QQQ en 600 € (el Nasdaq 100 ha caigut un 3.7% i la incertesa sobre valoracions tecnològiques persisteix) i SMH en 400 € (els semiconductors continuen sota pressió, amb baixades generalitzades). Amb aquests 1.000 € incremento GLD i XLE: l'or està en fort rally (+4.1% setmanal, +11.3% mensual) i ofereix cobertura davant la inflació i les tensions geopolítiques; l'energia (XLE) es manté resilient (+1.5% setmanal) i té bon momentum a mitjà termini. Això redueix el pes tecnològic fins al ~33% i augmenta la diversificació, sense superar els límits. Mantinc SPY com a nucli, VIG com a defensiu i deixo l'efectiu mínim per evitar costos innecessaris.",
         "context": null,
         "riscos": null,
         "expectativa": null,
@@ -3475,6 +3822,46 @@
         "context": null,
         "riscos": null,
         "expectativa": null,
+        "resultat": 0.26
+      },
+      {
+        "setmana": 14,
+        "data": "2026-08-24",
+        "decisio": "reajustar",
+        "confianca": 6,
+        "nivell_risc": "moderat",
+        "comprats": [
+          "IEF",
+          "SMH",
+          "USMV"
+        ],
+        "venuts": [
+          "GLD",
+          "LLY",
+          "XLE"
+        ],
+        "mantinguts": [],
+        "operacions": [
+          {
+            "vendre": "LLY",
+            "comprar": "IEF",
+            "import": 94.97
+          },
+          {
+            "vendre": "XLE",
+            "comprar": "USMV",
+            "import": 499.5
+          },
+          {
+            "vendre": "GLD",
+            "comprar": "SMH",
+            "import": 299.7
+          }
+        ],
+        "justificacio": "1) **Vendre LLY (1% de la cartera)**: Eli Lilly ha pujat un 82% en l'últim any i un 5% aquesta setmana, però el seu PER és elevat (superior a 50x). En un context de rendiments dels bons atractius (4.738%), prefereixo reduir exposició a salut i rotar cap a IEF (bons EUA 7-10 anys) per obtenir rendibilitat sense risc d'accions. 2) **Reduir XLE (de 10.5% a 5.3%)**: El sector energètic està exposat a la volatilitat del petroli (titular 11) i a les tensions geopolítiques (titular 2). Venc la meitat de la posició i compro USMV (mínima volatilitat EUA) per reduir risc sense sortir del mercat. 3) **Reduir GLD (de 10.9% a 7.6%)**: Tot i que l'or ha pujat aquesta setmana, el titular 4 indica que els inversors segueixen nerviosos. Aprofito per augmentar exposició a semiconductors (SMH), que han corregit un 5.9% aquesta setmana però tenen un potencial a llarg termini (IA, reindustrialització).",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
         "resultat": null
       }
     ]
@@ -3487,8 +3874,17 @@
         "tipus": "etf",
         "sector": "Índexs principals",
         "pais": "Global",
-        "pes": 32.0,
-        "valor": 3235
+        "pes": 28.0,
+        "valor": 2791
+      },
+      {
+        "ticker": "GLD",
+        "nom": "Or físic (SPDR)",
+        "tipus": "etf",
+        "sector": "Metalls preciosos",
+        "pais": "Global",
+        "pes": 16.5,
+        "valor": 1647
       },
       {
         "ticker": "SPY",
@@ -3496,26 +3892,8 @@
         "tipus": "etf",
         "sector": "Índexs principals",
         "pais": "Global",
-        "pes": 15.8,
-        "valor": 1594
-      },
-      {
-        "ticker": "GLD",
-        "nom": "Or físic (SPDR)",
-        "tipus": "etf",
-        "sector": "Metalls preciosos",
-        "pais": "Global",
-        "pes": 15.5,
-        "valor": 1570
-      },
-      {
-        "ticker": "SMH",
-        "nom": "Semiconductors (VanEck)",
-        "tipus": "etf",
-        "sector": "IA i semiconductors",
-        "pais": "Global",
-        "pes": 11.7,
-        "valor": 1178
+        "pes": 15.7,
+        "valor": 1565
       },
       {
         "ticker": "NVDA",
@@ -3523,8 +3901,26 @@
         "tipus": "accio",
         "sector": "Semiconductors",
         "pais": "EUA",
-        "pes": 7.8,
-        "valor": 783
+        "pes": 7.5,
+        "valor": 743
+      },
+      {
+        "ticker": "XLV",
+        "nom": "Salut EUA",
+        "tipus": "etf",
+        "sector": "Salut",
+        "pais": "Global",
+        "pes": 7.5,
+        "valor": 743
+      },
+      {
+        "ticker": "SMH",
+        "nom": "Semiconductors (VanEck)",
+        "tipus": "etf",
+        "sector": "IA i semiconductors",
+        "pais": "Global",
+        "pes": 7.2,
+        "valor": 717
       },
       {
         "ticker": "XLE",
@@ -3532,8 +3928,8 @@
         "tipus": "etf",
         "sector": "Energia",
         "pais": "Global",
-        "pes": 6.9,
-        "valor": 699
+        "pes": 7.2,
+        "valor": 715
       },
       {
         "ticker": "IGV",
@@ -3541,37 +3937,37 @@
         "tipus": "etf",
         "sector": "Tecnologia",
         "pais": "Global",
-        "pes": 6.5,
-        "valor": 653
+        "pes": 4.0,
+        "valor": 395
       },
       {
-        "ticker": "TIP",
-        "nom": "Bons lligats a la inflació",
+        "ticker": "GDX",
+        "nom": "Mineres d'or",
         "tipus": "etf",
-        "sector": "Renda fixa",
+        "sector": "Metalls preciosos",
         "pais": "Global",
-        "pes": 3.9,
-        "valor": 396
+        "pes": 4.0,
+        "valor": 399
+      },
+      {
+        "ticker": "IBB",
+        "nom": "Biotecnologia (Nasdaq)",
+        "tipus": "etf",
+        "sector": "Salut",
+        "pais": "Global",
+        "pes": 2.5,
+        "valor": 250
       }
     ],
     "claude": [
-      {
-        "ticker": "QQQ",
-        "nom": "Nasdaq 100",
-        "tipus": "etf",
-        "sector": "Índexs principals",
-        "pais": "Global",
-        "pes": 25.0,
-        "valor": 2508
-      },
       {
         "ticker": "GLD",
         "nom": "Or físic (SPDR)",
         "tipus": "etf",
         "sector": "Metalls preciosos",
         "pais": "Global",
-        "pes": 20.7,
-        "valor": 2073
+        "pes": 21.7,
+        "valor": 2175
       },
       {
         "ticker": "VGK",
@@ -3580,7 +3976,7 @@
         "sector": "Mercats internacionals",
         "pais": "Global",
         "pes": 20.3,
-        "valor": 2040
+        "valor": 2038
       },
       {
         "ticker": "SPY",
@@ -3588,8 +3984,17 @@
         "tipus": "etf",
         "sector": "Índexs principals",
         "pais": "Global",
-        "pes": 20.2,
-        "valor": 2027
+        "pes": 19.9,
+        "valor": 1990
+      },
+      {
+        "ticker": "QQQ",
+        "nom": "Nasdaq 100",
+        "tipus": "etf",
+        "sector": "Índexs principals",
+        "pais": "Global",
+        "pes": 18.0,
+        "valor": 1806
       },
       {
         "ticker": "IEF",
@@ -3597,8 +4002,17 @@
         "tipus": "etf",
         "sector": "Renda fixa",
         "pais": "Global",
-        "pes": 9.0,
-        "valor": 901
+        "pes": 8.9,
+        "valor": 895
+      },
+      {
+        "ticker": "XLV",
+        "nom": "Salut EUA",
+        "tipus": "etf",
+        "sector": "Salut",
+        "pais": "Global",
+        "pes": 6.3,
+        "valor": 629
       },
       {
         "ticker": "XLE",
@@ -3606,28 +4020,28 @@
         "tipus": "etf",
         "sector": "Energia",
         "pais": "Global",
-        "pes": 4.8,
-        "valor": 479
+        "pes": 4.9,
+        "valor": 490
       }
     ],
     "gemini": [
+      {
+        "ticker": "GDX",
+        "nom": "Mineres d'or",
+        "tipus": "etf",
+        "sector": "Metalls preciosos",
+        "pais": "Global",
+        "pes": 14.9,
+        "valor": 1459
+      },
       {
         "ticker": "SPY",
         "nom": "S&P 500 (SPDR)",
         "tipus": "etf",
         "sector": "Índexs principals",
         "pais": "Global",
-        "pes": 20.5,
-        "valor": 2023
-      },
-      {
-        "ticker": "VTI",
-        "nom": "Mercat total EUA",
-        "tipus": "etf",
-        "sector": "Índexs principals",
-        "pais": "Global",
-        "pes": 15.4,
-        "valor": 1521
+        "pes": 14.2,
+        "valor": 1385
       },
       {
         "ticker": "USMV",
@@ -3635,8 +4049,17 @@
         "tipus": "etf",
         "sector": "Defensius",
         "pais": "Global",
-        "pes": 13.0,
-        "valor": 1284
+        "pes": 13.1,
+        "valor": 1279
+      },
+      {
+        "ticker": "VTI",
+        "nom": "Mercat total EUA",
+        "tipus": "etf",
+        "sector": "Índexs principals",
+        "pais": "Global",
+        "pes": 12.2,
+        "valor": 1192
       },
       {
         "ticker": "VGK",
@@ -3644,17 +4067,8 @@
         "tipus": "etf",
         "sector": "Mercats internacionals",
         "pais": "Global",
-        "pes": 10.5,
-        "valor": 1042
-      },
-      {
-        "ticker": "005930.KS",
-        "nom": "Samsung Electronics",
-        "tipus": "accio",
-        "sector": "Tecnologia",
-        "pais": "Corea del Sud",
-        "pes": 10.1,
-        "valor": 999
+        "pes": 10.6,
+        "valor": 1041
       },
       {
         "ticker": "MSFT",
@@ -3662,26 +4076,26 @@
         "tipus": "accio",
         "sector": "Tecnologia",
         "pais": "EUA",
-        "pes": 8.3,
-        "valor": 819
+        "pes": 8.1,
+        "valor": 795
       },
       {
-        "ticker": "SMH",
-        "nom": "Semiconductors (VanEck)",
-        "tipus": "etf",
-        "sector": "IA i semiconductors",
-        "pais": "Global",
-        "pes": 5.1,
-        "valor": 502
-      },
-      {
-        "ticker": "GDX",
-        "nom": "Mineres d'or",
+        "ticker": "GLD",
+        "nom": "Or físic (SPDR)",
         "tipus": "etf",
         "sector": "Metalls preciosos",
         "pais": "Global",
-        "pes": 5.0,
-        "valor": 498
+        "pes": 7.0,
+        "valor": 679
+      },
+      {
+        "ticker": "005930.KS",
+        "nom": "Samsung Electronics",
+        "tipus": "accio",
+        "sector": "Tecnologia",
+        "pais": "Corea del Sud",
+        "pes": 6.6,
+        "valor": 648
       },
       {
         "ticker": "OIH",
@@ -3690,7 +4104,7 @@
         "sector": "Energia",
         "pais": "Global",
         "pes": 5.0,
-        "valor": 500
+        "valor": 490
       },
       {
         "ticker": "XLP",
@@ -3699,16 +4113,16 @@
         "sector": "Defensius",
         "pais": "Global",
         "pes": 4.7,
-        "valor": 466
+        "valor": 463
       },
       {
-        "ticker": "GLD",
-        "nom": "Or físic (SPDR)",
+        "ticker": "SMH",
+        "nom": "Semiconductors (VanEck)",
         "tipus": "etf",
-        "sector": "Metalls preciosos",
+        "sector": "IA i semiconductors",
         "pais": "Global",
-        "pes": 2.0,
-        "valor": 200
+        "pes": 2.8,
+        "valor": 276
       },
       {
         "ticker": "EFECTIU",
@@ -3716,8 +4130,8 @@
         "tipus": "efectiu",
         "sector": "Efectiu",
         "pais": "—",
-        "pes": 0.3,
-        "valor": 35
+        "pes": 0.7,
+        "valor": 69
       }
     ],
     "deepseek": [
@@ -3727,8 +4141,8 @@
         "tipus": "etf",
         "sector": "Índexs principals",
         "pais": "Global",
-        "pes": 39.9,
-        "valor": 3991
+        "pes": 40.1,
+        "valor": 3917
       },
       {
         "ticker": "QQQ",
@@ -3736,26 +4150,8 @@
         "tipus": "etf",
         "sector": "Índexs principals",
         "pais": "Global",
-        "pes": 29.9,
-        "valor": 2988
-      },
-      {
-        "ticker": "SMH",
-        "nom": "Semiconductors (VanEck)",
-        "tipus": "etf",
-        "sector": "IA i semiconductors",
-        "pais": "Global",
-        "pes": 14.6,
-        "valor": 1461
-      },
-      {
-        "ticker": "VIG",
-        "nom": "Dividends creixents (Vanguard)",
-        "tipus": "etf",
-        "sector": "Dividends",
-        "pais": "Global",
-        "pes": 9.6,
-        "valor": 960
+        "pes": 23.6,
+        "valor": 2301
       },
       {
         "ticker": "XLE",
@@ -3763,7 +4159,34 @@
         "tipus": "etf",
         "sector": "Energia",
         "pais": "Global",
-        "pes": 6.0,
+        "pes": 10.4,
+        "valor": 1013
+      },
+      {
+        "ticker": "SMH",
+        "nom": "Semiconductors (VanEck)",
+        "tipus": "etf",
+        "sector": "IA i semiconductors",
+        "pais": "Global",
+        "pes": 10.1,
+        "valor": 986
+      },
+      {
+        "ticker": "VIG",
+        "nom": "Dividends creixents (Vanguard)",
+        "tipus": "etf",
+        "sector": "Dividends",
+        "pais": "Global",
+        "pes": 9.7,
+        "valor": 950
+      },
+      {
+        "ticker": "GLD",
+        "nom": "Or físic (SPDR)",
+        "tipus": "etf",
+        "sector": "Metalls preciosos",
+        "pais": "Global",
+        "pes": 6.1,
         "valor": 599
       },
       {
@@ -3773,7 +4196,7 @@
         "sector": "Efectiu",
         "pais": "—",
         "pes": 0.1,
-        "valor": 6
+        "valor": 5
       }
     ],
     "mistral": [
@@ -3783,35 +4206,8 @@
         "tipus": "etf",
         "sector": "Índexs principals",
         "pais": "Global",
-        "pes": 19.2,
-        "valor": 1885
-      },
-      {
-        "ticker": "GLD",
-        "nom": "Or físic (SPDR)",
-        "tipus": "etf",
-        "sector": "Metalls preciosos",
-        "pais": "Global",
-        "pes": 10.4,
-        "valor": 1017
-      },
-      {
-        "ticker": "XLE",
-        "nom": "Energia EUA",
-        "tipus": "etf",
-        "sector": "Energia",
-        "pais": "Global",
-        "pes": 10.3,
-        "valor": 1005
-      },
-      {
-        "ticker": "VHT",
-        "nom": "Sanitat (Vanguard)",
-        "tipus": "etf",
-        "sector": "Salut",
-        "pais": "Global",
-        "pes": 9.3,
-        "valor": 911
+        "pes": 18.8,
+        "valor": 1850
       },
       {
         "ticker": "USMV",
@@ -3819,8 +4215,8 @@
         "tipus": "etf",
         "sector": "Defensius",
         "pais": "Global",
-        "pes": 7.4,
-        "valor": 722
+        "pes": 12.4,
+        "valor": 1218
       },
       {
         "ticker": "SMH",
@@ -3828,8 +4224,35 @@
         "tipus": "etf",
         "sector": "IA i semiconductors",
         "pais": "Global",
-        "pes": 6.9,
-        "valor": 676
+        "pes": 9.6,
+        "valor": 941
+      },
+      {
+        "ticker": "VHT",
+        "nom": "Sanitat (Vanguard)",
+        "tipus": "etf",
+        "sector": "Salut",
+        "pais": "Global",
+        "pes": 9.6,
+        "valor": 944
+      },
+      {
+        "ticker": "GLD",
+        "nom": "Or físic (SPDR)",
+        "tipus": "etf",
+        "sector": "Metalls preciosos",
+        "pais": "Global",
+        "pes": 7.8,
+        "valor": 767
+      },
+      {
+        "ticker": "IEF",
+        "nom": "Bons EUA 7-10 anys",
+        "tipus": "etf",
+        "sector": "Renda fixa",
+        "pais": "Global",
+        "pes": 6.0,
+        "valor": 589
       },
       {
         "ticker": "NESN.SW",
@@ -3838,7 +4261,16 @@
         "sector": "Consum",
         "pais": "Suïssa",
         "pes": 5.7,
-        "valor": 557
+        "valor": 561
+      },
+      {
+        "ticker": "XLE",
+        "nom": "Energia EUA",
+        "tipus": "etf",
+        "sector": "Energia",
+        "pais": "Global",
+        "pes": 5.4,
+        "valor": 528
       },
       {
         "ticker": "VIG",
@@ -3846,17 +4278,8 @@
         "tipus": "etf",
         "sector": "Dividends",
         "pais": "Global",
-        "pes": 5.5,
-        "valor": 536
-      },
-      {
-        "ticker": "IEF",
-        "nom": "Bons EUA 7-10 anys",
-        "tipus": "etf",
-        "sector": "Renda fixa",
-        "pais": "Global",
-        "pes": 5.1,
-        "valor": 498
+        "pes": 5.4,
+        "valor": 530
       },
       {
         "ticker": "VGK",
@@ -3865,7 +4288,7 @@
         "sector": "Mercats internacionals",
         "pais": "Global",
         "pes": 4.5,
-        "valor": 440
+        "valor": 439
       },
       {
         "ticker": "EWJ",
@@ -3873,8 +4296,8 @@
         "tipus": "etf",
         "sector": "Mercats internacionals",
         "pais": "Global",
-        "pes": 4.0,
-        "valor": 388
+        "pes": 3.8,
+        "valor": 375
       },
       {
         "ticker": "PG",
@@ -3883,7 +4306,7 @@
         "sector": "Consum",
         "pais": "EUA",
         "pes": 3.3,
-        "valor": 325
+        "valor": 324
       },
       {
         "ticker": "XLV",
@@ -3891,8 +4314,8 @@
         "tipus": "etf",
         "sector": "Salut",
         "pais": "Global",
-        "pes": 3.1,
-        "valor": 303
+        "pes": 3.2,
+        "valor": 315
       },
       {
         "ticker": "ADBE",
@@ -3900,8 +4323,8 @@
         "tipus": "accio",
         "sector": "Tecnologia",
         "pais": "EUA",
-        "pes": 2.1,
-        "valor": 209
+        "pes": 2.2,
+        "valor": 216
       },
       {
         "ticker": "NVDA",
@@ -3909,8 +4332,8 @@
         "tipus": "accio",
         "sector": "Semiconductors",
         "pais": "EUA",
-        "pes": 1.4,
-        "valor": 135
+        "pes": 1.3,
+        "valor": 128
       },
       {
         "ticker": "BABA",
@@ -3919,21 +4342,324 @@
         "sector": "Consum",
         "pais": "Xina",
         "pes": 1.0,
-        "valor": 100
-      },
-      {
-        "ticker": "LLY",
-        "nom": "Eli Lilly",
-        "tipus": "accio",
-        "sector": "Salut",
-        "pais": "EUA",
-        "pes": 0.9,
-        "valor": 90
+        "valor": 96
       }
     ]
   },
   "canvis": [
     {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "claude",
+      "ticker": "QQQ",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 629.37,
+      "motiu": "Redueixo lleugerament QQQ (de 24.3% a ~18%) després d'una setmana de correcció clara i generalitzada en semiconductors i big tech, que crec reflecteix preocupació legítima per valoracions altes en un context de yields elevats i dubtes sobre inflació. Redirigeixo aquest capital cap a XLV (salut EUA), un sector defensiu que aquesta setmana ha mostrat fortalesa relativa (+3.0%) i bona tendència de fons (+30.7% any), sense sortir de renda variable ni augmentar el risc global de la cartera. Mantinc GLD com a cobertura principal donat el seu bon moment, i no toco IEF ni XLE, que ja compleixen el seu paper. És un ajust tàctic i mesurat, no un canvi d'estratègia.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "claude",
+      "ticker": "XLV",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 629.37,
+      "motiu": "Redueixo lleugerament QQQ (de 24.3% a ~18%) després d'una setmana de correcció clara i generalitzada en semiconductors i big tech, que crec reflecteix preocupació legítima per valoracions altes en un context de yields elevats i dubtes sobre inflació. Redirigeixo aquest capital cap a XLV (salut EUA), un sector defensiu que aquesta setmana ha mostrat fortalesa relativa (+3.0%) i bona tendència de fons (+30.7% any), sense sortir de renda variable ni augmentar el risc global de la cartera. Mantinc GLD com a cobertura principal donat el seu bon moment, i no toco IEF ni XLE, que ja compleixen el seu paper. És un ajust tàctic i mesurat, no un canvi d'estratègia.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "gpt",
+      "ticker": "TIP",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 394.34,
+      "motiu": "Redueixo sensibilitat a tipus i una mica de solapament en semis/tech: SMH i QQQ han estat els grans perdedors amb rendiments a l’alça. Mantinc la tesi estructural d’IA (conservo NVDA i una posició rellevant en QQQ), però baixo el risc tàcticament. Surt TIP perquè, amb tipus i reals pujants, pateix més per durada i aporta poc en l’horitzó curt. Reforço sanitat amb XLV (defensiu, fluxos estables, momentum recent) i afegeixo IBB per captar el cicle alcista de biotech (dades, M&A i sorpreses positives). Amplio la palanca a l’or a través de GDX: si el rally de metalls preciosos persisteix en un entorn d’inflació/tensions geopolítiques, les miners poden multiplicar el moviment del metall. Mantenim XLE com a cobertura de cicle i oferta restrictiva. En conjunt, reequilibri moderat que redueix volatilitat de valoració, conserva el potencial d’IA i afegeix cues favorables en salut i metalls.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "gpt",
+      "ticker": "XLV",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 394.34,
+      "motiu": "Redueixo sensibilitat a tipus i una mica de solapament en semis/tech: SMH i QQQ han estat els grans perdedors amb rendiments a l’alça. Mantinc la tesi estructural d’IA (conservo NVDA i una posició rellevant en QQQ), però baixo el risc tàcticament. Surt TIP perquè, amb tipus i reals pujants, pateix més per durada i aporta poc en l’horitzó curt. Reforço sanitat amb XLV (defensiu, fluxos estables, momentum recent) i afegeixo IBB per captar el cicle alcista de biotech (dades, M&A i sorpreses positives). Amplio la palanca a l’or a través de GDX: si el rally de metalls preciosos persisteix en un entorn d’inflació/tensions geopolítiques, les miners poden multiplicar el moviment del metall. Mantenim XLE com a cobertura de cicle i oferta restrictiva. En conjunt, reequilibri moderat que redueix volatilitat de valoració, conserva el potencial d’IA i afegeix cues favorables en salut i metalls.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "gpt",
+      "ticker": "SMH",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 399.6,
+      "motiu": "Redueixo sensibilitat a tipus i una mica de solapament en semis/tech: SMH i QQQ han estat els grans perdedors amb rendiments a l’alça. Mantinc la tesi estructural d’IA (conservo NVDA i una posició rellevant en QQQ), però baixo el risc tàcticament. Surt TIP perquè, amb tipus i reals pujants, pateix més per durada i aporta poc en l’horitzó curt. Reforço sanitat amb XLV (defensiu, fluxos estables, momentum recent) i afegeixo IBB per captar el cicle alcista de biotech (dades, M&A i sorpreses positives). Amplio la palanca a l’or a través de GDX: si el rally de metalls preciosos persisteix en un entorn d’inflació/tensions geopolítiques, les miners poden multiplicar el moviment del metall. Mantenim XLE com a cobertura de cicle i oferta restrictiva. En conjunt, reequilibri moderat que redueix volatilitat de valoració, conserva el potencial d’IA i afegeix cues favorables en salut i metalls.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "gpt",
+      "ticker": "GDX",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 399.6,
+      "motiu": "Redueixo sensibilitat a tipus i una mica de solapament en semis/tech: SMH i QQQ han estat els grans perdedors amb rendiments a l’alça. Mantinc la tesi estructural d’IA (conservo NVDA i una posició rellevant en QQQ), però baixo el risc tàcticament. Surt TIP perquè, amb tipus i reals pujants, pateix més per durada i aporta poc en l’horitzó curt. Reforço sanitat amb XLV (defensiu, fluxos estables, momentum recent) i afegeixo IBB per captar el cicle alcista de biotech (dades, M&A i sorpreses positives). Amplio la palanca a l’or a través de GDX: si el rally de metalls preciosos persisteix en un entorn d’inflació/tensions geopolítiques, les miners poden multiplicar el moviment del metall. Mantenim XLE com a cobertura de cicle i oferta restrictiva. En conjunt, reequilibri moderat que redueix volatilitat de valoració, conserva el potencial d’IA i afegeix cues favorables en salut i metalls.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "gpt",
+      "ticker": "IGV",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 249.75,
+      "motiu": "Redueixo sensibilitat a tipus i una mica de solapament en semis/tech: SMH i QQQ han estat els grans perdedors amb rendiments a l’alça. Mantinc la tesi estructural d’IA (conservo NVDA i una posició rellevant en QQQ), però baixo el risc tàcticament. Surt TIP perquè, amb tipus i reals pujants, pateix més per durada i aporta poc en l’horitzó curt. Reforço sanitat amb XLV (defensiu, fluxos estables, momentum recent) i afegeixo IBB per captar el cicle alcista de biotech (dades, M&A i sorpreses positives). Amplio la palanca a l’or a través de GDX: si el rally de metalls preciosos persisteix en un entorn d’inflació/tensions geopolítiques, les miners poden multiplicar el moviment del metall. Mantenim XLE com a cobertura de cicle i oferta restrictiva. En conjunt, reequilibri moderat que redueix volatilitat de valoració, conserva el potencial d’IA i afegeix cues favorables en salut i metalls.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "gpt",
+      "ticker": "IBB",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 249.75,
+      "motiu": "Redueixo sensibilitat a tipus i una mica de solapament en semis/tech: SMH i QQQ han estat els grans perdedors amb rendiments a l’alça. Mantinc la tesi estructural d’IA (conservo NVDA i una posició rellevant en QQQ), però baixo el risc tàcticament. Surt TIP perquè, amb tipus i reals pujants, pateix més per durada i aporta poc en l’horitzó curt. Reforço sanitat amb XLV (defensiu, fluxos estables, momentum recent) i afegeixo IBB per captar el cicle alcista de biotech (dades, M&A i sorpreses positives). Amplio la palanca a l’or a través de GDX: si el rally de metalls preciosos persisteix en un entorn d’inflació/tensions geopolítiques, les miners poden multiplicar el moviment del metall. Mantenim XLE com a cobertura de cicle i oferta restrictiva. En conjunt, reequilibri moderat que redueix volatilitat de valoració, conserva el potencial d’IA i afegeix cues favorables en salut i metalls.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "gpt",
+      "ticker": "QQQ",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 349.65,
+      "motiu": "Redueixo sensibilitat a tipus i una mica de solapament en semis/tech: SMH i QQQ han estat els grans perdedors amb rendiments a l’alça. Mantinc la tesi estructural d’IA (conservo NVDA i una posició rellevant en QQQ), però baixo el risc tàcticament. Surt TIP perquè, amb tipus i reals pujants, pateix més per durada i aporta poc en l’horitzó curt. Reforço sanitat amb XLV (defensiu, fluxos estables, momentum recent) i afegeixo IBB per captar el cicle alcista de biotech (dades, M&A i sorpreses positives). Amplio la palanca a l’or a través de GDX: si el rally de metalls preciosos persisteix en un entorn d’inflació/tensions geopolítiques, les miners poden multiplicar el moviment del metall. Mantenim XLE com a cobertura de cicle i oferta restrictiva. En conjunt, reequilibri moderat que redueix volatilitat de valoració, conserva el potencial d’IA i afegeix cues favorables en salut i metalls.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "gpt",
+      "ticker": "XLV",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 349.65,
+      "motiu": "Redueixo sensibilitat a tipus i una mica de solapament en semis/tech: SMH i QQQ han estat els grans perdedors amb rendiments a l’alça. Mantinc la tesi estructural d’IA (conservo NVDA i una posició rellevant en QQQ), però baixo el risc tàcticament. Surt TIP perquè, amb tipus i reals pujants, pateix més per durada i aporta poc en l’horitzó curt. Reforço sanitat amb XLV (defensiu, fluxos estables, momentum recent) i afegeixo IBB per captar el cicle alcista de biotech (dades, M&A i sorpreses positives). Amplio la palanca a l’or a través de GDX: si el rally de metalls preciosos persisteix en un entorn d’inflació/tensions geopolítiques, les miners poden multiplicar el moviment del metall. Mantenim XLE com a cobertura de cicle i oferta restrictiva. En conjunt, reequilibri moderat que redueix volatilitat de valoració, conserva el potencial d’IA i afegeix cues favorables en salut i metalls.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "gemini",
+      "ticker": "SPY",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 600.0,
+      "motiu": "La decisió de reajustar la cartera es fonamenta en l'anàlisi de la feblesa generalitzada del mercat de renda variable, especialment en els sectors tecnològic i d'índexs amplis dels EUA, i la fortalesa sostinguda dels metalls preciosos en un entorn de 'risk-off' i preocupacions inflacionistes.   **Vendes:** - **SPY i VTI:** Redueixo l'exposició a aquests ETFs d'índexs amplis dels EUA. Han mostrat una caiguda significativa aquesta setmana (-2.7%) i estan més exposats a les 'preocupacions per la inflació' i als 'rendiments dels bons que desafien les accions', tal com indiquen les notícies [7] i [10]. Reduir la seva ponderació disminueix la dependència del rendiment general del mercat americà, que actualment es troba en un moment de tensió. - **SMH (Semiconductors) i 005930.KS (Samsung Electronics):** Aquests actius del sector tecnològic i de semiconductors han patit pèrdues considerables aquesta setmana (SMH -5.9%, Samsung -5.2%). El sector tecnològic és particularment sensible a la pujada dels tipus d'interès i a la desacceleració econòmica. Aquesta retallada tàctica busca protegir la cartera de possibles futures caigudes en aquest sector.  **Compres:** - **GDX (Mineres d'Or) i GLD (Or Físic):** Augmento significativament la meva posició en or i mineres d'or. La notícia [4] destaca un 'ral·li' d'aquests actius en un context on 'els inversors segueixen en tensió'. GDX ha tingut un rendiment excepcional aquesta setmana (+12.8%) i GLD (+4.1%). Amb les persistents 'preocupacions per la inflació' [10] i la incertesa del mercat, l'or i les empreses mineres actuen com a actius refugi i presenten un fort impuls positiu, oferint una oportunitat per capitalitzar la tendència actual i protegir el valor de la cartera.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "gemini",
+      "ticker": "VTI",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 300.0,
+      "motiu": "La decisió de reajustar la cartera es fonamenta en l'anàlisi de la feblesa generalitzada del mercat de renda variable, especialment en els sectors tecnològic i d'índexs amplis dels EUA, i la fortalesa sostinguda dels metalls preciosos en un entorn de 'risk-off' i preocupacions inflacionistes.   **Vendes:** - **SPY i VTI:** Redueixo l'exposició a aquests ETFs d'índexs amplis dels EUA. Han mostrat una caiguda significativa aquesta setmana (-2.7%) i estan més exposats a les 'preocupacions per la inflació' i als 'rendiments dels bons que desafien les accions', tal com indiquen les notícies [7] i [10]. Reduir la seva ponderació disminueix la dependència del rendiment general del mercat americà, que actualment es troba en un moment de tensió. - **SMH (Semiconductors) i 005930.KS (Samsung Electronics):** Aquests actius del sector tecnològic i de semiconductors han patit pèrdues considerables aquesta setmana (SMH -5.9%, Samsung -5.2%). El sector tecnològic és particularment sensible a la pujada dels tipus d'interès i a la desacceleració econòmica. Aquesta retallada tàctica busca protegir la cartera de possibles futures caigudes en aquest sector.  **Compres:** - **GDX (Mineres d'Or) i GLD (Or Físic):** Augmento significativament la meva posició en or i mineres d'or. La notícia [4] destaca un 'ral·li' d'aquests actius en un context on 'els inversors segueixen en tensió'. GDX ha tingut un rendiment excepcional aquesta setmana (+12.8%) i GLD (+4.1%). Amb les persistents 'preocupacions per la inflació' [10] i la incertesa del mercat, l'or i les empreses mineres actuen com a actius refugi i presenten un fort impuls positiu, oferint una oportunitat per capitalitzar la tendència actual i protegir el valor de la cartera.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "gemini",
+      "ticker": "SMH",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 200.0,
+      "motiu": "La decisió de reajustar la cartera es fonamenta en l'anàlisi de la feblesa generalitzada del mercat de renda variable, especialment en els sectors tecnològic i d'índexs amplis dels EUA, i la fortalesa sostinguda dels metalls preciosos en un entorn de 'risk-off' i preocupacions inflacionistes.   **Vendes:** - **SPY i VTI:** Redueixo l'exposició a aquests ETFs d'índexs amplis dels EUA. Han mostrat una caiguda significativa aquesta setmana (-2.7%) i estan més exposats a les 'preocupacions per la inflació' i als 'rendiments dels bons que desafien les accions', tal com indiquen les notícies [7] i [10]. Reduir la seva ponderació disminueix la dependència del rendiment general del mercat americà, que actualment es troba en un moment de tensió. - **SMH (Semiconductors) i 005930.KS (Samsung Electronics):** Aquests actius del sector tecnològic i de semiconductors han patit pèrdues considerables aquesta setmana (SMH -5.9%, Samsung -5.2%). El sector tecnològic és particularment sensible a la pujada dels tipus d'interès i a la desacceleració econòmica. Aquesta retallada tàctica busca protegir la cartera de possibles futures caigudes en aquest sector.  **Compres:** - **GDX (Mineres d'Or) i GLD (Or Físic):** Augmento significativament la meva posició en or i mineres d'or. La notícia [4] destaca un 'ral·li' d'aquests actius en un context on 'els inversors segueixen en tensió'. GDX ha tingut un rendiment excepcional aquesta setmana (+12.8%) i GLD (+4.1%). Amb les persistents 'preocupacions per la inflació' [10] i la incertesa del mercat, l'or i les empreses mineres actuen com a actius refugi i presenten un fort impuls positiu, oferint una oportunitat per capitalitzar la tendència actual i protegir el valor de la cartera.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "gemini",
+      "ticker": "005930.KS",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 300.0,
+      "motiu": "La decisió de reajustar la cartera es fonamenta en l'anàlisi de la feblesa generalitzada del mercat de renda variable, especialment en els sectors tecnològic i d'índexs amplis dels EUA, i la fortalesa sostinguda dels metalls preciosos en un entorn de 'risk-off' i preocupacions inflacionistes.   **Vendes:** - **SPY i VTI:** Redueixo l'exposició a aquests ETFs d'índexs amplis dels EUA. Han mostrat una caiguda significativa aquesta setmana (-2.7%) i estan més exposats a les 'preocupacions per la inflació' i als 'rendiments dels bons que desafien les accions', tal com indiquen les notícies [7] i [10]. Reduir la seva ponderació disminueix la dependència del rendiment general del mercat americà, que actualment es troba en un moment de tensió. - **SMH (Semiconductors) i 005930.KS (Samsung Electronics):** Aquests actius del sector tecnològic i de semiconductors han patit pèrdues considerables aquesta setmana (SMH -5.9%, Samsung -5.2%). El sector tecnològic és particularment sensible a la pujada dels tipus d'interès i a la desacceleració econòmica. Aquesta retallada tàctica busca protegir la cartera de possibles futures caigudes en aquest sector.  **Compres:** - **GDX (Mineres d'Or) i GLD (Or Físic):** Augmento significativament la meva posició en or i mineres d'or. La notícia [4] destaca un 'ral·li' d'aquests actius en un context on 'els inversors segueixen en tensió'. GDX ha tingut un rendiment excepcional aquesta setmana (+12.8%) i GLD (+4.1%). Amb les persistents 'preocupacions per la inflació' [10] i la incertesa del mercat, l'or i les empreses mineres actuen com a actius refugi i presenten un fort impuls positiu, oferint una oportunitat per capitalitzar la tendència actual i protegir el valor de la cartera.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "gemini",
+      "ticker": "GDX",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 894.0,
+      "motiu": "La decisió de reajustar la cartera es fonamenta en l'anàlisi de la feblesa generalitzada del mercat de renda variable, especialment en els sectors tecnològic i d'índexs amplis dels EUA, i la fortalesa sostinguda dels metalls preciosos en un entorn de 'risk-off' i preocupacions inflacionistes.   **Vendes:** - **SPY i VTI:** Redueixo l'exposició a aquests ETFs d'índexs amplis dels EUA. Han mostrat una caiguda significativa aquesta setmana (-2.7%) i estan més exposats a les 'preocupacions per la inflació' i als 'rendiments dels bons que desafien les accions', tal com indiquen les notícies [7] i [10]. Reduir la seva ponderació disminueix la dependència del rendiment general del mercat americà, que actualment es troba en un moment de tensió. - **SMH (Semiconductors) i 005930.KS (Samsung Electronics):** Aquests actius del sector tecnològic i de semiconductors han patit pèrdues considerables aquesta setmana (SMH -5.9%, Samsung -5.2%). El sector tecnològic és particularment sensible a la pujada dels tipus d'interès i a la desacceleració econòmica. Aquesta retallada tàctica busca protegir la cartera de possibles futures caigudes en aquest sector.  **Compres:** - **GDX (Mineres d'Or) i GLD (Or Físic):** Augmento significativament la meva posició en or i mineres d'or. La notícia [4] destaca un 'ral·li' d'aquests actius en un context on 'els inversors segueixen en tensió'. GDX ha tingut un rendiment excepcional aquesta setmana (+12.8%) i GLD (+4.1%). Amb les persistents 'preocupacions per la inflació' [10] i la incertesa del mercat, l'or i les empreses mineres actuen com a actius refugi i presenten un fort impuls positiu, oferint una oportunitat per capitalitzar la tendència actual i protegir el valor de la cartera.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "gemini",
+      "ticker": "GLD",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 470.0,
+      "motiu": "La decisió de reajustar la cartera es fonamenta en l'anàlisi de la feblesa generalitzada del mercat de renda variable, especialment en els sectors tecnològic i d'índexs amplis dels EUA, i la fortalesa sostinguda dels metalls preciosos en un entorn de 'risk-off' i preocupacions inflacionistes.   **Vendes:** - **SPY i VTI:** Redueixo l'exposició a aquests ETFs d'índexs amplis dels EUA. Han mostrat una caiguda significativa aquesta setmana (-2.7%) i estan més exposats a les 'preocupacions per la inflació' i als 'rendiments dels bons que desafien les accions', tal com indiquen les notícies [7] i [10]. Reduir la seva ponderació disminueix la dependència del rendiment general del mercat americà, que actualment es troba en un moment de tensió. - **SMH (Semiconductors) i 005930.KS (Samsung Electronics):** Aquests actius del sector tecnològic i de semiconductors han patit pèrdues considerables aquesta setmana (SMH -5.9%, Samsung -5.2%). El sector tecnològic és particularment sensible a la pujada dels tipus d'interès i a la desacceleració econòmica. Aquesta retallada tàctica busca protegir la cartera de possibles futures caigudes en aquest sector.  **Compres:** - **GDX (Mineres d'Or) i GLD (Or Físic):** Augmento significativament la meva posició en or i mineres d'or. La notícia [4] destaca un 'ral·li' d'aquests actius en un context on 'els inversors segueixen en tensió'. GDX ha tingut un rendiment excepcional aquesta setmana (+12.8%) i GLD (+4.1%). Amb les persistents 'preocupacions per la inflació' [10] i la incertesa del mercat, l'or i les empreses mineres actuen com a actius refugi i presenten un fort impuls positiu, oferint una oportunitat per capitalitzar la tendència actual i protegir el valor de la cartera.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "deepseek",
+      "ticker": "QQQ",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 600.0,
+      "motiu": "Redueixo QQQ en 600 € (el Nasdaq 100 ha caigut un 3.7% i la incertesa sobre valoracions tecnològiques persisteix) i SMH en 400 € (els semiconductors continuen sota pressió, amb baixades generalitzades). Amb aquests 1.000 € incremento GLD i XLE: l'or està en fort rally (+4.1% setmanal, +11.3% mensual) i ofereix cobertura davant la inflació i les tensions geopolítiques; l'energia (XLE) es manté resilient (+1.5% setmanal) i té bon momentum a mitjà termini. Això redueix el pes tecnològic fins al ~33% i augmenta la diversificació, sense superar els límits. Mantinc SPY com a nucli, VIG com a defensiu i deixo l'efectiu mínim per evitar costos innecessaris.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "deepseek",
+      "ticker": "GLD",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 600.0,
+      "motiu": "Redueixo QQQ en 600 € (el Nasdaq 100 ha caigut un 3.7% i la incertesa sobre valoracions tecnològiques persisteix) i SMH en 400 € (els semiconductors continuen sota pressió, amb baixades generalitzades). Amb aquests 1.000 € incremento GLD i XLE: l'or està en fort rally (+4.1% setmanal, +11.3% mensual) i ofereix cobertura davant la inflació i les tensions geopolítiques; l'energia (XLE) es manté resilient (+1.5% setmanal) i té bon momentum a mitjà termini. Això redueix el pes tecnològic fins al ~33% i augmenta la diversificació, sense superar els límits. Mantinc SPY com a nucli, VIG com a defensiu i deixo l'efectiu mínim per evitar costos innecessaris.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "deepseek",
+      "ticker": "SMH",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 400.0,
+      "motiu": "Redueixo QQQ en 600 € (el Nasdaq 100 ha caigut un 3.7% i la incertesa sobre valoracions tecnològiques persisteix) i SMH en 400 € (els semiconductors continuen sota pressió, amb baixades generalitzades). Amb aquests 1.000 € incremento GLD i XLE: l'or està en fort rally (+4.1% setmanal, +11.3% mensual) i ofereix cobertura davant la inflació i les tensions geopolítiques; l'energia (XLE) es manté resilient (+1.5% setmanal) i té bon momentum a mitjà termini. Això redueix el pes tecnològic fins al ~33% i augmenta la diversificació, sense superar els límits. Mantinc SPY com a nucli, VIG com a defensiu i deixo l'efectiu mínim per evitar costos innecessaris.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "deepseek",
+      "ticker": "XLE",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 400.0,
+      "motiu": "Redueixo QQQ en 600 € (el Nasdaq 100 ha caigut un 3.7% i la incertesa sobre valoracions tecnològiques persisteix) i SMH en 400 € (els semiconductors continuen sota pressió, amb baixades generalitzades). Amb aquests 1.000 € incremento GLD i XLE: l'or està en fort rally (+4.1% setmanal, +11.3% mensual) i ofereix cobertura davant la inflació i les tensions geopolítiques; l'energia (XLE) es manté resilient (+1.5% setmanal) i té bon momentum a mitjà termini. Això redueix el pes tecnològic fins al ~33% i augmenta la diversificació, sense superar els límits. Mantinc SPY com a nucli, VIG com a defensiu i deixo l'efectiu mínim per evitar costos innecessaris.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "mistral",
+      "ticker": "LLY",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 94.97,
+      "motiu": "1) **Vendre LLY (1% de la cartera)**: Eli Lilly ha pujat un 82% en l'últim any i un 5% aquesta setmana, però el seu PER és elevat (superior a 50x). En un context de rendiments dels bons atractius (4.738%), prefereixo reduir exposició a salut i rotar cap a IEF (bons EUA 7-10 anys) per obtenir rendibilitat sense risc d'accions. 2) **Reduir XLE (de 10.5% a 5.3%)**: El sector energètic està exposat a la volatilitat del petroli (titular 11) i a les tensions geopolítiques (titular 2). Venc la meitat de la posició i compro USMV (mínima volatilitat EUA) per reduir risc sense sortir del mercat. 3) **Reduir GLD (de 10.9% a 7.6%)**: Tot i que l'or ha pujat aquesta setmana, el titular 4 indica que els inversors segueixen nerviosos. Aprofito per augmentar exposició a semiconductors (SMH), que han corregit un 5.9% aquesta setmana però tenen un potencial a llarg termini (IA, reindustrialització).",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "mistral",
+      "ticker": "IEF",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 94.97,
+      "motiu": "1) **Vendre LLY (1% de la cartera)**: Eli Lilly ha pujat un 82% en l'últim any i un 5% aquesta setmana, però el seu PER és elevat (superior a 50x). En un context de rendiments dels bons atractius (4.738%), prefereixo reduir exposició a salut i rotar cap a IEF (bons EUA 7-10 anys) per obtenir rendibilitat sense risc d'accions. 2) **Reduir XLE (de 10.5% a 5.3%)**: El sector energètic està exposat a la volatilitat del petroli (titular 11) i a les tensions geopolítiques (titular 2). Venc la meitat de la posició i compro USMV (mínima volatilitat EUA) per reduir risc sense sortir del mercat. 3) **Reduir GLD (de 10.9% a 7.6%)**: Tot i que l'or ha pujat aquesta setmana, el titular 4 indica que els inversors segueixen nerviosos. Aprofito per augmentar exposició a semiconductors (SMH), que han corregit un 5.9% aquesta setmana però tenen un potencial a llarg termini (IA, reindustrialització).",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "mistral",
+      "ticker": "XLE",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "1) **Vendre LLY (1% de la cartera)**: Eli Lilly ha pujat un 82% en l'últim any i un 5% aquesta setmana, però el seu PER és elevat (superior a 50x). En un context de rendiments dels bons atractius (4.738%), prefereixo reduir exposició a salut i rotar cap a IEF (bons EUA 7-10 anys) per obtenir rendibilitat sense risc d'accions. 2) **Reduir XLE (de 10.5% a 5.3%)**: El sector energètic està exposat a la volatilitat del petroli (titular 11) i a les tensions geopolítiques (titular 2). Venc la meitat de la posició i compro USMV (mínima volatilitat EUA) per reduir risc sense sortir del mercat. 3) **Reduir GLD (de 10.9% a 7.6%)**: Tot i que l'or ha pujat aquesta setmana, el titular 4 indica que els inversors segueixen nerviosos. Aprofito per augmentar exposició a semiconductors (SMH), que han corregit un 5.9% aquesta setmana però tenen un potencial a llarg termini (IA, reindustrialització).",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "mistral",
+      "ticker": "USMV",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 499.5,
+      "motiu": "1) **Vendre LLY (1% de la cartera)**: Eli Lilly ha pujat un 82% en l'últim any i un 5% aquesta setmana, però el seu PER és elevat (superior a 50x). En un context de rendiments dels bons atractius (4.738%), prefereixo reduir exposició a salut i rotar cap a IEF (bons EUA 7-10 anys) per obtenir rendibilitat sense risc d'accions. 2) **Reduir XLE (de 10.5% a 5.3%)**: El sector energètic està exposat a la volatilitat del petroli (titular 11) i a les tensions geopolítiques (titular 2). Venc la meitat de la posició i compro USMV (mínima volatilitat EUA) per reduir risc sense sortir del mercat. 3) **Reduir GLD (de 10.9% a 7.6%)**: Tot i que l'or ha pujat aquesta setmana, el titular 4 indica que els inversors segueixen nerviosos. Aprofito per augmentar exposició a semiconductors (SMH), que han corregit un 5.9% aquesta setmana però tenen un potencial a llarg termini (IA, reindustrialització).",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "mistral",
+      "ticker": "GLD",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 299.7,
+      "motiu": "1) **Vendre LLY (1% de la cartera)**: Eli Lilly ha pujat un 82% en l'últim any i un 5% aquesta setmana, però el seu PER és elevat (superior a 50x). En un context de rendiments dels bons atractius (4.738%), prefereixo reduir exposició a salut i rotar cap a IEF (bons EUA 7-10 anys) per obtenir rendibilitat sense risc d'accions. 2) **Reduir XLE (de 10.5% a 5.3%)**: El sector energètic està exposat a la volatilitat del petroli (titular 11) i a les tensions geopolítiques (titular 2). Venc la meitat de la posició i compro USMV (mínima volatilitat EUA) per reduir risc sense sortir del mercat. 3) **Reduir GLD (de 10.9% a 7.6%)**: Tot i que l'or ha pujat aquesta setmana, el titular 4 indica que els inversors segueixen nerviosos. Aprofito per augmentar exposició a semiconductors (SMH), que han corregit un 5.9% aquesta setmana però tenen un potencial a llarg termini (IA, reindustrialització).",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "model": "mistral",
+      "ticker": "SMH",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 299.7,
+      "motiu": "1) **Vendre LLY (1% de la cartera)**: Eli Lilly ha pujat un 82% en l'últim any i un 5% aquesta setmana, però el seu PER és elevat (superior a 50x). En un context de rendiments dels bons atractius (4.738%), prefereixo reduir exposició a salut i rotar cap a IEF (bons EUA 7-10 anys) per obtenir rendibilitat sense risc d'accions. 2) **Reduir XLE (de 10.5% a 5.3%)**: El sector energètic està exposat a la volatilitat del petroli (titular 11) i a les tensions geopolítiques (titular 2). Venc la meitat de la posició i compro USMV (mínima volatilitat EUA) per reduir risc sense sortir del mercat. 3) **Reduir GLD (de 10.9% a 7.6%)**: Tot i que l'or ha pujat aquesta setmana, el titular 4 indica que els inversors segueixen nerviosos. Aprofito per augmentar exposició a semiconductors (SMH), que han corregit un 5.9% aquesta setmana però tenen un potencial a llarg termini (IA, reindustrialització).",
+      "impacte": 0.0
+    },
+    {
       "setmana": 13,
       "data": "2026-08-17",
       "model": "claude",
@@ -3943,7 +4669,7 @@
       "pesDespres": null,
       "import": 20.8,
       "motiu": "Liquido la posició residual de TLT (ja pràcticament simbòlica) i redueixo IEF perquè la pujada del bo japonès a 30 anys i el context de tipus EUA encara alts (4.7%) fan que la renda fixa de duració mitjana-llarga tingui un perfil de risc/rendiment poc atractiu ara mateix. Reforço QQQ perquè el moment del sector tecnològic i semiconductors continua sòlid (Nasdaq +29% a un any, IA com a motor estructural) i obro una posició tàctica en XLE per capturar el repunt del petroli lligat a la tensió a l'estret d'Hormuz, sense trencar la diversificació general de la cartera. Mantinc SPY, VGK i GLD intactes perquè continuen complint bé el seu paper de nucli i cobertura.",
-      "impacte": 0.0
+      "impacte": -0.07
     },
     {
       "setmana": 13,
@@ -3955,7 +4681,7 @@
       "pesDespres": null,
       "import": 20.8,
       "motiu": "Liquido la posició residual de TLT (ja pràcticament simbòlica) i redueixo IEF perquè la pujada del bo japonès a 30 anys i el context de tipus EUA encara alts (4.7%) fan que la renda fixa de duració mitjana-llarga tingui un perfil de risc/rendiment poc atractiu ara mateix. Reforço QQQ perquè el moment del sector tecnològic i semiconductors continua sòlid (Nasdaq +29% a un any, IA com a motor estructural) i obro una posició tàctica en XLE per capturar el repunt del petroli lligat a la tensió a l'estret d'Hormuz, sense trencar la diversificació general de la cartera. Mantinc SPY, VGK i GLD intactes perquè continuen complint bé el seu paper de nucli i cobertura.",
-      "impacte": 0.0
+      "impacte": -0.07
     },
     {
       "setmana": 13,
@@ -3967,7 +4693,7 @@
       "pesDespres": null,
       "import": 499.5,
       "motiu": "Liquido la posició residual de TLT (ja pràcticament simbòlica) i redueixo IEF perquè la pujada del bo japonès a 30 anys i el context de tipus EUA encara alts (4.7%) fan que la renda fixa de duració mitjana-llarga tingui un perfil de risc/rendiment poc atractiu ara mateix. Reforço QQQ perquè el moment del sector tecnològic i semiconductors continua sòlid (Nasdaq +29% a un any, IA com a motor estructural) i obro una posició tàctica en XLE per capturar el repunt del petroli lligat a la tensió a l'estret d'Hormuz, sense trencar la diversificació general de la cartera. Mantinc SPY, VGK i GLD intactes perquè continuen complint bé el seu paper de nucli i cobertura.",
-      "impacte": 0.0
+      "impacte": -0.07
     },
     {
       "setmana": 13,
@@ -3979,7 +4705,7 @@
       "pesDespres": null,
       "import": 499.5,
       "motiu": "Liquido la posició residual de TLT (ja pràcticament simbòlica) i redueixo IEF perquè la pujada del bo japonès a 30 anys i el context de tipus EUA encara alts (4.7%) fan que la renda fixa de duració mitjana-llarga tingui un perfil de risc/rendiment poc atractiu ara mateix. Reforço QQQ perquè el moment del sector tecnològic i semiconductors continua sòlid (Nasdaq +29% a un any, IA com a motor estructural) i obro una posició tàctica en XLE per capturar el repunt del petroli lligat a la tensió a l'estret d'Hormuz, sense trencar la diversificació general de la cartera. Mantinc SPY, VGK i GLD intactes perquè continuen complint bé el seu paper de nucli i cobertura.",
-      "impacte": 0.0
+      "impacte": -0.07
     },
     {
       "setmana": 13,
@@ -3991,7 +4717,7 @@
       "pesDespres": null,
       "import": 479.52,
       "motiu": "Liquido la posició residual de TLT (ja pràcticament simbòlica) i redueixo IEF perquè la pujada del bo japonès a 30 anys i el context de tipus EUA encara alts (4.7%) fan que la renda fixa de duració mitjana-llarga tingui un perfil de risc/rendiment poc atractiu ara mateix. Reforço QQQ perquè el moment del sector tecnològic i semiconductors continua sòlid (Nasdaq +29% a un any, IA com a motor estructural) i obro una posició tàctica en XLE per capturar el repunt del petroli lligat a la tensió a l'estret d'Hormuz, sense trencar la diversificació general de la cartera. Mantinc SPY, VGK i GLD intactes perquè continuen complint bé el seu paper de nucli i cobertura.",
-      "impacte": 0.0
+      "impacte": -0.07
     },
     {
       "setmana": 13,
@@ -4003,7 +4729,7 @@
       "pesDespres": null,
       "import": 479.52,
       "motiu": "Liquido la posició residual de TLT (ja pràcticament simbòlica) i redueixo IEF perquè la pujada del bo japonès a 30 anys i el context de tipus EUA encara alts (4.7%) fan que la renda fixa de duració mitjana-llarga tingui un perfil de risc/rendiment poc atractiu ara mateix. Reforço QQQ perquè el moment del sector tecnològic i semiconductors continua sòlid (Nasdaq +29% a un any, IA com a motor estructural) i obro una posició tàctica en XLE per capturar el repunt del petroli lligat a la tensió a l'estret d'Hormuz, sense trencar la diversificació general de la cartera. Mantinc SPY, VGK i GLD intactes perquè continuen complint bé el seu paper de nucli i cobertura.",
-      "impacte": 0.0
+      "impacte": -0.07
     },
     {
       "setmana": 13,
@@ -4015,7 +4741,7 @@
       "pesDespres": null,
       "import": 699.3,
       "motiu": "1) Redueixo totalment la durada llarga (TLT) perquè el mix ‘oil-up + yields globals en pujada’ és advers per a bons 20+ anys en un horitzó de 4-5 mesos. 2) Afegeixo XLE per capturar el rally d’energia impulsat per risc geopolític i com a cobertura d’inflació; complementa bé la nostra sobreexposició a tecnologia/semis i històricament té correlació negativa amb sorpreses d’inflació. 3) Substitueixo part del coixí de bons per TIP: manté rol defensiu però amb protecció davant repunts d’inflació, minimitzant la sensibilitat a pujades de tipus reals. 4) Mantinc el nucli d’IA/semis (QQQ, SMH, NVDA) perquè el cicle d’inversió (capex en data centers, memòria, equips) continua fort —les pujades recents en ASML/AMD/Samsung ho confirmen— i és on veig el millor potencial de beneficis a curt termini. 5) Conservo GLD: amb VIX baix però risc geopolític alt, l’or és una assegurança barata que ja està mostrant momentum.",
-      "impacte": 0.0
+      "impacte": -1.4
     },
     {
       "setmana": 13,
@@ -4027,7 +4753,7 @@
       "pesDespres": null,
       "import": 699.3,
       "motiu": "1) Redueixo totalment la durada llarga (TLT) perquè el mix ‘oil-up + yields globals en pujada’ és advers per a bons 20+ anys en un horitzó de 4-5 mesos. 2) Afegeixo XLE per capturar el rally d’energia impulsat per risc geopolític i com a cobertura d’inflació; complementa bé la nostra sobreexposició a tecnologia/semis i històricament té correlació negativa amb sorpreses d’inflació. 3) Substitueixo part del coixí de bons per TIP: manté rol defensiu però amb protecció davant repunts d’inflació, minimitzant la sensibilitat a pujades de tipus reals. 4) Mantinc el nucli d’IA/semis (QQQ, SMH, NVDA) perquè el cicle d’inversió (capex en data centers, memòria, equips) continua fort —les pujades recents en ASML/AMD/Samsung ho confirmen— i és on veig el millor potencial de beneficis a curt termini. 5) Conservo GLD: amb VIX baix però risc geopolític alt, l’or és una assegurança barata que ja està mostrant momentum.",
-      "impacte": 0.0
+      "impacte": -1.4
     },
     {
       "setmana": 13,
@@ -4039,7 +4765,7 @@
       "pesDespres": null,
       "import": 396.55,
       "motiu": "1) Redueixo totalment la durada llarga (TLT) perquè el mix ‘oil-up + yields globals en pujada’ és advers per a bons 20+ anys en un horitzó de 4-5 mesos. 2) Afegeixo XLE per capturar el rally d’energia impulsat per risc geopolític i com a cobertura d’inflació; complementa bé la nostra sobreexposició a tecnologia/semis i històricament té correlació negativa amb sorpreses d’inflació. 3) Substitueixo part del coixí de bons per TIP: manté rol defensiu però amb protecció davant repunts d’inflació, minimitzant la sensibilitat a pujades de tipus reals. 4) Mantinc el nucli d’IA/semis (QQQ, SMH, NVDA) perquè el cicle d’inversió (capex en data centers, memòria, equips) continua fort —les pujades recents en ASML/AMD/Samsung ho confirmen— i és on veig el millor potencial de beneficis a curt termini. 5) Conservo GLD: amb VIX baix però risc geopolític alt, l’or és una assegurança barata que ja està mostrant momentum.",
-      "impacte": 0.0
+      "impacte": -1.4
     },
     {
       "setmana": 13,
@@ -4051,7 +4777,7 @@
       "pesDespres": null,
       "import": 396.55,
       "motiu": "1) Redueixo totalment la durada llarga (TLT) perquè el mix ‘oil-up + yields globals en pujada’ és advers per a bons 20+ anys en un horitzó de 4-5 mesos. 2) Afegeixo XLE per capturar el rally d’energia impulsat per risc geopolític i com a cobertura d’inflació; complementa bé la nostra sobreexposició a tecnologia/semis i històricament té correlació negativa amb sorpreses d’inflació. 3) Substitueixo part del coixí de bons per TIP: manté rol defensiu però amb protecció davant repunts d’inflació, minimitzant la sensibilitat a pujades de tipus reals. 4) Mantinc el nucli d’IA/semis (QQQ, SMH, NVDA) perquè el cicle d’inversió (capex en data centers, memòria, equips) continua fort —les pujades recents en ASML/AMD/Samsung ho confirmen— i és on veig el millor potencial de beneficis a curt termini. 5) Conservo GLD: amb VIX baix però risc geopolític alt, l’or és una assegurança barata que ja està mostrant momentum.",
-      "impacte": 0.0
+      "impacte": -1.4
     },
     {
       "setmana": 13,
@@ -4063,7 +4789,7 @@
       "pesDespres": null,
       "import": 1196.9,
       "motiu": "La decisió de reajustar la cartera es fonamenta en la necessitat d'adaptar-se a les dinàmiques actuals del mercat i notícies rellevants, mantenint un enfocament proactiu per maximitzar la rendibilitat en el curt termini del torneig.   1.  **Venda d'AMZN i part de MSFT:** Amazon ha mostrat un rendiment negatiu aquesta setmana (-4.4%), i el context de desacceleració econòmica a la Xina (notícia 11) i les preocupacions generals sobre el consum global fan que reduir l'exposició a aquest tipus d'actius sigui prudent. Microsoft també ha tingut un lleuger retrocés (-1.0%), i vendre'n una part allibera capital per a oportunitats amb un major impuls. 2.  **Compra de 005930.KS (Samsung Electronics):** Aquesta acció ha mostrat una fortalesa increïble, amb un augment del +19.3% aquesta setmana i gairebé un +300% en un any. Com a líder en semiconductors i electrònica, representa una aposta d'alt creixement que s'adapta bé a l'objectiu de rendibilitat en el curt termini. 3.  **Compra d'OIH (Serveis Petroliers):** Les notícies sobre la tensió a l'Estret d'Ormuz i el risc d'un conflicte amb l'Iran (notícies 2 i 10) són un fort catalitzador per a l'augment dels preus del petroli. L'ETF OIH, que inverteix en empreses de serveis petroliers, està en una posició privilegiada per beneficiar-se'n, com demostra el seu +8.5% setmanal i +82.1% anual. Aquesta és una aposta tàctica clara davant la situació geopolítica actual. 4.  **Compra de GLD (Or físic):** L'or és un actiu refugi històric en moments d'incertesa geopolítica. La possible escalada a l'Orient Mitjà justifica augmentar la meva petita exposició a l'or per protegir la cartera i aprofitar el seu potencial d'apreciació davant l'augment del risc global. A més, l'or pot actuar com a cobertura contra una potencial inflació induïda per l'energia si els preus del petroli es disparen.  Aquestes operacions busquen un equilibri entre el creixement d'alt rendiment (Samsung), la protecció contra riscos geopolítics (Or) i l'explotació de tendències clares de mercat (Petroli) en el curt termini que ens queda de torneig.",
-      "impacte": 0.0
+      "impacte": -1.12
     },
     {
       "setmana": 13,
@@ -4075,7 +4801,7 @@
       "pesDespres": null,
       "import": 500.0,
       "motiu": "La decisió de reajustar la cartera es fonamenta en la necessitat d'adaptar-se a les dinàmiques actuals del mercat i notícies rellevants, mantenint un enfocament proactiu per maximitzar la rendibilitat en el curt termini del torneig.   1.  **Venda d'AMZN i part de MSFT:** Amazon ha mostrat un rendiment negatiu aquesta setmana (-4.4%), i el context de desacceleració econòmica a la Xina (notícia 11) i les preocupacions generals sobre el consum global fan que reduir l'exposició a aquest tipus d'actius sigui prudent. Microsoft també ha tingut un lleuger retrocés (-1.0%), i vendre'n una part allibera capital per a oportunitats amb un major impuls. 2.  **Compra de 005930.KS (Samsung Electronics):** Aquesta acció ha mostrat una fortalesa increïble, amb un augment del +19.3% aquesta setmana i gairebé un +300% en un any. Com a líder en semiconductors i electrònica, representa una aposta d'alt creixement que s'adapta bé a l'objectiu de rendibilitat en el curt termini. 3.  **Compra d'OIH (Serveis Petroliers):** Les notícies sobre la tensió a l'Estret d'Ormuz i el risc d'un conflicte amb l'Iran (notícies 2 i 10) són un fort catalitzador per a l'augment dels preus del petroli. L'ETF OIH, que inverteix en empreses de serveis petroliers, està en una posició privilegiada per beneficiar-se'n, com demostra el seu +8.5% setmanal i +82.1% anual. Aquesta és una aposta tàctica clara davant la situació geopolítica actual. 4.  **Compra de GLD (Or físic):** L'or és un actiu refugi històric en moments d'incertesa geopolítica. La possible escalada a l'Orient Mitjà justifica augmentar la meva petita exposició a l'or per protegir la cartera i aprofitar el seu potencial d'apreciació davant l'augment del risc global. A més, l'or pot actuar com a cobertura contra una potencial inflació induïda per l'energia si els preus del petroli es disparen.  Aquestes operacions busquen un equilibri entre el creixement d'alt rendiment (Samsung), la protecció contra riscos geopolítics (Or) i l'explotació de tendències clares de mercat (Petroli) en el curt termini que ens queda de torneig.",
-      "impacte": 0.0
+      "impacte": -1.12
     },
     {
       "setmana": 13,
@@ -4087,7 +4813,7 @@
       "pesDespres": null,
       "import": 1000.0,
       "motiu": "La decisió de reajustar la cartera es fonamenta en la necessitat d'adaptar-se a les dinàmiques actuals del mercat i notícies rellevants, mantenint un enfocament proactiu per maximitzar la rendibilitat en el curt termini del torneig.   1.  **Venda d'AMZN i part de MSFT:** Amazon ha mostrat un rendiment negatiu aquesta setmana (-4.4%), i el context de desacceleració econòmica a la Xina (notícia 11) i les preocupacions generals sobre el consum global fan que reduir l'exposició a aquest tipus d'actius sigui prudent. Microsoft també ha tingut un lleuger retrocés (-1.0%), i vendre'n una part allibera capital per a oportunitats amb un major impuls. 2.  **Compra de 005930.KS (Samsung Electronics):** Aquesta acció ha mostrat una fortalesa increïble, amb un augment del +19.3% aquesta setmana i gairebé un +300% en un any. Com a líder en semiconductors i electrònica, representa una aposta d'alt creixement que s'adapta bé a l'objectiu de rendibilitat en el curt termini. 3.  **Compra d'OIH (Serveis Petroliers):** Les notícies sobre la tensió a l'Estret d'Ormuz i el risc d'un conflicte amb l'Iran (notícies 2 i 10) són un fort catalitzador per a l'augment dels preus del petroli. L'ETF OIH, que inverteix en empreses de serveis petroliers, està en una posició privilegiada per beneficiar-se'n, com demostra el seu +8.5% setmanal i +82.1% anual. Aquesta és una aposta tàctica clara davant la situació geopolítica actual. 4.  **Compra de GLD (Or físic):** L'or és un actiu refugi històric en moments d'incertesa geopolítica. La possible escalada a l'Orient Mitjà justifica augmentar la meva petita exposició a l'or per protegir la cartera i aprofitar el seu potencial d'apreciació davant l'augment del risc global. A més, l'or pot actuar com a cobertura contra una potencial inflació induïda per l'energia si els preus del petroli es disparen.  Aquestes operacions busquen un equilibri entre el creixement d'alt rendiment (Samsung), la protecció contra riscos geopolítics (Or) i l'explotació de tendències clares de mercat (Petroli) en el curt termini que ens queda de torneig.",
-      "impacte": 0.0
+      "impacte": -1.12
     },
     {
       "setmana": 13,
@@ -4099,7 +4825,7 @@
       "pesDespres": null,
       "import": 500.0,
       "motiu": "La decisió de reajustar la cartera es fonamenta en la necessitat d'adaptar-se a les dinàmiques actuals del mercat i notícies rellevants, mantenint un enfocament proactiu per maximitzar la rendibilitat en el curt termini del torneig.   1.  **Venda d'AMZN i part de MSFT:** Amazon ha mostrat un rendiment negatiu aquesta setmana (-4.4%), i el context de desacceleració econòmica a la Xina (notícia 11) i les preocupacions generals sobre el consum global fan que reduir l'exposició a aquest tipus d'actius sigui prudent. Microsoft també ha tingut un lleuger retrocés (-1.0%), i vendre'n una part allibera capital per a oportunitats amb un major impuls. 2.  **Compra de 005930.KS (Samsung Electronics):** Aquesta acció ha mostrat una fortalesa increïble, amb un augment del +19.3% aquesta setmana i gairebé un +300% en un any. Com a líder en semiconductors i electrònica, representa una aposta d'alt creixement que s'adapta bé a l'objectiu de rendibilitat en el curt termini. 3.  **Compra d'OIH (Serveis Petroliers):** Les notícies sobre la tensió a l'Estret d'Ormuz i el risc d'un conflicte amb l'Iran (notícies 2 i 10) són un fort catalitzador per a l'augment dels preus del petroli. L'ETF OIH, que inverteix en empreses de serveis petroliers, està en una posició privilegiada per beneficiar-se'n, com demostra el seu +8.5% setmanal i +82.1% anual. Aquesta és una aposta tàctica clara davant la situació geopolítica actual. 4.  **Compra de GLD (Or físic):** L'or és un actiu refugi històric en moments d'incertesa geopolítica. La possible escalada a l'Orient Mitjà justifica augmentar la meva petita exposició a l'or per protegir la cartera i aprofitar el seu potencial d'apreciació davant l'augment del risc global. A més, l'or pot actuar com a cobertura contra una potencial inflació induïda per l'energia si els preus del petroli es disparen.  Aquestes operacions busquen un equilibri entre el creixement d'alt rendiment (Samsung), la protecció contra riscos geopolítics (Or) i l'explotació de tendències clares de mercat (Petroli) en el curt termini que ens queda de torneig.",
-      "impacte": 0.0
+      "impacte": -1.12
     },
     {
       "setmana": 13,
@@ -4111,7 +4837,7 @@
       "pesDespres": null,
       "import": 200.0,
       "motiu": "La decisió de reajustar la cartera es fonamenta en la necessitat d'adaptar-se a les dinàmiques actuals del mercat i notícies rellevants, mantenint un enfocament proactiu per maximitzar la rendibilitat en el curt termini del torneig.   1.  **Venda d'AMZN i part de MSFT:** Amazon ha mostrat un rendiment negatiu aquesta setmana (-4.4%), i el context de desacceleració econòmica a la Xina (notícia 11) i les preocupacions generals sobre el consum global fan que reduir l'exposició a aquest tipus d'actius sigui prudent. Microsoft també ha tingut un lleuger retrocés (-1.0%), i vendre'n una part allibera capital per a oportunitats amb un major impuls. 2.  **Compra de 005930.KS (Samsung Electronics):** Aquesta acció ha mostrat una fortalesa increïble, amb un augment del +19.3% aquesta setmana i gairebé un +300% en un any. Com a líder en semiconductors i electrònica, representa una aposta d'alt creixement que s'adapta bé a l'objectiu de rendibilitat en el curt termini. 3.  **Compra d'OIH (Serveis Petroliers):** Les notícies sobre la tensió a l'Estret d'Ormuz i el risc d'un conflicte amb l'Iran (notícies 2 i 10) són un fort catalitzador per a l'augment dels preus del petroli. L'ETF OIH, que inverteix en empreses de serveis petroliers, està en una posició privilegiada per beneficiar-se'n, com demostra el seu +8.5% setmanal i +82.1% anual. Aquesta és una aposta tàctica clara davant la situació geopolítica actual. 4.  **Compra de GLD (Or físic):** L'or és un actiu refugi històric en moments d'incertesa geopolítica. La possible escalada a l'Orient Mitjà justifica augmentar la meva petita exposició a l'or per protegir la cartera i aprofitar el seu potencial d'apreciació davant l'augment del risc global. A més, l'or pot actuar com a cobertura contra una potencial inflació induïda per l'energia si els preus del petroli es disparen.  Aquestes operacions busquen un equilibri entre el creixement d'alt rendiment (Samsung), la protecció contra riscos geopolítics (Or) i l'explotació de tendències clares de mercat (Petroli) en el curt termini que ens queda de torneig.",
-      "impacte": 0.0
+      "impacte": -1.12
     },
     {
       "setmana": 13,
@@ -4123,7 +4849,7 @@
       "pesDespres": null,
       "import": 600.0,
       "motiu": "Redueixo parcialment SMH (semiconductors) per alliberar 600 € i compro XLE (energia EUA), que està pujant amb força (+7,6% setmanal) i es beneficia directament del bloqueig de l'estret d'Ormuz i la pujada del petroli. Això redueix una mica la sobreponderació tecnològica i afegeix diversificació sectorial, mantenint un perfil de risc moderat. La resta de la cartera es manté intacta perquè segueixo confiant en la tecnologia a mitjà termini, però crec que és prudent prendre beneficis i cobrir-me davant un possible repunt de la inflació i l'energia.",
-      "impacte": 0.0
+      "impacte": -2.34
     },
     {
       "setmana": 13,
@@ -4135,7 +4861,7 @@
       "pesDespres": null,
       "import": 600.0,
       "motiu": "Redueixo parcialment SMH (semiconductors) per alliberar 600 € i compro XLE (energia EUA), que està pujant amb força (+7,6% setmanal) i es beneficia directament del bloqueig de l'estret d'Ormuz i la pujada del petroli. Això redueix una mica la sobreponderació tecnològica i afegeix diversificació sectorial, mantenint un perfil de risc moderat. La resta de la cartera es manté intacta perquè segueixo confiant en la tecnologia a mitjà termini, però crec que és prudent prendre beneficis i cobrir-me davant un possible repunt de la inflació i l'energia.",
-      "impacte": 0.0
+      "impacte": -2.34
     },
     {
       "setmana": 13,
@@ -4147,7 +4873,7 @@
       "pesDespres": null,
       "import": 499.5,
       "motiu": "1) **Reducció de semiconductors (SMH i NVDA)**: Tot i la seva fortalesa recent, la inflació persistent (titular 1) i les tensions geopolítiques (titular 2) podrien limitar el seu creixement. Vendre 500€ de SMH i 200€ de NVDA per reduir l'exposició al sector. 2) **Augment d'energia (XLE)**: Les tensions a l'Estret d'Hormuz (titular 2) podrien disparar els preus del petroli, beneficiant el sector energètic. Comprar 700€ de XLE (306.61€ actuals + 700€ = 1006.61€, 10.3% de la cartera). 3) **Reforç de l'or (GLD)**: Com a cobertura davant la incertesa geopolítica i la possible volatilitat dels mercats. Comprar 200€ de GLD (817.62€ actuals + 200€ = 1017.62€, 10.4% de la cartera). 4) **Reducció d'Europa (VGK)**: La desacceleració xinesa (titular 11) podria afectar les exportacions europees. Vendre 200€ de VGK per finançar la compra d'energia.",
-      "impacte": 0.0
+      "impacte": 0.26
     },
     {
       "setmana": 13,
@@ -4159,7 +4885,7 @@
       "pesDespres": null,
       "import": 499.5,
       "motiu": "1) **Reducció de semiconductors (SMH i NVDA)**: Tot i la seva fortalesa recent, la inflació persistent (titular 1) i les tensions geopolítiques (titular 2) podrien limitar el seu creixement. Vendre 500€ de SMH i 200€ de NVDA per reduir l'exposició al sector. 2) **Augment d'energia (XLE)**: Les tensions a l'Estret d'Hormuz (titular 2) podrien disparar els preus del petroli, beneficiant el sector energètic. Comprar 700€ de XLE (306.61€ actuals + 700€ = 1006.61€, 10.3% de la cartera). 3) **Reforç de l'or (GLD)**: Com a cobertura davant la incertesa geopolítica i la possible volatilitat dels mercats. Comprar 200€ de GLD (817.62€ actuals + 200€ = 1017.62€, 10.4% de la cartera). 4) **Reducció d'Europa (VGK)**: La desacceleració xinesa (titular 11) podria afectar les exportacions europees. Vendre 200€ de VGK per finançar la compra d'energia.",
-      "impacte": 0.0
+      "impacte": 0.26
     },
     {
       "setmana": 13,
@@ -4171,7 +4897,7 @@
       "pesDespres": null,
       "import": 199.8,
       "motiu": "1) **Reducció de semiconductors (SMH i NVDA)**: Tot i la seva fortalesa recent, la inflació persistent (titular 1) i les tensions geopolítiques (titular 2) podrien limitar el seu creixement. Vendre 500€ de SMH i 200€ de NVDA per reduir l'exposició al sector. 2) **Augment d'energia (XLE)**: Les tensions a l'Estret d'Hormuz (titular 2) podrien disparar els preus del petroli, beneficiant el sector energètic. Comprar 700€ de XLE (306.61€ actuals + 700€ = 1006.61€, 10.3% de la cartera). 3) **Reforç de l'or (GLD)**: Com a cobertura davant la incertesa geopolítica i la possible volatilitat dels mercats. Comprar 200€ de GLD (817.62€ actuals + 200€ = 1017.62€, 10.4% de la cartera). 4) **Reducció d'Europa (VGK)**: La desacceleració xinesa (titular 11) podria afectar les exportacions europees. Vendre 200€ de VGK per finançar la compra d'energia.",
-      "impacte": 0.0
+      "impacte": 0.26
     },
     {
       "setmana": 13,
@@ -4183,7 +4909,7 @@
       "pesDespres": null,
       "import": 199.8,
       "motiu": "1) **Reducció de semiconductors (SMH i NVDA)**: Tot i la seva fortalesa recent, la inflació persistent (titular 1) i les tensions geopolítiques (titular 2) podrien limitar el seu creixement. Vendre 500€ de SMH i 200€ de NVDA per reduir l'exposició al sector. 2) **Augment d'energia (XLE)**: Les tensions a l'Estret d'Hormuz (titular 2) podrien disparar els preus del petroli, beneficiant el sector energètic. Comprar 700€ de XLE (306.61€ actuals + 700€ = 1006.61€, 10.3% de la cartera). 3) **Reforç de l'or (GLD)**: Com a cobertura davant la incertesa geopolítica i la possible volatilitat dels mercats. Comprar 200€ de GLD (817.62€ actuals + 200€ = 1017.62€, 10.4% de la cartera). 4) **Reducció d'Europa (VGK)**: La desacceleració xinesa (titular 11) podria afectar les exportacions europees. Vendre 200€ de VGK per finançar la compra d'energia.",
-      "impacte": 0.0
+      "impacte": 0.26
     },
     {
       "setmana": 13,
@@ -4195,7 +4921,7 @@
       "pesDespres": null,
       "import": 199.8,
       "motiu": "1) **Reducció de semiconductors (SMH i NVDA)**: Tot i la seva fortalesa recent, la inflació persistent (titular 1) i les tensions geopolítiques (titular 2) podrien limitar el seu creixement. Vendre 500€ de SMH i 200€ de NVDA per reduir l'exposició al sector. 2) **Augment d'energia (XLE)**: Les tensions a l'Estret d'Hormuz (titular 2) podrien disparar els preus del petroli, beneficiant el sector energètic. Comprar 700€ de XLE (306.61€ actuals + 700€ = 1006.61€, 10.3% de la cartera). 3) **Reforç de l'or (GLD)**: Com a cobertura davant la incertesa geopolítica i la possible volatilitat dels mercats. Comprar 200€ de GLD (817.62€ actuals + 200€ = 1017.62€, 10.4% de la cartera). 4) **Reducció d'Europa (VGK)**: La desacceleració xinesa (titular 11) podria afectar les exportacions europees. Vendre 200€ de VGK per finançar la compra d'energia.",
-      "impacte": 0.0
+      "impacte": 0.26
     },
     {
       "setmana": 13,
@@ -4207,7 +4933,7 @@
       "pesDespres": null,
       "import": 199.8,
       "motiu": "1) **Reducció de semiconductors (SMH i NVDA)**: Tot i la seva fortalesa recent, la inflació persistent (titular 1) i les tensions geopolítiques (titular 2) podrien limitar el seu creixement. Vendre 500€ de SMH i 200€ de NVDA per reduir l'exposició al sector. 2) **Augment d'energia (XLE)**: Les tensions a l'Estret d'Hormuz (titular 2) podrien disparar els preus del petroli, beneficiant el sector energètic. Comprar 700€ de XLE (306.61€ actuals + 700€ = 1006.61€, 10.3% de la cartera). 3) **Reforç de l'or (GLD)**: Com a cobertura davant la incertesa geopolítica i la possible volatilitat dels mercats. Comprar 200€ de GLD (817.62€ actuals + 200€ = 1017.62€, 10.4% de la cartera). 4) **Reducció d'Europa (VGK)**: La desacceleració xinesa (titular 11) podria afectar les exportacions europees. Vendre 200€ de VGK per finançar la compra d'energia.",
-      "impacte": 0.0
+      "impacte": 0.26
     },
     {
       "setmana": 12,
@@ -4219,7 +4945,7 @@
       "pesDespres": null,
       "import": 783.1,
       "motiu": "1) Venc Europa (VGK) per risc macro específic (sequera greu i senyals de cansament a borsa) i baixo exposició a factors menys dinàmics. 2) Desfaig TIP perquè la caiguda del cru i el to macro afebleixen l’escenari d’inflació persistent; prefereixo risc direccional en IA. 3) Compro NVDA per sobrepès directe al líder d’acceleració d’IA (GPU/datacenter, demanda secular i marges elevats), potencialment més palanquejat que via ETF generalista. 4) Afegeixo a SMH per reforçar el tema semis amb diversificació dins la cadena (foundries, equips, disseny), capturant el rebot post correcció del darrer mes. Mantinc GLD i TLT com a coixins davant sorpreses de creixement o geopolítica. Amb 20 setmanes per davant, busco maximitzar el tram final d’IA sense trencar el perfil de risc.",
-      "impacte": 0.22
+      "impacte": -1.18
     },
     {
       "setmana": 12,
@@ -4231,7 +4957,7 @@
       "pesDespres": null,
       "import": 783.1,
       "motiu": "1) Venc Europa (VGK) per risc macro específic (sequera greu i senyals de cansament a borsa) i baixo exposició a factors menys dinàmics. 2) Desfaig TIP perquè la caiguda del cru i el to macro afebleixen l’escenari d’inflació persistent; prefereixo risc direccional en IA. 3) Compro NVDA per sobrepès directe al líder d’acceleració d’IA (GPU/datacenter, demanda secular i marges elevats), potencialment més palanquejat que via ETF generalista. 4) Afegeixo a SMH per reforçar el tema semis amb diversificació dins la cadena (foundries, equips, disseny), capturant el rebot post correcció del darrer mes. Mantinc GLD i TLT com a coixins davant sorpreses de creixement o geopolítica. Amb 20 setmanes per davant, busco maximitzar el tram final d’IA sense trencar el perfil de risc.",
-      "impacte": 0.22
+      "impacte": -1.18
     },
     {
       "setmana": 12,
@@ -4243,7 +4969,7 @@
       "pesDespres": null,
       "import": 350.62,
       "motiu": "1) Venc Europa (VGK) per risc macro específic (sequera greu i senyals de cansament a borsa) i baixo exposició a factors menys dinàmics. 2) Desfaig TIP perquè la caiguda del cru i el to macro afebleixen l’escenari d’inflació persistent; prefereixo risc direccional en IA. 3) Compro NVDA per sobrepès directe al líder d’acceleració d’IA (GPU/datacenter, demanda secular i marges elevats), potencialment més palanquejat que via ETF generalista. 4) Afegeixo a SMH per reforçar el tema semis amb diversificació dins la cadena (foundries, equips, disseny), capturant el rebot post correcció del darrer mes. Mantinc GLD i TLT com a coixins davant sorpreses de creixement o geopolítica. Amb 20 setmanes per davant, busco maximitzar el tram final d’IA sense trencar el perfil de risc.",
-      "impacte": 0.22
+      "impacte": -1.18
     },
     {
       "setmana": 12,
@@ -4255,7 +4981,7 @@
       "pesDespres": null,
       "import": 350.62,
       "motiu": "1) Venc Europa (VGK) per risc macro específic (sequera greu i senyals de cansament a borsa) i baixo exposició a factors menys dinàmics. 2) Desfaig TIP perquè la caiguda del cru i el to macro afebleixen l’escenari d’inflació persistent; prefereixo risc direccional en IA. 3) Compro NVDA per sobrepès directe al líder d’acceleració d’IA (GPU/datacenter, demanda secular i marges elevats), potencialment més palanquejat que via ETF generalista. 4) Afegeixo a SMH per reforçar el tema semis amb diversificació dins la cadena (foundries, equips, disseny), capturant el rebot post correcció del darrer mes. Mantinc GLD i TLT com a coixins davant sorpreses de creixement o geopolítica. Amb 20 setmanes per davant, busco maximitzar el tram final d’IA sense trencar el perfil de risc.",
-      "impacte": 0.22
+      "impacte": -1.18
     },
     {
       "setmana": 12,
@@ -4267,7 +4993,7 @@
       "pesDespres": null,
       "import": 1000.0,
       "motiu": "La decisió de reajustar la cartera es fonamenta en la necessitat d'adaptar-se a les dinàmiques actuals del mercat i notícies rellevants, mantenint un enfocament en el creixement per al curt termini que queda del torneig. Primer, reduiré l'exposició a VGK (Europa) en 1.000 € davant les notícies negatives sobre la sequera a Europa (10), que podrien llastrar el creixement econòmic de la regió. Segon, destinaré 500 € a l'ETF SMH (Semiconductors VanEck). Aquest sector ha mostrat un rendiment excepcional (+7.8% aquesta setmana, +101.4% l'últim any) i continua sent un motor clau d'innovació i creixement, aliniant-se amb la meva estratègia de buscar rendibilitat. Els semiconductors són fonamentals per a la tecnologia i la IA, camps amb gran potencial. Finalment, invertiré 500 € en GDX (Mineres d'or), que ha tingut una setmana molt forta (+21.3%). Aquesta operació respon a la possible renovació de les pressions inflacionistes a causa de la situació a l'Estret d'Ormuz (7) i a la incertesa econòmica global suggerida per la pèrdua de llocs de treball als EUA (1). Les mineres d'or poden actuar com a cobertura contra la inflació i la volatilitat, a més de capitalitzar el fort impuls recent. Aquest reajustament busca optimitzar la cartera per capturar el creixement tecnològic mentre es manté una cobertura contra riscos macroeconòmics.",
-      "impacte": -0.82
+      "impacte": -1.92
     },
     {
       "setmana": 12,
@@ -4279,7 +5005,7 @@
       "pesDespres": null,
       "import": 500.0,
       "motiu": "La decisió de reajustar la cartera es fonamenta en la necessitat d'adaptar-se a les dinàmiques actuals del mercat i notícies rellevants, mantenint un enfocament en el creixement per al curt termini que queda del torneig. Primer, reduiré l'exposició a VGK (Europa) en 1.000 € davant les notícies negatives sobre la sequera a Europa (10), que podrien llastrar el creixement econòmic de la regió. Segon, destinaré 500 € a l'ETF SMH (Semiconductors VanEck). Aquest sector ha mostrat un rendiment excepcional (+7.8% aquesta setmana, +101.4% l'últim any) i continua sent un motor clau d'innovació i creixement, aliniant-se amb la meva estratègia de buscar rendibilitat. Els semiconductors són fonamentals per a la tecnologia i la IA, camps amb gran potencial. Finalment, invertiré 500 € en GDX (Mineres d'or), que ha tingut una setmana molt forta (+21.3%). Aquesta operació respon a la possible renovació de les pressions inflacionistes a causa de la situació a l'Estret d'Ormuz (7) i a la incertesa econòmica global suggerida per la pèrdua de llocs de treball als EUA (1). Les mineres d'or poden actuar com a cobertura contra la inflació i la volatilitat, a més de capitalitzar el fort impuls recent. Aquest reajustament busca optimitzar la cartera per capturar el creixement tecnològic mentre es manté una cobertura contra riscos macroeconòmics.",
-      "impacte": -0.82
+      "impacte": -1.92
     },
     {
       "setmana": 12,
@@ -4291,7 +5017,7 @@
       "pesDespres": null,
       "import": 500.0,
       "motiu": "La decisió de reajustar la cartera es fonamenta en la necessitat d'adaptar-se a les dinàmiques actuals del mercat i notícies rellevants, mantenint un enfocament en el creixement per al curt termini que queda del torneig. Primer, reduiré l'exposició a VGK (Europa) en 1.000 € davant les notícies negatives sobre la sequera a Europa (10), que podrien llastrar el creixement econòmic de la regió. Segon, destinaré 500 € a l'ETF SMH (Semiconductors VanEck). Aquest sector ha mostrat un rendiment excepcional (+7.8% aquesta setmana, +101.4% l'últim any) i continua sent un motor clau d'innovació i creixement, aliniant-se amb la meva estratègia de buscar rendibilitat. Els semiconductors són fonamentals per a la tecnologia i la IA, camps amb gran potencial. Finalment, invertiré 500 € en GDX (Mineres d'or), que ha tingut una setmana molt forta (+21.3%). Aquesta operació respon a la possible renovació de les pressions inflacionistes a causa de la situació a l'Estret d'Ormuz (7) i a la incertesa econòmica global suggerida per la pèrdua de llocs de treball als EUA (1). Les mineres d'or poden actuar com a cobertura contra la inflació i la volatilitat, a més de capitalitzar el fort impuls recent. Aquest reajustament busca optimitzar la cartera per capturar el creixement tecnològic mentre es manté una cobertura contra riscos macroeconòmics.",
-      "impacte": -0.82
+      "impacte": -1.92
     },
     {
       "setmana": 12,
@@ -4303,7 +5029,7 @@
       "pesDespres": null,
       "import": 2054.02,
       "motiu": "Venc tota la posició en VGK (Europa) perquè ha tingut un rendiment inferior al dels EUA i el context global (dèbil economia europea, sequera) no afavoreix el vell continent. Amb els diners, compro SMH (semiconductors), que ha pujat un 7.8% aquesta setmana i un 101.4% en l'últim any, i es beneficia directament del rebot de la IA i els xips. Així, augmento l'exposició al sector més dinàmic sense superar el límit del 40% per ETF (SMH quedarà al 20.6%). El risc és alt perquè els semiconductors són volàtils, però l'horitzó de 20 setmanes i el momentum actual justifiquen aquesta aposta agressiva.",
-      "impacte": 0.24
+      "impacte": -2.1
     },
     {
       "setmana": 12,
@@ -4315,7 +5041,7 @@
       "pesDespres": null,
       "import": 2054.02,
       "motiu": "Venc tota la posició en VGK (Europa) perquè ha tingut un rendiment inferior al dels EUA i el context global (dèbil economia europea, sequera) no afavoreix el vell continent. Amb els diners, compro SMH (semiconductors), que ha pujat un 7.8% aquesta setmana i un 101.4% en l'últim any, i es beneficia directament del rebot de la IA i els xips. Així, augmento l'exposició al sector més dinàmic sense superar el límit del 40% per ETF (SMH quedarà al 20.6%). El risc és alt perquè els semiconductors són volàtils, però l'horitzó de 20 setmanes i el momentum actual justifiquen aquesta aposta agressiva.",
-      "impacte": 0.24
+      "impacte": -2.1
     },
     {
       "setmana": 12,
@@ -4327,7 +5053,7 @@
       "pesDespres": null,
       "import": 499.5,
       "motiu": "1) **Augment d'exposició a semiconductors (SMH i NVDA)**: Els semiconductors han mostrat fortalesa recent (SMH +7.8% setmanal, NVDA +11.5%) i són clau en la transició tecnològica. La rotació des de renda fixa (IEF) i consum bàsic (XLP) busca aprofitar aquest momentum sense superar els límits de concentració. 2) **Reforç de l'or (GLD)**: L'or ha tingut un bon comportament (+7.2% setmanal) i actua com a cobertura davant la incertesa econòmica i geopolítica. La venda de TLT (bons llargs) es justifica per la seva baixa rendibilitat en un context de possible repunt inflacionari. 3) **Reducció de renda fixa**: Els bons (IEF i TLT) ofereixen rendibilitats baixes i estan exposats a riscos de tipus d'interès. La rotació cap a actius amb més potencial de revalorització (semiconductors i or) és coherent amb l'horitzó temporal curt del torneig.",
-      "impacte": 0.07
+      "impacte": 0.32
     },
     {
       "setmana": 12,
@@ -4339,7 +5065,7 @@
       "pesDespres": null,
       "import": 499.5,
       "motiu": "1) **Augment d'exposició a semiconductors (SMH i NVDA)**: Els semiconductors han mostrat fortalesa recent (SMH +7.8% setmanal, NVDA +11.5%) i són clau en la transició tecnològica. La rotació des de renda fixa (IEF) i consum bàsic (XLP) busca aprofitar aquest momentum sense superar els límits de concentració. 2) **Reforç de l'or (GLD)**: L'or ha tingut un bon comportament (+7.2% setmanal) i actua com a cobertura davant la incertesa econòmica i geopolítica. La venda de TLT (bons llargs) es justifica per la seva baixa rendibilitat en un context de possible repunt inflacionari. 3) **Reducció de renda fixa**: Els bons (IEF i TLT) ofereixen rendibilitats baixes i estan exposats a riscos de tipus d'interès. La rotació cap a actius amb més potencial de revalorització (semiconductors i or) és coherent amb l'horitzó temporal curt del torneig.",
-      "impacte": 0.07
+      "impacte": 0.32
     },
     {
       "setmana": 12,
@@ -4351,7 +5077,7 @@
       "pesDespres": null,
       "import": 335.33,
       "motiu": "1) **Augment d'exposició a semiconductors (SMH i NVDA)**: Els semiconductors han mostrat fortalesa recent (SMH +7.8% setmanal, NVDA +11.5%) i són clau en la transició tecnològica. La rotació des de renda fixa (IEF) i consum bàsic (XLP) busca aprofitar aquest momentum sense superar els límits de concentració. 2) **Reforç de l'or (GLD)**: L'or ha tingut un bon comportament (+7.2% setmanal) i actua com a cobertura davant la incertesa econòmica i geopolítica. La venda de TLT (bons llargs) es justifica per la seva baixa rendibilitat en un context de possible repunt inflacionari. 3) **Reducció de renda fixa**: Els bons (IEF i TLT) ofereixen rendibilitats baixes i estan exposats a riscos de tipus d'interès. La rotació cap a actius amb més potencial de revalorització (semiconductors i or) és coherent amb l'horitzó temporal curt del torneig.",
-      "impacte": 0.07
+      "impacte": 0.32
     },
     {
       "setmana": 12,
@@ -4363,7 +5089,7 @@
       "pesDespres": null,
       "import": 335.33,
       "motiu": "1) **Augment d'exposició a semiconductors (SMH i NVDA)**: Els semiconductors han mostrat fortalesa recent (SMH +7.8% setmanal, NVDA +11.5%) i són clau en la transició tecnològica. La rotació des de renda fixa (IEF) i consum bàsic (XLP) busca aprofitar aquest momentum sense superar els límits de concentració. 2) **Reforç de l'or (GLD)**: L'or ha tingut un bon comportament (+7.2% setmanal) i actua com a cobertura davant la incertesa econòmica i geopolítica. La venda de TLT (bons llargs) es justifica per la seva baixa rendibilitat en un context de possible repunt inflacionari. 3) **Reducció de renda fixa**: Els bons (IEF i TLT) ofereixen rendibilitats baixes i estan exposats a riscos de tipus d'interès. La rotació cap a actius amb més potencial de revalorització (semiconductors i or) és coherent amb l'horitzó temporal curt del torneig.",
-      "impacte": 0.07
+      "impacte": 0.32
     },
     {
       "setmana": 12,
@@ -4375,7 +5101,7 @@
       "pesDespres": null,
       "import": 429.88,
       "motiu": "1) **Augment d'exposició a semiconductors (SMH i NVDA)**: Els semiconductors han mostrat fortalesa recent (SMH +7.8% setmanal, NVDA +11.5%) i són clau en la transició tecnològica. La rotació des de renda fixa (IEF) i consum bàsic (XLP) busca aprofitar aquest momentum sense superar els límits de concentració. 2) **Reforç de l'or (GLD)**: L'or ha tingut un bon comportament (+7.2% setmanal) i actua com a cobertura davant la incertesa econòmica i geopolítica. La venda de TLT (bons llargs) es justifica per la seva baixa rendibilitat en un context de possible repunt inflacionari. 3) **Reducció de renda fixa**: Els bons (IEF i TLT) ofereixen rendibilitats baixes i estan exposats a riscos de tipus d'interès. La rotació cap a actius amb més potencial de revalorització (semiconductors i or) és coherent amb l'horitzó temporal curt del torneig.",
-      "impacte": 0.07
+      "impacte": 0.32
     },
     {
       "setmana": 12,
@@ -4387,7 +5113,7 @@
       "pesDespres": null,
       "import": 429.88,
       "motiu": "1) **Augment d'exposició a semiconductors (SMH i NVDA)**: Els semiconductors han mostrat fortalesa recent (SMH +7.8% setmanal, NVDA +11.5%) i són clau en la transició tecnològica. La rotació des de renda fixa (IEF) i consum bàsic (XLP) busca aprofitar aquest momentum sense superar els límits de concentració. 2) **Reforç de l'or (GLD)**: L'or ha tingut un bon comportament (+7.2% setmanal) i actua com a cobertura davant la incertesa econòmica i geopolítica. La venda de TLT (bons llargs) es justifica per la seva baixa rendibilitat en un context de possible repunt inflacionari. 3) **Reducció de renda fixa**: Els bons (IEF i TLT) ofereixen rendibilitats baixes i estan exposats a riscos de tipus d'interès. La rotació cap a actius amb més potencial de revalorització (semiconductors i or) és coherent amb l'horitzó temporal curt del torneig.",
-      "impacte": 0.07
+      "impacte": 0.32
     },
     {
       "setmana": 11,
@@ -5719,9 +6445,9 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "pendent",
-        "ultimaExecucio": "Setmana 13 · 2026-08-17",
-        "ultimBriefing": "Liquido la posició residual de TLT (ja pràcticament simbòlica) i redueixo IEF perquè la pujada del bo japonès a 30 anys i el context de tipus EUA encara alts (4…"
+        "estat": "connectada",
+        "ultimaExecucio": "Setmana 14 · 2026-08-24",
+        "ultimBriefing": "Redueixo lleugerament QQQ (de 24.3% a ~18%) després d'una setmana de correcció clara i generalitzada en semiconductors i big tech, que crec reflecteix preocupac…"
       },
       {
         "id": "gpt",
@@ -5729,9 +6455,9 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "pendent",
-        "ultimaExecucio": "Setmana 13 · 2026-08-17",
-        "ultimBriefing": "1) Redueixo totalment la durada llarga (TLT) perquè el mix ‘oil-up + yields globals en pujada’ és advers per a bons 20+ anys en un horitzó de 4-5 mesos. 2) Afeg…"
+        "estat": "connectada",
+        "ultimaExecucio": "Setmana 14 · 2026-08-24",
+        "ultimBriefing": "Redueixo sensibilitat a tipus i una mica de solapament en semis/tech: SMH i QQQ han estat els grans perdedors amb rendiments a l’alça. Mantinc la tesi estructur…"
       },
       {
         "id": "gemini",
@@ -5739,9 +6465,9 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "pendent",
-        "ultimaExecucio": "Setmana 13 · 2026-08-17",
-        "ultimBriefing": "La decisió de reajustar la cartera es fonamenta en la necessitat d'adaptar-se a les dinàmiques actuals del mercat i notícies rellevants, mantenint un enfocament…"
+        "estat": "connectada",
+        "ultimaExecucio": "Setmana 14 · 2026-08-24",
+        "ultimBriefing": "La decisió de reajustar la cartera es fonamenta en l'anàlisi de la feblesa generalitzada del mercat de renda variable, especialment en els sectors tecnològic i …"
       },
       {
         "id": "deepseek",
@@ -5749,9 +6475,9 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "pendent",
-        "ultimaExecucio": "Setmana 13 · 2026-08-17",
-        "ultimBriefing": "Redueixo parcialment SMH (semiconductors) per alliberar 600 € i compro XLE (energia EUA), que està pujant amb força (+7,6% setmanal) i es beneficia directament …"
+        "estat": "connectada",
+        "ultimaExecucio": "Setmana 14 · 2026-08-24",
+        "ultimBriefing": "Redueixo QQQ en 600 € (el Nasdaq 100 ha caigut un 3.7% i la incertesa sobre valoracions tecnològiques persisteix) i SMH en 400 € (els semiconductors continuen s…"
       },
       {
         "id": "mistral",
@@ -5759,9 +6485,9 @@
         "model_api": "mistral-large-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "pendent",
-        "ultimaExecucio": "Setmana 13 · 2026-08-17",
-        "ultimBriefing": "1) **Reducció de semiconductors (SMH i NVDA)**: Tot i la seva fortalesa recent, la inflació persistent (titular 1) i les tensions geopolítiques (titular 2) podr…"
+        "estat": "connectada",
+        "ultimaExecucio": "Setmana 14 · 2026-08-24",
+        "ultimBriefing": "1) **Vendre LLY (1% de la cartera)**: Eli Lilly ha pujat un 82% en l'últim any i un 5% aquesta setmana, però el seu PER és elevat (superior a 50x). En un contex…"
       }
     ],
     "financeres": [
@@ -5781,42 +6507,42 @@
   },
   "risc": {
     "claude": {
-      "volatilitat": 11.77,
+      "volatilitat": 11.52,
       "max_caiguda": -4.05,
-      "sharpe": 0.35
+      "sharpe": 0.4
     },
     "gpt": {
-      "volatilitat": 17.25,
+      "volatilitat": 16.88,
       "max_caiguda": -5.52,
-      "sharpe": -0.04
+      "sharpe": -0.01
     },
     "gemini": {
       "volatilitat": 12.46,
       "max_caiguda": -3.73,
-      "sharpe": -1.02
+      "sharpe": -1.69
     },
     "deepseek": {
-      "volatilitat": 13.16,
+      "volatilitat": 12.88,
       "max_caiguda": -3.75,
-      "sharpe": -1.77
-    },
-    "mistral": {
-      "volatilitat": 10.54,
-      "max_caiguda": -4.21,
       "sharpe": -1.68
     },
+    "mistral": {
+      "volatilitat": 10.32,
+      "max_caiguda": -4.21,
+      "sharpe": -1.56
+    },
     "index": {
-      "volatilitat": 12.59,
+      "volatilitat": 12.31,
       "max_caiguda": -3.2,
-      "sharpe": -0.26
+      "sharpe": -0.19
     }
   },
   "comissions": {
-    "gpt": 9.6,
-    "claude": 5.8,
-    "gemini": 12.35,
-    "deepseek": 20.06,
-    "mistral": 13.93
+    "gpt": 12.39,
+    "claude": 7.06,
+    "gemini": 15.11,
+    "deepseek": 22.06,
+    "mistral": 15.72
   },
   "dividends": {},
   "consens": [
@@ -5828,23 +6554,23 @@
       "models": [
         {
           "model": "gpt",
-          "pes": 15.8
+          "pes": 15.7
         },
         {
           "model": "claude",
-          "pes": 20.2
+          "pes": 19.9
         },
         {
           "model": "gemini",
-          "pes": 20.5
+          "pes": 14.2
         },
         {
           "model": "deepseek",
-          "pes": 39.9
+          "pes": 40.1
         },
         {
           "model": "mistral",
-          "pes": 19.2
+          "pes": 18.8
         }
       ]
     },
@@ -5856,19 +6582,23 @@
       "models": [
         {
           "model": "gpt",
-          "pes": 15.5
+          "pes": 16.5
         },
         {
           "model": "claude",
-          "pes": 20.7
+          "pes": 21.7
         },
         {
           "model": "gemini",
-          "pes": 2.0
+          "pes": 7.0
+        },
+        {
+          "model": "deepseek",
+          "pes": 6.1
         },
         {
           "model": "mistral",
-          "pes": 10.4
+          "pes": 7.8
         }
       ]
     },
@@ -5880,19 +6610,19 @@
       "models": [
         {
           "model": "gpt",
-          "pes": 11.7
+          "pes": 7.2
         },
         {
           "model": "gemini",
-          "pes": 5.1
+          "pes": 2.8
         },
         {
           "model": "deepseek",
-          "pes": 14.6
+          "pes": 10.1
         },
         {
           "model": "mistral",
-          "pes": 6.9
+          "pes": 9.6
         }
       ]
     },
@@ -5904,19 +6634,19 @@
       "models": [
         {
           "model": "gpt",
-          "pes": 6.9
+          "pes": 7.2
         },
         {
           "model": "claude",
-          "pes": 4.8
+          "pes": 4.9
         },
         {
           "model": "deepseek",
-          "pes": 6.0
+          "pes": 10.4
         },
         {
           "model": "mistral",
-          "pes": 10.3
+          "pes": 5.4
         }
       ]
     },
@@ -5928,15 +6658,15 @@
       "models": [
         {
           "model": "gpt",
-          "pes": 32.0
+          "pes": 28.0
         },
         {
           "model": "claude",
-          "pes": 25.0
+          "pes": 18.0
         },
         {
           "model": "deepseek",
-          "pes": 29.9
+          "pes": 23.6
         }
       ]
     },
@@ -5952,11 +6682,31 @@
         },
         {
           "model": "gemini",
-          "pes": 10.5
+          "pes": 10.6
         },
         {
           "model": "mistral",
           "pes": 4.5
+        }
+      ]
+    },
+    {
+      "ticker": "XLV",
+      "nom": "Salut EUA",
+      "tipus": "etf",
+      "sector": "Salut",
+      "models": [
+        {
+          "model": "gpt",
+          "pes": 7.5
+        },
+        {
+          "model": "claude",
+          "pes": 6.3
+        },
+        {
+          "model": "mistral",
+          "pes": 3.2
         }
       ]
     },
@@ -5968,11 +6718,27 @@
       "models": [
         {
           "model": "gemini",
-          "pes": 13.0
+          "pes": 13.1
         },
         {
           "model": "mistral",
-          "pes": 7.4
+          "pes": 12.4
+        }
+      ]
+    },
+    {
+      "ticker": "GDX",
+      "nom": "Mineres d'or",
+      "tipus": "etf",
+      "sector": "Metalls preciosos",
+      "models": [
+        {
+          "model": "gpt",
+          "pes": 4.0
+        },
+        {
+          "model": "gemini",
+          "pes": 14.9
         }
       ]
     },
@@ -5984,11 +6750,11 @@
       "models": [
         {
           "model": "deepseek",
-          "pes": 9.6
+          "pes": 9.7
         },
         {
           "model": "mistral",
-          "pes": 5.5
+          "pes": 5.4
         }
       ]
     },
@@ -6000,11 +6766,11 @@
       "models": [
         {
           "model": "claude",
-          "pes": 9.0
+          "pes": 8.9
         },
         {
           "model": "mistral",
-          "pes": 5.1
+          "pes": 6.0
         }
       ]
     },
@@ -6016,11 +6782,11 @@
       "models": [
         {
           "model": "gpt",
-          "pes": 7.8
+          "pes": 7.5
         },
         {
           "model": "mistral",
-          "pes": 1.4
+          "pes": 1.3
         }
       ]
     },
@@ -6032,19 +6798,7 @@
       "models": [
         {
           "model": "gemini",
-          "pes": 15.4
-        }
-      ]
-    },
-    {
-      "ticker": "005930.KS",
-      "nom": "Samsung Electronics",
-      "tipus": "accio",
-      "sector": "Tecnologia",
-      "models": [
-        {
-          "model": "gemini",
-          "pes": 10.1
+          "pes": 12.2
         }
       ]
     },
@@ -6056,7 +6810,7 @@
       "models": [
         {
           "model": "mistral",
-          "pes": 9.3
+          "pes": 9.6
         }
       ]
     },
@@ -6068,19 +6822,19 @@
       "models": [
         {
           "model": "gemini",
-          "pes": 8.3
+          "pes": 8.1
         }
       ]
     },
     {
-      "ticker": "IGV",
-      "nom": "Programari EUA",
-      "tipus": "etf",
+      "ticker": "005930.KS",
+      "nom": "Samsung Electronics",
+      "tipus": "accio",
       "sector": "Tecnologia",
       "models": [
         {
-          "model": "gpt",
-          "pes": 6.5
+          "model": "gemini",
+          "pes": 6.6
         }
       ]
     },
@@ -6093,18 +6847,6 @@
         {
           "model": "mistral",
           "pes": 5.7
-        }
-      ]
-    },
-    {
-      "ticker": "GDX",
-      "nom": "Mineres d'or",
-      "tipus": "etf",
-      "sector": "Metalls preciosos",
-      "models": [
-        {
-          "model": "gemini",
-          "pes": 5.0
         }
       ]
     },
@@ -6133,6 +6875,18 @@
       ]
     },
     {
+      "ticker": "IGV",
+      "nom": "Programari EUA",
+      "tipus": "etf",
+      "sector": "Tecnologia",
+      "models": [
+        {
+          "model": "gpt",
+          "pes": 4.0
+        }
+      ]
+    },
+    {
       "ticker": "EWJ",
       "nom": "Japó",
       "tipus": "etf",
@@ -6140,19 +6894,7 @@
       "models": [
         {
           "model": "mistral",
-          "pes": 4.0
-        }
-      ]
-    },
-    {
-      "ticker": "TIP",
-      "nom": "Bons lligats a la inflació",
-      "tipus": "etf",
-      "sector": "Renda fixa",
-      "models": [
-        {
-          "model": "gpt",
-          "pes": 3.9
+          "pes": 3.8
         }
       ]
     },
@@ -6169,14 +6911,14 @@
       ]
     },
     {
-      "ticker": "XLV",
-      "nom": "Salut EUA",
+      "ticker": "IBB",
+      "nom": "Biotecnologia (Nasdaq)",
       "tipus": "etf",
       "sector": "Salut",
       "models": [
         {
-          "model": "mistral",
-          "pes": 3.1
+          "model": "gpt",
+          "pes": 2.5
         }
       ]
     },
@@ -6188,7 +6930,7 @@
       "models": [
         {
           "model": "mistral",
-          "pes": 2.1
+          "pes": 2.2
         }
       ]
     },
@@ -6203,47 +6945,36 @@
           "pes": 1.0
         }
       ]
-    },
-    {
-      "ticker": "LLY",
-      "nom": "Eli Lilly",
-      "tipus": "accio",
-      "sector": "Salut",
-      "models": [
-        {
-          "model": "mistral",
-          "pes": 0.9
-        }
-      ]
     }
   ],
   "exposicio": {
     "gpt": {
       "sectors": {
-        "Índexs principals": 47.8,
-        "Metalls preciosos": 15.5,
-        "IA i semiconductors": 11.7,
-        "Semiconductors": 7.8,
-        "Energia": 6.9,
-        "Tecnologia": 6.5,
-        "Renda fixa": 3.9
+        "Índexs principals": 43.7,
+        "Metalls preciosos": 20.5,
+        "Salut": 10.0,
+        "Semiconductors": 7.5,
+        "IA i semiconductors": 7.2,
+        "Energia": 7.2,
+        "Tecnologia": 4.0
       },
       "paisos": {
-        "Global": 92.3,
-        "EUA": 7.8
+        "Global": 92.6,
+        "EUA": 7.5
       },
       "tipus": {
-        "Fons (ETFs)": 92.3,
-        "Accions": 7.8
+        "Fons (ETFs)": 92.6,
+        "Accions": 7.5
       }
     },
     "claude": {
       "sectors": {
-        "Índexs principals": 45.2,
-        "Metalls preciosos": 20.7,
+        "Índexs principals": 37.9,
+        "Metalls preciosos": 21.7,
         "Mercats internacionals": 20.3,
-        "Renda fixa": 9.0,
-        "Energia": 4.8
+        "Renda fixa": 8.9,
+        "Salut": 6.3,
+        "Energia": 4.9
       },
       "paisos": {
         "Global": 100.0
@@ -6254,33 +6985,34 @@
     },
     "gemini": {
       "sectors": {
-        "Índexs principals": 35.9,
-        "Tecnologia": 18.4,
-        "Defensius": 17.7,
-        "Mercats internacionals": 10.5,
-        "Metalls preciosos": 7.0,
-        "IA i semiconductors": 5.1,
+        "Índexs principals": 26.4,
+        "Metalls preciosos": 21.9,
+        "Defensius": 17.8,
+        "Tecnologia": 14.7,
+        "Mercats internacionals": 10.6,
         "Energia": 5.0,
-        "Efectiu": 0.3
+        "IA i semiconductors": 2.8,
+        "Efectiu": 0.7
       },
       "paisos": {
-        "Global": 81.2,
-        "Corea del Sud": 10.1,
-        "EUA": 8.3,
-        "—": 0.3
+        "Global": 84.5,
+        "EUA": 8.1,
+        "Corea del Sud": 6.6,
+        "—": 0.7
       },
       "tipus": {
-        "Fons (ETFs)": 81.2,
-        "Accions": 18.4,
-        "Efectiu": 0.3
+        "Fons (ETFs)": 84.5,
+        "Accions": 14.7,
+        "Efectiu": 0.7
       }
     },
     "deepseek": {
       "sectors": {
-        "Índexs principals": 69.8,
-        "IA i semiconductors": 14.6,
-        "Dividends": 9.6,
-        "Energia": 6.0,
+        "Índexs principals": 63.7,
+        "Energia": 10.4,
+        "IA i semiconductors": 10.1,
+        "Dividends": 9.7,
+        "Metalls preciosos": 6.1,
         "Efectiu": 0.1
       },
       "paisos": {
@@ -6294,32 +7026,92 @@
     },
     "mistral": {
       "sectors": {
-        "Índexs principals": 19.2,
-        "Salut": 13.3,
-        "Metalls preciosos": 10.4,
-        "Energia": 10.3,
+        "Índexs principals": 18.8,
+        "Salut": 12.8,
+        "Defensius": 12.4,
         "Consum": 10.0,
-        "Mercats internacionals": 8.5,
-        "Defensius": 7.4,
-        "IA i semiconductors": 6.9,
-        "Dividends": 5.5,
-        "Renda fixa": 5.1,
-        "Tecnologia": 2.1,
-        "Semiconductors": 1.4
+        "IA i semiconductors": 9.6,
+        "Mercats internacionals": 8.3,
+        "Metalls preciosos": 7.8,
+        "Renda fixa": 6.0,
+        "Energia": 5.4,
+        "Dividends": 5.4,
+        "Tecnologia": 2.2,
+        "Semiconductors": 1.3
       },
       "paisos": {
-        "Global": 85.7,
-        "EUA": 7.7,
+        "Global": 86.5,
+        "EUA": 6.8,
         "Suïssa": 5.7,
         "Xina": 1.0
       },
       "tipus": {
-        "Fons (ETFs)": 85.7,
-        "Accions": 14.4
+        "Fons (ETFs)": 86.5,
+        "Accions": 13.5
       }
     }
   },
   "titulars": [
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "titular": "Singapore inflation hits highest in nearly two years, but undershoots expectations"
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "titular": "U.S. to unveil 'greatest financial offensive' against Iran as Tehran threatens ship seizures"
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "titular": "Bitcoin is great (for systemic theft of aid money)"
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "titular": "Gold, silver rally off ugly crash, but investors remain on edge"
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "titular": "Why is Ceigall India stock climbing today?"
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "titular": "Swiss industry fears tariff gap to European Union could hurt US exports"
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "titular": "The bond yield that could finally challenge stocks - SocGen"
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "titular": "There are six stocks that hedge funds and mutual funds are both overweight — and SpaceX is one"
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "titular": "El Ibex quiere recuperar los 20.000 puntos"
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "titular": "Bessent's bond gambit aimed at calming markets is instead stirring inflation worries"
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "titular": "Oil prices fall as investors await 'toughest' U.S. sanctions on Iran"
+    },
+    {
+      "setmana": 14,
+      "data": "2026-08-24",
+      "titular": "The great re-equitisation and the dollar"
+    },
     {
       "setmana": 13,
       "data": "2026-08-17",
