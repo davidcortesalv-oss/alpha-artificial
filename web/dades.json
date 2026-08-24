@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-08-24",
     "font": "real",
-    "generat": "2026-08-24T08:26",
+    "generat": "2026-08-24T22:00",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -161,7 +161,7 @@
       9976.28,
       9941.2,
       10015.01,
-      10021.47
+      10012.05
     ],
     "gpt": [
       9979.75,
@@ -188,7 +188,7 @@
       9948.71,
       9914.86,
       9960.94,
-      9965.83
+      9901.42
     ],
     "gemini": [
       9982.74,
@@ -215,7 +215,7 @@
       9718.82,
       9760.6,
       9861.25,
-      9777.04
+      9852.58
     ],
     "deepseek": [
       9983.74,
@@ -242,7 +242,7 @@
       9797.58,
       9737.94,
       9766.55,
-      9772.08
+      9714.15
     ],
     "mistral": [
       9979.75,
@@ -269,7 +269,7 @@
       9814.79,
       9761.3,
       9815.33,
-      9823.37
+      9805.69
     ],
     "index": [
       10000.0,
@@ -296,7 +296,7 @@
       10004.86,
       9919.97,
       9963.11,
-      9970.8
+      9943.2
     ]
   },
   "decisions": {
@@ -6445,7 +6445,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 14 · 2026-08-24",
         "ultimBriefing": "Redueixo lleugerament QQQ (de 24.3% a ~18%) després d'una setmana de correcció clara i generalitzada en semiconductors i big tech, que crec reflecteix preocupac…"
       },
@@ -6455,7 +6455,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 14 · 2026-08-24",
         "ultimBriefing": "Redueixo sensibilitat a tipus i una mica de solapament en semis/tech: SMH i QQQ han estat els grans perdedors amb rendiments a l’alça. Mantinc la tesi estructur…"
       },
@@ -6465,7 +6465,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 14 · 2026-08-24",
         "ultimBriefing": "La decisió de reajustar la cartera es fonamenta en l'anàlisi de la feblesa generalitzada del mercat de renda variable, especialment en els sectors tecnològic i …"
       },
@@ -6475,7 +6475,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 14 · 2026-08-24",
         "ultimBriefing": "Redueixo QQQ en 600 € (el Nasdaq 100 ha caigut un 3.7% i la incertesa sobre valoracions tecnològiques persisteix) i SMH en 400 € (els semiconductors continuen s…"
       },
@@ -6485,7 +6485,7 @@
         "model_api": "mistral-large-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 14 · 2026-08-24",
         "ultimBriefing": "1) **Vendre LLY (1% de la cartera)**: Eli Lilly ha pujat un 82% en l'últim any i un 5% aquesta setmana, però el seu PER és elevat (superior a 50x). En un contex…"
       }
@@ -6509,32 +6509,32 @@
     "claude": {
       "volatilitat": 11.52,
       "max_caiguda": -4.05,
-      "sharpe": 0.4
+      "sharpe": 0.31
     },
     "gpt": {
-      "volatilitat": 16.88,
+      "volatilitat": 16.98,
       "max_caiguda": -5.52,
-      "sharpe": -0.01
+      "sharpe": -0.41
     },
     "gemini": {
-      "volatilitat": 12.46,
+      "volatilitat": 12.19,
       "max_caiguda": -3.73,
-      "sharpe": -1.69
+      "sharpe": -1.07
     },
     "deepseek": {
-      "volatilitat": 12.88,
-      "max_caiguda": -3.75,
-      "sharpe": -1.68
+      "volatilitat": 12.95,
+      "max_caiguda": -3.78,
+      "sharpe": -2.16
     },
     "mistral": {
-      "volatilitat": 10.32,
+      "volatilitat": 10.31,
       "max_caiguda": -4.21,
-      "sharpe": -1.56
+      "sharpe": -1.74
     },
     "index": {
-      "volatilitat": 12.31,
+      "volatilitat": 12.32,
       "max_caiguda": -3.2,
-      "sharpe": -0.19
+      "sharpe": -0.43
     }
   },
   "comissions": {
