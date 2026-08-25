@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-08-24",
     "font": "real",
-    "generat": "2026-08-24T22:00",
+    "generat": "2026-08-25T09:21",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -6445,7 +6445,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 14 · 2026-08-24",
         "ultimBriefing": "Redueixo lleugerament QQQ (de 24.3% a ~18%) després d'una setmana de correcció clara i generalitzada en semiconductors i big tech, que crec reflecteix preocupac…"
       },
@@ -6455,7 +6455,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 14 · 2026-08-24",
         "ultimBriefing": "Redueixo sensibilitat a tipus i una mica de solapament en semis/tech: SMH i QQQ han estat els grans perdedors amb rendiments a l’alça. Mantinc la tesi estructur…"
       },
@@ -6465,7 +6465,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 14 · 2026-08-24",
         "ultimBriefing": "La decisió de reajustar la cartera es fonamenta en l'anàlisi de la feblesa generalitzada del mercat de renda variable, especialment en els sectors tecnològic i …"
       },
@@ -6475,7 +6475,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 14 · 2026-08-24",
         "ultimBriefing": "Redueixo QQQ en 600 € (el Nasdaq 100 ha caigut un 3.7% i la incertesa sobre valoracions tecnològiques persisteix) i SMH en 400 € (els semiconductors continuen s…"
       },
@@ -6485,7 +6485,7 @@
         "model_api": "mistral-large-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 14 · 2026-08-24",
         "ultimBriefing": "1) **Vendre LLY (1% de la cartera)**: Eli Lilly ha pujat un 82% en l'últim any i un 5% aquesta setmana, però el seu PER és elevat (superior a 50x). En un contex…"
       }
