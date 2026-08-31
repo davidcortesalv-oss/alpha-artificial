@@ -1,53 +1,53 @@
 model,ticker,nom,tipus,sector,pais,unitats,valor,pes
-gpt,SPY,S&P 500 (SPDR),etf,Índexs principals,Global,2.384599,1564.77,15.7
-gpt,GLD,Or físic (SPDR),etf,Metalls preciosos,Global,4.539604,1647.0,16.53
-gpt,QQQ,Nasdaq 100,etf,Índexs principals,Global,4.565543,2791.36,28.01
-gpt,SMH,Semiconductors (VanEck),etf,IA i semiconductors,Global,1.493896,717.46,7.2
-gpt,XLE,Energia EUA,etf,Energia,Global,13.103144,714.62,7.17
-gpt,IGV,Programari EUA,etf,Tecnologia,Global,4.463908,395.44,3.97
-gpt,NVDA,Nvidia,accio,Semiconductors,EUA,4.039108,743.23,7.46
-gpt,XLV,Salut EUA,etf,Salut,Global,4.966754,743.25,7.46
-gpt,GDX,Mineres d'or,etf,Metalls preciosos,Global,4.530067,399.2,4.01
-gpt,IBB,Biotecnologia (Nasdaq),etf,Salut,Global,1.363279,249.5,2.5
-claude,SPY,S&P 500 (SPDR),etf,Índexs principals,Global,3.032432,1989.88,19.86
-claude,VGK,Europa (Vanguard),etf,Mercats internacionals,Global,25.643636,2037.6,20.33
-claude,GLD,Or físic (SPDR),etf,Metalls preciosos,Global,5.994339,2174.79,21.7
-claude,QQQ,Nasdaq 100,etf,Índexs principals,Global,2.953691,1805.88,18.02
-claude,IEF,Bons EUA 7-10 anys,etf,Renda fixa,Global,11.246046,894.56,8.93
-claude,XLE,Energia EUA,etf,Energia,Global,8.985013,490.02,4.89
-claude,XLV,Salut EUA,etf,Salut,Global,4.201565,628.74,6.27
-gemini,EFECTIU,Efectiu,efectiu,Efectiu,—,69.172423,69.17,0.71
-gemini,SPY,S&P 500 (SPDR),etf,Índexs principals,Global,2.111123,1385.32,14.17
-gemini,VGK,Europa (Vanguard),etf,Mercats internacionals,Global,13.097787,1040.73,10.64
-gemini,GLD,Or físic (SPDR),etf,Metalls preciosos,Global,1.872045,679.19,6.95
-gemini,VTI,Mercat total EUA,etf,Índexs principals,Global,3.676405,1191.67,12.19
-gemini,USMV,Mínima volatilitat EUA,etf,Defensius,Global,14.741488,1278.84,13.08
-gemini,XLP,Consum bàsic EUA,etf,Defensius,Global,6.284976,463.15,4.74
-gemini,MSFT,Microsoft,accio,Tecnologia,EUA,1.920401,795.28,8.13
-gemini,SMH,Semiconductors (VanEck),etf,IA i semiconductors,Global,0.574761,276.04,2.82
-gemini,GDX,Mineres d'or,etf,Metalls preciosos,Global,16.560157,1459.32,14.93
-gemini,005930.KS,Samsung Electronics,accio,Tecnologia,Corea del Sud,4.073471,648.34,6.63
-gemini,OIH,Serveis petroliers,etf,Energia,Global,1.376639,489.98,5.01
-deepseek,EFECTIU,Efectiu,efectiu,Efectiu,—,5.119444,5.12,0.05
-deepseek,SPY,S&P 500 (SPDR),etf,Índexs principals,Global,5.96925,3917.02,40.08
-deepseek,GLD,Or físic (SPDR),etf,Metalls preciosos,Global,1.652116,599.4,6.13
-deepseek,QQQ,Nasdaq 100,etf,Índexs principals,Global,3.764196,2301.42,23.55
-deepseek,VIG,Dividends creixents (Vanguard),etf,Dividends,Global,4.545116,950.04,9.72
-deepseek,SMH,Semiconductors (VanEck),etf,IA i semiconductors,Global,2.053745,986.34,10.09
-deepseek,XLE,Energia EUA,etf,Energia,Global,18.569551,1012.74,10.36
-mistral,SPY,S&P 500 (SPDR),etf,Índexs principals,Global,2.819885,1850.41,18.84
-mistral,VGK,Europa (Vanguard),etf,Mercats internacionals,Global,5.529593,439.37,4.47
-mistral,GLD,Or físic (SPDR),etf,Metalls preciosos,Global,2.115226,767.42,7.81
-mistral,SMH,Semiconductors (VanEck),etf,IA i semiconductors,Global,1.959123,940.9,9.58
-mistral,EWJ,Japó,etf,Mercats internacionals,Global,4.592203,374.57,3.81
-mistral,IEF,Bons EUA 7-10 anys,etf,Renda fixa,Global,7.408162,589.28,6.0
-mistral,USMV,Mínima volatilitat EUA,etf,Defensius,Global,14.03876,1217.88,12.4
-mistral,XLE,Energia EUA,etf,Energia,Global,9.685986,528.25,5.38
-mistral,VHT,Sanitat (Vanguard),etf,Salut,Global,3.360904,943.84,9.61
-mistral,XLV,Salut EUA,etf,Salut,Global,2.104797,314.97,3.21
-mistral,VIG,Dividends creixents (Vanguard),etf,Dividends,Global,2.5363,530.15,5.4
-mistral,NESN.SW,Nestlé,accio,Consum,Suïssa,6.557995,561.49,5.72
-mistral,PG,Procter & Gamble,accio,Consum,EUA,2.612089,323.86,3.3
-mistral,ADBE,Adobe,accio,Tecnologia,EUA,0.917315,216.42,2.2
-mistral,BABA,Alibaba,accio,Consum,Xina,0.939488,96.08,0.98
-mistral,NVDA,Nvidia,accio,Semiconductors,EUA,0.698147,128.47,1.31
+gpt,SPY,S&P 500 (SPDR),etf,Índexs principals,Global,2.384599,1572.45,15.82
+gpt,GLD,Or físic (SPDR),etf,Metalls preciosos,Global,4.539604,1588.76,15.99
+gpt,QQQ,Nasdaq 100,etf,Índexs principals,Global,4.565543,2810.5,28.28
+gpt,SMH,Semiconductors (VanEck),etf,IA i semiconductors,Global,2.375138,1134.25,11.41
+gpt,XLE,Energia EUA,etf,Energia,Global,13.103144,713.08,7.18
+gpt,NVDA,Nvidia,accio,Semiconductors,EUA,4.039108,765.28,7.7
+gpt,XLV,Salut EUA,etf,Salut,Global,4.966754,728.53,7.33
+gpt,IBB,Biotecnologia (Nasdaq),etf,Salut,Global,1.363279,243.67,2.45
+gpt,OIH,Serveis petroliers,etf,Energia,Global,1.045566,380.84,3.83
+claude,SPY,S&P 500 (SPDR),etf,Índexs principals,Global,3.032432,1999.64,20.11
+claude,VGK,Europa (Vanguard),etf,Mercats internacionals,Global,25.643636,2024.54,20.36
+claude,GLD,Or físic (SPDR),etf,Metalls preciosos,Global,5.994339,2097.89,21.1
+claude,QQQ,Nasdaq 100,etf,Índexs principals,Global,2.953691,1818.26,18.29
+claude,IEF,Bons EUA 7-10 anys,etf,Renda fixa,Global,11.246046,897.16,9.02
+claude,XLE,Energia EUA,etf,Energia,Global,8.985013,488.97,4.92
+claude,XLV,Salut EUA,etf,Salut,Global,4.201565,616.29,6.2
+gemini,SPY,S&P 500 (SPDR),etf,Índexs principals,Global,2.111123,1392.11,14.26
+gemini,VGK,Europa (Vanguard),etf,Mercats internacionals,Global,13.097787,1034.06,10.59
+gemini,GLD,Or físic (SPDR),etf,Metalls preciosos,Global,0.936016,327.59,3.35
+gemini,VTI,Mercat total EUA,etf,Índexs principals,Global,3.676405,1194.9,12.24
+gemini,USMV,Mínima volatilitat EUA,etf,Defensius,Global,14.741488,1287.8,13.19
+gemini,MSFT,Microsoft,accio,Tecnologia,EUA,1.920401,845.08,8.65
+gemini,SMH,Semiconductors (VanEck),etf,IA i semiconductors,Global,1.202339,574.18,5.88
+gemini,GDX,Mineres d'or,etf,Metalls preciosos,Global,11.040122,930.0,9.52
+gemini,005930.KS,Samsung Electronics,accio,Tecnologia,Corea del Sud,2.036711,329.43,3.37
+gemini,OIH,Serveis petroliers,etf,Energia,Global,2.747963,1000.94,10.25
+gemini,AIQ,Intel·ligència artificial,etf,IA i semiconductors,Global,9.035638,499.5,5.12
+gemini,EWT,Taiwan,etf,Mercats internacionals,Global,3.752979,349.65,3.58
+deepseek,EFECTIU,Efectiu,efectiu,Efectiu,—,4.119444,4.12,0.04
+deepseek,SPY,S&P 500 (SPDR),etf,Índexs principals,Global,5.96925,3936.23,40.28
+deepseek,GLD,Or físic (SPDR),etf,Metalls preciosos,Global,1.652116,578.21,5.92
+deepseek,QQQ,Nasdaq 100,etf,Índexs principals,Global,3.764196,2317.2,23.71
+deepseek,VIG,Dividends creixents (Vanguard),etf,Dividends,Global,4.545116,946.74,9.69
+deepseek,SMH,Semiconductors (VanEck),etf,IA i semiconductors,Global,2.053745,980.77,10.04
+deepseek,XLE,Energia EUA,etf,Energia,Global,0.194021,10.56,0.11
+deepseek,NVDA,Nvidia,accio,Semiconductors,EUA,5.272658,999.0,10.22
+mistral,SPY,S&P 500 (SPDR),etf,Índexs principals,Global,2.819885,1859.48,19.0
+mistral,VGK,Europa (Vanguard),etf,Mercats internacionals,Global,5.529593,436.56,4.46
+mistral,GLD,Or físic (SPDR),etf,Metalls preciosos,Global,2.115226,740.28,7.56
+mistral,SMH,Semiconductors (VanEck),etf,IA i semiconductors,Global,1.959123,935.58,9.56
+mistral,EWJ,Japó,etf,Mercats internacionals,Global,4.592203,379.15,3.87
+mistral,IEF,Bons EUA 7-10 anys,etf,Renda fixa,Global,7.408162,590.99,6.04
+mistral,USMV,Mínima volatilitat EUA,etf,Defensius,Global,14.03876,1226.41,12.53
+mistral,XLE,Energia EUA,etf,Energia,Global,9.685986,527.11,5.39
+mistral,VHT,Sanitat (Vanguard),etf,Salut,Global,3.360904,923.82,9.44
+mistral,XLV,Salut EUA,etf,Salut,Global,2.104797,308.73,3.15
+mistral,VIG,Dividends creixents (Vanguard),etf,Dividends,Global,2.5363,528.31,5.4
+mistral,NESN.SW,Nestlé,accio,Consum,Suïssa,6.557995,550.07,5.62
+mistral,PG,Procter & Gamble,accio,Consum,EUA,2.612089,325.27,3.32
+mistral,ADBE,Adobe,accio,Tecnologia,EUA,0.917315,230.14,2.35
+mistral,BABA,Alibaba,accio,Consum,Xina,0.939488,93.03,0.95
+mistral,NVDA,Nvidia,accio,Semiconductors,EUA,0.698147,132.28,1.35
