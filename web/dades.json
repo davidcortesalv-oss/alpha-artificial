@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-09-01",
     "font": "real",
-    "generat": "2026-09-01T13:43",
+    "generat": "2026-09-01T23:33",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -6963,7 +6963,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 15 · 2026-08-31",
         "ultimBriefing": "Amb només 17 setmanes fins al tancament del torneig, prefereixo no reaccionar a una correcció puntual de l'or que considero soroll dins d'una tendència alcista …"
       },
@@ -6973,7 +6973,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 15 · 2026-08-31",
         "ultimBriefing": "Roto beneficis del rebot del programari (IGV) cap a semiconductors (SMH), on la monetització de l’IA i el cicle d’inversió continuen sent els drivers més clars …"
       },
@@ -6983,7 +6983,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 15 · 2026-08-31",
         "ultimBriefing": "La decisió de reajustar la cartera es fonamenta en la necessitat d'adaptar-se a les dinàmiques actuals del mercat i a l'horitzó temporal curt del torneig. Per t…"
       },
@@ -6993,7 +6993,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 15 · 2026-08-31",
         "ultimBriefing": "Venc tota la posició en XLE (aprox. 1010 €) perquè el petroli s'enfronta a resistència i Goldman Sachs alerta de debilitat econòmica; a més, la trobada de Trump…"
       },
@@ -7003,7 +7003,7 @@
         "model_api": "mistral-large-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 15 · 2026-08-31",
         "ultimBriefing": "(sense resposta: error HTTP 403 (403))"
       }
