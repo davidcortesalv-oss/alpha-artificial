@@ -423,6 +423,40 @@ Aquest canvi surt de l'auditoria completa del sistema, documentada a
 
 ---
 
+## Canvi núm. 7 — Mistral canvia de model (obligat pel proveïdor)
+
+**Data:** 4 de setembre de 2026 (setmana 15)
+
+**Què ha canviat:** el model de Mistral passa de `mistral-large-latest` a
+`mistral-medium-latest`.
+
+**Per què:** no és una decisió del projecte, és una imposició. El 31 d'agost
+de 2026 Mistral va treure `mistral-large-latest` del pla gratuït i l'API va
+començar a respondre amb un error 403 (*"aquest model no està disponible al
+teu pla"*). El model que sí que admet el compte, i el més equivalent dels que
+queden, és `mistral-medium-latest`.
+
+**Conseqüència per al torneig:** la setmana 15 (31/08) Mistral **no va
+decidir**. El motor, que està fet per no aturar-se si una IA falla, li va
+anotar "mantenir" per defecte. La seva cartera es va quedar igual aquella
+setmana. Queda registrat al CSV amb el motiu (`error HTTP 403`) i explicat a
+la secció 6 d'AUDITORIA.md.
+
+**Efecte sobre la comparació:** cal tenir-ho present en llegir els resultats
+de Mistral. Una setmana sense decidir no és el mateix que una setmana decidint
+mantenir: la primera és una avaria, la segona és una opinió. Al TR s'ha de
+distingir.
+
+**Nota oberta:** en el moment d'escriure això el compte de Mistral tampoc no
+té quota disponible (respon que té 0 peticions per minut), cosa independent
+del model. Fins que no es resolgui al web de Mistral, la IA seguirà sense
+participar.
+
+**Fitxers tocats:** `config.py` (el model), `comprovar_salut.py` (nou avís
+perquè una IA morta no torni a passar desapercebuda).
+
+---
+
 ## Millores metodològiques aplicades el mateix dia
 
 No modifiquen les regles del joc, però sí què es mesura i es guarda:
@@ -439,5 +473,5 @@ No modifiquen les regles del joc, però sí què es mesura i es guarda:
 
 ---
 
-*Document generat el 27/07/2026. Si més endavant es fa cap altre canvi de
-regles, s'afegirà com a «Canvi núm. 2» amb el mateix nivell de detall.*
+*Document generat el 27/07/2026 i actualitzat el 04/09/2026. Cada canvi de
+regles s'hi afegeix amb el mateix nivell de detall, numerat i datat.*

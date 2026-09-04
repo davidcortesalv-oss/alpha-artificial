@@ -11,3 +11,7 @@ venv/
 
 # Configuració local de l'assistent (només d'aquest ordinador)
 .claude/settings.local.json
+
+# Copies de seguretat que fan els scripts de correccio.
+# L original sempre queda a l historial de git, aixi que no cal pujar-les.
+*.abans_de_corregir_*

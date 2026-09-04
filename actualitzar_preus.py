@@ -47,7 +47,20 @@ def main():
         return
 
     preus = torneo.baixar_preus()
-    avui = datetime.date.today().isoformat()
+
+    # La data del punt del gràfic ha de ser la de l'ÚLTIMA SESSIÓ DE BORSA,
+    # no la de l'hora en què s'executa el robot. GitHub de vegades s'endarrereix
+    # hores i, si datéssim per rellotge, passarien dues coses lletges:
+    #   · un robot endarrerit fins passada la mitjanit datava el dia següent,
+    #     i el dia real de mercat es perdia (va passar el 26/08/2026);
+    #   · un robot del divendres executat el dissabte creava un punt en un dia
+    #     amb el mercat tancat (va passar el 29/08/2026).
+    # Com que el preu que dóna Yahoo sempre és el de l'últim tancament, datar-lo
+    # per aquell dia és el correcte i, de propina, fa la feina idempotent.
+    avui = torneo.ULTIMA_DATA_MERCAT or datetime.date.today().isoformat()
+    if torneo.ULTIMA_DATA_MERCAT != datetime.date.today().isoformat():
+        print(f"    (el robot corre el {datetime.date.today().isoformat()}, "
+              f"però l'últim tancament de borsa és del {avui}: es data pel tancament)")
     ja_hi_son = files_existents()
 
     # ¿Hay precios de verdad? (un festivo o un fallo de red no debe ensuciar el histórico)

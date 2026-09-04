@@ -82,6 +82,12 @@ jobs:
           python torneo.py
           python generar_web.py
 
+      # Una IA morta no es pot amagar darrere d'un tic verd: si alguna no ha
+      # respost, surt en gran al resum de l'execució.
+      - name: Comprovar que les 5 IAs han respost
+        if: always()
+        run: python comprovar_salut.py
+
       - name: Guardar els resultats al repositori
         id: guardar
         run: |

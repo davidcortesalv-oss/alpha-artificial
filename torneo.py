@@ -59,6 +59,9 @@ RUTA_COMISSIONS = os.path.join(config.CARPETA_DADES, "comissions.csv")
 RUTA_TITULARS = os.path.join(config.CARPETA_DADES, "titulars.csv")
 RUTA_DIVIDENDS = os.path.join(config.CARPETA_DADES, "dividends.csv")
 
+# Data de l'última sessió de borsa dels preus baixats. L'omple baixar_preus().
+ULTIMA_DATA_MERCAT = None
+
 
 # ============================================================
 #  PASO 1 — Bajar precios reales del mercado
@@ -80,6 +83,16 @@ def baixar_preus():
     # yfinance permite bajar muchos de golpe; pedimos los últimos 5 días
     # y nos quedamos con el cierre más reciente de cada uno.
     dades = yf.download(tickers, period="5d", progress=False)
+
+    # Guardem QUIN DIA és el preu que acabem de baixar. No és el mateix que
+    # "avui": si el robot s'endarrereix i s'executa a la matinada o en dissabte,
+    # el preu que dóna Yahoo segueix sent el de l'última sessió de borsa.
+    # Datar pel dia real de mercat evita dies fantasma i dies perduts.
+    global ULTIMA_DATA_MERCAT
+    try:
+        ULTIMA_DATA_MERCAT = dades["Close"]["SPY"].dropna().index[-1].date().isoformat()
+    except Exception:
+        ULTIMA_DATA_MERCAT = None
 
     bruts = {}
     for t in tickers:

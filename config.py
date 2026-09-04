@@ -49,7 +49,10 @@ MODELS = {
     # Si actives la facturació a aistudio.google.com, canvia-ho a "gemini-2.5-pro".
     "gemini":   {"nom": "Gemini (Google)",    "pais": "EUA",    "actiu": True, "model_api": "gemini-2.5-flash"},
     "deepseek": {"nom": "DeepSeek",           "pais": "Xina",   "actiu": True, "model_api": "deepseek-chat"},
-    "mistral":  {"nom": "Mistral AI",         "pais": "Europa", "actiu": True, "model_api": "mistral-large-latest"},
+    # Nota: el 31/08/2026 Mistral va treure "mistral-large-latest" del pla gratuït
+    # (error 403 "model not available in your subscription tier"). El substitut
+    # equivalent que sí que admet el compte és "mistral-medium-latest".
+    "mistral":  {"nom": "Mistral AI",         "pais": "Europa", "actiu": True, "model_api": "mistral-medium-latest"},
 }
 
 # --- Universo de inversión: lista CERRADA pero amplia de ETFs reales ---

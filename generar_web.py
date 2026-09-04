@@ -27,8 +27,16 @@ import csv
 import json
 import math
 import re
+import sys
 import datetime
 import config
+
+# A GitHub (Linux) la consola ja és UTF-8, però a Windows no: sense això,
+# imprimir una fletxa o un accent peta l'script sencer a mitja feina.
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 try:
     import connectors_ia

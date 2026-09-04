@@ -1,5 +1,9 @@
 # Auditoria del torneig — són reals els resultats?
 
+> **Actualitzat el 4 de setembre de 2026** (setmana 15 de 22) amb la secció 6,
+> que explica l'incident de les dues setmanes que el torneig va passar
+> desatès. Les seccions 1 a 5 són de la revisió original.
+>
 > Document d'auditoria fet el **17 d'agost de 2026** (setmana 13 de 22) per
 > respondre la pregunta més important del TR: **els números que ensenya la web
 > són els que tindria de veritat algú que hagués invertit aquests diners?**
@@ -182,6 +186,137 @@ desembre sí**, i llavors serà un factor rellevant.
 
 ---
 
+## 6. Incident del 24 d'agost al 4 de setembre de 2026
+
+> Aquesta secció s'afegeix el **4 de setembre de 2026**. Durant dues setmanes
+> el torneig va anar sol, sense ningú al davant, i és el primer cop que se li
+> fa un repàs després d'un període desatès. Va sortir-ne feina.
+
+### Què semblava que passava
+
+Que les rondes dels dilluns 24 i 31 d'agost **no s'havien jugat**: qui entrava
+a la web durant el dia no hi veia res nou.
+
+### Què passava de veritat
+
+Les rondes **sí que es van jugar, totes dues, i soles**. Ho diu el registre
+d'execucions de GitHub: 12 execucions automàtiques en aquestes dues setmanes,
+totes marcades com a correctes i **cap llançada a mà**. Les setmanes 14 i 15
+tenen les seves 5 decisions guardades, com totes les altres.
+
+El problema era **l'hora**:
+
+| Dia | Hora prevista | Hora real | Retard |
+|---|---|---|---|
+| dl 24/08 | 09:37 | 10:22 | 45 min |
+| dl 31/08 | 09:37 | **17:22** | **7 h 45 min** |
+| dt 01/09 | 10:51 | 15:42 | 4 h 51 min |
+
+El 31 d'agost la ronda no es va jugar fins a un quart de sis de la tarda. Qui
+mirés la web al matí, a migdia o després de dinar veia el mateix que la
+setmana anterior i concloïa, amb tota la lògica del món, que allò estava
+espatllat.
+
+**Per què passa.** Les tasques programades de GitHub són gratuïtes i, a canvi,
+no tenen hora garantida: GitHub les posa en una cua i les executa *quan pot*.
+La seva pròpia documentació ho diu obertament. Si aquell dia hi ha molta feina
+—i el començament de mes n'hi sol haver— la cua s'allarga hores. No és una
+avaria; és el tracte que s'accepta en no pagar.
+
+### Els dos problemes de debò
+
+El retard, en si mateix, no fa mal: la ronda s'acaba jugant. El que sí que va
+fer mal van ser dues coses que el retard va destapar.
+
+**Problema 1 — Mistral va deixar de participar.**
+
+El 31 d'agost Mistral va respondre amb un error 403, que vol dir *"aquest
+model ja no entra al teu pla"*. Mistral havia tret el model que fèiem servir
+(`mistral-large-latest`) del compte gratuït. Com que el motor està pensat per
+no aturar-se si una IA falla, va anotar "mantenir" per defecte i va continuar.
+
+I aquí ve el que és realment greu: **GitHub va marcar la ronda en verd, com un
+èxit.** Havia funcionat tot menys una de les cinc IAs, i no ho deia enlloc.
+Sense mirar el CSV a mà, era invisible.
+
+**Problema 2 — el gràfic tenia dies mal posats.**
+
+Aquest és conseqüència directa dels retards, i és el més subtil dels tres.
+
+El robot de preus posava com a data **el dia en què s'executava**. Normalment
+corre a les 23:42 (hora d'aquí), amb la borsa ja tancada, i encerta. Però amb
+els retards, uns quants robots es van executar **de matinada**:
+
+| El robot corre | Etiqueta que posava | Preus que portava de veritat |
+|---|---|---|
+| dj 27/08 a les 03:03 | 27/08 | **26/08** (la borsa encara no havia obert) |
+| dv 28/08 a les 07:49 | 28/08 | **27/08** |
+| ds 29/08 a les 05:22 | 29/08 | **28/08** |
+| dt 01/09 a les 02:46 | 01/09 | **31/08** |
+
+La borsa dels EUA obre a les 15:30 d'aquí. Un robot que corre a les tres de la
+matinada no pot tenir els preus d'aquell dia, perquè encara no existeixen:
+agafa l'últim tancament, que és el del dia abans. Però els guardava amb la
+data del dia nou.
+
+Resultat: tota la sèrie va quedar **desplaçada un dia**. Al gràfic hi havia un
+**dissabte 29 d'agost amb la borsa tancada** i, en canvi, hi faltava el
+**dimecres 26**. I encara una altra: el dimarts 1 de setembre el robot de la
+nit va veure que ja hi havia una fila amb aquella data (la de matinada, amb
+preus del 31) i es va saltar la feina, així que el tancament real de l'1 de
+setembre no es va arribar a guardar mai.
+
+### Què s'ha fet
+
+| Problema | Solució |
+|---|---|
+| Mistral fora del pla | Canviat a `mistral-medium-latest`, que el compte sí que admet |
+| Una IA morta passava desapercebuda | Nou `comprovar_salut.py`: si una IA no respon, surt en gran al resum de GitHub |
+| Dates posades pel rellotge | `actualitzar_preus.py` ara data pel **tancament real de Yahoo**, no per l'hora del robot |
+| Sèrie desplaçada un dia | `corregir_dates_diaries.py` retorna cada fila al seu dia |
+| L'1 de setembre perdut | `recuperar_dia.py` el reconstrueix amb els tancaments reals d'aquell dia |
+
+Sobre la correcció de dates, que és la que toca dades ja guardades: **no
+s'inventa cap número**. Cada fila conserva els preus que portava; només se li
+posa la data del dia de borsa al qual pertanyen de debò. Quin dia és, no és
+opinable: se sap de l'hora exacta en què es va executar cada robot, que GitHub
+guarda, i del calendari de la borsa.
+
+L'únic dia realment perdut, l'1 de setembre, s'ha reconstruït amb el mateix
+mètode que fa servir aquesta auditoria: les unitats que tenia cada cartera
+aquell dia (entre dues rondes no es toquen) pels tancaments reals de Yahoo del
+dia 1. La comprovació: el valor de l'índex reconstruït dóna 9.963,04 € i el
+càlcul independent fet a part en dóna 9.963,34 € — **3 dècimes d'euro de
+diferència sobre 10.000**.
+
+Després de la reparació, la sèrie del 17 d'agost al 3 de setembre té **tots**
+els dies de borsa, cap dia de mercat tancat, i cap forat.
+
+### Què no s'ha pogut arreglar des d'aquí
+
+**El compte de Mistral no té quota.** Canviar el model treu l'error 403, però
+el compte respon ara amb un altre error dient que té **0 peticions per minut
+disponibles**. Això és una qüestió del compte de Mistral —de saldo o de
+verificació—, i s'ha de resoldre al seu web. Fins que no es resolgui, Mistral
+seguirà sense decidir i el motor li anotarà "mantenir" cada dilluns.
+
+**Els retards de GitHub no es poden evitar.** Són com són. El que s'ha fet és
+que deixin de fer mal: hi ha sis intents repartits entre dilluns i dimarts
+(amb que n'entri un, la ronda es juga) i, des d'ara, l'hora a la qual
+s'executi el robot ja no afecta les dades, perquè la data surt del mercat i no
+del rellotge.
+
+### Per al TR
+
+Aquest incident val la pena explicar-lo, i no amagar-lo. És un cas real de
+**per què les dades s'han d'auditar encara que tot sembli anar bé**: durant
+dotze dies el sistema va donar totes les senyals de funcionar correctament
+—execucions en verd, web actualitzada, gràfic ple de punts— mentre arrossegava
+una IA morta i una sèrie de dates desplaçada. Cap alarma va saltar. Es va
+trobar mirant-ho a mà.
+
+---
+
 ## Resum: què és real i què no
 
 ### Sí que és realista
@@ -201,6 +336,8 @@ desembre sí**, i llavors serà un factor rellevant.
 | Es permeten fraccions d'accions | Realista: molts brokers ja ho permeten |
 | No es descompten impostos sobre dividends | Un inversor real pagaria retenció |
 | Les setmanes 1-7 arrosseguen l'antiga comptabilitat en dòlars, reescalada | Documentat al Canvi núm. 5 |
+| Mistral no va decidir la setmana 15 (el seu proveïdor va tallar-li l'accés) | Se li va anotar "mantenir"; vegeu la secció 6 |
+| Quatre dies del gràfic de finals d'agost porten el tipus de canvi de la matinada, no el del tancament | Diferència d'una dècima; els preus de borsa sí que són del dia correcte |
 
 **Conclusió:** els números són reals i verificables. Si algú hagués fet
 aquestes mateixes operacions en un compte real, tindria pràcticament el
