@@ -1,0 +1,364 @@
+### SISTEMA (rol + regles — idèntic per a totes les IAs) ###
+
+Ets un gestor de cartera autònom que participa en un torneig d'inversió de cinc mesos. Competeixes contra altres quatre intel·ligències artificials i contra l'índex S&P 500 en gestió passiva. L'objectiu és obtenir la màxima rendibilitat possible al final del torneig assumint un risc raonable.
+
+No ets una calculadora. Ets un gestor que pensa, raona i es mulla. Has de reaccionar als teus encerts i als teus errors, tenir criteri propi i defensar les teves decisions amb arguments, igual que ho faria un gestor humà.
+
+=== REGLES DEL TORNEIG (inamovibles) ===
+1. Gestiones una cartera virtual de 10.000 € ja totalment invertida des de la primera setmana. Cada setmana pots mantenir-la o reajustar-la.
+2. Només pots operar amb els actius de la llista que se't proporciona: ACCIONS d'empreses concretes (Apple, Inditex, Nvidia...) i FONS COTITZATS (ETFs). No pots inventar-te cap altre actiu.
+3. Límits de concentració: cap ACCIÓ individual pot superar el 20% de la cartera, i cap ETF pot superar el 40%. Una sola empresa és molt més arriscada que un fons diversificat.
+4. Sense palanquejament i sense posicions curtes.
+5. Pots moure una part a efectiu si ho justifiques com a estratègia, però no deixis diners aturats per inèrcia.
+6. Cada operació té un cost del 0,1%. Operar de més et fa perdre diners.
+7. Prens UNA decisió per setmana.
+8. Tota la informació de què disposes és la d'aquest missatge. No tens accés a Internet.
+9. Tots els preus estan JA CONVERTITS A EUROS, encara que l'empresa cotitzi en dòlars, lliures o iens. No has de fer cap conversió.
+
+=== HORITZÓ TEMPORAL DEL TORNEIG ===
+Aquest torneig NO és una inversió a llarg termini. Es tanca el 31/12/2026: queden 16 setmanes. La classificació final es decidirà exclusivament pel valor de la teva cartera aquell dia; no hi ha res després.
+
+Ets tu qui decideix si aquest horitzó ha d'influir en la teva estratègia i de quina manera. No se t'indica cap conclusió: forma part de la teva feina com a gestor valorar què implica.
+
+=== COM HAS DE PENSAR ===
+- Mira com t'ha anat la cartera aquesta setmana i per què.
+- Reacciona als resultats: comenta els actius que t'han anat molt bé o molt malament.
+- Si compres o vens una empresa concreta, explica QUÈ fa aquesta empresa i per què creus que pujarà o baixarà. Aquesta és la part més interessant per a qui llegeix el torneig.
+- Fes servir el teu historial de decisions: mantén una estratègia coherent i adona't si canvies massa sovint.
+- No facis cas del soroll. De vegades la millor decisió és no fer res.
+- Declara amb quin nivell de risc jugues aquesta setmana.
+
+=== LES NOTÍCIES DE LA SETMANA (llegeix-les de veritat) ===
+Rebràs una llista de titulars reals publicats aquests últims dies. NO són decoració: són l'única finestra que tens al que està passant al món. Abans de decidir:
+- Llegeix-los tots i pregunta't quins afecten DE VERITAT els teus actius.
+- Descarta els que siguin soroll o no tinguin res a veure amb la teva cartera.
+- Al camp "noticies_clau" has d'indicar el NÚMERO dels titulars que han influït en la teva decisió (per exemple [1, 4, 7]), i al camp "lectura_noticies" explicar en una o dues frases què n'has deduït.
+- Si cap titular no t'ha fet canviar res, digues-ho obertament: posa la llista buida i explica per què els consideres irrelevants aquesta setmana. És una resposta perfectament vàlida.
+
+=== FORMAT DE RESPOSTA (OBLIGATORI) ===
+Respon NOMÉS amb un objecte JSON vàlid, sense text abans ni després ni embolcalls de codi, amb aquesta estructura:
+
+{
+  "reflexio_historial": "...",
+  "analisi_cartera": "...",
+  "noticies_clau": [1, 4, 7],
+  "lectura_noticies": "...",
+  "nivell_risc": "conservador | moderat | agressiu",
+  "decisio": "mantenir | reajustar",
+  "operacions": [ { "vendre": "TICKER", "import_eur": 0, "comprar": "TICKER" } ],
+  "justificacio": "...",
+  "confianca": 5
+}
+
+Tot el text ha d'estar en CATALÀ. Si mantens la cartera, "operacions" ha de ser una llista buida [].
+
+
+### USUARI (briefing setmanal — els {{...}} els omple el programa) ###
+
+=== BRIEFING · SETMANA 16 · 2026-09-07 ===
+
+LA TEVA CARTERA ACTUAL (valor total: 10035.82 €):
+  SPY (S&P 500 (SPDR)) — 2.384599 unitats — 1579.46 € (15.7% de 40% permès)
+  GLD (Or físic (SPDR)) — 4.539604 unitats — 1588.04 € (15.8% de 40% permès)
+  QQQ (Nasdaq 100) — 4.565543 unitats — 2822.88 € (28.1% de 40% permès)
+  SMH (Semiconductors (VanEck)) — 2.375138 unitats — 1158.18 € (11.5% de 40% permès)
+  XLE (Energia EUA) — 13.103144 unitats — 721.87 € (7.2% de 40% permès)
+  IGV (Programari EUA) — 3.2e-05 unitats — 0.0 € (0.0% de 40% permès)
+  NVDA (Nvidia) — 4.039108 unitats — 800.18 € (8.0% de 20% permès)
+  XLV (Salut EUA) — 4.966754 unitats — 732.33 € (7.3% de 40% permès)
+  IBB (Biotecnologia (Nasdaq)) — 1.363279 unitats — 248.46 € (2.5% de 40% permès)
+  OIH (Serveis petroliers) — 1.045566 unitats — 384.43 € (3.8% de 40% permès)
+Efectiu sense invertir: 0.0 €
+
+COM T'HA ANAT:
+Rendibilitat aquesta setmana: 0.99 %
+Rendibilitat acumulada: 0.36 %
+
+EL TEU HISTORIAL DE DECISIONS:
+  S8: reajustar (risc moderat, confiança 5/10, cartera 9741.85 €) — 1) Rebaixem part de la durada llarga passant de TLT cap a TIP per defensar-nos d’un escenari on les expectatives d’inflació repunten (oli fe
+  S9: reajustar (risc moderat, confiança 5/10, cartera 9490.27 €) — Reforcem l’exposició a IA/semis després d’una venda motivada per titulars: el titular 3 (‘DeepSeek no enfonsarà els titans d’IA’) dona supor
+  S10: reajustar (risc moderat, confiança 6/10, cartera 9639.21 €) — Rotem la petita posició d’energia cap a semiconductors: el senyal d’oversupply de BP afebleix el curt termini per a XLE, mentre que l’evidèn
+  S11: reajustar (risc moderat, confiança 6/10, cartera 9669.2 €) — 1) Macro: amb inflació replegant-se (1, 10) i el petroli caient (2), el balanç de riscos s’inclina cap a retallades i tires més baixes; per 
+  S12: reajustar (risc moderat, confiança 6/10, cartera 10085.02 €) — 1) Venc Europa (VGK) per risc macro específic (sequera greu i senyals de cansament a borsa) i baixo exposició a factors menys dinàmics. 2) D
+  S13: reajustar (risc moderat, confiança 6/10, cartera 10107.47 €) — 1) Redueixo totalment la durada llarga (TLT) perquè el mix ‘oil-up + yields globals en pujada’ és advers per a bons 20+ anys en un horitzó d
+  S14: reajustar (risc moderat, confiança 6/10, cartera 9965.83 €) — Redueixo sensibilitat a tipus i una mica de solapament en semis/tech: SMH i QQQ han estat els grans perdedors amb rendiments a l’alça. Manti
+  S15: reajustar (risc moderat, confiança 6/10, cartera 9937.36 €) — Roto beneficis del rebot del programari (IGV) cap a semiconductors (SMH), on la monetització de l’IA i el cicle d’inversió continuen sent el
+
+UNIVERS D'INVERSIÓ DISPONIBLE:
+(Cada actiu porta el preu actual en euros i la seva evolució recent: "1set" és
+l'última setmana, "1mes" l'últim mes i "1any" l'últim any. Aquesta informació
+es dóna igual per a totes les accions i per a tots els fons.)
+ACCIONS D'EMPRESES CONCRETES (màxim 20% de la cartera per empresa):
+  · Alemanya
+    ADS.DE — Adidas (Consum) — 148.25 €  | 1set -2.1% · 1mes -9.6% · 1any -17.0%
+    ALV.DE — Allianz (Finances) — 447.6 €  | 1set -0.8% · 1mes +3.2% · 1any +32.7%
+    BAS.DE — BASF (Química) — 53.01 €  | 1set +0.1% · 1mes +2.9% · 1any +25.1%
+    BMW.DE — BMW (Automoció) — 62.68 €  | 1set +1.2% · 1mes +4.9% · 1any -24.6%
+    DTE.DE — Deutsche Telekom (Telecomunicacions) — 28.16 €  | 1set -0.8% · 1mes -3.0% · 1any -4.5%
+    MBG.DE — Mercedes-Benz (Automoció) — 48.4 €  | 1set +2.5% · 1mes +2.8% · 1any -1.3%
+    SAP.DE — SAP (Tecnologia) — 182.1 €  | 1set -4.6% · 1mes +2.3% · 1any -19.7%
+    SIE.DE — Siemens (Indústria) — 271.4 €  | 1set -5.0% · 1mes -3.0% · 1any +20.1%
+  · Bèlgica
+    ABI.BR — AB InBev (Consum) — 67.98 €  | 1set -0.5% · 1mes -6.7% · 1any +37.1%
+  · Catalunya
+    CLNX.MC — Cellnex (Telecomunicacions) — 25.62 €  | 1set -3.2% · 1mes -7.0% · 1any -12.4%
+    GRF.MC — Grifols (Salut) — 9.766 €  | 1set -0.6% · 1mes -4.0% · 1any -18.9%
+  · Corea del Sud
+    005930.KS — Samsung Electronics (Tecnologia) — 172.4578 €  | 1set +4.8% · 1mes +22.9% · 1any +304.5%
+  · EUA
+    AAPL — Apple (Tecnologia) — 275.172 €  | 1set +0.3% · 1mes +1.9% · 1any +36.0%
+    ABBV — AbbVie (Salut) — 220.5538 €  | 1set +0.6% · 1mes +4.5% · 1any +27.0%
+    ABNB — Airbnb (Consum) — 156.4671 €  | 1set -3.7% · 1mes +19.2% · 1any +47.1%
+    ADBE — Adobe (Tecnologia) — 229.1968 €  | 1set -8.4% · 1mes +1.8% · 1any -25.2%
+    AMD — AMD (Semiconductors) — 410.7069 €  | 1set +2.8% · 1mes -3.0% · 1any +217.7%
+    AMGN — Amgen (Salut) — 376.0148 €  | 1set +1.4% · 1mes +8.0% · 1any +61.5%
+    AMZN — Amazon (Consum) — 222.3168 €  | 1set -2.7% · 1mes -5.6% · 1any +10.4%
+    AVGO — Broadcom (Semiconductors) — 307.7915 €  | 1set -2.7% · 1mes -15.4% · 1any +5.1%
+    AXP — American Express (Finances) — 280.4954 €  | 1set -1.9% · 1mes -5.4% · 1any +2.0%
+    BA — Boeing (Indústria) — 182.5335 €  | 1set +1.4% · 1mes -9.1% · 1any -7.4%
+    BAC — Bank of America (Finances) — 53.9044 €  | 1set +1.3% · 1mes -0.6% · 1any +30.4%
+    BRK-B — Berkshire Hathaway (Finances) — 435.1823 €  | 1set +0.4% · 1mes -4.1% · 1any +3.2%
+    CAT — Caterpillar (Indústria) — 699.9828 €  | 1set +2.0% · 1mes -5.6% · 1any +95.7%
+    COIN — Coinbase (Finances) — 158.7891 €  | 1set +3.6% · 1mes +26.2% · 1any -38.5%
+    COST — Costco (Consum) — 787.5301 €  | 1set -2.9% · 1mes -4.1% · 1any -4.5%
+    CRM — Salesforce (Tecnologia) — 222.936 €  | 1set +1.5% · 1mes +38.0% · 1any +4.4%
+    CSCO — Cisco (Tecnologia) — 93.9112 €  | 1set -0.4% · 1mes -10.2% · 1any +67.9%
+    CVX — Chevron (Energia) — 179.3946 €  | 1set +3.6% · 1mes +10.5% · 1any +41.8%
+    DE — John Deere (Indústria) — 596.431 €  | 1set +10.3% · 1mes +12.1% · 1any +46.9%
+    DIS — Walt Disney (Mitjans) — 90.5659 €  | 1set -2.4% · 1mes -0.0% · 1any -9.4%
+    F — Ford (Automoció) — 12.5731 €  | 1set +5.5% · 1mes +6.5% · 1any +31.8%
+    GE — General Electric (Indústria) — 289.9209 €  | 1set -1.4% · 1mes -10.5% · 1any +23.6%
+    GM — General Motors (Automoció) — 75.473 €  | 1set +2.2% · 1mes +0.5% · 1any +53.2%
+    GOOGL — Alphabet (Google) (Tecnologia) — 291.0733 €  | 1set -2.0% · 1mes -5.9% · 1any +46.1%
+    GS — Goldman Sachs (Finances) — 893.1975 €  | 1set +1.2% · 1mes +0.5% · 1any +43.8%
+    HD — Home Depot (Consum) — 276.1008 €  | 1set -1.8% · 1mes -8.0% · 1any -20.8%
+    IBM — IBM (Tecnologia) — 202.0038 €  | 1set -0.1% · 1mes +0.7% · 1any -5.2%
+    INTC — Intel (Semiconductors) — 82.3873 €  | 1set +7.3% · 1mes -4.6% · 1any +294.2%
+    JNJ — Johnson & Johnson (Salut) — 236.6959 €  | 1set +2.9% · 1mes +7.0% · 1any +59.1%
+    JPM — JPMorgan Chase (Finances) — 308.4279 €  | 1set +0.5% · 1mes +0.0% · 1any +25.7%
+    KO — Coca-Cola (Consum) — 75.7396 €  | 1set -1.5% · 1mes +0.8% · 1any +35.3%
+    LLY — Eli Lilly (Salut) — 988.4417 €  | 1set -1.9% · 1mes -4.0% · 1any +57.7%
+    LMT — Lockheed Martin (Defensa) — 451.7372 €  | 1set -6.0% · 1mes -9.9% · 1any +18.2%
+    MA — Mastercard (Finances) — 498.1166 €  | 1set -2.5% · 1mes -0.0% · 1any +0.1%
+    MCD — McDonald's (Consum) — 219.8916 €  | 1set -2.6% · 1mes -7.4% · 1any -15.5%
+    META — Meta (Facebook) (Tecnologia) — 530.418 €  | 1set +7.0% · 1mes +3.9% · 1any -17.1%
+    MRK — Merck (Salut) — 129.2828 €  | 1set +1.6% · 1mes +16.4% · 1any +86.1%
+    MRNA — Moderna (Salut) — 125.172 €  | 1set +5.7% · 1mes +168.6% · 1any +490.4%
+    MSFT — Microsoft (Tecnologia) — 429.7386 €  | 1set -2.5% · 1mes -0.5% · 1any +1.9%
+    NFLX — Netflix (Mitjans) — 67.2945 €  | 1set -4.0% · 1mes +5.5% · 1any -36.7%
+    NKE — Nike (Consum) — 33.0237 €  | 1set -1.8% · 1mes -8.2% · 1any -46.1%
+    NVDA — Nvidia (Semiconductors) — 198.108 €  | 1set +6.1% · 1mes +4.5% · 1any +38.0%
+    ORCL — Oracle (Tecnologia) — 136.5497 €  | 1set +5.5% · 1mes +10.0% · 1any -32.2%
+    PEP — PepsiCo (Consum) — 118.3609 €  | 1set -1.2% · 1mes -0.1% · 1any +1.8%
+    PFE — Pfizer (Salut) — 24.4668 €  | 1set +2.0% · 1mes +7.9% · 1any +24.9%
+    PG — Procter & Gamble (Consum) — 125.9374 €  | 1set +2.1% · 1mes -1.0% · 1any -4.5%
+    PLTR — Palantir (Tecnologia) — 149.9226 €  | 1set -6.2% · 1mes +11.1% · 1any +12.5%
+    PYPL — PayPal (Finances) — 47.2652 €  | 1set +2.9% · 1mes -8.4% · 1any -18.2%
+    QCOM — Qualcomm (Semiconductors) — 145.1152 €  | 1set +3.6% · 1mes +5.1% · 1any +8.3%
+    RTX — RTX (Raytheon) (Defensa) — 172.678 €  | 1set -4.9% · 1mes -10.3% · 1any +33.1%
+    SBUX — Starbucks (Consum) — 89.8435 €  | 1set -2.9% · 1mes -0.7% · 1any +28.2%
+    T — AT&T (Telecomunicacions) — 22.0846 €  | 1set -1.0% · 1mes +7.6% · 1any -6.3%
+    TSLA — Tesla (Automoció) — 304.5064 €  | 1set +1.8% · 1mes +10.1% · 1any +3.0%
+    UBER — Uber (Tecnologia) — 65.1531 €  | 1set -3.7% · 1mes +6.9% · 1any -19.1%
+    UNH — UnitedHealth (Salut) — 341.5377 €  | 1set +1.3% · 1mes -2.3% · 1any +28.3%
+    UPS — UPS (Logística) — 87.9687 €  | 1set -2.6% · 1mes +0.1% · 1any +30.2%
+    V — Visa (Finances) — 322.5576 €  | 1set -1.5% · 1mes +0.8% · 1any +11.3%
+    VZ — Verizon (Telecomunicacions) — 43.1201 €  | 1set +0.3% · 1mes +6.1% · 1any +24.6%
+    WMT — Walmart (Consum) — 92.1397 €  | 1set +4.2% · 1mes -4.8% · 1any +6.4%
+    XOM — ExxonMobil (Energia) — 137.1431 €  | 1set +2.0% · 1mes +3.0% · 1any +50.5%
+  · Espanya
+    AENA.MC — Aena (aeroports) (Indústria) — 25.54 €  | 1set -3.3% · 1mes -4.8% · 1any +9.1%
+    AMS.MC — Amadeus (Tecnologia) — 56.28 €  | 1set -3.4% · 1mes -2.2% · 1any -15.4%
+    BBVA.MC — BBVA (Finances) — 25.37 €  | 1set +1.3% · 1mes +3.1% · 1any +65.2%
+    ELE.MC — Endesa (Energia) — 41.49 €  | 1set -1.4% · 1mes -1.8% · 1any +67.0%
+    FER.MC — Ferrovial (Indústria) — 49.94 €  | 1set -0.9% · 1mes -12.9% · 1any +6.5%
+    IBE.MC — Iberdrola (Energia) — 19.875 €  | 1set -1.0% · 1mes -4.0% · 1any +30.7%
+    ITX.MC — Inditex (Zara) (Consum) — 57.54 €  | 1set -0.8% · 1mes -1.9% · 1any +31.1%
+    REP.MC — Repsol (Energia) — 28.32 €  | 1set +3.9% · 1mes +12.0% · 1any +105.8%
+    SAN.MC — Banco Santander (Finances) — 12.878 €  | 1set +1.7% · 1mes +0.2% · 1any +55.7%
+    TEF.MC — Telefónica (Telecomunicacions) — 3.627 €  | 1set -0.5% · 1mes -1.1% · 1any -13.2%
+  · França
+    AIR.PA — Airbus (Indústria) — 198.28 €  | 1set +0.5% · 1mes -7.2% · 1any +7.1%
+    BNP.PA — BNP Paribas (Finances) — 104.14 €  | 1set +1.3% · 1mes -7.4% · 1any +41.9%
+    CAP.PA — Capgemini (Tecnologia) — 104.9 €  | 1set -2.2% · 1mes -4.0% · 1any -11.6%
+    MC.PA — LVMH (Louis Vuitton) (Luxe) — 431.9 €  | 1set -4.7% · 1mes -10.0% · 1any -9.6%
+    OR.PA — L'Oréal (Consum) — 386.1 €  | 1set +0.3% · 1mes +0.0% · 1any +1.4%
+    RMS.PA — Hermès (Luxe) — 1476.0 €  | 1set -6.6% · 1mes -9.8% · 1any -28.8%
+    SAN.PA — Sanofi (Salut) — 76.11 €  | 1set -0.9% · 1mes +1.0% · 1any +0.1%
+    TTE.PA — TotalEnergies (Energia) — 77.38 €  | 1set +2.5% · 1mes +4.5% · 1any +54.9%
+  · Itàlia
+    ENI.MI — Eni (Energia) — 23.355 €  | 1set +0.2% · 1mes +0.3% · 1any +68.2%
+    ISP.MI — Intesa Sanpaolo (Finances) — 6.752 €  | 1set -0.6% · 1mes -1.0% · 1any +35.0%
+    RACE — Ferrari (Automoció) — 352.5542 €  | 1set -2.3% · 1mes +0.0% · 1any -12.8%
+    STLAM.MI — Stellantis (Automoció) — 4.87 €  | 1set +2.3% · 1mes +1.7% · 1any -36.1%
+  · Japó
+    6758.T — Sony (Tecnologia) — 21.054 €  | 1set -2.7% · 1mes +5.7% · 1any -12.0%
+    7203.T — Toyota (Automoció) — 17.2443 €  | 1set +1.4% · 1mes +5.3% · 1any +3.9%
+  · Països Baixos
+    ADYEN.AS — Adyen (Finances) — 1001.0 €  | 1set -4.4% · 1mes +7.6% · 1any -26.7%
+    ASML.AS — ASML (Semiconductors) — 1494.0 €  | 1set +2.9% · 1mes -0.3% · 1any +121.1%
+    PHIA.AS — Philips (Salut) — 22.06 €  | 1set -3.7% · 1mes -4.6% · 1any -5.2%
+  · Regne Unit
+    AZN.L — AstraZeneca (Salut) — 141.5463 €  | 1set +1.3% · 1mes +2.4% · 1any +2.6%
+    BP.L — BP (Energia) — 6.4136 €  | 1set +6.8% · 1mes +5.8% · 1any +33.3%
+    HSBA.L — HSBC (Finances) — 18.4001 €  | 1set +3.2% · 1mes +3.8% · 1any +64.7%
+    RIO.L — Rio Tinto (Mineria) — 89.1709 €  | 1set -0.4% · 1mes +2.6% · 1any +64.8%
+    SHEL.L — Shell (Energia) — 40.7202 €  | 1set +4.4% · 1mes +5.4% · 1any +34.0%
+    ULVR.L — Unilever (Consum) — 54.9313 €  | 1set -1.4% · 1mes +0.1% · 1any -5.0%
+  · Suïssa
+    NESN.SW — Nestlé (Consum) — 83.7815 €  | 1set -0.4% · 1mes -3.4% · 1any +9.2%
+    NOVN.SW — Novartis (Salut) — 135.1047 €  | 1set +2.8% · 1mes +0.4% · 1any +27.4%
+    UBSG.SW — UBS (Finances) — 47.3164 €  | 1set +0.1% · 1mes +1.9% · 1any +41.9%
+  · Taiwan
+    TSM — TSMC (xips Taiwan) (Semiconductors) — 368.8596 €  | 1set +3.0% · 1mes +1.9% · 1any +76.7%
+  · Xina
+    BABA — Alibaba (Consum) — 97.3856 €  | 1set -4.5% · 1mes -11.2% · 1any -18.5%
+    NTES — NetEase (Mitjans) — 102.5886 €  | 1set -2.2% · 1mes -8.7% · 1any -14.5%
+    PDD — PDD (Temu) (Consum) — 70.7 €  | 1set -3.8% · 1mes -10.1% · 1any -33.8%
+  · Índia
+    HDB — HDFC Bank (Finances) — 19.9346 €  | 1set +0.7% · 1mes -3.1% · 1any -34.0%
+    INFY — Infosys (Tecnologia) — 10.0619 €  | 1set -2.7% · 1mes -5.9% · 1any -27.2%
+
+FONS COTITZATS / ETFs (màxim 40% de la cartera per fons):
+  · Índexs principals
+    SPY — S&P 500 (SPDR) — 662.3581 €  | 1set +0.3% · 1mes -0.4% · 1any +20.9%
+    VOO — S&P 500 (Vanguard) — 608.8837 €  | 1set +0.4% · 1mes -0.4% · 1any +21.0%
+    IVV — S&P 500 (iShares Core) — 665.5659 €  | 1set +0.4% · 1mes -0.4% · 1any +21.0%
+    VTI — Mercat total EUA — 326.5652 €  | 1set +0.3% · 1mes -0.4% · 1any +20.7%
+    QQQ — Nasdaq 100 — 618.3007 €  | 1set +0.6% · 1mes -0.0% · 1any +25.7%
+    DIA — Dow Jones Industrial — 459.3051 €  | 1set +0.1% · 1mes -1.3% · 1any +19.7%
+    IWM — Russell 2000 (small caps) — 254.5666 €  | 1set +0.3% · 1mes -1.4% · 1any +26.5%
+    RSP — S&P 500 equiponderat — 188.3385 €  | 1set -0.5% · 1mes -0.4% · 1any +19.1%
+    VT — Mercat mundial total — 139.0867 €  | 1set +0.7% · 1mes +0.5% · 1any +22.7%
+    ACWI — Món desenvolupat i emergent — 139.2243 €  | 1set +0.7% · 1mes +0.5% · 1any +22.9%
+  · Tecnologia
+    XLK — Tecnologia EUA (S&P) — 161.0595 €  | 1set +1.1% · 1mes +0.4% · 1any +43.2%
+    VGT — Tecnologia (Vanguard) — 104.2914 €  | 1set +1.2% · 1mes +0.8% · 1any +39.2%
+    IGV — Programari EUA — 89.9295 €  | 1set -4.3% · 1mes +4.5% · 1any -4.2%
+    FDN — Internet EUA — 250.1462 €  | 1set -1.0% · 1mes +2.0% · 1any +3.9%
+    SKYY — Computació al núvol — 138.9405 €  | 1set -1.9% · 1mes +6.6% · 1any +23.9%
+    CIBR — Ciberseguretat — 81.3467 €  | 1set -3.8% · 1mes -2.5% · 1any +28.2%
+    ARKK — Innovació disruptiva (ARK) — 74.1486 €  | 1set +2.2% · 1mes +13.2% · 1any +14.1%
+  · IA i semiconductors
+    SMH — Semiconductors (VanEck) — 487.6247 €  | 1set +2.8% · 1mes -1.4% · 1any +93.2%
+    SOXX — Semiconductors (iShares) — 447.076 €  | 1set +2.5% · 1mes -3.0% · 1any +111.4%
+    BOTZ — Robòtica i IA (Global X) — 30.9168 €  | 1set +0.8% · 1mes -3.3% · 1any +6.7%
+    ROBO — Robòtica i automatització — 69.2896 €  | 1set +0.2% · 1mes -3.6% · 1any +26.0%
+    AIQ — Intel·ligència artificial — 55.3148 €  | 1set +0.4% · 1mes +3.2% · 1any +40.6%
+    ARKQ — Autonomia i robòtica (ARK) — 105.1342 €  | 1set +0.2% · 1mes -1.4% · 1any +27.0%
+  · Energia
+    XLE — Energia EUA — 55.0912 €  | 1set +2.5% · 1mes +9.5% · 1any +52.7%
+    XOP — Exploració de petroli i gas — 164.0093 €  | 1set +2.8% · 1mes +13.5% · 1any +52.7%
+    OIH — Serveis petroliers — 367.6729 €  | 1set +2.4% · 1mes +8.4% · 1any +71.6%
+    ICLN — Energies netes globals — 15.2821 €  | 1set +1.9% · 1mes -2.6% · 1any +24.1%
+    TAN — Energia solar — 41.3141 €  | 1set -1.0% · 1mes -6.8% · 1any +11.7%
+    FAN — Energia eòlica — 20.356 €  | 1set -0.4% · 1mes -0.6% · 1any +28.4%
+    URA — Urani i energia nuclear — 39.6113 €  | 1set +1.3% · 1mes +6.0% · 1any +17.1%
+  · Salut
+    XLV — Salut EUA — 147.4458 €  | 1set +0.4% · 1mes +3.6% · 1any +27.5%
+    VHT — Sanitat (Vanguard) — 276.6254 €  | 1set +0.5% · 1mes +3.5% · 1any +28.4%
+    IBB — Biotecnologia (Nasdaq) — 182.2497 €  | 1set +1.7% · 1mes +9.1% · 1any +50.5%
+    XBI — Biotecnologia (S&P) — 140.8755 €  | 1set +1.1% · 1mes +5.4% · 1any +75.5%
+    IHI — Equipament mèdic — 46.1214 €  | 1set -2.6% · 1mes -1.5% · 1any -13.2%
+  · Renda fixa
+    TLT — Bons EUA 20+ anys — 70.7 €  | 1set -0.2% · 1mes -0.6% · 1any -3.5%
+    IEF — Bons EUA 7-10 anys — 79.3344 €  | 1set -0.1% · 1mes -1.0% · 1any -0.5%
+    SHY — Bons EUA 1-3 anys — 70.2528 €  | 1set +0.3% · 1mes -0.5% · 1any +2.8%
+    BIL — Lletres del Tresor (1-3 mesos) — 78.6464 €  | 1set +0.3% · 1mes -0.3% · 1any +4.4%
+    AGG — Bons EUA agregats — 83.4193 €  | 1set +0.1% · 1mes -0.7% · 1any +1.2%
+    BND — Mercat total de bons EUA — 61.8765 €  | 1set +0.1% · 1mes -0.7% · 1any +1.2%
+    LQD — Bons corporatius de qualitat — 90.7121 €  | 1set -0.2% · 1mes -1.0% · 1any -0.3%
+    HYG — Bons d'alt rendiment — 68.0771 €  | 1set +0.1% · 1mes -0.4% · 1any +4.6%
+    TIP — Bons lligats a la inflació — 91.9935 €  | 1set +0.3% · 1mes -0.5% · 1any +0.9%
+    EMB — Deute de mercats emergents — 81.2436 €  | 1set +0.2% · 1mes -0.7% · 1any +5.7%
+    MUB — Bons municipals EUA — 89.4651 €  | 1set -0.6% · 1mes -1.9% · 1any +2.2%
+    GOVT — Bons del Tresor EUA — 19.2294 €  | 1set +0.2% · 1mes -0.7% · 1any +0.7%
+  · Mercats internacionals
+    VGK — Europa (Vanguard) — 78.8958 €  | 1set -0.0% · 1mes -0.7% · 1any +20.4%
+    EZU — Zona euro — 60.5951 €  | 1set -0.3% · 1mes -1.4% · 1any +21.1%
+    EWG — Alemanya — 37.7451 €  | 1set -1.3% · 1mes +0.2% · 1any +8.2%
+    EWQ — França — 39.2931 €  | 1set -0.9% · 1mes -4.6% · 1any +10.1%
+    EWU — Regne Unit — 41.7871 €  | 1set +0.3% · 1mes +0.0% · 1any +21.3%
+    EWJ — Japó — 84.5201 €  | 1set +2.8% · 1mes +2.7% · 1any +27.5%
+    MCHI — Xina (MSCI) — 47.2222 €  | 1set -0.3% · 1mes -2.4% · 1any -9.5%
+    FXI — Xina (grans empreses) — 30.8566 €  | 1set +1.3% · 1mes -0.8% · 1any -6.7%
+    EWY — Corea del Sud — 162.4269 €  | 1set +5.1% · 1mes +14.4% · 1any +162.2%
+    EWT — Taiwan — 96.474 €  | 1set +4.2% · 1mes +9.3% · 1any +93.8%
+    EEM — Mercats emergents (MSCI) — 59.0815 €  | 1set +2.6% · 1mes +5.0% · 1any +38.6%
+    VWO — Mercats emergents (Vanguard) — 52.838 €  | 1set +1.3% · 1mes +1.9% · 1any +21.0%
+    INDA — Índia — 42.9223 €  | 1set +0.9% · 1mes -1.0% · 1any -4.9%
+    EWZ — Brasil — 32.5593 €  | 1set +6.8% · 1mes +5.1% · 1any +34.7%
+    EWC — Canadà — 53.354 €  | 1set +0.7% · 1mes +1.6% · 1any +28.5%
+  · Matèries primeres
+    DBC — Cistella de matèries primeres — 27.4338 €  | 1set +3.9% · 1mes +9.9% · 1any +49.7%
+    PDBC — Matèries primeres (optimitzat) — 16.3485 €  | 1set +3.6% · 1mes +9.7% · 1any +50.6%
+    GSG — Índex GSCI de matèries primeres — 29.9536 €  | 1set +4.5% · 1mes +11.4% · 1any +54.5%
+    USO — Petroli WTI — 122.0846 €  | 1set +9.7% · 1mes +18.7% · 1any +95.8%
+    BNO — Petroli Brent — 48.2542 €  | 1set +9.3% · 1mes +17.7% · 1any +90.1%
+    UNG — Gas natural — 9.0815 €  | 1set +2.5% · 1mes +9.0% · 1any -19.2%
+    DBA — Agricultura — 24.8108 €  | 1set -0.9% · 1mes +4.6% · 1any +10.4%
+    CPER — Coure — 34.3567 €  | 1set +1.0% · 1mes -2.6% · 1any +43.6%
+    DBB — Metalls industrials — 22.1448 €  | 1set +1.3% · 1mes +0.2% · 1any +33.7%
+  · Metalls preciosos
+    GLD — Or físic (SPDR) — 349.8194 €  | 1set -0.3% · 1mes +3.8% · 1any +22.4%
+    IAU — Or físic (iShares) — 71.7148 €  | 1set -0.3% · 1mes +3.8% · 1any +22.5%
+    SGOL — Or físic (abrdn) — 36.3175 €  | 1set -0.2% · 1mes +3.8% · 1any +22.7%
+    SLV — Plata física (iShares) — 51.4448 €  | 1set -0.1% · 1mes +6.5% · 1any +60.6%
+    SIVR — Plata física (abrdn) — 54.1022 €  | 1set -0.1% · 1mes +6.5% · 1any +60.9%
+    PPLT — Platí físic — 14.1899 €  | 1set +0.3% · 1mes +4.6% · 1any +31.8%
+    PALL — Pal·ladi físic — 21.7664 €  | 1set -1.6% · 1mes +1.1% · 1any +22.6%
+    GDX — Mineres d'or — 85.3629 €  | 1set -0.2% · 1mes +17.6% · 1any +49.8%
+    GDXJ — Mineres d'or júnior — 110.9649 €  | 1set +0.4% · 1mes +17.2% · 1any +53.9%
+  · Immobiliari
+    VNQ — Immobiliari EUA (REITs) — 82.5765 €  | 1set -1.0% · 1mes -2.7% · 1any +9.3%
+    VNQI — Immobiliari internacional — 38.9319 €  | 1set +0.3% · 1mes -2.0% · 1any +0.5%
+    IYR — Immobiliari EUA (iShares) — 87.8397 €  | 1set -1.0% · 1mes -2.6% · 1any +8.3%
+    SCHH — REITs EUA (Schwab) — 20.1668 €  | 1set -1.0% · 1mes -2.9% · 1any +13.3%
+    REM — REITs hipotecaris — 18.7393 €  | 1set +0.3% · 1mes +0.8% · 1any +1.8%
+  · Dividends
+    VIG — Dividends creixents (Vanguard) — 208.1355 €  | 1set -0.2% · 1mes -1.6% · 1any +16.5%
+    VYM — Alt dividend (Vanguard) — 141.2367 €  | 1set +0.2% · 1mes -0.9% · 1any +21.4%
+    SCHD — Dividends de qualitat (Schwab) — 29.9278 €  | 1set -0.0% · 1mes +2.6% · 1any +32.4%
+    DVY — Dividends selectes (iShares) — 141.2539 €  | 1set +0.5% · 1mes +1.3% · 1any +21.5%
+    HDV — Alt dividend (iShares) — 25.2838 €  | 1set +0.1% · 1mes +2.1% · 1any +26.6%
+    SDY — Aristòcrates del dividend (SPDR) — 134.0643 €  | 1set -0.8% · 1mes -1.2% · 1any +14.8%
+    NOBL — Aristòcrates del dividend (S&P) — 49.6216 €  | 1set -0.9% · 1mes -1.3% · 1any +13.9%
+    DGRO — Creixement de dividends — 68.0513 €  | 1set -0.0% · 1mes -0.6% · 1any +21.5%
+  · Defensius
+    USMV — Mínima volatilitat EUA — 86.6873 €  | 1set -0.7% · 1mes +0.2% · 1any +9.6%
+    SPLV — Baixa volatilitat S&P 500 — 64.2759 €  | 1set -0.2% · 1mes -2.4% · 1any +5.2%
+    QUAL — Factor qualitat (MSCI) — 191.4173 €  | 1set -0.2% · 1mes -1.7% · 1any +19.3%
+    SPHD — Alt dividend i baixa volatilitat — 44.9776 €  | 1set -0.8% · 1mes -0.1% · 1any +12.4%
+    XLP — Consum bàsic EUA — 72.7382 €  | 1set -0.8% · 1mes -1.2% · 1any +8.7%
+    XLU — Serveis públics (utilities) — 37.0485 €  | 1set +1.1% · 1mes -1.3% · 1any +8.0%
+  · Sectors EUA
+    XLF — Banca i finances EUA — 49.9656 €  | 1set +0.2% · 1mes -0.1% · 1any +11.9%
+    XLY — Consum discrecional EUA — 98.8218 €  | 1set -1.7% · 1mes -3.3% · 1any -1.2%
+    XLI — Indústria EUA — 150.731 €  | 1set -0.8% · 1mes -5.7% · 1any +18.2%
+    XLB — Materials EUA — 45.098 €  | 1set -1.1% · 1mes -0.1% · 1any +16.9%
+    XLRE — Immobiliari EUA (sector S&P) — 37.7795 €  | 1set -1.0% · 1mes -2.6% · 1any +9.3%
+    XLC — Serveis de comunicació EUA — 96.345 €  | 1set -0.6% · 1mes +0.1% · 1any -0.5%
+    KBE — Bancs EUA — 59.6319 €  | 1set +1.5% · 1mes -1.8% · 1any +16.9%
+    ITA — Aeroespacial i defensa — 194.023 €  | 1set -2.9% · 1mes -10.3% · 1any +15.6%
+    JETS — Aerolínies — 24.7678 €  | 1set -1.0% · 1mes -12.3% · 1any +11.9%
+
+CONTEXT DE MERCAT:
+  VIX (índex de la por): 15.08
+  Bo EUA 10 anys (%): 4.784
+  EUR/USD: 1.1628
+
+ELS 10 TITULARS MÉS IMPORTANTS DE LA SETMANA:
+  1. Trump turns up the heat on Warsh as Fed rate hike looms
+  2. Trump says he's made 'Hundreds of Billions of Dollars on Stocks' for the U.S., in stream of AI posts
+  3. Yen surges to 6-month high as traders stay alert for signs of intervention
+  4. Scott Galloway issues grim SpaceX stock price forecast
+  5. European shares sag on Tehran’s Hormuz zone plan and imminent ECB hike
+  6. Yen hits seven-month high; dollar soft ahead of US inflation
+  7. Audi targets Europe’s EV market with new A2 compact
+  8. Oil prices climb after reports of Saudi Aramco refinery being hit by Houthi rebels
+  9. El Ibex duda en los 20.000 puntos sin la referencia de Wall Street
+  10. Women accounted for almost all of job gains in August. Here's why
+  11. SpaceX rival launches rocket in historic first, says industry is 'desperate' for more
+  12. Saudi Aramco oil facilities hit in new strikes
+
+LA TEVA TASCA: analitza-ho tot i pren la teva decisió. Respon NOMÉS amb el JSON.
