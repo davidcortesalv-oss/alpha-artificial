@@ -212,6 +212,12 @@ perdre diners— i les dades diuen **just el contrari**.
 | Claude | 1 de 7 (14 %) | 2 de 6 (33 %) |
 | **TOTAL** | **20 de 36 (56 %)** | **23 de 33 (70 %)** |
 
+> *Nota:* la fila TOTAL ajunta totes les decisions de les cinc IAs (20 de 36).
+> La web, a la pestanya Biaixos, fa la mitjana dels cinc percentatges per
+> separat i li surt 53,1 %. Les dues xifres són correctes: mesuren coses
+> lleugerament diferents (una pondera per nombre de decisions i l'altra dona
+> el mateix pes a cada IA). La conclusió no canvia.
+
 Després d'una setmana en verd reajusten el **70 %** de les vegades; després
 d'una en vermell, només el **56 %**. **Toquen més la cartera quan els va bé
 que quan els va malament.**
