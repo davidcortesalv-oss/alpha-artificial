@@ -676,7 +676,11 @@ main {
   .inf-grid { grid-template-columns: 1fr; gap: 10px; }
   .cv-fila { grid-template-columns: 1fr 90px; row-gap: 8px; }
   .cv-pes { grid-column: 1 / -1; }
-  .font-dades .font-sub { display: none; }
+  /* El "fa X min" es queda TAMBÉ al mòbil: és justament al telèfon on més
+     fàcil és estar mirant una pestanya oberta de fa dies sense adonar-se'n.
+     S'encongeix i es posa a sota, però no s'amaga. */
+  .font-dades { flex-direction: column; align-items: flex-end; gap: 0; line-height: 1.25; }
+  .font-dades .font-sub { font-size: 9px; }
 }
 @media (max-width: 640px) {
   .rk { grid-template-columns: 26px 1fr 1fr; padding: 12px 14px; }
