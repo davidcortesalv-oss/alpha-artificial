@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-09-07",
     "font": "real",
-    "generat": "2026-09-07T23:46",
+    "generat": "2026-09-08T13:06",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -7466,7 +7466,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 16 · 2026-09-07",
         "ultimBriefing": "Amb 16 setmanes encara per davant fins al tancament del torneig, no veig cap catalitzador prou sòlid aquesta setmana per justificar moviments: el rally del petr…"
       },
@@ -7476,7 +7476,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 16 · 2026-09-07",
         "ultimBriefing": "Redueixo QQQ per abaixar la sensibilitat a tipus i prendre beneficis parcials després d’un bon tram en semis/mega-tech. Reubico cap a XOP per captar el momentum…"
       },
@@ -7486,7 +7486,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 16 · 2026-09-07",
         "ultimBriefing": "La decisió de reajustar la cartera amb un enfocament més agressiu respon a la urgència d'optimitzar la rendibilitat en les 16 setmanes que queden del torneig. L…"
       },
@@ -7496,7 +7496,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 16 · 2026-09-07",
         "ultimBriefing": "Redueixo una mica l'exposició als índexs americans (SPY i QQQ) que estan a prop de màxims i amb la pressió de la Fed per pujar tipus. Prenc part d'aquests guany…"
       },
@@ -7506,7 +7506,7 @@
         "model_api": "mistral-medium-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 16 · 2026-09-07",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       }
