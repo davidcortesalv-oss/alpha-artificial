@@ -1184,7 +1184,21 @@
       const confEnPerdues = perdudes.length ? perdudes.reduce((s, x) => s + x.confianca, 0) / perdudes.length : 0;
       // "efecte disposició": reajusta just després d'una setmana en negatiu
       const veneEnVermell = d.filter((x, i) => i > 0 && d[i - 1].rend_setmana < 0 && x.decisio === "reajustar").length;
-      metrica[m.id] = { reaj, total: d.length, confMitja, confEnPerdues, veneEnVermell };
+
+      // Quant de la cartera és, literalment, el rival que han de batre.
+      // Comprar l'índex mentre intentes superar-lo es diu "indexació encoberta":
+      // t'assegura no quedar-ne lluny, però també no superar-lo mai, perquè
+      // pagues comissions per una cosa que l'índex té gratis.
+      const AMPLIS = ["SPY", "QQQ", "VTI", "VOO", "IVV", "VT", "ACWI"];
+      const pesIndex = (DATA.carteres[m.id] || [])
+        .filter((h) => AMPLIS.indexOf(h.ticker) !== -1)
+        .reduce((s, h) => s + (h.pes || 0), 0);
+
+      // Tenen 114 accions d'empreses reals per triar i gairebé no en compren.
+      const exp = ((DATA.exposicio || {})[m.id] || {}).tipus || {};
+      const pesFons = exp["Fons (ETFs)"] || 0;
+
+      metrica[m.id] = { reaj, total: d.length, confMitja, confEnPerdues, veneEnVermell, pesIndex, pesFons };
     });
 
     const targetes = [
@@ -1200,13 +1214,19 @@
       { t: "Confiança mitjana", q: "Com de segures es mostren en general (d'1 a 10)? Més confiança no vol dir més encert.",
         f: (id) => metrica[id].confMitja, fmt: (v) => `${dec1(v)}/10`,
         peu: (top) => `<b>${top.nom}</b> és la IA que es declara més segura del torneig.` },
+      { t: "Compren el rival", q: "Quina part de la cartera és, literalment, l'índex que han de batre? Comprar-lo t'assegura no quedar-ne lluny… i no superar-lo mai.",
+        f: (id) => metrica[id].pesIndex, fmt: (v) => `${dec1(v)} %`,
+        peu: (top) => `Totes cinc tenen S&P 500 a la cartera. <b>${top.nom}</b> és qui més en té: indexació encoberta de manual.` },
+      { t: "Fugen de les empreses", q: "Tenen 114 accions d'empreses reals per triar (Nvidia, Inditex, Ferrari…). Quantes en compren?",
+        f: (id) => metrica[id].pesFons, fmt: (v) => `${dec1(v)} % en fons`,
+        peu: (top, baix) => `<b>${top.nom}</b> és qui més s'amaga en fons; ni <b>${baix.nom}</b> arriba al 15 % en accions concretes. Aversió a l'ambigüitat.` },
     ];
 
     VISTA().innerHTML = `
       ${capçaleraVista("Anàlisi de biaixos conductuals", "Mostren les IAs els mateixos biaixos que els inversors humans? Pànic, sobreoperació, excés de confiança… Economia conductual, en la línia de Kahneman.")}
       ${nIncidencies ? `<div class="avis-metodologic">
         <b>Nota metodològica:</b> s'han exclòs d'aquestes mètriques
-        ${nIncidencies} ronda${nIncidencies === 1 ? "" : "es"} en què una IA no va poder respondre
+        ${nIncidencies} ${nIncidencies === 1 ? "ronda" : "rondes"} en què una IA no va poder respondre
         (API del proveïdor caiguda o resposta tallada). No van ser decisions de
         mantenir la cartera, sinó incidències tècniques: comptar-les distorsionaria
         la sobreoperació i la confiança mitjana. Continuen visibles a l'historial de cada IA.
