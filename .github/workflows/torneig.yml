@@ -22,7 +22,13 @@ on:
     # parell més el dimarts, per si el dilluns falla del tot).
     # El motor comprova si la ronda d'aquesta setmana ja s'ha jugat: la
     # primera execució que entra la juga i la resta no fan res.
-    - cron: "37 7 * * 1"     # dilluns 09:37 (hora d'estiu espanyola)
+    # Els retards observats el 31/08 i el 07/09 de 2026 van ser de 6-8 hores,
+    # molt més del que es preveia. Per això s'engeguen dos intents de matinada:
+    # encara que arribin tard, la ronda cau al matí i no a mitja tarda.
+    # Costen 1 minut cadascun si la ronda ja està jugada.
+    - cron: "19 3 * * 1"     # dilluns 05:19 (hora d'estiu espanyola)
+    - cron: "41 5 * * 1"     # dilluns 07:41
+    - cron: "37 7 * * 1"     # dilluns 09:37
     - cron: "17 10 * * 1"    # dilluns 12:17
     - cron: "43 13 * * 1"    # dilluns 15:43
     - cron: "23 17 * * 1"    # dilluns 19:23

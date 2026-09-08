@@ -60,8 +60,22 @@
     carregarDadesReals(true);
     setInterval(() => carregarDadesReals(false), 60000); // refresc cada minut
     window.addEventListener("hashchange", route);
+
+    // El refresc del minut NO n'hi ha prou. Els navegadors congelen els
+    // temporitzadors de les pestanyes que no mires: si deixes la web oberta en
+    // segon pla i hi tornes l'endemà, pots estar veient les dades d'ahir sense
+    // saber-ho. Aquí forcem una recàrrega de dades just quan tornes a mirar.
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) carregarDadesReals(false);
+    });
+    window.addEventListener("focus", function () { carregarDadesReals(false); });
+    window.addEventListener("pageshow", function (e) {
+      if (e.persisted) carregarDadesReals(false);   // tornada amb el botó "enrere"
+    });
+
     bindNav();
     route();
+    setInterval(pintarEstatFont, 30000);  // manté viu el "fa X min"
   }
 
   function carregarDadesReals(primerCop) {
@@ -85,12 +99,34 @@
       .catch(() => pintarEstatFont());
   }
 
+  // "2026-09-08T13:06" -> "fa 4 min", "fa 3 h", "ahir", "fa 3 dies"
+  function faQuant(iso) {
+    // Les marques noves ja porten la zona horària. Les velles no en porten cap
+    // i venen de GitHub, que va en UTC: si no ho diguéssim, el navegador les
+    // llegiria com a hora d'aquí i el "fa X" sortiria desviat dues hores.
+    const teZona = /[Zz]$|[+-]\d\d:?\d\d$/.test(iso);
+    const t = new Date(teZona ? iso : iso + "Z");
+    if (isNaN(t)) return iso.slice(0, 16).replace("T", " ");
+    const min = Math.round((Date.now() - t.getTime()) / 60000);
+    if (min < 2) return "ara mateix";
+    if (min < 60) return "fa " + min + " min";
+    const h = Math.round(min / 60);
+    if (h < 24) return "fa " + h + " h";
+    const d = Math.round(h / 24);
+    return d === 1 ? "ahir" : "fa " + d + " dies";
+  }
+
   function pintarEstatFont() {
     const el = $("#font-dades");
     if (!el || !DATA) return;
     if (DATA.meta.font === "real") {
+      // Ensenyar l'hora sola no diu si el que mires és fresc o de fa tres dies.
+      // Amb el "fa X" es veu d'un cop d'ull, i si la pàgina s'ha quedat
+      // enganxada en segon pla, el número creix i es nota.
       el.innerHTML = `<span class="dot dot-verd"></span> DADES REALS` +
-        (DATA.meta.generat ? ` <span class="font-sub">· actualitzat ${DATA.meta.generat.slice(0, 16).replace("T", " ")}</span>` : "");
+        (DATA.meta.generat
+          ? ` <span class="font-sub">· actualitzat ${faQuant(DATA.meta.generat)}</span>`
+          : "");
     } else {
       el.innerHTML = `<span class="dot dot-ambre"></span> DEMOSTRACIÓ <span class="font-sub">· esperant el torneig real</span>`;
     }

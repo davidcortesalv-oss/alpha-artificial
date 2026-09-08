@@ -555,7 +555,10 @@ def main():
             "dataInici": dies[0] if dies else "",
             "dataActual": dies[-1] if dies else "",
             "font": "real",
-            "generat": datetime.datetime.now().isoformat(timespec="minutes"),
+            # Amb zona horària EXPLÍCITA (UTC). Sense ella la marca era
+            # ambigua: a GitHub sortia en UTC i al portàtil en hora d'aquí,
+            # i el navegador no podia saber quina de les dues llegia.
+            "generat": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="minutes"),
             "puntsPerSetmana": punts_per_setmana,
             "nAccions": len(config.UNIVERS_ACCIONS),
             "nEtfs": len(config.UNIVERS_ETFS),
