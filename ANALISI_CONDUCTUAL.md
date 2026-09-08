@@ -18,14 +18,20 @@
 Totes les xifres surten de `dades/decisions.csv`, `dades/canvis.csv` i
 `dades/comissions.csv`, que són públics al repositori.
 
-**S'han exclòs 7 rondes** en què una IA no va poder respondre perquè l'API del
+**S'han exclòs 6 rondes** en què una IA no va poder respondre perquè l'API del
 seu proveïdor estava caiguda o va tallar la resposta. No van ser decisions de
 mantenir la cartera: van ser avaries. Comptar-les com si la IA hagués triat
 quedar-se quieta inflaria artificialment la seva paciència i li rebaixaria la
 confiança mitjana. Queden visibles a l'historial, però fora d'aquestes
 mètriques.
 
-Queden, doncs, **73 decisions vàlides** de 80.
+Queden, doncs, **74 decisions vàlides** de 80.
+
+Per mesurar si una setmana va anar bé o malament es fa servir el rendiment
+setmanal que calcula el propi motor (`rend_setmana`), no la diferència entre
+els valors de cartera de dues decisions consecutives. Són coses distintes: la
+segona barreja el moviment del mercat amb el moment exacte en què es va
+executar la ronda, i dona resultats enganyosos.
 
 ---
 
@@ -89,7 +95,7 @@ I hi ha una segona baula que tanca el cercle:
 | Relació | Correlació |
 |---|---|
 | Confiança ↔ rendiment | **−0,94** |
-| Confiança ↔ operar més | **+0,75** |
+| Confiança ↔ operar més | **+0,77** |
 | Operar més ↔ rendiment | −0,58 |
 
 Es llegeix així: **més confiança porta a operar més, i operar més porta a
@@ -117,7 +123,7 @@ menys guanyaven, i que la causa era l'excés de confiança.
 | Gemini | 11 de 15 (73 %) | **2,2 × la cartera** | 19,50 € |
 | GPT | 10 de 16 (62 %) | 1,0 × la cartera | 16,00 € |
 | DeepSeek | 8 de 15 (53 %) | 1,3 × la cartera | **25,26 €** |
-| Claude | **3 de 14 (23 %)** | 0,4 × la cartera | 7,06 € |
+| Claude | **3 de 14 (21 %)** | 0,4 × la cartera | 7,06 € |
 
 **Mistral no ha decidit mantenir ni una sola vegada.** Cada setmana, sense
 excepció, ha trobat un motiu per moure la cartera. Gemini ha arribat a moure
@@ -192,37 +198,61 @@ totes cinc hi han anat igualment.
 
 ---
 
-## 6. Reaccionen quan perden, però no aprenen
+## 6. No hi ha pànic: hi ha eufòria
 
-### Es mouen més després d'una mala setmana
+Aquí esperàvem trobar el biaix més típic —moure fitxa nerviosament després de
+perdre diners— i les dades diuen **just el contrari**.
 
 | IA | Reajusta després de PERDRE | Reajusta després de GUANYAR |
 |---|---|---|
-| Gemini | **6 de 7 (86 %)** | 4 de 7 (57 %) |
-| Mistral | 7 de 7 (100 %) | 6 de 6 (100 %) |
-| DeepSeek | 3 de 5 (60 %) | 5 de 9 (56 %) |
-| GPT | 3 de 6 (50 %) | 6 de 9 (67 %) |
-| Claude | 2 de 5 (40 %) | 1 de 7 (14 %) |
-| **TOTAL** | **21 de 30 (70 %)** | **22 de 38 (58 %)** |
+| Mistral | 8 de 8 (100 %) | 5 de 5 (100 %) |
+| Gemini | **6 de 8 (75 %)** | 4 de 6 (67 %) |
+| GPT | 3 de 7 (43 %) | **6 de 8 (75 %)** |
+| DeepSeek | 2 de 6 (33 %) | **6 de 8 (75 %)** |
+| Claude | 1 de 7 (14 %) | 2 de 6 (33 %) |
+| **TOTAL** | **20 de 36 (56 %)** | **23 de 33 (70 %)** |
 
-En conjunt, després d'una setmana en vermell reajusten el **70 %** de les
-vegades; després d'una en verd, el **58 %**. Hi ha una tendència a moure fitxa
-quan les coses van malament, però és moderada. **Gemini és la més nerviosa**:
-passa del 57 % al 86 %.
+Després d'una setmana en verd reajusten el **70 %** de les vegades; després
+d'una en vermell, només el **56 %**. **Toquen més la cartera quan els va bé
+que quan els va malament.**
 
-### El que no fan: recalibrar-se
+GPT i DeepSeek són els casos més marcats: passen del 33-43 % després de perdre
+al 75 % després de guanyar. L'única que encaixa amb el patró de pànic és
+**Gemini** (75 % vs 67 %), i per poc.
+
+Es pot llegir de dues maneres, i totes dues són interessants per al TR:
+
+- Com a **eufòria**: una bona setmana s'interpreta com a confirmació que la
+  lectura del mercat és bona, i això anima a fer més moviments.
+- Com a **efecte disposició** (Shefrin i Statman, 1985): quan hi ha guanys es
+  toca la cartera per realitzar-los; quan hi ha pèrdues s'espera «a veure si
+  recupera».
+
+> ⚠️ **Compte amb aquesta xifra.** Depèn molt de com es defineixi «setmana
+> dolenta». Aquí es fa servir el rendiment setmanal que calcula el motor. Si
+> en comptes d'això es compara el valor de la cartera entre dues decisions
+> consecutives —que barreja el mercat amb l'hora d'execució de la ronda— el
+> resultat **s'inverteix**. És un bon exemple, per al TR, de com la manera de
+> mesurar pot canviar la conclusió: convé dir sempre quina s'ha fet servir.
+
+### El que sí que no fan: recalibrar-se
 
 | IA | Confiança després de PERDRE | Confiança després de GUANYAR |
 |---|---|---|
-| Mistral | 7,1 | 7,2 |
-| Gemini | **7,0** | **6,8** |
-| DeepSeek | 6,2 | 6,2 |
-| Claude | 6,0 | 6,0 |
-| GPT | 5,3 | 5,8 |
+| Mistral | **7,4** | 6,8 |
+| DeepSeek | **6,5** | 6,1 |
+| Gemini | 6,8 | 7,0 |
+| Claude | 5,7 | 6,0 |
+| GPT | 5,6 | 5,6 |
 
-Perdre diners **no els baixa la confiança**. DeepSeek i Claude la mantenen
-clavada. **Gemini fins i tot la puja** després de perdre. Només GPT —la que
-millor ho fa— es rebaixa mig punt quan li ha anat malament.
+**Mistral i DeepSeek pugen la confiança després de perdre diners.** Mistral
+passa de 6,8 a 7,4: com pitjor li ha anat la setmana, més segura es declara la
+següent. GPT no es mou gens. Només Claude i Gemini la baixen una mica, que és
+el que faria algú que aprèn de l'error.
+
+I no és casualitat que les dues que pugen la confiança quan perden siguin
+també **les dues que pitjor ho fan** del grup (Mistral −1,86 %, DeepSeek
+−1,35 %).
 
 Aquesta és una forma d'excés de confiança especialment humana: no és només
 declarar-se segur, és **no actualitzar-se quan la realitat et contradiu**.
@@ -261,13 +291,13 @@ que després fan.
 | Biaix | Apareix? | Evidència |
 |---|---|---|
 | **Excés de confiança** | ✅ Molt clar | Correlació −0,94 entre confiança i rendiment |
-| **Manca de recalibració** | ✅ Clar | Perdre no els baixa la confiança; Gemini la puja |
+| **Manca de recalibració** | ✅ Clar | Mistral i DeepSeek pugen la confiança després de perdre |
 | **Indexació encoberta** | ✅ Molt clar | Les 5 tenen SPY; DeepSeek, 57,6 % en índexs |
 | **Aversió a l'ambigüitat** | ✅ Clar | 86-100 % en fons havent-hi 114 accions |
 | **Autodescripció inexacta** | ✅ Clar | Totes «moderades», volatilitat de 9,3 a 16,1 |
 | **Sobreoperació** | ⚠️ Parcial | Mistral 100 %, però GPT opera i guanya |
-| **Pànic davant pèrdues** | ⚠️ Lleu | 70 % vs 58 %; només Gemini destaca |
 | **Efecte ramat** | ⚠️ Parcial | Coincideixen en SPY, GLD i SMH, però les carteres divergeixen molt |
+| **Pànic davant pèrdues** | ❌ **No apareix** | Reajusten més després de guanyar (70 %) que de perdre (56 %) |
 
 ---
 

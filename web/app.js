@@ -1183,7 +1183,18 @@
       const perdudes = d.filter((x) => x.rend_setmana < 0);
       const confEnPerdues = perdudes.length ? perdudes.reduce((s, x) => s + x.confianca, 0) / perdudes.length : 0;
       // "efecte disposició": reajusta just després d'una setmana en negatiu
-      const veneEnVermell = d.filter((x, i) => i > 0 && d[i - 1].rend_setmana < 0 && x.decisio === "reajustar").length;
+      // Comptar quantes vegades reajusta després de perdre, en absolut, enganya:
+      // Mistral ho fa 8 cops, però és que reajusta SEMPRE, guanyi o perdi.
+      // El que diu alguna cosa és el percentatge, i comparar-lo amb el de
+      // després de guanyar. Si la primera xifra fos molt més alta, seria pànic.
+      let rp = [0, 0], rg = [0, 0];
+      d.forEach((x, i) => {
+        if (i === 0) return;
+        const r = x.decisio === "reajustar" ? 1 : 0;
+        if (d[i - 1].rend_setmana < 0) { rp[0] += r; rp[1]++; } else { rg[0] += r; rg[1]++; }
+      });
+      const pctPerdre = rp[1] ? (100 * rp[0]) / rp[1] : 0;
+      const pctGuanyar = rg[1] ? (100 * rg[0]) / rg[1] : 0;
 
       // Quant de la cartera és, literalment, el rival que han de batre.
       // Comprar l'índex mentre intentes superar-lo es diu "indexació encoberta":
@@ -1198,7 +1209,7 @@
       const exp = ((DATA.exposicio || {})[m.id] || {}).tipus || {};
       const pesFons = exp["Fons (ETFs)"] || 0;
 
-      metrica[m.id] = { reaj, total: d.length, confMitja, confEnPerdues, veneEnVermell, pesIndex, pesFons };
+      metrica[m.id] = { reaj, total: d.length, confMitja, confEnPerdues, pctPerdre, pctGuanyar, pesIndex, pesFons };
     });
 
     const targetes = [
@@ -1208,9 +1219,15 @@
       { t: "Excés de confiança", q: "Quina IA es mostra més segura justament les setmanes en què acaba perdent diners?",
         f: (id) => metrica[id].confEnPerdues, fmt: (v) => `${dec1(v)}/10`,
         peu: (top) => `<b>${top.nom}</b> manté la confiança més alta fins i tot en setmanes de pèrdues: el biaix més humà de tots.` },
-      { t: "Reacció a les pèrdues", q: "Qui reajusta la cartera just després d'una setmana en vermell? (possible pànic o efecte disposició)",
-        f: (id) => metrica[id].veneEnVermell, fmt: (v) => `${v} cops`,
-        peu: (top) => `<b>${top.nom}</b> és qui més sovint mou fitxa immediatament després de perdre.` },
+      { t: "Reacció a les pèrdues", q: "Quin percentatge de vegades reajusten just després d'una setmana en vermell? Si fos molt més alt que després de guanyar, seria pànic.",
+        f: (id) => metrica[id].pctPerdre, fmt: (v) => `${dec1(v)} %`,
+        peu: (top) => {
+          const mitP = comp.reduce((s, m) => s + metrica[m.id].pctPerdre, 0) / comp.length;
+          const mitG = comp.reduce((s, m) => s + metrica[m.id].pctGuanyar, 0) / comp.length;
+          return mitG > mitP
+            ? `Sorpresa: de mitjana reajusten <b>menys</b> després de perdre (${dec1(mitP)} %) que després de guanyar (${dec1(mitG)} %). <b>No hi ha pànic</b>: si de cas, eufòria.`
+            : `De mitjana reajusten el ${dec1(mitP)} % després de perdre i el ${dec1(mitG)} % després de guanyar. <b>${top.nom}</b> és la més reactiva.`;
+        } },
       { t: "Confiança mitjana", q: "Com de segures es mostren en general (d'1 a 10)? Més confiança no vol dir més encert.",
         f: (id) => metrica[id].confMitja, fmt: (v) => `${dec1(v)}/10`,
         peu: (top) => `<b>${top.nom}</b> és la IA que es declara més segura del torneig.` },
