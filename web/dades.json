@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-09-14",
     "font": "real",
-    "generat": "2026-09-14T23:59+00:00",
+    "generat": "2026-09-15T13:53+00:00",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -8322,7 +8322,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 17 · 2026-09-14",
         "ultimBriefing": "Redueixo una mica l'or (que últimament no compleix el seu paper de cobertura amb tipus alts i porta setmanes flexionant a la baixa) per augmentar l'exposició a …"
       },
@@ -8332,7 +8332,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 17 · 2026-09-14",
         "ultimBriefing": "Amb el 10Y prop del 5%, prefereixo reduir actius sensibles a tipus (or i part de QQQ) i salut que ha girat a la baixa. El xoc energètic i el risc d’oferta (Horm…"
       },
@@ -8342,7 +8342,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 17 · 2026-09-14",
         "ultimBriefing": "La justificació d'aquest reajustament radica en una resposta directa a les notícies clau de la setmana i a l'horitzó temporal limitat del torneig. Les advertènc…"
       },
@@ -8352,7 +8352,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 17 · 2026-09-14",
         "ultimBriefing": "Redueixo SPY en 1.800 € (del 37,1% al 18,5%) i QQQ en 400 € per finançar una rotació clara cap a energia i matèries primeres, que són els únics sectors amb inèr…"
       },
@@ -8362,7 +8362,7 @@
         "model_api": "mistral-medium-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 17 · 2026-09-14",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       }
