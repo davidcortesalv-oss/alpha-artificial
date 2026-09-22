@@ -9,9 +9,9 @@
     "setmanes": 22,
     "setmanaActual": 18,
     "dataInici": "2026-07-09",
-    "dataActual": "2026-09-21",
+    "dataActual": "2026-09-22",
     "font": "real",
-    "generat": "2026-09-22T13:41+00:00",
+    "generat": "2026-09-22T23:49+00:00",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -61,7 +61,8 @@
     "2026-09-16",
     "2026-09-17",
     "2026-09-18",
-    "2026-09-21"
+    "2026-09-21",
+    "2026-09-22"
   ],
   "models": [
     {
@@ -201,7 +202,8 @@
       9842.86,
       9950.26,
       9929.14,
-      9945.14
+      9945.14,
+      10064.69
     ],
     "gpt": [
       9979.75,
@@ -248,7 +250,8 @@
       9878.55,
       9995.63,
       10015.08,
-      10023.43
+      10023.43,
+      10179.06
     ],
     "gemini": [
       9982.74,
@@ -295,7 +298,8 @@
       9583.53,
       9686.6,
       9658.52,
-      9676.84
+      9676.84,
+      9972.98
     ],
     "deepseek": [
       9983.74,
@@ -342,7 +346,8 @@
       9746.76,
       9542.26,
       9863.33,
-      9872.75
+      9872.75,
+      10001.49
     ],
     "mistral": [
       9979.75,
@@ -389,7 +394,8 @@
       9698.19,
       9789.34,
       9784.27,
-      9791.77
+      9791.77,
+      9928.29
     ],
     "index": [
       10000.0,
@@ -436,7 +442,8 @@
       9986.58,
       10093.65,
       10073.71,
-      10104.85
+      10104.85,
+      10286.81
     ]
   },
   "decisions": {
@@ -8851,7 +8858,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 18 · 2026-09-21",
         "ultimBriefing": "Cap titular d'aquesta setmana representa un catalitzador prou clar per justificar un reajust: la fortalesa de QQQ i la recuperació de l'or confirmen que les mev…"
       },
@@ -8861,7 +8868,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 18 · 2026-09-21",
         "ultimBriefing": "1) Redueixo OIH i parcialment XOP: els serveis i l’exploració són la part amb més beta del complex energètic i han corregit tot i un cru estable; amb 14 setmane…"
       },
@@ -8871,7 +8878,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 18 · 2026-09-21",
         "ultimBriefing": "La decisió de reajustar la cartera es fonamenta en la necessitat d'accelerar la recuperació davant l'horitzó temporal limitat de 14 setmanes. Estem reduint la n…"
       },
@@ -8881,7 +8888,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 18 · 2026-09-21",
         "ultimBriefing": "Redueixo lleugerament l'exposició a energia (USO i XOP) per prendre beneficis després de les fortes pujades recents (USO +18,6% mensual, XOP +3,2% mensual) i pe…"
       },
@@ -8891,7 +8898,7 @@
         "model_api": "mistral-medium-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 18 · 2026-09-21",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       }
@@ -8913,34 +8920,34 @@
   },
   "risc": {
     "claude": {
-      "volatilitat": 10.31,
+      "volatilitat": 10.58,
       "max_caiguda": -4.05,
-      "sharpe": -0.16
+      "sharpe": 0.48
     },
     "gpt": {
-      "volatilitat": 15.37,
+      "volatilitat": 15.62,
       "max_caiguda": -5.52,
-      "sharpe": 0.24
+      "sharpe": 0.79
     },
     "gemini": {
-      "volatilitat": 11.26,
+      "volatilitat": 13.37,
       "max_caiguda": -4.4,
-      "sharpe": -1.53
+      "sharpe": 0.02
     },
     "deepseek": {
-      "volatilitat": 15.05,
+      "volatilitat": 15.2,
       "max_caiguda": -5.49,
-      "sharpe": -0.35
+      "sharpe": 0.14
     },
     "mistral": {
-      "volatilitat": 9.07,
+      "volatilitat": 9.59,
       "max_caiguda": -4.21,
-      "sharpe": -1.16
+      "sharpe": -0.25
     },
     "index": {
-      "volatilitat": 10.7,
+      "volatilitat": 11.38,
       "max_caiguda": -3.24,
-      "sharpe": 0.61
+      "sharpe": 1.45
     }
   },
   "comissions": {
