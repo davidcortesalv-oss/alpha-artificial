@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-09-21",
     "font": "real",
-    "generat": "2026-09-21T09:20+00:00",
+    "generat": "2026-09-22T00:17+00:00",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -8851,7 +8851,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 18 · 2026-09-21",
         "ultimBriefing": "Cap titular d'aquesta setmana representa un catalitzador prou clar per justificar un reajust: la fortalesa de QQQ i la recuperació de l'or confirmen que les mev…"
       },
@@ -8861,7 +8861,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 18 · 2026-09-21",
         "ultimBriefing": "1) Redueixo OIH i parcialment XOP: els serveis i l’exploració són la part amb més beta del complex energètic i han corregit tot i un cru estable; amb 14 setmane…"
       },
@@ -8871,7 +8871,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 18 · 2026-09-21",
         "ultimBriefing": "La decisió de reajustar la cartera es fonamenta en la necessitat d'accelerar la recuperació davant l'horitzó temporal limitat de 14 setmanes. Estem reduint la n…"
       },
@@ -8881,7 +8881,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 18 · 2026-09-21",
         "ultimBriefing": "Redueixo lleugerament l'exposició a energia (USO i XOP) per prendre beneficis després de les fortes pujades recents (USO +18,6% mensual, XOP +3,2% mensual) i pe…"
       },
@@ -8891,7 +8891,7 @@
         "model_api": "mistral-medium-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 18 · 2026-09-21",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       }
