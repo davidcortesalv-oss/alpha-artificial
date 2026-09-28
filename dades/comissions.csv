@@ -54,3 +54,8 @@ data,setmana,model,comissio_setmana,comissio_acumulada
 2026-09-21,18,gemini,4.63,26.09
 2026-09-21,18,deepseek,1.2,31.26
 2026-09-21,18,mistral,0.0,15.72
+2026-09-28,19,gpt,1.41,23.82
+2026-09-28,19,claude,1.78,9.68
+2026-09-28,19,gemini,2.15,28.24
+2026-09-28,19,deepseek,3.09,34.35
+2026-09-28,19,mistral,0.0,15.72
