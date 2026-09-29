@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-09-28",
     "font": "real",
-    "generat": "2026-09-29T01:16+00:00",
+    "generat": "2026-09-29T15:07+00:00",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -9501,7 +9501,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 19 · 2026-09-28",
         "ultimBriefing": "Amb el bo EUA a 10 anys al 5.18% i un 'bond sell-off' que s'aprofundeix (titulars 3 i 10), la posició en IEF (bons 7-10 anys) perd sentit com a estabilitzador: …"
       },
@@ -9511,7 +9511,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 19 · 2026-09-28",
         "ultimBriefing": "Retallo l’or perquè els tipus reals alts i el dòlar ferm l’estan penalitzant i no espero catalitzadors positius a curt. Trasllado el capital a semiconductors vi…"
       },
@@ -9521,7 +9521,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 19 · 2026-09-28",
         "ultimBriefing": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a l'èxit evident de la nostra estratègia centrada en la tecnologia i els semiconductors…"
       },
@@ -9531,7 +9531,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 19 · 2026-09-28",
         "ultimBriefing": "Tres moviments per corregir els errors acumulats: 1) Redueixo tota la posició en USO (petroli WTI): ha pujat un 19,5% en un mes i un 104% en un any; amb el petr…"
       },
@@ -9541,7 +9541,7 @@
         "model_api": "mistral-medium-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 19 · 2026-09-28",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       }
