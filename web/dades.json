@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-09-28",
     "font": "real",
-    "generat": "2026-09-29T15:07+00:00",
+    "generat": "2026-09-30T00:45+00:00",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -211,7 +211,7 @@
       10026.42,
       10016.1,
       10070.66,
-      10065.35
+      9982.63
     ],
     "gpt": [
       9979.75,
@@ -263,7 +263,7 @@
       10199.96,
       10227.92,
       10243.92,
-      10238.52
+      10196.78
     ],
     "gemini": [
       9982.74,
@@ -315,7 +315,7 @@
       9947.07,
       9973.26,
       10018.93,
-      10013.3
+      9903.23
     ],
     "deepseek": [
       9983.74,
@@ -367,7 +367,7 @@
       10027.73,
       10037.04,
       10056.3,
-      10051.0
+      10013.61
     ],
     "mistral": [
       9979.75,
@@ -419,7 +419,7 @@
       9905.25,
       9886.71,
       9939.14,
-      9938.85
+      9894.14
     ],
     "index": [
       10000.0,
@@ -471,7 +471,7 @@
       10273.73,
       10258.09,
       10332.9,
-      10327.45
+      10282.23
     ]
   },
   "decisions": {
@@ -9501,7 +9501,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 19 · 2026-09-28",
         "ultimBriefing": "Amb el bo EUA a 10 anys al 5.18% i un 'bond sell-off' que s'aprofundeix (titulars 3 i 10), la posició en IEF (bons 7-10 anys) perd sentit com a estabilitzador: …"
       },
@@ -9511,7 +9511,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 19 · 2026-09-28",
         "ultimBriefing": "Retallo l’or perquè els tipus reals alts i el dòlar ferm l’estan penalitzant i no espero catalitzadors positius a curt. Trasllado el capital a semiconductors vi…"
       },
@@ -9521,7 +9521,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 19 · 2026-09-28",
         "ultimBriefing": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a l'èxit evident de la nostra estratègia centrada en la tecnologia i els semiconductors…"
       },
@@ -9531,7 +9531,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 19 · 2026-09-28",
         "ultimBriefing": "Tres moviments per corregir els errors acumulats: 1) Redueixo tota la posició en USO (petroli WTI): ha pujat un 19,5% en un mes i un 104% en un any; amb el petr…"
       },
@@ -9541,7 +9541,7 @@
         "model_api": "mistral-medium-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 19 · 2026-09-28",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       }
@@ -9563,34 +9563,34 @@
   },
   "risc": {
     "claude": {
-      "volatilitat": 10.25,
+      "volatilitat": 10.45,
       "max_caiguda": -4.05,
-      "sharpe": 0.46
+      "sharpe": 0.05
     },
     "gpt": {
-      "volatilitat": 14.97,
+      "volatilitat": 15.02,
       "max_caiguda": -5.52,
-      "sharpe": 0.95
+      "sharpe": 0.81
     },
     "gemini": {
-      "volatilitat": 12.87,
+      "volatilitat": 13.14,
       "max_caiguda": -4.4,
-      "sharpe": 0.18
+      "sharpe": -0.25
     },
     "deepseek": {
-      "volatilitat": 14.57,
+      "volatilitat": 14.61,
       "max_caiguda": -5.49,
-      "sharpe": 0.31
+      "sharpe": 0.18
     },
     "mistral": {
-      "volatilitat": 9.28,
+      "volatilitat": 9.34,
       "max_caiguda": -4.21,
-      "sharpe": -0.18
+      "sharpe": -0.43
     },
     "index": {
-      "volatilitat": 11.03,
+      "volatilitat": 11.1,
       "max_caiguda": -3.24,
-      "sharpe": 1.56
+      "sharpe": 1.34
     }
   },
   "comissions": {
