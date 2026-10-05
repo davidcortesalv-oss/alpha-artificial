@@ -21,3 +21,8 @@ data_cobrament,data_pagament,model,ticker,import_eur
 2026-09-21,2026-09-18,gemini,VGK,2.53
 2026-09-21,2026-09-18,mistral,VGK,1.07
 2026-09-28,2026-09-23,mistral,VHT,2.86
+2026-10-05,2026-10-01,deepseek,BIL,1.97
+2026-10-05,2026-10-01,mistral,BIL,0.0
+2026-10-05,2026-10-01,claude,IEF,0.0
+2026-10-05,2026-10-01,mistral,IEF,2.03
+2026-10-05,2026-10-01,gemini,TLT,0.0
