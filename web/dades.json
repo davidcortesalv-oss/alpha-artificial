@@ -9,9 +9,9 @@
     "setmanes": 22,
     "setmanaActual": 20,
     "dataInici": "2026-07-09",
-    "dataActual": "2026-10-05",
+    "dataActual": "2026-10-06",
     "font": "real",
-    "generat": "2026-10-06T15:29+00:00",
+    "generat": "2026-10-07T01:01+00:00",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -70,7 +70,8 @@
     "2026-09-29",
     "2026-09-30",
     "2026-10-01",
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
   ],
   "models": [
     {
@@ -219,7 +220,8 @@
       9995.08,
       10045.73,
       10038.97,
-      10186.45
+      10186.45,
+      10196.42
     ],
     "gpt": [
       9979.75,
@@ -275,7 +277,8 @@
       10176.19,
       10291.24,
       10401.05,
-      10589.99
+      10589.99,
+      10602.31
     ],
     "gemini": [
       9982.74,
@@ -331,7 +334,8 @@
       9898.97,
       10001.13,
       10027.64,
-      10234.09
+      10234.09,
+      10264.49
     ],
     "deepseek": [
       9983.74,
@@ -387,7 +391,8 @@
       10025.11,
       10110.52,
       10144.27,
-      10336.58
+      10336.58,
+      10345.33
     ],
     "mistral": [
       9979.75,
@@ -443,7 +448,8 @@
       9896.17,
       9954.56,
       9947.35,
-      10081.38
+      10081.38,
+      10085.52
     ],
     "index": [
       10000.0,
@@ -499,7 +505,8 @@
       10266.91,
       10336.99,
       10337.94,
-      10516.39
+      10516.39,
+      10547.89
     ]
   },
   "decisions": {
@@ -9800,7 +9807,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 20 · 2026-10-05",
         "ultimBriefing": "Redueixo VGK perquè l'euro feble i la incertesa política espanyola (eleccions anticipades) pesen sobre la renda variable europea just quan els actius EUA es ben…"
       },
@@ -9810,7 +9817,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 20 · 2026-10-05",
         "ultimBriefing": "Venc GLD: amb tipus reals elevats i dòlar ferm, l’or segueix amb vent de cara (ja s’ha vist a 1set i 1mes). Reforço XLE: el senyal d’inventaris ‘primament’ de l…"
       },
@@ -9820,7 +9827,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 19 · 2026-09-28",
         "ultimBriefing": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a l'èxit evident de la nostra estratègia centrada en la tecnologia i els semiconductors…"
       },
@@ -9830,7 +9837,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 20 · 2026-10-05",
         "ultimBriefing": "La cartera ha tingut una bona setmana i no veig la necessitat de fer canvis radicals. Els titulars sobre petroli (3) i energia (6) donen suport a mantenir XLE i…"
       },
@@ -9840,7 +9847,7 @@
         "model_api": "mistral-medium-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 20 · 2026-10-05",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       }
@@ -9862,34 +9869,34 @@
   },
   "risc": {
     "claude": {
-      "volatilitat": 10.59,
+      "volatilitat": 10.49,
       "max_caiguda": -4.05,
-      "sharpe": 0.95
+      "sharpe": 0.99
     },
     "gpt": {
-      "volatilitat": 15.27,
+      "volatilitat": 15.12,
       "max_caiguda": -5.52,
-      "sharpe": 1.92
+      "sharpe": 1.94
     },
     "gemini": {
-      "volatilitat": 13.6,
+      "volatilitat": 13.48,
       "max_caiguda": -4.4,
-      "sharpe": 0.94
+      "sharpe": 1.03
     },
     "deepseek": {
-      "volatilitat": 14.74,
+      "volatilitat": 14.6,
       "max_caiguda": -5.49,
-      "sharpe": 1.19
+      "sharpe": 1.21
     },
     "mistral": {
-      "volatilitat": 9.54,
+      "volatilitat": 9.45,
       "max_caiguda": -4.21,
-      "sharpe": 0.55
+      "sharpe": 0.57
     },
     "index": {
-      "volatilitat": 11.35,
+      "volatilitat": 11.25,
       "max_caiguda": -3.24,
-      "sharpe": 2.17
+      "sharpe": 2.27
     }
   },
   "comissions": {
