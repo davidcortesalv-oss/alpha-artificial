@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-10-12",
     "font": "real",
-    "generat": "2026-10-13T02:43+00:00",
+    "generat": "2026-10-13T16:28+00:00",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -10598,7 +10598,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 21 · 2026-10-12",
         "ultimBriefing": "Redueixo una mica XLE (de 13.4% a ~9.5%) perquè el possible acord de ceasefire energètic a Ucraïna (titulars 3 i 4) podria pressionar el preu del petroli just q…"
       },
@@ -10608,7 +10608,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 21 · 2026-10-12",
         "ultimBriefing": "Redueixo risc direccional en petroli: surto d’USO (cost de rols i titulars de ‘ceasefire’ pressionen el cru) i rebaixo XOP (més beta), mantenint XLE (majors int…"
       },
@@ -10618,7 +10618,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 21 · 2026-10-12",
         "ultimBriefing": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a la urgència d'accelerar la rendibilitat durant les 11 setmanes restants del torneig. …"
       },
@@ -10628,7 +10628,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 21 · 2026-10-12",
         "ultimBriefing": "Redueixo tota la posició en USO perquè és residual i no aporta res. Més important: redueixo XLE perquè el possible alto el foc a Ucraïna (titulars 3 i 4) podria…"
       },
@@ -10638,7 +10638,7 @@
         "model_api": "mistral-medium-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 21 · 2026-10-12",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       }
