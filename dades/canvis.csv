@@ -185,3 +185,7 @@ data,setmana,model,vendre,comprar,import_eur
 2026-10-12,21,gemini,EFECTIU,MSFT,160.04
 2026-10-12,21,deepseek,USO,BIL,0.37
 2026-10-12,21,deepseek,XLE,GLD,534.0
+2026-10-19,22,gpt,SOXX,TLT,658.83
+2026-10-19,22,gpt,CIBR,TLT,591.96
+2026-10-19,22,gemini,AMD,QQQ,399.6
+2026-10-19,22,gemini,TSM,MSFT,299.7
