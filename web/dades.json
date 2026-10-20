@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-10-19",
     "font": "real",
-    "generat": "2026-10-19T09:19+00:00",
+    "generat": "2026-10-20T00:39+00:00",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -10934,7 +10934,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 22 · 2026-10-19",
         "ultimBriefing": "Amb 10 setmanes per al tancament, la temptació és reaccionar a cada sotragada, però això és exactament el que vull evitar: SMH i QQQ han caigut fort aquesta set…"
       },
@@ -10944,7 +10944,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 22 · 2026-10-19",
         "ultimBriefing": "Venc SOXX per eliminar solapament amb SMH i rebaixar beta d’IA mantenint exposició core a semiconductors via SMH i NVDA/AMD. Surto de CIBR per simplificar el bl…"
       },
@@ -10954,7 +10954,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 22 · 2026-10-19",
         "ultimBriefing": "La forta caiguda d'aquesta setmana en la meva cartera, liderada pels semiconductors, exigeix una resposta estratègica sense abandonar la meva tesi principal. Am…"
       },
@@ -10964,7 +10964,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 22 · 2026-10-19",
         "ultimBriefing": "Mantinc la cartera per diverses raons: 1) La caiguda setmanal és concentrada en semiconductors i tecnologia, sectors que històricament han mostrat recuperacions…"
       },
@@ -10974,7 +10974,7 @@
         "model_api": "mistral-medium-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 22 · 2026-10-19",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       }
