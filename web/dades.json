@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-10-19",
     "font": "real",
-    "generat": "2026-10-20T13:52+00:00",
+    "generat": "2026-10-21T00:08+00:00",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -233,7 +233,7 @@
       10150.06,
       10045.66,
       9922.36,
-      9947.99
+      9953.56
     ],
     "gpt": [
       9979.75,
@@ -296,7 +296,7 @@
       10437.41,
       10175.04,
       9999.69,
-      10023.04
+      10043.57
     ],
     "gemini": [
       9982.74,
@@ -359,7 +359,7 @@
       10039.11,
       9657.55,
       9353.82,
-      9376.61
+      9468.56
     ],
     "deepseek": [
       9983.74,
@@ -422,7 +422,7 @@
       10248.85,
       10084.34,
       9927.22,
-      9952.88
+      9991.54
     ],
     "mistral": [
       9979.75,
@@ -485,7 +485,7 @@
       10145.85,
       10141.66,
       10077.67,
-      10110.19
+      10098.3
     ],
     "index": [
       10000.0,
@@ -548,7 +548,7 @@
       10589.74,
       10480.73,
       10339.87,
-      10366.61
+      10394.72
     ]
   },
   "decisions": {
@@ -10934,7 +10934,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 22 · 2026-10-19",
         "ultimBriefing": "Amb 10 setmanes per al tancament, la temptació és reaccionar a cada sotragada, però això és exactament el que vull evitar: SMH i QQQ han caigut fort aquesta set…"
       },
@@ -10944,7 +10944,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 22 · 2026-10-19",
         "ultimBriefing": "Venc SOXX per eliminar solapament amb SMH i rebaixar beta d’IA mantenint exposició core a semiconductors via SMH i NVDA/AMD. Surto de CIBR per simplificar el bl…"
       },
@@ -10954,7 +10954,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 22 · 2026-10-19",
         "ultimBriefing": "La forta caiguda d'aquesta setmana en la meva cartera, liderada pels semiconductors, exigeix una resposta estratègica sense abandonar la meva tesi principal. Am…"
       },
@@ -10964,7 +10964,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 22 · 2026-10-19",
         "ultimBriefing": "Mantinc la cartera per diverses raons: 1) La caiguda setmanal és concentrada en semiconductors i tecnologia, sectors que històricament han mostrat recuperacions…"
       },
@@ -10974,7 +10974,7 @@
         "model_api": "mistral-medium-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 22 · 2026-10-19",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       }
@@ -10996,34 +10996,34 @@
   },
   "risc": {
     "claude": {
-      "volatilitat": 10.7,
+      "volatilitat": 10.71,
       "max_caiguda": -4.05,
-      "sharpe": -0.09
+      "sharpe": -0.07
     },
     "gpt": {
-      "volatilitat": 15.98,
+      "volatilitat": 15.99,
       "max_caiguda": -5.68,
-      "sharpe": 0.19
+      "sharpe": 0.25
     },
     "gemini": {
-      "volatilitat": 16.85,
+      "volatilitat": 17.05,
       "max_caiguda": -8.87,
-      "sharpe": -1.48
+      "sharpe": -1.22
     },
     "deepseek": {
-      "volatilitat": 14.83,
+      "volatilitat": 14.88,
       "max_caiguda": -5.49,
-      "sharpe": -0.02
+      "sharpe": 0.09
     },
     "mistral": {
-      "volatilitat": 9.27,
+      "volatilitat": 9.25,
       "max_caiguda": -4.21,
-      "sharpe": 0.63
+      "sharpe": 0.58
     },
     "index": {
-      "volatilitat": 11.52,
+      "volatilitat": 11.55,
       "max_caiguda": -3.24,
-      "sharpe": 1.37
+      "sharpe": 1.46
     }
   },
   "comissions": {
