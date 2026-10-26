@@ -6,12 +6,12 @@
     "maxPesEtf": 0.4,
     "maxPesAccio": 0.2,
     "moneda": "EUR",
-    "setmanes": 22,
-    "setmanaActual": 22,
+    "setmanes": 23,
+    "setmanaActual": 23,
     "dataInici": "2026-07-09",
-    "dataActual": "2026-10-22",
+    "dataActual": "2026-10-26",
     "font": "real",
-    "generat": "2026-10-24T00:01+00:00",
+    "generat": "2026-10-26T09:22+00:00",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -80,7 +80,8 @@
     "2026-10-19",
     "2026-10-20",
     "2026-10-21",
-    "2026-10-22"
+    "2026-10-22",
+    "2026-10-26"
   ],
   "models": [
     {
@@ -239,7 +240,8 @@
       9953.56,
       9981.95,
       10055.11,
-      9871.84
+      9871.84,
+      9857.68
     ],
     "gpt": [
       9979.75,
@@ -305,7 +307,8 @@
       10043.57,
       10077.53,
       10168.24,
-      9991.9
+      9991.9,
+      10011.24
     ],
     "gemini": [
       9982.74,
@@ -371,7 +374,8 @@
       9468.56,
       9458.82,
       9609.95,
-      9279.74
+      9279.74,
+      9296.77
     ],
     "deepseek": [
       9983.74,
@@ -437,7 +441,8 @@
       9991.54,
       9999.53,
       10090.7,
-      9886.87
+      9886.87,
+      9862.66
     ],
     "mistral": [
       9979.75,
@@ -503,7 +508,8 @@
       10098.3,
       10166.17,
       10211.86,
-      10180.08
+      10180.08,
+      10117.43
     ],
     "index": [
       10000.0,
@@ -569,7 +575,8 @@
       10394.72,
       10425.86,
       10489.04,
-      10386.44
+      10386.44,
+      10322.06
     ]
   },
   "decisions": {
@@ -998,6 +1005,36 @@
           9
         ],
         "lectura_noticies": "El titular 3 apunta a un possible rebot de la borsa nord-americana després de la venda massiva en IA, i el titular 5 avisa que aquesta setmana arriben resultats empresarials de tecnologia que podrien ser el catalitzador d'aquest rebot (o d'una nova caiguda, encara no ho sabem). El titular 9 sobre la Fed (es manté en hold, encara que Warsh podria sorprendre) no canvia el meu escenari de tipus alts. Donada aquesta incertesa bidireccional just abans dels resultats, vendre ara SMH/QQQ després d'una caiguda tan forta seria vendre en el pitjor moment possible si el rebot es confirma.",
+        "incidencia": false
+      },
+      {
+        "setmana": 23,
+        "data": "2026-10-26",
+        "decisio": "reajustar",
+        "nivell_risc": "moderat",
+        "confianca": 6,
+        "valor_cartera": 9857.68,
+        "rend_setmana": -0.91,
+        "justificacio": "Redueixo SMH d'un 13.9% a prop d'un 9% de la cartera perquè Morgan Stanley veu encara més recorregut a la baixa en semiconductors i la tendència tècnica (-11% al mes) confirma la pèrdua d'impuls; destino aquest import a XLV, sector defensiu amb bon moment i catalitzadors positius com Genmab. Alhora retallo una mica més GLD, que porta setmanes sense complir el seu paper de cobertura amb el bo a 10 anys per sobre del 4.9%, i el passo a SHY per tenir un petit coixí de liquiditat segura de cara al tram final del torneig, sense renunciar a l'exposició a renda variable que manté SPY, QQQ i XLV.",
+        "operacions": [
+          {
+            "vendre": "SMH",
+            "comprar": "XLV",
+            "import": 500.0
+          },
+          {
+            "vendre": "GLD",
+            "comprar": "SHY",
+            "import": 300.0
+          }
+        ],
+        "noticies_clau": [
+          7,
+          12,
+          9,
+          6
+        ],
+        "lectura_noticies": "Morgan Stanley alertant d'un possible -15% addicional en semiconductors (titular 7) justifica retallar una mica SMH després de setmanes de caigudes consecutives; en canvi el salt de Genmab (+13%, titular 12) reforça l'atractiu del sector salut on ja tinc posició. Els jobless claims baixos (titular 9) i els beneficis del S&P per davant dels preus (titular 6) donen suport moderat a la renda variable EUA en general, així que no toco SPY ni QQQ.",
         "incidencia": false
       }
     ],
@@ -1615,6 +1652,42 @@
           9
         ],
         "lectura_noticies": "Esperen rebot després de la venda d’IA, però arriben resultats tech amb nervis i amb el 10Y prop del 5% la volatilitat pot seguir alta. Si la Fed es manté, la caiguda de rendiments pot donar aire als bons llargs i servir de cobertura.",
+        "incidencia": false
+      },
+      {
+        "setmana": 23,
+        "data": "2026-10-26",
+        "decisio": "reajustar",
+        "nivell_risc": "moderat",
+        "confianca": 6,
+        "valor_cartera": 10011.24,
+        "rend_setmana": -0.12,
+        "justificacio": "Redueixo beta on el senyal és més fràgil i reforço pilars més resilients per a les 9 setmanes finals. 1) Semiconductors: mantinc exposició estratègica (SMH+NVDA) però retallo SMH arran de l’avís de suport més baix (7) i la debilitat a 1 mes; prefereixo alliberar capital per sectors amb momentum més estable. 2) Energies: surto d’XOP (E&P d’alta beta, més sensibles a volatilitat del WTI i titulars de demanda/Geopolítica (10)) i mantinc XLE (integrades, flux de caixa més previsible). 3) Sanitat (XLV): sector defensiu amb força relativa (1 set +1,4% i +7% a 1 mes) i catalysts positius (12); incremento fins a un pes prop del 20% com a pilar de la cartera. 4) RSP: augmento equal-weight per capturar l’ampliació de l’amplada de mercat i reduir la dependència de mega-caps, en línia amb valoracions/beneficis (6). 5) Mantinc TLT com a coixí si el 10Y recula del ~5%, però sense ampliar per l’atur molt baix (9) que pot mantenir rendiments elevats. Amb això reequilibro la cartera cap a un mix més defensiu, diversificat i amb opcionalitat de rebot de final d’any, limitant el risc idiosincràtic en semis i E&P.",
+        "operacions": [
+          {
+            "vendre": "XOP",
+            "comprar": "XLV",
+            "import": 533.04
+          },
+          {
+            "vendre": "AMD",
+            "comprar": "RSP",
+            "import": 342.46
+          },
+          {
+            "vendre": "SMH",
+            "comprar": "XLV",
+            "import": 399.6
+          }
+        ],
+        "noticies_clau": [
+          6,
+          7,
+          10,
+          9,
+          12
+        ],
+        "lectura_noticies": "Veig suport de fons en valoracions vs beneficis (6), però alerta específica a semis amb risc de -15% addicional (7). El cru oscil·la amb titulars de demanda i riscos geopolítics (10), millor reduir beta en energia. Atur molt baix (9) manté pressió de tipus; no amplio durada. Bones notícies puntuals en biotec/salut (12) reforcen el biaix cap a XLV.",
         "incidencia": false
       }
     ],
@@ -2387,6 +2460,86 @@
         ],
         "lectura_noticies": "Aquesta setmana, les notícies confirmen una 'venda massiva d'IA' i 'nerviosisme' en el sector tecnològic, que expliquen gran part de les pèrdues de la meva cartera. No obstant això, el titular [3] suggereix un possible rebot en les accions nord-americanes després d'aquesta correcció, i el titular [5] apunta que els resultats trimestrals de les tecnològiques seran catalitzadors clau en els propers dies. La incertesa sobre les decisions de la Fed [9] afegeix un element de cautela general, però no altera la meva estratègia fonamental, ja que un rebot del sector tecnològic és crucial per a la recuperació en les 10 setmanes restants.",
         "incidencia": false
+      },
+      {
+        "setmana": 23,
+        "data": "2026-10-26",
+        "decisio": "reajustar",
+        "nivell_risc": "agressiu",
+        "confianca": 8,
+        "valor_cartera": 9296.77,
+        "rend_setmana": -0.85,
+        "justificacio": "La decisió de reajustar la cartera amb un enfocament agressiu però més diversificat respon a la necessitat urgent de revertir les pèrdues i optimitzar la rendibilitat en les 9 setmanes que queden. Venc la totalitat de META i EWT, i redueixo substancialment l'exposició a AMD, NVDA, SMH i TSM. Aquesta mesura és una resposta directa al mal rendiment d'aquests actius i a les advertències de Morgan Stanley sobre els semiconductors (Notícia 7). Reassigno els fons per augmentar la meva posició en CIBR (ciberseguretat) i PLTR (IA i anàlisi de dades), que han mostrat una gran resiliència i fortalesa. Introdueixo IGV per aprofitar el bon moment del sector del programari. Per diversificar el risc i beneficiar-me de les bones previsions de beneficis de l'S&P 500 (Notícia 6), compro RSP, un ETF equiponderat que redueix la dependència de les grans capitalitzacions. Finalment, afegeixo SCHD, un ETF de dividends de qualitat que aporta estabilitat i un rendiment consistent, sense abandonar el potencial de creixement. Aquesta estratègia busca un equilibri entre el potencial de creixement agressiu i una gestió de risc més prudent, reduint la concentració en els sectors més vulnerables actualment.",
+        "operacions": [
+          {
+            "vendre": "META",
+            "comprar": "EFECTIU",
+            "import": 286.21
+          },
+          {
+            "vendre": "EWT",
+            "comprar": "EFECTIU",
+            "import": 232.9
+          },
+          {
+            "vendre": "AMD",
+            "comprar": "EFECTIU",
+            "import": 600.0
+          },
+          {
+            "vendre": "NVDA",
+            "comprar": "EFECTIU",
+            "import": 450.0
+          },
+          {
+            "vendre": "SMH",
+            "comprar": "EFECTIU",
+            "import": 450.0
+          },
+          {
+            "vendre": "QQQ",
+            "comprar": "EFECTIU",
+            "import": 200.0
+          },
+          {
+            "vendre": "TSM",
+            "comprar": "EFECTIU",
+            "import": 200.0
+          },
+          {
+            "vendre": "EFECTIU",
+            "comprar": "RSP",
+            "import": 900.0
+          },
+          {
+            "vendre": "EFECTIU",
+            "comprar": "SCHD",
+            "import": 600.0
+          },
+          {
+            "vendre": "EFECTIU",
+            "comprar": "CIBR",
+            "import": 350.0
+          },
+          {
+            "vendre": "EFECTIU",
+            "comprar": "PLTR",
+            "import": 300.0
+          },
+          {
+            "vendre": "EFECTIU",
+            "comprar": "IGV",
+            "import": 266.69
+          }
+        ],
+        "noticies_clau": [
+          2,
+          6,
+          7,
+          9
+        ],
+        "lectura_noticies": "Les notícies clau d'aquesta setmana confirmen la pressió sobre el sector tecnològic (2) i, de manera crucial, apunten a una possible baixada del 15% en el suport a les accions de semiconductors (7), fet que justifica la reducció d'exposició en aquesta àrea. Tanmateix, les previsions de beneficis de l'S&P 500 (6) i la fortalesa del mercat laboral nord-americà (9) suggereixen un rerefons econòmic més sòlid, que podria donar suport a una diversificació cap a actius més amplis i de qualitat.",
+        "incidencia": false
       }
     ],
     "deepseek": [
@@ -2881,6 +3034,41 @@
           9
         ],
         "lectura_noticies": "Els titulars 3 i 5 assenyalen que els inversors esperen un rebot després de la venda massiva en IA i que hi ha nerviosisme pels resultats tecnològics que es publiquen aquesta setmana. El titular 9 indica que el mercat espera que la Fed mantingui tipus a l'octubre, però hi ha risc de sorpresa. Això reforça la meva visió que la correcció tecnològica pot ser temporal i que no cal vendre, però també aconsella no augmentar el risc just abans de resultats clau.",
+        "incidencia": false
+      },
+      {
+        "setmana": 23,
+        "data": "2026-10-26",
+        "decisio": "reajustar",
+        "nivell_risc": "moderat",
+        "confianca": 6,
+        "valor_cartera": 9862.66,
+        "rend_setmana": -0.91,
+        "justificacio": "Redueixo SMH en 600 € (del 13,6% al 9,1%) per la pressió addicional que Morgan Stanley preveu sobre semiconductors, i rotació cap a XLV (salut), sector defensiu amb bon comportament recent (+1,4% setmana, +7,0% mes) i que pot resistir millor la volatilitat. Elimino la posició residual en XLE (0,02 €) per netejar la cartera i evitar costos innecessaris. Redueixo NVDA en 200 € (del 8,0% al 6,0%) perquè el sector de semiconductors continua feble i prefereixo reduir risc puntual. Mantinc la resta de la cartera: SPY i QQQ ja estan en pesos raonables, GLD tot i la caiguda manté la funció de diversificador, i BIL augmenta lleugerament com a coixí de liquiditat. No venc CVX perquè el petroli podria repuntar amb les tensions geopolítiques, però no hi afegeixo més. Aquests moviments busquen reduir la concentració en els sectors més castigats i augmentar la qualitat defensiva de la cartera.",
+        "operacions": [
+          {
+            "vendre": "SMH",
+            "comprar": "XLV",
+            "import": 600.0
+          },
+          {
+            "vendre": "XLE",
+            "comprar": "BIL",
+            "import": 0.02
+          },
+          {
+            "vendre": "NVDA",
+            "comprar": "BIL",
+            "import": 200.0
+          }
+        ],
+        "noticies_clau": [
+          2,
+          3,
+          7,
+          10
+        ],
+        "lectura_noticies": "Els titulars 2, 3, 7 i 10 assenyalen un entorn advers per a semiconductors (Morgan Stanley preveu caigudes addicionals del 15%) i per al petroli (caiguda del preu malgrat tensions geopolítiques, possible destrucció de demanda). Això afecta SMH, NVDA i la petita posició en XLE/CVX. La resta de titulars són soroll o no afecten directament la cartera.",
         "incidencia": false
       }
     ],
@@ -3434,6 +3622,20 @@
         "noticies_clau": [],
         "lectura_noticies": "",
         "incidencia": true
+      },
+      {
+        "setmana": 23,
+        "data": "2026-10-26",
+        "decisio": "mantenir",
+        "nivell_risc": "—",
+        "confianca": 0,
+        "valor_cartera": 10117.43,
+        "rend_setmana": 0.07,
+        "justificacio": "(sense resposta: límit de peticions (429) (després de 6 intents))",
+        "operacions": null,
+        "noticies_clau": [],
+        "lectura_noticies": "",
+        "incidencia": true
       }
     ]
   },
@@ -3875,6 +4077,39 @@
         "mantinguts": [],
         "operacions": [],
         "justificacio": "Amb 10 setmanes per al tancament, la temptació és reaccionar a cada sotragada, però això és exactament el que vull evitar: SMH i QQQ han caigut fort aquesta setmana per un sell-off d'IA que els propis titulars (3 i 5) assenyalen com a potencialment temporal, amb earnings de tech aquesta mateixa setmana que poden revertir el sentiment. Vendre ara seria capitular en el pitjor moment. La meva cartera ja està prou diversificada (energia, salut, or, Europa) per absorbir aquest cop sectorial sense necessitat de reajustar, i cap posició supera els límits de concentració. Prefereixo esperar als resultats empresarials abans de moure res, en lloc de fer un canvi reactiu basat en una setmana de pànic en semis.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
+        "resultat": -0.91
+      },
+      {
+        "setmana": 23,
+        "data": "2026-10-26",
+        "decisio": "reajustar",
+        "confianca": 6,
+        "nivell_risc": "moderat",
+        "comprats": [
+          "SHY",
+          "XLV"
+        ],
+        "venuts": [
+          "GLD",
+          "SMH"
+        ],
+        "mantinguts": [],
+        "operacions": [
+          {
+            "vendre": "SMH",
+            "comprar": "XLV",
+            "import": 500.0
+          },
+          {
+            "vendre": "GLD",
+            "comprar": "SHY",
+            "import": 300.0
+          }
+        ],
+        "justificacio": "Redueixo SMH d'un 13.9% a prop d'un 9% de la cartera perquè Morgan Stanley veu encara més recorregut a la baixa en semiconductors i la tendència tècnica (-11% al mes) confirma la pèrdua d'impuls; destino aquest import a XLV, sector defensiu amb bon moment i catalitzadors positius com Genmab. Alhora retallo una mica més GLD, que porta setmanes sense complir el seu paper de cobertura amb el bo a 10 anys per sobre del 4.9%, i el passo a SHY per tenir un petit coixí de liquiditat segura de cara al tram final del torneig, sense renunciar a l'exposició a renda variable que manté SPY, QQQ i XLV.",
         "context": null,
         "riscos": null,
         "expectativa": null,
@@ -4555,6 +4790,45 @@
           }
         ],
         "justificacio": "Venc SOXX per eliminar solapament amb SMH i rebaixar beta d’IA mantenint exposició core a semiconductors via SMH i NVDA/AMD. Surto de CIBR per simplificar el bloc tecnològic just abans d’uns resultats potencialment volàtils. Reubico tot a TLT: amb el 10Y >5% i una Fed previsiblement en pausa, la relació risc/retorn de la durada és atractiva en el nostre horitzó de 10 setmanes i aporta cobertura si el creixement es refreda o el to de la Fed és menys ‘hawkish’. Mantenim XLE/XOP per la fortalesa relativa del sector i disciplina d’oferta, i XLV com a pilar defensiu. Assumeixo el risc que si els rendiments pugen encara més TLT pateixi, però la cartera queda més equilibrada i amb menys volatilitat agregada. Opero només dues vegades per minimitzar costos.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
+        "resultat": -0.12
+      },
+      {
+        "setmana": 23,
+        "data": "2026-10-26",
+        "decisio": "reajustar",
+        "confianca": 6,
+        "nivell_risc": "moderat",
+        "comprats": [
+          "RSP",
+          "XLV"
+        ],
+        "venuts": [
+          "AMD",
+          "SMH",
+          "XOP"
+        ],
+        "mantinguts": [],
+        "operacions": [
+          {
+            "vendre": "XOP",
+            "comprar": "XLV",
+            "import": 533.04
+          },
+          {
+            "vendre": "AMD",
+            "comprar": "RSP",
+            "import": 342.46
+          },
+          {
+            "vendre": "SMH",
+            "comprar": "XLV",
+            "import": 399.6
+          }
+        ],
+        "justificacio": "Redueixo beta on el senyal és més fràgil i reforço pilars més resilients per a les 9 setmanes finals. 1) Semiconductors: mantinc exposició estratègica (SMH+NVDA) però retallo SMH arran de l’avís de suport més baix (7) i la debilitat a 1 mes; prefereixo alliberar capital per sectors amb momentum més estable. 2) Energies: surto d’XOP (E&P d’alta beta, més sensibles a volatilitat del WTI i titulars de demanda/Geopolítica (10)) i mantinc XLE (integrades, flux de caixa més previsible). 3) Sanitat (XLV): sector defensiu amb força relativa (1 set +1,4% i +7% a 1 mes) i catalysts positius (12); incremento fins a un pes prop del 20% com a pilar de la cartera. 4) RSP: augmento equal-weight per capturar l’ampliació de l’amplada de mercat i reduir la dependència de mega-caps, en línia amb valoracions/beneficis (6). 5) Mantinc TLT com a coixí si el 10Y recula del ~5%, però sense ampliar per l’atur molt baix (9) que pot mantenir rendiments elevats. Amb això reequilibro la cartera cap a un mix més defensiu, diversificat i amb opcionalitat de rebot de final d’any, limitant el risc idiosincràtic en semis i E&P.",
         "context": null,
         "riscos": null,
         "expectativa": null,
@@ -5414,6 +5688,97 @@
         "context": null,
         "riscos": null,
         "expectativa": null,
+        "resultat": -0.85
+      },
+      {
+        "setmana": 23,
+        "data": "2026-10-26",
+        "decisio": "reajustar",
+        "confianca": 8,
+        "nivell_risc": "agressiu",
+        "comprats": [
+          "CIBR",
+          "IGV",
+          "PLTR",
+          "RSP",
+          "SCHD"
+        ],
+        "venuts": [
+          "AMD",
+          "EWT",
+          "META",
+          "NVDA",
+          "QQQ",
+          "SMH",
+          "TSM"
+        ],
+        "mantinguts": [],
+        "operacions": [
+          {
+            "vendre": "META",
+            "comprar": "EFECTIU",
+            "import": 286.21
+          },
+          {
+            "vendre": "EWT",
+            "comprar": "EFECTIU",
+            "import": 232.9
+          },
+          {
+            "vendre": "AMD",
+            "comprar": "EFECTIU",
+            "import": 600.0
+          },
+          {
+            "vendre": "NVDA",
+            "comprar": "EFECTIU",
+            "import": 450.0
+          },
+          {
+            "vendre": "SMH",
+            "comprar": "EFECTIU",
+            "import": 450.0
+          },
+          {
+            "vendre": "QQQ",
+            "comprar": "EFECTIU",
+            "import": 200.0
+          },
+          {
+            "vendre": "TSM",
+            "comprar": "EFECTIU",
+            "import": 200.0
+          },
+          {
+            "vendre": "EFECTIU",
+            "comprar": "RSP",
+            "import": 900.0
+          },
+          {
+            "vendre": "EFECTIU",
+            "comprar": "SCHD",
+            "import": 600.0
+          },
+          {
+            "vendre": "EFECTIU",
+            "comprar": "CIBR",
+            "import": 350.0
+          },
+          {
+            "vendre": "EFECTIU",
+            "comprar": "PLTR",
+            "import": 300.0
+          },
+          {
+            "vendre": "EFECTIU",
+            "comprar": "IGV",
+            "import": 266.69
+          }
+        ],
+        "justificacio": "La decisió de reajustar la cartera amb un enfocament agressiu però més diversificat respon a la necessitat urgent de revertir les pèrdues i optimitzar la rendibilitat en les 9 setmanes que queden. Venc la totalitat de META i EWT, i redueixo substancialment l'exposició a AMD, NVDA, SMH i TSM. Aquesta mesura és una resposta directa al mal rendiment d'aquests actius i a les advertències de Morgan Stanley sobre els semiconductors (Notícia 7). Reassigno els fons per augmentar la meva posició en CIBR (ciberseguretat) i PLTR (IA i anàlisi de dades), que han mostrat una gran resiliència i fortalesa. Introdueixo IGV per aprofitar el bon moment del sector del programari. Per diversificar el risc i beneficiar-me de les bones previsions de beneficis de l'S&P 500 (Notícia 6), compro RSP, un ETF equiponderat que redueix la dependència de les grans capitalitzacions. Finalment, afegeixo SCHD, un ETF de dividends de qualitat que aporta estabilitat i un rendiment consistent, sense abandonar el potencial de creixement. Aquesta estratègia busca un equilibri entre el potencial de creixement agressiu i una gestió de risc més prudent, reduint la concentració en els sectors més vulnerables actualment.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
         "resultat": null
       }
     ],
@@ -5954,6 +6319,45 @@
         "mantinguts": [],
         "operacions": [],
         "justificacio": "Mantinc la cartera per diverses raons: 1) La caiguda setmanal és concentrada en semiconductors i tecnologia, sectors que històricament han mostrat recuperacions fortes després de correccions (SMH +62% l'últim any, tot i la caiguda setmanal). 2) Els titulars 3 i 5 suggereixen que el mercat espera un rebot després de la venda massiva en IA, i els resultats tecnològics d'aquesta setmana podrien actuar com a catalitzador positiu. 3) No vull caure en el biaix de rotar massa sovint: el meu historial mostra que he venut actius que després han pujat. 4) La cartera ja té una bona diversificació i una posició en BIL que actua de coixí. 5) Amb només 10 setmanes per acabar el torneig, els costos de transacció (0,1% per operació) i el risc de timing erroni fan que mantenir sigui la decisió més prudent. Si la setmana vinent els resultats tecnològics deceben, llavors sí que reconsideraria rebaixar el pes en semiconductors.",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
+        "resultat": -0.91
+      },
+      {
+        "setmana": 23,
+        "data": "2026-10-26",
+        "decisio": "reajustar",
+        "confianca": 6,
+        "nivell_risc": "moderat",
+        "comprats": [
+          "BIL",
+          "XLV"
+        ],
+        "venuts": [
+          "NVDA",
+          "SMH",
+          "XLE"
+        ],
+        "mantinguts": [],
+        "operacions": [
+          {
+            "vendre": "SMH",
+            "comprar": "XLV",
+            "import": 600.0
+          },
+          {
+            "vendre": "XLE",
+            "comprar": "BIL",
+            "import": 0.02
+          },
+          {
+            "vendre": "NVDA",
+            "comprar": "BIL",
+            "import": 200.0
+          }
+        ],
+        "justificacio": "Redueixo SMH en 600 € (del 13,6% al 9,1%) per la pressió addicional que Morgan Stanley preveu sobre semiconductors, i rotació cap a XLV (salut), sector defensiu amb bon comportament recent (+1,4% setmana, +7,0% mes) i que pot resistir millor la volatilitat. Elimino la posició residual en XLE (0,02 €) per netejar la cartera i evitar costos innecessaris. Redueixo NVDA en 200 € (del 8,0% al 6,0%) perquè el sector de semiconductors continua feble i prefereixo reduir risc puntual. Mantinc la resta de la cartera: SPY i QQQ ja estan en pesos raonables, GLD tot i la caiguda manté la funció de diversificador, i BIL augmenta lleugerament com a coixí de liquiditat. No venc CVX perquè el petroli podria repuntar amb les tensions geopolítiques, però no hi afegeixo més. Aquests moviments busquen reduir la concentració en els sectors més castigats i augmentar la qualitat defensiva de la cartera.",
         "context": null,
         "riscos": null,
         "expectativa": null,
@@ -6632,6 +7036,22 @@
         "context": null,
         "riscos": null,
         "expectativa": null,
+        "resultat": 0.07
+      },
+      {
+        "setmana": 23,
+        "data": "2026-10-26",
+        "decisio": "mantenir",
+        "confianca": 0,
+        "nivell_risc": "—",
+        "comprats": [],
+        "venuts": [],
+        "mantinguts": [],
+        "operacions": [],
+        "justificacio": "(sense resposta: límit de peticions (429) (després de 6 intents))",
+        "context": null,
+        "riscos": null,
+        "expectativa": null,
         "resultat": null
       }
     ]
@@ -6639,13 +7059,13 @@
   "carteres": {
     "gpt": [
       {
-        "ticker": "SMH",
-        "nom": "Semiconductors (VanEck)",
+        "ticker": "XLV",
+        "nom": "Salut EUA",
         "tipus": "etf",
-        "sector": "IA i semiconductors",
+        "sector": "Salut",
         "pais": "Global",
-        "pes": 16.9,
-        "valor": 1695
+        "pes": 20.0,
+        "valor": 2004
       },
       {
         "ticker": "SPY",
@@ -6653,8 +7073,8 @@
         "tipus": "etf",
         "sector": "Índexs principals",
         "pais": "Global",
-        "pes": 16.2,
-        "valor": 1623
+        "pes": 16.1,
+        "valor": 1616
       },
       {
         "ticker": "XLE",
@@ -6662,8 +7082,8 @@
         "tipus": "etf",
         "sector": "Energia",
         "pais": "Global",
-        "pes": 13.6,
-        "valor": 1359
+        "pes": 13.8,
+        "valor": 1381
       },
       {
         "ticker": "TLT",
@@ -6671,8 +7091,17 @@
         "tipus": "etf",
         "sector": "Renda fixa",
         "pais": "Global",
+        "pes": 12.7,
+        "valor": 1270
+      },
+      {
+        "ticker": "SMH",
+        "nom": "Semiconductors (VanEck)",
+        "tipus": "etf",
+        "sector": "IA i semiconductors",
+        "pais": "Global",
         "pes": 12.5,
-        "valor": 1250
+        "valor": 1255
       },
       {
         "ticker": "QQQ",
@@ -6680,17 +7109,8 @@
         "tipus": "etf",
         "sector": "Índexs principals",
         "pais": "Global",
-        "pes": 10.5,
-        "valor": 1048
-      },
-      {
-        "ticker": "XLV",
-        "nom": "Salut EUA",
-        "tipus": "etf",
-        "sector": "Salut",
-        "pais": "Global",
-        "pes": 10.5,
-        "valor": 1057
+        "pes": 10.4,
+        "valor": 1040
       },
       {
         "ticker": "NVDA",
@@ -6698,26 +7118,8 @@
         "tipus": "accio",
         "sector": "Semiconductors",
         "pais": "EUA",
-        "pes": 7.7,
-        "valor": 771
-      },
-      {
-        "ticker": "XOP",
-        "nom": "Exploració de petroli i gas",
-        "tipus": "etf",
-        "sector": "Energia",
-        "pais": "Global",
-        "pes": 5.3,
-        "valor": 530
-      },
-      {
-        "ticker": "AMD",
-        "nom": "AMD",
-        "tipus": "accio",
-        "sector": "Semiconductors",
-        "pais": "EUA",
-        "pes": 3.5,
-        "valor": 351
+        "pes": 7.6,
+        "valor": 760
       },
       {
         "ticker": "RSP",
@@ -6725,8 +7127,8 @@
         "tipus": "etf",
         "sector": "Índexs principals",
         "pais": "Global",
-        "pes": 3.4,
-        "valor": 339
+        "pes": 6.8,
+        "valor": 685
       },
       {
         "ticker": "IBB",
@@ -6745,8 +7147,8 @@
         "tipus": "etf",
         "sector": "Índexs principals",
         "pais": "Global",
-        "pes": 20.8,
-        "valor": 2064
+        "pes": 20.9,
+        "valor": 2055
       },
       {
         "ticker": "QQQ",
@@ -6755,34 +7157,7 @@
         "sector": "Índexs principals",
         "pais": "Global",
         "pes": 18.8,
-        "valor": 1869
-      },
-      {
-        "ticker": "SMH",
-        "nom": "Semiconductors (VanEck)",
-        "tipus": "etf",
-        "sector": "IA i semiconductors",
-        "pais": "Global",
-        "pes": 14.1,
-        "valor": 1401
-      },
-      {
-        "ticker": "VGK",
-        "nom": "Europa (Vanguard)",
-        "tipus": "etf",
-        "sector": "Mercats internacionals",
-        "pais": "Global",
-        "pes": 13.0,
-        "valor": 1289
-      },
-      {
-        "ticker": "GLD",
-        "nom": "Or físic (SPDR)",
-        "tipus": "etf",
-        "sector": "Metalls preciosos",
-        "pais": "Global",
-        "pes": 12.3,
-        "valor": 1226
+        "valor": 1855
       },
       {
         "ticker": "XLV",
@@ -6790,8 +7165,17 @@
         "tipus": "etf",
         "sector": "Salut",
         "pais": "Global",
-        "pes": 10.8,
-        "valor": 1074
+        "pes": 16.1,
+        "valor": 1589
+      },
+      {
+        "ticker": "VGK",
+        "nom": "Europa (Vanguard)",
+        "tipus": "etf",
+        "sector": "Mercats internacionals",
+        "pais": "Global",
+        "pes": 12.9,
+        "valor": 1274
       },
       {
         "ticker": "XLE",
@@ -6799,8 +7183,35 @@
         "tipus": "etf",
         "sector": "Energia",
         "pais": "Global",
-        "pes": 10.2,
-        "valor": 1015
+        "pes": 10.5,
+        "valor": 1031
+      },
+      {
+        "ticker": "GLD",
+        "nom": "Or físic (SPDR)",
+        "tipus": "etf",
+        "sector": "Metalls preciosos",
+        "pais": "Global",
+        "pes": 8.9,
+        "valor": 877
+      },
+      {
+        "ticker": "SMH",
+        "nom": "Semiconductors (VanEck)",
+        "tipus": "etf",
+        "sector": "IA i semiconductors",
+        "pais": "Global",
+        "pes": 8.8,
+        "valor": 868
+      },
+      {
+        "ticker": "SHY",
+        "nom": "Bons EUA 1-3 anys",
+        "tipus": "etf",
+        "sector": "Renda fixa",
+        "pais": "Global",
+        "pes": 3.0,
+        "valor": 300
       },
       {
         "ticker": "EFECTIU",
@@ -6819,8 +7230,8 @@
         "tipus": "etf",
         "sector": "Índexs principals",
         "pais": "Global",
-        "pes": 15.3,
-        "valor": 1437
+        "pes": 15.4,
+        "valor": 1431
       },
       {
         "ticker": "VTI",
@@ -6828,17 +7239,8 @@
         "tipus": "etf",
         "sector": "Índexs principals",
         "pais": "Global",
-        "pes": 13.1,
-        "valor": 1226
-      },
-      {
-        "ticker": "AMD",
-        "nom": "AMD",
-        "tipus": "accio",
-        "sector": "Semiconductors",
-        "pais": "EUA",
-        "pes": 12.1,
-        "valor": 1137
+        "pes": 13.2,
+        "valor": 1223
       },
       {
         "ticker": "MSFT",
@@ -6847,7 +7249,43 @@
         "sector": "Tecnologia",
         "pais": "EUA",
         "pes": 10.8,
-        "valor": 1017
+        "valor": 1008
+      },
+      {
+        "ticker": "RSP",
+        "nom": "S&P 500 equiponderat",
+        "tipus": "etf",
+        "sector": "Índexs principals",
+        "pais": "Global",
+        "pes": 9.7,
+        "valor": 899
+      },
+      {
+        "ticker": "CIBR",
+        "nom": "Ciberseguretat",
+        "tipus": "etf",
+        "sector": "Tecnologia",
+        "pais": "Global",
+        "pes": 6.9,
+        "valor": 638
+      },
+      {
+        "ticker": "SCHD",
+        "nom": "Dividends de qualitat (Schwab)",
+        "tipus": "etf",
+        "sector": "Dividends",
+        "pais": "Global",
+        "pes": 6.5,
+        "valor": 599
+      },
+      {
+        "ticker": "PLTR",
+        "nom": "Palantir",
+        "tipus": "accio",
+        "sector": "Tecnologia",
+        "pais": "EUA",
+        "pes": 6.2,
+        "valor": 581
       },
       {
         "ticker": "SMH",
@@ -6855,17 +7293,17 @@
         "tipus": "etf",
         "sector": "IA i semiconductors",
         "pais": "Global",
-        "pes": 10.5,
-        "valor": 988
+        "pes": 5.5,
+        "valor": 515
       },
       {
-        "ticker": "NVDA",
-        "nom": "Nvidia",
+        "ticker": "AMD",
+        "nom": "AMD",
         "tipus": "accio",
         "sector": "Semiconductors",
         "pais": "EUA",
-        "pes": 9.8,
-        "valor": 918
+        "pes": 5.5,
+        "valor": 511
       },
       {
         "ticker": "QQQ",
@@ -6873,17 +7311,17 @@
         "tipus": "etf",
         "sector": "Índexs principals",
         "pais": "Global",
-        "pes": 7.2,
-        "valor": 674
+        "pes": 5.0,
+        "valor": 469
       },
       {
-        "ticker": "TSM",
-        "nom": "TSMC (xips Taiwan)",
+        "ticker": "NVDA",
+        "nom": "Nvidia",
         "tipus": "accio",
         "sector": "Semiconductors",
-        "pais": "Taiwan",
+        "pais": "EUA",
         "pes": 4.9,
-        "valor": 457
+        "valor": 455
       },
       {
         "ticker": "AIQ",
@@ -6892,43 +7330,25 @@
         "sector": "IA i semiconductors",
         "pais": "Global",
         "pes": 4.7,
-        "valor": 436
+        "valor": 438
       },
       {
-        "ticker": "META",
-        "nom": "Meta (Facebook)",
-        "tipus": "accio",
-        "sector": "Tecnologia",
-        "pais": "EUA",
-        "pes": 3.4,
-        "valor": 316
-      },
-      {
-        "ticker": "CIBR",
-        "nom": "Ciberseguretat",
+        "ticker": "IGV",
+        "nom": "Programari EUA",
         "tipus": "etf",
         "sector": "Tecnologia",
         "pais": "Global",
         "pes": 2.9,
-        "valor": 268
-      },
-      {
-        "ticker": "PLTR",
-        "nom": "Palantir",
-        "tipus": "accio",
-        "sector": "Tecnologia",
-        "pais": "EUA",
-        "pes": 2.8,
         "valor": 266
       },
       {
-        "ticker": "EWT",
-        "nom": "Taiwan",
-        "tipus": "etf",
-        "sector": "Mercats internacionals",
-        "pais": "Global",
-        "pes": 2.5,
-        "valor": 236
+        "ticker": "TSM",
+        "nom": "TSMC (xips Taiwan)",
+        "tipus": "accio",
+        "sector": "Semiconductors",
+        "pais": "Taiwan",
+        "pes": 2.8,
+        "valor": 264
       }
     ],
     "deepseek": [
@@ -6938,8 +7358,8 @@
         "tipus": "etf",
         "sector": "Índexs principals",
         "pais": "Global",
-        "pes": 19.1,
-        "valor": 1904
+        "pes": 19.2,
+        "valor": 1896
       },
       {
         "ticker": "QQQ",
@@ -6948,52 +7368,7 @@
         "sector": "Índexs principals",
         "pais": "Global",
         "pes": 18.8,
-        "valor": 1868
-      },
-      {
-        "ticker": "SMH",
-        "nom": "Semiconductors (VanEck)",
-        "tipus": "etf",
-        "sector": "IA i semiconductors",
-        "pais": "Global",
-        "pes": 13.8,
-        "valor": 1374
-      },
-      {
-        "ticker": "GLD",
-        "nom": "Or físic (SPDR)",
-        "tipus": "etf",
-        "sector": "Metalls preciosos",
-        "pais": "Global",
-        "pes": 11.0,
-        "valor": 1091
-      },
-      {
-        "ticker": "VIG",
-        "nom": "Dividends creixents (Vanguard)",
-        "tipus": "etf",
-        "sector": "Dividends",
-        "pais": "Global",
-        "pes": 9.8,
-        "valor": 980
-      },
-      {
-        "ticker": "NVDA",
-        "nom": "Nvidia",
-        "tipus": "accio",
-        "sector": "Semiconductors",
-        "pais": "EUA",
-        "pes": 8.1,
-        "valor": 805
-      },
-      {
-        "ticker": "BIL",
-        "nom": "Lletres del Tresor (1-3 mesos)",
-        "tipus": "etf",
-        "sector": "Renda fixa",
-        "pais": "Global",
-        "pes": 6.9,
-        "valor": 687
+        "valor": 1854
       },
       {
         "ticker": "XLV",
@@ -7001,8 +7376,53 @@
         "tipus": "etf",
         "sector": "Salut",
         "pais": "Global",
-        "pes": 4.9,
-        "valor": 489
+        "pes": 11.1,
+        "valor": 1095
+      },
+      {
+        "ticker": "GLD",
+        "nom": "Or físic (SPDR)",
+        "tipus": "etf",
+        "sector": "Metalls preciosos",
+        "pais": "Global",
+        "pes": 10.6,
+        "valor": 1047
+      },
+      {
+        "ticker": "VIG",
+        "nom": "Dividends creixents (Vanguard)",
+        "tipus": "etf",
+        "sector": "Dividends",
+        "pais": "Global",
+        "pes": 10.0,
+        "valor": 985
+      },
+      {
+        "ticker": "BIL",
+        "nom": "Lletres del Tresor (1-3 mesos)",
+        "tipus": "etf",
+        "sector": "Renda fixa",
+        "pais": "Global",
+        "pes": 9.0,
+        "valor": 887
+      },
+      {
+        "ticker": "SMH",
+        "nom": "Semiconductors (VanEck)",
+        "tipus": "etf",
+        "sector": "IA i semiconductors",
+        "pais": "Global",
+        "pes": 7.5,
+        "valor": 742
+      },
+      {
+        "ticker": "NVDA",
+        "nom": "Nvidia",
+        "tipus": "accio",
+        "sector": "Semiconductors",
+        "pais": "EUA",
+        "pes": 6.0,
+        "valor": 593
       },
       {
         "ticker": "MSFT",
@@ -7011,7 +7431,7 @@
         "sector": "Tecnologia",
         "pais": "EUA",
         "pes": 4.2,
-        "valor": 414
+        "valor": 411
       },
       {
         "ticker": "CVX",
@@ -7019,8 +7439,8 @@
         "tipus": "accio",
         "sector": "Energia",
         "pais": "EUA",
-        "pes": 3.4,
-        "valor": 335
+        "pes": 3.5,
+        "valor": 347
       },
       {
         "ticker": "EFECTIU",
@@ -7029,7 +7449,7 @@
         "sector": "Efectiu",
         "pais": "—",
         "pes": 0.1,
-        "valor": 6
+        "valor": 5
       }
     ],
     "mistral": [
@@ -7039,8 +7459,8 @@
         "tipus": "etf",
         "sector": "Índexs principals",
         "pais": "Global",
-        "pes": 19.0,
-        "valor": 1919
+        "pes": 18.9,
+        "valor": 1911
       },
       {
         "ticker": "USMV",
@@ -7048,8 +7468,8 @@
         "tipus": "etf",
         "sector": "Defensius",
         "pais": "Global",
-        "pes": 12.5,
-        "valor": 1268
+        "pes": 12.7,
+        "valor": 1289
       },
       {
         "ticker": "VHT",
@@ -7057,8 +7477,8 @@
         "tipus": "etf",
         "sector": "Salut",
         "pais": "Global",
-        "pes": 9.7,
-        "valor": 980
+        "pes": 9.8,
+        "valor": 997
       },
       {
         "ticker": "SMH",
@@ -7066,8 +7486,8 @@
         "tipus": "etf",
         "sector": "IA i semiconductors",
         "pais": "Global",
-        "pes": 9.3,
-        "valor": 943
+        "pes": 9.1,
+        "valor": 921
       },
       {
         "ticker": "GLD",
@@ -7075,8 +7495,8 @@
         "tipus": "etf",
         "sector": "Metalls preciosos",
         "pais": "Global",
-        "pes": 7.1,
-        "valor": 720
+        "pes": 6.8,
+        "valor": 691
       },
       {
         "ticker": "IEF",
@@ -7085,7 +7505,7 @@
         "sector": "Renda fixa",
         "pais": "Global",
         "pes": 5.9,
-        "valor": 597
+        "valor": 601
       },
       {
         "ticker": "XLE",
@@ -7093,8 +7513,8 @@
         "tipus": "etf",
         "sector": "Energia",
         "pais": "Global",
-        "pes": 5.8,
-        "valor": 589
+        "pes": 5.9,
+        "valor": 599
       },
       {
         "ticker": "NESN.SW",
@@ -7103,7 +7523,7 @@
         "sector": "Consum",
         "pais": "Suïssa",
         "pes": 5.8,
-        "valor": 582
+        "valor": 587
       },
       {
         "ticker": "VIG",
@@ -7112,7 +7532,7 @@
         "sector": "Dividends",
         "pais": "Global",
         "pes": 5.4,
-        "valor": 547
+        "valor": 550
       },
       {
         "ticker": "VGK",
@@ -7120,8 +7540,8 @@
         "tipus": "etf",
         "sector": "Mercats internacionals",
         "pais": "Global",
-        "pes": 4.3,
-        "valor": 430
+        "pes": 4.2,
+        "valor": 425
       },
       {
         "ticker": "EWJ",
@@ -7130,7 +7550,7 @@
         "sector": "Mercats internacionals",
         "pais": "Global",
         "pes": 3.8,
-        "valor": 388
+        "valor": 385
       },
       {
         "ticker": "PG",
@@ -7139,7 +7559,7 @@
         "sector": "Consum",
         "pais": "EUA",
         "pes": 3.7,
-        "valor": 371
+        "valor": 375
       },
       {
         "ticker": "XLV",
@@ -7148,7 +7568,7 @@
         "sector": "Salut",
         "pais": "Global",
         "pes": 3.3,
-        "valor": 332
+        "valor": 336
       },
       {
         "ticker": "ADBE",
@@ -7156,8 +7576,8 @@
         "tipus": "accio",
         "sector": "Tecnologia",
         "pais": "EUA",
-        "pes": 2.0,
-        "valor": 201
+        "pes": 2.1,
+        "valor": 216
       },
       {
         "ticker": "NVDA",
@@ -7166,7 +7586,7 @@
         "sector": "Semiconductors",
         "pais": "EUA",
         "pes": 1.3,
-        "valor": 133
+        "valor": 131
       },
       {
         "ticker": "BABA",
@@ -7174,8 +7594,8 @@
         "tipus": "accio",
         "sector": "Consum",
         "pais": "Xina",
-        "pes": 0.9,
-        "valor": 91
+        "pes": 0.8,
+        "valor": 83
       },
       {
         "ticker": "EFECTIU",
@@ -7184,11 +7604,347 @@
         "sector": "Efectiu",
         "pais": "—",
         "pes": 0.2,
-        "valor": 17
+        "valor": 19
       }
     ]
   },
   "canvis": [
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "claude",
+      "ticker": "SMH",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 500.0,
+      "motiu": "Redueixo SMH d'un 13.9% a prop d'un 9% de la cartera perquè Morgan Stanley veu encara més recorregut a la baixa en semiconductors i la tendència tècnica (-11% al mes) confirma la pèrdua d'impuls; destino aquest import a XLV, sector defensiu amb bon moment i catalitzadors positius com Genmab. Alhora retallo una mica més GLD, que porta setmanes sense complir el seu paper de cobertura amb el bo a 10 anys per sobre del 4.9%, i el passo a SHY per tenir un petit coixí de liquiditat segura de cara al tram final del torneig, sense renunciar a l'exposició a renda variable que manté SPY, QQQ i XLV.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "claude",
+      "ticker": "XLV",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 500.0,
+      "motiu": "Redueixo SMH d'un 13.9% a prop d'un 9% de la cartera perquè Morgan Stanley veu encara més recorregut a la baixa en semiconductors i la tendència tècnica (-11% al mes) confirma la pèrdua d'impuls; destino aquest import a XLV, sector defensiu amb bon moment i catalitzadors positius com Genmab. Alhora retallo una mica més GLD, que porta setmanes sense complir el seu paper de cobertura amb el bo a 10 anys per sobre del 4.9%, i el passo a SHY per tenir un petit coixí de liquiditat segura de cara al tram final del torneig, sense renunciar a l'exposició a renda variable que manté SPY, QQQ i XLV.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "claude",
+      "ticker": "GLD",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 300.0,
+      "motiu": "Redueixo SMH d'un 13.9% a prop d'un 9% de la cartera perquè Morgan Stanley veu encara més recorregut a la baixa en semiconductors i la tendència tècnica (-11% al mes) confirma la pèrdua d'impuls; destino aquest import a XLV, sector defensiu amb bon moment i catalitzadors positius com Genmab. Alhora retallo una mica més GLD, que porta setmanes sense complir el seu paper de cobertura amb el bo a 10 anys per sobre del 4.9%, i el passo a SHY per tenir un petit coixí de liquiditat segura de cara al tram final del torneig, sense renunciar a l'exposició a renda variable que manté SPY, QQQ i XLV.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "claude",
+      "ticker": "SHY",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 300.0,
+      "motiu": "Redueixo SMH d'un 13.9% a prop d'un 9% de la cartera perquè Morgan Stanley veu encara més recorregut a la baixa en semiconductors i la tendència tècnica (-11% al mes) confirma la pèrdua d'impuls; destino aquest import a XLV, sector defensiu amb bon moment i catalitzadors positius com Genmab. Alhora retallo una mica més GLD, que porta setmanes sense complir el seu paper de cobertura amb el bo a 10 anys per sobre del 4.9%, i el passo a SHY per tenir un petit coixí de liquiditat segura de cara al tram final del torneig, sense renunciar a l'exposició a renda variable que manté SPY, QQQ i XLV.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "gpt",
+      "ticker": "XOP",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 533.04,
+      "motiu": "Redueixo beta on el senyal és més fràgil i reforço pilars més resilients per a les 9 setmanes finals. 1) Semiconductors: mantinc exposició estratègica (SMH+NVDA) però retallo SMH arran de l’avís de suport més baix (7) i la debilitat a 1 mes; prefereixo alliberar capital per sectors amb momentum més estable. 2) Energies: surto d’XOP (E&P d’alta beta, més sensibles a volatilitat del WTI i titulars de demanda/Geopolítica (10)) i mantinc XLE (integrades, flux de caixa més previsible). 3) Sanitat (XLV): sector defensiu amb força relativa (1 set +1,4% i +7% a 1 mes) i catalysts positius (12); incremento fins a un pes prop del 20% com a pilar de la cartera. 4) RSP: augmento equal-weight per capturar l’ampliació de l’amplada de mercat i reduir la dependència de mega-caps, en línia amb valoracions/beneficis (6). 5) Mantinc TLT com a coixí si el 10Y recula del ~5%, però sense ampliar per l’atur molt baix (9) que pot mantenir rendiments elevats. Amb això reequilibro la cartera cap a un mix més defensiu, diversificat i amb opcionalitat de rebot de final d’any, limitant el risc idiosincràtic en semis i E&P.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "gpt",
+      "ticker": "XLV",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 533.04,
+      "motiu": "Redueixo beta on el senyal és més fràgil i reforço pilars més resilients per a les 9 setmanes finals. 1) Semiconductors: mantinc exposició estratègica (SMH+NVDA) però retallo SMH arran de l’avís de suport més baix (7) i la debilitat a 1 mes; prefereixo alliberar capital per sectors amb momentum més estable. 2) Energies: surto d’XOP (E&P d’alta beta, més sensibles a volatilitat del WTI i titulars de demanda/Geopolítica (10)) i mantinc XLE (integrades, flux de caixa més previsible). 3) Sanitat (XLV): sector defensiu amb força relativa (1 set +1,4% i +7% a 1 mes) i catalysts positius (12); incremento fins a un pes prop del 20% com a pilar de la cartera. 4) RSP: augmento equal-weight per capturar l’ampliació de l’amplada de mercat i reduir la dependència de mega-caps, en línia amb valoracions/beneficis (6). 5) Mantinc TLT com a coixí si el 10Y recula del ~5%, però sense ampliar per l’atur molt baix (9) que pot mantenir rendiments elevats. Amb això reequilibro la cartera cap a un mix més defensiu, diversificat i amb opcionalitat de rebot de final d’any, limitant el risc idiosincràtic en semis i E&P.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "gpt",
+      "ticker": "AMD",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 342.46,
+      "motiu": "Redueixo beta on el senyal és més fràgil i reforço pilars més resilients per a les 9 setmanes finals. 1) Semiconductors: mantinc exposició estratègica (SMH+NVDA) però retallo SMH arran de l’avís de suport més baix (7) i la debilitat a 1 mes; prefereixo alliberar capital per sectors amb momentum més estable. 2) Energies: surto d’XOP (E&P d’alta beta, més sensibles a volatilitat del WTI i titulars de demanda/Geopolítica (10)) i mantinc XLE (integrades, flux de caixa més previsible). 3) Sanitat (XLV): sector defensiu amb força relativa (1 set +1,4% i +7% a 1 mes) i catalysts positius (12); incremento fins a un pes prop del 20% com a pilar de la cartera. 4) RSP: augmento equal-weight per capturar l’ampliació de l’amplada de mercat i reduir la dependència de mega-caps, en línia amb valoracions/beneficis (6). 5) Mantinc TLT com a coixí si el 10Y recula del ~5%, però sense ampliar per l’atur molt baix (9) que pot mantenir rendiments elevats. Amb això reequilibro la cartera cap a un mix més defensiu, diversificat i amb opcionalitat de rebot de final d’any, limitant el risc idiosincràtic en semis i E&P.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "gpt",
+      "ticker": "RSP",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 342.46,
+      "motiu": "Redueixo beta on el senyal és més fràgil i reforço pilars més resilients per a les 9 setmanes finals. 1) Semiconductors: mantinc exposició estratègica (SMH+NVDA) però retallo SMH arran de l’avís de suport més baix (7) i la debilitat a 1 mes; prefereixo alliberar capital per sectors amb momentum més estable. 2) Energies: surto d’XOP (E&P d’alta beta, més sensibles a volatilitat del WTI i titulars de demanda/Geopolítica (10)) i mantinc XLE (integrades, flux de caixa més previsible). 3) Sanitat (XLV): sector defensiu amb força relativa (1 set +1,4% i +7% a 1 mes) i catalysts positius (12); incremento fins a un pes prop del 20% com a pilar de la cartera. 4) RSP: augmento equal-weight per capturar l’ampliació de l’amplada de mercat i reduir la dependència de mega-caps, en línia amb valoracions/beneficis (6). 5) Mantinc TLT com a coixí si el 10Y recula del ~5%, però sense ampliar per l’atur molt baix (9) que pot mantenir rendiments elevats. Amb això reequilibro la cartera cap a un mix més defensiu, diversificat i amb opcionalitat de rebot de final d’any, limitant el risc idiosincràtic en semis i E&P.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "gpt",
+      "ticker": "SMH",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 399.6,
+      "motiu": "Redueixo beta on el senyal és més fràgil i reforço pilars més resilients per a les 9 setmanes finals. 1) Semiconductors: mantinc exposició estratègica (SMH+NVDA) però retallo SMH arran de l’avís de suport més baix (7) i la debilitat a 1 mes; prefereixo alliberar capital per sectors amb momentum més estable. 2) Energies: surto d’XOP (E&P d’alta beta, més sensibles a volatilitat del WTI i titulars de demanda/Geopolítica (10)) i mantinc XLE (integrades, flux de caixa més previsible). 3) Sanitat (XLV): sector defensiu amb força relativa (1 set +1,4% i +7% a 1 mes) i catalysts positius (12); incremento fins a un pes prop del 20% com a pilar de la cartera. 4) RSP: augmento equal-weight per capturar l’ampliació de l’amplada de mercat i reduir la dependència de mega-caps, en línia amb valoracions/beneficis (6). 5) Mantinc TLT com a coixí si el 10Y recula del ~5%, però sense ampliar per l’atur molt baix (9) que pot mantenir rendiments elevats. Amb això reequilibro la cartera cap a un mix més defensiu, diversificat i amb opcionalitat de rebot de final d’any, limitant el risc idiosincràtic en semis i E&P.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "gpt",
+      "ticker": "XLV",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 399.6,
+      "motiu": "Redueixo beta on el senyal és més fràgil i reforço pilars més resilients per a les 9 setmanes finals. 1) Semiconductors: mantinc exposició estratègica (SMH+NVDA) però retallo SMH arran de l’avís de suport més baix (7) i la debilitat a 1 mes; prefereixo alliberar capital per sectors amb momentum més estable. 2) Energies: surto d’XOP (E&P d’alta beta, més sensibles a volatilitat del WTI i titulars de demanda/Geopolítica (10)) i mantinc XLE (integrades, flux de caixa més previsible). 3) Sanitat (XLV): sector defensiu amb força relativa (1 set +1,4% i +7% a 1 mes) i catalysts positius (12); incremento fins a un pes prop del 20% com a pilar de la cartera. 4) RSP: augmento equal-weight per capturar l’ampliació de l’amplada de mercat i reduir la dependència de mega-caps, en línia amb valoracions/beneficis (6). 5) Mantinc TLT com a coixí si el 10Y recula del ~5%, però sense ampliar per l’atur molt baix (9) que pot mantenir rendiments elevats. Amb això reequilibro la cartera cap a un mix més defensiu, diversificat i amb opcionalitat de rebot de final d’any, limitant el risc idiosincràtic en semis i E&P.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "gemini",
+      "ticker": "META",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 286.21,
+      "motiu": "La decisió de reajustar la cartera amb un enfocament agressiu però més diversificat respon a la necessitat urgent de revertir les pèrdues i optimitzar la rendibilitat en les 9 setmanes que queden. Venc la totalitat de META i EWT, i redueixo substancialment l'exposició a AMD, NVDA, SMH i TSM. Aquesta mesura és una resposta directa al mal rendiment d'aquests actius i a les advertències de Morgan Stanley sobre els semiconductors (Notícia 7). Reassigno els fons per augmentar la meva posició en CIBR (ciberseguretat) i PLTR (IA i anàlisi de dades), que han mostrat una gran resiliència i fortalesa. Introdueixo IGV per aprofitar el bon moment del sector del programari. Per diversificar el risc i beneficiar-me de les bones previsions de beneficis de l'S&P 500 (Notícia 6), compro RSP, un ETF equiponderat que redueix la dependència de les grans capitalitzacions. Finalment, afegeixo SCHD, un ETF de dividends de qualitat que aporta estabilitat i un rendiment consistent, sense abandonar el potencial de creixement. Aquesta estratègia busca un equilibri entre el potencial de creixement agressiu i una gestió de risc més prudent, reduint la concentració en els sectors més vulnerables actualment.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "gemini",
+      "ticker": "EWT",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 232.9,
+      "motiu": "La decisió de reajustar la cartera amb un enfocament agressiu però més diversificat respon a la necessitat urgent de revertir les pèrdues i optimitzar la rendibilitat en les 9 setmanes que queden. Venc la totalitat de META i EWT, i redueixo substancialment l'exposició a AMD, NVDA, SMH i TSM. Aquesta mesura és una resposta directa al mal rendiment d'aquests actius i a les advertències de Morgan Stanley sobre els semiconductors (Notícia 7). Reassigno els fons per augmentar la meva posició en CIBR (ciberseguretat) i PLTR (IA i anàlisi de dades), que han mostrat una gran resiliència i fortalesa. Introdueixo IGV per aprofitar el bon moment del sector del programari. Per diversificar el risc i beneficiar-me de les bones previsions de beneficis de l'S&P 500 (Notícia 6), compro RSP, un ETF equiponderat que redueix la dependència de les grans capitalitzacions. Finalment, afegeixo SCHD, un ETF de dividends de qualitat que aporta estabilitat i un rendiment consistent, sense abandonar el potencial de creixement. Aquesta estratègia busca un equilibri entre el potencial de creixement agressiu i una gestió de risc més prudent, reduint la concentració en els sectors més vulnerables actualment.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "gemini",
+      "ticker": "AMD",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 600.0,
+      "motiu": "La decisió de reajustar la cartera amb un enfocament agressiu però més diversificat respon a la necessitat urgent de revertir les pèrdues i optimitzar la rendibilitat en les 9 setmanes que queden. Venc la totalitat de META i EWT, i redueixo substancialment l'exposició a AMD, NVDA, SMH i TSM. Aquesta mesura és una resposta directa al mal rendiment d'aquests actius i a les advertències de Morgan Stanley sobre els semiconductors (Notícia 7). Reassigno els fons per augmentar la meva posició en CIBR (ciberseguretat) i PLTR (IA i anàlisi de dades), que han mostrat una gran resiliència i fortalesa. Introdueixo IGV per aprofitar el bon moment del sector del programari. Per diversificar el risc i beneficiar-me de les bones previsions de beneficis de l'S&P 500 (Notícia 6), compro RSP, un ETF equiponderat que redueix la dependència de les grans capitalitzacions. Finalment, afegeixo SCHD, un ETF de dividends de qualitat que aporta estabilitat i un rendiment consistent, sense abandonar el potencial de creixement. Aquesta estratègia busca un equilibri entre el potencial de creixement agressiu i una gestió de risc més prudent, reduint la concentració en els sectors més vulnerables actualment.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "gemini",
+      "ticker": "NVDA",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 450.0,
+      "motiu": "La decisió de reajustar la cartera amb un enfocament agressiu però més diversificat respon a la necessitat urgent de revertir les pèrdues i optimitzar la rendibilitat en les 9 setmanes que queden. Venc la totalitat de META i EWT, i redueixo substancialment l'exposició a AMD, NVDA, SMH i TSM. Aquesta mesura és una resposta directa al mal rendiment d'aquests actius i a les advertències de Morgan Stanley sobre els semiconductors (Notícia 7). Reassigno els fons per augmentar la meva posició en CIBR (ciberseguretat) i PLTR (IA i anàlisi de dades), que han mostrat una gran resiliència i fortalesa. Introdueixo IGV per aprofitar el bon moment del sector del programari. Per diversificar el risc i beneficiar-me de les bones previsions de beneficis de l'S&P 500 (Notícia 6), compro RSP, un ETF equiponderat que redueix la dependència de les grans capitalitzacions. Finalment, afegeixo SCHD, un ETF de dividends de qualitat que aporta estabilitat i un rendiment consistent, sense abandonar el potencial de creixement. Aquesta estratègia busca un equilibri entre el potencial de creixement agressiu i una gestió de risc més prudent, reduint la concentració en els sectors més vulnerables actualment.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "gemini",
+      "ticker": "SMH",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 450.0,
+      "motiu": "La decisió de reajustar la cartera amb un enfocament agressiu però més diversificat respon a la necessitat urgent de revertir les pèrdues i optimitzar la rendibilitat en les 9 setmanes que queden. Venc la totalitat de META i EWT, i redueixo substancialment l'exposició a AMD, NVDA, SMH i TSM. Aquesta mesura és una resposta directa al mal rendiment d'aquests actius i a les advertències de Morgan Stanley sobre els semiconductors (Notícia 7). Reassigno els fons per augmentar la meva posició en CIBR (ciberseguretat) i PLTR (IA i anàlisi de dades), que han mostrat una gran resiliència i fortalesa. Introdueixo IGV per aprofitar el bon moment del sector del programari. Per diversificar el risc i beneficiar-me de les bones previsions de beneficis de l'S&P 500 (Notícia 6), compro RSP, un ETF equiponderat que redueix la dependència de les grans capitalitzacions. Finalment, afegeixo SCHD, un ETF de dividends de qualitat que aporta estabilitat i un rendiment consistent, sense abandonar el potencial de creixement. Aquesta estratègia busca un equilibri entre el potencial de creixement agressiu i una gestió de risc més prudent, reduint la concentració en els sectors més vulnerables actualment.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "gemini",
+      "ticker": "QQQ",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 200.0,
+      "motiu": "La decisió de reajustar la cartera amb un enfocament agressiu però més diversificat respon a la necessitat urgent de revertir les pèrdues i optimitzar la rendibilitat en les 9 setmanes que queden. Venc la totalitat de META i EWT, i redueixo substancialment l'exposició a AMD, NVDA, SMH i TSM. Aquesta mesura és una resposta directa al mal rendiment d'aquests actius i a les advertències de Morgan Stanley sobre els semiconductors (Notícia 7). Reassigno els fons per augmentar la meva posició en CIBR (ciberseguretat) i PLTR (IA i anàlisi de dades), que han mostrat una gran resiliència i fortalesa. Introdueixo IGV per aprofitar el bon moment del sector del programari. Per diversificar el risc i beneficiar-me de les bones previsions de beneficis de l'S&P 500 (Notícia 6), compro RSP, un ETF equiponderat que redueix la dependència de les grans capitalitzacions. Finalment, afegeixo SCHD, un ETF de dividends de qualitat que aporta estabilitat i un rendiment consistent, sense abandonar el potencial de creixement. Aquesta estratègia busca un equilibri entre el potencial de creixement agressiu i una gestió de risc més prudent, reduint la concentració en els sectors més vulnerables actualment.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "gemini",
+      "ticker": "TSM",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 200.0,
+      "motiu": "La decisió de reajustar la cartera amb un enfocament agressiu però més diversificat respon a la necessitat urgent de revertir les pèrdues i optimitzar la rendibilitat en les 9 setmanes que queden. Venc la totalitat de META i EWT, i redueixo substancialment l'exposició a AMD, NVDA, SMH i TSM. Aquesta mesura és una resposta directa al mal rendiment d'aquests actius i a les advertències de Morgan Stanley sobre els semiconductors (Notícia 7). Reassigno els fons per augmentar la meva posició en CIBR (ciberseguretat) i PLTR (IA i anàlisi de dades), que han mostrat una gran resiliència i fortalesa. Introdueixo IGV per aprofitar el bon moment del sector del programari. Per diversificar el risc i beneficiar-me de les bones previsions de beneficis de l'S&P 500 (Notícia 6), compro RSP, un ETF equiponderat que redueix la dependència de les grans capitalitzacions. Finalment, afegeixo SCHD, un ETF de dividends de qualitat que aporta estabilitat i un rendiment consistent, sense abandonar el potencial de creixement. Aquesta estratègia busca un equilibri entre el potencial de creixement agressiu i una gestió de risc més prudent, reduint la concentració en els sectors més vulnerables actualment.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "gemini",
+      "ticker": "RSP",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 900.0,
+      "motiu": "La decisió de reajustar la cartera amb un enfocament agressiu però més diversificat respon a la necessitat urgent de revertir les pèrdues i optimitzar la rendibilitat en les 9 setmanes que queden. Venc la totalitat de META i EWT, i redueixo substancialment l'exposició a AMD, NVDA, SMH i TSM. Aquesta mesura és una resposta directa al mal rendiment d'aquests actius i a les advertències de Morgan Stanley sobre els semiconductors (Notícia 7). Reassigno els fons per augmentar la meva posició en CIBR (ciberseguretat) i PLTR (IA i anàlisi de dades), que han mostrat una gran resiliència i fortalesa. Introdueixo IGV per aprofitar el bon moment del sector del programari. Per diversificar el risc i beneficiar-me de les bones previsions de beneficis de l'S&P 500 (Notícia 6), compro RSP, un ETF equiponderat que redueix la dependència de les grans capitalitzacions. Finalment, afegeixo SCHD, un ETF de dividends de qualitat que aporta estabilitat i un rendiment consistent, sense abandonar el potencial de creixement. Aquesta estratègia busca un equilibri entre el potencial de creixement agressiu i una gestió de risc més prudent, reduint la concentració en els sectors més vulnerables actualment.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "gemini",
+      "ticker": "SCHD",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 600.0,
+      "motiu": "La decisió de reajustar la cartera amb un enfocament agressiu però més diversificat respon a la necessitat urgent de revertir les pèrdues i optimitzar la rendibilitat en les 9 setmanes que queden. Venc la totalitat de META i EWT, i redueixo substancialment l'exposició a AMD, NVDA, SMH i TSM. Aquesta mesura és una resposta directa al mal rendiment d'aquests actius i a les advertències de Morgan Stanley sobre els semiconductors (Notícia 7). Reassigno els fons per augmentar la meva posició en CIBR (ciberseguretat) i PLTR (IA i anàlisi de dades), que han mostrat una gran resiliència i fortalesa. Introdueixo IGV per aprofitar el bon moment del sector del programari. Per diversificar el risc i beneficiar-me de les bones previsions de beneficis de l'S&P 500 (Notícia 6), compro RSP, un ETF equiponderat que redueix la dependència de les grans capitalitzacions. Finalment, afegeixo SCHD, un ETF de dividends de qualitat que aporta estabilitat i un rendiment consistent, sense abandonar el potencial de creixement. Aquesta estratègia busca un equilibri entre el potencial de creixement agressiu i una gestió de risc més prudent, reduint la concentració en els sectors més vulnerables actualment.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "gemini",
+      "ticker": "CIBR",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 350.0,
+      "motiu": "La decisió de reajustar la cartera amb un enfocament agressiu però més diversificat respon a la necessitat urgent de revertir les pèrdues i optimitzar la rendibilitat en les 9 setmanes que queden. Venc la totalitat de META i EWT, i redueixo substancialment l'exposició a AMD, NVDA, SMH i TSM. Aquesta mesura és una resposta directa al mal rendiment d'aquests actius i a les advertències de Morgan Stanley sobre els semiconductors (Notícia 7). Reassigno els fons per augmentar la meva posició en CIBR (ciberseguretat) i PLTR (IA i anàlisi de dades), que han mostrat una gran resiliència i fortalesa. Introdueixo IGV per aprofitar el bon moment del sector del programari. Per diversificar el risc i beneficiar-me de les bones previsions de beneficis de l'S&P 500 (Notícia 6), compro RSP, un ETF equiponderat que redueix la dependència de les grans capitalitzacions. Finalment, afegeixo SCHD, un ETF de dividends de qualitat que aporta estabilitat i un rendiment consistent, sense abandonar el potencial de creixement. Aquesta estratègia busca un equilibri entre el potencial de creixement agressiu i una gestió de risc més prudent, reduint la concentració en els sectors més vulnerables actualment.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "gemini",
+      "ticker": "PLTR",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 300.0,
+      "motiu": "La decisió de reajustar la cartera amb un enfocament agressiu però més diversificat respon a la necessitat urgent de revertir les pèrdues i optimitzar la rendibilitat en les 9 setmanes que queden. Venc la totalitat de META i EWT, i redueixo substancialment l'exposició a AMD, NVDA, SMH i TSM. Aquesta mesura és una resposta directa al mal rendiment d'aquests actius i a les advertències de Morgan Stanley sobre els semiconductors (Notícia 7). Reassigno els fons per augmentar la meva posició en CIBR (ciberseguretat) i PLTR (IA i anàlisi de dades), que han mostrat una gran resiliència i fortalesa. Introdueixo IGV per aprofitar el bon moment del sector del programari. Per diversificar el risc i beneficiar-me de les bones previsions de beneficis de l'S&P 500 (Notícia 6), compro RSP, un ETF equiponderat que redueix la dependència de les grans capitalitzacions. Finalment, afegeixo SCHD, un ETF de dividends de qualitat que aporta estabilitat i un rendiment consistent, sense abandonar el potencial de creixement. Aquesta estratègia busca un equilibri entre el potencial de creixement agressiu i una gestió de risc més prudent, reduint la concentració en els sectors més vulnerables actualment.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "gemini",
+      "ticker": "IGV",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 266.69,
+      "motiu": "La decisió de reajustar la cartera amb un enfocament agressiu però més diversificat respon a la necessitat urgent de revertir les pèrdues i optimitzar la rendibilitat en les 9 setmanes que queden. Venc la totalitat de META i EWT, i redueixo substancialment l'exposició a AMD, NVDA, SMH i TSM. Aquesta mesura és una resposta directa al mal rendiment d'aquests actius i a les advertències de Morgan Stanley sobre els semiconductors (Notícia 7). Reassigno els fons per augmentar la meva posició en CIBR (ciberseguretat) i PLTR (IA i anàlisi de dades), que han mostrat una gran resiliència i fortalesa. Introdueixo IGV per aprofitar el bon moment del sector del programari. Per diversificar el risc i beneficiar-me de les bones previsions de beneficis de l'S&P 500 (Notícia 6), compro RSP, un ETF equiponderat que redueix la dependència de les grans capitalitzacions. Finalment, afegeixo SCHD, un ETF de dividends de qualitat que aporta estabilitat i un rendiment consistent, sense abandonar el potencial de creixement. Aquesta estratègia busca un equilibri entre el potencial de creixement agressiu i una gestió de risc més prudent, reduint la concentració en els sectors més vulnerables actualment.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "deepseek",
+      "ticker": "SMH",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 600.0,
+      "motiu": "Redueixo SMH en 600 € (del 13,6% al 9,1%) per la pressió addicional que Morgan Stanley preveu sobre semiconductors, i rotació cap a XLV (salut), sector defensiu amb bon comportament recent (+1,4% setmana, +7,0% mes) i que pot resistir millor la volatilitat. Elimino la posició residual en XLE (0,02 €) per netejar la cartera i evitar costos innecessaris. Redueixo NVDA en 200 € (del 8,0% al 6,0%) perquè el sector de semiconductors continua feble i prefereixo reduir risc puntual. Mantinc la resta de la cartera: SPY i QQQ ja estan en pesos raonables, GLD tot i la caiguda manté la funció de diversificador, i BIL augmenta lleugerament com a coixí de liquiditat. No venc CVX perquè el petroli podria repuntar amb les tensions geopolítiques, però no hi afegeixo més. Aquests moviments busquen reduir la concentració en els sectors més castigats i augmentar la qualitat defensiva de la cartera.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "deepseek",
+      "ticker": "XLV",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 600.0,
+      "motiu": "Redueixo SMH en 600 € (del 13,6% al 9,1%) per la pressió addicional que Morgan Stanley preveu sobre semiconductors, i rotació cap a XLV (salut), sector defensiu amb bon comportament recent (+1,4% setmana, +7,0% mes) i que pot resistir millor la volatilitat. Elimino la posició residual en XLE (0,02 €) per netejar la cartera i evitar costos innecessaris. Redueixo NVDA en 200 € (del 8,0% al 6,0%) perquè el sector de semiconductors continua feble i prefereixo reduir risc puntual. Mantinc la resta de la cartera: SPY i QQQ ja estan en pesos raonables, GLD tot i la caiguda manté la funció de diversificador, i BIL augmenta lleugerament com a coixí de liquiditat. No venc CVX perquè el petroli podria repuntar amb les tensions geopolítiques, però no hi afegeixo més. Aquests moviments busquen reduir la concentració en els sectors més castigats i augmentar la qualitat defensiva de la cartera.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "deepseek",
+      "ticker": "XLE",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 0.02,
+      "motiu": "Redueixo SMH en 600 € (del 13,6% al 9,1%) per la pressió addicional que Morgan Stanley preveu sobre semiconductors, i rotació cap a XLV (salut), sector defensiu amb bon comportament recent (+1,4% setmana, +7,0% mes) i que pot resistir millor la volatilitat. Elimino la posició residual en XLE (0,02 €) per netejar la cartera i evitar costos innecessaris. Redueixo NVDA en 200 € (del 8,0% al 6,0%) perquè el sector de semiconductors continua feble i prefereixo reduir risc puntual. Mantinc la resta de la cartera: SPY i QQQ ja estan en pesos raonables, GLD tot i la caiguda manté la funció de diversificador, i BIL augmenta lleugerament com a coixí de liquiditat. No venc CVX perquè el petroli podria repuntar amb les tensions geopolítiques, però no hi afegeixo més. Aquests moviments busquen reduir la concentració en els sectors més castigats i augmentar la qualitat defensiva de la cartera.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "deepseek",
+      "ticker": "BIL",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 0.02,
+      "motiu": "Redueixo SMH en 600 € (del 13,6% al 9,1%) per la pressió addicional que Morgan Stanley preveu sobre semiconductors, i rotació cap a XLV (salut), sector defensiu amb bon comportament recent (+1,4% setmana, +7,0% mes) i que pot resistir millor la volatilitat. Elimino la posició residual en XLE (0,02 €) per netejar la cartera i evitar costos innecessaris. Redueixo NVDA en 200 € (del 8,0% al 6,0%) perquè el sector de semiconductors continua feble i prefereixo reduir risc puntual. Mantinc la resta de la cartera: SPY i QQQ ja estan en pesos raonables, GLD tot i la caiguda manté la funció de diversificador, i BIL augmenta lleugerament com a coixí de liquiditat. No venc CVX perquè el petroli podria repuntar amb les tensions geopolítiques, però no hi afegeixo més. Aquests moviments busquen reduir la concentració en els sectors més castigats i augmentar la qualitat defensiva de la cartera.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "deepseek",
+      "ticker": "NVDA",
+      "accio": "reduït",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 200.0,
+      "motiu": "Redueixo SMH en 600 € (del 13,6% al 9,1%) per la pressió addicional que Morgan Stanley preveu sobre semiconductors, i rotació cap a XLV (salut), sector defensiu amb bon comportament recent (+1,4% setmana, +7,0% mes) i que pot resistir millor la volatilitat. Elimino la posició residual en XLE (0,02 €) per netejar la cartera i evitar costos innecessaris. Redueixo NVDA en 200 € (del 8,0% al 6,0%) perquè el sector de semiconductors continua feble i prefereixo reduir risc puntual. Mantinc la resta de la cartera: SPY i QQQ ja estan en pesos raonables, GLD tot i la caiguda manté la funció de diversificador, i BIL augmenta lleugerament com a coixí de liquiditat. No venc CVX perquè el petroli podria repuntar amb les tensions geopolítiques, però no hi afegeixo més. Aquests moviments busquen reduir la concentració en els sectors més castigats i augmentar la qualitat defensiva de la cartera.",
+      "impacte": 0.0
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "model": "deepseek",
+      "ticker": "BIL",
+      "accio": "augmentat",
+      "pesAbans": null,
+      "pesDespres": null,
+      "import": 200.0,
+      "motiu": "Redueixo SMH en 600 € (del 13,6% al 9,1%) per la pressió addicional que Morgan Stanley preveu sobre semiconductors, i rotació cap a XLV (salut), sector defensiu amb bon comportament recent (+1,4% setmana, +7,0% mes) i que pot resistir millor la volatilitat. Elimino la posició residual en XLE (0,02 €) per netejar la cartera i evitar costos innecessaris. Redueixo NVDA en 200 € (del 8,0% al 6,0%) perquè el sector de semiconductors continua feble i prefereixo reduir risc puntual. Mantinc la resta de la cartera: SPY i QQQ ja estan en pesos raonables, GLD tot i la caiguda manté la funció de diversificador, i BIL augmenta lleugerament com a coixí de liquiditat. No venc CVX perquè el petroli podria repuntar amb les tensions geopolítiques, però no hi afegeixo més. Aquests moviments busquen reduir la concentració en els sectors més castigats i augmentar la qualitat defensiva de la cartera.",
+      "impacte": 0.0
+    },
     {
       "setmana": 22,
       "data": "2026-10-19",
@@ -7199,7 +7955,7 @@
       "pesDespres": null,
       "import": 658.83,
       "motiu": "Venc SOXX per eliminar solapament amb SMH i rebaixar beta d’IA mantenint exposició core a semiconductors via SMH i NVDA/AMD. Surto de CIBR per simplificar el bloc tecnològic just abans d’uns resultats potencialment volàtils. Reubico tot a TLT: amb el 10Y >5% i una Fed previsiblement en pausa, la relació risc/retorn de la durada és atractiva en el nostre horitzó de 10 setmanes i aporta cobertura si el creixement es refreda o el to de la Fed és menys ‘hawkish’. Mantenim XLE/XOP per la fortalesa relativa del sector i disciplina d’oferta, i XLV com a pilar defensiu. Assumeixo el risc que si els rendiments pugen encara més TLT pateixi, però la cartera queda més equilibrada i amb menys volatilitat agregada. Opero només dues vegades per minimitzar costos.",
-      "impacte": 0.0
+      "impacte": -0.12
     },
     {
       "setmana": 22,
@@ -7211,7 +7967,7 @@
       "pesDespres": null,
       "import": 658.83,
       "motiu": "Venc SOXX per eliminar solapament amb SMH i rebaixar beta d’IA mantenint exposició core a semiconductors via SMH i NVDA/AMD. Surto de CIBR per simplificar el bloc tecnològic just abans d’uns resultats potencialment volàtils. Reubico tot a TLT: amb el 10Y >5% i una Fed previsiblement en pausa, la relació risc/retorn de la durada és atractiva en el nostre horitzó de 10 setmanes i aporta cobertura si el creixement es refreda o el to de la Fed és menys ‘hawkish’. Mantenim XLE/XOP per la fortalesa relativa del sector i disciplina d’oferta, i XLV com a pilar defensiu. Assumeixo el risc que si els rendiments pugen encara més TLT pateixi, però la cartera queda més equilibrada i amb menys volatilitat agregada. Opero només dues vegades per minimitzar costos.",
-      "impacte": 0.0
+      "impacte": -0.12
     },
     {
       "setmana": 22,
@@ -7223,7 +7979,7 @@
       "pesDespres": null,
       "import": 591.96,
       "motiu": "Venc SOXX per eliminar solapament amb SMH i rebaixar beta d’IA mantenint exposició core a semiconductors via SMH i NVDA/AMD. Surto de CIBR per simplificar el bloc tecnològic just abans d’uns resultats potencialment volàtils. Reubico tot a TLT: amb el 10Y >5% i una Fed previsiblement en pausa, la relació risc/retorn de la durada és atractiva en el nostre horitzó de 10 setmanes i aporta cobertura si el creixement es refreda o el to de la Fed és menys ‘hawkish’. Mantenim XLE/XOP per la fortalesa relativa del sector i disciplina d’oferta, i XLV com a pilar defensiu. Assumeixo el risc que si els rendiments pugen encara més TLT pateixi, però la cartera queda més equilibrada i amb menys volatilitat agregada. Opero només dues vegades per minimitzar costos.",
-      "impacte": 0.0
+      "impacte": -0.12
     },
     {
       "setmana": 22,
@@ -7235,7 +7991,7 @@
       "pesDespres": null,
       "import": 591.96,
       "motiu": "Venc SOXX per eliminar solapament amb SMH i rebaixar beta d’IA mantenint exposició core a semiconductors via SMH i NVDA/AMD. Surto de CIBR per simplificar el bloc tecnològic just abans d’uns resultats potencialment volàtils. Reubico tot a TLT: amb el 10Y >5% i una Fed previsiblement en pausa, la relació risc/retorn de la durada és atractiva en el nostre horitzó de 10 setmanes i aporta cobertura si el creixement es refreda o el to de la Fed és menys ‘hawkish’. Mantenim XLE/XOP per la fortalesa relativa del sector i disciplina d’oferta, i XLV com a pilar defensiu. Assumeixo el risc que si els rendiments pugen encara més TLT pateixi, però la cartera queda més equilibrada i amb menys volatilitat agregada. Opero només dues vegades per minimitzar costos.",
-      "impacte": 0.0
+      "impacte": -0.12
     },
     {
       "setmana": 22,
@@ -7247,7 +8003,7 @@
       "pesDespres": null,
       "import": 399.6,
       "motiu": "La forta caiguda d'aquesta setmana en la meva cartera, liderada pels semiconductors, exigeix una resposta estratègica sense abandonar la meva tesi principal. Amb només 10 setmanes per al final del torneig, una postura agressiva segueix sent necessària per buscar la màxima rendibilitat. Les notícies apunten a una 'venda massiva d'IA' i un possible rebot, la qual cosa reforça la idea de no cedir a la por, sinó d'ajustar tàcticament. He decidit reduir l'exposició a AMD i TSM, que han estat els actius més volàtils i castigats, per disminuir el risc de concentració en accions individuals de semiconductors. Els fons obtinguts es reinvertiran en QQQ (Nasdaq 100) i MSFT (Microsoft). QQQ proporciona una exposició més diversificada a un ampli espectre de les principals empreses tecnològiques, mantenint l'aposta pel sector amb una mica menys de risc que una única acció. Microsoft és un gegant tecnològic sòlid, amb un creixement robust en el núvol i una posició capdavantera en IA, que ha demostrat major resiliència aquesta setmana. Aquesta reassignació permet mantenir un perfil de risc agressiu, optimitzant la cartera per a una potencial recuperació del sector tecnològic amb una millor gestió de la volatilitat.",
-      "impacte": 0.0
+      "impacte": -0.85
     },
     {
       "setmana": 22,
@@ -7259,7 +8015,7 @@
       "pesDespres": null,
       "import": 399.6,
       "motiu": "La forta caiguda d'aquesta setmana en la meva cartera, liderada pels semiconductors, exigeix una resposta estratègica sense abandonar la meva tesi principal. Amb només 10 setmanes per al final del torneig, una postura agressiva segueix sent necessària per buscar la màxima rendibilitat. Les notícies apunten a una 'venda massiva d'IA' i un possible rebot, la qual cosa reforça la idea de no cedir a la por, sinó d'ajustar tàcticament. He decidit reduir l'exposició a AMD i TSM, que han estat els actius més volàtils i castigats, per disminuir el risc de concentració en accions individuals de semiconductors. Els fons obtinguts es reinvertiran en QQQ (Nasdaq 100) i MSFT (Microsoft). QQQ proporciona una exposició més diversificada a un ampli espectre de les principals empreses tecnològiques, mantenint l'aposta pel sector amb una mica menys de risc que una única acció. Microsoft és un gegant tecnològic sòlid, amb un creixement robust en el núvol i una posició capdavantera en IA, que ha demostrat major resiliència aquesta setmana. Aquesta reassignació permet mantenir un perfil de risc agressiu, optimitzant la cartera per a una potencial recuperació del sector tecnològic amb una millor gestió de la volatilitat.",
-      "impacte": 0.0
+      "impacte": -0.85
     },
     {
       "setmana": 22,
@@ -7271,7 +8027,7 @@
       "pesDespres": null,
       "import": 299.7,
       "motiu": "La forta caiguda d'aquesta setmana en la meva cartera, liderada pels semiconductors, exigeix una resposta estratègica sense abandonar la meva tesi principal. Amb només 10 setmanes per al final del torneig, una postura agressiva segueix sent necessària per buscar la màxima rendibilitat. Les notícies apunten a una 'venda massiva d'IA' i un possible rebot, la qual cosa reforça la idea de no cedir a la por, sinó d'ajustar tàcticament. He decidit reduir l'exposició a AMD i TSM, que han estat els actius més volàtils i castigats, per disminuir el risc de concentració en accions individuals de semiconductors. Els fons obtinguts es reinvertiran en QQQ (Nasdaq 100) i MSFT (Microsoft). QQQ proporciona una exposició més diversificada a un ampli espectre de les principals empreses tecnològiques, mantenint l'aposta pel sector amb una mica menys de risc que una única acció. Microsoft és un gegant tecnològic sòlid, amb un creixement robust en el núvol i una posició capdavantera en IA, que ha demostrat major resiliència aquesta setmana. Aquesta reassignació permet mantenir un perfil de risc agressiu, optimitzant la cartera per a una potencial recuperació del sector tecnològic amb una millor gestió de la volatilitat.",
-      "impacte": 0.0
+      "impacte": -0.85
     },
     {
       "setmana": 22,
@@ -7283,7 +8039,7 @@
       "pesDespres": null,
       "import": 299.7,
       "motiu": "La forta caiguda d'aquesta setmana en la meva cartera, liderada pels semiconductors, exigeix una resposta estratègica sense abandonar la meva tesi principal. Amb només 10 setmanes per al final del torneig, una postura agressiva segueix sent necessària per buscar la màxima rendibilitat. Les notícies apunten a una 'venda massiva d'IA' i un possible rebot, la qual cosa reforça la idea de no cedir a la por, sinó d'ajustar tàcticament. He decidit reduir l'exposició a AMD i TSM, que han estat els actius més volàtils i castigats, per disminuir el risc de concentració en accions individuals de semiconductors. Els fons obtinguts es reinvertiran en QQQ (Nasdaq 100) i MSFT (Microsoft). QQQ proporciona una exposició més diversificada a un ampli espectre de les principals empreses tecnològiques, mantenint l'aposta pel sector amb una mica menys de risc que una única acció. Microsoft és un gegant tecnològic sòlid, amb un creixement robust en el núvol i una posició capdavantera en IA, que ha demostrat major resiliència aquesta setmana. Aquesta reassignació permet mantenir un perfil de risc agressiu, optimitzant la cartera per a una potencial recuperació del sector tecnològic amb una millor gestió de la volatilitat.",
-      "impacte": 0.0
+      "impacte": -0.85
     },
     {
       "setmana": 21,
@@ -7295,7 +8051,7 @@
       "pesDespres": null,
       "import": 400.0,
       "motiu": "Redueixo una mica XLE (de 13.4% a ~9.5%) perquè el possible acord de ceasefire energètic a Ucraïna (titulars 3 i 4) podria pressionar el preu del petroli just quan el sector ja ha pujat un 60% en un any; és un bon moment per recollir part dels guanys. Traslladi aquest import a XLV (salut EUA), que aquesta setmana ha tingut un comportament sòlid (+3.1%) i ofereix un perfil més defensiu de cara a les últimes 11 setmanes del torneig, sense dependre de factors geopolítics volàtils. Mantinc la resta de la cartera intacta: SMH, SPY, QQQ, VGK i GLD continuen tenint sentit estratègic i no veig catalitzadors prou forts per tocar-los aquesta setmana.",
-      "impacte": -2.48
+      "impacte": -3.37
     },
     {
       "setmana": 21,
@@ -7307,7 +8063,7 @@
       "pesDespres": null,
       "import": 400.0,
       "motiu": "Redueixo una mica XLE (de 13.4% a ~9.5%) perquè el possible acord de ceasefire energètic a Ucraïna (titulars 3 i 4) podria pressionar el preu del petroli just quan el sector ja ha pujat un 60% en un any; és un bon moment per recollir part dels guanys. Traslladi aquest import a XLV (salut EUA), que aquesta setmana ha tingut un comportament sòlid (+3.1%) i ofereix un perfil més defensiu de cara a les últimes 11 setmanes del torneig, sense dependre de factors geopolítics volàtils. Mantinc la resta de la cartera intacta: SMH, SPY, QQQ, VGK i GLD continuen tenint sentit estratègic i no veig catalitzadors prou forts per tocar-los aquesta setmana.",
-      "impacte": -2.48
+      "impacte": -3.37
     },
     {
       "setmana": 21,
@@ -7319,7 +8075,7 @@
       "pesDespres": null,
       "import": 789.39,
       "motiu": "Redueixo risc direccional en petroli: surto d’USO (cost de rols i titulars de ‘ceasefire’ pressionen el cru) i rebaixo XOP (més beta), mantenint XLE (majors integrades més resilients). En semis, consolido l’exposició rebaixant SMH/SOXX per l’avís de límits de capital a la cadena d’IA, però mantinc nucli d’IA perquè el tema segueix fort (suportat per l’interès en memòria/NAND). Redistribueixo cap a XLV (defensiu amb momentum en un entorn de tipus reals alts), CIBR (creixement secular i fluxos positius) i RSP (capturar ampliació de la pujada i reduir concentració). Això baixa la volatilitat esperada tot preservant catalitzadors a 11 setmanes del tancament.",
-      "impacte": -4.45
+      "impacte": -4.56
     },
     {
       "setmana": 21,
@@ -7331,7 +8087,7 @@
       "pesDespres": null,
       "import": 789.39,
       "motiu": "Redueixo risc direccional en petroli: surto d’USO (cost de rols i titulars de ‘ceasefire’ pressionen el cru) i rebaixo XOP (més beta), mantenint XLE (majors integrades més resilients). En semis, consolido l’exposició rebaixant SMH/SOXX per l’avís de límits de capital a la cadena d’IA, però mantinc nucli d’IA perquè el tema segueix fort (suportat per l’interès en memòria/NAND). Redistribueixo cap a XLV (defensiu amb momentum en un entorn de tipus reals alts), CIBR (creixement secular i fluxos positius) i RSP (capturar ampliació de la pujada i reduir concentració). Això baixa la volatilitat esperada tot preservant catalitzadors a 11 setmanes del tancament.",
-      "impacte": -4.45
+      "impacte": -4.56
     },
     {
       "setmana": 21,
@@ -7343,7 +8099,7 @@
       "pesDespres": null,
       "import": 520.0,
       "motiu": "Redueixo risc direccional en petroli: surto d’USO (cost de rols i titulars de ‘ceasefire’ pressionen el cru) i rebaixo XOP (més beta), mantenint XLE (majors integrades més resilients). En semis, consolido l’exposició rebaixant SMH/SOXX per l’avís de límits de capital a la cadena d’IA, però mantinc nucli d’IA perquè el tema segueix fort (suportat per l’interès en memòria/NAND). Redistribueixo cap a XLV (defensiu amb momentum en un entorn de tipus reals alts), CIBR (creixement secular i fluxos positius) i RSP (capturar ampliació de la pujada i reduir concentració). Això baixa la volatilitat esperada tot preservant catalitzadors a 11 setmanes del tancament.",
-      "impacte": -4.45
+      "impacte": -4.56
     },
     {
       "setmana": 21,
@@ -7355,7 +8111,7 @@
       "pesDespres": null,
       "import": 520.0,
       "motiu": "Redueixo risc direccional en petroli: surto d’USO (cost de rols i titulars de ‘ceasefire’ pressionen el cru) i rebaixo XOP (més beta), mantenint XLE (majors integrades més resilients). En semis, consolido l’exposició rebaixant SMH/SOXX per l’avís de límits de capital a la cadena d’IA, però mantinc nucli d’IA perquè el tema segueix fort (suportat per l’interès en memòria/NAND). Redistribueixo cap a XLV (defensiu amb momentum en un entorn de tipus reals alts), CIBR (creixement secular i fluxos positius) i RSP (capturar ampliació de la pujada i reduir concentració). Això baixa la volatilitat esperada tot preservant catalitzadors a 11 setmanes del tancament.",
-      "impacte": -4.45
+      "impacte": -4.56
     },
     {
       "setmana": 21,
@@ -7367,7 +8123,7 @@
       "pesDespres": null,
       "import": 338.66,
       "motiu": "Redueixo risc direccional en petroli: surto d’USO (cost de rols i titulars de ‘ceasefire’ pressionen el cru) i rebaixo XOP (més beta), mantenint XLE (majors integrades més resilients). En semis, consolido l’exposició rebaixant SMH/SOXX per l’avís de límits de capital a la cadena d’IA, però mantinc nucli d’IA perquè el tema segueix fort (suportat per l’interès en memòria/NAND). Redistribueixo cap a XLV (defensiu amb momentum en un entorn de tipus reals alts), CIBR (creixement secular i fluxos positius) i RSP (capturar ampliació de la pujada i reduir concentració). Això baixa la volatilitat esperada tot preservant catalitzadors a 11 setmanes del tancament.",
-      "impacte": -4.45
+      "impacte": -4.56
     },
     {
       "setmana": 21,
@@ -7379,7 +8135,7 @@
       "pesDespres": null,
       "import": 338.66,
       "motiu": "Redueixo risc direccional en petroli: surto d’USO (cost de rols i titulars de ‘ceasefire’ pressionen el cru) i rebaixo XOP (més beta), mantenint XLE (majors integrades més resilients). En semis, consolido l’exposició rebaixant SMH/SOXX per l’avís de límits de capital a la cadena d’IA, però mantinc nucli d’IA perquè el tema segueix fort (suportat per l’interès en memòria/NAND). Redistribueixo cap a XLV (defensiu amb momentum en un entorn de tipus reals alts), CIBR (creixement secular i fluxos positius) i RSP (capturar ampliació de la pujada i reduir concentració). Això baixa la volatilitat esperada tot preservant catalitzadors a 11 setmanes del tancament.",
-      "impacte": -4.45
+      "impacte": -4.56
     },
     {
       "setmana": 21,
@@ -7391,7 +8147,7 @@
       "pesDespres": null,
       "import": 236.28,
       "motiu": "Redueixo risc direccional en petroli: surto d’USO (cost de rols i titulars de ‘ceasefire’ pressionen el cru) i rebaixo XOP (més beta), mantenint XLE (majors integrades més resilients). En semis, consolido l’exposició rebaixant SMH/SOXX per l’avís de límits de capital a la cadena d’IA, però mantinc nucli d’IA perquè el tema segueix fort (suportat per l’interès en memòria/NAND). Redistribueixo cap a XLV (defensiu amb momentum en un entorn de tipus reals alts), CIBR (creixement secular i fluxos positius) i RSP (capturar ampliació de la pujada i reduir concentració). Això baixa la volatilitat esperada tot preservant catalitzadors a 11 setmanes del tancament.",
-      "impacte": -4.45
+      "impacte": -4.56
     },
     {
       "setmana": 21,
@@ -7403,7 +8159,7 @@
       "pesDespres": null,
       "import": 236.28,
       "motiu": "Redueixo risc direccional en petroli: surto d’USO (cost de rols i titulars de ‘ceasefire’ pressionen el cru) i rebaixo XOP (més beta), mantenint XLE (majors integrades més resilients). En semis, consolido l’exposició rebaixant SMH/SOXX per l’avís de límits de capital a la cadena d’IA, però mantinc nucli d’IA perquè el tema segueix fort (suportat per l’interès en memòria/NAND). Redistribueixo cap a XLV (defensiu amb momentum en un entorn de tipus reals alts), CIBR (creixement secular i fluxos positius) i RSP (capturar ampliació de la pujada i reduir concentració). Això baixa la volatilitat esperada tot preservant catalitzadors a 11 setmanes del tancament.",
-      "impacte": -4.45
+      "impacte": -4.56
     },
     {
       "setmana": 21,
@@ -7415,7 +8171,7 @@
       "pesDespres": null,
       "import": 142.26,
       "motiu": "Redueixo risc direccional en petroli: surto d’USO (cost de rols i titulars de ‘ceasefire’ pressionen el cru) i rebaixo XOP (més beta), mantenint XLE (majors integrades més resilients). En semis, consolido l’exposició rebaixant SMH/SOXX per l’avís de límits de capital a la cadena d’IA, però mantinc nucli d’IA perquè el tema segueix fort (suportat per l’interès en memòria/NAND). Redistribueixo cap a XLV (defensiu amb momentum en un entorn de tipus reals alts), CIBR (creixement secular i fluxos positius) i RSP (capturar ampliació de la pujada i reduir concentració). Això baixa la volatilitat esperada tot preservant catalitzadors a 11 setmanes del tancament.",
-      "impacte": -4.45
+      "impacte": -4.56
     },
     {
       "setmana": 21,
@@ -7427,7 +8183,7 @@
       "pesDespres": null,
       "import": 142.26,
       "motiu": "Redueixo risc direccional en petroli: surto d’USO (cost de rols i titulars de ‘ceasefire’ pressionen el cru) i rebaixo XOP (més beta), mantenint XLE (majors integrades més resilients). En semis, consolido l’exposició rebaixant SMH/SOXX per l’avís de límits de capital a la cadena d’IA, però mantinc nucli d’IA perquè el tema segueix fort (suportat per l’interès en memòria/NAND). Redistribueixo cap a XLV (defensiu amb momentum en un entorn de tipus reals alts), CIBR (creixement secular i fluxos positius) i RSP (capturar ampliació de la pujada i reduir concentració). Això baixa la volatilitat esperada tot preservant catalitzadors a 11 setmanes del tancament.",
-      "impacte": -4.45
+      "impacte": -4.56
     },
     {
       "setmana": 21,
@@ -7439,7 +8195,7 @@
       "pesDespres": null,
       "import": 197.35,
       "motiu": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a la urgència d'accelerar la rendibilitat durant les 11 setmanes restants del torneig. Hem consolidat la nostra aposta pel sector tecnològic, especialment en Intel·ligència Artificial i semiconductors, ja que les notícies confirmen el seu gran potencial de creixement i la seva importància estratègica a curt i mitjà termini. Hem venut actius amb un rendiment inferior o que no s'ajusten a la nostra estratègia de creixement (INTC, QCOM, 005930.KS), hem pres beneficis de posicions defensives (USMV), hem reduït la nostra exposició a Europa (VGK), a matèries primeres (USO, DBC) i hem eliminat actius testimonials amb valor residual (TLT, GDX, XOP). Els fons alliberats s'han invertit estratègicament per augmentar la nostra exposició en líders de semiconductors (NVDA, AMD, TSM, SMH), IA (AIQ, PLTR) i ciberseguretat (CIBR), així com en un gegant tecnològic diversificat amb fortes iniciatives en IA com Microsoft (MSFT). Palantir (PLTR) és una empresa de programari i anàlisi de dades amb un fort component d'IA, i CIBR (ciberseguretat) representa un sector amb un creixement estructural i una demanda creixent en l'era digital.",
-      "impacte": -7.08
+      "impacte": -7.88
     },
     {
       "setmana": 21,
@@ -7451,7 +8207,7 @@
       "pesDespres": null,
       "import": 153.77,
       "motiu": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a la urgència d'accelerar la rendibilitat durant les 11 setmanes restants del torneig. Hem consolidat la nostra aposta pel sector tecnològic, especialment en Intel·ligència Artificial i semiconductors, ja que les notícies confirmen el seu gran potencial de creixement i la seva importància estratègica a curt i mitjà termini. Hem venut actius amb un rendiment inferior o que no s'ajusten a la nostra estratègia de creixement (INTC, QCOM, 005930.KS), hem pres beneficis de posicions defensives (USMV), hem reduït la nostra exposició a Europa (VGK), a matèries primeres (USO, DBC) i hem eliminat actius testimonials amb valor residual (TLT, GDX, XOP). Els fons alliberats s'han invertit estratègicament per augmentar la nostra exposició en líders de semiconductors (NVDA, AMD, TSM, SMH), IA (AIQ, PLTR) i ciberseguretat (CIBR), així com en un gegant tecnològic diversificat amb fortes iniciatives en IA com Microsoft (MSFT). Palantir (PLTR) és una empresa de programari i anàlisi de dades amb un fort component d'IA, i CIBR (ciberseguretat) representa un sector amb un creixement estructural i una demanda creixent en l'era digital.",
-      "impacte": -7.08
+      "impacte": -7.88
     },
     {
       "setmana": 21,
@@ -7463,7 +8219,7 @@
       "pesDespres": null,
       "import": 280.64,
       "motiu": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a la urgència d'accelerar la rendibilitat durant les 11 setmanes restants del torneig. Hem consolidat la nostra aposta pel sector tecnològic, especialment en Intel·ligència Artificial i semiconductors, ja que les notícies confirmen el seu gran potencial de creixement i la seva importància estratègica a curt i mitjà termini. Hem venut actius amb un rendiment inferior o que no s'ajusten a la nostra estratègia de creixement (INTC, QCOM, 005930.KS), hem pres beneficis de posicions defensives (USMV), hem reduït la nostra exposició a Europa (VGK), a matèries primeres (USO, DBC) i hem eliminat actius testimonials amb valor residual (TLT, GDX, XOP). Els fons alliberats s'han invertit estratègicament per augmentar la nostra exposició en líders de semiconductors (NVDA, AMD, TSM, SMH), IA (AIQ, PLTR) i ciberseguretat (CIBR), així com en un gegant tecnològic diversificat amb fortes iniciatives en IA com Microsoft (MSFT). Palantir (PLTR) és una empresa de programari i anàlisi de dades amb un fort component d'IA, i CIBR (ciberseguretat) representa un sector amb un creixement estructural i una demanda creixent en l'era digital.",
-      "impacte": -7.08
+      "impacte": -7.88
     },
     {
       "setmana": 21,
@@ -7475,7 +8231,7 @@
       "pesDespres": null,
       "import": 235.21,
       "motiu": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a la urgència d'accelerar la rendibilitat durant les 11 setmanes restants del torneig. Hem consolidat la nostra aposta pel sector tecnològic, especialment en Intel·ligència Artificial i semiconductors, ja que les notícies confirmen el seu gran potencial de creixement i la seva importància estratègica a curt i mitjà termini. Hem venut actius amb un rendiment inferior o que no s'ajusten a la nostra estratègia de creixement (INTC, QCOM, 005930.KS), hem pres beneficis de posicions defensives (USMV), hem reduït la nostra exposició a Europa (VGK), a matèries primeres (USO, DBC) i hem eliminat actius testimonials amb valor residual (TLT, GDX, XOP). Els fons alliberats s'han invertit estratègicament per augmentar la nostra exposició en líders de semiconductors (NVDA, AMD, TSM, SMH), IA (AIQ, PLTR) i ciberseguretat (CIBR), així com en un gegant tecnològic diversificat amb fortes iniciatives en IA com Microsoft (MSFT). Palantir (PLTR) és una empresa de programari i anàlisi de dades amb un fort component d'IA, i CIBR (ciberseguretat) representa un sector amb un creixement estructural i una demanda creixent en l'era digital.",
-      "impacte": -7.08
+      "impacte": -7.88
     },
     {
       "setmana": 21,
@@ -7487,7 +8243,7 @@
       "pesDespres": null,
       "import": 1055.7,
       "motiu": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a la urgència d'accelerar la rendibilitat durant les 11 setmanes restants del torneig. Hem consolidat la nostra aposta pel sector tecnològic, especialment en Intel·ligència Artificial i semiconductors, ja que les notícies confirmen el seu gran potencial de creixement i la seva importància estratègica a curt i mitjà termini. Hem venut actius amb un rendiment inferior o que no s'ajusten a la nostra estratègia de creixement (INTC, QCOM, 005930.KS), hem pres beneficis de posicions defensives (USMV), hem reduït la nostra exposició a Europa (VGK), a matèries primeres (USO, DBC) i hem eliminat actius testimonials amb valor residual (TLT, GDX, XOP). Els fons alliberats s'han invertit estratègicament per augmentar la nostra exposició en líders de semiconductors (NVDA, AMD, TSM, SMH), IA (AIQ, PLTR) i ciberseguretat (CIBR), així com en un gegant tecnològic diversificat amb fortes iniciatives en IA com Microsoft (MSFT). Palantir (PLTR) és una empresa de programari i anàlisi de dades amb un fort component d'IA, i CIBR (ciberseguretat) representa un sector amb un creixement estructural i una demanda creixent en l'era digital.",
-      "impacte": -7.08
+      "impacte": -7.88
     },
     {
       "setmana": 21,
@@ -7499,7 +8255,7 @@
       "pesDespres": null,
       "import": 507.01,
       "motiu": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a la urgència d'accelerar la rendibilitat durant les 11 setmanes restants del torneig. Hem consolidat la nostra aposta pel sector tecnològic, especialment en Intel·ligència Artificial i semiconductors, ja que les notícies confirmen el seu gran potencial de creixement i la seva importància estratègica a curt i mitjà termini. Hem venut actius amb un rendiment inferior o que no s'ajusten a la nostra estratègia de creixement (INTC, QCOM, 005930.KS), hem pres beneficis de posicions defensives (USMV), hem reduït la nostra exposició a Europa (VGK), a matèries primeres (USO, DBC) i hem eliminat actius testimonials amb valor residual (TLT, GDX, XOP). Els fons alliberats s'han invertit estratègicament per augmentar la nostra exposició en líders de semiconductors (NVDA, AMD, TSM, SMH), IA (AIQ, PLTR) i ciberseguretat (CIBR), així com en un gegant tecnològic diversificat amb fortes iniciatives en IA com Microsoft (MSFT). Palantir (PLTR) és una empresa de programari i anàlisi de dades amb un fort component d'IA, i CIBR (ciberseguretat) representa un sector amb un creixement estructural i una demanda creixent en l'era digital.",
-      "impacte": -7.08
+      "impacte": -7.88
     },
     {
       "setmana": 21,
@@ -7511,7 +8267,7 @@
       "pesDespres": null,
       "import": 132.93,
       "motiu": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a la urgència d'accelerar la rendibilitat durant les 11 setmanes restants del torneig. Hem consolidat la nostra aposta pel sector tecnològic, especialment en Intel·ligència Artificial i semiconductors, ja que les notícies confirmen el seu gran potencial de creixement i la seva importància estratègica a curt i mitjà termini. Hem venut actius amb un rendiment inferior o que no s'ajusten a la nostra estratègia de creixement (INTC, QCOM, 005930.KS), hem pres beneficis de posicions defensives (USMV), hem reduït la nostra exposició a Europa (VGK), a matèries primeres (USO, DBC) i hem eliminat actius testimonials amb valor residual (TLT, GDX, XOP). Els fons alliberats s'han invertit estratègicament per augmentar la nostra exposició en líders de semiconductors (NVDA, AMD, TSM, SMH), IA (AIQ, PLTR) i ciberseguretat (CIBR), així com en un gegant tecnològic diversificat amb fortes iniciatives en IA com Microsoft (MSFT). Palantir (PLTR) és una empresa de programari i anàlisi de dades amb un fort component d'IA, i CIBR (ciberseguretat) representa un sector amb un creixement estructural i una demanda creixent en l'era digital.",
-      "impacte": -7.08
+      "impacte": -7.88
     },
     {
       "setmana": 21,
@@ -7523,7 +8279,7 @@
       "pesDespres": null,
       "import": 500.0,
       "motiu": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a la urgència d'accelerar la rendibilitat durant les 11 setmanes restants del torneig. Hem consolidat la nostra aposta pel sector tecnològic, especialment en Intel·ligència Artificial i semiconductors, ja que les notícies confirmen el seu gran potencial de creixement i la seva importància estratègica a curt i mitjà termini. Hem venut actius amb un rendiment inferior o que no s'ajusten a la nostra estratègia de creixement (INTC, QCOM, 005930.KS), hem pres beneficis de posicions defensives (USMV), hem reduït la nostra exposició a Europa (VGK), a matèries primeres (USO, DBC) i hem eliminat actius testimonials amb valor residual (TLT, GDX, XOP). Els fons alliberats s'han invertit estratègicament per augmentar la nostra exposició en líders de semiconductors (NVDA, AMD, TSM, SMH), IA (AIQ, PLTR) i ciberseguretat (CIBR), així com en un gegant tecnològic diversificat amb fortes iniciatives en IA com Microsoft (MSFT). Palantir (PLTR) és una empresa de programari i anàlisi de dades amb un fort component d'IA, i CIBR (ciberseguretat) representa un sector amb un creixement estructural i una demanda creixent en l'era digital.",
-      "impacte": -7.08
+      "impacte": -7.88
     },
     {
       "setmana": 21,
@@ -7535,7 +8291,7 @@
       "pesDespres": null,
       "import": 500.0,
       "motiu": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a la urgència d'accelerar la rendibilitat durant les 11 setmanes restants del torneig. Hem consolidat la nostra aposta pel sector tecnològic, especialment en Intel·ligència Artificial i semiconductors, ja que les notícies confirmen el seu gran potencial de creixement i la seva importància estratègica a curt i mitjà termini. Hem venut actius amb un rendiment inferior o que no s'ajusten a la nostra estratègia de creixement (INTC, QCOM, 005930.KS), hem pres beneficis de posicions defensives (USMV), hem reduït la nostra exposició a Europa (VGK), a matèries primeres (USO, DBC) i hem eliminat actius testimonials amb valor residual (TLT, GDX, XOP). Els fons alliberats s'han invertit estratègicament per augmentar la nostra exposició en líders de semiconductors (NVDA, AMD, TSM, SMH), IA (AIQ, PLTR) i ciberseguretat (CIBR), així com en un gegant tecnològic diversificat amb fortes iniciatives en IA com Microsoft (MSFT). Palantir (PLTR) és una empresa de programari i anàlisi de dades amb un fort component d'IA, i CIBR (ciberseguretat) representa un sector amb un creixement estructural i una demanda creixent en l'era digital.",
-      "impacte": -7.08
+      "impacte": -7.88
     },
     {
       "setmana": 21,
@@ -7547,7 +8303,7 @@
       "pesDespres": null,
       "import": 300.0,
       "motiu": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a la urgència d'accelerar la rendibilitat durant les 11 setmanes restants del torneig. Hem consolidat la nostra aposta pel sector tecnològic, especialment en Intel·ligència Artificial i semiconductors, ja que les notícies confirmen el seu gran potencial de creixement i la seva importància estratègica a curt i mitjà termini. Hem venut actius amb un rendiment inferior o que no s'ajusten a la nostra estratègia de creixement (INTC, QCOM, 005930.KS), hem pres beneficis de posicions defensives (USMV), hem reduït la nostra exposició a Europa (VGK), a matèries primeres (USO, DBC) i hem eliminat actius testimonials amb valor residual (TLT, GDX, XOP). Els fons alliberats s'han invertit estratègicament per augmentar la nostra exposició en líders de semiconductors (NVDA, AMD, TSM, SMH), IA (AIQ, PLTR) i ciberseguretat (CIBR), així com en un gegant tecnològic diversificat amb fortes iniciatives en IA com Microsoft (MSFT). Palantir (PLTR) és una empresa de programari i anàlisi de dades amb un fort component d'IA, i CIBR (ciberseguretat) representa un sector amb un creixement estructural i una demanda creixent en l'era digital.",
-      "impacte": -7.08
+      "impacte": -7.88
     },
     {
       "setmana": 21,
@@ -7559,7 +8315,7 @@
       "pesDespres": null,
       "import": 300.0,
       "motiu": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a la urgència d'accelerar la rendibilitat durant les 11 setmanes restants del torneig. Hem consolidat la nostra aposta pel sector tecnològic, especialment en Intel·ligència Artificial i semiconductors, ja que les notícies confirmen el seu gran potencial de creixement i la seva importància estratègica a curt i mitjà termini. Hem venut actius amb un rendiment inferior o que no s'ajusten a la nostra estratègia de creixement (INTC, QCOM, 005930.KS), hem pres beneficis de posicions defensives (USMV), hem reduït la nostra exposició a Europa (VGK), a matèries primeres (USO, DBC) i hem eliminat actius testimonials amb valor residual (TLT, GDX, XOP). Els fons alliberats s'han invertit estratègicament per augmentar la nostra exposició en líders de semiconductors (NVDA, AMD, TSM, SMH), IA (AIQ, PLTR) i ciberseguretat (CIBR), així com en un gegant tecnològic diversificat amb fortes iniciatives en IA com Microsoft (MSFT). Palantir (PLTR) és una empresa de programari i anàlisi de dades amb un fort component d'IA, i CIBR (ciberseguretat) representa un sector amb un creixement estructural i una demanda creixent en l'era digital.",
-      "impacte": -7.08
+      "impacte": -7.88
     },
     {
       "setmana": 21,
@@ -7571,7 +8327,7 @@
       "pesDespres": null,
       "import": 200.0,
       "motiu": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a la urgència d'accelerar la rendibilitat durant les 11 setmanes restants del torneig. Hem consolidat la nostra aposta pel sector tecnològic, especialment en Intel·ligència Artificial i semiconductors, ja que les notícies confirmen el seu gran potencial de creixement i la seva importància estratègica a curt i mitjà termini. Hem venut actius amb un rendiment inferior o que no s'ajusten a la nostra estratègia de creixement (INTC, QCOM, 005930.KS), hem pres beneficis de posicions defensives (USMV), hem reduït la nostra exposició a Europa (VGK), a matèries primeres (USO, DBC) i hem eliminat actius testimonials amb valor residual (TLT, GDX, XOP). Els fons alliberats s'han invertit estratègicament per augmentar la nostra exposició en líders de semiconductors (NVDA, AMD, TSM, SMH), IA (AIQ, PLTR) i ciberseguretat (CIBR), així com en un gegant tecnològic diversificat amb fortes iniciatives en IA com Microsoft (MSFT). Palantir (PLTR) és una empresa de programari i anàlisi de dades amb un fort component d'IA, i CIBR (ciberseguretat) representa un sector amb un creixement estructural i una demanda creixent en l'era digital.",
-      "impacte": -7.08
+      "impacte": -7.88
     },
     {
       "setmana": 21,
@@ -7583,7 +8339,7 @@
       "pesDespres": null,
       "import": 300.0,
       "motiu": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a la urgència d'accelerar la rendibilitat durant les 11 setmanes restants del torneig. Hem consolidat la nostra aposta pel sector tecnològic, especialment en Intel·ligència Artificial i semiconductors, ja que les notícies confirmen el seu gran potencial de creixement i la seva importància estratègica a curt i mitjà termini. Hem venut actius amb un rendiment inferior o que no s'ajusten a la nostra estratègia de creixement (INTC, QCOM, 005930.KS), hem pres beneficis de posicions defensives (USMV), hem reduït la nostra exposició a Europa (VGK), a matèries primeres (USO, DBC) i hem eliminat actius testimonials amb valor residual (TLT, GDX, XOP). Els fons alliberats s'han invertit estratègicament per augmentar la nostra exposició en líders de semiconductors (NVDA, AMD, TSM, SMH), IA (AIQ, PLTR) i ciberseguretat (CIBR), així com en un gegant tecnològic diversificat amb fortes iniciatives en IA com Microsoft (MSFT). Palantir (PLTR) és una empresa de programari i anàlisi de dades amb un fort component d'IA, i CIBR (ciberseguretat) representa un sector amb un creixement estructural i una demanda creixent en l'era digital.",
-      "impacte": -7.08
+      "impacte": -7.88
     },
     {
       "setmana": 21,
@@ -7595,7 +8351,7 @@
       "pesDespres": null,
       "import": 300.0,
       "motiu": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a la urgència d'accelerar la rendibilitat durant les 11 setmanes restants del torneig. Hem consolidat la nostra aposta pel sector tecnològic, especialment en Intel·ligència Artificial i semiconductors, ja que les notícies confirmen el seu gran potencial de creixement i la seva importància estratègica a curt i mitjà termini. Hem venut actius amb un rendiment inferior o que no s'ajusten a la nostra estratègia de creixement (INTC, QCOM, 005930.KS), hem pres beneficis de posicions defensives (USMV), hem reduït la nostra exposició a Europa (VGK), a matèries primeres (USO, DBC) i hem eliminat actius testimonials amb valor residual (TLT, GDX, XOP). Els fons alliberats s'han invertit estratègicament per augmentar la nostra exposició en líders de semiconductors (NVDA, AMD, TSM, SMH), IA (AIQ, PLTR) i ciberseguretat (CIBR), així com en un gegant tecnològic diversificat amb fortes iniciatives en IA com Microsoft (MSFT). Palantir (PLTR) és una empresa de programari i anàlisi de dades amb un fort component d'IA, i CIBR (ciberseguretat) representa un sector amb un creixement estructural i una demanda creixent en l'era digital.",
-      "impacte": -7.08
+      "impacte": -7.88
     },
     {
       "setmana": 21,
@@ -7607,7 +8363,7 @@
       "pesDespres": null,
       "import": 160.04,
       "motiu": "La decisió de reajustar la cartera amb un nivell de risc agressiu respon a la urgència d'accelerar la rendibilitat durant les 11 setmanes restants del torneig. Hem consolidat la nostra aposta pel sector tecnològic, especialment en Intel·ligència Artificial i semiconductors, ja que les notícies confirmen el seu gran potencial de creixement i la seva importància estratègica a curt i mitjà termini. Hem venut actius amb un rendiment inferior o que no s'ajusten a la nostra estratègia de creixement (INTC, QCOM, 005930.KS), hem pres beneficis de posicions defensives (USMV), hem reduït la nostra exposició a Europa (VGK), a matèries primeres (USO, DBC) i hem eliminat actius testimonials amb valor residual (TLT, GDX, XOP). Els fons alliberats s'han invertit estratègicament per augmentar la nostra exposició en líders de semiconductors (NVDA, AMD, TSM, SMH), IA (AIQ, PLTR) i ciberseguretat (CIBR), així com en un gegant tecnològic diversificat amb fortes iniciatives en IA com Microsoft (MSFT). Palantir (PLTR) és una empresa de programari i anàlisi de dades amb un fort component d'IA, i CIBR (ciberseguretat) representa un sector amb un creixement estructural i una demanda creixent en l'era digital.",
-      "impacte": -7.08
+      "impacte": -7.88
     },
     {
       "setmana": 21,
@@ -7619,7 +8375,7 @@
       "pesDespres": null,
       "import": 0.37,
       "motiu": "Redueixo tota la posició en USO perquè és residual i no aporta res. Més important: redueixo XLE perquè el possible alto el foc a Ucraïna (titulars 3 i 4) podria fer caure el petroli i perjudicar el sector energètic. Amb els diners, compro GLD (or) perquè és un actiu refugi en moments d'incertesa geopolítica i té un bon comportament en entorns inflacionistes. Mantinc la resta de la cartera perquè la meva estratègia diversificada funciona i no vull sobreoperar. La setmana que ve estaré atent a les dades d'inflació dels EUA (titular 7) que podrien afectar els tipus d'interès.",
-      "impacte": -3.51
+      "impacte": -4.39
     },
     {
       "setmana": 21,
@@ -7631,7 +8387,7 @@
       "pesDespres": null,
       "import": 0.37,
       "motiu": "Redueixo tota la posició en USO perquè és residual i no aporta res. Més important: redueixo XLE perquè el possible alto el foc a Ucraïna (titulars 3 i 4) podria fer caure el petroli i perjudicar el sector energètic. Amb els diners, compro GLD (or) perquè és un actiu refugi en moments d'incertesa geopolítica i té un bon comportament en entorns inflacionistes. Mantinc la resta de la cartera perquè la meva estratègia diversificada funciona i no vull sobreoperar. La setmana que ve estaré atent a les dades d'inflació dels EUA (titular 7) que podrien afectar els tipus d'interès.",
-      "impacte": -3.51
+      "impacte": -4.39
     },
     {
       "setmana": 21,
@@ -7643,7 +8399,7 @@
       "pesDespres": null,
       "import": 534.0,
       "motiu": "Redueixo tota la posició en USO perquè és residual i no aporta res. Més important: redueixo XLE perquè el possible alto el foc a Ucraïna (titulars 3 i 4) podria fer caure el petroli i perjudicar el sector energètic. Amb els diners, compro GLD (or) perquè és un actiu refugi en moments d'incertesa geopolítica i té un bon comportament en entorns inflacionistes. Mantinc la resta de la cartera perquè la meva estratègia diversificada funciona i no vull sobreoperar. La setmana que ve estaré atent a les dades d'inflació dels EUA (titular 7) que podrien afectar els tipus d'interès.",
-      "impacte": -3.51
+      "impacte": -4.39
     },
     {
       "setmana": 21,
@@ -7655,7 +8411,7 @@
       "pesDespres": null,
       "import": 534.0,
       "motiu": "Redueixo tota la posició en USO perquè és residual i no aporta res. Més important: redueixo XLE perquè el possible alto el foc a Ucraïna (titulars 3 i 4) podria fer caure el petroli i perjudicar el sector energètic. Amb els diners, compro GLD (or) perquè és un actiu refugi en moments d'incertesa geopolítica i té un bon comportament en entorns inflacionistes. Mantinc la resta de la cartera perquè la meva estratègia diversificada funciona i no vull sobreoperar. La setmana que ve estaré atent a les dades d'inflació dels EUA (titular 7) que podrien afectar els tipus d'interès.",
-      "impacte": -3.51
+      "impacte": -4.39
     },
     {
       "setmana": 20,
@@ -10955,9 +11711,9 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "pendent",
-        "ultimaExecucio": "Setmana 22 · 2026-10-19",
-        "ultimBriefing": "Amb 10 setmanes per al tancament, la temptació és reaccionar a cada sotragada, però això és exactament el que vull evitar: SMH i QQQ han caigut fort aquesta set…"
+        "estat": "connectada",
+        "ultimaExecucio": "Setmana 23 · 2026-10-26",
+        "ultimBriefing": "Redueixo SMH d'un 13.9% a prop d'un 9% de la cartera perquè Morgan Stanley veu encara més recorregut a la baixa en semiconductors i la tendència tècnica (-11% a…"
       },
       {
         "id": "gpt",
@@ -10965,9 +11721,9 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "pendent",
-        "ultimaExecucio": "Setmana 22 · 2026-10-19",
-        "ultimBriefing": "Venc SOXX per eliminar solapament amb SMH i rebaixar beta d’IA mantenint exposició core a semiconductors via SMH i NVDA/AMD. Surto de CIBR per simplificar el bl…"
+        "estat": "connectada",
+        "ultimaExecucio": "Setmana 23 · 2026-10-26",
+        "ultimBriefing": "Redueixo beta on el senyal és més fràgil i reforço pilars més resilients per a les 9 setmanes finals. 1) Semiconductors: mantinc exposició estratègica (SMH+NVDA…"
       },
       {
         "id": "gemini",
@@ -10975,9 +11731,9 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "pendent",
-        "ultimaExecucio": "Setmana 22 · 2026-10-19",
-        "ultimBriefing": "La forta caiguda d'aquesta setmana en la meva cartera, liderada pels semiconductors, exigeix una resposta estratègica sense abandonar la meva tesi principal. Am…"
+        "estat": "connectada",
+        "ultimaExecucio": "Setmana 23 · 2026-10-26",
+        "ultimBriefing": "La decisió de reajustar la cartera amb un enfocament agressiu però més diversificat respon a la necessitat urgent de revertir les pèrdues i optimitzar la rendib…"
       },
       {
         "id": "deepseek",
@@ -10985,9 +11741,9 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "pendent",
-        "ultimaExecucio": "Setmana 22 · 2026-10-19",
-        "ultimBriefing": "Mantinc la cartera per diverses raons: 1) La caiguda setmanal és concentrada en semiconductors i tecnologia, sectors que històricament han mostrat recuperacions…"
+        "estat": "connectada",
+        "ultimaExecucio": "Setmana 23 · 2026-10-26",
+        "ultimBriefing": "Redueixo SMH en 600 € (del 13,6% al 9,1%) per la pressió addicional que Morgan Stanley preveu sobre semiconductors, i rotació cap a XLV (salut), sector defensiu…"
       },
       {
         "id": "mistral",
@@ -10995,8 +11751,8 @@
         "model_api": "mistral-medium-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "pendent",
-        "ultimaExecucio": "Setmana 22 · 2026-10-19",
+        "estat": "connectada",
+        "ultimaExecucio": "Setmana 23 · 2026-10-26",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       }
     ],
@@ -11017,45 +11773,45 @@
   },
   "risc": {
     "claude": {
-      "volatilitat": 11.19,
+      "volatilitat": 11.1,
       "max_caiguda": -4.05,
-      "sharpe": -0.35
+      "sharpe": -0.4
     },
     "gpt": {
-      "volatilitat": 16.11,
+      "volatilitat": 15.98,
       "max_caiguda": -5.76,
-      "sharpe": 0.11
+      "sharpe": 0.16
     },
     "gemini": {
-      "volatilitat": 18.27,
+      "volatilitat": 18.13,
       "max_caiguda": -9.59,
-      "sharpe": -1.51
+      "sharpe": -1.46
     },
     "deepseek": {
-      "volatilitat": 15.18,
+      "volatilitat": 15.07,
       "max_caiguda": -5.49,
-      "sharpe": -0.18
+      "sharpe": -0.24
     },
     "mistral": {
-      "volatilitat": 9.19,
+      "volatilitat": 9.2,
       "max_caiguda": -4.21,
-      "sharpe": 0.91
+      "sharpe": 0.63
     },
     "index": {
-      "volatilitat": 11.53,
+      "volatilitat": 11.51,
       "max_caiguda": -3.24,
-      "sharpe": 1.37
+      "sharpe": 1.14
     }
   },
   "comissions": {
-    "gpt": 31.54,
-    "claude": 12.68,
-    "gemini": 34.76,
-    "deepseek": 35.42,
+    "gpt": 34.09,
+    "claude": 14.28,
+    "gemini": 39.6,
+    "deepseek": 37.02,
     "mistral": 15.72
   },
   "dividends": {
-    "mistral": 16.88,
+    "mistral": 19.42,
     "claude": 13.16,
     "gemini": 9.62,
     "gpt": 5.04,
@@ -11071,23 +11827,23 @@
       "models": [
         {
           "model": "gpt",
-          "pes": 16.2
+          "pes": 16.1
         },
         {
           "model": "claude",
-          "pes": 20.8
+          "pes": 20.9
         },
         {
           "model": "gemini",
-          "pes": 15.3
+          "pes": 15.4
         },
         {
           "model": "deepseek",
-          "pes": 19.1
+          "pes": 19.2
         },
         {
           "model": "mistral",
-          "pes": 19.0
+          "pes": 18.9
         }
       ]
     },
@@ -11099,23 +11855,23 @@
       "models": [
         {
           "model": "gpt",
-          "pes": 16.9
+          "pes": 12.5
         },
         {
           "model": "claude",
-          "pes": 14.1
+          "pes": 8.8
         },
         {
           "model": "gemini",
-          "pes": 10.5
+          "pes": 5.5
         },
         {
           "model": "deepseek",
-          "pes": 13.8
+          "pes": 7.5
         },
         {
           "model": "mistral",
-          "pes": 9.3
+          "pes": 9.1
         }
       ]
     },
@@ -11127,7 +11883,7 @@
       "models": [
         {
           "model": "gpt",
-          "pes": 10.5
+          "pes": 10.4
         },
         {
           "model": "claude",
@@ -11135,7 +11891,7 @@
         },
         {
           "model": "gemini",
-          "pes": 7.2
+          "pes": 5.0
         },
         {
           "model": "deepseek",
@@ -11151,15 +11907,15 @@
       "models": [
         {
           "model": "gpt",
-          "pes": 10.5
+          "pes": 20.0
         },
         {
           "model": "claude",
-          "pes": 10.8
+          "pes": 16.1
         },
         {
           "model": "deepseek",
-          "pes": 4.9
+          "pes": 11.1
         },
         {
           "model": "mistral",
@@ -11175,39 +11931,19 @@
       "models": [
         {
           "model": "gpt",
-          "pes": 7.7
+          "pes": 7.6
         },
         {
           "model": "gemini",
-          "pes": 9.8
+          "pes": 4.9
         },
         {
           "model": "deepseek",
-          "pes": 8.1
+          "pes": 6.0
         },
         {
           "model": "mistral",
           "pes": 1.3
-        }
-      ]
-    },
-    {
-      "ticker": "GLD",
-      "nom": "Or físic (SPDR)",
-      "tipus": "etf",
-      "sector": "Metalls preciosos",
-      "models": [
-        {
-          "model": "claude",
-          "pes": 12.3
-        },
-        {
-          "model": "deepseek",
-          "pes": 11.0
-        },
-        {
-          "model": "mistral",
-          "pes": 7.1
         }
       ]
     },
@@ -11219,15 +11955,35 @@
       "models": [
         {
           "model": "gpt",
-          "pes": 13.6
+          "pes": 13.8
         },
         {
           "model": "claude",
-          "pes": 10.2
+          "pes": 10.5
         },
         {
           "model": "mistral",
-          "pes": 5.8
+          "pes": 5.9
+        }
+      ]
+    },
+    {
+      "ticker": "GLD",
+      "nom": "Or físic (SPDR)",
+      "tipus": "etf",
+      "sector": "Metalls preciosos",
+      "models": [
+        {
+          "model": "claude",
+          "pes": 8.9
+        },
+        {
+          "model": "deepseek",
+          "pes": 10.6
+        },
+        {
+          "model": "mistral",
+          "pes": 6.8
         }
       ]
     },
@@ -11239,27 +11995,27 @@
       "models": [
         {
           "model": "claude",
-          "pes": 13.0
+          "pes": 12.9
         },
         {
           "model": "mistral",
-          "pes": 4.3
+          "pes": 4.2
         }
       ]
     },
     {
-      "ticker": "AMD",
-      "nom": "AMD",
-      "tipus": "accio",
-      "sector": "Semiconductors",
+      "ticker": "RSP",
+      "nom": "S&P 500 equiponderat",
+      "tipus": "etf",
+      "sector": "Índexs principals",
       "models": [
         {
           "model": "gpt",
-          "pes": 3.5
+          "pes": 6.8
         },
         {
           "model": "gemini",
-          "pes": 12.1
+          "pes": 9.7
         }
       ]
     },
@@ -11271,7 +12027,7 @@
       "models": [
         {
           "model": "deepseek",
-          "pes": 9.8
+          "pes": 10.0
         },
         {
           "model": "mistral",
@@ -11303,7 +12059,7 @@
       "models": [
         {
           "model": "gemini",
-          "pes": 13.1
+          "pes": 13.2
         }
       ]
     },
@@ -11315,7 +12071,7 @@
       "models": [
         {
           "model": "gpt",
-          "pes": 12.5
+          "pes": 12.7
         }
       ]
     },
@@ -11327,7 +12083,7 @@
       "models": [
         {
           "model": "mistral",
-          "pes": 12.5
+          "pes": 12.7
         }
       ]
     },
@@ -11339,7 +12095,7 @@
       "models": [
         {
           "model": "mistral",
-          "pes": 9.7
+          "pes": 9.8
         }
       ]
     },
@@ -11351,7 +12107,43 @@
       "models": [
         {
           "model": "deepseek",
+          "pes": 9.0
+        }
+      ]
+    },
+    {
+      "ticker": "CIBR",
+      "nom": "Ciberseguretat",
+      "tipus": "etf",
+      "sector": "Tecnologia",
+      "models": [
+        {
+          "model": "gemini",
           "pes": 6.9
+        }
+      ]
+    },
+    {
+      "ticker": "SCHD",
+      "nom": "Dividends de qualitat (Schwab)",
+      "tipus": "etf",
+      "sector": "Dividends",
+      "models": [
+        {
+          "model": "gemini",
+          "pes": 6.5
+        }
+      ]
+    },
+    {
+      "ticker": "PLTR",
+      "nom": "Palantir",
+      "tipus": "accio",
+      "sector": "Tecnologia",
+      "models": [
+        {
+          "model": "gemini",
+          "pes": 6.2
         }
       ]
     },
@@ -11380,26 +12172,14 @@
       ]
     },
     {
-      "ticker": "XOP",
-      "nom": "Exploració de petroli i gas",
-      "tipus": "etf",
-      "sector": "Energia",
-      "models": [
-        {
-          "model": "gpt",
-          "pes": 5.3
-        }
-      ]
-    },
-    {
-      "ticker": "TSM",
-      "nom": "TSMC (xips Taiwan)",
+      "ticker": "AMD",
+      "nom": "AMD",
       "tipus": "accio",
       "sector": "Semiconductors",
       "models": [
         {
           "model": "gemini",
-          "pes": 4.9
+          "pes": 5.5
         }
       ]
     },
@@ -11440,30 +12220,6 @@
       ]
     },
     {
-      "ticker": "RSP",
-      "nom": "S&P 500 equiponderat",
-      "tipus": "etf",
-      "sector": "Índexs principals",
-      "models": [
-        {
-          "model": "gpt",
-          "pes": 3.4
-        }
-      ]
-    },
-    {
-      "ticker": "META",
-      "nom": "Meta (Facebook)",
-      "tipus": "accio",
-      "sector": "Tecnologia",
-      "models": [
-        {
-          "model": "gemini",
-          "pes": 3.4
-        }
-      ]
-    },
-    {
       "ticker": "CVX",
       "nom": "Chevron",
       "tipus": "accio",
@@ -11471,13 +12227,25 @@
       "models": [
         {
           "model": "deepseek",
-          "pes": 3.4
+          "pes": 3.5
         }
       ]
     },
     {
-      "ticker": "CIBR",
-      "nom": "Ciberseguretat",
+      "ticker": "SHY",
+      "nom": "Bons EUA 1-3 anys",
+      "tipus": "etf",
+      "sector": "Renda fixa",
+      "models": [
+        {
+          "model": "claude",
+          "pes": 3.0
+        }
+      ]
+    },
+    {
+      "ticker": "IGV",
+      "nom": "Programari EUA",
       "tipus": "etf",
       "sector": "Tecnologia",
       "models": [
@@ -11488,26 +12256,14 @@
       ]
     },
     {
-      "ticker": "PLTR",
-      "nom": "Palantir",
+      "ticker": "TSM",
+      "nom": "TSMC (xips Taiwan)",
       "tipus": "accio",
-      "sector": "Tecnologia",
+      "sector": "Semiconductors",
       "models": [
         {
           "model": "gemini",
           "pes": 2.8
-        }
-      ]
-    },
-    {
-      "ticker": "EWT",
-      "nom": "Taiwan",
-      "tipus": "etf",
-      "sector": "Mercats internacionals",
-      "models": [
-        {
-          "model": "gemini",
-          "pes": 2.5
         }
       ]
     },
@@ -11519,7 +12275,7 @@
       "models": [
         {
           "model": "mistral",
-          "pes": 2.0
+          "pes": 2.1
         }
       ]
     },
@@ -11531,7 +12287,7 @@
       "models": [
         {
           "model": "mistral",
-          "pes": 0.9
+          "pes": 0.8
         }
       ]
     },
@@ -11551,114 +12307,175 @@
   "exposicio": {
     "gpt": {
       "sectors": {
-        "Índexs principals": 30.1,
-        "Energia": 18.9,
-        "IA i semiconductors": 16.9,
-        "Renda fixa": 12.5,
-        "Semiconductors": 11.2,
-        "Salut": 10.5
+        "Índexs principals": 33.3,
+        "Salut": 20.0,
+        "Energia": 13.8,
+        "Renda fixa": 12.7,
+        "IA i semiconductors": 12.5,
+        "Semiconductors": 7.6
       },
       "paisos": {
-        "Global": 88.9,
-        "EUA": 11.2
+        "Global": 92.3,
+        "EUA": 7.6
       },
       "tipus": {
-        "Fons (ETFs)": 88.9,
-        "Accions": 11.2
+        "Fons (ETFs)": 92.3,
+        "Accions": 7.6
       }
     },
     "claude": {
       "sectors": {
-        "Índexs principals": 39.6,
-        "IA i semiconductors": 14.1,
-        "Mercats internacionals": 13.0,
-        "Metalls preciosos": 12.3,
-        "Salut": 10.8,
-        "Energia": 10.2,
+        "Índexs principals": 39.7,
+        "Salut": 16.1,
+        "Mercats internacionals": 12.9,
+        "Energia": 10.5,
+        "Metalls preciosos": 8.9,
+        "IA i semiconductors": 8.8,
+        "Renda fixa": 3.0,
         "Efectiu": 0.1
       },
       "paisos": {
-        "Global": 100.0,
+        "Global": 99.9,
         "—": 0.1
       },
       "tipus": {
-        "Fons (ETFs)": 100.0,
+        "Fons (ETFs)": 99.9,
         "Efectiu": 0.1
       }
     },
     "gemini": {
       "sectors": {
-        "Índexs principals": 35.6,
-        "Semiconductors": 26.8,
-        "Tecnologia": 19.9,
-        "IA i semiconductors": 15.2,
-        "Mercats internacionals": 2.5
+        "Índexs principals": 43.3,
+        "Tecnologia": 26.8,
+        "Semiconductors": 13.2,
+        "IA i semiconductors": 10.2,
+        "Dividends": 6.5
       },
       "paisos": {
-        "Global": 56.2,
-        "EUA": 38.9,
-        "Taiwan": 4.9
+        "Global": 69.8,
+        "EUA": 27.4,
+        "Taiwan": 2.8
       },
       "tipus": {
-        "Fons (ETFs)": 56.2,
-        "Accions": 43.8
+        "Fons (ETFs)": 69.8,
+        "Accions": 30.2
       }
     },
     "deepseek": {
       "sectors": {
-        "Índexs principals": 37.9,
-        "IA i semiconductors": 13.8,
-        "Metalls preciosos": 11.0,
-        "Dividends": 9.8,
-        "Semiconductors": 8.1,
-        "Renda fixa": 6.9,
-        "Salut": 4.9,
+        "Índexs principals": 38.0,
+        "Salut": 11.1,
+        "Metalls preciosos": 10.6,
+        "Dividends": 10.0,
+        "Renda fixa": 9.0,
+        "IA i semiconductors": 7.5,
+        "Semiconductors": 6.0,
         "Tecnologia": 4.2,
-        "Energia": 3.4,
+        "Energia": 3.5,
         "Efectiu": 0.1
       },
       "paisos": {
-        "Global": 84.3,
-        "EUA": 15.7,
+        "Global": 86.2,
+        "EUA": 13.7,
         "—": 0.1
       },
       "tipus": {
-        "Fons (ETFs)": 84.3,
-        "Accions": 15.7,
+        "Fons (ETFs)": 86.2,
+        "Accions": 13.7,
         "Efectiu": 0.1
       }
     },
     "mistral": {
       "sectors": {
-        "Índexs principals": 19.0,
-        "Salut": 13.0,
-        "Defensius": 12.5,
-        "Consum": 10.4,
-        "IA i semiconductors": 9.3,
-        "Mercats internacionals": 8.1,
-        "Metalls preciosos": 7.1,
+        "Índexs principals": 18.9,
+        "Salut": 13.1,
+        "Defensius": 12.7,
+        "Consum": 10.3,
+        "IA i semiconductors": 9.1,
+        "Mercats internacionals": 8.0,
+        "Metalls preciosos": 6.8,
         "Renda fixa": 5.9,
-        "Energia": 5.8,
+        "Energia": 5.9,
         "Dividends": 5.4,
-        "Tecnologia": 2.0,
+        "Tecnologia": 2.1,
         "Semiconductors": 1.3,
         "Efectiu": 0.2
       },
       "paisos": {
-        "Global": 86.1,
-        "EUA": 7.0,
+        "Global": 85.8,
+        "EUA": 7.1,
         "Suïssa": 5.8,
-        "Xina": 0.9,
+        "Xina": 0.8,
         "—": 0.2
       },
       "tipus": {
-        "Fons (ETFs)": 86.1,
+        "Fons (ETFs)": 85.8,
         "Accions": 13.7,
         "Efectiu": 0.2
       }
     }
   },
   "titulars": [
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "titular": "Trump's approval rating on economy hits all-time low as midterm looms: CNBC survey"
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "titular": "Neocloud stocks fall as Elon Musk says more than 200 of them face 'guppy-level death'"
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "titular": "Oil price falls back as traders remain focused on Middle East conflict"
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "titular": "Borr Drilling, BW Energy, Panoro shares slump after Gabon rig sinking"
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "titular": "Asia-focused banks face capital squeeze due to inflation, bond turbulence"
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "titular": "S&P 500 profit forecasts sprint ahead of stock prices, leaving shares on sale"
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "titular": "Support for semiconductor stocks could be as much as 15% lower than current levels, says Morgan Stanley"
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "titular": "El Ibex se descuelga de Europa por el 'efecto Brasil'"
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "titular": "Jobless claims near the lowest since the 1960s as low-fire trend continues"
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "titular": "Oil slides over 2% as traders weigh Saudi attack risks, demand destruction"
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "titular": "Singapore to store Saudi oil in underground caverns"
+    },
+    {
+      "setmana": 23,
+      "data": "2026-10-26",
+      "titular": "Genmab shares jump 13% on colorectal cancer drug trial results"
+    },
     {
       "setmana": 22,
       "data": "2026-10-19",

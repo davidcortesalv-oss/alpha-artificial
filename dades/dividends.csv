@@ -26,3 +26,4 @@ data_cobrament,data_pagament,model,ticker,import_eur
 2026-10-05,2026-10-01,claude,IEF,0.0
 2026-10-05,2026-10-01,mistral,IEF,2.03
 2026-10-05,2026-10-01,gemini,TLT,0.0
+2026-10-26,2026-10-23,mistral,PG,2.54
