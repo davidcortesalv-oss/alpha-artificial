@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-10-26",
     "font": "real",
-    "generat": "2026-10-26T09:22+00:00",
+    "generat": "2026-10-27T00:50+00:00",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -81,6 +81,7 @@
     "2026-10-20",
     "2026-10-21",
     "2026-10-22",
+    "2026-10-23",
     "2026-10-26"
   ],
   "models": [
@@ -241,6 +242,7 @@
       9981.95,
       10055.11,
       9871.84,
+      9893.82,
       9857.68
     ],
     "gpt": [
@@ -308,6 +310,7 @@
       10077.53,
       10168.24,
       9991.9,
+      10047.97,
       10011.24
     ],
     "gemini": [
@@ -375,6 +378,7 @@
       9458.82,
       9609.95,
       9279.74,
+      9330.88,
       9296.77
     ],
     "deepseek": [
@@ -442,6 +446,7 @@
       9999.53,
       10090.7,
       9886.87,
+      9898.83,
       9862.66
     ],
     "mistral": [
@@ -509,6 +514,7 @@
       10166.17,
       10211.86,
       10180.08,
+      10159.06,
       10117.43
     ],
     "index": [
@@ -576,6 +582,7 @@
       10425.86,
       10489.04,
       10386.44,
+      10359.93,
       10322.06
     ]
   },
@@ -11711,7 +11718,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 23 · 2026-10-26",
         "ultimBriefing": "Redueixo SMH d'un 13.9% a prop d'un 9% de la cartera perquè Morgan Stanley veu encara més recorregut a la baixa en semiconductors i la tendència tècnica (-11% a…"
       },
@@ -11721,7 +11728,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 23 · 2026-10-26",
         "ultimBriefing": "Redueixo beta on el senyal és més fràgil i reforço pilars més resilients per a les 9 setmanes finals. 1) Semiconductors: mantinc exposició estratègica (SMH+NVDA…"
       },
@@ -11731,7 +11738,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 23 · 2026-10-26",
         "ultimBriefing": "La decisió de reajustar la cartera amb un enfocament agressiu però més diversificat respon a la necessitat urgent de revertir les pèrdues i optimitzar la rendib…"
       },
@@ -11741,7 +11748,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 23 · 2026-10-26",
         "ultimBriefing": "Redueixo SMH en 600 € (del 13,6% al 9,1%) per la pressió addicional que Morgan Stanley preveu sobre semiconductors, i rotació cap a XLV (salut), sector defensiu…"
       },
@@ -11751,7 +11758,7 @@
         "model_api": "mistral-medium-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 23 · 2026-10-26",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       }
@@ -11773,34 +11780,34 @@
   },
   "risc": {
     "claude": {
-      "volatilitat": 11.1,
+      "volatilitat": 11.04,
       "max_caiguda": -4.05,
-      "sharpe": -0.4
+      "sharpe": -0.39
     },
     "gpt": {
-      "volatilitat": 15.98,
+      "volatilitat": 15.91,
       "max_caiguda": -5.76,
       "sharpe": 0.16
     },
     "gemini": {
-      "volatilitat": 18.13,
+      "volatilitat": 18.04,
       "max_caiguda": -9.59,
-      "sharpe": -1.46
+      "sharpe": -1.44
     },
     "deepseek": {
-      "volatilitat": 15.07,
+      "volatilitat": 14.96,
       "max_caiguda": -5.49,
       "sharpe": -0.24
     },
     "mistral": {
-      "volatilitat": 9.2,
+      "volatilitat": 9.09,
       "max_caiguda": -4.21,
       "sharpe": 0.63
     },
     "index": {
-      "volatilitat": 11.51,
+      "volatilitat": 11.39,
       "max_caiguda": -3.24,
-      "sharpe": 1.14
+      "sharpe": 1.13
     }
   },
   "comissions": {
