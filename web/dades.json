@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-10-26",
     "font": "real",
-    "generat": "2026-10-27T00:50+00:00",
+    "generat": "2026-10-27T14:56+00:00",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -11718,7 +11718,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 23 · 2026-10-26",
         "ultimBriefing": "Redueixo SMH d'un 13.9% a prop d'un 9% de la cartera perquè Morgan Stanley veu encara més recorregut a la baixa en semiconductors i la tendència tècnica (-11% a…"
       },
@@ -11728,7 +11728,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 23 · 2026-10-26",
         "ultimBriefing": "Redueixo beta on el senyal és més fràgil i reforço pilars més resilients per a les 9 setmanes finals. 1) Semiconductors: mantinc exposició estratègica (SMH+NVDA…"
       },
@@ -11738,7 +11738,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 23 · 2026-10-26",
         "ultimBriefing": "La decisió de reajustar la cartera amb un enfocament agressiu però més diversificat respon a la necessitat urgent de revertir les pèrdues i optimitzar la rendib…"
       },
@@ -11748,7 +11748,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 23 · 2026-10-26",
         "ultimBriefing": "Redueixo SMH en 600 € (del 13,6% al 9,1%) per la pressió addicional que Morgan Stanley preveu sobre semiconductors, i rotació cap a XLV (salut), sector defensiu…"
       },
@@ -11758,7 +11758,7 @@
         "model_api": "mistral-medium-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 23 · 2026-10-26",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       }
