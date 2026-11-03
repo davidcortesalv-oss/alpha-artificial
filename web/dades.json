@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-11-02",
     "font": "real",
-    "generat": "2026-11-02T11:49+00:00",
+    "generat": "2026-11-03T03:04+00:00",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -251,7 +251,7 @@
       10048.19,
       10034.6,
       10063.19,
-      9858.22
+      9775.18
     ],
     "gpt": [
       9979.75,
@@ -323,7 +323,7 @@
       10202.14,
       10164.04,
       10222.63,
-      10040.92
+      9942.01
     ],
     "gemini": [
       9982.74,
@@ -395,7 +395,7 @@
       9554.99,
       9518.03,
       9484.59,
-      9146.58
+      9083.41
     ],
     "deepseek": [
       9983.74,
@@ -467,7 +467,7 @@
       10076.87,
       10050.15,
       10061.0,
-      9816.47
+      9769.82
     ],
     "mistral": [
       9979.75,
@@ -539,7 +539,7 @@
       10264.24,
       10232.92,
       10298.42,
-      10147.52
+      10126.73
     ],
     "index": [
       10000.0,
@@ -611,7 +611,7 @@
       10518.39,
       10487.79,
       10479.5,
-      10268.0
+      10239.82
     ]
   },
   "decisions": {
@@ -12110,7 +12110,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 24 · 2026-11-02",
         "ultimBriefing": "Redueixo GLD d'un 8.6% a un ~4.6% perquè porta setmanes de feblesa i amb tipus encara alts no fa bé de cobertura. Trasllado aquest capital a XLE, aprofitant la …"
       },
@@ -12120,7 +12120,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 24 · 2026-11-02",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       },
@@ -12130,7 +12130,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 24 · 2026-11-02",
         "ultimBriefing": "La meva decisió es basa en la necessitat urgent de revertir les pèrdues i aconseguir la màxima rendibilitat en les 8 setmanes restants. La meva exposició a semi…"
       },
@@ -12140,7 +12140,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 24 · 2026-11-02",
         "ultimBriefing": "Redueixo QQQ (tecnologia) en 400 € perquè la correcció del Nasdaq pot continuar i vull augmentar XLV (salut), que puja un 3,5% setmanal i té un moment clar. Red…"
       },
@@ -12150,7 +12150,7 @@
         "model_api": "mistral-medium-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 24 · 2026-11-02",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       }
@@ -12172,34 +12172,34 @@
   },
   "risc": {
     "claude": {
-      "volatilitat": 11.63,
-      "max_caiguda": -4.05,
-      "sharpe": -0.34
+      "volatilitat": 12.26,
+      "max_caiguda": -4.13,
+      "sharpe": -0.57
     },
     "gpt": {
-      "volatilitat": 16.05,
-      "max_caiguda": -5.76,
-      "sharpe": 0.22
+      "volatilitat": 16.55,
+      "max_caiguda": -6.23,
+      "sharpe": -0.0
     },
     "gemini": {
-      "volatilitat": 19.09,
-      "max_caiguda": -10.89,
-      "sharpe": -1.58
+      "volatilitat": 19.57,
+      "max_caiguda": -11.51,
+      "sharpe": -1.66
     },
     "deepseek": {
-      "volatilitat": 15.47,
-      "max_caiguda": -5.49,
-      "sharpe": -0.32
+      "volatilitat": 15.76,
+      "max_caiguda": -5.56,
+      "sharpe": -0.42
     },
     "mistral": {
-      "volatilitat": 9.48,
+      "volatilitat": 9.61,
       "max_caiguda": -4.21,
-      "sharpe": 0.69
+      "sharpe": 0.6
     },
     "index": {
-      "volatilitat": 11.94,
-      "max_caiguda": -3.24,
-      "sharpe": 0.87
+      "volatilitat": 12.12,
+      "max_caiguda": -3.45,
+      "sharpe": 0.77
     }
   },
   "comissions": {
