@@ -9,9 +9,9 @@
     "setmanes": 24,
     "setmanaActual": 24,
     "dataInici": "2026-07-09",
-    "dataActual": "2026-11-02",
+    "dataActual": "2026-11-03",
     "font": "real",
-    "generat": "2026-11-04T01:39+00:00",
+    "generat": "2026-11-05T01:48+00:00",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -86,7 +86,8 @@
     "2026-10-27",
     "2026-10-28",
     "2026-10-29",
-    "2026-11-02"
+    "2026-11-02",
+    "2026-11-03"
   ],
   "models": [
     {
@@ -251,7 +252,8 @@
       10048.19,
       10034.6,
       10063.19,
-      9775.18
+      9775.18,
+      9721.43
     ],
     "gpt": [
       9979.75,
@@ -323,7 +325,8 @@
       10202.14,
       10164.04,
       10222.63,
-      9942.01
+      9942.01,
+      9903.16
     ],
     "gemini": [
       9982.74,
@@ -395,7 +398,8 @@
       9554.99,
       9518.03,
       9484.59,
-      9083.41
+      9083.41,
+      9038.97
     ],
     "deepseek": [
       9983.74,
@@ -467,7 +471,8 @@
       10076.87,
       10050.15,
       10061.0,
-      9769.82
+      9769.82,
+      9734.37
     ],
     "mistral": [
       9979.75,
@@ -539,7 +544,8 @@
       10264.24,
       10232.92,
       10298.42,
-      10126.73
+      10126.73,
+      10060.67
     ],
     "index": [
       10000.0,
@@ -611,7 +617,8 @@
       10518.39,
       10487.79,
       10479.5,
-      10239.82
+      10239.82,
+      10207.5
     ]
   },
   "decisions": {
@@ -12172,34 +12179,34 @@
   },
   "risc": {
     "claude": {
-      "volatilitat": 12.26,
-      "max_caiguda": -4.13,
-      "sharpe": -0.57
+      "volatilitat": 12.21,
+      "max_caiguda": -4.66,
+      "sharpe": -0.72
     },
     "gpt": {
-      "volatilitat": 16.55,
-      "max_caiguda": -6.23,
-      "sharpe": -0.0
+      "volatilitat": 16.44,
+      "max_caiguda": -6.59,
+      "sharpe": -0.09
     },
     "gemini": {
-      "volatilitat": 19.57,
-      "max_caiguda": -11.51,
-      "sharpe": -1.66
+      "volatilitat": 19.44,
+      "max_caiguda": -11.94,
+      "sharpe": -1.74
     },
     "deepseek": {
-      "volatilitat": 15.76,
-      "max_caiguda": -5.56,
-      "sharpe": -0.42
+      "volatilitat": 15.65,
+      "max_caiguda": -5.91,
+      "sharpe": -0.5
     },
     "mistral": {
-      "volatilitat": 9.61,
+      "volatilitat": 9.62,
       "max_caiguda": -4.21,
-      "sharpe": 0.6
+      "sharpe": 0.35
     },
     "index": {
-      "volatilitat": 12.12,
-      "max_caiguda": -3.45,
-      "sharpe": 0.77
+      "volatilitat": 12.05,
+      "max_caiguda": -3.75,
+      "sharpe": 0.67
     }
   },
   "comissions": {
