@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-11-09",
     "font": "real",
-    "generat": "2026-11-10T16:37+00:00",
+    "generat": "2026-11-11T01:28+00:00",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -12658,7 +12658,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 25 · 2026-11-09",
         "ultimBriefing": "Elimino SMH (semiconductors, amb Nvidia com a component central) perquè l'escàndol de l'espia xinès i l'escrutini polític sobre Jensen Huang afegeixen un risc i…"
       },
@@ -12668,7 +12668,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 25 · 2026-11-09",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       },
@@ -12678,7 +12678,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 25 · 2026-11-09",
         "ultimBriefing": "La meva decisió de reajustament es basa en la necessitat urgent de revertir les pèrdues i aconseguir la màxima rendibilitat en les 7 setmanes restants. La forta…"
       },
@@ -12688,7 +12688,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 25 · 2026-11-09",
         "ultimBriefing": "Redueixo QQQ en 400 € perquè la correcció del Nasdaq pot continuar (QQQ -12,4% en un mes) i l'escàndol de Nvidia pot pesar més. Augmento XLV perquè la salut és …"
       },
@@ -12698,7 +12698,7 @@
         "model_api": "mistral-medium-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "connectada",
+        "estat": "pendent",
         "ultimaExecucio": "Setmana 25 · 2026-11-09",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       }
