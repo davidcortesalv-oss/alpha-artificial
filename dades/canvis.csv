@@ -229,3 +229,8 @@ data,setmana,model,vendre,comprar,import_eur
 2026-11-09,25,deepseek,QQQ,XLV,400.0
 2026-11-09,25,deepseek,SMH,GLD,200.0
 2026-11-09,25,deepseek,XLE,BIL,150.0
+2026-11-16,26,claude,GLD,XLV,400.0
+2026-11-16,26,gemini,EFECTIU,SCHD,357.06
+2026-11-16,26,gemini,EFECTIU,SOXX,534.68
+2026-11-16,26,deepseek,QQQ,XLV,400.0
+2026-11-16,26,deepseek,SMH,BIL,199.6
