@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-11-16",
     "font": "real",
-    "generat": "2026-11-17T04:11+00:00",
+    "generat": "2026-11-17T17:54+00:00",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -13006,7 +13006,7 @@
         "model_api": "claude-sonnet-5",
         "variable": "ANTHROPIC_API_KEY",
         "url_consola": "https://console.anthropic.com/",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 26 · 2026-11-16",
         "ultimBriefing": "Redueixo GLD d'un 12.2% a prop d'un 8% perquè l'or continua en tendència baixista persistent (-3% aquesta setmana, -5.9% al mes, pràcticament pla a 1 any) mentr…"
       },
@@ -13016,7 +13016,7 @@
         "model_api": "gpt-5",
         "variable": "OPENAI_API_KEY",
         "url_consola": "https://platform.openai.com/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 26 · 2026-11-16",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       },
@@ -13026,7 +13026,7 @@
         "model_api": "gemini-2.5-flash",
         "variable": "GOOGLE_API_KEY",
         "url_consola": "https://aistudio.google.com/apikey",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 26 · 2026-11-16",
         "ultimBriefing": "La meva decisió de reajustament es basa en la necessitat urgent de revertir les pèrdues i aconseguir la màxima rendibilitat en les 6 setmanes restants, mantenin…"
       },
@@ -13036,7 +13036,7 @@
         "model_api": "deepseek-chat",
         "variable": "DEEPSEEK_API_KEY",
         "url_consola": "https://platform.deepseek.com/api_keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 26 · 2026-11-16",
         "ultimBriefing": "Redueixo QQQ en 400 € (del 10,2% al 6,1%) per la pressió continuada sobre tecnologia i semiconductors, i els titulars negatius sobre Nvidia i xips AI. Amb aques…"
       },
@@ -13046,7 +13046,7 @@
         "model_api": "mistral-medium-latest",
         "variable": "MISTRAL_API_KEY",
         "url_consola": "https://console.mistral.ai/api-keys",
-        "estat": "pendent",
+        "estat": "connectada",
         "ultimaExecucio": "Setmana 26 · 2026-11-16",
         "ultimBriefing": "(sense resposta: límit de peticions (429) (després de 6 intents))"
       }
