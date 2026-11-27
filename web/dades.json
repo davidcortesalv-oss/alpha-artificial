@@ -11,7 +11,7 @@
     "dataInici": "2026-07-09",
     "dataActual": "2026-11-25",
     "font": "real",
-    "generat": "2026-11-26T03:46+00:00",
+    "generat": "2026-11-27T03:47+00:00",
     "puntsPerSetmana": 4,
     "nAccions": 114,
     "nEtfs": 108
@@ -281,7 +281,7 @@
       9079.56,
       9365.09,
       9354.48,
-      9335.93
+      9318.09
     ],
     "gpt": [
       9979.75,
@@ -368,7 +368,7 @@
       9082.82,
       9592.56,
       9487.92,
-      9450.59
+      9432.52
     ],
     "gemini": [
       9982.74,
@@ -455,7 +455,7 @@
       8503.38,
       8702.25,
       8757.0,
-      8811.41
+      8794.56
     ],
     "deepseek": [
       9983.74,
@@ -542,7 +542,7 @@
       9083.75,
       9327.4,
       9318.15,
-      9304.42
+      9286.64
     ],
     "mistral": [
       9979.75,
@@ -629,7 +629,7 @@
       9523.89,
       9903.88,
       9864.51,
-      9867.46
+      9851.08
     ],
     "index": [
       10000.0,
@@ -716,7 +716,7 @@
       9578.38,
       10081.77,
       9997.96,
-      9959.93
+      9940.89
     ]
   },
   "decisions": {
@@ -13651,32 +13651,32 @@
     "claude": {
       "volatilitat": 16.57,
       "max_caiguda": -10.95,
-      "sharpe": -1.13
+      "sharpe": -1.17
     },
     "gpt": {
-      "volatilitat": 21.72,
+      "volatilitat": 21.73,
       "max_caiguda": -14.33,
-      "sharpe": -0.65
+      "sharpe": -0.67
     },
     "gemini": {
-      "volatilitat": 20.97,
+      "volatilitat": 20.95,
       "max_caiguda": -17.16,
-      "sharpe": -1.68
+      "sharpe": -1.71
     },
     "deepseek": {
-      "volatilitat": 18.33,
+      "volatilitat": 18.34,
       "max_caiguda": -12.19,
-      "sharpe": -1.06
+      "sharpe": -1.09
     },
     "mistral": {
       "volatilitat": 14.71,
       "max_caiguda": -7.52,
-      "sharpe": -0.16
+      "sharpe": -0.19
     },
     "index": {
-      "volatilitat": 19.37,
+      "volatilitat": 19.38,
       "max_caiguda": -9.68,
-      "sharpe": 0.03
+      "sharpe": 0.0
     }
   },
   "comissions": {
